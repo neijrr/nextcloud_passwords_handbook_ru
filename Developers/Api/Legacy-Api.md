@@ -1,5 +1,3 @@
-# Passwords Legacy Api
-
 > This is the legacy api of the original passwords app by Fallon Turner.
 > The rewritten passwords app provides an implementation of this api, but does not recommend using it.
 > With the implementation of client side encryption in the app, this api will start to return incomplete data.

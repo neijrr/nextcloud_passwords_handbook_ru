@@ -1,5 +1,3 @@
-# Passwords API
-
 ### The Password Object
 
 ```json
