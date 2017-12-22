@@ -32,7 +32,7 @@
 | revision | model | string | no | The UUID of the current password revision |
 | label | model | string | yes | The label of the password |
 | username | model | string | yes | The username of the account |
-| notes | model | string | yes | The notes for the password. Notes contain mardown styled text. |
+| notes | model | string | yes | The notes for the password. Notes contain markdown styled text. |
 | url | model | string | yes | The url of the website |
 | status | model | int | no | The security status of the password |
 | hash | model | string | yes | SHA-1 hash of the password. This is used to check if the password is in the HIBP database. |

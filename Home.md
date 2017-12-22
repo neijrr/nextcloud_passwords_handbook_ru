@@ -1,7 +1,7 @@
 > Welcome to the Passwords for Nextcloud documentation
 
 ## Users
-1. [Settings](Users/Personal Settings)
+1. [Settings](Users/Personal-Settings)
 
 ## Administrators
 1. [Settings](Administrators/Administrative-Settings)
