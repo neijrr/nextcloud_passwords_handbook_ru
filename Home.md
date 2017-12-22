@@ -8,5 +8,5 @@
 
 ## Developers
 1. The API
-   1. [Password API](Password-Api)
+   1. [Password API](Developers/Api/Password-Api)
 2. [Legacy API](Developers/Api/Legacy-Api)
