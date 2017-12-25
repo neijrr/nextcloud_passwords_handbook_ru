@@ -4,6 +4,7 @@
 1. [Settings](Users/Personal-Settings)
 
 ## Administrators
+1. [System Requirements](Administrators/System-Requirements)
 1. [Settings](Administrators/Administrative-Settings)
 
 ## Developers

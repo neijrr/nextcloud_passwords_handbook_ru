@@ -1,10 +1,11 @@
 ## Users
-- [Settings](Users/Personal-Settings)
+- [Settings](Personal-Settings)
 
 ## Administrators
-- [Settings](Administrators/Administrative-Settings)
+- [System Requirements](System-Requirements)
+- [Settings](Administrative-Settings)
 
 ## Developers
 - The API
-   - [Password API](Developers/Api/Password-Api)
-- [Legacy API](Developers/Api/Legacy-Api)
+   - [Password API](Api/Password-Api)
+- [Legacy API](Api/Legacy-Api)
