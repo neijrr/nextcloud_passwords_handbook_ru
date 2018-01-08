@@ -3,6 +3,7 @@
 
 ## Administrators
 - [System Requirements](System-Requirements)
+- [Migrating from the legacy app](Administrators/Legacy-Migration)
 - [Settings](Administrative-Settings)
 
 ## Developers
