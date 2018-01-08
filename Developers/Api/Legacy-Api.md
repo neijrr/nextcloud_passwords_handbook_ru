@@ -1,22 +1,19 @@
 > This is the legacy api of the original passwords app by Fallon Turner.
 > The rewritten passwords app provides an implementation of this api, but does not recommend using it.
-> With the implementation of client side encryption in the app, this api will start to return incomplete data.
+> Due to its limitations, this api returns incomplete data and does not support client side encryption.
+> This api will be removed permanently in version 2019.1.0.
 > If you are planning to use the passwords api in your own application, please use the new api instead.
-
-How To Use The RESTful API (for extensions and other apps that use Passwords)
-This app supports using an API. You can remotely get the list of passwords or edit and save them.
-Methods
 
 Supported methods are GET, POST, DELETE and PUT. You can use HEAD and OPTIONS to view all information of the API on your own server.
 
 |Method |Scope          |Semantics|
 |---|---|---|
-|GET 	|collection     |Retrieve all resources in a collection|
-|GET 	|resource       |Retrieve a single resource|
-|HEAD 	|collection     |Retrieve all resources in a collection (header only)|
-|HEAD 	|resource       |Retrieve a single resource (header only)|
-|POST 	|collection     |Create a new resource in a collection|
-|PUT 	|resource       |Update a resource|
+|GET    |collection     |Retrieve all resources in a collection|
+|GET    |resource       |Retrieve a single resource|
+|HEAD   |collection     |Retrieve all resources in a collection (header only)|
+|HEAD   |resource       |Retrieve a single resource (header only)|
+|POST   |collection     |Create a new resource in a collection|
+|PUT    |resource       |Update a resource|
 |DELETE |resource       |Delete a resource|
 |OPTIONS|any            |Return available HTTP methods and other options|
 

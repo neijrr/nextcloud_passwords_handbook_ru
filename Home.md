@@ -5,7 +5,8 @@
 
 ## Administrators
 1. [System Requirements](Administrators/System-Requirements)
-1. [Settings](Administrators/Administrative-Settings)
+2. [Migrating from the legacy app](Administrators/Legacy-Migration.md)
+3. [Settings](Administrators/Administrative-Settings)
 
 ## Developers
 1. The API
