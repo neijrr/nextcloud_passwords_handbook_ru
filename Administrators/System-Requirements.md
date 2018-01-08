@@ -10,6 +10,10 @@
 | PECL | Curl | Zip, Imagick, Curl |
 | Libraries | - | wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
+### Browser Support
+The webinterface of Passwords for Nextcloud is designed to support the latest versions of major browsers.
+This includes most browsers based on Firefox Quantum (Version 57+), Chromium and Edge.
+
 ### Wkhtml dependencies
 - libmagickwand 
 - libXrender1 
