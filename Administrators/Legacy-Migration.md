@@ -2,6 +2,11 @@ This guide helps you to migrate fom the [Passwords Legacy](https://github.com/ma
 If you did use the legacy app or want to [start from scratch](#starting-from-scratch), this guide is not relevant for you.
 
 
+### Why you should upgrade
+With the release of Passwords for Nextcloud 2018.1 at the beginning of february 2018, Passwords Legacy will only receive patches for larger security issues.
+With the release of Passwords for Nextcloud 2019.1 at the beginning of 2019, Passwords Legacy will not receive any updates at all anymore.
+Passwords for Nextcloud is more secure, faster and comes with a more powerful api and a modern webinterface.
+
 ### Prerequisites
 Make sure to upgrade to the latest version of the [legacy app](https://github.com/marius-wieschollek/passwords-legacy) before attempting the migration.
 Check the [system-requirements](System-Requirements.md) and make sure your server fulfills all the minimum requirements.

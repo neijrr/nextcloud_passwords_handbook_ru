@@ -7,12 +7,18 @@
 | OS | Linux | Ubuntu 16.04 |
 | DB | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
 | PHP | PHP 7.1 | PHP 7.2 |
+| Webserver  | HTTPS | Nginx 1.12.2 HTTPS |
 | PECL | Curl | Zip, Imagick, Curl |
 | Libraries | - | wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Browser Support
-The webinterface of Passwords for Nextcloud is designed to support the latest versions of major browsers.
+The web interface of Passwords for Nextcloud is designed to support the latest versions of major browsers.
 This includes most browsers based on Firefox Quantum (Version 57+), Chromium and Edge.
+
+### HTTPS
+Passwords for Nextcloud requires HTTPS to work. This can not be disabled.
+Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
+You can get a free HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/getting-started/).
 
 ### Wkhtml dependencies
 - libmagickwand 
