@@ -1,5 +1,5 @@
 This guide helps you to migrate fom the [Passwords Legacy](https://github.com/marius-wieschollek/passwords-legacy) app written by Fallon Turner and maintained by Marius Wieschollek.
-If you did use the legacy app or want to [start from scratch](#starting-from-scratch), this guide is not relevant for you.
+If you did not use the legacy app or want to [start from scratch](#starting-from-scratch), this guide is not relevant for you.
 
 
 ### Why you should upgrade
@@ -87,6 +87,7 @@ Please describe your issue in detail and precise and supply all necessary inform
 
 ### Starting from scratch
 If you have used passwords legacy but do not want to migrate your old data you can just disable the migration tool by setting the `installed version` to `2018.0`.
+Make sure you also delete the legacy app tables from your database.
 ```sql
 UPDATE `*PREFIX*appconfig` SET `configvalue` = '2018.11' WHERE `*PREFIX*appconfig`.`appid` = 'passwords' AND `*PREFIX*appconfig`.`configkey` = 'installed_version'; 
 ```
