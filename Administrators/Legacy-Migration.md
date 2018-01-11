@@ -3,9 +3,9 @@ If you did not use the legacy app or want to [start from scratch](#starting-from
 
 
 ### Why you should upgrade
-With the release of Passwords for Nextcloud 2018.1 at the beginning of february 2018, Passwords Legacy will only receive patches for larger security issues.
-With the release of Passwords for Nextcloud 2019.1 at the beginning of 2019, Passwords Legacy will not receive any updates at all anymore.
-Passwords for Nextcloud is more secure, faster and comes with a more powerful api and a modern webinterface.
+With the release of Passwords 2018.1 at the beginning of february 2018, Passwords Legacy will only receive patches for larger security issues.
+With the release of Passwords 2019.1 at the beginning of 2019, Passwords Legacy will not receive any updates at all anymore.
+Passwords is more secure, faster and comes with a more powerful api and a modern webinterface.
 
 ### Prerequisites
 Make sure to upgrade to the latest version of the [legacy app](https://github.com/marius-wieschollek/passwords-legacy) before attempting the migration.
@@ -14,7 +14,7 @@ It might also be a good idea to check the issue trackers [on github](https://git
 
 
 ### Database Backup
-Passwords for Nextcloud has no write capabilities for Passwords Legacy built-in and does not use the legacy tables.
+Passwords has no write capabilities for Passwords Legacy built-in and does not use the legacy tables.
 It is still a good idea to make a backup of the following tables before you start the migration process.
 **Do not keep this backup in any publicly accessible folder of your webserver**
 
@@ -46,7 +46,8 @@ So in order to prevent duplicate passwords, you should empty the password tables
 
 
 ### Migration
-Install the newest version of Passwords for Nextcloud from the app store or the builds page.
+Install the newest version of Passwords from the app store or the builds page.
+You can also use the sources, but you will have to run `npm install` and `npm run build` to compile the files.
 Nextcloud should detect the new version and activate the maintenance mode.
 You can start the migration by clicking the upgrade button on the web interface or by using the command line tool.
 We recommend using the command line tool for the migration.
@@ -68,7 +69,7 @@ If the migration was successful, the number of migrated passwords, categories an
 
 ### Known Issues
 ###### Shared passwords are not shown
-This is due to the way shares work in Passwords for Nextcloud.
+This is due to the way shares work in Passwords.
 The shared passwords will be added to the receivers account by a background cron job.
 If you want to speed up the process, execute the cron jobs manually
 ```bash
