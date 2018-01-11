@@ -36,8 +36,7 @@ Using these URLs will produce a decrypted JSON string.
 #### Getting the app version
 `curl -u [user] https://[nextcloud]/index.php/apps/passwords/api/0.1/version`
 
-This will return a string like "17.2".
-
+This call is hardcoded to return "21"
 
 #### Getting all passwords of a user
 `curl -u [user] https://[nextcloud]/index.php/apps/passwords/api/0.1/passwords`
