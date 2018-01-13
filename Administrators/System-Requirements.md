@@ -9,7 +9,7 @@
 | PHP | PHP 7.1 | PHP 7.2 |
 | Webserver  | HTTPS | Nginx 1.12.2 HTTPS |
 | PECL | Curl | Zip, Imagick, Curl |
-| Libraries | - | wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+| Libraries |  | librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Browser Support
 The web interface of Passwords is designed to support the latest versions of major browsers.

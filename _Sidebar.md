@@ -8,5 +8,6 @@
 
 ## Developers
 - The API
-   - [Password API](Api/Password-Api)
-- [Legacy API](Api/Legacy-Api)
+   - [Password API](Password-Api)
+   - [Error Codes](Error-Codes)
+- [Legacy API](Legacy-Api)

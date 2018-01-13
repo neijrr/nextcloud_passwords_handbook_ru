@@ -1,7 +1,9 @@
 > Welcome to the Passwords for Nextcloud documentation
 
 ## Users
-1. [Settings](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Personal-Settings)
+1. [F.A.Q](https://git.mdns.eu/nextcloud/passwords/wikis/Users/F.A.Q)
+2. [Settings](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Personal-Settings)
+
 
 ## Administrators
 1. [System Requirements](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/System-Requirements)
@@ -11,4 +13,5 @@
 ## Developers
 1. The API
    1. [Password API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Password-Api)
+   2. [Error Codes](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Error-Codes)
 2. [Legacy API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Legacy-Api)
