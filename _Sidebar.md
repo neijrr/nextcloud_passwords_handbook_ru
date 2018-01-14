@@ -7,7 +7,7 @@
 - [Settings](Administrative-Settings)
 
 ## Developers
-- The API
+- [The API](Api)
    - [Password API](Password-Api)
    - [Error Codes](Error-Codes)
 - [Legacy API](Legacy-Api)

@@ -11,7 +11,7 @@
 3. [Settings](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Administrative-Settings)
 
 ## Developers
-1. The API
+1. [The API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Api)
    1. [Password API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Password-Api)
    2. [Error Codes](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Error-Codes)
 2. [Legacy API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Legacy-Api)

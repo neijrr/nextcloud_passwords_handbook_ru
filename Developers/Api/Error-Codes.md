@@ -1,6 +1,6 @@
 ## General Errors
 #### [6304571a] HTTPS required
-You can not run Passwords without HTTPS on a productive server as this in completely insecure.
+You can not run Passwords without HTTPS on a productive server as this is completely insecure.
 
 #### [a3f7ed53] Access denied
 The permissions of yur client do not allow this action.
