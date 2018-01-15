@@ -21,6 +21,8 @@
 	"trashed"  : false,
 	"favourite": false
 }
+
+
 ```
 
 | Field | Detail Level | Type | Writeable | Description |

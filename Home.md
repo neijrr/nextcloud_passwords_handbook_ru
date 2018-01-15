@@ -12,8 +12,8 @@
 
 ## Developers
 1. [General](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/General)
-2. [The API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Api)
+1. [The API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api)
    1. [Password API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Password-Api)
    2. [Error Codes](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Error-Codes)
 3. [Legacy API](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Legacy-Api)
-4. [Verify your GIT commigs](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Verify-Git-Commits.md)
+4. [Verify GIT commits](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Verify-Git-Commits)
