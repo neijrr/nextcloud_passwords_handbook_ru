@@ -11,14 +11,19 @@
 | PECL | Curl | Zip, Imagick, Curl |
 | Libraries |  | librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
-### Browser Support
-The web interface of Passwords is designed to support the latest versions of major browsers.
-This includes most browsers based on Firefox Quantum (Version 57+), Chromium and Edge.
-
 ### HTTPS
 Passwords requires HTTPS to work. This can not be disabled.
 Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
 You can get a free HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/getting-started/).
+
+### Background Jobs
+Passwords uses several background jobs to process data.
+To ensure that these run as intended, it is recommended to configure Nextcloud to run those jobs trough cron.
+More information can be found in the [documentation](https://docs.nextcloud.com/server/12/go.php?to=admin-background-jobs).
+
+### Browser Support
+The web interface of Passwords is designed to support the latest versions of major browsers.
+This includes most browsers based on Firefox Quantum (Version 57+), Chromium and Edge.
 
 ### Wkhtml dependencies
 - libmagickwand 
