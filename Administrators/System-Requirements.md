@@ -1,15 +1,15 @@
 |  | Minimum | Recommended |
 | --- | --- | --- |
-| Processor | 4x1 GHz | 4x2GHz |
-| Ram | 512 MiB | 8GiB |
-| Disk | 4 GiB | 64GiB |
-| Platform | Nextcloud 12 | Nextcloud 12 |
-| OS | Linux | Ubuntu 16.04 |
-| DB | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
-| PHP | PHP 7.1 | PHP 7.2 |
-| Webserver  | HTTPS | Nginx 1.12.2 HTTPS |
-| PECL | Curl | Zip, Imagick, Curl |
-| Libraries |  | librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+| Processor | 4x1 GHz      | 4x2GHz |
+| Ram       | 512 MiB      | 8GiB |
+| Disk      | 4 GiB        | 64GiB |
+| Platform  | Nextcloud 12 | Nextcloud 12 |
+| OS        | Linux        | Ubuntu 16.04 |
+| Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
+| PHP       | PHP 7.1 | PHP 7.2 |
+| Webserver | HTTPS   | Nginx 1.12.2 HTTPS |
+| PECL      | Curl    | Zip, Imagick, Curl |
+| Libraries |         | librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### HTTPS
 Passwords requires HTTPS to work. This can not be disabled.

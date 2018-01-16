@@ -1,0 +1,81 @@
+## Legacy Api Support
+The Legacy API is the API which was originally provided by the Passwords App in versions prior to 2018.1.
+This API is used by many clients for passwords and therefore still available.
+However the APi does not support client side encryption or safe server side encryption.
+It is also makes the application slower and does not strictly enforce HTTPS.
+
+##### Enable Legacy API
+This option enables or disables the API completely.
+If the API is disabled it will no longer be possible to access it in any way as the app will no longer register the necessary components in Nextcloud.
+
+##### Legacy API was last used on
+This settings is read only.
+It should tell you when the legacy api was last used.
+If you can see that the api is no longer in use on your server, you should disable it.
+
+
+## Internal Data Processing
+These settings influence how Passwords processes different types of data internally.
+
+##### Image Rendering
+You have two options for image rendering.
+If Imagemagick or Graphicsmagick are installed on your system, they will automatically be chosen as default.
+GDLib should only be chosen if the Imagemagick are broken or not available.
+GDLib usually provides lower image quality and might not work with all formats.
+
+
+## External Services
+In this section you can configure all the third party services used by Passwords.
+
+##### Password Security Checks
+This service is used to check if a password is safe or not.
+
+**Have I been pwned?** is the recommended service.
+Is might be slow if a lot of passwords needs to be processed, since you can only make one request every 1.5 seconds.
+But in general it has the largest database and is updated regularly.
+If a bad password is found, the hash is stored locally so that the service does not need to be contacted again.
+
+**10 Million Passwords** downloads a static password file and fills the local cache with it.
+After this, all password checking can be done locally.
+It is faster than Hibp when it comes to checking passwords, but of course it does not contain that many passwords.
+Updating the database can take up to 1.75Gib of RAM or up to 125MiB on less powerful systems.
+If you do not have that much ram available, you should not use this service.
+It also requires up to 512Mib of disk space.
+
+**1 Million Passwords** downloads a static file with the most common passwords.
+It uses a lot less system resources than the 10Mio passwords and should run on any system.
+
+**10 Mio Passwords + Have I been pwned?** fills the local cache with the most common passwords.
+It is faster if a bad password is found in the 10 Mio Passwords database since Hibp is not contacted in that case.
+
+##### Password Generator Service
+This service will be used to generate the basic words for a new password.
+
+**Local Dictionary** uses locally installed dictionaries for different languages to provide words.
+It has the best language support.
+
+**Random Characters** generates sets of random letters for the service.
+This service has no dependencies.
+
+**watchout4snakes.com** is only available in english.
+It can provide words based on their rarity and type and is therefore the best service to generate easy to remember and secure passwords.
+
+
+## Favicon Service
+This service delivers the website favicons .
+The icons are onyl fetched once for a domain and then stored locally.
+
+**Local analyzer** fetches the start page of the domain and searches for common icon tags.
+This service usually finds the most icons, but also the most useless icons.
+
+**The Favicon Finder** uses the third party service to find icons.
+It usually returns the best icons and also good default icons if none is found.
+
+**DuckDuckGo** uses the icon service of the search engine.
+All icons have a native resolution of 32 pixels.
+
+**Google** uses googles icon service.
+It finds the least icons and they usually have a crappy resolution.
+
+**None** always returns a default icon.
+It is the fastest and most privacy friendly service.
