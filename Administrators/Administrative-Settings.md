@@ -91,6 +91,7 @@ If the installation with NPM fails, try `sudo npm install --global pageres-cli -
 
 **WKHTML** requires wkhtmltoimage to be installed locally.
 It is headless and has less dependencies than pageres, but it comes with an outdated rendering engine and sometimes no output is produced at all.
+You can get the binary from [their website](https://wkhtmltopdf.org/).
 
 **screenshotapi.io** offers a huge amount of free screenshots, uses HTTPS and is generally very cheap.
 It might be slower and sometimes crashes.

@@ -26,10 +26,15 @@ The web interface of Passwords is designed to support the latest versions of maj
 This includes most browsers based on Firefox Quantum (Version 57+), Chromium and Edge.
 
 ### Wkhtml dependencies
-- libmagickwand 
-- libXrender1 
-- libfontconfig1 
+- libmagickwand
+- libXrender1
+- libfontconfig1
 - libXext6
+
+### Pageres dependencies
+- PhantomJS 
+- NPM 
+- fontconfig
 
 ### Third Party Services
 To provide all api features, passwords may use third party services depending on the settings.
