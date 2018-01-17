@@ -54,16 +54,15 @@ This service will be used to generate the basic words for a new password.
 **Local Dictionary** uses locally installed dictionaries for different languages to provide words.
 It has the best language support.
 
-**Random Characters** generates sets of random letters for the service.
-This service has no dependencies.
-
 **watchout4snakes.com** is only available in english.
 It can provide words based on their rarity and type and is therefore the best service to generate easy to remember and secure passwords.
 
+**Random Characters** generates sets of random letters for the service.
+This service has no dependencies.
 
-## Favicon Service
+##### Favicon Service
 This service delivers the website favicons .
-The icons are onyl fetched once for a domain and then stored locally.
+The icons are only fetched once for a domain and then stored locally.
 
 **Local analyzer** fetches the start page of the domain and searches for common icon tags.
 This service usually finds the most icons, but also the most useless icons.
@@ -79,3 +78,44 @@ It finds the least icons and they usually have a crappy resolution.
 
 **None** always returns a default icon.
 It is the fastest and most privacy friendly service.
+
+##### Website PageShot Service
+This service is used to generate previews of websites.
+Only the front page of the domain is called and at maximum twice for mobile and desktop views.
+If you know a good program or service, feel free to open an issue to support it.
+(Requirements: Offers a free plan and has an api)
+
+**WKHTML** requires wkhtmltoimage to be installed locally.
+It deos not require an Xserver, but it has an outdated rendering engine and sometimes it produces no output at all.
+
+**screenshotapi.io** offers a huge amount of free screenshots, uses HTTPS and is generally very cheap.
+It might be slower and sometimes crashes.
+
+**screenshotmachine.com** offers 100 fresh screenshots for free per month and impressions are free.
+You only have to pay what you use and it is quite fast and supports different devices.
+For free accounts, HTTPS is not supported.
+
+**None** just delivers one of five default images.
+
+##### PageShot Service API Key
+If you use a service with an api, you have to put your api key here.
+
+
+## Caches
+Caches are used to store temporary data. they are usually not emptied by the app.
+If problems occur, the first tip is always to empty the related cache.
+
+##### Default Cache
+Usually not used. Contains general files.
+
+##### Avatars Cache
+Contains rendered images of user avatars.
+
+##### Favicon Cache
+Contains the raw and scaled favicons
+
+##### Pageshot Cache
+Contains the raw website screenshots and resized or cropped versions.
+
+##### Passwords Cache
+Contains lists with bad passwords.
