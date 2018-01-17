@@ -85,8 +85,12 @@ Only the front page of the domain is called and at maximum twice for mobile and 
 If you know a good program or service, feel free to open an issue to support it.
 (Requirements: Offers a free plan and has an api)
 
+**Pageres/PhantomJS** requires pageres-cli and phantomJS to installed locally.
+Usually very reliable local and headless preview generator with a modern browser engine.
+If the installation with NPM fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
+
 **WKHTML** requires wkhtmltoimage to be installed locally.
-It deos not require an Xserver, but it has an outdated rendering engine and sometimes it produces no output at all.
+It is headless and has less dependencies than pageres, but it comes with an outdated rendering engine and sometimes no output is produced at all.
 
 **screenshotapi.io** offers a huge amount of free screenshots, uses HTTPS and is generally very cheap.
 It might be slower and sometimes crashes.
