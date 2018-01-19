@@ -2,6 +2,7 @@
 
 ## Users
 1. [F.A.Q](https://git.mdns.eu/nextcloud/passwords/wikis/Users/F.A.Q)
+2. [Gallery](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Gallery)
 2. [Settings](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Personal-Settings)
 
 
