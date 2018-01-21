@@ -4,89 +4,92 @@
 > This api will be removed permanently in version 2020.1.
 > If you are planning to use the passwords api in your own application, please use the new api instead.
 
-Supported methods are GET, POST, DELETE and PUT. You can use HEAD and OPTIONS to view all information of the API on your own server.
+|Method |Scope      |Semantics|
+|  ---  |    ---    | --- |
+|GET    |collection |Retrieve all resources in a collection|
+|GET    |resource   |Retrieve a single resource|
+|HEAD   |collection |Retrieve all resources in a collection (header only)|
+|HEAD   |resource   |Retrieve a single resource (header only)|
+|POST   |collection |Create a new resource in a collection|
+|PUT    |resource   |Update a resource|
+|DELETE |resource   |Delete a resource|
+|OPTIONS|any        |Return available HTTP methods and other options|
 
-|Method |Scope          |Semantics|
-|---|---|---|
-|GET    |collection     |Retrieve all resources in a collection|
-|GET    |resource       |Retrieve a single resource|
-|HEAD   |collection     |Retrieve all resources in a collection (header only)|
-|HEAD   |resource       |Retrieve a single resource (header only)|
-|POST   |collection     |Create a new resource in a collection|
-|PUT    |resource       |Update a resource|
-|DELETE |resource       |Delete a resource|
-|OPTIONS|any            |Return available HTTP methods and other options|
+## Authentication
+The api can only be accessed with CORS compatible clients and requires basic auth.
 
-An example to use HEAD method to check the app on a server:
+## Version
+#### The Version Object
+This api always returns the number `21`
 
-`curl -i -X HEAD -u username https://[nextcloud]/index.php/apps/passwords/api/0.1/passwords`
-
-## Commands
-Every command requires Nextcloud authentication. Without a username and password of an existing user, the API will return: CORS requires basic auth.
-
-The basic URL is the location of the app, followed by /api/0.1/[type], so:
-```
-Passwords: https://[nextcloud]/index.php/apps/passwords/api/0.1/passwords
-Categories: https://[nextcloud]/index.php/apps/passwords/api/0.1/categories
-```
-
-Using these URLs will produce a decrypted JSON string.
+#### Api Url
+`https://{host}/index.php/apps/passwords/api/0.1/version/`
 
 
-#### Getting the app version
-`curl -u [user] https://[nextcloud]/index.php/apps/passwords/api/0.1/version`
+## Passwords
+#### The Category Object
+| Property | Type | Writable | Description |
+| --- |--- |--- | --- |
+| id  | int | no | Numeric id of the category |
+| user_id | string | no | Nextcloud user name of the current user |
+| loginname | string | yes | Username for the password |
+| pass | string | yes | The password |
+| website | string | no | The domain of the password. It will always be the domain of the address |
+| address | string | yes | The url of the website |
+| notes | string | yes | Notes taken by the user. May containe markdown |
+| deleted | bool | yes | True if the password is in the trash |
+| creation_date | string | no | Date when the password was created. Format `YYYY-MM-DD` |
+| properties | string | no | JSON encoded string with properties |
+| properties.loginname | string | yes | See loginname |
+| properties.address | string | yes | See address | 
+| properties.strength | int | no | Security status of the password. (0 = broken, 10 = Weak, 20 = Good) |
+| properties.length | int | no | Length of the password |
+| properties.lower | bool | no | True if the password contains lowercase letters |
+| properties.upper | bool | no | True if the password contains uppercase letters |
+| properties.number | bool | no | True if the password contains numbers |
+| properties.special | bool | no | True if the password contains special characters |
+| properties.category | int | yes | Id of the fiest associated tag |
+| properties.datechanged | string | yes | Date when the password was last edited. Format `YYYY-MM-DD` |
+| properties.notes | string | yes | See notes |
 
-This call is hardcoded to return "21"
+#### Api Url
+`https://{host}/index.php/apps/passwords/api/0.1/passwords/{?id}`
 
-#### Getting all passwords of a user
-`curl -u [user] https://[nextcloud]/index.php/apps/passwords/api/0.1/passwords`
+#### Rest Methods
+| Method | Fields | Description |
+| ------ | --- | --- |
+| POST   | pass, loginname, address, notes, category | Creates a new password with the given attributes. Reurns the password |
+| PUT    | id, pass, loginname, address, notes, category, deleted, datechanged | Updates the password with the given id. Note that the id is a get parameter, the rest are JSON post parameters |
+| GET    |  | Lists all passwords |
+| GET    | id | Returns the passwords with the given id |
+| DELETE | id | Moves the passwords with the given id to the trash and deletes it when the deleted attribute is set to true |
 
+## Categories
+#### The Category Object
+| Property | Type | Writable | Description |
+| --- |--- |--- | --- |
+| id  | int | no | Numeric id of the category |
+| user_id | string | no | Nextcloud user name of the current user |
+| category_name | string | yes | The label of the tag |
+| category_colour | string | yes | The color of the tag as hexadecimal number *without* the leading '#' |
 
-#### Getting a single password of a user
-Taking into account that the password with database ID = 61 belongs to [user]:
+#### Api Url
+`https://{host}/index.php/apps/passwords/api/0.1/categories/{?id}`
 
-`curl -u [user] https://[nextcloud]/index.php/apps/passwords/api/0.1/passwords/61`
+#### Rest Methods
+| Method | Fields | Description |
+| ------ | --- | --- |
+| POST   | category_name, category_colour | Creates a new tag with the given attributes. Returns the created tag. |
+| GET    |  | Lists all tags |
+| GET    | id | Returns the tag with the given id |
+| DELETE | id | Moves the tag with the given id to the trash |
 
-
-#### Saving a password for a user
-For saving this:
-```
-{
-    "website": "testsite.com",
-    "pass": "newpassword",
-    "loginname": "username",
-    "address": "www.testsite.com",
-    "notes": "my new notes"
-}
-```
-use this (note that all " within the JSON object must be written as \\"):
-```
-curl -u [user] -H "Content-Type: application/json" -X POST -d "{\"website\":\"testsite.com\",\"pass\":\"newpassword\",\"loginname\":\"username\",\"address\": \"www.testsite.com\", \"notes\": \"my new notes\"}" https://[nextcloud]/index.php/apps/passwords/api/0.1/passwords
-```
-
-
-#### Getting all categories of a user
-`curl -u [user] https://[nextcloud]/index.php/apps/passwords/api/0.1/categories`
-
-
-#### Getting a single category of a user
-Taking into account that the category with database ID = 3 belongs to [user]:
-
-`curl -u [user] https://[nextcloud]/index.php/apps/passwords/api/0.1/categories/3`
-
-
-#### Saving a category for a user
-> Categories will be mapped to tags. 
-
-Category colours must be hexadecimal and must not be preceded by a # character. The format will be checked for validity server-side.
-For saving this:
-```
-{
-	"category_name": "My category",
-	"category_colour": "aa0000",
-}
-```
-use this (note that all " within the JSON object must be written as \\"):
-```
-curl -u [user] -H "Content-Type: application/json" -X POST -d "{\"category_name\":\"My category\",\"category_colour\":\"aa0000\"}" https://[nextcloud]/index.php/apps/passwords/api/0.1/passwords
-```
+## Incompatibilities / Notes
+- Some passwords will not have addresses or websites as this is not a required field in the new app
+- The delete command will move passwords into the trash if they do not have the deleted attribute
+- The attribute strength has only three values: 0 - 10 - 20
+- The sharing api is not supported. If you need it open a ticket.
+- Categories are mapped to tags. There is only the first category shown.
+- Tags will only be moved in the trash when deleted
+- Client side encryption or safe sever side encryption are not supported
+- The new app will fill all fields with values, the legacy app only the properties

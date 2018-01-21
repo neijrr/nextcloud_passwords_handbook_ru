@@ -20,8 +20,10 @@ These settings influence how Passwords processes different types of data interna
 ##### Image Rendering
 You have two options for image rendering.
 If Imagemagick or Graphicsmagick are installed on your system, they will automatically be chosen as default.
-GDLib should only be chosen if the Imagemagick are broken or not available.
+GDLib should only be chosen if Imagemagick is broken or not available.
 GDLib usually provides lower image quality and might not work with all formats.
+
+**Note:** If you have Imagemagick selected, make sure that svg is supported. Otherwise GDLib will be used in some cases.
 
 
 ## External Services

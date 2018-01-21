@@ -9,7 +9,7 @@
 | PHP       | PHP 7.1 | PHP 7.2 |
 | Webserver | HTTPS   | Nginx 1.12.2 HTTPS |
 | PECL      | Curl    | Zip, Imagick, Curl |
-| Libraries |         | librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+| Libraries |         | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### HTTPS
 Passwords requires HTTPS to work. This can not be disabled.
@@ -39,14 +39,13 @@ This includes most browsers based on Firefox Quantum (Version 57+), Chromium and
 ### Third Party Services
 To provide all api features, passwords may use third party services depending on the settings.
 The following list contains all domains which may provide these services.
-However some local service providers like WKHTML and the favicon finder may contact any domain as requested via the api.
+However some local service providers like WKHTML, Pageres and the favicon finder may contact any domain as requested via the api.
 
 - https://github.com
 - https://icons.better-idea.org
 - https://icons.duckduckgo.com
 - https://www.google.com
 - https://api.screenshotapi.io
-- http://api.screenshotlayer.com
 - http://api.screenshotmachine.com
 - https://archive.org
 - https://haveibeenpwned.com
