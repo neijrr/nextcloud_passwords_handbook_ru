@@ -1,4 +1,6 @@
-## The Password Object
+[[_TOC_]]
+
+# The Password Object
 | Property | Type | Writable | Encrypted | Versioned | Description |
 | --- | --- | --- | --- | --- | --- |
 | id | string | no | no | no | The UUID of the password |
@@ -62,7 +64,7 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 | restore | `/api/1.0/password/restore` | PATCH | Restore an earlier state of a password |
 
 
-## The create method
+# The create method
 The create method creates a new password with the given attributes
 
 #### Attributes
