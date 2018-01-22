@@ -1,5 +1,3 @@
-**Contents**
-
 [[_TOC_]]
 
 # The Password Object
