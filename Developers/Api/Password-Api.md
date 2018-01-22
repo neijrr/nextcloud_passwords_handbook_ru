@@ -1,3 +1,4 @@
+**Contents**
 [[_TOC_]]
 
 # The Password Object
@@ -51,7 +52,7 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
  The users password rules need to be checked client sided.
 
 
-## Available api actions
+# Available api actions
 | Action | Url | Method | Description |
 | --- | --- | --- | --- |
 | list | `/api/1.0/password/list` | GET | List all passwords with the default detail level |
