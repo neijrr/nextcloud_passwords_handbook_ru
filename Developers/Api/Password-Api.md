@@ -1,48 +1,83 @@
-### The Password Object
+## The Password Object
+| Property | Type | Writable | Encrypted | Versioned | Description |
+| --- |--- |--- | --- |
+| id | string | no | no | no | The UUID of the password |
+| created | int | no | no | no | Unix timestamp when the password was created |
+| updated | int | no | no | yes | Unix timestamp when the password was updated |
+| edited | int | yes | no | yes | Unix timestamp when the user last changed the password |
+| share | string / null | no | no | no | UUID of the share if the password was shared by someone else with the user |
+| revision | string | no | no | yes | UUID of the current revision |
+| label | string | yes | yes | yes | User defined label of the password | 
+| username | string | yes | yes | yes | Username associated with the password |
+| password | string | yes | yes | yes | The actual password |
+| notes | string | yes | yes | yes | Notes for hte password. Can be formatted with Markdown |
+| url | string | yes | yes | yes | Url of the website |
+| status | int | no | no | yes | Security status of the password |
+| hash | string | yes | no | yes | SHA1 hash of the password |
+| folder | string | yes | no | yes | UUID of the current folder of the password |
+| cseType | string | yes | no | yes | Type of the used client side encryption |
+| sseType | string | yes | no | yes | Type of the used server side encryption |
+| hidden | bool | yes | no | yes | Hides the password in list / find actions |
+| trashed | bool | no | no | yes | True if the password is in the trash |
+| favourite | bool | yes | no | yes | True if the user has marked the password as favourite |
+| editable | bool | no | no | no | Specifies if the encrypted properties can be changed. Might be false for shared passwords |
 
-```json
-{
-    "id"       : "00000000-0000-0000-0000-000000000000",
-	"owner"    : "string",
-	"created"  : 1513946292,
-	"updated"  : 1513946292,
-	"revision" : "00000000-0000-0000-0000-000000000000",
-	"label"    : "string",
-	"username" : "string",
-	"password" : "string",
-	"notes"    : "string",
-	"url"      : "string",
-	"status"   : 0,
-	"hash"     : "string",
-	"folder"   : "00000000-0000-0000-0000-000000000000",
-	"cseType"  : "string",
-	"sseType"  : "string",
-	"hidden"   : false,
-	"trashed"  : false,
-	"favourite": false
-}
+#### Detail Levels
+| Level | Description |
+| --- | --- | 
+| model | Returns the base model |
+| +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
+| +folder | Fills the folder property with the base model of the folder |
+| +tags | Adds the tags property filled with the base model of all tags |
+| +shares | Adds the shares property filled with the base model of all shares with other users. Fills the share property with the base model of the original share if available |
+
+#### Enhanced API special properties
+The properties "revisions", "folder", "tags", "shares" and "share" are also processed if necessary.
+| Property | Type | Description |
+| --- | --- | --- | 
+| type | string | Object type, the value is "password" |
+| icon | string | Url for the default favicon of the website |
+| image | string | Url for the default website preview image |
+| created | Date | Date when the password was created |
+| updated | Date | Date when the password was last updated |
+| edited | Date | Date when the use last changed the password |
 
 
-```
+## Available api actions
+| Action | Url | Method | Description |
+| --- | --- | --- | --- |
+| list | `/api/1.0/password/list` | GET | List all passwords with the default detail level |
+| list | `/api/1.0/password/list` | POST | List all passwords with the given detail level |
+| show | `/api/1.0/password/show` | POST | Show a password |
+| find | `/api/1.0/password/find` | POST | Find passwords matching given criteria |
+| create | `/api/1.0/password/create` | POST | Create a new password |
+| update | `/api/1.0/password/update` | PATCH | Update an existing password |
+| delete | `/api/1.0/password/delete` | DELETE | Delete a password |
+| restore | `/api/1.0/password/restore` | PATCH | Restore an earlier state of a password |
 
-| Field | Detail Level | Type | Writeable | Description |
+
+## The create method
+The create method creates a new password with the given attributes
+
+#### Attributes
+| Attribute | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| id | model | string | no | The UUID of the password |
-| owner | model | string | no | The Nextcloud username of the owner |
-| created | model | int / Date | no | The time when the password was created. Usually a Unix timestamp, but a date object in the extended API. |
-| updated | model | int / Date | no | The time when the password was last updated. Usually a Unix timestamp, but a date object in the extended API. |
-| revision | model | string | no | The UUID of the current password revision |
-| label | model | string | yes | The label of the password |
-| username | model | string | yes | The username of the account |
-| notes | model | string | yes | The notes for the password. Notes contain markdown styled text. |
-| url | model | string | yes | The url of the website |
-| status | model | int | no | The security status of the password |
-| hash | model | string | yes | SHA-1 hash of the password. This is used to check if the password is in the HIBP database. |
-| folder | model | string | yes | The UUID of the folder which the password is currently assigned to. |
-| cseType | model | string | yes | The client side encryption method used to encrypt the data |
-| sseType | model | string | yes | The server side encryption method used to encrypt the data |
-| hidden | model | boolean | yes | Hides the password in show and find request and relations. |
-| trashed | model | boolean | no | True if the password is in the trash |
-| favourite | model | boolean | yes | True if the password is mared as favourite |
+| password | string | - | yes | The password |
+| label | string | - | yes | The label of the password |
+| username | string | empty | no | The username associated with the password |
+| url | string | empty | no | The url of the associated website |
+| notes | string | empty | no | The users notes |
+| hash | string | empty | yes | The SHA1 hash of the password |
+| cseType | string | "none" | no | The client side encryption type |
+| folder | string | Base folder | no | The current folder of the password |
+| hidden | bool | false | no | Whether or not the password should be hidden |
+| favourite | bool | false | no | Whether or not the user has marked this password as favourite |
+| tags | array | empty | no | The id of all tags associated with this passwords. Tags have to exist and can not be created inline |
 
-### Create a Password
+#### Return value
+The success status code is `201 - Created`
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the password |
+| revision | string | The UUID of the revision |

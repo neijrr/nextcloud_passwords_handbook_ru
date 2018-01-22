@@ -26,3 +26,4 @@
  - Public link shares
  - Client Side Encryption for shares
  - Passlink API (Easy login)
+ - Client identifiers
