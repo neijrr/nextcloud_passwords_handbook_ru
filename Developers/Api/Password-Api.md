@@ -1,6 +1,6 @@
 ## The Password Object
 | Property | Type | Writable | Encrypted | Versioned | Description |
-| --- |--- |--- | --- |
+| --- | --- | --- | --- | --- | --- |
 | id | string | no | no | no | The UUID of the password |
 | created | int | no | no | no | Unix timestamp when the password was created |
 | updated | int | no | no | yes | Unix timestamp when the password was updated |
@@ -33,6 +33,7 @@
 
 #### Enhanced API special properties
 The properties "revisions", "folder", "tags", "shares" and "share" are also processed if necessary.
+
 | Property | Type | Description |
 | --- | --- | --- | 
 | type | string | Object type, the value is "password" |
@@ -41,6 +42,11 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 | created | Date | Date when the password was created |
 | updated | Date | Date when the password was last updated |
 | edited | Date | Date when the use last changed the password |
+
+#### Notes
+ - The status property may be 0 for secure, 1 for weak and 2 for broken.
+ Since not all password analysis can be done server side, some passwords may be classified as 0 even if they fail the users password rules.
+ The users password rules need to be checked client sided.
 
 
 ## Available api actions
@@ -75,7 +81,7 @@ The create method creates a new password with the given attributes
 | tags | array | empty | no | The id of all tags associated with this passwords. Tags have to exist and can not be created inline |
 
 #### Return value
-The success status code is `201 - Created`
+The success status code is `201 Created`
 
 | Attribute | Type | Description |
 | --- | --- | --- |
