@@ -11,6 +11,13 @@
 | PECL      | Curl    | Zip, Imagick, Curl |
 | Libraries |         | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
+### Version scheme and minimum requirements
+Passwords versions are simply the date of the release of the version.
+The exact version scheme is `<year>.<month>.<bugfix>`.
+Usually the app will still follow the [SemVer2.0.0](https://semver.org/spec/v2.0.0.html) with one exception:
+The Nextcloud minimum requirement version might be raised when a new version of Nextcloud is published.
+In this case the last version supporting the old Nextcloud release will receive security updates until the end of the year.
+
 ### HTTPS
 Passwords requires HTTPS to work. This can not be disabled.
 Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
@@ -24,6 +31,15 @@ More information can be found in the [documentation](https://docs.nextcloud.com/
 ### Browser Support
 The web interface of Passwords is designed to support the latest versions of major browsers.
 This includes most browsers based on Firefox Quantum (Version 57+), Chromium and Edge.
+
+### PHP Requirements
+To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages)
+You can install the latest version from the PPA with the following commands:
+```bash
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get upgrade
+```
 
 ### Wkhtml dependencies
 - libmagickwand
