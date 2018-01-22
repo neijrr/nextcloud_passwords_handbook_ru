@@ -64,8 +64,8 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 | restore | `/api/1.0/password/restore` | PATCH | Restore an earlier state of a password |
 
 
-# The create method
-The create method creates a new password with the given attributes
+# The create action
+The create action creates a new password with the given attributes
 
 #### Attributes
 | Attribute | Type | Default | Required | Description |
@@ -77,10 +77,10 @@ The create method creates a new password with the given attributes
 | notes | string | empty | no | The users notes |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
-| folder | string | Base folder | no | The current folder of the password |
+| folder | string | Base folder | no | The current folder of the password. If the uuid is invalid or does not exist, the base folder uuid will be used instead. |
 | hidden | bool | false | no | Whether or not the password should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this password as favourite |
-| tags | array | empty | no | The id of all tags associated with this passwords. Tags have to exist and can not be created inline |
+| tags | array | empty | no | The id of all tags associated with this passwords. Not existing tags will be ignored |
 
 #### Return value
 The success status code is `201 Created`
@@ -89,3 +89,37 @@ The success status code is `201 Created`
 | --- | --- | --- |
 | id | string | The UUID of the password |
 | revision | string | The UUID of the revision |
+
+
+# The update action
+The update action creates a new revision of a password with an updated set of attributes.
+
+#### Attributes 
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the password object |
+| password | string | - | yes | The password |
+| label | string | - | yes | The label of the password |
+| username | string | empty | no | The username associated with the password |
+| url | string | empty | no | The url of the associated website |
+| notes | string | empty | no | The users notes |
+| hash | string | empty | yes | The SHA1 hash of the password |
+| cseType | string | "none" | no | The client side encryption type |
+| folder | string | Base folder | no | The current folder of the password. If the uuid is invalid or does not exist, the base folder uuid will be used instead. |
+| edited | int | 0 | no | Unix timestamp when the user has last edited the password. If it is 0, the timestamp from the last revision will be used. It can not be in the future |
+| hidden | bool | false | no | Whether or not the password should be hidden |
+| favourite | bool | false | no | Whether or not the user has marked this password as favourite |
+| tags | array | empty | no | The id of all tags associated with this passwords. Not existing tags will be ignored. To delete all tags you will have to supply one invalid tag id |
+
+#### Return value
+The success status code is `201 Created`
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the password |
+| revision | string | The UUID of the new revision |
+
+#### Notes
+ - If the password is not editable, any change to the encrypted properties, the cseType and the hash will be ignored.
+ - If the password is shared you can only use cse types which support sharing
+ - If the password is shared you can not hide the password. 
