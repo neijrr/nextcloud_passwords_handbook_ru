@@ -67,8 +67,8 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 # The create action
 The create action creates a new password with the given attributes
 
-#### Attributes
-| Attribute | Type | Default | Required | Description |
+#### Arguments
+| Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | password | string | - | yes | The password |
 | label | string | - | yes | The label of the password |
@@ -85,7 +85,7 @@ The create action creates a new password with the given attributes
 #### Return value
 The success status code is `201 Created`
 
-| Attribute | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | id | string | The UUID of the password |
 | revision | string | The UUID of the revision |
@@ -99,8 +99,8 @@ The success status code is `201 Created`
 # The update action
 The update action creates a new revision of a password with an updated set of attributes.
 
-#### Attributes 
-| Attribute | Type | Default | Required | Description |
+#### Arguments
+| Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password object |
 | password | string | - | yes | The password |
@@ -119,13 +119,13 @@ The update action creates a new revision of a password with an updated set of at
 #### Return value
 The success status code is `200 Ok`
 
-| Attribute | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | id | string | The UUID of the password |
 | revision | string | The UUID of the new revision |
 
 #### Notes
- - If the password is not editable, any change to the encrypted properties, the cseType and the hash will be ignored.
+ - If the password is not editable any change to the encrypted properties, the cseType and the hash will be ignored.
  - If the password is shared you can only use cse types which support sharing
  - If the password is shared you can not hide the password
  - If the password is not hidden and shall be moved to a hidden folder, it will be moved to the default folder instead
@@ -133,11 +133,55 @@ The success status code is `200 Ok`
    Therefore another client might remove the tag by accident
 
 
+# The delete action
+The delete action moves a password to the trash or deletes it completely if it is already in the trash.
+
+#### Arguments
+| Arguments | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the password object |
+
+#### Return value
+The success status code is `200 Ok`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the password |
+| revision | string | The UUID of the new revision. Only if the password was moved to the trash |
+
+
+# The restore action
+The restore action can restore an earlier version of a password
+
+#### Arguments
+| Arguments | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the password object |
+| revision | string | - | no | The id of the revision. If none is given, the password will be restored from trash if it is trashed |
+
+#### Return value
+The success status code is `200 Ok`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the password |
+| revision | string | The UUID of the new revision |
+
+#### Notes
+ - If no revision is given and the password is not in trash, nothing is done
+ - The action may fail if the password is shared but the revision to restore does not meet the requirements for sharing
+ - This action will always create a new revision
+ - The new revision will always be removed from trash
+ - The server side encryption type may change
+ - If the folder does not exist anymore, the default folder will be used
+ - Tag relations can not be restored
+
+
 # The show action
 The show action lists the properties of a single password.
 
-#### Attributes
-| Attribute | Type | Default | Required | Description |
+#### Arguments
+| Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password object |
 | detailLevel | string | "model" | no | The detail level of the returned password object |
@@ -153,8 +197,8 @@ The return value is a password object with the given detail level
 # The list action
 The list action lists all passwords of the user except those in trash and the hidden ones.
 
-#### Attributes
-| Attribute | Type | Default | Required | Description |
+#### Arguments
+| Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | detailLevel | string | "model" | no | The detail level of the returned password object |
 
@@ -169,15 +213,27 @@ The return value is a list of password objects with the given detail level
 
 
 # The find action
-The find action will find all passwords matching the given criteria
+The find action can be used to find all passwords matching the given search criteria.
+Only a specific set of fields is allowed in the criteria.
+How the criteria works is explained on the [object search page](./Object-Search.md).
 
-#### Attributes
-| Attribute | Type | Default | Required | Description |
+#### Arguments
+| Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
 | detailLevel | string | "model" | no | The detail level of the returned password object |
 
-#### Allowed fields
+#### Allowed search fields
+| Field | Type | Description |
+| --- | --- | --- |
+| created | int | Unix timestamp when the password was created |
+| updated | int | Unix timestamp when the password was updated |
+| edited | int | Unix timestamp when the user last changed the password |
+| cseType | string | The client side encryption type |
+| sseType | string | The server side encryption type |
+| status | int | The server side detected security status |
+| trashed | bool | Whether or not the password is in the trash |
+| favourite | bool | Whether or not the user has marked the password as favourite |
 
 #### Return value
 The success status code is `200 Ok`
