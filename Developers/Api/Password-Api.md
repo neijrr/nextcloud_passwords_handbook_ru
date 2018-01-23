@@ -29,8 +29,8 @@
 | --- | --- | 
 | model | Returns the base model |
 | +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
-| +folder | Fills the folder property with the base model of the folder |
-| +tags | Adds the tags property filled with the base model of all tags |
+| +folder | Fills the folder property with the base model of the folder. If the password is not hidden but the folder is, the default folder will be used |
+| +tags | Adds the tags property filled with the base model of all tags. Hidden tags are not included in this list if the password is not hidden |
 | +shares | Adds the shares property filled with the base model of all shares with other users. Fills the share property with the base model of the original share if available |
 
 #### Enhanced API special properties
@@ -90,6 +90,11 @@ The success status code is `201 Created`
 | id | string | The UUID of the password |
 | revision | string | The UUID of the revision |
 
+#### Notes
+ - If the password is not hidden and shall be created in a hidden folder, it will be created in the default folder instead
+ - You can assign hidden tags to a not hidden password, but they will not be visible.
+   Therefore another client might remove the tag by accident
+
 
 # The update action
 The update action creates a new revision of a password with an updated set of attributes.
@@ -109,10 +114,10 @@ The update action creates a new revision of a password with an updated set of at
 | edited | int | 0 | no | Unix timestamp when the user has last edited the password. If it is 0, the timestamp from the last revision will be used. It can not be in the future |
 | hidden | bool | false | no | Whether or not the password should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this password as favourite |
-| tags | array | empty | no | The id of all tags associated with this passwords. Not existing tags will be ignored. To delete all tags you will have to supply one invalid tag id |
+| tags | array | empty | no | The id of all tags associated with this passwords. Not existing tags will be ignored. To delete all tags you will have to supply one invalid tag id. If the array us empty, no changes will be made |
 
 #### Return value
-The success status code is `201 Created`
+The success status code is `200 Ok`
 
 | Attribute | Type | Description |
 | --- | --- | --- |
@@ -122,4 +127,63 @@ The success status code is `201 Created`
 #### Notes
  - If the password is not editable, any change to the encrypted properties, the cseType and the hash will be ignored.
  - If the password is shared you can only use cse types which support sharing
- - If the password is shared you can not hide the password. 
+ - If the password is shared you can not hide the password
+ - If the password is not hidden and shall be moved to a hidden folder, it will be moved to the default folder instead
+ - You can assign hidden tags to a not hidden password, but they will not be visible.
+   Therefore another client might remove the tag by accident
+
+
+# The show action
+The show action lists the properties of a single password.
+
+#### Attributes
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the password object |
+| detailLevel | string | "model" | no | The detail level of the returned password object |
+
+#### Return value
+The success status code is `200 Ok`
+The return value is a password object with the given detail level
+
+#### Notes
+ - This is the only action that will return values for hidden passwords
+
+
+# The list action
+The list action lists all passwords of the user except those in trash and the hidden ones.
+
+#### Attributes
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| detailLevel | string | "model" | no | The detail level of the returned password object |
+
+#### Return value
+The success status code is `200 Ok`
+The return value is a list of password objects with the given detail level
+
+#### Notes
+ - The list will not include trashed passwords
+ - The list will not include hidden passwords
+ - The list will not include suspended passwords where the folder or a parent folder is in the trash
+
+
+# The find action
+The find action will find all passwords matching the given criteria
+
+#### Attributes
+| Attribute | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| criteria | array | [] | no | The search criteria |
+| detailLevel | string | "model" | no | The detail level of the returned password object |
+
+#### Allowed fields
+
+#### Return value
+The success status code is `200 Ok`
+The return value is a list of password objects that match the criteria with the given detail level
+
+#### Notes
+ - The list will include trashed passwords, so you need to filter that
+ - The list will not include hidden passwords
+ - The list will not include suspended passwords where the folder or a parent folder is in the trash

@@ -27,3 +27,4 @@
  - Client Side Encryption for shares
  - Passlink API (Easy login)
  - Client identifiers
+ - Improved view of folders in trash
