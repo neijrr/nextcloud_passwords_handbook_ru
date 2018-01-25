@@ -49,6 +49,7 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
  - The status property may be 0 for secure, 1 for weak and 2 for broken.
  Since not all password analysis can be done server side, some passwords may be classified as 0 even if they fail the users password rules.
  The users password rules need to be checked client sided.
+ - The difference betwenn `updated` and `edited` is that updated is always set by the server when the password is changed and edited has to be set by the client.
 
 
 # Available api actions
@@ -65,7 +66,7 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 
 
 # The create action
-The create action creates a new password with the given attributes
+The create action creates a new password with the given attributes.
 
 #### Arguments
 | Argument | Type | Default | Required | Description |
@@ -91,7 +92,7 @@ The success status code is `201 Created`
 | revision | string | The UUID of the revision |
 
 #### Notes
- - If the password is not hidden and shall be created in a hidden folder, it will be created in the default folder instead
+ - If the password is not hidden and should be created in a hidden folder, it will be created in the default folder instead.
  - You can assign hidden tags to a not hidden password, but they will not be visible.
    Therefore another client might remove the tag by accident
 
@@ -111,7 +112,7 @@ The update action creates a new revision of a password with an updated set of at
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
 | folder | string | Base folder | no | The current folder of the password. If the uuid is invalid or does not exist, the base folder uuid will be used instead. |
-| edited | int | 0 | no | Unix timestamp when the user has last edited the password. If it is 0, the timestamp from the last revision will be used. It can not be in the future |
+| edited | int | 0 | no | Unix timestamp when the user has last edited the password. This timestamp is set by the client. It should be updated when the actual password is changed. If it is 0, the timestamp from the last revision will be used. It can not be in the future |
 | hidden | bool | false | no | Whether or not the password should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this password as favourite |
 | tags | array | empty | no | The id of all tags associated with this passwords. Not existing tags will be ignored. To delete all tags you will have to supply one invalid tag id. If the array us empty, no changes will be made |
@@ -128,7 +129,7 @@ The success status code is `200 Ok`
  - If the password is not editable any change to the encrypted properties, the cseType and the hash will be ignored.
  - If the password is shared you can only use cse types which support sharing
  - If the password is shared you can not hide the password
- - If the password is not hidden and shall be moved to a hidden folder, it will be moved to the default folder instead
+ - If the password is not hidden and should be moved to a hidden folder, it will be moved to the default folder instead
  - You can assign hidden tags to a not hidden password, but they will not be visible.
    Therefore another client might remove the tag by accident
 
@@ -175,6 +176,7 @@ The success status code is `200 Ok`
  - The server side encryption type may change
  - If the folder does not exist anymore, the default folder will be used
  - Tag relations can not be restored
+ - Deleted passwords can not be restored
 
 
 # The show action

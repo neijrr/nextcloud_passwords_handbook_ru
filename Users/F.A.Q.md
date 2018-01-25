@@ -1,9 +1,22 @@
 ## Security
+#### How secure is Passwords?
+How secure your passwords are with the Passwords app depends on two main factors.
+You are one of it.
+Make sure to keep your Nextcloud account safe.
+Only access the cloud over HTTPS and do not give your credentials to someone else.
+Do not log into Nextcloud on someone else's pc or a public pc.
+IF you are using a client ot access your passwords, make sure it is always up-to-date.
+The second main factor is the administrator of your Nextcloud instance.
+Any security issues in Nextcloud, other Nextcloud apps and the server in general is also a security issue for the Passwords app.
+So in order to keep your passwords safe, your server administrator has to keep the server safe.
+A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when client side encryption is enabled.
+So you will have to trust your administrator to keep the server safe.
+
 #### I found a strange WebUi Device Token
 When you use the Passwords app, a token called "Passwords WebUI Access" will appear in your device list.
 This token was automatically generated to enable the app to access your passwords.
 There should only be one token with this name and it should not have filesystem access.
-If you don't use Passwords or the token appears more than once, you should delete it. 
+If you don't use Passwords or the token appears more than once, you should delete it.
 
 
 ## Sharing
