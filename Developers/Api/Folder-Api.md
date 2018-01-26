@@ -61,8 +61,9 @@ The create action creates a new folder with the given attributes.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | label | string | - | yes | The label of the folder |
-| folder | string | Base folder | no | The current parent folder. If the uuid is invalid or does not exist, the base folder uuid will be used instead. |
+| parent | string | Base folder | no | The current parent folder |
 | cseType | string | "none" | no | The client side encryption type |
+| edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this folder as favourite |
 
@@ -75,4 +76,38 @@ The success status code is `201 Created`
 | revision | string | The UUID of the revision |
 
 #### Notes
- - If the folder is not hidden and should be created in a hidden folder, it will be created in the default folder instead.
+ - If the uuid of the parent folder is invalid or does not exist, the base folder uuid will be used instead
+ - If the folder is not hidden and should be created in a hidden folder, it will be created in the default folder instead
+ - If the `edited` argument is "0", missing or in the future, the current time will be used
+
+
+# The update action
+The update action creates a new revision of a folder with an updated set of attributes.
+
+#### Arguments
+| Argument | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the password object |
+| label | string | - | yes | The label of the folder |
+| parent | string | Base folder | no | The current parent folder |
+| cseType | string | "none" | no | The client side encryption type |
+| edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
+| hidden | bool | false | no | Whether or not the folder should be hidden |
+| favourite | bool | false | no | Whether or not the user has marked this folder as favourite |
+
+
+#### Return value
+The success status code is `200 Ok`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the folder |
+| revision | string | The UUID of the new revision |
+
+#### Notes
+ - If the uuid of the parent folder is invalid or does not exist, the base folder uuid will be used instead
+ - If the folder is not hidden and should be moved to a hidden parent folder, it will be moved to the default folder instead
+ - If hou hide a folder, all folders and passwords in it will be hidden as well
+ - If you unhide a folder no change to the folders and passwords in it will be made and they will remain hidden
+ - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
+ - If the `edited` time is in the future, the current time will be used

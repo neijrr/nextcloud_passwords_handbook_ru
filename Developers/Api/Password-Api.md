@@ -78,10 +78,11 @@ The create action creates a new password with the given attributes.
 | notes | string | empty | no | The users notes |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
-| folder | string | Base folder | no | The current folder of the password. If the uuid is invalid or does not exist, the base folder uuid will be used instead. |
+| folder | string | Base folder | no | The current folder of the password |
+| edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this password as favourite |
-| tags | array | empty | no | The id of all tags associated with this passwords. Not existing tags will be ignored |
+| tags | array | empty | no | The id of all tags associated with this passwords |
 
 #### Return value
 The success status code is `201 Created`
@@ -92,7 +93,11 @@ The success status code is `201 Created`
 | revision | string | The UUID of the revision |
 
 #### Notes
- - If the password is not hidden and should be created in a hidden folder, it will be created in the default folder instead.
+ - If the password is not hidden and should be created in a hidden folder, it will be created in the default folder instead
+ - If the folder uuid is invalid or does not exist, the base folder uuid will be used instead
+ - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
+ - If the `edited` time is in the future, the current time will be used
+ - If the `tags` argument contains invalid tag ids, they will be ignored
  - You can assign hidden tags to a not hidden password, but they will not be visible.
    Therefore another client might remove the tag by accident
 
@@ -111,11 +116,11 @@ The update action creates a new revision of a password with an updated set of at
 | notes | string | empty | no | The users notes |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
-| folder | string | Base folder | no | The current folder of the password. If the uuid is invalid or does not exist, the base folder uuid will be used instead. |
-| edited | int | 0 | no | Unix timestamp when the user has last edited the password. This timestamp is set by the client. It should be updated when the actual password is changed. If it is 0, the timestamp from the last revision will be used. It can not be in the future |
+| folder | string | Base folder | no | The current folder of the password |
+| edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this password as favourite |
-| tags | array | empty | no | The id of all tags associated with this passwords. Not existing tags will be ignored. To delete all tags you will have to supply one invalid tag id. If the array us empty, no changes will be made |
+| tags | array | empty | no | The id of all tags associated with this password |
 
 #### Return value
 The success status code is `200 Ok`
@@ -130,6 +135,12 @@ The success status code is `200 Ok`
  - If the password is shared you can only use cse types which support sharing
  - If the password is shared you can not hide the password
  - If the password is not hidden and should be moved to a hidden folder, it will be moved to the default folder instead
+ - If the password has tags and you want to remove all tags, you need to submit an array with one invalid tag id
+ - If the folder uuid is invalid or does not exist, the base folder uuid will be used instead
+ - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
+ - If the `edited` time is in the future, the current time will be used
+ - If the `tags` argument is empty or missing, no changes will be made
+ - If the `tags` argument contains invalid tag ids, they will be ignored
  - You can assign hidden tags to a not hidden password, but they will not be visible.
    Therefore another client might remove the tag by accident
 

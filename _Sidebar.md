@@ -8,6 +8,7 @@
 - [Migrating from the legacy app](Legacy-Migration)
 - [Settings](Administrative-Settings)
 
+# Developers
 - [General Information](General)
 - [The API](Api)
    - [Password API](Password-Api)
