@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # The Password Object
 | Property | Type | Writable | Encrypted | Versioned | Description |
 | --- | --- | --- | --- | --- | --- |

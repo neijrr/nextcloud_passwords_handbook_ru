@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # The Folder Object
 | Property | Type | Writable | Encrypted | Versioned | Description |
 | --- | --- | --- | --- | --- | --- |
