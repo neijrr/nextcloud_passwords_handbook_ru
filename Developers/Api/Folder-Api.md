@@ -29,7 +29,7 @@ The properties "revisions", "parent", "folders" and "passwords" are also process
 | Property | Type | Description |
 | --- | --- | --- |
 | type | string | Object type, the value is "folder" |
-| icon | string | Url for the default fodler favicon |
+| icon | string | Url for the default folder icon |
 | created | Date | Date when the folder was created |
 | updated | Date | Date when the folder was last updated |
 | edited | Date | Date when the user last renamed the folder |

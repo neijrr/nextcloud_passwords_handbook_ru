@@ -21,5 +21,6 @@ The version 1.0 api is not complete at this point. It will be so by the beginnin
  - Not supported arguments for api actions are silently discarded
  - If a versionable api object is changed in any way, a new revision is created
  - UUIDs follow the [UUID V4 Schema according to RFC 4122](https://wikipedia.org/wiki/Universally_Unique_Identifier)
+ - The encrypted properties may contain raw user input
  - The API only works with HTTPS
  - The API requires CORS with basic authentication

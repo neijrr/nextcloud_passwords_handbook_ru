@@ -10,7 +10,7 @@
 | label | string | yes | yes | yes | User defined label of the password | 
 | username | string | yes | yes | yes | Username associated with the password |
 | password | string | yes | yes | yes | The actual password |
-| notes | string | yes | yes | yes | Notes for hte password. Can be formatted with Markdown |
+| notes | string | yes | yes | yes | Notes for the password. Can be formatted with Markdown |
 | url | string | yes | yes | yes | Url of the website |
 | status | int | no | no | yes | Security status of the password |
 | hash | string | yes | no | yes | SHA1 hash of the password |
