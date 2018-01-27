@@ -29,7 +29,7 @@
 | --- | --- | 
 | model | Returns the base model |
 | +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
-| +folder | Fills the folder property with the base model of the folder. If the password is not hidden but the folder is, the default folder will be used |
+| +folder | Fills the folder property with the base model of the folder. If the password is not hidden but the folder is, the base folder will be used |
 | +tags | Adds the tags property filled with the base model of all tags. Hidden tags are not included in this list if the password is not hidden |
 | +shares | Adds the shares property filled with the base model of all shares with other users. Fills the share property with the base model of the original share if available |
 
@@ -93,7 +93,7 @@ The success status code is `201 Created`
 | revision | string | The UUID of the revision |
 
 #### Notes
- - If the password is not hidden and should be created in a hidden folder, it will be created in the default folder instead
+ - If the password is not hidden and should be created in a hidden folder, it will be created in the base folder instead
  - If the folder uuid is invalid or does not exist, the base folder uuid will be used instead
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
  - If the `edited` time is in the future, the current time will be used
@@ -134,7 +134,7 @@ The success status code is `200 Ok`
  - If the password is not editable any change to the encrypted properties, the cseType and the hash will be ignored.
  - If the password is shared you can only use cse types which support sharing
  - If the password is shared you can not hide the password
- - If the password is not hidden and should be moved to a hidden folder, it will be moved to the default folder instead
+ - If the password is not hidden and should be moved to a hidden folder, it will be moved to the base folder instead
  - If the password has tags and you want to remove all tags, you need to submit an array with one invalid tag id
  - If the folder uuid is invalid or does not exist, the base folder uuid will be used instead
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
@@ -151,7 +151,7 @@ The delete action moves a password to the trash or deletes it completely if it i
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| id | string | - | yes | The id of the password object |
+| id | string | - | yes | The id of the password |
 
 #### Return value
 The success status code is `200 Ok`
@@ -161,15 +161,18 @@ The success status code is `200 Ok`
 | id | string | The UUID of the password |
 | revision | string | The UUID of the new revision. Only if the password was moved to the trash |
 
+#### Notes
+ - If a password is moved to the trash, the relations to tags will be hidden from the tag, but not the password.
+
 
 # The restore action
-The restore action can restore an earlier version of a password
+The restore action can restore an earlier state of a password.
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| id | string | - | yes | The id of the password object |
-| revision | string | - | no | The id of the revision. If none is given, the password will be restored from trash if it is trashed |
+| id | string | - | yes | The id of the password |
+| revision | string | - | no | The id of the revision |
 
 #### Return value
 The success status code is `200 Ok`
@@ -180,12 +183,13 @@ The success status code is `200 Ok`
 | revision | string | The UUID of the new revision |
 
 #### Notes
+ - If no revision is given and the password is in trash, it will be removed from trash
  - If no revision is given and the password is not in trash, nothing is done
+ - If a revision is given and the revision is marked as in trash, it will be removed from trash
  - The action may fail if the password is shared but the revision to restore does not meet the requirements for sharing
  - This action will always create a new revision
- - The new revision will always be removed from trash
  - The server side encryption type may change
- - If the folder does not exist anymore, the default folder will be used
+ - If the folder does not exist anymore, it will be moved to the base folder
  - Tag relations can not be restored
  - Deleted passwords can not be restored
 
@@ -196,7 +200,7 @@ The show action lists the properties of a single password.
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| id | string | - | yes | The id of the password object |
+| id | string | - | yes | The id of the password |
 | detailLevel | string | "model" | no | The detail level of the returned password object |
 
 #### Return value
@@ -204,7 +208,7 @@ The success status code is `200 Ok`
 The return value is a password object with the given detail level
 
 #### Notes
- - This is the only action that will return values for hidden passwords
+ - This is the only action that can access hidden passwords
 
 
 # The list action
@@ -213,7 +217,7 @@ The list action lists all passwords of the user except those in trash and the hi
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| detailLevel | string | "model" | no | The detail level of the returned password object |
+| detailLevel | string | "model" | no | The detail level of the returned password objects |
 
 #### Return value
 The success status code is `200 Ok`
@@ -228,13 +232,13 @@ The return value is a list of password objects with the given detail level
 # The find action
 The find action can be used to find all passwords matching the given search criteria.
 Only a specific set of fields is allowed in the criteria.
-How the criteria works is explained on the [object search page](./Object-Search.md).
+How the criteria array works is explained on the [object search page](./Object-Search.md).
 
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
-| detailLevel | string | "model" | no | The detail level of the returned password object |
+| detailLevel | string | "model" | no | The detail level of the returned password objects |
 
 #### Allowed search fields
 | Field | Type | Description |
