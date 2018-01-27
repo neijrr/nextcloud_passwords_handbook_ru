@@ -37,8 +37,8 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 | Property | Type | Description |
 | --- | --- | --- | 
 | type | string | Object type, the value is "password" |
-| icon | string | Url for the default favicon of the website |
-| image | string | Url for the default website preview image |
+| icon | string | Url for the default favicon of the website in 32x32px |
+| image | string | Url for the default website preview image in 550x350+ px |
 | created | Date | Date when the password was created |
 | updated | Date | Date when the password was last updated |
 | edited | Date | Date when the use last changed the password |

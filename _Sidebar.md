@@ -14,6 +14,7 @@
    - [Password API](Password-Api)
    - [Folder API](Folder-Api)
    - [Tag API](Tag-Api)
+   - [Share API](Share-Api)
    - [Object Search API](Object-Search)
    - [Error Codes](Error-Codes)
 - [Legacy API](Legacy-Api)
