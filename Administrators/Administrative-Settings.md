@@ -81,7 +81,7 @@ It finds the least icons and they usually have a crappy resolution.
 **None** always returns a default icon.
 It is the fastest and most privacy friendly service.
 
-##### Website PageShot Service
+##### Website Preview Service
 This service is used to generate previews of websites.
 Only the front page of the domain is called and at maximum twice for mobile and desktop views.
 If you know a good program or service, feel free to open an issue to support it.
@@ -104,7 +104,7 @@ For free accounts, HTTPS is not supported.
 
 **None** just delivers one of five default images.
 
-##### PageShot Service API Key
+##### Website Preview API Key
 If you use a service with an api, you have to put your api key here.
 
 

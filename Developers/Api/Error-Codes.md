@@ -89,9 +89,9 @@ The current favicon service was unable to create a favicon for the given domain.
 Also the default favicon service failed to create a default icon.
 Please check your server configuration.
 
-#### [42e95ef6] Internal PageShot API Error
-The current pageshot service was unable to create a preview of the given domain.
-Also the default pageshot service failed to load a default image.
+#### [34e9164c] Internal Website Preview API Error
+The current website preview service was unable to create a preview of the given domain.
+Also the default preview service failed to load a default image.
 Please check your server configuration.
 
 #### [43486931] Internal Words API Error

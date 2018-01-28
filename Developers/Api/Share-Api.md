@@ -229,5 +229,5 @@ The success status code is `200 Ok`
 The return value is a list of shares objects that match the criteria with the given detail level
 
 #### Notes
- - The `owner` and `receiver` fields allow the special value `_self` which is replaced by the users id
+ - The `owner` and `receiver` fields allow the special value `_self` which is replaced with the users id
  - This action still works if sharing has been disabled
