@@ -4,7 +4,7 @@
 | id | string | no | The UUID of the share |
 | created | int | no | Unix timestamp when the share was created |
 | updated | int | no | Unix timestamp when the share was updated |
-| expires | int | yes | Unix timestamp when the share will expire |
+| expires | int / null | yes | Unix timestamp when the share will expire |
 | editable | bool | yes | Whether or not the receiving user can edit the password |
 | shareable | bool | yes | Whether or not the receiving user can share the password again |
 | updatePending | bool | no | Whether or not data changes for this share are in queue |
@@ -36,6 +36,8 @@ The property "password" is also processed if necessary.
  - The `shareable` will always be `false` for the receiver if resharing is disabled system wide
 
 
+
+
 # Available api actions
 | Action | Url | Method | Description |
 | --- | --- | --- | --- |
@@ -51,6 +53,8 @@ The property "password" is also processed if necessary.
 | partners | `/api/1.0/share/partners` | POST | Find users you can share with by pattern |
 
 
+
+
 # The info action
 This command lists the status of the available features of the sharing api.
 
@@ -63,6 +67,8 @@ The success status code is `200 Ok`
 | resharing | bool | Whether or not resharing is allowed systemwide |
 | autocomplete | bool | Whether or not the `partners` action is enabled |
 | types | array | A list of supported sharing types |
+
+
 
 
 # The partners action
@@ -80,4 +86,148 @@ The array is at maximum around 512 entries long.
 If the autocompletion is disabled by the administrator the result is an empty array
 
 #### Notes
- - This command will not work if sharing is disabled
+ - This command will fail if sharing is disabled
+
+
+
+
+# The create action
+The create action creates a new share with the given attributes.
+
+#### Arguments
+| Argument | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| password | string | - | yes | The UUID of the password |
+| receiver | string | - | yes | The user id of the user which the password should be shared with |
+| type | string | "user" | no | The type of the share |
+| expires | int / null | null | no | Unix timestamp when the share will expire |
+| editable | bool | false | no | Whether or not the receiver can edit the password |
+| shareable | bool | false | no | Whether or not the receiver can share the password |
+
+#### Return value
+The success status code is `201 Created`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the share |
+
+#### Notes
+ - This action will fail if the password is hidden or the CSE does not support sharing
+ - You can not share a password with the same user more than once
+ - This command will fail if sharing is disabled
+
+
+
+
+# The update action
+The update action changes the properties of an existing share.
+
+#### Arguments
+| Argument | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The UUID of the share |
+| expires | int / null | null | no | Unix timestamp when the share will expire |
+| editable | bool | false | no | Whether or not the receiver can edit the password |
+| shareable | bool | false | no | Whether or not the receiver can share the password |
+
+#### Return value
+The success status code is `200 Ok`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the share |
+
+#### Notes
+ - You can only edit a share if it is owned by the user
+ - This command will fail if sharing is disabled
+
+
+
+
+# The delete action
+The delete action deletes a share.
+
+#### Arguments
+| Arguments | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the share |
+
+#### Return value
+The success status code is `200 Ok`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the share |
+
+#### Notes
+ - You can only delete shares owned by the user.
+ - If you want to delete a share where the current user is the receiver, you need to delete the password instead
+ - This action still works if sharing has been disabled
+
+
+
+
+# The show action
+The show action lists the properties of a single share.
+
+#### Arguments
+| Argument | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the share |
+| detailLevel | string | "model" | no | The detail level of the returned share object |
+
+#### Return value
+The success status code is `200 Ok`
+The return value is a share object with the given detail level
+
+#### Notes
+ - This action still works if sharing has been disabled
+
+
+
+
+# The list action
+The list action lists all shares with the user as owner or receiver.
+
+#### Arguments
+| Argument | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| detailLevel | string | "model" | no | The detail level of the returned share objects |
+
+#### Return value
+The success status code is `200 Ok`
+The return value is a list of share objects with the given detail level
+
+#### Notes
+ - This action still works if sharing has been disabled
+
+
+# The find action
+The find action can be used to find all shares matching the given search criteria.
+Only a specific set of fields is allowed in the criteria.
+How the criteria array works is explained on the [object search page](./Object-Search.md).
+
+#### Arguments
+| Argument | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| criteria | array | [] | no | The search criteria |
+| detailLevel | string | "model" | no | The detail level of the returned share objects |
+
+#### Allowed search fields
+| Field | Type | Description |
+| --- | --- | --- |
+| created | int | Unix timestamp when the share was created |
+| updated | int | Unix timestamp when the share was updated |
+| owner | string | User id of the owner of the share |
+| receiver | string | User id of the receiver of the share |
+| expires | int / null | Unix timestamp when the share will expire |
+| editable | bool | Whether or not the receiver can edit the password |
+| shareable | bool | Whether or not the receiver can share the password |
+
+#### Return value
+The success status code is `200 Ok`
+The return value is a list of shares objects that match the criteria with the given detail level
+
+#### Notes
+ - The `owner` and `receiver` fields allow the special value `_self` which is replaced by the users id
+ - This action still works if sharing has been disabled

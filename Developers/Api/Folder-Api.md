@@ -39,6 +39,8 @@ The properties "revisions", "parent", "folders" and "passwords" are also process
  - The base folder can not be edited at all
 
 
+
+
 # Available api actions
 | Action | Url | Method | Description |
 | --- | --- | --- | --- |
@@ -50,6 +52,8 @@ The properties "revisions", "parent", "folders" and "passwords" are also process
 | update | `/api/1.0/folder/update` | PATCH | Update an existing folder |
 | delete | `/api/1.0/folder/delete` | DELETE | Delete a folder |
 | restore | `/api/1.0/folder/restore` | PATCH | Restore an earlier state of a folder |
+
+
 
 
 # The create action
@@ -79,6 +83,8 @@ The success status code is `201 Created`
  - If the `edited` argument is "0", missing or in the future, the current time will be used
 
 
+
+
 # The update action
 The update action creates a new revision of a folder with an updated set of attributes.
 
@@ -92,7 +98,6 @@ The update action creates a new revision of a folder with an updated set of attr
 | edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this folder as favourite |
-
 
 #### Return value
 The success status code is `200 Ok`
@@ -109,6 +114,8 @@ The success status code is `200 Ok`
  - If you unhide a folder no change to the folders and passwords in it will be made and they will remain hidden
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
  - If the `edited` time is in the future, the current time will be used
+
+
 
 
 # The delete action
@@ -131,6 +138,8 @@ The success status code is `200 Ok`
  - If a folder is moved to the trash, all passwords and folders in it will be suspended and hidden from list and find actions
  - If a folder is moved to the trash, the relations between tags and passwords in the folder will be hidden from the tag, but not the password
  - If a folder is deleted, all passwords and folders in it will be deleted as well
+
+
 
 
 # The restore action
@@ -160,6 +169,8 @@ The success status code is `200 Ok`
  - Deleted folders can not be restored
 
 
+
+
 # The show action
 The show action lists the properties of a single folder.
 
@@ -175,6 +186,8 @@ The return value is a folder object with the given detail level
 
 #### Notes
  - This is the only action that can access hidden folders
+
+
 
 
 # The list action
@@ -193,6 +206,8 @@ The return value is a list of folder objects with the given detail level
  - The list will not include trashed folders
  - The list will not include hidden folders
  - The list will not include suspended folders where a parent folder is in the trash
+
+
 
 
 # The find action

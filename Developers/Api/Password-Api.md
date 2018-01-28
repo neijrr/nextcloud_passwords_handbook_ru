@@ -50,6 +50,8 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
  - The difference betwenn `updated` and `edited` is that updated is always set by the server when the password is changed and edited has to be set by the client.
 
 
+
+
 # Available api actions
 | Action | Url | Method | Description |
 | --- | --- | --- | --- |
@@ -61,6 +63,8 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 | update | `/api/1.0/password/update` | PATCH | Update an existing password |
 | delete | `/api/1.0/password/delete` | DELETE | Delete a password |
 | restore | `/api/1.0/password/restore` | PATCH | Restore an earlier state of a password |
+
+
 
 
 # The create action
@@ -98,6 +102,8 @@ The success status code is `201 Created`
  - If the `tags` argument contains invalid tag ids, they will be ignored
  - You can assign hidden tags to a not hidden password, but they will not be visible.
    Therefore another client might remove the tag by accident
+
+
 
 
 # The update action
@@ -143,6 +149,8 @@ The success status code is `200 Ok`
    Therefore another client might remove the tag by accident
 
 
+
+
 # The delete action
 The delete action moves a password to the trash or deletes it completely if it is already in the trash.
 
@@ -161,6 +169,8 @@ The success status code is `200 Ok`
 
 #### Notes
  - If a password is moved to the trash, the relations to tags will be hidden from the tag, but not the password.
+
+
 
 
 # The restore action
@@ -192,6 +202,8 @@ The success status code is `200 Ok`
  - Deleted passwords can not be restored
 
 
+
+
 # The show action
 The show action lists the properties of a single password.
 
@@ -207,6 +219,8 @@ The return value is a password object with the given detail level
 
 #### Notes
  - This is the only action that can access hidden passwords
+
+
 
 
 # The list action
@@ -225,6 +239,8 @@ The return value is a list of password objects with the given detail level
  - The list will not include trashed passwords
  - The list will not include hidden passwords
  - The list will not include suspended passwords where the folder or a parent folder is in the trash
+
+
 
 
 # The find action

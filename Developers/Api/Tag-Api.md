@@ -32,6 +32,8 @@ The properties "revisions" and "passwords" are also processed if necessary.
 | edited | Date | Date when the user last edited the tag |
 
 
+
+
 # Available api actions
 | Action | Url | Method | Description |
 | --- | --- | --- | --- |
@@ -43,6 +45,8 @@ The properties "revisions" and "passwords" are also processed if necessary.
 | update | `/api/1.0/tag/update` | PATCH | Update an existing tag |
 | delete | `/api/1.0/tag/delete` | DELETE | Delete a tag |
 | restore | `/api/1.0/tag/restore` | PATCH | Restore an earlier state of a tag |
+
+
 
 
 # The create action
@@ -70,6 +74,8 @@ The success status code is `201 Created`
  - If the `edited` argument is "0", missing or in the future, the current time will be used
 
 
+
+
 # The update action
 The update action creates a new revision of a tag with an updated set of attributes.
 
@@ -84,7 +90,6 @@ The update action creates a new revision of a tag with an updated set of attribu
 | hidden | bool | false | no | Whether or not the tag should be hidden |
 | favourite | bool | false | no | Whether or not the user has marked this tag as favourite |
 
-
 #### Return value
 The success status code is `200 Ok`
 
@@ -97,6 +102,8 @@ The success status code is `200 Ok`
  - If hou hide a tag, the tag will be no longer visible in passwords which are not hidden, but the passwords will be visible in the tag
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
  - If the `edited` time is in the future, the current time will be used
+
+
 
 
 # The delete action
@@ -118,6 +125,8 @@ The success status code is `200 Ok`
 #### Notes
  - If a tag is moved to the trash, the relation to all passwords which are not in trash will be hidden from the password
  - If a tag is deleted, all relations to passwords are deleted
+
+
 
 
 # The restore action
@@ -146,6 +155,8 @@ The success status code is `200 Ok`
  - Deleted tags can not be restored
 
 
+
+
 # The show action
 The show action lists the properties of a single tag.
 
@@ -163,6 +174,8 @@ The return value is a tag object with the given detail level
  - This is the only action that can access hidden tags
 
 
+
+
 # The list action
 The list action lists all tags of the user except those in trash and the hidden ones.
 
@@ -178,6 +191,8 @@ The return value is a list of tag objects with the given detail level
 #### Notes
  - The list will not include trashed tags
  - The list will not include hidden tags
+
+
 
 
 # The find action
