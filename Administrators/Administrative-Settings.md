@@ -69,7 +69,8 @@ The icons are only fetched once for a domain and then stored locally.
 **Local analyzer** fetches the start page of the domain and searches for common icon tags.
 This service usually finds the most icons, but also the most useless icons.
 
-**The Favicon Finder** uses the third party service to find icons.
+**Besticon** uses a [besticon](https://github.com/mat/besticon) third party service to find icons.
+The url for the service can be defined in the settings. Any compatible api is accepted.
 It usually returns the best icons and also good default icons if none is found.
 
 **DuckDuckGo** uses the icon service of the search engine.
