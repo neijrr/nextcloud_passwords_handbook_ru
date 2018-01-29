@@ -6,6 +6,8 @@
  - Delete all in trash
  - Autocomplete for sharing
  - Password generator strength settings
+ - Better admin settings
+ - Besticon url configurable
  
 #### 2018.3
  - Enhanced sharing form
