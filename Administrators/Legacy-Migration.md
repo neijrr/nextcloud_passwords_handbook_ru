@@ -77,6 +77,14 @@ If you want to speed up the process, execute the cron jobs manually
 php ./cron.php
 ```
 
+###### Migration does not start
+In some rare cases it migth happen that the migration tool is not executed when the app is updated.
+In this case, the following commands should help to run the migration tool:
+```bash
+./occ config:app:set passwords installed_version --value 2017.12
+./occ upgrade
+```
+
 ###### Security status of passwords is not correct
 If you use one of the local databases for bad passwords, passwords might get marked as secure even if they are not.
 The password databases have to be downloaded before passwords are checked correctly.
