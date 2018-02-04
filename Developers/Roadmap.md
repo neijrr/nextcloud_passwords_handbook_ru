@@ -1,27 +1,31 @@
 #### 2018.2
  - Settings API
- - Backup page
+ - Import & Export support
+ - Better admin settings
+ - Nextcloud 13 compatibility
+ 
+#### 2018.3
  - Personal settings
+ - Encrypted Backups
  - Table sorting header
  - Delete all in trash
  - Autocomplete for sharing
  - Password generator strength settings
- - Better admin settings
  - Besticon url configurable
- 
-#### 2018.3
+
+#### 2018.4
+ - In page search
  - Enhanced sharing form
  - Keyboard support for dropdown menu in tags
- - In page search
  - Delete old revisions
  - Delete passwords of deleted users
  - Permanently delete deleted objects
 
-#### 2018.4
+#### 2018.5
  - Use fields in search
  - Global search
  - Authentication api
- - Masterpassword
+ - Master Password
 
 #### Unscheduled
  - Client Side Encryption
@@ -30,3 +34,4 @@
  - Passlink API (Easy login)
  - Client identifiers
  - Improved view of folders in trash
+ - Language support
