@@ -35,3 +35,7 @@
  - Client identifiers
  - Improved view of folders in trash
  - Language support
+ - TOTP support
+ - More password hashes
+ - Bookmarks integration
+ - One Click Login (open website and login)

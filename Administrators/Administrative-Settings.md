@@ -4,11 +4,13 @@ This API is used by many clients for passwords and therefore still available.
 However the APi does not support client side encryption or safe server side encryption.
 It is also makes the application slower and does not strictly enforce HTTPS.
 
-##### Enable Legacy API
+#### Enable Legacy API
 This option enables or disables the API completely.
 If the API is disabled it will no longer be possible to access it in any way as the app will no longer register the necessary components in Nextcloud.
 
-##### Legacy API was last used on
+**Note:** The browser extension does not support the new api in versions prior to 2.0.0.
+
+#### Legacy API was last used on
 This settings is read only.
 It should tell you when the legacy api was last used.
 If you can see that the api is no longer in use on your server, you should disable it.
@@ -17,7 +19,7 @@ If you can see that the api is no longer in use on your server, you should disab
 ## Internal Data Processing
 These settings influence how Passwords processes different types of data internally.
 
-##### Image Rendering
+#### Image Rendering
 You have two options for image rendering.
 If Imagemagick or Graphicsmagick are installed on your system, they will automatically be chosen as default.
 GDLib should only be chosen if Imagemagick is broken or not available.
@@ -29,7 +31,7 @@ GDLib usually provides lower image quality and might not work with all formats.
 ## External Services
 In this section you can configure all the third party services used by Passwords.
 
-##### Password Security Checks
+#### Password Security Checks
 This service is used to check if a password is safe or not.
 
 **Have I been pwned?** is the recommended service.
@@ -50,7 +52,7 @@ It uses a lot less system resources than the 10Mio passwords and should run on a
 **10 Mio Passwords + Have I been pwned?** fills the local cache with the most common passwords.
 It is faster if a bad password is found in the 10 Mio Passwords database since Hibp is not contacted in that case.
 
-##### Password Generator Service
+#### Password Generator Service
 This service will be used to generate the basic words for a new password.
 
 **Local Dictionary** uses locally installed dictionaries for different languages to provide words.
@@ -62,7 +64,7 @@ It can provide words based on their rarity and type and is therefore the best se
 **Random Characters** generates sets of random letters for the service.
 This service has no dependencies.
 
-##### Favicon Service
+#### Favicon Service
 This service delivers the website favicons .
 The icons are only fetched once for a domain and then stored locally.
 
@@ -82,7 +84,7 @@ It finds the least icons and they usually have a crappy resolution.
 **None** always returns a default icon.
 It is the fastest and most privacy friendly service.
 
-##### Website Preview Service
+#### Website Preview Service
 This service is used to generate previews of websites.
 Only the front page of the domain is called and at maximum twice for mobile and desktop views.
 If you know a good program or service, feel free to open an issue to support it.
@@ -105,7 +107,7 @@ For free accounts, HTTPS is not supported.
 
 **None** just delivers one of five default images.
 
-##### Website Preview API Key
+#### Website Preview API Key
 If you use a service with an api, you have to put your api key here.
 
 
@@ -113,17 +115,17 @@ If you use a service with an api, you have to put your api key here.
 Caches are used to store temporary data. they are usually not emptied by the app.
 If problems occur, the first tip is always to empty the related cache.
 
-##### Default Cache
+#### Default Cache
 Usually not used. Contains general files.
 
-##### Avatars Cache
+#### Avatars Cache
 Contains rendered images of user avatars.
 
-##### Favicon Cache
+#### Favicon Cache
 Contains the raw and scaled favicons
 
-##### Pageshot Cache
+#### Pageshot Cache
 Contains the raw website screenshots and resized or cropped versions.
 
-##### Passwords Cache
+#### Passwords Cache
 Contains lists with bad passwords.
