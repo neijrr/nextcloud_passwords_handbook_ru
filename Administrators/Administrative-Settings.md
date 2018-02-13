@@ -72,6 +72,7 @@ The icons are only fetched once for a domain and then stored locally.
 This service usually finds the most icons, but also the most useless icons.
 
 **Besticon** uses a [besticon](https://github.com/mat/besticon) third party service to find icons.
+The service can be self hosted by using the [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/) or running the app on a server.
 The url for the service can be defined in the settings. Any compatible api is accepted.
 It usually returns the best icons and also good default icons if none is found.
 
@@ -83,6 +84,10 @@ It finds the least icons and they usually have a crappy resolution.
 
 **None** always returns a default icon.
 It is the fastest and most privacy friendly service.
+
+#### Favicon Service Api
+If you use a service with an API, you can enter the url here.
+The default url for the besticon service is https://besticon-demo.herokuapp.com/icon.
 
 #### Website Preview Service
 This service is used to generate previews of websites.

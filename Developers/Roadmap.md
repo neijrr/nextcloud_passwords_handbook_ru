@@ -1,10 +1,10 @@
 #### 2018.2
- - Settings API
  - Import & Export support
  - Better admin settings
  - Nextcloud 13 compatibility
  
 #### 2018.3
+ - Settings API
  - Personal settings
  - Encrypted Backups
  - Table sorting header
@@ -28,6 +28,8 @@
  - Master Password
 
 #### Unscheduled
+ - Weak password detection
+ - Send passwords
  - Client Side Encryption
  - Public link shares
  - Client Side Encryption for shares

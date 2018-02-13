@@ -1,9 +1,9 @@
 |  | Minimum | Recommended |
 | --- | --- | --- |
-| Processor | 4x1 GHz      | 4x2GHz |
+| Processor | 2x1 GHz      | 4x2GHz |
 | Ram       | 512 MiB      | 8GiB |
 | Disk      | 4 GiB        | 64GiB |
-| Platform  | Nextcloud 12 | Nextcloud 12 |
+| Platform  | Nextcloud 12 | Nextcloud 13 |
 | OS        | Linux        | Ubuntu 16.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
 | PHP       | PHP 7.1 | PHP 7.2 |
