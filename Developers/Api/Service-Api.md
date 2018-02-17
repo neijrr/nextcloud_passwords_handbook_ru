@@ -19,7 +19,6 @@ The password action generates one password with the given settings.
 | strength | int | 1 | no | How many words the password should have |
 | numbers | bool | false | no | Whether or not numbers should be used in the password |
 | special | bool | false | no | Whether or not special characters should be used in the password |
-| smileys | bool | false | no | Whether or not strings like text smileys should be used in the password |
 
 #### Return value
 The success status code is `200 Ok`
@@ -31,7 +30,6 @@ The success status code is `200 Ok`
 | strength | int | The words used in the password |
 | numbers | bool | Whether or not numbers were used in the password |
 | special | bool | Whether or not special characters were used in the password |
-| special | bool | Whether or not smileys were used in the password |
 
 #### Notes
  - If you call this action with a GET request, the users settings will be used
