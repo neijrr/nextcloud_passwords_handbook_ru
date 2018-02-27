@@ -30,7 +30,7 @@ More information can be found in the [documentation](https://docs.nextcloud.com/
 
 ### Browser Support
 The web interface of Passwords is designed to support the latest versions of major browsers.
-This includes most browsers based on Firefox Quantum (Version 57+), Chromium and Edge.
+This includes most browsers based on Chromium and Firefox Quantum (Version 57+).
 
 ### PHP Requirements
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages)

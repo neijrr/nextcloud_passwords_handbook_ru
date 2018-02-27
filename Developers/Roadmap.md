@@ -5,7 +5,7 @@
  
 #### 2018.3
  - Settings API
- - Personal settings
+ - User settings
  - Encrypted Backups
  - Table sorting header
  - Delete all in trash

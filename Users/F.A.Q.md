@@ -1,3 +1,18 @@
+## General
+#### Error "Your Browser is outdated"
+If your browser does not support the necessary APIs used by Passwords, you will see this message.
+This means that your browser does not provide some functionality which is absolutely required to run the app.
+Passwords checks the existence of such functionality and shows the message only if it is not present.
+You may use a known working browser like Firefox or Vivaldi to run the app.
+
+**NOTE:** Please do not ask us to "make your browser compatible". If we could, you would not see this message.
+
+#### Error "HTTPS Required"
+This error appears if you tried to open the app with an unsecure connection.
+Using Passwords via HTTP is not only insecure, the app will also not work.
+You can solve this issue by prefixing the url with `https://<your nextcloud url>`.
+If the server does not support HTTPS, this error can not be solved.
+
 ## Security
 #### How secure is Passwords?
 How secure your passwords are with the Passwords app depends on two main factors.
