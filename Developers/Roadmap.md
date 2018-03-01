@@ -1,10 +1,10 @@
 #### 2018.2
- - Import & Export support
+ - **Import & Export**
  - Better admin settings
  - Nextcloud 13 compatibility
- 
+
 #### 2018.3
- - Settings API
+ - **Settings API**
  - User settings
  - Encrypted Backups
  - Table sorting header
@@ -14,30 +14,41 @@
  - Besticon url configurable
 
 #### 2018.4
- - In page search
- - Enhanced sharing form
+ - **In page search**
  - Keyboard support for dropdown menu in tags
  - Delete old revisions
  - Delete passwords of deleted users
  - Permanently delete deleted objects
 
 #### 2018.5
+ - **Master password support**
  - Use fields in search
  - Global search
  - Authentication api
- - Master Password
+
+#### 2018.6
+ - **Client Side Encryption**
+
+#### 2018.7
+ - **TOTP**
+
+#### 2018.9
+ - **Public link shares**
 
 #### Unscheduled
- - Weak password detection
- - Send passwords
- - Client Side Encryption
- - Public link shares
+ - One Click Login (open website and login)
  - Client Side Encryption for shares
- - Passlink API (Easy login)
+ - More password hashes
  - Client identifiers
+ - Enhanced sharing form
+ - Weak password detection
+ - Password sending via Link
+ - Public link shares
+ - Easy client authentication process
  - Improved view of folders in trash
  - Language support
- - TOTP support
- - More password hashes
  - Bookmarks integration
- - One Click Login (open website and login)
+ - Custom Password Fields [#17](https://github.com/marius-wieschollek/passwords/issues/17)
+ - Group Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
+ - Folder Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
+ - Tag Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
