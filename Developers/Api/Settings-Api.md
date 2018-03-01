@@ -41,34 +41,32 @@
 
 
 # The get action
-Get the value of a setting.
+Get the value of one or more settings.
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| key | string | - | yes | The name of the setting |
+| <setting name> | string | - | yes | The name of the setting |
 
 #### Return value
-The success status code is `200 Ok`. The return value is the value of the setting
+The success status code is `200 Ok`. The return value is an array with the requested settings
+
+#### Notes
+ - The Enhanced API also offers the option to get a single setting
 
 
 
 
 # The set action
-Set the value of a setting.
+Set the value of one or more settings.
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| key | string | - | yes | The name of the setting |
-| value | mixed | - | yes | The new value of the setting |
+| <settings> | array | - | yes | An array with the settings |
 
 #### Return value
-| Argument | Type | Description |
-| --- | --- | --- |
-| status | string | Is set to `ok` if the action was successful |
-| key | string | The name of the setting |
-| value | int | The new value of the setting |
+The success status code is `200 Ok`. The return value is an array with the changed settings
 
 
 

@@ -28,6 +28,7 @@
 
 #### 2018.6
  - **Client Side Encryption**
+ - Custom Password Fields [#17](https://github.com/marius-wieschollek/passwords/issues/17)
 
 #### 2018.7
  - **TOTP**
@@ -42,13 +43,11 @@
  - Client identifiers
  - Enhanced sharing form
  - Weak password detection
- - Password sending via Link
- - Public link shares
+ - Password sending via link
  - Easy client authentication process
  - Improved view of folders in trash
  - Language support
  - Bookmarks integration
- - Custom Password Fields [#17](https://github.com/marius-wieschollek/passwords/issues/17)
  - Group Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Folder Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Tag Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
