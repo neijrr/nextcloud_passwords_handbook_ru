@@ -33,22 +33,21 @@ If you do not have a separate environment for testing, you can use the [docker s
 After finishing the setup, import the database dump from the previous step and set the `passwordsalt` and `secret` in the `config.php` to the same values as on your live system.
 If you used password sharing in the legacy app, you should import a complete dump of your live database since the migration will not migrate shares if the user it was shared with does not exist.
 Make sure to set the `installed_version` value on your testing system to `2017.12`:
-```sql
-UPDATE `*PREFIX*appconfig` SET `configvalue` = '2017.12' WHERE `*PREFIX*appconfig`.`appid` = 'passwords' AND `*PREFIX*appconfig`.`configkey` = 'installed_version'; 
+```
+./occ config:app:set passwords installed_version --value 2017.12
 ```
 Please note that the migration will check the security status of all passwords during the migration.
 By default this is done with the [haveibeenpwned.com](https://haveibeenpwned.com/) web service which takes 1.5 seconds per password.
 You can change this with the following sql statement:
 ```sql
-UPDATE `*PREFIX*appconfig` SET `configvalue` = 'bigdb' WHERE `*PREFIX*appconfig`.`appid` = 'passwords' AND `*PREFIX*appconfig`.`configkey` = 'service/security'; 
+./occ config:app:set passwords service/security --value bigdb
 ```
 Lastly you should know that every time you start the migration, it will try to import all categories, passwords and shares.
 So in order to prevent duplicate passwords, you should empty the password tables if you have to start the migration process anew.
 
 
 ### Migration
-Install the newest version of Passwords from the app store or the builds page.
-You can also use the sources, but you will have to run `npm install` and `npm run build` to compile the files.
+Install the newest version of Passwords from the [app store](https://apps.nextcloud.com/apps/passwords).
 Nextcloud should detect the new version and activate the maintenance mode.
 You can start the migration by clicking the upgrade button on the web interface or by using the command line tool.
 We recommend using the command line tool for the migration.
@@ -57,6 +56,9 @@ Execute the following command in the root directory of your Nextcloud installati
 ./occ upgrade
 ```
 If the migration was successful, the number of migrated passwords, categories and shares should be listed in the log.
+
+[![Migration Shell](../_files/Migration/_previews/01-migration-shell.png)](../_files/Migration/01-migration-shell.png)
+[![Migration Browser](../_files/Migration/_previews/01-migration-browser.png)](../_files/Migration/01-migration-browser.png)
 
 
 ### Post Migration Steps

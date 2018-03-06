@@ -222,5 +222,5 @@ The success status code is `200 Ok`
 The return value is a list of tag objects that match the criteria with the given detail level
 
 #### Notes
- - The list will include trashed tags, so you need to filter that
+ - The property `trashed` will be set to `false` if not present
  - The list will not include hidden tags

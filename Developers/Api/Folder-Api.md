@@ -22,6 +22,7 @@
 | +parent | Fills the parent property with the base model of the parent folder |
 | +folders | Adds the folders property with the base model of all folders in this folder |
 | +passwords | Adds the passwords property with the base model of all passwords in this folder |
+| +tags | Not implemented but reserved |
 
 #### Enhanced API special properties
 The properties "revisions", "parent", "folders" and "passwords" are also processed if necessary.
@@ -237,6 +238,6 @@ The success status code is `200 Ok`
 The return value is a list of folder objects that match the criteria with the given detail level
 
 #### Notes
- - The list will include trashed folders, so you need to filter that
+ - The property `trashed` will be set to `false` if not present
  - The list will not include hidden folders
  - The list will not include suspended folders where a parent folder is in the trash

@@ -271,6 +271,6 @@ The success status code is `200 Ok`
 The return value is a list of password objects that match the criteria with the given detail level
 
 #### Notes
- - The list will include trashed passwords, so you need to filter that
+ - The property `trashed` will be set to `false` if not present
  - The list will not include hidden passwords
  - The list will not include suspended passwords where the folder or a parent folder is in the trash
