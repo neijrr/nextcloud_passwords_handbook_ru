@@ -12,6 +12,7 @@
  - Autocomplete for sharing
  - Password generator strength settings
  - Besticon url configurable
+ - Allow longer passwords
 
 #### 2018.4
  - **In page search**
@@ -34,11 +35,16 @@
 
 #### 2018.7
  - **TOTP**
+ - Delete everything option
 
 #### 2018.9
  - **Public link shares**
 
 #### Unscheduled
+ - Detailed revision view
+ - Folder details
+ - Tag details
+ - Tags for folders
  - Drag and Drop multiple items
  - Move items with dialog
  - Import and Export from Nextcloud
