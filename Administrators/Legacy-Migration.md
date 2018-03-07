@@ -30,16 +30,17 @@ It is still a good idea to make a backup of the following tables before you star
 We do not recommend performing the update on a live system before testing it.
 If you have a staging / testing environment use it to test the migration before migrating the live system.
 If you do not have a separate environment for testing, you can use the [docker setup for developers](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md).
-After finishing the setup, import the database dump from the previous step and set the `passwordsalt` and `secret` in the `config.php` to the same values as on your live system.
 If you used password sharing in the legacy app, you should import a complete dump of your live database since the migration will not migrate shares if the user it was shared with does not exist.
+After importing the database dump from the previous step and set the `passwordsalt` to the same value as on your live system.
 Make sure to set the `installed_version` value on your testing system to `2017.12`:
-```
+```bash
+./occ config:system:set passwordsalt --value <yourpasswordsalt>
 ./occ config:app:set passwords installed_version --value 2017.12
 ```
 Please note that the migration will check the security status of all passwords during the migration.
 By default this is done with the [haveibeenpwned.com](https://haveibeenpwned.com/) web service which takes 1.5 seconds per password.
 You can change this with the following sql statement:
-```sql
+```bash
 ./occ config:app:set passwords service/security --value bigdb
 ```
 Lastly you should know that every time you start the migration, it will try to import all categories, passwords and shares.
@@ -100,6 +101,6 @@ Please describe your issue in detail and precise and supply all necessary inform
 ### Starting from scratch
 If you have used passwords legacy but do not want to migrate your old data you can just disable the migration tool by setting the `installed version` to `2018.0`.
 Make sure you also delete the legacy app tables from your database.
-```sql
-UPDATE `*PREFIX*appconfig` SET `configvalue` = '2018.0' WHERE `*PREFIX*appconfig`.`appid` = 'passwords' AND `*PREFIX*appconfig`.`configkey` = 'installed_version'; 
+```bash
+./occ config:app:set passwords installed_version --value 2018.0
 ```
