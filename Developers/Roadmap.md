@@ -19,6 +19,8 @@
  - Delete old revisions
  - Delete passwords of deleted users
  - Permanently delete deleted objects
+ - Tags in the list view [#3](https://github.com/marius-wieschollek/passwords/issues/3)
+ - User Documentation
 
 #### 2018.5
  - **Master password support**
@@ -37,6 +39,11 @@
  - **Public link shares**
 
 #### Unscheduled
+ - Drag and Drop multiple items
+ - Move items with dialog
+ - Import and Export from Nextcloud
+ - Api command to check passwords
+ - HIBP 2 integration
  - One Click Login (open website and login)
  - Client Side Encryption for shares
  - More password hashes
@@ -47,7 +54,9 @@
  - Easy client authentication process
  - Improved view of folders in trash
  - Language support
+ - E-Mail Notifications
  - Bookmarks integration
+ - Improved sharing with log
  - Group Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Folder Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Tag Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
