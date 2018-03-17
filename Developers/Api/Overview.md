@@ -9,10 +9,10 @@ Support for an old version of the api will be ended by a new major version of th
 The version 1.0 api is not complete at this point. It will be so by the beginning of 2019.
 
 ### API version support
-| API | Introduced | Removed |
-| --- | --- | --- |
-| 0.1 | 2018.1 | 2020.1 |
-| 1.0 | 2018.1 | - |
+| API | Introduced | Deprecated | Removed |
+| --- | --- | --- | --- |
+| 0.1 | 2018.1 | 2018.1 | 2020.1 |
+| 1.0 | 2018.1 | - | - |
 
 ### General Notes
  - The api delivers and receives JSON objects
@@ -24,3 +24,4 @@ The version 1.0 api is not complete at this point. It will be so by the beginnin
  - The encrypted properties may contain raw user input
  - The API only works with HTTPS
  - The API requires CORS with basic authentication
+ - Non-Standard endpointes, options and values have to be prefixed with `x-`

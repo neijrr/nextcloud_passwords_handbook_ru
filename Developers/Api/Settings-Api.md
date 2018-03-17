@@ -23,17 +23,27 @@
 | user.password.generator.strength | int | 1 | The strength of generated passwords |
 | user.password.generator.numbers | bool | false | Whether or not generated passwords contain numbers |
 | user.password.generator.special | bool | false | Whether or not generated passwords contain special characters |
+| user.mail.security | bool | true | Whether or not the user receives mails about security issues |
+| user.mail.shares | bool | false | Whether or not the user receives mails about new shared objects |
+| user.notification.security | bool | true | Whether or not the user receives notifications about security issues |
+| user.notification.shares | bool | true | Whether or not the user receives notifications about new shared objects |
+| user.notification.errors | bool | true | Whether or not the user receives notifications about backgroudn errors |
+| server.version | string | - | The Nextcloud version of the server |
 | server.baseUrl | string | - | The base url of the server |
-| theme.color | string | `#745bca` | The color of the current Nextcloud theme |
-| theme.text.color | string | `#ffffff` | The contrast color of the current Nextcloud theme |
-| theme.background | string | - | The url to the current Nextcloud background image |
-| theme.logo | string | - | The url to the logo of the current Nextcloud theme |
-| theme.label | string | "Nextcloud" | The name of the Nextcloud instance |
-| theme.folder.icon | string | - | The url to the current svg folder icon |
+| server.sharing.enabled | bool | true | Whether or not sharing is enabled globally |
+| server.sharing.resharing | bool | true | Whether or not resharing shared entities is enabled globally |
+| server.sharing.autocomplete | bool | true | Whether or not the [auto-complete](./Share-Api.md#the-partners-action) request works |
+| server.sharing.types | array | `["user"]` | List of supported sharing types.  |
+| server.theme.color | string | `#745bca` | The color of the current Nextcloud theme |
+| server.theme.text.color | string | `#ffffff` | The contrast color of the current Nextcloud theme |
+| server.theme.background | string | - | The url to the current Nextcloud background image |
+| server.theme.logo | string | - | The url to the logo of the current Nextcloud theme |
+| server.theme.label | string | "Nextcloud" | The name of the Nextcloud instance |
+| server.theme.folder.icon | string | - | The url to the current svg folder icon |
 | client.* | - | null | The client scope allows client defined keys |
 
 #### Notes
- - The `theme.background` image might have a transparent background. In this case the background color should be `theme.color`.
+ - The `server.theme.background` image might have a transparent background. In this case the background color should be `server.theme.color`.
  - The `client` scope allows keys with up to 16 characters, excluding `client.`
  - The `client` scope allows values with a maximum length of 36 characters
 

@@ -41,7 +41,6 @@ The property "password" is also processed if necessary.
 # Available api actions
 | Action | Url | Method | Description |
 | --- | --- | --- | --- |
-| info | `/api/1.0/share/info` | GET | Returns information about the share api capabilities |
 | list | `/api/1.0/share/list` | GET | List all shares with the default detail level |
 | list | `/api/1.0/share/list` | POST | List all shares with the given detail level |
 | show | `/api/1.0/share/show` | POST | Show a share |
@@ -51,22 +50,6 @@ The property "password" is also processed if necessary.
 | delete | `/api/1.0/share/delete` | DELETE | Delete a share |
 | partners | `/api/1.0/share/partners` | GET | Find users you can share with |
 | partners | `/api/1.0/share/partners` | POST | Find users you can share with by pattern |
-
-
-
-
-# The info action
-This command lists the status of the available features of the sharing api.
-
-#### Return value
-The success status code is `200 Ok`
-
-| Argument | Type | Description |
-| --- | --- | --- |
-| enabled | bool | Whether or not the sharing api is enabled |
-| resharing | bool | Whether or not resharing is allowed systemwide |
-| autocomplete | bool | Whether or not the `partners` action is enabled |
-| types | array | A list of supported sharing types |
 
 
 
