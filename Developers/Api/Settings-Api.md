@@ -16,7 +16,6 @@
 | user | yes | User specific settings |
 | client | yes | Client specific settings |
 | server | no | Server specific settings |
-| theme | no | Nextcloud theme settings |
 
 | Setting | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -44,95 +43,105 @@
 
 #### Notes
  - The `server.theme.background` image might have a transparent background. In this case the background color should be `server.theme.color`.
- - The `client` scope allows keys with up to 16 characters, excluding `client.`
- - The `client` scope allows values with a maximum length of 36 characters
+ - The `client` scope allows keys with up to 48 characters, excluding `client.`
+ - The `client` scope allows values with a maximum length of 128 characters
+ - The `client` scope is shared between all clients
 
 
 
 
 # The get action
 Get the value of one or more settings.
+This action accepts an array of strings where each value is the name of one setting.
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| <setting name> | string | - | yes | The name of the setting |
+| first setting | string | - | yes | The name of the first setting |
+| second setting | string | - | no | The name of the second setting |
 
 #### Return value
-The success status code is `200 Ok`. The return value is an array with the requested settings
+The success status code is `200 Ok`.
+The return value is an object with the requested settings.
+Each key of the object is a setting and the value is the value of the setting.
 
 #### Notes
  - The Enhanced API also offers the option to get a single setting
+ - If the setting is not defined, it will default to `null`
+ - Accessing an undefined setting in the `client` scope will not create it
 
 
 
 
 # The set action
 Set the value of one or more settings.
+This action accepts an object where each key is the name of a setting and the value is the new value
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| <settings> | array | - | yes | An array with the settings |
+| first setting | mixed | - | yes | The first setting to be set |
+| second setting | mixed | - | no | The second setting to be set |
 
 #### Return value
-The success status code is `200 Ok`. The return value is an array with the changed settings
+The success status code is `200 Ok`.
+The return value is an object with the updated settings and their new value.
+
+#### Notes
+ - The Enhanced API also offers the option to set a single setting
+ - If the scope is not writable, the setting will not be saved and default to `null` in the return value
+ - If the setting is not defined in the `user` scope, it will not be saved and default to `null` in the return value
+ - If the size limitations of the `client` scope are exceeded, an error will be returned
 
 
 
 
 # The reset action
-Resets the value of a setting. If the setting is in the `client` scope, it will be deleted
+Reset the value of one or more settings.
+This action accepts an array of strings where each value is the name of one setting.
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| key | string | - | yes | The name of the setting |
+| first setting | string | - | yes | The name of the first setting |
+| second setting | string | - | no | The name of the second setting |
 
 #### Return value
-| Argument | Type | Description |
-| --- | --- | --- |
-| status | string | Is set to `ok` if the action was successful |
-| key | string | The name of the setting |
-| value | int | The new value of the setting |
+The success status code is `200 Ok`.
+The return value is an object with the cleared settings.
+Each key of the object is a setting and the value is the value of the setting.
 
 #### Notes
- - If you reset a setting in the client scope, it will be deleted
+ - If you reset a setting in the client scope, it will be deleted and no longer appear in the list action
+ - If the setting does not exist, the value will be `null`
 
 
 
 
 # The list action
-Resets the value of a setting. If the setting is in the `client` scope, it will be deleted
+Lists all settings within a scope.
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| scope | string | - | no | The name of the scope |
+| scopes | array | - | no | An array with the names of all requested scopes as value |
 
 #### Return value
-The return value is a JSON formatted object with all scopes and their settings.
-```json
-{
-    "server": {
-        "baseUrl": "https://localhost"
-    },
-    "theme" : {
-        "color"      : "#6AC97D",
-        "text.color" : "#000000",
-        "background" : "https://example.com/core/img/background.png",
-        "logo"       : "https://example.com/core/img/logo.svg?v=3",
-        "label"      : "Nextcloud",
-        "folder.icon": "https://example.com/index.php/apps/theming/img/core/filetypes/folder.svg"
-    },
-    "user"  : {
-        "password.generator.strength": 1,
-        "password.generator.numbers": true,
-        "password.generator.special": false
-    },
-    "client": [ ]
-}
-```
+The return value is a JSON formatted object with all settings from the requested scopes.
 
 #### Notes
  - If a scope has been specified, only the values of this scope will be returned
+ - If the specified scopes do not exist, te return value is an empty array
+ - If no scope has been defined, all existing settings will be returned
+
+
+
+
+# Known client settings
+| Setting | Type | Default |Allowed Values | Description |
+| --- | --- | --- | --- | --- |
+| client.ui.section.default | string | `all` | `all`, `favourites`, `folders`, `tags`, `recent` | Which section to show when the app ist loaded |
+| client.ui.password.field.title | string | `label` | `label`, `website`, `user` | Which field to use as title of a password |
+| client.ui.password.field.sorting | string | `byTitle` | `byTitle`, `label`, `website`, `user` | Sort passwords by this field instead of the label. `byTitle` means use the `title` setting |
+| client.ui.password.menu.copy | bool | `false` | - | Show "copy to clipboard" options in the password menu |
+| client.ui.list.tags.show | bool | `false` | - |Show tags in the list view |
