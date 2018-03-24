@@ -7,5 +7,5 @@
 
 
 ## Video
-Teh short video below quickly shows you all the major fatures of passwords.
+The short video below quickly shows you all the major features of passwords.
 [![Feature Overview](https://raw.githubusercontent.com/wiki/marius-wieschollek/passwords/_files/Gallery/_previews/feature-overview.gif)](https://raw.githubusercontent.com/wiki/marius-wieschollek/passwords/_files/Gallery/feature-overview.mp4)
