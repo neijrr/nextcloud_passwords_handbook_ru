@@ -47,7 +47,7 @@ Even if you have the rights to edit the password, you can not delete it in the a
 
 
 ## Notifications
-#### Passwords tells me taht one of my passwords is insecure
+#### Passwords tells me that one of my passwords is insecure
 If companies get hacked, the passwords of their users often end up in online databases of hacked passwords.
 Because of this, the passwords app checks on a regular basis if one of your passwords appears in these databases and notifies you if it does.
 This does not necessarily mean that you or the website which you use the password for have been hacked.
