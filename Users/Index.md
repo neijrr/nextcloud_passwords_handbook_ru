@@ -5,4 +5,3 @@ Welcome to the Passwords User Manual
 2. [Import](Import)
 2. [Export](Export)
 3. [Settings](Settings)
-4. [Test Page](TestPage)
