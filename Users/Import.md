@@ -35,14 +35,45 @@ If this option is selected, passwords which were shared with you by other users 
 
 ## Import specific options and notes
 ### Database Backup
+Database backups are a special import source.
+
 ##### Backup password
 If the backup has been secured with a password, you will have to enter it here.
 
 ### Custom CSV File Options
 ![Parsing otpions for custom csv files](_files/import-custom-csv-options.png)
 
+Custom CSV files can have very different formats. Therefore you can choose the file parsing options here.
+
+##### Field Delimiter
+Specifies the character used to separate the fields in the csv. The import can try to `Detect` the field delimiter.
+Alternatively you can choose one of the options manually.
+
+##### Quote Character
+The quote character is used to mark the contents of a field in the csv. Anything after the quote character will be interpreted as content until another quote character is found.
+
+##### Escape Character
+This character is used to escape the quote character within a field. If the escape character has to come before the quote character if it appears as part of the content.
+
+##### Detect unescaped quotes
+This option can help to parse faulty csv files. It tries to detect whether a quote character is used to signal the beginning or ending of a field or if it is part of the content.
+
 ### Custom CSV Import Options
 ![Import options and field mapping for a custom csv file](_files/import-custom-csv-mapping.png)
+
+##### Database
+Select the database which you want to import your csv into. This also has an effect on the other available options.
+
+##### Skip first line
+Skips the first line of the csv. Select this option if your csv file has a header which should not be imported.
+
+##### Interpolate missing fields
+If fields like the label or the url are not present, this option will tell the importer to check if another field may contain the value.
+
+##### CSV Field Mapping
+Here you can map the columns of your csv file. You don't have to map every column, just the ones you wish to import.
+For passwords you will have to map at least the `Password` column, for folders and tags the `Label` column is required.
+You can use the `Preview Line` option to preview a different line.
 
 ## How to fix faulty CSV files
 ![Warning for services which may create faulty exports](_files/import-faulty-csv.png)

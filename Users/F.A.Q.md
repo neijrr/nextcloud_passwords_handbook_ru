@@ -46,7 +46,14 @@ If you delete a password that was shared with you, it will only be deleted from 
 Even if you have the rights to edit the password, you can not delete it in the account of the person who shared it with you.
 
 
-## Notifications
+## Import and Export
+#### A warning says that the service i am trying to import from is known to generate faulty csv files
+Some password services create export files where the columns are not formatted properly.
+If that happens, Passwords may be unable to import the file as it is and you have to fix it manually.
+See the [import section](Import#how-to-fix-faulty-csv-files) for further information.
+
+
+## Notifications and Emails
 #### Passwords tells me that one of my passwords is insecure
 If companies get hacked, the passwords of their users often end up in online databases of hacked passwords.
 Because of this, the passwords app checks on a regular basis if one of your passwords appears in these databases and notifies you if it does.
