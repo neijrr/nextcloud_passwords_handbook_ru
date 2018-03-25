@@ -49,13 +49,15 @@ You can show the tags for a password in the list view.
 If you click on a tag the tag section will be opened and you can see all passwords with the tag.
 This will increase the loading times if you have a lot of tags.
 Also the tags will not be shown on mobile devices.
+
 ![Tags in the list view](_files/tags-hover.gif)
 
 
 ## Notifications
 ### Send Emails for
 These settings enable or disable the emails sent to you by Passwords.
-**Note:** Emails will only be sent if your account has an email address.
+
+**Note:** Emails will only be sent if you have an email address associated with your account.
 
 ##### Security issues
 Passwords checks whether your passwords are still secret or can be found in public data breaches every day.
@@ -90,5 +92,6 @@ Deleted settings can not be restored.
 This option will delete all passwords, folders, tags and settings in your account.
 It will also delete your private encryption key. This means that your data can not be restored.
 You should make a backup and confirm that the backup works before you use this option.
+
 **Note:** This option does not reset access tokens used by third party clients.
 You can delete these in your personal settings.

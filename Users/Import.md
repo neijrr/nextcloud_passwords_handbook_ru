@@ -41,9 +41,7 @@ Database backups are a special import source.
 If the backup has been secured with a password, you will have to enter it here.
 
 ### Custom CSV File Options
-![Parsing otpions for custom csv files](_files/import-custom-csv-options.png)
-
-Custom CSV files can have very different formats. Therefore you can choose the file parsing options here.
+![Parsing options for custom csv files](_files/import-custom-csv-options.png)
 
 ##### Field Delimiter
 Specifies the character used to separate the fields in the csv. The import can try to `Detect` the field delimiter.
