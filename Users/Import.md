@@ -3,6 +3,8 @@ It can be used to restore a previously made backup, import a backup from another
 
 ![The Import section](_files/import-overview.png)
 
+
+
 ## The Import Steps
 ##### 1. Choose Format
 Choose the format of the file you want to import.
@@ -20,6 +22,7 @@ Depending on the file type, different options may be available which are explain
 If you're ready to go, hit the `Import` button and start importing your files
 
 
+
 ## Import Options
 ##### Import Mode
 The `Import Mode` defines how the Importer should handle conflicts.
@@ -31,6 +34,7 @@ The `Import Mode` defines how the Importer should handle conflicts.
 
 ##### Don't edit passwords shared with me
 If this option is selected, passwords which were shared with you by other users will not be overwritten by the import.
+
 
 
 ## Import specific options and notes
@@ -72,6 +76,8 @@ If fields like the label or the url are not present, this option will tell the i
 Here you can map the columns of your csv file. You don't have to map every column, just the ones you wish to import.
 For passwords you will have to map at least the `Password` column, for folders and tags the `Label` column is required.
 You can use the `Preview Line` option to preview a different line.
+
+
 
 ## How to fix faulty CSV files
 ![Warning for services which may create faulty exports](_files/import-faulty-csv.png)
