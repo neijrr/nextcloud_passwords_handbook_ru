@@ -1,4 +1,7 @@
-## Developer Manual
+> Welcome to the Passwords Developer Handbook.
+
+## Contents
+1. [Development Environment](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
 1. [The API](Api/Overview)
    1. [Password API](Api/Password-Api)
    2. [Folder API](Api/Folder-Api)
@@ -11,9 +14,6 @@
 2. [Legacy API](Api/Legacy-Api)
 3. [Verify GIT Commits](Verify-Git-Commits)
 
-## Set up your Development Environment
-See [Contributing.md](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
-
 ## Sample Data
-Sample data is available [here](../_files/Sample Passwords.json).
-Thee sample data can be imported in the [backup section](http://localhost/index.php/apps/passwords#/backup).
+Sample data can be downloaded from [here](../_files/Sample Passwords.json).
+The sample data can be imported in the [import section](http://localhost/index.php/apps/passwords#/backup/import).

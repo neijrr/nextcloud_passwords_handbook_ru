@@ -5,13 +5,13 @@ This section contains general information about the Passwords project
 - [Roadmap](https://git.mdns.eu/nextcloud/passwords/wikis/Project/Roadmap)
 - [Report a bug](https://git.mdns.eu/nextcloud/passwords/wikis/Project/Bug-Reporting)
 
-## Administrator Manual
-The [administrator manual](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Index) is intended to help administrators to maintain the app.
+## Administrator Handbook
+The [administrator handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Index) is intended to help administrators to configure and maintain the Passwords.
 
-## Developer Manual
-The [developer manual](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Index) is intended to help developers understand how Passwords works and integrate the API in their own projects.
+## Developer Handbook
+The [developer handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Index) is intended to help developers understand how Passwords works and create amazing things using our API.
 
-## User Manual
+## User Handbook
 The user manual can be accessed from within the app.
 Go to `More > Handbook` view it.
 Alternatively the online version can be found [here](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Index).

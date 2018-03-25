@@ -1,4 +1,4 @@
-## Create and add a key
+## Create and add a ssh key
 Follow [this](https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/index.html) tutorial.
 If you are using Ubuntu 16.04, use the `gpg2` command.
 
