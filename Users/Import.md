@@ -38,9 +38,15 @@ If this option is selected, passwords which were shared with you by other users 
 ##### Backup password
 If the backup has been secured with a password, you will have to enter it here.
 
+### Custom CSV File Options
+![Parsing otpions for custom csv files](_files/import-custom-csv-options.png)
+
+### Custom CSV Import Options
+![Import options and field mapping for a custom csv file](_files/import-custom-csv-mapping.png)
 
 ## How to fix faulty CSV files
-![Warning for bad exports](_files/import-faulty-csv.png)
+![Warning for services which may create faulty exports](_files/import-faulty-csv.png)
+
 Some password managers create faulty export files which can not be parsed by the importer.
 These files need to be fixed manually in order to work properly.
 

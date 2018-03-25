@@ -1,7 +1,7 @@
 The settings section can be found in `More > Settings`.
 These settings allow you to define how the app itself and the official clients behave.
 
-[![The Settings section](_files/settings-overview.png)](_files/settings-overview.png)
+![The Settings section](_files/settings-overview.png)
 
 ## Security
 ### Password Generator
@@ -49,7 +49,7 @@ You can show the tags for a password in the list view.
 If you click on a tag the tag section will be opened and you can see all passwords with the tag.
 This will increase the loading times if you have a lot of tags.
 Also the tags will not be shown on mobile devices.
-[![Tags in the list view](_files/tags-hover.gif)](_files/tags-hover.gif)
+![Tags in the list view](_files/tags-hover.gif)
 
 
 ## Notifications
