@@ -1,1 +1,1 @@
-Personal settings are under development
+The user settings can be fount in `More > Settings`.
