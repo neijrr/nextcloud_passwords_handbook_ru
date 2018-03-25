@@ -16,16 +16,14 @@
 
 #### 2018.4
  - **In page search**
- - Keyboard support for dropdown menu in tags
- - Delete old revisions
  - Delete passwords of deleted users
- - Permanently delete deleted objects
+ - Permanently remove deleted objects
  - Tags in the list view [#3](https://github.com/marius-wieschollek/passwords/issues/3)
  - User Documentation
 
 #### 2018.5
  - **Master password support**
- - Use fields in search
+ - Keyboard support for dropdown menu in tags
  - Global search
  - Authentication api
 

@@ -9,3 +9,9 @@ Welcome to the Passwords User Handbook.
 
 ## Forum
 If you have any questions which are not answered in the manual, don't hesitate to ask your question in our [froum](https://help.nextcloud.com/c/apps/passwords)
+
+## Browser Extension
+The Passwords Browser Extension gives you easy access to all your passwords from your browser
+- [Passwords for Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords/)
+- [Passwords for Chrome](https://github.com/marius-wieschollek/passwords-webextension/wiki/chromium-builds)
+- [Handbook](https://github.com/marius-wieschollek/passwords-webextension/wiki)
