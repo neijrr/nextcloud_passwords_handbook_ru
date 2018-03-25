@@ -1,0 +1,1 @@
+[Open full manual](https://git.mdns.eu/nextcloud/passwords/wikis/home)

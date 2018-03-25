@@ -1,0 +1,5 @@
+- [Administrator Manual](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Home)
+- [Developer Manual](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Home)
+- [User Manual](https://git.mdns.eu/nextcloud/passwords/wikis/User/Home)
+- [Roadmap](Roadmap)
+- [Report a bug](Bug-Reporting)
