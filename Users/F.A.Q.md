@@ -50,7 +50,7 @@ Even if you have the rights to edit the password, you can not delete it in the a
 #### A warning says that the service i am trying to import from is known to generate faulty csv files
 Some password services create export files where the columns are not formatted properly.
 If that happens, Passwords may be unable to import the file as it is and you have to fix it manually.
-See the [import section](Import#how-to-fix-faulty-csv-files) for further information.
+See the [import section](./Import#how-to-fix-faulty-csv-files) for further information.
 
 
 ## Notifications and Emails

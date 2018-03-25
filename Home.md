@@ -6,7 +6,7 @@ This section contains general information about the Passwords project
 - [Report a bug](https://git.mdns.eu/nextcloud/passwords/wikis/Project/Bug-Reporting)
 
 ## Administrator Handbook
-The [administrator handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Index) is intended to help administrators to configure and maintain the Passwords.
+The [administrator handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Index) is intended to help administrators to configure and maintain Passwords.
 
 ## Developer Handbook
 The [developer handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Index) is intended to help developers understand how Passwords works and create amazing things using our API.
