@@ -8,4 +8,4 @@
 
 ## Video
 The short video below quickly shows you all the major features of passwords.
-![[Feature Overview](../_files/Gallery/feature-overview.mp4)](../_files/Gallery/_previews/feature-overview.gif)
+[![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)](../_files/Gallery/feature-overview.mp4)
