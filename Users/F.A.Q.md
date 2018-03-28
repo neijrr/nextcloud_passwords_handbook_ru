@@ -27,7 +27,7 @@ So in order to keep your passwords safe, your server administrator has to keep t
 A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when client side encryption is enabled.
 So you will have to trust your administrator to keep the server safe.
 
-#### I found a strange WebUi Device Token
+#### What does the WebUI Device Token do?
 When you use the Passwords app, a token called "Passwords WebUI Access" will appear in your device list.
 This token was automatically generated to enable the app to access your passwords.
 There should only be one token with this name and it should not have filesystem access.
@@ -40,6 +40,11 @@ Passwords permits users to access the data of other users themselves.
 Because of this, changes in shared passwords need to be processed by a privileged automated process on the server.
 This is usually done every 15 minutes.
 This process will always execute changes made by the original owner first and discard the changes of others if there is any conflict.
+
+#### Some of my shares show a loading that says "Some data is waiting to be synchronized"
+As described in the [question above](#i-have-shared-unshared-a-password-but-the-other-person-can-not-still-see-it), shared passwords are synchronized in the background.
+So if you or someone else changes the shared password, it is queued for synchronizing.
+Until all changes have been synchronized, the loading animation will tell you that changes are waiting to be synchronized.
 
 #### What happens if I delete a password that was shared with me?
 If you delete a password that was shared with you, it will only be deleted from your account and the accounts of the people you may have shared the password with.
