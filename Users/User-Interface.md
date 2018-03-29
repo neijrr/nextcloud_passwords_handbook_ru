@@ -1,9 +1,9 @@
 ## Images
-[![Password List](../_files/Gallery/_previews/01-section-all.png)](../_files/Gallery/01-section-all.png)
-[![Folder View](../_files/Gallery/_previews/02-section-folders.png)](../_files/Gallery/02-section-folders.png)
-[![Tag View](../_files/Gallery/_previews/03-section-tags.png)](../_files/Gallery/03-section-tags.png)
-[![Security Section](../_files/Gallery/_previews/04-section-security.png)](../_files/Gallery/04-section-security.png)
-[![Trash Section](../_files/Gallery/_previews/05-section-trash.png)](../_files/Gallery/05-section-trash.png)
+[![Password List](./_files/_previews/main-section.jpg)](./_files/main-section.png)
+[![Folder View](./_files/_previews/folder-section.jpg)](./_files/folder-section.png)
+[![Tag View](./_files/_previews/tags-section.jpg)](./_files/tags-section.png)
+[![Security Section](./_files/_previews/security-section.jpg)](./_files/security-section.png)
+[![Trash Section](./_files/_previews/trash-section.jpg)](./_files/trash-section.png)
 
 
 ## Video
