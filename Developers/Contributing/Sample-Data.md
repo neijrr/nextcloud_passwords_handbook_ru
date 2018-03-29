@@ -10,4 +10,4 @@ Here you can find sample data and import files which can be imported in the [imp
 - [KeePass CSV](../_files/KeePass.csv)
 - [Enpass CSV](../_files/Enpass.csv)
 - [Dashlane CSV](../_files/DashlaneExport.csv)
-- [A Simple Password CSV](../_files/SimplePasswordList.csv)
+- [Generic Password CSV](../_files/PasswordList.csv)
