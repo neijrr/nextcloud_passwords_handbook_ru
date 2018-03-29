@@ -1,7 +1,7 @@
 The import can be found `More > Backup and Restore > Restore or Import`.
 It can be used to restore a previously made backup, import a backup from another instance or import data from another password manager.
 
-![The Import section](_files/import-overview.png)
+![The Import section](_files/import-section.png)
 
 
 

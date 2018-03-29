@@ -1,7 +1,8 @@
 The settings section can be found in `More > Settings`.
 These settings allow you to define how the app itself and the official clients behave.
 
-![The Settings section](_files/settings-overview.png)
+![The Settings section](_files/settings-section.png)
+
 
 ## Security
 ### Password Generator
