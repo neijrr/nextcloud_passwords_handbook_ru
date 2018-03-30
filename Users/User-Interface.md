@@ -4,6 +4,10 @@
 [![Tag View](./_files/_previews/tags-section.jpg)](./_files/tags-section.png)
 [![Security Section](./_files/_previews/security-section.jpg)](./_files/security-section.png)
 [![Trash Section](./_files/_previews/trash-section.jpg)](./_files/trash-section.png)
+[![Settings Section](./_files/_previews/settings-section.jpg)](./_files/settings-section.png)
+[![Import Section](./_files/_previews/import-section.jpg)](./_files/import-section.png)
+[![Export Section](./_files/_previews/export-section.jpg)](./_files/export-section.png)
+[![Handbook Section](./_files/_previews/handbook-section.jpg)](./_files/handbook-section.png)
 
 
 ## Video
