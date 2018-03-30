@@ -10,6 +10,6 @@
 [![Handbook Section](./_files/_previews/handbook-section.jpg)](./_files/handbook-section.png)
 
 
-## Video
+## Feature Overview
 The short video below quickly shows you all the major features of passwords.
 [![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)](../_files/Gallery/feature-overview.mp4)
