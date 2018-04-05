@@ -16,30 +16,35 @@
 
 #### 2018.4
  - **In page search**
+ - Handbook
  - Delete passwords of deleted users
  - Permanently remove deleted objects
  - Tags in the list view [#3](https://github.com/marius-wieschollek/passwords/issues/3)
- - User Documentation
 
 #### 2018.5
- - **Master password support**
- - Keyboard support for dropdown menu in tags
+ - **Custom Password Fields** [#17](https://github.com/marius-wieschollek/passwords/issues/17)
  - Global search
  - Authentication api
 
 #### 2018.6
- - **Client Side Encryption**
- - Custom Password Fields [#17](https://github.com/marius-wieschollek/passwords/issues/17)
+ - **Master password support**
+ - Keyboard support for dropdown menu in tags
 
 #### 2018.7
- - **TOTP**
+ - **Client Side Encryption**
  - Delete everything option
 
 #### 2018.9
+ - **TOTP**
+
+#### 2018.10
  - **Public link shares**
 
 #### Unscheduled
+ - Add settings in database backup
  - Detailed revision view
+ - Add tag on import
+ - Support tags in password creation menu
  - Folder details
  - Tag details
  - Tags for folders
@@ -55,6 +60,7 @@
  - Enhanced sharing form
  - Weak password detection
  - Password sending via link
+ - Automatic login support with browser extension
  - Easy client authentication process
  - Improved view of folders in trash
  - Language support

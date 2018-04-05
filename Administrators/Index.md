@@ -2,5 +2,6 @@
 
 ## Contents
 1. [System Requirements](./System-Requirements)
-3. [App Settings](./Administrative-Settings)
-2. [Migrating from the legacy app](./Legacy-Migration)
+2. [App Settings](./Administrative-Settings)
+3. [Migrating from the legacy app](./Legacy-Migration)
+4. [Officail Bug Tracker](https://github.com/marius-wieschollek/passwords)

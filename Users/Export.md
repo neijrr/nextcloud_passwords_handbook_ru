@@ -3,6 +3,20 @@ It can be used to create a backup of your current database or to create csv and 
 
 ![The Export section](_files/export-section.png)
 
+## Database Backup
+The passwords database backup format can be used to save a snapshot of your current database.
+It can include all of your `Passwords`, `Folders` and `Tags`.
+The backup can be used to restore an earlier state of your database later or to import all your data in another instance of passwords.
+
+**Note:**
+- Backups will only contain editable fields of your passwords. Things like the `created` date will not be included.
+- Backups use ids to identify objects but these will be different on every instance of passwords.
+  This means that if you make a backup on one instance of passwords and import the same backup twice on another instance, every element will be created two times since the ids do not match.
+- Backups will not contain hidden passwords
+
+## Predefined CSV Export
+Creates a CSV file
+
 ## Creating a custom CSV file
 ![The "Custom CSV" option allows the creation of a customized CSV file](_files/export-custom-csv.png)
 

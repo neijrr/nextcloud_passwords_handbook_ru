@@ -15,3 +15,4 @@
    1. [Development Environment](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
    2. [Verify GIT Commits](./Contributing/Verify-Git-Commits)
    3. [Sample Data](./Contributing/Sample-Data)
+4. [Officail Bug Tracker](https://github.com/marius-wieschollek/passwords)
