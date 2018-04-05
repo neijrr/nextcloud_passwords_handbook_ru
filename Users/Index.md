@@ -19,4 +19,4 @@ The Passwords Browser Extension gives you easy and secure access to all your pas
 ## Further Information
 - [Administrator Handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Index)
 - [Developer Handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Index)
-- [Officail Bug Tracker](https://github.com/marius-wieschollek/passwords)
+- [Official Bug Tracker](https://github.com/marius-wieschollek/passwords)
