@@ -23,7 +23,7 @@ You can get a quick overview of all passwords by their security status in the se
 
 ##### The `⋯`-Menu
 With the `More` menu, you can access all other options available for the password.
-The `Details` option will open a side section with all the password details and other things such as [Sharing](./Passwords/Sharing-Passwords) and Revisions.
+The `Details` option will open a side section with all the password details and other things such as [sharing](./Passwords/Sharing-Passwords), notes and previous revisions.
 The `Edit` option will open the `Edit Password` window where you can change the password properties.
 You can also delete the password via this menu.
 
