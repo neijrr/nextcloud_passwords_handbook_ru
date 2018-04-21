@@ -16,6 +16,7 @@ It should tell you when the legacy api was last used.
 If you can see that the api is no longer in use on your server, you should disable it.
 
 
+
 ## Internal Data Processing
 These settings influence how Passwords processes different types of data internally.
 
@@ -28,8 +29,10 @@ GDLib usually provides lower image quality and might not work with all formats.
 **Note:** If you have Imagemagick selected, make sure that svg is supported. Otherwise GDLib will be used in some cases.
 
 
+
 ## External Services
 In this section you can configure all the third party services used by Passwords.
+
 
 #### Password Security Checks
 This service is used to check if a password is safe or not.
@@ -52,6 +55,7 @@ It uses a lot less system resources than the 10Mio passwords and should run on a
 **10 Mio Passwords + Have I been pwned?** fills the local cache with the most common passwords.
 It is faster if a bad password is found in the 10 Mio Passwords database since Hibp is not contacted in that case.
 
+
 #### Password Generator Service
 This service will be used to generate the basic words for a new password.
 
@@ -63,6 +67,7 @@ It can provide words based on their rarity and type and is therefore the best se
 
 **Random Characters** generates sets of random letters for the service.
 This service has no dependencies.
+
 
 #### Favicon Service
 This service delivers the website favicons .
@@ -85,9 +90,11 @@ It finds the least icons and they usually have a crappy resolution.
 **None** always returns a default icon.
 It is the fastest and most privacy friendly service.
 
+
 #### Favicon Service Api
 If you use a service with an API, you can enter the url here.
 The default url for the besticon service is https://besticon-demo.herokuapp.com/icon.
+
 
 #### Website Preview Service
 This service is used to generate previews of websites.
@@ -112,8 +119,18 @@ For free accounts, HTTPS is not supported.
 
 **None** just delivers one of five default images.
 
+
 #### Website Preview API Key
 If you use a service with an api, you have to put your api key here.
+
+
+
+## Other Settings
+
+#### Remove deleted objects from database
+Specifies the time after which passwords, folders and tags deleted by the user will be removed from the database permanently.
+This setting does not affect the data of deleted users which will always be deleted permanently.
+
 
 
 ## Caches
@@ -127,7 +144,8 @@ Usually not used. Contains general files.
 Contains rendered images of user avatars.
 
 #### Favicon Cache
-Contains the raw and scaled favicons
+Contains the raw and scaled favicons.
+This cache can not be cleared if you are using the shared BestIcon instance.
 
 #### Pageshot Cache
 Contains the raw website screenshots and resized or cropped versions.

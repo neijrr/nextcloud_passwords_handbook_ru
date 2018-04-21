@@ -58,7 +58,8 @@ The following list contains all domains which may provide these services.
 However some local service providers like WKHTML, Pageres and the favicon finder may contact any domain as requested via the api.
 
 - https://github.com
-- https://icons.better-idea.org
+- https://passwords-app-favicons.herokuapp.com
+- http://favicongrabber.com/
 - https://icons.duckduckgo.com
 - https://www.google.com
 - https://api.screenshotapi.io
