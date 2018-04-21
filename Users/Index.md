@@ -3,6 +3,8 @@
 ## Contents
 1. [F.A.Q](./F.A.Q)
 2. [User Interface](./User-Interface)
+3. Passwords
+   1. [Sharing Passwords](./Passwords/Sharing-Passwords)
 2. [Import](./Import)
 2. [Export](./Export)
 3. [Settings](./Settings)
