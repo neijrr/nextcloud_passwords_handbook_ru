@@ -3,11 +3,11 @@
 ## Password in the list view
 ![A single password as displayed in the list view](_files/password-line.png)
 
-The password list view gives you quick access to all the passwords information.
+The password list view gives you quick access to all commonly used information.
 You can see the favicon of the related website and the name of the password.
 You can also see its security status symbolized by a shield on the right.
 Next to it is the date when the actual password was last changed.
-Depending on your settings andthe section you are in, other attributes of the password may be shown as well.
+Depending on your settings and the section you are in, other attributes of the password may be shown as well.
 
 ##### Copying Password and Username
 Clicking once on a password will copy the password and clicking twice will copy the username.
@@ -22,11 +22,11 @@ If the shield is red, the password is bad and has been found in hacker databases
 You can get a quick overview of all passwords by their security status in the security section.
 
 ##### The `⋯`-Menu
-With the more menu, you can access all other options available for the password.
-The `Details` option will open a side section with all the password details and other thinds such as [Sharing](./Passwords/Share-Password) and Revisions.
+With the `More` menu, you can access all other options available for the password.
+The `Details` option will open a side section with all the password details and other things such as [Sharing](./Passwords/Sharing-Passwords) and Revisions.
 The `Edit` option will open the `Edit Password` window where you can change the password properties.
 You can also delete the password via this menu.
 
 #### Additional display options
-If the option is enabled, you can also see the password tags in the listing.
+If the [option](./Settings#show-tags-in-the-list-view) is enabled, you can also see the password tags in the listing.
 ![Tags in the list view](_files/tags-hover.gif)
