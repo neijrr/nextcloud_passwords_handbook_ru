@@ -6,7 +6,7 @@ The sharing options can be found in the `Share` tab.
 If someone shares a password with you, he can also disable sharing.
 
 
-## Share with another user
+## Share passwords with another user
 To share the password with another user, simply type the name or the username of the person in the search field.
 You can then select the user from the search results.
 If the user does not appear in the search results it is likely that it does not exist or you are not allowed to share with him.
@@ -37,4 +37,10 @@ This also means that if a shared password is updated or the permissions of the s
 Since this synchronisation is done by the server in the background, it may take some minutes.
 To make this process transparent to you, you will see a loading icon around the avatar of the user if there are changes pending for or from this specific user.
 
-![A password is queued to be synchronized](../_files/share-update.gif)
+![A password (middle) is queued to be synchronized](../_files/share-update.gif)
+
+
+
+## Share password via QRCode
+In the `Share` tab of the password details, you will find the `QRCode` tab.
+The QRCode sharing functionality allows you to create a QRCode for the most commonly used properties of a password: the username, the website and the password itself.
