@@ -1,4 +1,4 @@
-The export can be found `More > Backup and Restore > Backup or Export`.
+The export can be found under `More > Backup and Restore > Backup or Export`.
 It can be used to create a backup of your current database or to create csv and office documents for the use in third party applications.
 
 ![The Export section](_files/export-section.png)
