@@ -2,14 +2,14 @@
 | Property | Type | Writable | Encrypted | Versioned | Description |
 | --- | --- | --- | --- | --- | --- |
 | id | string | no | no | no | The UUID of the folder |
+| label | string | yes | yes | yes | User defined label of the folder |
+| parent | string | no | no | yes | UUID of the parent folder |
 | created | int | no | no | no | Unix timestamp when the folder was created |
 | updated | int | no | no | yes | Unix timestamp when the folder was updated |
 | edited | int | yes | no | yes | Unix timestamp when the user last changed the folder name |
 | revision | string | no | no | yes | UUID of the current revision |
-| label | string | yes | yes | yes | User defined label of the folder |
-| parent | string | no | no | yes | UUID of the parent folder |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
-| sseType | string | yes | no | yes | Type of the used server side encryption |
+| sseType | string | no | no | yes | Type of the used server side encryption |
 | hidden | bool | yes | no | yes | Hides the folder in list / find actions |
 | trashed | bool | no | no | yes | True if the folder is in the trash |
 | favourite | bool | yes | no | yes | True if the user has marked the folder as favourite |

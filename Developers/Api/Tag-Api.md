@@ -2,14 +2,14 @@
 | Property | Type | Writable | Encrypted | Versioned | Description |
 | --- | --- | --- | --- | --- | --- |
 | id | string | no | no | no | The UUID of the tag |
+| label | string | yes | yes | yes | User defined label of the tag |
+| color | string | yes | yes | yes | The color of the tag. Any valid CSSv3 color is accepted. |
 | created | int | no | no | no | Unix timestamp when the tag was created |
 | updated | int | no | no | yes | Unix timestamp when the tag was updated |
 | edited | int | yes | no | yes | Unix timestamp when the user last edited the tag name or color |
 | revision | string | no | no | yes | UUID of the current revision |
-| label | string | yes | yes | yes | User defined label of the tag |
-| color | string | yes | yes | yes | The color of the tag. Any valid CSSv3 color is accepted. |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
-| sseType | string | yes | no | yes | Type of the used server side encryption |
+| sseType | string | no | no | yes | Type of the used server side encryption |
 | hidden | bool | yes | no | yes | Hides the tag in list / find actions |
 | trashed | bool | no | no | yes | True if the tag is in the trash |
 | favourite | bool | yes | no | yes | True if the user has marked the tag as favourite |
