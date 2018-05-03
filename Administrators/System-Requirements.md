@@ -26,6 +26,7 @@ You can get a free HTTPS certificate from [Let's Encrypt](https://letsencrypt.or
 ### Background Jobs
 Passwords uses several background jobs to process data.
 To ensure that these run as intended, it is recommended to configure Nextcloud to run those jobs trough cron.
+Ajax cron jobs are not supported and will not work.
 More information can be found in the [documentation](https://docs.nextcloud.com/server/12/go.php?to=admin-background-jobs).
 
 ### Browser Support
