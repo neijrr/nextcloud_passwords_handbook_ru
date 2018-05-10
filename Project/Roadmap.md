@@ -6,7 +6,6 @@
 #### 2018.3
  - **Settings API**
  - User settings
- - Encrypted Backups
  - Table sorting header
  - Delete all in trash
  - Autocomplete for sharing
@@ -17,6 +16,7 @@
 #### 2018.4
  - **In page search**
  - Handbook
+ - E-Mail Notifications
  - Delete passwords of deleted users
  - Permanently remove deleted objects
  - Tags in the list view [#3](https://github.com/marius-wieschollek/passwords/issues/3)
@@ -24,15 +24,16 @@
 #### 2018.5
  - **Custom Password Fields** [#17](https://github.com/marius-wieschollek/passwords/issues/17)
  - Global search
- - Authentication api
+ - Delete everything option
 
 #### 2018.6
  - **Master password support**
  - Keyboard support for dropdown menu in tags
+ - Authentication api
 
 #### 2018.7
  - **Client Side Encryption**
- - Delete everything option
+ - Encrypted Backups
 
 #### 2018.9
  - **TOTP**
@@ -64,7 +65,6 @@
  - Easy client authentication process
  - Improved view of folders in trash
  - Language support
- - E-Mail Notifications
  - Bookmarks integration
  - Improved sharing with log
  - Group Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
