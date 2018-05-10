@@ -29,6 +29,7 @@
 | user.notification.errors | bool | true | Whether or not the user receives notifications about backgroudn errors |
 | server.version | string | - | The Nextcloud version of the server |
 | server.baseUrl | string | - | The base url of the server |
+| server.baseUrl.webdav | string | - | The base url of the WebDav service used for file storage |
 | server.sharing.enabled | bool | true | Whether or not sharing is enabled globally |
 | server.sharing.resharing | bool | true | Whether or not resharing shared entities is enabled globally |
 | server.sharing.autocomplete | bool | true | Whether or not the [auto-complete](./Share-Api.md#the-partners-action) request works |
@@ -142,7 +143,12 @@ The return value is a JSON formatted object with all settings from the requested
 | Setting | Type | Default |Allowed Values | Description |
 | --- | --- | --- | --- | --- |
 | client.ui.section.default | string | `all` | `all`, `favourites`, `folders`, `tags`, `recent` | Which section to show when the app ist loaded |
-| client.ui.password.field.title | string | `label` | `label`, `website`, `user` | Which field to use as title of a password |
-| client.ui.password.field.sorting | string | `byTitle` | `byTitle`, `label`, `website`, `user` | Sort passwords by this field instead of the label. `byTitle` means use the `title` setting |
+| client.ui.password.field.title | string | `label` | `label`, `website` | Which field to use as title of a password |
+| client.ui.password.field.sorting | string | `byTitle` | `byTitle`, `label`, `website` | Sort passwords by this field instead of the label. `byTitle` means use the `title` setting |
+| client.ui.password.click.action | string | `password` | `password`, `username`, `url`, `details` | Copy the choosen attribute to clipboard when the user clicks on the password oropen the `details` view. |
+| client.ui.password.dblClick.action | string | `username` | `password`, `username`, `url`, `details` | Copy the choosen attribute to clipboard when the user double clicks on the password oropen the `details` view. |
 | client.ui.password.menu.copy | bool | `false` | - | Show "copy to clipboard" options in the password menu |
-| client.ui.list.tags.show | bool | `false` | - |Show tags in the list view |
+| client.ui.password.user.show | bool | `false` | - | Show the user name in the list view |
+| client.ui.custom.fields.show.hidden | bool | `false` | - | Show hidden custom fields in the ui |
+| client.ui.list.tags.show | bool | `false` | - | Show tags in the list view |
+| client.settings.advanced | bool | `false` | - | Show advanced settings |

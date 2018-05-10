@@ -2,25 +2,26 @@
 | Property | Type | Writable | Encrypted | Versioned | Description |
 | --- | --- | --- | --- | --- | --- |
 | id | string | no | no | no | The UUID of the password |
-| created | int | no | no | no | Unix timestamp when the password was created |
-| updated | int | no | no | yes | Unix timestamp when the password was updated |
-| edited | int | yes | no | yes | Unix timestamp when the user last changed the password |
-| share | string / null | no | no | no | UUID of the share if the password was shared by someone else with the user |
-| revision | string | no | no | yes | UUID of the current revision |
-| label | string | yes | yes | yes | User defined label of the password | 
+| label | string | yes | yes | yes | User defined label of the password |
 | username | string | yes | yes | yes | Username associated with the password |
 | password | string | yes | yes | yes | The actual password |
-| notes | string | yes | yes | yes | Notes for the password. Can be formatted with Markdown |
 | url | string | yes | yes | yes | Url of the website |
+| notes | string | yes | yes | yes | Notes for the password. Can be formatted with Markdown |
+| customFields | string | yes | yes | yes | Custom fields created by the user. (See [custom fields](#Custom-Fields) |
 | status | int | no | no | yes | Security status of the password |
 | hash | string | yes | no | yes | SHA1 hash of the password |
 | folder | string | yes | no | yes | UUID of the current folder of the password |
+| revision | string | no | no | yes | UUID of the current revision |
+| share | string / null | no | no | no | UUID of the share if the password was shared by someone else with the user |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
-| sseType | string | yes | no | yes | Type of the used server side encryption |
+| sseType | string | no | no | yes | Type of the used server side encryption |
 | hidden | bool | yes | no | yes | Hides the password in list / find actions |
 | trashed | bool | no | no | yes | True if the password is in the trash |
 | favourite | bool | yes | no | yes | True if the user has marked the password as favourite |
 | editable | bool | no | no | no | Specifies if the encrypted properties can be changed. Might be false for shared passwords |
+| edited | int | yes | no | yes | Unix timestamp when the user last changed the password |
+| created | int | no | no | no | Unix timestamp when the password was created |
+| updated | int | no | no | yes | Unix timestamp when the password was updated |
 
 #### Detail Levels
 | Level | Description |
@@ -78,6 +79,7 @@ The create action creates a new password with the given attributes.
 | username | string | empty | no | The username associated with the password |
 | url | string | empty | no | The url of the associated website |
 | notes | string | empty | no | The users notes |
+| customFields| string | empty | no | The custom fields defined by the user |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
 | folder | string | Base folder | no | The current folder of the password |
@@ -118,6 +120,7 @@ The update action creates a new revision of a password with an updated set of at
 | username | string | empty | no | The username associated with the password |
 | url | string | empty | no | The url of the associated website |
 | notes | string | empty | no | The users notes |
+| customFields| string | empty | no | The custom fields defined by the user |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
 | folder | string | Base folder | no | The current folder of the password |
@@ -274,3 +277,43 @@ The return value is a list of password objects that match the criteria with the 
  - The property `trashed` will be set to `false` if not present
  - The list will not include hidden passwords
  - The list will not include suspended passwords where the folder or a parent folder is in the trash
+
+
+
+
+# Custom Fields
+The custom fields attribute contains a JSON formatted object with user defined custom fields.
+Custom fields are part of the shared attributes.
+
+#### Format
+Each field has three attributes: the name, the type and the value.
+The `name` is used as key in the JSON object. This key contains another object with the `type` and `value` keys.
+If the name starts with an underscore, the field will be visually hidden and not displayed in the ui.
+```json
+{
+    "Field Name": {
+        "type": "text",
+        "value": "Field Value"
+    },
+    "_HiddenField": {
+         "type": "text",
+         "value": "Field Value"
+    }
+}
+```
+
+#### Field Types
+| Type | Description |
+| --- | --- |
+| text | Generic text value |
+| secret | A secret value which should be treated like a password |
+| email | An email address |
+| url | A valid full url. Any protocol is allowed |
+| file | The path to a file accessible over WebDav. The base url of the WebDav service is defined in the setting `server.baseUrl.webdav`. |
+
+#### Notes
+- Only 20 fields per password are allowed including hidden fields
+- The name has a maximum length of 48 characters
+- The value has a maximum length of 320 characters
+- The total length of all custom fields can not exceed 8192 characters
+- The value should not be but may be empty
