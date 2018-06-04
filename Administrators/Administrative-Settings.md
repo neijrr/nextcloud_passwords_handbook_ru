@@ -125,12 +125,33 @@ If you use a service with an api, you have to put your api key here.
 
 
 
+## Default Email Settings
+These settigns can be overwritten by the user.
+
+#### Send emails for security events
+Enable emails for security relevant events by default.
+This will enable emails for bad passwords.
+
+#### Send emails for sharing events
+Send emails when a password was shared with an user.
+
+
+
 ## Other Settings
 
 #### Remove deleted objects from database
 Specifies the time after which passwords, folders and tags deleted by the user will be removed from the database permanently.
 This setting does not affect the data of deleted users which will always be deleted permanently.
 
+#### Enable HTTPS detection debugging
+Enable the debugging tool for HTTPS.
+This can be helpful if you have HTTPS enabled, but get the HTTPS warning anyway.
+
+#### Enable Passwords Nightly Builds
+This setting will modify the Nextcloud core to enable the installation of nightly updates.
+The system config key `allowNightlyUpdates` will contain an array of apps for which the nightly updates are enabled.
+
+**Note:** You can add other apps to `allowNightlyUpdates` or remove passwords from it manually, but the functionality will only work if the backend option is enabled.
 
 
 ## Caches
