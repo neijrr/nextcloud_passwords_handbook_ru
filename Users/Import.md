@@ -24,13 +24,14 @@ If you're ready to go, hit the `Import` button and start importing your files
 
 
 ## Import Options
-##### Import Mode
-The `Import Mode` defines how the Importer should handle conflicts.
-`Skip if same revision` will skip entries when an object with the same id and same revision already exists in the database.
-`Skip if id exists` will skip entries when the id already exists.
-`Overwrite if id exists` will overwrite an entry with the data from the import if the id is found in the database.
-`Clone if id exists` will create a new entry if an entry with the same id already exists.
-**Note:** For all formats except `Database Backup`, the import will match the passwords by their name.
+##### Conflict Handling Mode
+The `Conflict handling` mode defines how the Importer should handle conflicts.
+`Skip if same revision` will skip an entry if it already exists and the revision matches. Works only if the import contains a revision field.
+`Skip always` will skip an entry if it already exists in the database.
+`Overwrite existing` will overwrite an entry if it already exists in the database.
+`Merge with existing` will merge the new data with the current data.
+`Create new entry` will always create a new entry, even if it already exists.
+**Note:** If no id field is available, entries will be matched by their name. The `Database Backup` option will always use id based matching.
 
 ##### Don't edit passwords shared with me
 If this option is selected, passwords which were shared with you by other users will not be overwritten by the import.
@@ -70,7 +71,7 @@ Select the database which you want to import your csv into. This also has an eff
 Skips the first line of the csv. Select this option if your csv file has a header which should not be imported.
 
 ##### Interpolate missing fields
-If fields like the label or the url are not present, this option will tell the importer to check if another field may contain the value.
+This option will make the Importer try to guess missing fields like the url.
 
 ##### CSV Field Mapping
 Here you can map the columns of your csv file. You don't have to map every column, just the ones you wish to import.
