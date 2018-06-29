@@ -142,7 +142,7 @@ The return value is a JSON formatted object with all settings from the requested
 # Known client settings
 | Setting | Type | Default |Allowed Values | Description |
 | --- | --- | --- | --- | --- |
-| client.ui.section.default | string | `all` | `all`, `favourites`, `folders`, `tags`, `recent` | Which section to show when the app ist loaded |
+| client.ui.section.default | string | `all` | `all`, `favorites`, `folders`, `tags`, `recent` | Which section to show when the app ist loaded |
 | client.ui.password.field.title | string | `label` | `label`, `website` | Which field to use as title of a password |
 | client.ui.password.field.sorting | string | `byTitle` | `byTitle`, `label`, `website` | Sort passwords by this field instead of the label. `byTitle` means use the `title` setting |
 | client.ui.password.click.action | string | `password` | `password`, `username`, `url`, `details` | Copy the choosen attribute to clipboard when the user clicks on the password oropen the `details` view. |

@@ -18,7 +18,7 @@
 | sseType | string | no | no | yes | Type of the used server side encryption |
 | hidden | bool | yes | no | yes | Hides the password in list / find actions |
 | trashed | bool | no | no | yes | True if the password is in the trash |
-| favourite | bool | yes | no | yes | True if the user has marked the password as favourite |
+| favorite | bool | yes | no | yes | True if the user has marked the password as favorite |
 | editable | bool | no | no | no | Specifies if the encrypted properties can be changed. Might be false for shared passwords |
 | edited | int | yes | no | yes | Unix timestamp when the user last changed the password |
 | created | int | no | no | no | Unix timestamp when the password was created |
@@ -86,7 +86,7 @@ The create action creates a new password with the given attributes.
 | folder | string | Base folder | no | The current folder of the password |
 | edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |
-| favourite | bool | false | no | Whether or not the user has marked this password as favourite |
+| favorite | bool | false | no | Whether or not the user has marked this password as favorite |
 | tags | array | empty | no | The id of all tags associated with this passwords |
 
 #### Return value
@@ -127,7 +127,7 @@ The update action creates a new revision of a password with an updated set of at
 | folder | string | Base folder | no | The current folder of the password |
 | edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |
-| favourite | bool | false | no | Whether or not the user has marked this password as favourite |
+| favorite | bool | false | no | Whether or not the user has marked this password as favorite |
 | tags | array | empty | no | The id of all tags associated with this password |
 
 #### Return value
@@ -268,7 +268,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | sseType | string | The server side encryption type |
 | status | int | The server side detected security status |
 | trashed | bool | Whether or not the password is in the trash |
-| favourite | bool | Whether or not the user has marked the password as favourite |
+| favorite | bool | Whether or not the user has marked the password as favorite |
 
 #### Return value
 The success status code is `200 Ok`

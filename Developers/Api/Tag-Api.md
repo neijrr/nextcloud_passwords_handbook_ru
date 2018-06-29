@@ -12,7 +12,7 @@
 | sseType | string | no | no | yes | Type of the used server side encryption |
 | hidden | bool | yes | no | yes | Hides the tag in list / find actions |
 | trashed | bool | no | no | yes | True if the tag is in the trash |
-| favourite | bool | yes | no | yes | True if the user has marked the tag as favourite |
+| favorite | bool | yes | no | yes | True if the user has marked the tag as favorite |
 
 #### Detail Levels
 | Level | Description |
@@ -60,7 +60,7 @@ The create action creates a new tag with the given attributes.
 | cseType | string | "none" | no | The client side encryption type |
 | edited | int | 0 | no | Unix timestamp when the user has last edited the tag |
 | hidden | bool | false | no | Whether or not the tag should be hidden |
-| favourite | bool | false | no | Whether or not the user has marked this tag as favourite |
+| favorite | bool | false | no | Whether or not the user has marked this tag as favorite |
 
 #### Return value
 The success status code is `201 Created`
@@ -88,7 +88,7 @@ The update action creates a new revision of a tag with an updated set of attribu
 | cseType | string | "none" | no | The client side encryption type |
 | edited | int | 0 | no | Unix timestamp when the user has last edited the tag |
 | hidden | bool | false | no | Whether or not the tag should be hidden |
-| favourite | bool | false | no | Whether or not the user has marked this tag as favourite |
+| favorite | bool | false | no | Whether or not the user has marked this tag as favorite |
 
 #### Return value
 The success status code is `200 Ok`
@@ -215,7 +215,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | cseType | string | The client side encryption type |
 | sseType | string | The server side encryption type |
 | trashed | bool | Whether or not the tag is in the trash |
-| favourite | bool | Whether or not the user has marked the tag as favourite |
+| favorite | bool | Whether or not the user has marked the tag as favorite |
 
 #### Return value
 The success status code is `200 Ok`

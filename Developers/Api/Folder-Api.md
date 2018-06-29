@@ -12,7 +12,7 @@
 | sseType | string | no | no | yes | Type of the used server side encryption |
 | hidden | bool | yes | no | yes | Hides the folder in list / find actions |
 | trashed | bool | no | no | yes | True if the folder is in the trash |
-| favourite | bool | yes | no | yes | True if the user has marked the folder as favourite |
+| favorite | bool | yes | no | yes | True if the user has marked the folder as favorite |
 
 #### Detail Levels
 | Level | Description |
@@ -68,7 +68,7 @@ The create action creates a new folder with the given attributes.
 | cseType | string | "none" | no | The client side encryption type |
 | edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
-| favourite | bool | false | no | Whether or not the user has marked this folder as favourite |
+| favorite | bool | false | no | Whether or not the user has marked this folder as favorite |
 
 #### Return value
 The success status code is `201 Created`
@@ -98,7 +98,7 @@ The update action creates a new revision of a folder with an updated set of attr
 | cseType | string | "none" | no | The client side encryption type |
 | edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
-| favourite | bool | false | no | Whether or not the user has marked this folder as favourite |
+| favorite | bool | false | no | Whether or not the user has marked this folder as favorite |
 
 #### Return value
 The success status code is `200 Ok`
@@ -231,7 +231,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | cseType | string | The client side encryption type |
 | sseType | string | The server side encryption type |
 | trashed | bool | Whether or not the folder is in the trash |
-| favourite | bool | Whether or not the user has marked the folder as favourite |
+| favorite | bool | Whether or not the user has marked the folder as favorite |
 
 #### Return value
 The success status code is `200 Ok`
