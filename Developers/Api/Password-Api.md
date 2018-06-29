@@ -8,7 +8,8 @@
 | url | string | yes | yes | yes | Url of the website |
 | notes | string | yes | yes | yes | Notes for the password. Can be formatted with Markdown |
 | customFields | string | yes | yes | yes | Custom fields created by the user. (See [custom fields](#Custom-Fields) |
-| status | int | no | no | yes | Security status of the password |
+| status | int | no | no | yes | Security status level of the password (0 = ok, 1 = user rules violated, 2 = breached) |
+| statusCode | string | no | no | yes | Specific code for the current security status (GOOD, OUTDATED, DUPLICATE, BREACHED) |
 | hash | string | yes | no | yes | SHA1 hash of the password |
 | folder | string | yes | no | yes | UUID of the current folder of the password |
 | revision | string | no | no | yes | UUID of the current revision |
@@ -45,9 +46,9 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 | edited | Date | Date when the use last changed the password |
 
 #### Notes
- - The status property may be 0 for secure, 1 for weak and 2 for broken.
- Since not all password analysis can be done server side, some passwords may be classified as 0 even if they fail the users password rules.
- The users password rules need to be checked client sided.
+ - The status property may be 0 for secure, 1 for weak and 2 for breached.
+ - The status code GOOD is level 0, OUTDATED and DUPLICATE are level 1 and BREACHED is level 2
+ - Since the status check is done once per day server side, the DUPLICATE status may take some time to be applied to all affected passwords
  - The difference betwenn `updated` and `edited` is that updated is always set by the server when the password is changed and edited has to be set by the client.
 
 
