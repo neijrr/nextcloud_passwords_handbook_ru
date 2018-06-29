@@ -5,6 +5,16 @@ These settings allow you to define how the app itself and the official clients b
 
 
 ## Security
+### Password Rules
+Password rules activate additional security checks for passwords.
+If a password fails one of these checks, it will be marked as weak.
+
+##### Mark duplicates
+If you use a password more than once, this option will mark it as weak.
+
+##### Maximum age in days
+Set the maximum age allowed for your passwords. Setting the value to `0` will disable the check.
+
 ### Password Generator
 These settings define how the built-in password generator creates passwords.
 You may be able to temporarily overwrite these settings when creating a password.
@@ -28,17 +38,17 @@ If activated, the password generator will add special characters like `$, €, @
 Here you can choose which section will be shown when you open the passwords app.
 By default the `All Passwords` section will be shown, but you can also select your `Favourites`, `Folders`, `Tags` or `Recent` passwords as inital section.
 
+##### Show hidden custom fields (Advanced)
+If enabled, this option will show hidden custom field (custom fields which start with an underscore "`_`") in the password details and edit form.
+These fields are usually visually hidden and may be used for technical information, but they count towards the custom fields maximum limit.
+
+
 ### Password List View
 These settings change how passwords are displayed in the list view.
 
 ##### Set title from
 By default the name of the password will be shown in the list view.
-You can also select the `Website` or the `Username` to be used.
-
-##### Sort by
-This option lets you choose which field will be used to sort passwords, when "Sort by Name" is selected in the list view.
-By default the title field from the previous option will be used.
-But you can also have your passwords sorted by `Name`, `Website` or `Username` independently from the title field.
+You can also select the `Website` to be used.
 
 ##### Add copy options in menu
 If this option is enabled, the `⋯`-menu will contain two menu entries to copy the password and the username.
@@ -52,6 +62,38 @@ This will increase the loading times if you have a lot of tags.
 Also the tags will not be shown on mobile devices.
 
 ![Tags in the list view](_files/tags-hover.gif)
+
+##### Sort by (Advanced)
+This option lets you choose which field will be used to sort passwords, when "Sort by Name" is selected in the list view.
+By default the title field from the `Set title from` option will be used.
+But you can also have your passwords sorted by `Name`, `Website` independently from the title field.
+
+##### Single click action (Advanced)
+This option defines the action which will be executed when you click on a password entry.
+The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
+The option `Show details` will open the password details.
+
+##### Double click action (Advanced)
+This option defines the action which will be executed when you double click on a password entry.
+The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
+The option `Show details` will open the password details.
+
+##### Show username in list view (Advanced)
+This option will always append your username after the title in the list view.
+This option does not have any effect on the sorting of passwords.
+
+
+### Search (Advanced)
+The search section adds options to allow you to modify the behaviour of the password search.
+
+##### Search as i type (Advanced)
+If enabled, the search will start as soon as you start typing anywhere in the passwords app.
+The search box will be focused automatically. (This of course excludes input fields)
+
+##### Search everywhere with Enter (Advanced)
+By default, passwords will search in the current section.
+If this option is enabled, passwords will search everywhere if you hit the "Enter" button in the search box.
+
 
 
 ## Notifications
@@ -75,6 +117,9 @@ Passwords will also send a notification in any suspicious events concerning your
 
 ##### Passwords shared with me
 If this option is enabled, you will receive notifications when someone shared a new password with you.
+
+##### Other errors (Advanced)
+If a background operation (e.g. updating a shared password) fails, you will receive a notification.
 
 ##### Other errors
 Tasks like sharing passwords, security checks and database housekeeping will run independently in the background.
