@@ -94,6 +94,9 @@ The search box will be focused automatically. (This of course excludes input fie
 By default, passwords will search in the current section.
 If this option is enabled, passwords will search everywhere if you hit the "Enter" button in the search box.
 
+##### Always show search section (Advanced)
+This option will make the search section always visible in the navigation on the left.
+
 
 
 ## Notifications

@@ -22,6 +22,8 @@
 | user.password.generator.strength | int | 1 | The strength of generated passwords |
 | user.password.generator.numbers | bool | false | Whether or not generated passwords contain numbers |
 | user.password.generator.special | bool | false | Whether or not generated passwords contain special characters |
+| user.password.security.duplicates | bool | true | Whether or not the server should check passwords for duplicates |
+| user.password.security.age | int | 0 | Marks passwords a weak if they surpass the specified date mark. 0 is off. |
 | user.mail.security | bool | true | Whether or not the user receives mails about security issues |
 | user.mail.shares | bool | false | Whether or not the user receives mails about new shared objects |
 | user.notification.security | bool | true | Whether or not the user receives notifications about security issues |
@@ -151,4 +153,7 @@ The return value is a JSON formatted object with all settings from the requested
 | client.ui.password.user.show | bool | `false` | - | Show the user name in the list view |
 | client.ui.custom.fields.show.hidden | bool | `false` | - | Show hidden custom fields in the ui |
 | client.ui.list.tags.show | bool | `false` | - | Show tags in the list view |
+| client.search.show | bool | `false` | - | Show search section in navigation |
+| client.search.live | bool | `true` | - | Start search when user types |
+| client.search.global | bool | `true` | - | Start global search when user hits enter |
 | client.settings.advanced | bool | `false` | - | Show advanced settings |
