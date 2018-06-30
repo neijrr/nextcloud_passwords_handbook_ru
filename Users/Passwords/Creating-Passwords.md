@@ -1,18 +1,18 @@
 ![The password creation dialog](../_files/password-create.png)
 
 ### Properties
-###### Username
+##### Username
 The username of the account. The username is optional.
 
-###### Password
+##### Password
 The password. You can toggle the visibility by clicking the "eye".
 The refresh button will generate a new password and also show the password options.
 
-###### Name
+##### Name
 The name of the password entry which will be shown in the list view.
 If no name is chosen one will be generated.
 
-###### Website
+##### Website
 The website associated with the password.
 The website will be used by the browser addon to determine on which pages the password will be suggested.
 
@@ -32,8 +32,8 @@ You can show those fields by enabling the [option](Settings#show-hidden-custom-f
 
 
 ### More Options
-###### Favorite
+##### Favorite
 Select this box to mark the password as favorite
 
-###### Encryption
+##### Encryption
 If available, you can select an encryption type for the password here.
