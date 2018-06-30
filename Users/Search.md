@@ -9,7 +9,7 @@ Clicking the search icon will unveil the search box where you can enter a search
 The search will automatically show all entries matching the current search query.
 Clicking the "X" icon in the search box will close the search view.
 
-You can also open the search box with `Ctrl` + `F` or by typing anywhere on the page if [the "Search as i type" option](#search-as-i-type-advanced) is activated.
+You can also open the search box with `Ctrl` + `F` or by typing anywhere on the page if [the "Search as i type" option](Settings##search-as-i-type-advanced) is activated.
 
 ![The activated search box](_files/search-active.png)
 
@@ -17,7 +17,7 @@ You can also open the search box with `Ctrl` + `F` or by typing anywhere on the 
 By default you will only search in the currently displayed passwords, folders and tags.
 But you can also use the global search to search in all passwords, folders and tags.
 To do sou, you have to click on the "Search everywhere for "…"" link which you can find either at the end of the current search results or below the "No results" message.
-If you have [the "Search everywhere with Enter" option](#search-everywhere-with-enter-advanced) option enabled, you can also trigger the global search by hitting the `Enter` key in the search box.
+If you have [the "Search everywhere with Enter" option](Settings##search-everywhere-with-enter-advanced) option enabled, you can also trigger the global search by hitting the `Enter` key in the search box.
 
 
 ## Advanced search usage

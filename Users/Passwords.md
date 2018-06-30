@@ -1,7 +1,7 @@
 ![The All Passwords Section with password details visible](_files/password-details.png)
 
 ## Password in the list view
-![A single password as displayed in the list view](_files/password-line.png)
+![A single password as displayed in the list view](_files/password-single.png)
 
 The password list view gives you quick access to all commonly used information.
 You can see the favicon of the related website and the name of the password.
