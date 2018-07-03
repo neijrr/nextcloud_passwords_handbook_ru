@@ -20,7 +20,12 @@ The value of the `Remove deleted objects from database` setting will be ignored 
 While a user is queued for complete removal, you can not reassign the username.
 
 
-# Sharing Passwords
+## Sharing Passwords
 Shared passwords are synchronized using a cron job.
 This means that creating, updating or deleting a shared password will not be completed until the cron job has been executed.
 If you want to speed up this process, you can run your cron jobs more often.
+
+## Repairing the Database
+Passwords offers a repair job which can fix database inconsistencies like orphaned revisions or broken relations between entities.
+It will also perform upgrades of entities when a new field is added or changed.
+To execute the repair job, execute the Nextcloud maintenance command from the nextcloud folder `./occ maintenance:repair`

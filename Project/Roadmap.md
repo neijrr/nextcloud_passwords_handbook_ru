@@ -27,18 +27,24 @@
  - Delete everything option
 
 #### 2018.6
- - **Master password support**
- - Keyboard support for dropdown menu in tags
- - Authentication api
+ - **Ajax Cronjob Support**
+ - Czech Translation
 
 #### 2018.7
- - **Client Side Encryption**
- - Encrypted Backups
+ - **User Password Rules**
+ - HIBP v2 support
+ - Database Repair
 
 #### 2018.9
- - **TOTP**
+ - **Client Side Encryption**
+ - Keyboard support for dropdown menu in tags
+ - Authentication api
+ - Encrypted Backups
 
 #### 2018.10
+ - **TOTP**
+
+#### 2018.12
  - **Public link shares**
 
 #### Unscheduled
