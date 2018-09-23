@@ -3,8 +3,8 @@
 | Processor | 2x1 GHz      | 4x2GHz |
 | Ram       | 512 MiB      | 8GiB |
 | Disk      | 4 GiB        | 64GiB |
-| Platform  | Nextcloud 12 | Nextcloud 13 |
-| OS        | Linux        | Ubuntu 16.04 |
+| Platform  | Nextcloud 12 | Nextcloud 14 |
+| OS        | Linux        | Ubuntu 18.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
 | PHP       | PHP 7.1 | PHP 7.2 |
 | Webserver | HTTPS   | Nginx 1.12.2 HTTPS |
@@ -20,7 +20,7 @@ In this case the last version supporting the old Nextcloud release will receive 
 
 ### HTTPS
 Passwords requires HTTPS to work. This can not be disabled.
-Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
+Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
 You can get a free HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/getting-started/).
 
 ### Background Jobs
@@ -28,7 +28,7 @@ Passwords uses several background jobs to process data.
 To ensure that these run as intended, it is recommended to configure Nextcloud to run those jobs trough cron.
 Executing background jobs with Ajax is in experimental stage and may lead to unexpected results.
 This is because ajax jobs are executed in the user scope, while cron and webcron are executed in the global scope.
-More information can be found in the [documentation](https://docs.nextcloud.com/server/12/go.php?to=admin-background-jobs).
+More information can be found in the [documentation](https://docs.nextcloud.com/server/14/go.php?to=admin-background-jobs).
 
 ### Browser Support
 The web interface of Passwords is designed to support the latest versions of major browsers.
@@ -42,12 +42,6 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get upgrade
 ```
-
-### Wkhtml dependencies
-- libmagickwand
-- libXrender1
-- libfontconfig1
-- libXext6
 
 ### Pageres dependencies
 - PhantomJS 
@@ -67,7 +61,7 @@ However some local service providers like WKHTML, Pageres and the favicon finder
 - https://api.screenshotapi.io
 - http://api.screenshotmachine.com
 - https://archive.org
-- https://haveibeenpwned.com
+- https://api.pwnedpasswords.com
 - https://raw.githubusercontent.com
 - http://watchout4snakes.com
 
