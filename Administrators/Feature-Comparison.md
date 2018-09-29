@@ -12,10 +12,10 @@
 | Revisions              | ✔ | ✔ |
 | Password Generator     | ✔ | ✔ |
 | Quick Actions          | ✔ | ✘ |
-| CSV Export             | ✔ | ✘[¹][] |
+| CSV Export             | ✔ | ✘¹ |
 | CSV Import             | ✔ | ✔ |
 | Excel Export           | ✔ | ✘ |
-| Backups                | ✔ | ✘[¹][] |
+| Backups                | ✔ | ✘¹ |
 | Manual                 | ✔ | ✘ |
 
 
@@ -58,5 +58,5 @@
 | Multiple Accounts        | ✘ | ✔ |
 
 
-##### Notes
-[¹]: Implemented but broken
+##### Footnotes
+¹: Implemented but broken
