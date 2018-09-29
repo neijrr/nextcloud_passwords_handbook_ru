@@ -2,21 +2,21 @@
 ### Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Mordern User Interface | ✔ | ✖ |
-| Passwords              | ✔ | ✔ |
-| Folders                | ✔ | ✖ |
-| Tags                   | ✔ | ✔ |
-| Trash                  | ✔ | ✔ |
-| Vaults                 | ✖ | ✔ |
-| Custom Fields          | ✔ | ✔ |
-| Revisions              | ✔ | ✔ |
-| Password Generator     | ✔ | ✔ |
-| Quick Actions          | ✔ | ✖ |
-| CSV Export             | ✔ | ✖¹ |
-| CSV Import             | ✔ | ✔ |
-| Excel Export           | ✔ | ✖ |
-| Backups                | ✔ | ✖¹ |
-| Manual                 | ✔ | ✖ |
+| Modern User Interface | ✔ | ✖ |
+| Passwords             | ✔ | ✔ |
+| Folders               | ✔ | ✖ |
+| Tags                  | ✔ | ✔ |
+| Trash                 | ✔ | ✔ |
+| Vaults                | ✖ | ✔ |
+| Custom Fields         | ✔ | ✔ |
+| Revisions             | ✔ | ✔ |
+| Password Generator    | ✔ | ✔ |
+| Quick Actions         | ✔ | ✖ |
+| CSV Export            | ✔ | ✖¹ |
+| CSV Import            | ✔ | ✔ |
+| Excel Export          | ✔ | ✖ |
+| Backups               | ✔ | ✖¹ |
+| Manual                | ✔ | ✖ |
 
 
 ### Password Security
@@ -45,6 +45,7 @@
 | --- | --- | --- |
 | Compatibility | Nextcloud 12, 13, 14 | Nextcloud 12, 13 |
 | Self hosted   | ✔ | ✔ |
+| Languages     | English, German, Czech, Dutch, Russian | 48 languages including dialects |
 | Price         | free | free |
 
 
@@ -59,4 +60,4 @@
 
 
 ##### Footnotes
-¹: Implemented but broken
+¹ Implemented but broken

@@ -36,18 +36,23 @@
  - Database Repair
 
 #### 2018.9
+ - **Nextcloud 14 support**
+
+#### 2018.10
+ - **New Translations**
+
+#### 2018.12
  - **Client Side Encryption**
  - Keyboard support for dropdown menu in tags
  - Authentication api
  - Encrypted Backups
 
-#### 2018.10
- - **TOTP**
-
-#### 2018.12
- - **Public link shares**
-
 #### Unscheduled
+ - **TOTP**
+ - **Folder sharing**
+ - **Tag sharing**
+ - **Group sharing**
+ - **Public link shares**
  - Add settings in database backup
  - Detailed revision view
  - Add tag on import
