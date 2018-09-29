@@ -2,41 +2,41 @@
 ### Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Mordern User Interface | ✔ | ✘ |
+| Mordern User Interface | ✔ | ✖ |
 | Passwords              | ✔ | ✔ |
-| Folders                | ✔ | ✘ |
+| Folders                | ✔ | ✖ |
 | Tags                   | ✔ | ✔ |
 | Trash                  | ✔ | ✔ |
-| Vaults                 | ✘ | ✔ |
+| Vaults                 | ✖ | ✔ |
 | Custom Fields          | ✔ | ✔ |
 | Revisions              | ✔ | ✔ |
 | Password Generator     | ✔ | ✔ |
-| Quick Actions          | ✔ | ✘ |
-| CSV Export             | ✔ | ✘¹ |
+| Quick Actions          | ✔ | ✖ |
+| CSV Export             | ✔ | ✖¹ |
 | CSV Import             | ✔ | ✔ |
-| Excel Export           | ✔ | ✘ |
-| Backups                | ✔ | ✘¹ |
-| Manual                 | ✔ | ✘ |
+| Excel Export           | ✔ | ✖ |
+| Backups                | ✔ | ✖¹ |
+| Manual                 | ✔ | ✖ |
 
 
 ### Password Security
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
 | Server Side Encryption    | ✔ | ✔ |
-| Client Side Encryption    | ✘ | ✔ |
-| Two-Factor Authentication | ✘ | ✔ |
+| Client Side Encryption    | ✖ | ✔ |
+| Two-Factor Authentication | ✖ | ✔ |
 | Password Quality Check    | ✔ | ✔ |
-| Security Check            | ✔ | ✘ |
+| Security Check            | ✔ | ✖ |
 
 
 ### Password Sharing
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
 | Password Sharing | ✔ | ✔ |
-| Folder Sharing   | ✘ | ✘ |
-| Tag Sharing      | ✘ | ✘ |
-| Group Sharing    | ✘ | ✘ |
-| Public Sharing   | ✘ | ✘ |
+| Folder Sharing   | ✖ | ✖ |
+| Tag Sharing      | ✖ | ✖ |
+| Group Sharing    | ✖ | ✖ |
+| Public Sharing   | ✖ | ✖ |
 
 
 
@@ -54,8 +54,8 @@
 | Browsers                 | Firefox & Chrome | Firefox & Chrome |
 | Detect new Passwords     | ✔ | ✔ |
 | Detect changed Passwords | ✔ | ✔ |
-| Autofill                 | ✘ | ✔ |
-| Multiple Accounts        | ✘ | ✔ |
+| Autofill                 | ✖ | ✔ |
+| Multiple Accounts        | ✖ | ✔ |
 
 
 ##### Footnotes
