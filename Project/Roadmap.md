@@ -53,6 +53,10 @@
  - **Tag sharing**
  - **Group sharing**
  - **Public link shares**
+ - Improve nightly updates
+ - Use temporary api access tokens
+ - Hash check api endpoint (Hibp like)
+ - No password reuse security rule
  - Add settings in database backup
  - Detailed revision view
  - Add tag on import
