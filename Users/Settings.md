@@ -3,6 +3,8 @@ These settings allow you to define how the app itself and the official clients b
 
 ![The Settings section](_files/settings-section.png)
 
+## Advanced Settings
+Expert settings can be shown by setting the drop-down in the top right corner to `Advanced`
 
 ## Security
 ### Password Rules
