@@ -77,7 +77,7 @@ The icons are only fetched once for a domain and then stored locally.
 This service usually finds the most icons, but also the most useless icons.
 
 **Besticon** uses a [besticon](https://github.com/mat/besticon) third party service to find icons.
-The service can be self hosted by using the [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/) or running the app on a server.
+The service can be self hosted by using the [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/), fore free on [Heroku](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon&template=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon) or running the app on a server.
 The url for the service can be defined in the settings. Any compatible api is accepted.
 It usually returns the best icons and also good default icons if none is found.
 
@@ -93,7 +93,7 @@ It is the fastest and most privacy friendly service.
 
 #### Favicon Service Api
 If you use a service with an API, you can enter the url here.
-The default url for the besticon service is https://besticon-demo.herokuapp.com/icon.
+The default url for the besticon service is https://passwords-app-favicons.herokuapp.com/icon.
 
 
 #### Website Preview Service
@@ -106,8 +106,9 @@ If you know a good program or service, feel free to open an issue to support it.
 Usually very reliable local and headless preview generator with a modern browser engine.
 If the installation with NPM fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
 
-**WKHTML** requires wkhtmltoimage to be installed locally.
-It is headless and has less dependencies than pageres, but it comes with an outdated rendering engine and sometimes no output is produced at all.
+**WKHTML** **DEPRECATED and removed in 2019.1** requires wkhtmltoimage to be installed locally.
+It is headless and has less dependencies than pageres, but it comes with an outdated rendering engine which often produces bad or no output at all.
+Since the outdated engine prone to security issues, this option will be removed soon.
 You can get the binary from [their website](https://wkhtmltopdf.org/).
 
 **screenshotapi.io** offers a huge amount of free screenshots, uses HTTPS and is generally very cheap.
@@ -134,6 +135,26 @@ This will enable emails for bad passwords.
 
 #### Send emails for sharing events
 Send emails when a password was shared with an user.
+
+
+
+## Backup Settings
+Passwords makes regular backups of the raw password database.
+These backups can be used to restore the entire database or the database of a specific user.
+
+#### Backup Interval
+Specifies the interval in which backups should be created automatically.
+The default value is `Every Day`.
+You can also create backups manually with the command line command.
+
+**Note:** You can not disable automated backups since we _really_ can't help you when you loose your data.
+
+#### Amount of backups to keep
+Specifies the amount of backups to keep.
+If the maximum is reached, the oldest backup will be deleted.
+This setting also includes manually created backups.
+The default value is `14`, setting the value to `0` will keep all backups.
+The shorter your backup interval is, the higher this setting should be to cover at least two weeks.
 
 
 

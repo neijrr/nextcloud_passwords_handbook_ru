@@ -29,3 +29,7 @@ If you want to speed up this process, you can run your cron jobs more often.
 Passwords offers a repair job which can fix database inconsistencies like orphaned revisions or broken relations between entities.
 It will also perform upgrades of entities when a new field is added or changed.
 To execute the repair job, execute the Nextcloud maintenance command from the nextcloud folder `./occ maintenance:repair`
+
+## How do i make the app look like in the app store?
+- We use **Besticon** as **Favicon Service**. We recommend hosting it your self as [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/) or for free on [Heroku](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon&template=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon)
+- We use **Pageres** as **Website Preview Service**

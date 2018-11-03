@@ -27,11 +27,11 @@ So in order to keep your passwords safe, your server administrator has to keep t
 A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when client side encryption is enabled.
 So you will have to trust your administrator to keep the server safe.
 
-#### What does the WebUI Device Token do?
-When you use the Passwords app, a token called "Passwords WebUI Access" will appear in your device list.
-This token was automatically generated to enable the app to access your passwords.
-There should only be one token with this name and it should not have filesystem access.
-If you don't use Passwords or the token appears more than once, you should delete it.
+#### What does the Passwords Session Token do?
+When you use the Passwords app, tokens with the naming schema "Passwords Session MM.DD.YY HH:MM - IP Address" will appear in your device & sessions list.
+These tokens are generated automatically when you access the Passwords app in Nextcloud.
+The tokens are only valid for a short period of time and usually do not have file system access.
+It is safe to delete the tokens, but you should be aware that this will close currently open sessions.
 
 
 ## Sharing
