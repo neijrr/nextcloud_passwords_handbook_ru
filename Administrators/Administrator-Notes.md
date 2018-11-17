@@ -21,9 +21,11 @@ While a user is queued for complete removal, you can not reassign the username.
 
 
 ## Sharing Passwords
-Shared passwords are synchronized using a cron job.
-This means that creating, updating or deleting a shared password will not be completed until the cron job has been executed.
-If you want to speed up this process, you can run your cron jobs more often.
+Shared passwords are synchronized using a background job.
+This means that creating, updating or deleting a shared password will not be completed until the background job has been executed.
+If you want to speed up this process, we recommend running the background jobs more often.
+We also strongly recommend using cron instead of webcron or ajax.
+Ajax and webcron will only execute one background job at a time which will cause long delays when sharing a password.
 
 ## Repairing the Database
 Passwords offers a repair job which can fix database inconsistencies like orphaned revisions or broken relations between entities.
