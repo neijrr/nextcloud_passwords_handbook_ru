@@ -16,7 +16,7 @@ If you have any questions which are not answered in the handbook, don't hesitate
 
 ## Browser Extension
 The Passwords Browser Extension gives you easy and secure access to all your passwords from within your browser.
-- [Passwords for Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords/)
+- [Passwords for Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords?src=ext-handbook)
 - [Passwords for Chrome](https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi)
 - [Extension Handbook](https://github.com/marius-wieschollek/passwords-webextension/wiki)
 
