@@ -61,15 +61,17 @@ This commands returns an array of users that the current user can share with.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | search | string | - | no | Find users containing the search string |
+| limit | int | 5 | no | The maximum amount of matches to return |
 
 #### Return value
 The success status code is `200 Ok`.
 The return value is an array with the user id as key and the user display name as value.
-The array is at maximum around 512 entries long.
+The array is at maximum around 256 entries long.
 If the autocompletion is disabled by the administrator the result is an empty array
 
 #### Notes
  - This command will fail if sharing is disabled
+ - This api endpoint has a rate limit of 48 requests in 5 minutes
 
 
 

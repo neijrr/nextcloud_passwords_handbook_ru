@@ -16,7 +16,7 @@ The password action generates one password with the given settings.
 #### Arguments
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| strength | int | 1 | no | How many words the password should have |
+| strength | int | 1 | no | A higher value creates a longer and more complex password |
 | numbers | bool | false | no | Whether or not numbers should be used in the password |
 | special | bool | false | no | Whether or not special characters should be used in the password |
 
@@ -27,13 +27,15 @@ The success status code is `200 Ok`
 | --- | --- | --- |
 | password | string | The generated password |
 | words | string | The words used in the password |
-| strength | int | The words used in the password |
+| strength | int | The strength setting used |
 | numbers | bool | Whether or not numbers were used in the password |
 | special | bool | Whether or not special characters were used in the password |
 
 #### Notes
  - If you call this action with a GET request, the users settings will be used
  - If you call this action with a POST request, the default settings will be used for missing parameters
+ - Generated passwords are checked for security automatically
+ - The maximum value for `strength` is 4
 
 
 

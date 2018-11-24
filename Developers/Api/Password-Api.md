@@ -100,8 +100,9 @@ The success status code is `201 Created`
 #### Notes
  - If the password is not hidden and should be created in a hidden folder, it will be created in the base folder instead
  - If the folder uuid is invalid or does not exist, the base folder uuid will be used instead
- - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
+ - If the `edited` argument is "0" or missing, the current time will be used
  - If the `edited` time is in the future, the current time will be used
+ - If the `cseType` is set to "none", the `hash` will be calculated on the server
  - If the `tags` argument contains invalid tag ids, they will be ignored
  - You can assign hidden tags to a not hidden password, but they will not be visible.
    Therefore another client might remove the tag by accident
@@ -147,6 +148,8 @@ The success status code is `200 Ok`
  - If the folder uuid is invalid or does not exist, the base folder uuid will be used instead
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
  - If the `edited` time is in the future, the current time will be used
+ - If the `hash` has not changed, the `edited` field from the last revision will be used
+ - If the `cseType` is set to "none", the `hash` will be calculated on the server
  - If the `tags` argument is empty or missing, no changes will be made
  - If the `tags` argument contains invalid tag ids, they will be ignored
  - You can assign hidden tags to a not hidden password, but they will not be visible.
