@@ -1,7 +1,7 @@
 This tutorial will help you to import your passwords from the Passman app.
 You can either watch the video or follow the instructions below.
 
-[![How To: Import your passwords from passman](../_files/_previews/passman-import.png)](../_files/videos/passman-import.webm)
+[![How To: Import your passwords from Passman](../_files/_previews/passman-import.png)](../_files/videos/passman-import.webm)
 
 
 ## Exporting your passwords from Passman
@@ -43,11 +43,18 @@ You can solve this by applying this [patch](https://github.com/nextcloud/passman
 #### Files can not be imported
 If you have attached files to your passwords in Passman, the Import will show the warning `"Password Name" has files attached which can not be imported.` for each affected password.
 Passwords does not offer any file storage functionality as we believe that it is better to leave this to Nextcloud itself.
-However, you can link files stored in Nextcloud to passwords.
-To do so, download the files manually from Passman and store them in Nextcloud.
-Then edit the password and add a custom field with the type "file" and choose the file from the file dialog.
+
+Passwords does support the linking of files stored in Nextcloud to passwords.
+Therefore we recommend downloading the files manually from Passman and storing them in Nextcloud.
+After this you can edit the password and add a custom field with the type "file" and choose the file from the file dialog.
 
 **Note:** If you want to store secret files like private keys, we recommend that you use the [Nextcloud E2E Encryption](https://nextcloud.com/endtoend/).
+
+#### Long custom field names / values are truncated
+If you have custom fields with a label that exceeds 48 characters or a value that exceeds 320 characters, it will be truncated to fit the length limitations of Passwords.
+Custom fields are intended to contain usual password related information like and e-mail address or the like.
+They are not intended to hold large amounts of data.
+If you want to store long texts, we recommend to use the "Notes" field.
 
 #### OTP/TOTP is not supported
 We do currently not offer OTP/TOTP.
