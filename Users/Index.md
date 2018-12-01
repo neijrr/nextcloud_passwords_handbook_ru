@@ -5,9 +5,10 @@
 2. [User Interface](./User-Interface)
 3. [Passwords](./Passwords)
    1. [Creating Passwords](./Passwords/Creating-Passwords)
-   1. [Sharing Passwords](./Passwords/Sharing-Passwords)
+   2. [Sharing Passwords](./Passwords/Sharing-Passwords)
 4. [Search](./Search)
 5. [Import](./Import)
+    1. [Import from Passman](./Import/Import-from-Passman)
 6. [Export](./Export)
 7. [Settings](./Settings)
 

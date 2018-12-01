@@ -39,7 +39,7 @@ You will get a warning like `"Password Name" has files attached which can not be
 In some versions of Passman, the file download will not work in Firefox.
 You can solve this by applying this [patch](https://github.com/nextcloud/passman/pull/460/commits/2e64d6c59498da26426933d726f94c21a08cf568) to the source code of Passman or by using another browser like Chrome.
 
-## Issues and Workarounds for the Passwords Import
+## Compatibility Issues and Workarounds for the Passwords Import
 #### Files can not be imported
 If you have attached files to your passwords in Passman, the Import will show the warning `"Password Name" has files attached which can not be imported.` for each affected password.
 Passwords does not offer any file storage functionality as we believe that it is better to leave this to Nextcloud itself.
