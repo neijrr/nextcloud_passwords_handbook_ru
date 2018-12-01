@@ -11,6 +11,7 @@ While it is possible to read older backups on newer versions of the app, it not 
 | App Version | Backup Version |
 | --- | --- |
 | 2018.11.0 | 100, 101 |
+| 2019.1.0 | 100, 101, 102 |
 
 ## Backup Security
 Backups contain a complete snapshot of the raw data in the database.
