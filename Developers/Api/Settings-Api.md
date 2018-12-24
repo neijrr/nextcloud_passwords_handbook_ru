@@ -36,8 +36,9 @@
 | server.sharing.resharing | bool | true | Whether or not resharing shared entities is enabled globally |
 | server.sharing.autocomplete | bool | true | Whether or not the [auto-complete](./Share-Api.md#the-partners-action) request works |
 | server.sharing.types | array | `["user"]` | List of supported sharing types.  |
-| server.theme.color | string | `#745bca` | The color of the current Nextcloud theme |
-| server.theme.text.color | string | `#ffffff` | The contrast color of the current Nextcloud theme |
+| server.theme.color.primary | string | `#745bca` | The color of the current Nextcloud theme |
+| server.theme.color.text | string | `#ffffff` | The text color of the current Nextcloud theme |
+| server.theme.color.background | string | `#ffffff` | The background color of the current Nextcloud theme |
 | server.theme.background | string | - | The url to the current Nextcloud background image |
 | server.theme.logo | string | - | The url to the logo of the current Nextcloud theme |
 | server.theme.label | string | "Nextcloud" | The name of the Nextcloud instance |
