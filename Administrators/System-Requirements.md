@@ -14,9 +14,8 @@
 ### Version scheme and minimum requirements
 Passwords versions are simply the date of the release of the version.
 The exact version scheme is `<year>.<month>.<bugfix>`.
-Usually the app will still follow the [SemVer2.0.0](https://semver.org/spec/v2.0.0.html) with one exception:
-The Nextcloud minimum requirement version might be raised when a new version of Nextcloud is published.
-In this case the last version supporting the old Nextcloud release will receive security updates until the end of the year.
+In accordance with [SemVer2.0.0](https://semver.org/spec/v2.0.0.html), backwards compatibility breaks will be introduced in the first version of a new year.
+This includes the removal of support for any Nextcloud version but the latest as well as any PHP version without [active support](http://php.net/supported-versions.php).
 
 ### HTTPS
 Passwords requires HTTPS to work. This can not be disabled.
