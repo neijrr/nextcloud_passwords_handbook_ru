@@ -1,13 +1,13 @@
 |  | Minimum | Recommended |
 | --- | --- | --- |
-| Processor | 2x1 GHz      | 4x2GHz |
-| Ram       | 512 MiB      | 8GiB |
-| Disk      | 4 GiB        | 64GiB |
-| Platform  | Nextcloud 12 | Nextcloud 14 |
+| Processor | 2x1 GHz      | 4x2 GHz |
+| Ram       | 512 MiB      | 8 GiB |
+| Disk      | 4 GiB        | 64 GiB |
+| Platform  | Nextcloud 15 | Nextcloud 15 |
 | OS        | Linux        | Ubuntu 18.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
-| PHP       | PHP 7.1 | PHP 7.2 |
-| Webserver | HTTPS   | Nginx 1.12.2 HTTPS |
+| PHP       | PHP 7.2 | PHP 7.2 |
+| Webserver | HTTPS   | Nginx 1.18.8 HTTPS |
 | PECL      | Curl    | Zip, Imagick, Curl |
 | Libraries |         | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
@@ -50,7 +50,7 @@ sudo apt-get upgrade
 ### Third Party Services
 To provide all api features, passwords may use third party services depending on the settings.
 The following list contains all domains which may provide these services.
-However some local service providers like WKHTML, Pageres and the favicon finder may contact any domain as requested via the api.
+However some local service providers like Pageres and the favicon finder may contact any domain as requested via the api.
 
 - https://github.com
 - https://passwords-app-favicons.herokuapp.com
