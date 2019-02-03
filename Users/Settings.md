@@ -85,6 +85,14 @@ This option will always append your username after the title in the list view.
 This option does not have any effect on the sorting of passwords.
 
 
+### Password Detail View (Advanced)
+These settings change the looks of the detail section for passwords.
+
+##### Show website preview (Advanced)
+If enabled the detail section will have a preview of the main website attached to the password at the top.
+This is only for desktops. On mobile devices this preview will not be shown.
+
+
 ### Search (Advanced)
 The search section adds options to allow you to modify the behaviour of the password search.
 

@@ -164,10 +164,6 @@ The shorter your backup interval is, the higher this setting should be to cover 
 Specifies the time after which passwords, folders and tags deleted by the user will be removed from the database permanently.
 This setting does not affect the data of deleted users which will always be deleted permanently.
 
-#### Enable HTTPS detection debugging
-Enable the debugging tool for HTTPS.
-This can be helpful if you have HTTPS enabled, but get the HTTPS warning anyway.
-
 #### Enable Passwords Nightly Builds
 This setting will modify the Nextcloud core to enable the installation of nightly updates.
 The system config key `allowNightlyUpdates` will contain an array of apps for which the nightly updates are enabled.
