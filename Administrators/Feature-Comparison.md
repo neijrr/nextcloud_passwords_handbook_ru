@@ -12,11 +12,6 @@
 | Revisions             | ✔ | ✔ |
 | Password Generator    | ✔ | ✔ |
 | Quick Actions         | ✔ | ✖ |
-| CSV Export            | ✔ | ✖¹ |
-| CSV Import            | ✔ | ✔ |
-| Excel Export          | ✔ | ✖ |
-| Backups               | ✔ | ✖¹ |
-| Manual                | ✔ | ✖ |
 
 
 ### Password Security
@@ -26,7 +21,7 @@
 | Client Side Encryption    | ✖ | ✔ |
 | Two-Factor Authentication | ✖ | ✔ |
 | Password Quality Check    | ✔ | ✔ |
-| Security Check            | ✔ | ✖ |
+| Password Breach Check     | ✔ | ✖ |
 
 
 ### Password Sharing
@@ -36,16 +31,41 @@
 | Folder Sharing   | ✖ | ✖ |
 | Tag Sharing      | ✖ | ✖ |
 | Group Sharing    | ✖ | ✖ |
-| Public Sharing   | ✖ | ✖ |
+| Public Sharing   | ✖ | ✔ |
 
+
+### Import, Export & Backups
+| CSV Export            | ✔ | ✖¹ |
+| CSV Import            | ✔ | ✔ |
+| Excel Export          | ✔ | ✖ |
+| Backups               | ✔ | ✖¹ |
+
+
+### Convenience Features
+| Feature | Passwords App | Passman |
+| --- | --- | --- |
+| Favicons               | ✔ | ✔ |
+| Website Previews       | ✔ | ✔ |
+| Integrated Manual      | ✔ | ✖ |
+| Dark Mode supported    | ✔ | ✖ |
+| Markdown Notes         | ✔ | ✖ |
+| Emails & Notifications | ✔ | ✖ |
+
+
+### Admin Features
+| Feature | Passwords App | Passman |
+| --- | --- | --- |
+| Database Backups             | ✔ | ✖ |
+| Account Transfer             | ✖ | ✔ |
+| Configure 3rd-Party-Services | ✔ | ✖ |
 
 
 ### Technical Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Compatibility | Nextcloud 12, 13, 14 | Nextcloud 12, 13 |
+| Compatibility | Nextcloud 12, 13, 14, 15 | Nextcloud 9, 10, 11, 12, 13, 14, 15 |
 | Self hosted   | ✔ | ✔ |
-| Languages     | English, German, Czech, Dutch, Russian | 48 languages including dialects |
+| Languages     | English, French, German, Czech, Dutch, Russian | 48 languages including dialects |
 | Price         | free | free |
 
 
@@ -58,6 +78,13 @@
 | Autofill                 | ✖ | ✔ |
 | Multiple Accounts        | ✖ | ✔ |
 
+
+### Android App
+| Feature | Passwords App | Passman |
+| --- | --- | --- |
+| Official App | ✖ | ✔ |
+| Read Access  | ✔ | ✔ |
+| Write Access | ✔ | ✖ |
 
 ##### Footnotes
 ¹ Implemented but broken
