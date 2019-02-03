@@ -35,6 +35,8 @@
 
 
 ### Import, Export & Backups
+| Feature | Passwords App | Passman |
+| --- | --- | --- |
 | CSV Export            | ✔ | ✖¹ |
 | CSV Import            | ✔ | ✔ |
 | Excel Export          | ✔ | ✖ |
