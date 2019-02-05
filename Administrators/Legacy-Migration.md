@@ -11,6 +11,8 @@ Passwords is more secure, faster and comes with a more powerful api and a modern
 Make sure to upgrade to the latest version of the [legacy app](https://github.com/marius-wieschollek/passwords-legacy) before attempting the migration.
 Check the [system-requirements](System-Requirements.md) and make sure your server fulfills all the minimum requirements.
 The migration works **only** up to PHP 7.1. If you can not use PHP 7.1, perform the migration on the developer docker system and copy the databases and configuration for the app back to your productive system.
+You also need the **mcrypt** module for PHP for the migration. The developer docker system does **not** have mcrypt installed.
+See [Mcrypt not installed](#mcrypt-not-installed) if you don't have it installed.
 Since the app requires PHP 7.1 minimum, you can use the [migration build](_files/passwords.tar.gz) to upgrade if you are using PHP 5.6.
 It might also be a good idea to check the issue trackers [on github](https://github.com/marius-wieschollek/passwords/issues) and [gitlab](https://git.mdns.eu/nextcloud/passwords/issues) to see if any problems with the migration process have occurred.
 
@@ -93,6 +95,34 @@ In this case, the following commands should help to run the migration tool:
 If you use one of the local databases for bad passwords, passwords might get marked as secure even if they are not.
 The password databases have to be downloaded before passwords are checked correctly.
 This is done by a background cron job and can take up to one day.
+
+
+###### Mcrypt not installed
+Mcrypt is no longer installed by default starting with PHP 7.1
+You can install it manually using [pecl](https://pecl.php.net/support.php).
+If you do not have pecl, install it with `sudo apt install php-pear` (on Debian/Ubuntu).
+
+```
+# If you're on your server
+sudo su
+
+# If you're using the developer system
+docker exec -it passwords-php bash
+
+
+apt-get update
+apt-get install libmcrypt-dev
+
+
+# Use Version 1.0.0 for PHP 7.1
+pecl install channel://pecl.php.net/mcrypt-1.0.2
+
+# If you installed PHP with apt
+phpenmod mcrypt
+
+# If you use the Nextcloud docker container or the developer system
+echo "extension=mcrypt.so" > /usr/local/etc/php/conf.d/docker-php-ext-mcrypt.ini
+```
 
 ###### Not listed issues
 If your issue is not listed here, try the [public issue tracker](https://github.com/marius-wieschollek/passwords/issues).
