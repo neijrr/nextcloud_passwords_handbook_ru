@@ -1,7 +1,7 @@
 ## Legacy Api Support
 The Legacy API is the API which was originally provided by the Passwords App in versions prior to 2018.1.
 This API is used by many clients for passwords and therefore still available.
-However the APi does not support client side encryption or safe server side encryption.
+However the API does not support client side encryption or safe server side encryption.
 It is also makes the application slower and does not strictly enforce HTTPS.
 
 #### Enable Legacy API
@@ -105,11 +105,6 @@ If you know a good program or service, feel free to open an issue to support it.
 **Pageres/PhantomJS** requires pageres-cli and phantomJS to installed locally.
 Usually very reliable local and headless preview generator with a modern browser engine.
 If the installation with NPM fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
-
-**WKHTML** **DEPRECATED and removed in 2019.1** requires wkhtmltoimage to be installed locally.
-It is headless and has less dependencies than pageres, but it comes with an outdated rendering engine which often produces bad or no output at all.
-Since the outdated engine prone to security issues, this option will be removed soon.
-You can get the binary from [their website](https://wkhtmltopdf.org/).
 
 **screenshotapi.io** offers a huge amount of free screenshots, uses HTTPS and is generally very cheap.
 It might be slower and sometimes crashes.
