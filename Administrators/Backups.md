@@ -13,6 +13,10 @@ While it is possible to read older backups on newer versions of the app, it not 
 | 2018.11.0 | 100, 101 |
 | 2019.1.0 | 100, 101, 102 |
 
+**Note:** Backups will be gzipped automatically if your system supports it.
+Restoring gzipped backups on a system without the PHP-Gzip extension will not work.
+
+
 ## Backup Security
 Backups contain a complete snapshot of the raw data in the database.
 This includes the encrypted entities and their encryption keys.
@@ -27,8 +31,10 @@ Passwords will create backups automatically according to the app [settings](./Ad
 You can also crate backups manually by running the cli command `./occ passwords:backup:create` in your Nextcloud directory.
 The command will output the name of the backup, the file size and whether it is plain json or gzip compressed json.
 
+
 ## Listing Backups
 The cli command `./occ passwords:backup:list` will list all backups with their name, file size and file format.
+
 
 ## Restoring Backups
 Backups can be restored with the command line parameter `./occ passwords:backup:restore <backup name>`.
@@ -44,3 +50,22 @@ You can choose which data should be restored with the following options for the 
 * `--no-app-settings` Will not restore application settings. This is set automatically if you use the `--user` option.
 * `--no-interaction` Will skip interactive parts like the confirmation before restoring the backup.
 
+
+## Accessing Backup Files
+The backup files are stored in the data directory of your Nextcloud instance.
+You should be able to access the backup directory with the following command:
+
+```
+DATA_DIR="$(./occ config:system:get datadirectory)";
+INSTANCE_ID="$(./occ config:system:get instanceid)";
+
+cd ${DATA_DIR}/appdata_${INSTANCE_ID}/passwords/backups;
+```
+
+If you choose to add a backup file, you will have to rescan te app data directory afterwards to make sure it shows up in the backup list:
+
+```
+./occ files:scan-app-data
+```
+
+**Note:** We do absolutely _not_ recommend messing with the backup files.
