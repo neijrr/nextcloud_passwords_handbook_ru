@@ -5,6 +5,10 @@ You can not run Passwords without HTTPS on a productive server as this is comple
 #### [a3f7ed53] Access denied
 The permissions of yur client do not allow this action.
 
+#### [f84f93d3] Access denied
+The requested action requires an authorized session.
+Open a session before making the request.
+
 
 ## Validation Errors
 #### [7b584c1e] Invalid server side encryption type
