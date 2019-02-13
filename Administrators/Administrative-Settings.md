@@ -104,7 +104,7 @@ If you know a good program or service, feel free to open an issue to support it.
 
 **Pageres/PhantomJS** requires pageres-cli and phantomJS to installed locally.
 Usually very reliable local and headless preview generator with a modern browser engine.
-If the installation with NPM fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
+If the installation with NPM fails, try `sudo npm install --global pageres-cli@4.1.0 --unsafe-perm`.
 
 **screenshotapi.io** offers a huge amount of free screenshots, uses HTTPS and is generally very cheap.
 It might be slower and sometimes crashes.

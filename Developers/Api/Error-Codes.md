@@ -17,6 +17,12 @@ This error indicates that the entity was assigned to a server side encryption ty
 #### [4e8162e6] Invalid client side encryption type
 This error indicates that the submitted client side encryption type is not supported by the server.
 
+#### [f43e7b82] No encryption specified
+Neither a client side, nor a server side encryption method was specified.
+
+#### [fce89df4] Client side encryption key missing
+A client side encryption type with cseKey was used, but the cseKey is empty.
+
 #### [7c31eb4d] Field "label" can not be empty
 The field "label" can not be left empty when creating or updating an entity.
 
