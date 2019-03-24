@@ -152,7 +152,7 @@ The return value is a JSON formatted object with all settings from the requested
 | client.ui.password.dblClick.action | string | `username` | `password`, `username`, `url`, `details` | Copy the choosen attribute to clipboard when the user double clicks on the password oropen the `details` view. |
 | client.ui.password.menu.copy | bool | `false` | - | Show "copy to clipboard" options in the password menu |
 | client.ui.password.user.show | bool | `false` | - | Show the user name in the list view |
-| client.ui.custom.fields.show.hidden | bool | `false` | - | Show hidden custom fields in the ui |
+| client.ui.custom.fields.show.hidden | bool | `false` | - | Show custom fields with the type `data` in the ui |
 | client.ui.list.tags.show | bool | `false` | - | Show tags in the list view |
 | client.search.show | bool | `false` | - | Show search section in navigation |
 | client.search.live | bool | `true` | - | Start search when user types |

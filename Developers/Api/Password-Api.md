@@ -286,24 +286,20 @@ The return value is a list of password objects that match the criteria with the 
 
 
 # Custom Fields
-The custom fields attribute contains a JSON formatted object with user defined custom fields.
+The custom fields attribute contains a JSON formatted array with user defined custom fields.
 Custom fields are part of the shared attributes.
 
 #### Format
 Each field has three attributes: the name, the type and the value.
-The `name` is used as key in the JSON object. This key contains another object with the `type` and `value` keys.
-If the name starts with an underscore, the field will be visually hidden and not displayed in the ui.
+The `label` contains the name of the field, the `type` describes the value and the `value` contains the content of the field.
 ```json
-{
-    "Field Name": {
-        "type": "text",
+[
+    {
+        "label": "Field Name",
+        "type" : "text",
         "value": "Field Value"
-    },
-    "_HiddenField": {
-         "type": "text",
-         "value": "Field Value"
     }
-}
+]
 ```
 
 #### Field Types
@@ -314,10 +310,13 @@ If the name starts with an underscore, the field will be visually hidden and not
 | email | An email address |
 | url | A valid full url. Any protocol is allowed |
 | file | The path to a file accessible over WebDav. The base url of the WebDav service is defined in the setting `server.baseUrl.webdav`. |
+| data | A field with technical information. Should not be shown to the user. |
 
 #### Notes
+- **The format of the JSON was changed in 2019.4.0**
 - Only 20 fields per password are allowed including hidden fields
-- The name has a maximum length of 48 characters
+- The label has a maximum length of 48 characters
 - The value has a maximum length of 320 characters
-- The total length of all custom fields can not exceed 8192 characters
+- Data fields can have 370 characters for label and value combined
+- The total length of the stringified customFields JSON can not exceed 8192 characters
 - The value should not be but may be empty
