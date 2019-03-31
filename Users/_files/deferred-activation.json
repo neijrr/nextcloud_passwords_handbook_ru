@@ -1,6 +1,7 @@
 {
     "webapp": {
-        "2019.4.0": {
+        "2019.5.0": {
+            "encryptiontests": true,
             "firstrunwizard": true
         }
     }
