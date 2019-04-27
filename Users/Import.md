@@ -112,7 +112,7 @@ These files need to be fixed manually in order to work properly.
 
 ## Compatibility Issues and Workarounds
 #### Passman related issues
-See the workarounds section in the[Import from Passman](./Import/Import-from-Passman#compatibility-issues-and-workarounds-for-the-passwords-import) tutorial for help regarding the Passman Import/Export.
+See the workarounds section in the [Import from Passman](../Import/Import-from-Passman#compatibility-issues-and-workarounds-for-the-passwords-import) tutorial for help regarding the Passman Import/Export.
 
 #### Files can not be imported
 Some password managers (e.g. Passman and Enpass) allow files to be stored with passwords.
