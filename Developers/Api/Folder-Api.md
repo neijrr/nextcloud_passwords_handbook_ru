@@ -230,6 +230,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | edited | int | Unix timestamp when the user last renamed the folder |
 | cseType | string | The client side encryption type |
 | sseType | string | The server side encryption type |
+| parent | string | The id of the parent folder |
 | trashed | bool | Whether or not the folder is in the trash |
 | favorite | bool | Whether or not the user has marked the folder as favorite |
 
@@ -239,5 +240,6 @@ The return value is a list of folder objects that match the criteria with the gi
 
 #### Notes
  - The property `trashed` will be set to `false` if not present
+ - The property `parent` is only supported in 2019.5.0 and later
  - The list will not include hidden folders
  - The list will not include suspended folders where a parent folder is in the trash
