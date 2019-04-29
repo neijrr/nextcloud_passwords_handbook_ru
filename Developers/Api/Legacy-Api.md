@@ -32,6 +32,7 @@ This api always returns the number `21`
 | --- |--- |--- | --- |
 | id  | int | no | Numeric id of the category |
 | user_id | string | no | Nextcloud user name of the current user |
+| name | string | no | Label of the password. Added in 2019.5.0, otherwise not present |
 | loginname | string | yes | Username for the password |
 | pass | string | yes | The password |
 | website | string | no | The domain of the password. It will always be the domain of the address |
