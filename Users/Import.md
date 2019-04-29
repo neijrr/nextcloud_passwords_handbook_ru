@@ -87,11 +87,30 @@ You don't have to map every column, just the ones you wish to import.
 For passwords you will have to map at least the `Password` column, for folders and tags the `Label` column is required.
 You can use the `Preview Line` option to preview a different line.
 
+##### Custom Fields format
+To import custom fields from a CSV file, the type of the column must be set to "Custom Fields" and the formatting must be as shown below.
+Each line contains one custom field.
+First, there is the label of the field which is optionally follwed by a comma and the type of the field.
+After that is a colon and then the value of the field.
+The type can be one of `text`, `email`, `url`, `secret`, `file` or `data`.
+
+```
+Label,type:value
+E-Mail,email:email@example.com
+Url,url:https://www.example.com
+Text,text:some sample text
+Password,secret:secret password
+File,file:/path/of/file/on/your/webdav.fil
+Data,data:applicationdatafield
+```
+
+
 ### Enpass JSON
 
 ##### Don't import empty fields
 Enpass has a lot of default fields which are often left empty.
 In order to improve usability, those fields can be skipped during import.
+
 
 
 ## How to fix faulty CSV files
@@ -131,3 +150,8 @@ If you have custom fields with a label that exceeds 48 characters or a value tha
 Custom fields are intended to contain usual password related information like and e-mail address or the like.
 They are not intended to hold large amounts of data.
 If you want to store long texts, we recommend to use the "Notes" field.
+
+#### Custom field type missmatch
+If you import passwords with custom fields from any source other than the `Database Backup`, they will be validated.
+Fields with the type `url` or `email` will require to be in a correct format or their type will be set to `text`.
+Also all fields with the type `text` will be checked if they are in the right format for `url` or `email` and if so, their type will be changed. 
