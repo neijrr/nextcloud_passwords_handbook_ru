@@ -4,6 +4,8 @@ The backup settings can be changed on the [admin settings page](./Administrative
 
 **Note:** Backups do not include tokens for third party apps.
 
+**Note:** Using backups requires command line access. But if your version of passwords supports client side encryption you can use [occweb](https://apps.nextcloud.com/apps/occweb).
+
 ## Backup Compatibility
 The list below contains all versions of Passwords that introduced new changes to the backup file format.
 While it is possible to read older backups on newer versions of the app, it not possible to read newer backups on older versions of the app.
