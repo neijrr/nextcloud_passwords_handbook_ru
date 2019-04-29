@@ -6,11 +6,12 @@
 3. [Passwords](./Passwords)
    1. [Creating Passwords](./Passwords/Creating-Passwords)
    2. [Sharing Passwords](./Passwords/Sharing-Passwords)
-4. [Search](./Search)
-5. [Import](./Import)
+4. [Folders](./Folders)
+5. [Search](./Search)
+6. [Import](./Import)
     1. [Import from Passman](./Import/Import-from-Passman)
-6. [Export](./Export)
-7. [Settings](./Settings)
+7. [Export](./Export)
+8. [Settings](./Settings)
 
 ## Forum
 If you have any questions which are not answered in the handbook, don't hesitate to ask your question in our [forum](https://help.nextcloud.com/c/apps/passwords).
