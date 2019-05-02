@@ -37,3 +37,8 @@ Select this box to mark the password as favorite
 
 ##### Encryption
 If available, you can select an encryption type for the password here.
+
+
+### Tags
+It is currently not possible to assign tags in the password creation dialog.
+To assign tags to a password, please use the `Add Tags...` area in the password detail view.
