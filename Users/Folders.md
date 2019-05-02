@@ -1,7 +1,7 @@
 Folders are a great way to organize passwords.
-A well organized folder hierarchy makes the application faster and passwords easier to find.
+A well structured folder hierarchy makes the application faster and passwords easier to find.
 For example you could have a folder "Work" for accounts related to your workplace and a folder "Private" for your own passwords.
-Password can only be in one folder at a time.
+A password can only be in one folder at a time.
 If you want to classify passwords with multiple keywords, consider using [tags](./Tags).
 
 ![The folder section](_files/folder-section.png)

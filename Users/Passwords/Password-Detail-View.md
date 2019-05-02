@@ -27,9 +27,9 @@ The security section shows all security related information.
 ###### Password Security Status Explained
 - `Secure` (green) means that the password is perfectly safe
 - `Weak (Duplicate)` (yellow) means that you are using this password more than once.
-  You need to activate [`Mark duplicates`](../Settings#mark-duplicates) setting for this.
+  You need to activate [`Mark duplicates`](../Settings#mark-duplicates) in the settings for this.
 - `Weak (Outdated)` (yellow) means that the password has reached its maximum age.
-  You need to activate [`Maximum age in days`](../Settings#maximum-age-in-days) setting for this.
+  You need to activate [`Maximum age in days`](../Settings#maximum-age-in-days) in the setting for this.
 - `Broken` (red) means that the password is bad and can be found in hacker databases on the internet.
   You need to change it and you should make sure that the account you're using it for has not been compromised
 
