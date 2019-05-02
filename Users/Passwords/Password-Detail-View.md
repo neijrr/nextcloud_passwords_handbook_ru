@@ -1,7 +1,7 @@
 ![The main section with a password in the detail view at the right](../_files/password-details.png)
 
 ## Details
-[![The details tab of a password](./_files/_previews/password-details-details.jpg)](./_files/password-details-details.png)
+[![The details tab of a password](../_files/_previews/password-details-details.jpg)](../_files/password-details-details.png)
 
 In the "Details"-Tab, you will find all the fields that are filled for the password.
 If you have created custom fields, they will be shown here as well.
@@ -35,13 +35,13 @@ The security section shows all security related information.
 
 
 ## Notes
-[![The notes tab of a password](./_files/_previews/password-details-notes.jpg)](./_files/password-details-notes.png)
+[![The notes tab of a password](../_files/_previews/password-details-notes.jpg)](../_files/password-details-notes.png)
 The "Notes"-Tab will only be shown if you have notes for the password.
 Notes can contain some markdown and can be up to 4096 characters long.
 
 
 ## Share
-[![The sharing tab of a password with a qr code](./_files/_previews/password-details-qrcode.jpg)](./_files/password-details-qrcode.png)
+[![The sharing tab of a password with a qr code](../_files/_previews/password-details-qrcode.jpg)](../_files/password-details-qrcode.png)
 
 ##### Share
 If sharing is allowed for this password, you can share it to other users from this tab.
@@ -56,7 +56,7 @@ It makes it easy for example if you are setting up a new mobile device and don't
 
 
 ## Revisions
-[![The revisions tab of a password](./_files/_previews/password-details-revisions.jpg)](./_files/password-details-revisions.png)
+[![The revisions tab of a password](../_files/_previews/password-details-revisions.jpg)](../_files/password-details-revisions.png)
 Every time something about a password is changed, a new revision is created.
 Each revision stores the complete password data.
 Revisions can be seen revisions as the history of your password.
