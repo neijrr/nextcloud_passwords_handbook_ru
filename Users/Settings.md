@@ -38,7 +38,7 @@ If activated, the password generator will add special characters like `$, €, @
 ## User Interface
 ##### Initial section
 Here you can choose which section will be shown when you open the passwords app.
-By default the `All Passwords` section will be shown, but you can also select your `Favourites`, `Folders`, `Tags` or `Recent` passwords as inital section.
+By default the `Folders` section will be shown, but you can also select your `All Passwords`, `Favourites`, `Tags` or `Recent` passwords as inital section.
 
 ##### Show hidden custom fields (Advanced)
 If enabled, this option will show hidden custom field (custom fields which start with an underscore "`_`") in the password details and edit form.
@@ -73,12 +73,14 @@ But you can also have your passwords sorted by `Name`, `Website` independently f
 ##### Single click action (Advanced)
 This option defines the action which will be executed when you click on a password entry.
 The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-The option `Show details` will open the password details.
+The option `Show details` will open the password details and the option `Edit password` will open the edit dialog.
+If set to `Nothing`, the click action will be disabled.
 
 ##### Double click action (Advanced)
 This option defines the action which will be executed when you double click on a password entry.
 The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-The option `Show details` will open the password details.
+The option `Show details` will open the password details and the option `Edit password` will open the edit dialog.
+If set to `Nothing`, the double click action will be disabled.
 
 ##### Show username in list view (Advanced)
 This option will always append your username after the title in the list view.
@@ -89,7 +91,7 @@ This option does not have any effect on the sorting of passwords.
 These settings change the looks of the detail section for passwords.
 
 ##### Show website preview (Advanced)
-If enabled the detail section will have a preview of the main website attached to the password at the top.
+If enabled, the detail section will have a preview of the main website attached to the password at the top.
 This is only for desktops. On mobile devices this preview will not be shown.
 
 
