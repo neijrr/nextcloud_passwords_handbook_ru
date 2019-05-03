@@ -179,7 +179,7 @@ The show action lists the properties of a single folder.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the folder |
-| detailLevel | string | "model" | no | The detail level of the returned folder object |
+| details | string | "model" | no | The detail level of the returned folder object |
 
 #### Return value
 The success status code is `200 Ok`
@@ -197,7 +197,7 @@ The list action lists all folders of the user except those in trash and the hidd
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| detailLevel | string | "model" | no | The detail level of the returned folder objects |
+| details | string | "model" | no | The detail level of the returned folder objects |
 
 #### Return value
 The success status code is `200 Ok`
@@ -220,7 +220,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
-| detailLevel | string | "model" | no | The detail level of the returned folder objects |
+| details | string | "model" | no | The detail level of the returned folder objects |
 
 #### Allowed search fields
 | Field | Type | Description |

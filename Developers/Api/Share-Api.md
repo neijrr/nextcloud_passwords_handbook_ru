@@ -159,7 +159,7 @@ The show action lists the properties of a single share.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the share |
-| detailLevel | string | "model" | no | The detail level of the returned share object |
+| details | string | "model" | no | The detail level of the returned share object |
 
 #### Return value
 The success status code is `200 Ok`
@@ -177,7 +177,7 @@ The list action lists all shares with the user as owner or receiver.
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| detailLevel | string | "model" | no | The detail level of the returned share objects |
+| details | string | "model" | no | The detail level of the returned share objects |
 
 #### Return value
 The success status code is `200 Ok`
@@ -196,7 +196,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
-| detailLevel | string | "model" | no | The detail level of the returned share objects |
+| details | string | "model" | no | The detail level of the returned share objects |
 
 #### Allowed search fields
 | Field | Type | Description |

@@ -26,7 +26,7 @@
 
 #### Detail Levels
 | Level | Description |
-| --- | --- | 
+| --- | --- |
 | model | Returns the base model |
 | +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
 | +folder | Fills the folder property with the base model of the folder. If the password is not hidden but the folder is, the base folder will be used |
@@ -37,7 +37,7 @@
 The properties "revisions", "folder", "tags", "shares" and "share" are also processed if necessary.
 
 | Property | Type | Description |
-| --- | --- | --- | 
+| --- | --- | --- |
 | type | string | Object type, the value is "password" |
 | icon | string | Url for the default favicon of the website in 32x32px |
 | preview | string | Url for the default website preview image in 550x350+ px |
@@ -218,7 +218,7 @@ The show action lists the properties of a single password.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password |
-| detailLevel | string | "model" | no | The detail level of the returned password object |
+| details | string | "model" | no | The detail level of the returned password object |
 
 #### Return value
 The success status code is `200 Ok`
@@ -236,7 +236,7 @@ The list action lists all passwords of the user except those in trash and the hi
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| detailLevel | string | "model" | no | The detail level of the returned password objects |
+| details | string | "model" | no | The detail level of the returned password objects |
 
 #### Return value
 The success status code is `200 Ok`
@@ -259,7 +259,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
-| detailLevel | string | "model" | no | The detail level of the returned password objects |
+| details | string | "model" | no | The detail level of the returned password objects |
 
 #### Allowed search fields
 | Field | Type | Description |
