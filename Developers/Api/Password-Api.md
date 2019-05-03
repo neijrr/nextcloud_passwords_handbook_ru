@@ -7,7 +7,7 @@
 | password | string | yes | yes | yes | The actual password |
 | url | string | yes | yes | yes | Url of the website |
 | notes | string | yes | yes | yes | Notes for the password. Can be formatted with Markdown |
-| customFields | string | yes | yes | yes | Custom fields created by the user. (See [custom fields](#Custom-Fields)) |
+| customFields | string | yes | yes | yes | Custom fields created by the user. (See [custom fields](#custom-fields)) |
 | status | int | no | no | yes | Security status level of the password (0 = ok, 1 = user rules violated, 2 = breached) |
 | statusCode | string | no | no | yes | Specific code for the current security status (GOOD, OUTDATED, DUPLICATE, BREACHED) |
 | hash | string | yes | no | yes | SHA1 hash of the password |
