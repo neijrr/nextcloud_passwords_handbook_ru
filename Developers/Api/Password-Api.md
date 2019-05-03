@@ -253,7 +253,7 @@ The return value is a list of password objects with the given detail level
 # The find action
 The find action can be used to find all passwords matching the given search criteria.
 Only a specific set of fields is allowed in the criteria.
-How the criteria array works is explained on the [object search page](./Object-Search.md).
+How the criteria array works is explained on the [object search page](./Object-Search).
 
 #### Arguments
 | Argument | Type | Default | Required | Description |
