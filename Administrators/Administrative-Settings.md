@@ -81,6 +81,9 @@ The service can be self hosted by using the [docker image](https://hub.docker.co
 The url for the service can be defined in the settings. Any compatible api is accepted.
 It usually returns the best icons and also good default icons if none is found.
 
+**favicongrabber.com** is free, requires no software and delivers good icons.
+There is an api request limit which means that it can be slower.
+
 **DuckDuckGo** uses the icon service of the search engine.
 All icons have a native resolution of 32 pixels.
 
@@ -107,9 +110,12 @@ Usually very reliable local and headless preview generator with a modern browser
 If the installation with NPM fails, try `sudo npm install --global pageres-cli@4.1.0 --unsafe-perm`.
 
 **Browshot** offers 100 free screenshots per month.
-The api offers HTTPS by default, you can view all screenshots in your account and you can buy additional screenshots if needed.
-If you want to use a premium/different instance, you have to set the config keys `service/preview/bws/mobile` and `service/preview/bws/desktop` manually.
-By default, instance 27 is used for desktop instance 67 for mobile.
+The api offers HTTPS by default, you can view the screenshots in your account and you can buy additional screenshots as you need.
+Passwords will check your account and use free screenshots if possible. 
+(Instance 27 is used for desktop and instance 67 for mobile.)
+If your account balance allows it, passwords will use premium instances if no free screenshots are left.
+(Instance 58 is used for desktop and instance 275 for mobile.)
+You can specify the premium instance to use with the config keys `service/preview/bws/mobile` and `service/preview/bws/desktop` manually.
 
 **screenshotlayer** offers 100 free screenshots per month.
 If you need more, you have to buy a subscription.
@@ -123,7 +129,8 @@ For free accounts, HTTPS is not supported.
 
 
 #### Website Preview API Key
-If you use a service with an api, you have to put your api key here.
+If you use "Browshot", "screenshotlayer" or "screenshotmachine.com", you will have to provide an api key here.
+Otherwise these services will not work.
 
 
 
