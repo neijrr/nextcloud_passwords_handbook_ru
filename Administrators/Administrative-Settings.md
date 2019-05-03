@@ -106,11 +106,17 @@ If you know a good program or service, feel free to open an issue to support it.
 Usually very reliable local and headless preview generator with a modern browser engine.
 If the installation with NPM fails, try `sudo npm install --global pageres-cli@4.1.0 --unsafe-perm`.
 
-**screenshotapi.io** offers a huge amount of free screenshots, uses HTTPS and is generally very cheap.
-It might be slower and sometimes crashes.
+**Browshot** offers 100 free screenshots per month.
+The api offers HTTPS by default, you can view all screenshots in your account and you can buy additional screenshots if needed.
+If you want to use a premium/different instance, you have to set the config keys `service/preview/bws/mobile` and `service/preview/bws/desktop` manually.
+By default, instance 27 is used for desktop instance 67 for mobile.
 
-**screenshotmachine.com** offers 100 fresh screenshots for free per month and impressions are free.
-You only have to pay what you use and it is quite fast and supports different devices.
+**screenshotlayer** offers 100 free screenshots per month.
+If you need more, you have to buy a subscription.
+For free accounts, HTTPS is not supported.
+
+**screenshotmachine.com** offers 100 fresh screenshots for free per month (accumulative) and impressions are free.
+You pay what you use, it is quite fast and supports different devices.
 For free accounts, HTTPS is not supported.
 
 **None** just delivers one of five default images.
@@ -122,7 +128,7 @@ If you use a service with an api, you have to put your api key here.
 
 
 ## Default Email Settings
-These settigns can be overwritten by the user.
+These settings can be overwritten by the user.
 
 #### Send emails for security events
 Enable emails for security relevant events by default.
