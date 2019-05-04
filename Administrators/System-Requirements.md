@@ -3,7 +3,7 @@
 | Processor | 2x1 GHz      | 4x2 GHz |
 | Ram       | 512 MiB      | 8 GiB |
 | Disk      | 4 GiB        | 64 GiB |
-| Platform  | Nextcloud 15 | Nextcloud 15 |
+| Platform  | Nextcloud 15 | Nextcloud 16 |
 | OS        | Linux        | Ubuntu 18.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
 | PHP       | PHP 7.2 | PHP 7.2 |
@@ -19,7 +19,8 @@ This includes the removal of support for any Nextcloud version but the latest as
 
 ### HTTPS
 Passwords requires HTTPS to work. This can not be disabled.
-Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
+Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
+If you use a proxy or separate ssl termination point, [configure your Nextcloud accordingly](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html).
 You can get a free HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/getting-started/).
 
 ### Background Jobs
@@ -27,7 +28,7 @@ Passwords uses several background jobs to process data.
 To ensure that these run as intended, it is recommended to configure Nextcloud to run those jobs trough cron.
 Using webcron or ajax for background jobs will cause long delays when passwords are shared since these options will only execute one background job with each call.
 Using ajax for background jobs may also cause unexpected issues since this will execute background jobs in the user scope instead of the global scope.
-More information can be found in the [documentation](https://docs.nextcloud.com/server/14/go.php?to=admin-background-jobs).
+More information can be found in the [documentation](https://docs.nextcloud.com/server/latest/go.php?to=admin-background-jobs).
 
 ### Browser Support
 The web interface of Passwords is designed to support the latest versions of major browsers.
@@ -57,7 +58,8 @@ However some local service providers like Pageres and the favicon finder may con
 - http://favicongrabber.com/
 - https://icons.duckduckgo.com
 - https://www.google.com
-- https://api.screenshotapi.io
+- https://api.browshot.com
+- http://api.screenshotlayer.com
 - http://api.screenshotmachine.com
 - https://archive.org
 - https://api.pwnedpasswords.com

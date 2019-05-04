@@ -13,6 +13,8 @@ Passwords will try to load the file `https://yourdomain.org/path/to/base/dir/Ind
 While Passwords will take care of the Nextcloud content security policy, you will have to make sure that the CORS policy of the handbook server allows requests from your Nextcloud.
 If you set an invalid handbook url, the default url will be used.
 
+**Note:** The file [`_files/deferred-activation.json`](../../Users/_files/deferred-activation.json) will be loaded and used to activate features after release.
+
 
 ## Deleting Users
 When a user gets deleted, all his data will be permanently removed with the next execution of the cron jobs.
