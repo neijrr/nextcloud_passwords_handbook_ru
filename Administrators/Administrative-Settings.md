@@ -119,11 +119,11 @@ You can specify the premium instance to use with the config keys `service/previe
 
 **screenshotlayer** offers 100 free screenshots per month.
 If you need more, you have to buy a subscription.
-For free accounts, HTTPS is not supported.
+Triggers the bot protection on more websites and HTTPS is not supported.
 
 **screenshotmachine.com** offers 100 fresh screenshots for free per month (accumulative) and impressions are free.
 You pay what you use, it is quite fast and supports different devices.
-For free accounts, HTTPS is not supported.
+HTTPS is not supported.
 
 **None** just delivers one of five default images.
 
