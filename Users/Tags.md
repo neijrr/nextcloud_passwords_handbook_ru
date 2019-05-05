@@ -18,6 +18,7 @@ The `Delete` option will move the tag.
 
 ##### Tags in the main view
 ![Tags of a password in the list view](_files/tags-hover.gif)
+
 If the [option](./Settings#show-tags-in-the-list-view) is enabled, listing of passwords will show the tags associated with them.
 You can then click on the tag to see all related passwords.
 
