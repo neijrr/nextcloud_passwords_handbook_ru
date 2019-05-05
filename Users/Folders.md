@@ -26,7 +26,7 @@ Enter the name of the folder and click on `Yes` to create the folder.
 
 **Notes**
 - The folder will always be created in the current folder.
-- Folder are not unique. Different folders with the same name can exist.
+- Folders are not unique. Different folders with the same name can exist.
 
 
 ## Deleting folders

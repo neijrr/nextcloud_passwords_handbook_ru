@@ -30,4 +30,4 @@ You can also delete the password via this menu.
 
 #### Additional display options
 If the [option](./Settings#show-tags-in-the-list-view) is enabled, you can also see the password tags in the listing.
-![Tags in the list view](_files/tags-hover.gif)
+![A password with tags in the list view](_files/tags-hover.gif)
