@@ -6,9 +6,9 @@
             "first-run-wizard": false
         },
         "2019.5.1": {
-            "encryption-tests": true,
-            "client-side-encryption": true,
-            "first-run-wizard": true
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false
         }
     }
 }
