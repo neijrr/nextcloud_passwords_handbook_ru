@@ -1,8 +1,14 @@
 {
     "webapp": {
-        "2019.5.0": {
-            "encryptiontests": true,
-            "firstrunwizard": true
+        "2019.5": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false
+        },
+        "2019.5.1": {
+            "encryption-tests": true,
+            "client-side-encryption": true,
+            "first-run-wizard": true
         }
     }
 }
