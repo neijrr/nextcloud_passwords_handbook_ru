@@ -1,7 +1,7 @@
 > Welcome to the Passwords Developer Handbook.
 
 ## Contents
-1. [The API](./Api/Overview)
+1. [The API](./Api)
    1. [Password API](./Api/Password-Api)
    2. [Folder API](./Api/Folder-Api)
    3. [Tag API](./Api/Tag-Api)
