@@ -165,6 +165,7 @@ The delete action moves a password to the trash or deletes it completely if it i
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password |
+| revision | string | - | no | Assumed current revision of the password (Since 2019.6.0) |
 
 #### Return value
 The success status code is `200 Ok`
@@ -176,8 +177,8 @@ The success status code is `200 Ok`
 
 #### Notes
  - If a password is moved to the trash, the relations to tags will be hidden from the tag, but not the password.
-
-
+ - If the `revision` is set, the password will only be deleted if that revision is the current revision. 
+   This way, a password is not accidentally deleted instead of trashed if the client is out of sync.
 
 
 # The restore action

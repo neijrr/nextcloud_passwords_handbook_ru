@@ -113,6 +113,7 @@ The delete action moves a tag to the trash or deletes it completely if it is alr
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the tag |
+| revision | string | - | no | Assumed current revision of the tag (Since 2019.6.0) |
 
 #### Return value
 The success status code is `200 Ok`
@@ -125,6 +126,8 @@ The success status code is `200 Ok`
 #### Notes
  - If a tag is moved to the trash, the relation to all passwords which are not in trash will be hidden from the password
  - If a tag is deleted, all relations to passwords are deleted
+ - If the `revision` is set, the tag will only be deleted if that revision is the current revision. 
+   This way, a tag is not accidentally deleted instead of trashed if the client is out of sync.
 
 
 

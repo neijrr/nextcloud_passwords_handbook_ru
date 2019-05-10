@@ -126,6 +126,7 @@ The delete action moves a folder and its content to the trash or deletes it comp
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the folder |
+| revision | string | - | no | Assumed current revision of the folder (Since 2019.6.0) |
 
 #### Return value
 The success status code is `200 Ok`
@@ -139,6 +140,8 @@ The success status code is `200 Ok`
  - If a folder is moved to the trash, all passwords and folders in it will be suspended and hidden from list and find actions
  - If a folder is moved to the trash, the relations between tags and passwords in the folder will be hidden from the tag, but not the password
  - If a folder is deleted, all passwords and folders in it will be deleted as well
+ - If the `revision` is set, the folder will only be deleted if that revision is the current revision. 
+   This way, a folder is not accidentally deleted instead of trashed if the client is out of sync.
 
 
 
