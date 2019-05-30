@@ -1,14 +1,18 @@
 {
-    "webapp": {
-        "2019.5": {
-            "encryption-tests": false,
-            "client-side-encryption": false,
-            "first-run-wizard": false
+    "server": {
+        "2019.6": {
+            "legacy-client-warning": false,
+            "client-side-encryption": false
         },
-        "2019.5.1": {
+        "2019.6.1": {}
+    },
+    "webapp": {
+        "2019.6": {
             "encryption-tests": false,
             "client-side-encryption": false,
-            "first-run-wizard": false
-        }
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2019.6.1": {}
     }
 }
