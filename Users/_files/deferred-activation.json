@@ -1,18 +1,19 @@
 {
     "server": {
-        "2019.6": {
+        "2019.7": {
+            "two-factor-tokens": false,
             "legacy-client-warning": false,
             "client-side-encryption": false
         },
-        "2019.6.1": {}
+        "2019.7.1": {}
     },
     "webapp": {
-        "2019.6": {
+        "2019.7": {
             "encryption-tests": false,
             "client-side-encryption": false,
             "first-run-wizard": false,
             "backup-encryption": false
         },
-        "2019.6.1": {}
+        "2019.7.1": {}
     }
 }

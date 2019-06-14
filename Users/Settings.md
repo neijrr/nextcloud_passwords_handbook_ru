@@ -24,9 +24,8 @@ Your system administrator can choose which service is used to generate passwords
 Based on the service the actual generated password may differ.
 
 ##### Password strength
-A higher password strength result in a more complex and longer password.
+A higher number will increase the length and complexity of the generated password.
 Every password will have at least 12 characters minimum.
-With strength set to `3`, three words will be used and with `4` it will be four words.
 
 ##### Include numbers
 If activated, the password generator will add numbers to the created password.
