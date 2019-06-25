@@ -117,6 +117,10 @@ If your account balance allows it, passwords will use premium instances if no fr
 (Instance 58 is used for desktop and instance 275 for mobile.)
 You can specify the premium instance to use with the config keys `service/preview/bws/mobile` and `service/preview/bws/desktop` manually.
 
+**screeenly** offers unlimited free screenshots and [self hosting](https://github.com/stefanzweifel/screeenly/wiki/Requirements-and-Install)
+It has HTTPS by default and usually creates proper screenshots.
+You can either just enter an api key and use the hosted version at [screeenly.com](https://secure.screeenly.com/) or enter a full url like `https://secure.screeenly.com/api/v1?key=yourapikey` where everything before `?key=` is the api url and the key is your api key.
+
 **screenshotlayer** offers 100 free screenshots per month.
 If you need more, you have to buy a subscription.
 Triggers the bot protection on more websites and HTTPS is not supported.
@@ -172,11 +176,17 @@ The shorter your backup interval is, the higher this setting should be to cover 
 Specifies the time after which passwords, folders and tags deleted by the user will be removed from the database permanently.
 This setting does not affect the data of deleted users which will always be deleted permanently.
 
-#### Enable Passwords Nightly Builds
+#### Show Nightly Updates in "Apps"
 This setting will modify the Nextcloud core to enable the installation of nightly updates.
 The system config key `allowNightlyUpdates` will contain an array of apps for which the nightly updates are enabled.
 
 **Note:** You can add other apps to `allowNightlyUpdates` or remove passwords from it manually, but the functionality will only work if the backend option is enabled.
+
+#### Server survey participation
+The server survey will send us some anonymous data of your server once a week.
+This helps us to plan the future development of the app.
+You can either contribute basic data (Nextcloud, App and PHP version) or full data (App Settings, Encryption usage) or no data at all.
+You can read more about this [here](./Server-Survey) or take a look at our [statistics](https://ncpw.mdns.eu/) generated from the data. 
 
 
 ## Caches
