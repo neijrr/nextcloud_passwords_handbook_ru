@@ -36,7 +36,7 @@ Not even that you do not participate.
 Will send the Nextcloud, PHP and app version and information about your OS, CPU architecture, cron execution and which database software is used.
 
 This is what a basic report looks like:
-```
+```json
 {
     "version": {
         "server":"16.0.1.1",
@@ -59,7 +59,7 @@ This is what a basic report looks like:
 Will send all the basic information and the services selected in the admin settings, legacy api usage, how much sharing is used, which encryption types are used, and if selected other apps are installed.
 
 This is what a full report looks like:
-```
+```json
 {
     "version": {
         "server":"16.0.1.1",
