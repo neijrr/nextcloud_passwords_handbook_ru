@@ -41,7 +41,7 @@ Make sure to set the `installed_version` value on your testing system to `2017.1
 ./occ config:app:set passwords installed_version --value 2017.12
 ```
 Please note that the migration will check the security status of all passwords during the migration.
-By default this is done with the [haveibeenpwned.com](https://haveibeenpwned.com/) web service which takes 1.5 seconds per password.
+By default this is done with the [haveibeenpwned.com](https://haveibeenpwned.com/) web service.
 You can change this with the following sql statement:
 ```bash
 ./occ config:app:set passwords service/security --value bigdb

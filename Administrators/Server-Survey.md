@@ -35,5 +35,87 @@ Not even that you do not participate.
 ## Basic
 Will send the Nextcloud, PHP and app version and information about your OS, CPU architecture, cron execution and which database software is used.
 
+This is what a basic report looks like:
+```
+{
+    "version": {
+        "server":"16.0.1.1",
+        "app": "2019.7.0",
+        "php": "7.3.0"
+    },
+    "environment": {
+        "os": "Linux",
+        "architecture": "x86_64",
+        "bits": 64,
+        "database": "mysql",
+        "cron": "cron"
+    }
+}
+```
+
+
+
 ## Full
 Will send all the basic information and the services selected in the admin settings, legacy api usage, how much sharing is used, which encryption types are used, and if selected other apps are installed.
+
+This is what a full report looks like:
+```
+{
+    "version": {
+        "server":"16.0.1.1",
+        "app": "2019.7.0",
+        "php": "7.3.0"
+    },
+    "environment": {
+        "os": "Linux",
+        "architecture": "x86_64",
+        "bits": 64,
+        "database": "mysql",
+        "cron": "cron"
+    },
+    "legacyApi": {
+        "enabled": true,
+        "used": false
+    },
+    "services": {
+        "images": "imagick",
+        "favicons": "bi",
+        "faviconApi": false,
+        "previews": "pageres",
+        "previewApi": false,
+        "words": "local",
+        "security": "hibp"
+    },
+    "settings": {
+        "nigthlies": false,
+        "handbook": false
+    },
+    "apps": {
+        "passman": {
+            "installed": true,
+            "enabled": false
+        },
+        "unsplash": {
+            "installed": true,
+            "enabled": true
+        }
+    },
+    "sharing": {
+        "shares": 10
+    },
+    "encryption": {
+        "sse": {
+            "default": "SSEv1r2",
+            "SSEv1r1": true,
+            "SSEv1r2": true,
+            "SSEv2r1": false,
+            "none": false
+        },
+        "cse": {
+            "default": "none",
+            "CSEv1r1": false,
+            "none": true
+        }
+    }
+}
+```
