@@ -72,17 +72,17 @@ By doing so, it might happen that the person you want to share the password with
 If that is the case, Passwords will not complete the sharing process as this would create an endless loop.
 You can view all your shared passwords in `Shared > Shared by me`.
 
-#### We have detected several failed attempts to unlock your password database by ...
+#### The notification "We have detected several failed attempts to unlock your password database by ..."
 If you use 2FA or a master password, the app will send you a notification if a client tries to gain access to the database without correct credentials.
 If this was not you, we recommend revoking the app password of that client in the "Security" section of your Nextcloud account settings.
 If the client was not using an app password, we recommend that you change your account password and delete all the app passwords (Changing your password will invalidate the app passwords).
 
-#### Administrative access to your account
+#### The notification "Administrative access to your account"
 An administrator has opened the passwords app with your account trough an app like [impersonate](https://apps.nextcloud.com/apps/impersonate).
 If you use a master password, then this does not necessarily mean that access to your passwords was possible.
 For more information please talk to your administrator.
 
-#### I get the notification "Legacy API: Time to say goodbye!"
+#### The notification "Legacy API: Time to say goodbye!"
 You are still using third party software that accesses the passwords trough the old api from ocPasswords.
 This is not recommended and will cause issues if you use client side encryption.
 It is recommended that you update that client or look for a replacement.
