@@ -33,6 +33,7 @@ There are two ways of creating backups.
 Passwords will create backups automatically according to the app [settings](./Administrative-Settings#Backup-Settings).
 You can also crate backups manually by running the cli command `./occ passwords:backup:create` in your Nextcloud directory.
 The command will output the name of the backup, the file size and whether it is plain json or gzip compressed json.
+You can also specify the name of the backup by adding it to the command `./occ passwords:backup:create <backup name>`. 
 
 
 ## Listing Backups
