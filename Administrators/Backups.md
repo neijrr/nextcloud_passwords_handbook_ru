@@ -15,6 +15,8 @@ While it is possible to read older backups on newer versions of the app, it not 
 | 2018.11.0 | 100, 101 |
 | 2019.1.0 | 100, 101, 102 |
 | 2019.4.0 | 100, 101, 102, 103 |
+| 2019.6.0 | 100, 101, 102, 103, 104 |
+| 2019.7.0 | 100, 101, 102, 103, 104, 105 |
 
 **Note:** Backups will be gzipped automatically if your system supports it.
 Restoring gzipped backups on a system without the PHP-Gzip extension will not work.
@@ -66,7 +68,7 @@ INSTANCE_ID="$(./occ config:system:get instanceid)";
 cd ${DATA_DIR}/appdata_${INSTANCE_ID}/passwords/backups;
 ```
 
-If you choose to add a backup file, you will have to rescan te app data directory afterwards to make sure it shows up in the backup list:
+If you choose to add a backup file, you will have to rescan the app data directory afterwards to make sure it shows up in the backup list:
 
 ```
 ./occ files:scan-app-data
