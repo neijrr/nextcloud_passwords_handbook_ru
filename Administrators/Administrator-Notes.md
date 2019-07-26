@@ -1,19 +1,5 @@
 ## Built-In Handbook
-Passwords features a build-in handbook to provide uses with an easy to access help whenever they need it.
-This handbook is constantly updated and will therefore be always fetched directly from our [github repository](https://github.com/marius-wieschollek/passwords/wiki).
-If you are running an outdated version of Passwords, the handbook may be inaccurate.
-Since the handbook resources will be fetched when they are requested, the handbook domain (raw.githubusercontent.com) will be whitelisted in the CSP.
-
-##### Using a custom or self hosted handbook
-You can set a custom location for the handbook with the following command.
-```bash
-./occ config:app:set passwords handbook/url --value https://yourdomain.org/path/to/base/dir/
-```
-Passwords will try to load the file `https://yourdomain.org/path/to/base/dir/Index.md` when the handbook is opened.
-While Passwords will take care of the Nextcloud content security policy, you will have to make sure that the CORS policy of the handbook server allows requests from your Nextcloud.
-If you set an invalid handbook url, the default url will be used.
-
-**Note:** The file [`_files/deferred-activation.json`](../../Users/_files/deferred-activation.json) will be loaded and used to activate features after release.
+See [user handbook](./User-Handbook).
 
 
 ## Deleting Users
