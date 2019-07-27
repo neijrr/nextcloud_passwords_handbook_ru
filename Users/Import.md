@@ -49,6 +49,11 @@ If the backup has been secured with a password, you will have to enter it here.
 ### Custom CSV File Options
 ![Parsing options for custom csv files](_files/import-custom-csv-options.png)
 
+##### Line Break
+Specifies the new line character used in the csv file.
+The `Detect` option will just check which line break is the most common and use it.
+If different line breaks are used in the csv, it is recommended to set it manually.
+
 ##### Field Delimiter
 Specifies the character used to separate the fields in the csv. 
 The import can try to `Detect` the field delimiter.
