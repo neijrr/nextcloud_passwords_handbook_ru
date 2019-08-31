@@ -32,7 +32,7 @@ You can use multiple fields: `field1:value1 field2:value2 rest of the query`.
 
 | Object | Fields |
 | --- | --- |
-| Passwords | `website`, `username`, `url`, `type`, `password`, `notes`, `label`, `id`, `revision`, `edited`, `status`, `statusCode`, `favorite`, `sseType`, `cseType` |
+| Passwords | `website`, `username`, `url`, `type`, `password`, `notes`, `label`, `id`, `revision`, `edited`, `status`, `statusCode`, `hash`, `favorite`, `sseType`, `cseType` |
 | Folders | `label`, `type`, `id`, `revision`, `edited`, `sseType`, `cseType`|
 | Tags | `label`, `type`, `id`, `revision`, `edited`, `sseType`, `cseType` |
 

@@ -1,13 +1,20 @@
 > Welcome to the Passwords Administrator Handbook.
 
 ## Contents
+#### Installation & Maintenance
 1. [System Requirements](./System-Requirements)
-2. [App Settings](./Administrative-Settings)
+2. [App Settings](./App-Settings)
 3. [Backups](./Backups)
-    1. [Server Migration](./Backups/Server-Migration)
-4. [Server Survey](./Server-Survey)
-5. [User Handbook](./User-Handbook)
-6. [Administrator Notes](./Administrator-Notes)
+3. [Database Repair](./Database-Repair)
+
+#### Tutorials
+1. [Migrate to another server](./Backups/Server-Migration)
+2. [Migrating from the legacy app](./Legacy-Migration)
+3. [Self-Hosting the user handbook](./User-Handbook)
+3. [Self-Hosting the Besticon service](./Besticon-Self-Hosting)
+
+#### Information
+4. [About the server survey](./Server-Survey)
+6. [notes for administrators](./Administrator-Notes)
 7. [Feature Comparison](./Feature-Comparison)
-8. [Migrating from the legacy app](./Legacy-Migration)
 9. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
