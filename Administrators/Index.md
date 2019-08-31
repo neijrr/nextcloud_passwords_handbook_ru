@@ -5,16 +5,16 @@
 1. [System Requirements](./System-Requirements)
 2. [App Settings](./App-Settings)
 3. [Backups](./Backups)
-3. [Database Repair](./Database-Repair)
+4. [Database Repair](./Database-Repair)
 
 #### Tutorials
 1. [Migrate to another server](./Backups/Server-Migration)
 2. [Migrating from the legacy app](./Legacy-Migration)
 3. [Self-Hosting the user handbook](./User-Handbook)
-3. [Self-Hosting the Besticon service](./Besticon-Self-Hosting)
+4. [Self-Hosting the Besticon service](./Besticon-Self-Hosting)
 
 #### Information
-4. [About the server survey](./Server-Survey)
-6. [notes for administrators](./Administrator-Notes)
-7. [Feature Comparison](./Feature-Comparison)
-9. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
+1. [About the server survey](./Server-Survey)
+2. [notes for administrators](./Administrator-Notes)
+3. [Feature Comparison](./Feature-Comparison)
+4. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
