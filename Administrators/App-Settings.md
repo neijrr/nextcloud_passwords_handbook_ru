@@ -77,7 +77,7 @@ The icons are only fetched once for a domain and then stored locally.
 This service usually finds the most icons, but also the most useless icons.
 
 **Besticon** uses a [besticon](https://github.com/mat/besticon) third party service to find icons.
-The service can be self hosted by using the [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/), fore free on [Heroku](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon&template=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon) or running the app on a server.
+The service can be self hosted by following our [tutorial](./Besticon-Self-Hosting).
 The url for the service can be defined in the settings. Any compatible api is accepted.
 It usually returns the best icons and also good default icons if none is found.
 
@@ -96,7 +96,6 @@ It is the fastest and most privacy friendly service.
 
 #### Favicon Service Api
 If you use a service with an API, you can enter the url here.
-The default url for the besticon service is https://passwords-app-favicons.herokuapp.com/icon.
 
 
 #### Website Preview Service
