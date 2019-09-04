@@ -31,8 +31,8 @@ Using ajax for background jobs may also cause unexpected issues since this will 
 More information can be found in the [documentation](https://docs.nextcloud.com/server/latest/go.php?to=admin-background-jobs).
 
 ### Browser Support
-The web interface of Passwords is designed to support the latest versions of major browsers.
-This includes most browsers based on Chromium and Firefox Quantum (Version 57+).
+We support the current version of Chrome and Firefox and assume that most browsers based on these will work as well.
+We do not support specific browser addons.
 
 ### PHP Requirements
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages)
