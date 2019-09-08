@@ -45,4 +45,7 @@ You can use multiple fields: `field1:value1 field2:value2 rest of the query`.
 | `user` | `username` |
 | `colour` | `color` |
 | `favourite` | `favorite` |
+| `sse` | `sseType` |
+| `cse` | `cseType` |
+| `sha` | `hash` |
 | `all` | `website`, `username`, `url`, `notes`, `label` |
