@@ -49,7 +49,7 @@ Please note that we expect you to have [docker](https://get.docker.com/) and [do
 
 ### Build it yourself (Suggested for Raspberry PI / ARM)
 These commands will compile the application from source.
-You can also use our [precompiled arm binary](_files/iconserver) and go directly to the [standalone installation](#standalone-with-autostart).
+You can also use our [precompiled arm binary](./_files/iconserver) and go directly to the [standalone installation](#standalone-with-autostart).
 
 1. Install GO: `sudo apt install golang git`
 2. Download and compile the app with `go get -u github.com/mat/besticon/...`
@@ -58,6 +58,7 @@ You can also use our [precompiled arm binary](_files/iconserver) and go directly
 
 ### Standalone with autostart
 You need command line access and root privileges for this guide.
+(NextCloudPI users: Enable SSH in the configuration interface and then log in with `ssh pi@yournextcloudpi`)
 You need to run these commands on your server an you need to know the domain of your server.
 
 1. Download the [binary](https://github.com/mat/besticon/releases) for your server.
