@@ -41,6 +41,7 @@ You can install the latest version from the PPA with the following commands:
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt-get install php7.3 php-defaults
 ```
 
 ### Pageres dependencies
