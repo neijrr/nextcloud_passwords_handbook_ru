@@ -132,6 +132,9 @@ Passwords will also send a notification in any suspicious events concerning your
 ##### Passwords shared with me
 If this option is enabled, you will receive notifications when someone shared a new password with you.
 
+##### Administration Issues (Administrators only)
+If the app finds incorrect app settings or detects system requirement issues, you will receive a notification if you're an administrator.
+
 ##### Other errors (Advanced)
 If a background operation (e.g. updating a shared password) fails, you will receive a notification.
 
