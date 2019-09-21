@@ -1,15 +1,15 @@
-|  | Minimum | Recommended |
-| --- | --- | --- |
-| Processor | 2x1 GHz      | 4x2 GHz |
-| Ram       | 512 MiB      | 8 GiB |
-| Disk      | 4 GiB        | 64 GiB |
-| Platform  | Nextcloud 15 | Nextcloud 16 |
-| OS        | Linux        | Ubuntu 18.04 |
-| Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.2 |
-| PHP       | PHP 7.2 | PHP 7.2 |
-| Webserver | HTTPS   | Nginx 1.18.8 HTTPS |
-| PECL      | Curl    | Zip, Imagick, Curl |
-| Libraries |         | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+|  | Minimum | 2020.1 | Recommended |
+| --- | --- | --- | --- |
+| Processor | 2x1 GHz                     | no change    | 4x2 GHz |
+| Ram       | 512 MiB                     | no change    | 8 GiB |
+| Disk      | 4 GiB                       | no change    |  64 GiB |
+| Platform  | Nextcloud 15                | Nextcloud 17 |  Nextcloud 16 |
+| OS        | Linux                       | no change    |  Ubuntu 18.04 |
+| Database  | Sqlite / MySQL / PostgreSQL | no change    |  MariaDB 10.4 |
+| PHP       | PHP 7.2                     | PHP 7.3      |  PHP 7.3 |
+| Webserver | HTTPS                       | no change    |  Nginx 1.17.3 HTTPS |
+| PECL      | Curl                        | no change    |  Zip, Imagick, Curl |
+| Libraries |                             | no change    |  imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Version scheme and minimum requirements
 Passwords versions are simply the date of the release of the version.
