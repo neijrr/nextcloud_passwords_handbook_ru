@@ -39,3 +39,13 @@ To enable/disable those features, the file [`_files/deferred-activation.json`](.
 The file will always be loaded when such a feature could be requested by the app.
 
 **Note:** Enabling features which are disabled by default can cause issues and is not supported
+
+| Scope | Feature | Description |
+| --- | --- | --- |
+| server | two-factor-tokens | Require 2FA tokens if available |
+| server | legacy-client-warning | Show a notification if a client is using the old api |
+| server | client-side-encryption | Allow users to set up client side encryption |
+| webapp | encryption-tests | Test client side encryption on the user device |
+| webapp | client-side-encryption | Enable client side encryption setup in the settings |
+| webapp | first-run-wizard | Enable the first run wizard with CSE setup |
+| webapp | backup-encryption | Enable encryption for database exports |
