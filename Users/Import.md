@@ -139,7 +139,7 @@ These files need to be fixed manually in order to work properly.
 See the workarounds section in the [Import from Passman](./Import/Import-from-Passman#compatibility-issues-and-workarounds-for-the-passwords-import) tutorial for help regarding the Passman Import/Export.
 
 #### Files can not be imported
-Some password managers (e.g. Passman and Enpass) allow files to be stored with passwords.
+Some password managers (e.g. Passman, Enpass, Bitwarden) allow files to be stored with passwords.
 The Import will show the warning `"Password Name" has files attached which can not be imported.` for each password which has files attached.
 The password will be imported anyway but the files will not be imported.
 Passwords does not offer any file storage functionality as we believe that it is better to leave this to Nextcloud itself.
