@@ -39,7 +39,7 @@
 | --- | --- | --- |
 | CSV Export            | ✔ | ✖¹ |
 | CSV Import            | ✔ | ✔ |
-| Excel Export          | ✔ | ✖ |
+| Excel/ODP Export      | ✔ | ✖ |
 | Backups               | ✔ | ✖¹ |
 
 
@@ -60,7 +60,7 @@
 | Database Backups             | ✔ | ✖ |
 | Account Transfer             | ✖ | ✔ |
 | Configure 3rd-Party-Services | ✔ | ✖ |
-| Server Backups | ✔ | ✖ |
+| Server Backups               | ✔ | ✖ |
 
 
 ### Technical Features
