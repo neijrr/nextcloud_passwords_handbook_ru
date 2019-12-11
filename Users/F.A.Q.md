@@ -13,6 +13,10 @@ Using Passwords via HTTP is not only insecure, the app will also not work.
 You can solve this issue by prefixing the url with `https://<your nextcloud url>`.
 If the server does not support HTTPS, this error can not be solved.
 
+#### Can i access passwords offline?
+**No.** A connection to the Nextcloud server is always required to access passwords.
+
+
 ## Security
 #### How secure is Passwords?
 How secure your passwords are with the Passwords app depends on two main factors.
