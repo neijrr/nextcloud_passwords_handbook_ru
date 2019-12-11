@@ -23,3 +23,20 @@ To execute the repair job, execute the Nextcloud maintenance command from the ne
 ## How do i make the app look like in the app store?
 - We use **Besticon** as **Favicon Service**. We recommend hosting it your self as [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/) or for free on [Heroku](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon&template=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon)
 - We use **Pageres** as **Website Preview Service**
+
+## How do i use the app on a server without internet access?
+
+The app is not designed to run offline. 
+The options below are the best way to run the app on a server without internet access.
+
+Internet access is still required to fetch the bad passwords database.
+You must also [host the user manual](User-Handbook#self-hosting-the-handbook) yourself.
+
+| Setting | Offline Option |
+| --- | --- |
+| Password Security Checks | 10 Million Passwords _or_ 1 Million Passwords |
+| Password Generator Service | Local dictionary _or_ Random characters |
+| Favicon Service | None |
+| Website Preview Service | None |
+| Server survey participation | None |
+| Show Nightly Updates in "Apps" | No |

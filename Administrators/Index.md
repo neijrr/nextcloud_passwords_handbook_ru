@@ -15,6 +15,6 @@
 
 #### Information
 1. [About the server survey](./Server-Survey)
-2. [notes for administrators](./Administrator-Notes)
+2. [Notes for Administrators](./Administrator-Notes)
 3. [Feature Comparison](./Feature-Comparison)
 4. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
