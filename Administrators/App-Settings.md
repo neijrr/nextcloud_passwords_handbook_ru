@@ -59,11 +59,14 @@ It is faster if a bad password is found in the 10 Mio Passwords database since H
 #### Password Generator Service
 This service will be used to generate the basic words for a new password.
 
-**Local Dictionary** uses locally installed dictionaries for different languages to provide words.
-It has the best language support.
+**Local Dictionary** detects and uses locally installed dictionaries for english, german, french, italian, spanish and portuguese..
+Actually available options depend on which dictionaries are installed on the server.
+
+**Leipzig Corpora Collection** supports english, german, french, italian, spanish, portuguese, dutch, dansk, czech and polish.
+The service returns random words from a randomly selected corpora and has the largest language support.
 
 **watchout4snakes.com** is only available in english.
-It can provide words based on their rarity and type and is therefore the best service to generate easy to remember and secure passwords.
+It can provide words based on their rarity and type and is therefore a great service to generate easy to remember and secure passwords.
 
 **Random Characters** generates sets of random letters for the service.
 This service has no dependencies.
