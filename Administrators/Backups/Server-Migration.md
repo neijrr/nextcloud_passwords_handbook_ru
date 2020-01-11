@@ -1,21 +1,19 @@
 This guide explains how to migrate the passwords database to a new server.
-We recommend to do this first, because the passwords app backup will overwrite your server secret.
+
+**Warning:** The passwords app backup will overwrite your server secret.
+We recommend importing the backup before setting up other apps & encryption.
 
 ## With CLI/SSH Access
 1. Log onto your old server and open the Nextcloud directory.
-2. Get the Nextcloud secret
-    ```
-    ./occ config:system:get secret
-    ```
-3. Create a new backup
+2. Create a new backup
     ```
     ./occ passwords:backup:create migration
     ```
-4. Export the backup file
+3. Export the backup file
     ```
     ./occ passwords:backup:export migration
     ```
-5. Copy the file from the old server to the new server
+4. Copy the file from the old server to the new server
     ```
     scp ./migration.json.gz user@newserver.org:/path/to/new/nextcloud/
     ```
@@ -23,16 +21,12 @@ We recommend to do this first, because the passwords app backup will overwrite y
     ```
     scp ./migration.json user@newserver.org:/path/to/new/nextcloud/
     ```
-6. Now log onto your new server and open the Nextcloud directory
-7. Restore the server secret from step 2.
-    ```
-    ./occ config:system:set secret --value=<server secret> --type=string
-    ```
-8. Import the backup file (use the file name from step 5)
+5. Now log onto your new server and open the Nextcloud directory
+6. Import the backup file (use the file name from step 5)
     ```
     ./occ passwords:backup:import migration.json.gz
     ```
-9. Restore the backup file with
+7. Restore the backup file with
     ```
     ./occ passwords:backup:restore migration
     ```
@@ -40,15 +34,11 @@ We recommend to do this first, because the passwords app backup will overwrite y
 ## With HTTPS/FTP Access
 1. Install [OCC Web](https://apps.nextcloud.com/apps/occweb) on both your Nextclouds
 2. Open OCC Web in your old Nextcloud
-3. Get the server secret
-    ```
-    config:system:get secret
-    ```
-4. Create a new backup
+3. Create a new backup
     ```
     passwords:backup:create migration
     ```
-5. Export the backup file
+4. Export the backup file
     ```
     passwords:backup:export migration
     ```
@@ -57,15 +47,11 @@ We recommend to do this first, because the passwords app backup will overwrite y
 7. Open your new server with FTP and open the Nextcloud folder.
 8. Upload the `migration.json.gz` file
 9. Open OCC Web on the new Server
-10. Restore the server secret from step 2 with OCC Web
-    ```
-    config:system:set secret --value=<server secret> --type=string
-    ```
-11. Import the backup file
+10. Import the backup file
     ```
     passwords:backup:import migration.json.gz
     ```
-12. Restore the backup file in OCC Web with
+11. Restore the backup file in OCC Web with
     ```
     passwords:backup:restore migration
     ```
