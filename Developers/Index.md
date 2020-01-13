@@ -13,7 +13,7 @@
    9. [Object Search API](./Api/Object-Search)
    10. [Client Names](./Api/Client-Names)
    11. [Error Codes](./Api/Error-Codes)
-2. Encryption
+2. [Encryption](./Api/Encryption)
    1. Challenges
       1. [PWDv1 Challenge](./Api/Encryption/PWDv1Challenge)
    2. Keychains
