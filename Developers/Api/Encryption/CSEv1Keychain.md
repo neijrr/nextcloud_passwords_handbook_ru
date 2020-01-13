@@ -2,7 +2,7 @@
 The CSEv1 keychain is an encrypted string which contains a JSON object with the keys used for the client side encryption.
 
 The CSEv1 keychain is implemented using [libsodium](https://download.libsodium.org/doc/bindings_for_other_languages).
-You can find the default implementation of the CSEv1 keychain [in the passwords-client package](https://git.mdns.eu/nextcloud/passwords-client/blob/master/src/Encryption/Keychain/CSEv1Keychain.js).
+The standard implementation of the CSEv1 keychain can be found [in the passwords-client package](https://git.mdns.eu/nextcloud/passwords-client/blob/master/src/Encryption/Keychain/CSEv1Keychain.js).
 
 
 ### Structure
@@ -56,7 +56,7 @@ It must be at least 12 and no more than 128 characters long.
 
 The keychain object must fit the [structure](#Structure).
 It consists of the two properties `keys` and `current`.
-The property `keys` is an object with the uuid of the key as property and the key as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) encoded string as value.
+The property `keys` is an object with the uuid of the key as property and the key as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) encoded string as value of that property.
 The property `current` contains the UUID of the current default encryption key.
 The key referred to in `current` must exist in `keys`.
 
@@ -73,14 +73,19 @@ The algorithm is `crypto_pwhash_ALG_ARGON2ID13` which is currently `crypto_pwhas
 Before the keychain object can be encrypted with the encryption key, it needs to be converted to a JSON string.
 It is also necessary to create a nonce with the length `crypto_secretbox_NONCEBYTES`.
 Libsodium provides the function [`randombytes_buf`](https://download.libsodium.org/doc/generating_random_data#usage) to generate secure random data.
-With the message, the nonce and the key, [`crypto_secretbox_easy`](https://download.libsodium.org/doc/secret-key_cryptography/secretbox#example) can be used to create the encrypted keychain.
+
+With the keychain json, the nonce and the key, [`crypto_secretbox_easy`](https://download.libsodium.org/doc/secret-key_cryptography/secretbox#example) can be used to create the encrypted keychain.
 The keychain json string is used for `m`, the nonce is `n` and encryption key is `k`.
 
 Then, the nonce is prepended to the encrypted keychain and after that the password salt is prepended to this string.
 (Encrypted Keychain = `salt` + `nonce` + `keychain`)
+Finally, the resulting string is encoded as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) string.
 
 
 ### Adding a new key to the keychain
+A new key should only be added to the keychain if the master password was changed.
+Adding new keys without changing the master password will only increase the size of the keychain but does not provide any security benefits.
+
 To add a new key, first a UUIDv4 must be generated.
 The key itself consist of random data and has the length `crypto_secretbox_KEYBYTES`.
 Libsodium provides the function [`randombytes_buf`](https://download.libsodium.org/doc/generating_random_data#usage) to generate secure random data.

@@ -7,7 +7,7 @@ It is used to encrypt the SSEv2 keychain and discarded afterwards.
 The server assumes that a salt is correct if it can decrypt the keychain with it.
 
 The PWDv1 challenge is implemented using [libsodium](https://download.libsodium.org/doc/bindings_for_other_languages).
-You can find the default implementation of the PWDv1 challenge [in the passwords-client package](https://git.mdns.eu/nextcloud/passwords-client/blob/master/src/Authorization/Challenge/PWDv1Challenge.js).
+The standard implementation of the PWDv1 challenge can be found [in the passwords-client package](https://git.mdns.eu/nextcloud/passwords-client/blob/master/src/Authorization/Challenge/PWDv1Challenge.js).
 
 
 ### Structure
