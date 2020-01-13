@@ -50,6 +50,8 @@ The generic hash key (salt 1) must be generated with `crypto_generichash_KEYBYTE
 The password hash salt (salt 2) must be generated with `crypto_pwhash_SALTBYTES` bytes of random data.
 Libsodium provides the function [`randombytes_buf`](https://download.libsodium.org/doc/generating_random_data#usage) to generate secure random data.
 
+**Important:** Always generate new salts when creating a new challenge and never re-use previously used salts.
+
 First, [`crypto_generichash`](https://download.libsodium.org/doc/hashing/generic_hashing#usage) must be used to compute the generic hash.
 The hash size is `crypto_generichash_BYTES_MAX`.
 The message consists of the user provided master password with the password salt (salt 0) appended.
