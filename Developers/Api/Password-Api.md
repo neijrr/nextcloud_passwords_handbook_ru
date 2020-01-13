@@ -14,8 +14,11 @@
 | folder | string | yes | no | yes | UUID of the current folder of the password |
 | revision | string | no | no | yes | UUID of the current revision |
 | share | string / null | no | no | no | UUID of the share if the password was shared by someone else with the user |
+| shared | bool | no | no | no | True if the password is shared with other users |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
 | sseType | string | no | no | yes | Type of the used server side encryption |
+| client | string | no | no | yes | Name of the client which created this revision |
 | hidden | bool | yes | no | yes | Hides the password in list / find actions |
 | trashed | bool | no | no | yes | True if the password is in the trash |
 | favorite | bool | yes | no | yes | True if the user has marked the password as favorite |
@@ -83,6 +86,7 @@ The create action creates a new password with the given attributes.
 | customFields| string | empty | no | The custom fields defined by the user |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | folder | string | Base folder | no | The current folder of the password |
 | edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |
@@ -125,6 +129,7 @@ The update action creates a new revision of a password with an updated set of at
 | customFields| string | empty | no | The custom fields defined by the user |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | folder | string | Base folder | no | The current folder of the password |
 | edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |

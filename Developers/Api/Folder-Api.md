@@ -9,7 +9,9 @@
 | edited | int | yes | no | yes | Unix timestamp when the user last changed the folder name |
 | revision | string | no | no | yes | UUID of the current revision |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
 | sseType | string | no | no | yes | Type of the used server side encryption |
+| client | string | no | no | yes | Name of the client which created this revision |
 | hidden | bool | yes | no | yes | Hides the folder in list / find actions |
 | trashed | bool | no | no | yes | True if the folder is in the trash |
 | favorite | bool | yes | no | yes | True if the user has marked the folder as favorite |
@@ -66,6 +68,7 @@ The create action creates a new folder with the given attributes.
 | label | string | - | yes | The label of the folder |
 | parent | string | Base folder | no | The current parent folder |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this folder as favorite |
@@ -96,6 +99,7 @@ The update action creates a new revision of a folder with an updated set of attr
 | label | string | - | yes | The label of the folder |
 | parent | string | Base folder | no | The current parent folder |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this folder as favorite |

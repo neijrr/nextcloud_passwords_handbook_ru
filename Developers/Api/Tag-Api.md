@@ -9,7 +9,9 @@
 | edited | int | yes | no | yes | Unix timestamp when the user last edited the tag name or color |
 | revision | string | no | no | yes | UUID of the current revision |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
 | sseType | string | no | no | yes | Type of the used server side encryption |
+| client | string | no | no | yes | Name of the client which created this revision |
 | hidden | bool | yes | no | yes | Hides the tag in list / find actions |
 | trashed | bool | no | no | yes | True if the tag is in the trash |
 | favorite | bool | yes | no | yes | True if the user has marked the tag as favorite |
@@ -58,6 +60,7 @@ The create action creates a new tag with the given attributes.
 | label | string | - | yes | The label of the tag |
 | color | string | - | yes | The color of the tag |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last edited the tag |
 | hidden | bool | false | no | Whether or not the tag should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this tag as favorite |
@@ -86,6 +89,7 @@ The update action creates a new revision of a tag with an updated set of attribu
 | label | string | - | yes | The label of the tag |
 | color | string | - | yes | The color of the tag |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last edited the tag |
 | hidden | bool | false | no | Whether or not the tag should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this tag as favorite |
