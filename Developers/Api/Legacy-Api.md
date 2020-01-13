@@ -1,7 +1,7 @@
 > This is the legacy api of the original passwords app by Fallon Turner.
 > The rewritten passwords app provides an implementation of this api, but does not recommend using it.
 > Due to its limitations, this api returns incomplete data and does not support client side encryption.
-> This api will be removed permanently in version 2020.1.
+> This api will be removed permanently in version 2021.1.
 > If you are planning to use the passwords api in your own application, please use the new api instead.
 
 |Method |Scope      |Semantics|

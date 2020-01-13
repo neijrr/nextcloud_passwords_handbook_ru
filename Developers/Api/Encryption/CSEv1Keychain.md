@@ -42,6 +42,9 @@ With the cipher text, the nonce and the decryption key, [`crypto_secretbox_open_
 The cipher text is used for `c`, the nonce is `n` and decryption key is `k`.
 
 The result is now a JSON encoded string representing the actual keychain object.
+The JSON object contains the property `keys` which contains an object representing all the keys in the keychain.
+The name of each property in `keys` is the id of the key and the value is the key as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) encoded string.
+Each key needs to be decoded before it can be used for encryption.
 
 
 ### Encrypt the keychain

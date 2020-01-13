@@ -66,5 +66,5 @@ The mem limit is `crypto_pwhash_MEMLIMIT_INTERACTIVE`.
 The algorithm is `crypto_pwhash_ALG_ARGON2ID13` which is currently `crypto_pwhash_ALG_DEFAULT`.
 
 The challenge has to be sent to the server as an object with two keys.
-The `salts` key is an Array with the three salts encoded as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) strings.
-The `secret` key is the secret encoded as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) string.
+The `salts` property is an Array with the three salts encoded as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) strings.
+The `secret` property is the secret encoded as [hexadecimal](https://download.libsodium.org/doc/helpers#hexadecimal-encoding-decoding) string.

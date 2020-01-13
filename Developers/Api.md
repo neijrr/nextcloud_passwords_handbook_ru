@@ -11,7 +11,7 @@ The version 1.0 api is not complete at this point. It will be so in late 2019.
 ### API version support
 | API | Introduced | Deprecated | Removed |
 | --- | --- | --- | --- |
-| 0.1 | 2018.1 | 2018.1 | 2020.1 |
+| 0.1 | 2018.1 | 2018.1 | 2021.1 |
 | 1.0 | 2018.1 | - | - |
 
 ### API debugging help
