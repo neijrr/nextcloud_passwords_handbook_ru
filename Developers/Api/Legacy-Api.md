@@ -1,7 +1,7 @@
 > This is the legacy api of the original passwords app by Fallon Turner.
 > The rewritten passwords app provides an implementation of this api, but does not recommend using it.
 > Due to its limitations, this api returns incomplete data and does not support client side encryption.
-> This api will be removed permanently in version 2020.1.
+> This api will be removed permanently in version 2021.1.
 > If you are planning to use the passwords api in your own application, please use the new api instead.
 
 |Method |Scope      |Semantics|
@@ -32,6 +32,7 @@ This api always returns the number `21`
 | --- |--- |--- | --- |
 | id  | int | no | Numeric id of the category |
 | user_id | string | no | Nextcloud user name of the current user |
+| name | string | no | Label of the password. Added in 2019.5.0, otherwise not present |
 | loginname | string | yes | Username for the password |
 | pass | string | yes | The password |
 | website | string | no | The domain of the password. It will always be the domain of the address |

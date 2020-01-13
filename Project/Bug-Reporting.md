@@ -1,4 +1,4 @@
-Bug should be reported on the official ,public [bug tracker on GitHub](https://github.com/marius-wieschollek/passwords/issues)
+Bug should be reported on the official, public [bug tracker on GitHub](https://github.com/marius-wieschollek/passwords/issues)
 
 > Please note that bug reports are for features and bugs.
 > If you need help with passwords visit the [official forum](https://help.nextcloud.com/c/apps/passwords)

@@ -9,7 +9,9 @@
 | edited | int | yes | no | yes | Unix timestamp when the user last changed the folder name |
 | revision | string | no | no | yes | UUID of the current revision |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
 | sseType | string | no | no | yes | Type of the used server side encryption |
+| client | string | no | no | yes | Name of the client which created this revision |
 | hidden | bool | yes | no | yes | Hides the folder in list / find actions |
 | trashed | bool | no | no | yes | True if the folder is in the trash |
 | favorite | bool | yes | no | yes | True if the user has marked the folder as favorite |
@@ -66,6 +68,7 @@ The create action creates a new folder with the given attributes.
 | label | string | - | yes | The label of the folder |
 | parent | string | Base folder | no | The current parent folder |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this folder as favorite |
@@ -96,6 +99,7 @@ The update action creates a new revision of a folder with an updated set of attr
 | label | string | - | yes | The label of the folder |
 | parent | string | Base folder | no | The current parent folder |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |
 | hidden | bool | false | no | Whether or not the folder should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this folder as favorite |
@@ -126,6 +130,7 @@ The delete action moves a folder and its content to the trash or deletes it comp
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the folder |
+| revision | string | - | no | Assumed current revision of the folder (Since 2019.6.0) |
 
 #### Return value
 The success status code is `200 Ok`
@@ -139,6 +144,8 @@ The success status code is `200 Ok`
  - If a folder is moved to the trash, all passwords and folders in it will be suspended and hidden from list and find actions
  - If a folder is moved to the trash, the relations between tags and passwords in the folder will be hidden from the tag, but not the password
  - If a folder is deleted, all passwords and folders in it will be deleted as well
+ - If the `revision` is set, the folder will only be deleted if that revision is the current revision. 
+   This way, a folder is not accidentally deleted instead of trashed if the client is out of sync.
 
 
 
@@ -179,7 +186,7 @@ The show action lists the properties of a single folder.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the folder |
-| detailLevel | string | "model" | no | The detail level of the returned folder object |
+| details | string | "model" | no | The detail level of the returned folder object |
 
 #### Return value
 The success status code is `200 Ok`
@@ -197,7 +204,7 @@ The list action lists all folders of the user except those in trash and the hidd
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| detailLevel | string | "model" | no | The detail level of the returned folder objects |
+| details | string | "model" | no | The detail level of the returned folder objects |
 
 #### Return value
 The success status code is `200 Ok`
@@ -220,7 +227,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
-| detailLevel | string | "model" | no | The detail level of the returned folder objects |
+| details | string | "model" | no | The detail level of the returned folder objects |
 
 #### Allowed search fields
 | Field | Type | Description |
@@ -230,6 +237,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | edited | int | Unix timestamp when the user last renamed the folder |
 | cseType | string | The client side encryption type |
 | sseType | string | The server side encryption type |
+| parent | string | The id of the parent folder |
 | trashed | bool | Whether or not the folder is in the trash |
 | favorite | bool | Whether or not the user has marked the folder as favorite |
 
@@ -239,5 +247,6 @@ The return value is a list of folder objects that match the criteria with the gi
 
 #### Notes
  - The property `trashed` will be set to `false` if not present
+ - The property `parent` is only supported in 2019.5.0 and later
  - The list will not include hidden folders
  - The list will not include suspended folders where a parent folder is in the trash

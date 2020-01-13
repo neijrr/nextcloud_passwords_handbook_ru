@@ -1,4 +1,4 @@
-![The All Passwords Section with password details visible](_files/password-details.png)
+![The main section with password details visible](_files/password-details.png)
 
 ## Password in the list view
 ![A single password as displayed in the list view](_files/password-single.png)
@@ -18,6 +18,7 @@ This way you always have quick access to the most important properties.
 The shield at the right side of each password symbolizes the security status of a password.
 If the shield is green, you have nothing to worry about.
 If it is yellow, the password does not fulfill your personal security standards.
+If you hover the icon, the tooltip will show you which rule was violated.
 If the shield is red, the password is bad and has been found in hacker databases.
 You can get a quick overview of all passwords by their security status in the security section.
 
@@ -29,4 +30,4 @@ You can also delete the password via this menu.
 
 #### Additional display options
 If the [option](./Settings#show-tags-in-the-list-view) is enabled, you can also see the password tags in the listing.
-![Tags in the list view](_files/tags-hover.gif)
+![A password with tags in the list view](_files/tags-hover.gif)

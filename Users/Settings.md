@@ -4,7 +4,7 @@ These settings allow you to define how the app itself and the official clients b
 ![The Settings section](_files/settings-section.png)
 
 ## Advanced Settings
-Expert settings can be shown by setting the drop-down in the top right corner to `Advanced`
+Expert settings can be shown by setting the drop-down in the top right corner to `Advanced`.
 
 ## Security
 ### Password Rules
@@ -24,9 +24,8 @@ Your system administrator can choose which service is used to generate passwords
 Based on the service the actual generated password may differ.
 
 ##### Password strength
-A higher password strength result in a more complex and longer password.
+A higher number will increase the length and complexity of the generated password.
 Every password will have at least 12 characters minimum.
-With strength set to `3`, three words will be used and with `4` it will be four words.
 
 ##### Include numbers
 If activated, the password generator will add numbers to the created password.
@@ -38,7 +37,7 @@ If activated, the password generator will add special characters like `$, €, @
 ## User Interface
 ##### Initial section
 Here you can choose which section will be shown when you open the passwords app.
-By default the `All Passwords` section will be shown, but you can also select your `Favourites`, `Folders`, `Tags` or `Recent` passwords as inital section.
+By default the `Folders` section will be shown, but you can also select your `All Passwords`, `Favourites`, `Tags` or `Recent` passwords as inital section.
 
 ##### Show hidden custom fields (Advanced)
 If enabled, this option will show hidden custom field (custom fields which start with an underscore "`_`") in the password details and edit form.
@@ -73,12 +72,14 @@ But you can also have your passwords sorted by `Name`, `Website` independently f
 ##### Single click action (Advanced)
 This option defines the action which will be executed when you click on a password entry.
 The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-The option `Show details` will open the password details.
+The option `Show details` will open the password details and the option `Edit password` will open the edit dialog.
+If set to `Nothing`, the click action will be disabled.
 
 ##### Double click action (Advanced)
 This option defines the action which will be executed when you double click on a password entry.
 The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-The option `Show details` will open the password details.
+The option `Show details` will open the password details and the option `Edit password` will open the edit dialog.
+If set to `Nothing`, the double click action will be disabled.
 
 ##### Show username in list view (Advanced)
 This option will always append your username after the title in the list view.
@@ -89,7 +90,7 @@ This option does not have any effect on the sorting of passwords.
 These settings change the looks of the detail section for passwords.
 
 ##### Show website preview (Advanced)
-If enabled the detail section will have a preview of the main website attached to the password at the top.
+If enabled, the detail section will have a preview of the main website attached to the password at the top.
 This is only for desktops. On mobile devices this preview will not be shown.
 
 
@@ -130,6 +131,9 @@ Passwords will also send a notification in any suspicious events concerning your
 
 ##### Passwords shared with me
 If this option is enabled, you will receive notifications when someone shared a new password with you.
+
+##### Administration Issues (Administrators only)
+If the app finds incorrect app settings or detects system requirement issues, you will receive a notification if you're an administrator.
 
 ##### Other errors (Advanced)
 If a background operation (e.g. updating a shared password) fails, you will receive a notification.

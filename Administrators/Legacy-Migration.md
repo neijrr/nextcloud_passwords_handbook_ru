@@ -1,6 +1,7 @@
+# Passwords 2020.1.0 and newer no longer support the legacy migration. You need to use [2019.12.1](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz) for the migration
+
 This guide helps you to migrate fom the [Passwords Legacy](https://github.com/marius-wieschollek/passwords-legacy) app written by Fallon Turner and maintained by Marius Wieschollek.
 If you did not use the legacy app or want to [start from scratch](#starting-from-scratch), this guide is not relevant for you.
-
 
 ### Why you should upgrade
 With the release of Passwords 2018.1 at the beginning of february 2018, Passwords Legacy will only receive patches for larger security issues.
@@ -14,7 +15,7 @@ The migration works **only** up to PHP 7.1. If you can not use PHP 7.1, perform 
 You also need the **mcrypt** module for PHP for the migration. The developer docker system does **not** have mcrypt installed.
 See [Mcrypt not installed](#mcrypt-not-installed) if you don't have it installed.
 Since the app requires PHP 7.1 minimum, you can use the [migration build](_files/passwords.tar.gz) to upgrade if you are using PHP 5.6.
-It might also be a good idea to check the issue trackers [on github](https://github.com/marius-wieschollek/passwords/issues) and [gitlab](https://git.mdns.eu/nextcloud/passwords/issues) to see if any problems with the migration process have occurred.
+It might also be a good idea to check the issue trackers [on github](https://github.com/marius-wieschollek/passwords/issues) to see if any problems with the migration process have occurred.
 
 
 ### Database Backup
@@ -32,7 +33,6 @@ It is still a good idea to make a backup of the following tables before you star
 ### Setup Testing System
 We do not recommend performing the update on a live system before testing it.
 If you have a staging / testing environment use it to test the migration before migrating the live system.
-If you do not have a separate environment for testing, you can use the [docker setup for developers](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md).
 If you used password sharing in the legacy app, you should import a complete dump of your live database since the migration will not migrate shares if the user it was shared with does not exist.
 After importing the database dump from the previous step and set the `passwordsalt` to the same value as on your live system.
 Make sure to set the `installed_version` value on your testing system to `2017.12`:
@@ -41,7 +41,7 @@ Make sure to set the `installed_version` value on your testing system to `2017.1
 ./occ config:app:set passwords installed_version --value 2017.12
 ```
 Please note that the migration will check the security status of all passwords during the migration.
-By default this is done with the [haveibeenpwned.com](https://haveibeenpwned.com/) web service which takes 1.5 seconds per password.
+By default this is done with the [haveibeenpwned.com](https://haveibeenpwned.com/) web service.
 You can change this with the following sql statement:
 ```bash
 ./occ config:app:set passwords service/security --value bigdb
@@ -114,8 +114,8 @@ apt-get update
 apt-get install libmcrypt-dev
 
 
-# Use Version 1.0.0 for PHP 7.1
-pecl install channel://pecl.php.net/mcrypt-1.0.2
+# Use Version 1.0.2 for PHP 7.3
+pecl install channel://pecl.php.net/mcrypt-1.0.3
 
 # If you installed PHP with apt
 phpenmod mcrypt

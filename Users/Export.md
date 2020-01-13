@@ -12,10 +12,25 @@ The backup can be used to restore an earlier state of your database later or to 
 - Backups will only contain editable fields of your passwords. Things like the `created` date will not be included.
 - Backups use ids to identify objects but these will be different on every instance of passwords.
   This means that if you make a backup on one instance of passwords and import the same backup twice on another instance, every element will be created two times since the ids do not match.
-- Backups will not contain hidden passwords
+- Backups will not contain hidden passwords, tags or folders
 
 ## Predefined CSV Export
-Creates a CSV file
+This export offers to export `Passwords`, `Folders` and `Tags` using a predefined template for the CSV file.
+This makes it easier to import the files since no manual field mapping needs to be used.
+
+The export will create either a CSV file or a ZIP-File containing multiple CSV files for each exported object type.
+
+#### Importing a predefined CSV file
+During the import, each file needs to be imported separately using the predefined csv import options.
+
+**Note:** The predefined format may change and export and import should always be made with the same version of the passwords app
+
+
+## Microsoft Excel / Open Office Calc Export
+The office document exports allow the export of the entire database into a single office document.
+`Passwords`, `Folders` and `Tags` will be exported as sheets of the document.
+The import does not support office documents so you must use the CSV export of your office suite to create an importable file.
+
 
 ## Creating a custom CSV file
 ![The "Custom CSV" option allows the creation of a customized CSV file](_files/export-custom-csv.png)

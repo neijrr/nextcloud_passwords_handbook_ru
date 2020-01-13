@@ -4,6 +4,8 @@ The backup settings can be changed on the [admin settings page](./Administrative
 
 **Note:** Backups do not include tokens for third party apps.
 
+**Note:** Using backups requires command line access. But if your version of passwords supports client side encryption you can use [occweb](https://apps.nextcloud.com/apps/occweb).
+
 ## Backup Compatibility
 The list below contains all versions of Passwords that introduced new changes to the backup file format.
 While it is possible to read older backups on newer versions of the app, it not possible to read newer backups on older versions of the app.
@@ -13,6 +15,8 @@ While it is possible to read older backups on newer versions of the app, it not 
 | 2018.11.0 | 100, 101 |
 | 2019.1.0 | 100, 101, 102 |
 | 2019.4.0 | 100, 101, 102, 103 |
+| 2019.6.0 | 100, 101, 102, 103, 104 |
+| 2019.7.0 | 100, 101, 102, 103, 104, 105 |
 
 **Note:** Backups will be gzipped automatically if your system supports it.
 Restoring gzipped backups on a system without the PHP-Gzip extension will not work.
@@ -31,6 +35,7 @@ There are two ways of creating backups.
 Passwords will create backups automatically according to the app [settings](./Administrative-Settings#Backup-Settings).
 You can also crate backups manually by running the cli command `./occ passwords:backup:create` in your Nextcloud directory.
 The command will output the name of the backup, the file size and whether it is plain json or gzip compressed json.
+You can also specify the name of the backup by adding it to the command `./occ passwords:backup:create <backup name>`.
 
 
 ## Listing Backups
@@ -63,7 +68,7 @@ INSTANCE_ID="$(./occ config:system:get instanceid)";
 cd ${DATA_DIR}/appdata_${INSTANCE_ID}/passwords/backups;
 ```
 
-If you choose to add a backup file, you will have to rescan te app data directory afterwards to make sure it shows up in the backup list:
+If you choose to add a backup file, you will have to rescan the app data directory afterwards to make sure it shows up in the backup list:
 
 ```
 ./occ files:scan-app-data

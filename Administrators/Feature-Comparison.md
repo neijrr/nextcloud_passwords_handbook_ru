@@ -18,8 +18,8 @@
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
 | Server Side Encryption    | ✔ | ✔ |
-| Client Side Encryption    | ✖ | ✔ |
-| Two-Factor Authentication | ✖ | ✔ |
+| Client Side Encryption    | ✔² | ✔ |
+| Two-Factor Authentication | ✔² | ✔ |
 | Password Quality Check    | ✔ | ✔ |
 | Password Breach Check     | ✔ | ✖ |
 
@@ -39,7 +39,7 @@
 | --- | --- | --- |
 | CSV Export            | ✔ | ✖¹ |
 | CSV Import            | ✔ | ✔ |
-| Excel Export          | ✔ | ✖ |
+| Excel/ODP Export      | ✔ | ✖ |
 | Backups               | ✔ | ✖¹ |
 
 
@@ -60,14 +60,15 @@
 | Database Backups             | ✔ | ✖ |
 | Account Transfer             | ✖ | ✔ |
 | Configure 3rd-Party-Services | ✔ | ✖ |
+| Server Backups               | ✔ | ✖ |
 
 
 ### Technical Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Compatibility | Nextcloud 12, 13, 14, 15 | Nextcloud 9, 10, 11, 12, 13, 14, 15 |
+| Compatibility | Nextcloud 15, 16 | Nextcloud 14, 15, 16 |
 | Self hosted   | ✔ | ✔ |
-| Languages     | English, French, German, Czech, Dutch, Russian | 48 languages including dialects |
+| Languages     | English, French, German, Czech, Dutch, Swedish, Russian | 48 languages including dialects |
 | Price         | free | free |
 
 
@@ -90,3 +91,4 @@
 
 ##### Footnotes
 ¹ Implemented but broken
+² In Beta Testing

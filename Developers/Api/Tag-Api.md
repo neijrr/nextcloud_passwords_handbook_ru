@@ -9,7 +9,9 @@
 | edited | int | yes | no | yes | Unix timestamp when the user last edited the tag name or color |
 | revision | string | no | no | yes | UUID of the current revision |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
 | sseType | string | no | no | yes | Type of the used server side encryption |
+| client | string | no | no | yes | Name of the client which created this revision |
 | hidden | bool | yes | no | yes | Hides the tag in list / find actions |
 | trashed | bool | no | no | yes | True if the tag is in the trash |
 | favorite | bool | yes | no | yes | True if the user has marked the tag as favorite |
@@ -58,6 +60,7 @@ The create action creates a new tag with the given attributes.
 | label | string | - | yes | The label of the tag |
 | color | string | - | yes | The color of the tag |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last edited the tag |
 | hidden | bool | false | no | Whether or not the tag should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this tag as favorite |
@@ -86,6 +89,7 @@ The update action creates a new revision of a tag with an updated set of attribu
 | label | string | - | yes | The label of the tag |
 | color | string | - | yes | The color of the tag |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | edited | int | 0 | no | Unix timestamp when the user has last edited the tag |
 | hidden | bool | false | no | Whether or not the tag should be hidden |
 | favorite | bool | false | no | Whether or not the user has marked this tag as favorite |
@@ -113,6 +117,7 @@ The delete action moves a tag to the trash or deletes it completely if it is alr
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the tag |
+| revision | string | - | no | Assumed current revision of the tag (Since 2019.6.0) |
 
 #### Return value
 The success status code is `200 Ok`
@@ -125,6 +130,8 @@ The success status code is `200 Ok`
 #### Notes
  - If a tag is moved to the trash, the relation to all passwords which are not in trash will be hidden from the password
  - If a tag is deleted, all relations to passwords are deleted
+ - If the `revision` is set, the tag will only be deleted if that revision is the current revision. 
+   This way, a tag is not accidentally deleted instead of trashed if the client is out of sync.
 
 
 
@@ -164,7 +171,7 @@ The show action lists the properties of a single tag.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the tag |
-| detailLevel | string | "model" | no | The detail level of the returned tag object |
+| details | string | "model" | no | The detail level of the returned tag object |
 
 #### Return value
 The success status code is `200 Ok`
@@ -182,7 +189,7 @@ The list action lists all tags of the user except those in trash and the hidden 
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| detailLevel | string | "model" | no | The detail level of the returned tag objects |
+| details | string | "model" | no | The detail level of the returned tag objects |
 
 #### Return value
 The success status code is `200 Ok`
@@ -204,7 +211,7 @@ How the criteria array works is explained on the [object search page](./Object-S
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
-| detailLevel | string | "model" | no | The detail level of the returned tag objects |
+| details | string | "model" | no | The detail level of the returned tag objects |
 
 #### Allowed search fields
 | Field | Type | Description |

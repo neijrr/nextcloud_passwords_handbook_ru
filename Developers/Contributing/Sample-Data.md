@@ -11,3 +11,6 @@ Here you can find sample data and import files which can be imported in the [imp
 - [Enpass CSV](../_files/Enpass.csv)
 - [Dashlane CSV](../_files/DashlaneExport.csv)
 - [Generic Password CSV](../_files/PasswordList.csv)
+
+### API debugging
+To make working with the API easier, we offer an [import file](./_files/insomnia-workspace.json) for the free API debugging tool [Insomnia](https://insomnia.rest/).

@@ -1,17 +1,5 @@
 ## Built-In Handbook
-Passwords features a build-in handbook to provide uses with an easy to access help whenever they need it.
-This handbook is constantly updated and will therefore be always fetched directly from our [github repository](https://github.com/marius-wieschollek/passwords/wiki).
-If you are running an outdated version of Passwords, the handbook may be inaccurate.
-Since the handbook resources will be fetched when they are requested, the handbook domain (raw.githubusercontent.com) will be whitelisted in the CSP.
-
-##### Using a custom or self hosted handbook
-You can set a custom location for the handbook with the following command.
-```bash
-./occ config:app:set passwords handbook/url --value https://yourdomain.org/path/to/base/dir/
-```
-Passwords will try to load the file `https://yourdomain.org/path/to/base/dir/Index.md` when the handbook is opened.
-While Passwords will take care of the Nextcloud content security policy, you will have to make sure that the CORS policy of the handbook server allows requests from your Nextcloud.
-If you set an invalid handbook url, the default url will be used.
+See [user handbook](./User-Handbook).
 
 
 ## Deleting Users
@@ -35,3 +23,20 @@ To execute the repair job, execute the Nextcloud maintenance command from the ne
 ## How do i make the app look like in the app store?
 - We use **Besticon** as **Favicon Service**. We recommend hosting it your self as [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/) or for free on [Heroku](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon&template=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon)
 - We use **Pageres** as **Website Preview Service**
+
+## How do i use the app on a server without internet access?
+
+The app is not designed to run offline. 
+The options below are the best way to run the app on a server without internet access.
+
+Internet access is still required to fetch the bad passwords database.
+You must also [host the user manual](User-Handbook#self-hosting-the-handbook) yourself.
+
+| Setting | Offline Option |
+| --- | --- |
+| Password Security Checks | 10 Million Passwords _or_ 1 Million Passwords |
+| Password Generator Service | Local dictionary _or_ Random characters |
+| Favicon Service | None |
+| Website Preview Service | None |
+| Server survey participation | None |
+| Show Nightly Updates in "Apps" | No |

@@ -7,15 +7,18 @@
 | password | string | yes | yes | yes | The actual password |
 | url | string | yes | yes | yes | Url of the website |
 | notes | string | yes | yes | yes | Notes for the password. Can be formatted with Markdown |
-| customFields | string | yes | yes | yes | Custom fields created by the user. (See [custom fields](#Custom-Fields) |
+| customFields | string | yes | yes | yes | Custom fields created by the user. (See [custom fields](#custom-fields)) |
 | status | int | no | no | yes | Security status level of the password (0 = ok, 1 = user rules violated, 2 = breached) |
 | statusCode | string | no | no | yes | Specific code for the current security status (GOOD, OUTDATED, DUPLICATE, BREACHED) |
 | hash | string | yes | no | yes | SHA1 hash of the password |
 | folder | string | yes | no | yes | UUID of the current folder of the password |
 | revision | string | no | no | yes | UUID of the current revision |
 | share | string / null | no | no | no | UUID of the share if the password was shared by someone else with the user |
+| shared | bool | no | no | no | True if the password is shared with other users |
 | cseType | string | yes | no | yes | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
 | sseType | string | no | no | yes | Type of the used server side encryption |
+| client | string | no | no | yes | Name of the client which created this revision |
 | hidden | bool | yes | no | yes | Hides the password in list / find actions |
 | trashed | bool | no | no | yes | True if the password is in the trash |
 | favorite | bool | yes | no | yes | True if the user has marked the password as favorite |
@@ -26,7 +29,7 @@
 
 #### Detail Levels
 | Level | Description |
-| --- | --- | 
+| --- | --- |
 | model | Returns the base model |
 | +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
 | +folder | Fills the folder property with the base model of the folder. If the password is not hidden but the folder is, the base folder will be used |
@@ -37,7 +40,7 @@
 The properties "revisions", "folder", "tags", "shares" and "share" are also processed if necessary.
 
 | Property | Type | Description |
-| --- | --- | --- | 
+| --- | --- | --- |
 | type | string | Object type, the value is "password" |
 | icon | string | Url for the default favicon of the website in 32x32px |
 | preview | string | Url for the default website preview image in 550x350+ px |
@@ -83,6 +86,7 @@ The create action creates a new password with the given attributes.
 | customFields| string | empty | no | The custom fields defined by the user |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | folder | string | Base folder | no | The current folder of the password |
 | edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |
@@ -125,6 +129,7 @@ The update action creates a new revision of a password with an updated set of at
 | customFields| string | empty | no | The custom fields defined by the user |
 | hash | string | empty | yes | The SHA1 hash of the password |
 | cseType | string | "none" | no | The client side encryption type |
+| cseKey | string | "" | no | The UUID of the key used for client side encryption. Required if `cseType` not "none" |
 | folder | string | Base folder | no | The current folder of the password |
 | edited | int | 0 | no | Unix timestamp when the user has last changed the actual password |
 | hidden | bool | false | no | Whether or not the password should be hidden |
@@ -165,6 +170,7 @@ The delete action moves a password to the trash or deletes it completely if it i
 | Arguments | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password |
+| revision | string | - | no | Assumed current revision of the password (Since 2019.6.0) |
 
 #### Return value
 The success status code is `200 Ok`
@@ -176,8 +182,8 @@ The success status code is `200 Ok`
 
 #### Notes
  - If a password is moved to the trash, the relations to tags will be hidden from the tag, but not the password.
-
-
+ - If the `revision` is set, the password will only be deleted if that revision is the current revision. 
+   This way, a password is not accidentally deleted instead of trashed if the client is out of sync.
 
 
 # The restore action
@@ -218,7 +224,7 @@ The show action lists the properties of a single password.
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password |
-| detailLevel | string | "model" | no | The detail level of the returned password object |
+| details | string | "model" | no | The detail level of the returned password object |
 
 #### Return value
 The success status code is `200 Ok`
@@ -236,7 +242,7 @@ The list action lists all passwords of the user except those in trash and the hi
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| detailLevel | string | "model" | no | The detail level of the returned password objects |
+| details | string | "model" | no | The detail level of the returned password objects |
 
 #### Return value
 The success status code is `200 Ok`
@@ -253,13 +259,13 @@ The return value is a list of password objects with the given detail level
 # The find action
 The find action can be used to find all passwords matching the given search criteria.
 Only a specific set of fields is allowed in the criteria.
-How the criteria array works is explained on the [object search page](./Object-Search.md).
+How the criteria array works is explained on the [object search page](./Object-Search).
 
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | criteria | array | [] | no | The search criteria |
-| detailLevel | string | "model" | no | The detail level of the returned password objects |
+| details | string | "model" | no | The detail level of the returned password objects |
 
 #### Allowed search fields
 | Field | Type | Description |

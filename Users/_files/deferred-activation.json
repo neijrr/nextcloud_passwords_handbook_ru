@@ -1,0 +1,100 @@
+{
+    "server": {
+        "2019.7": {
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2019.7.1": {},
+        "2019.7.2": {},
+        "2019.8": {
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2019.8.1": {},
+        "2019.9": {
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2019.9.1": {},
+        "2019.10": {
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2019.10.1": {},
+        "2019.11": {
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2019.11.1": {},
+        "2019.12": {
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2019.12.1": {},
+        "2020.1": {
+            "wo4snakes-fallback": false,
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2020.1.1": {}
+    },
+    "webapp": {
+        "2019.7": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2019.7.1": {},
+        "2019.7.2": {},
+        "2019.8": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2019.8.1": {},
+        "2019.9": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2019.9.1": {},
+        "2019.10": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2019.10.1": {},
+        "2019.11": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2019.11.1": {},
+        "2019.12": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2019.12.1": {},
+        "2020.1": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2020.1.1": {}
+    }
+}

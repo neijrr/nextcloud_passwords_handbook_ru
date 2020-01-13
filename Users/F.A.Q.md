@@ -13,6 +13,10 @@ Using Passwords via HTTP is not only insecure, the app will also not work.
 You can solve this issue by prefixing the url with `https://<your nextcloud url>`.
 If the server does not support HTTPS, this error can not be solved.
 
+#### Can i access passwords offline?
+**No.** A connection to the Nextcloud server is always required to access passwords.
+
+
 ## Security
 #### How secure is Passwords?
 How secure your passwords are with the Passwords app depends on two main factors.
@@ -28,7 +32,7 @@ A bad administrator could also manipulate Nextcloud in a way to steal your passw
 So you will have to trust your administrator to keep the server safe.
 
 #### What does the Passwords Session Token do?
-When you use the Passwords app, tokens with the naming schema "Passwords Session MM.DD.YY HH:MM - IP Address" will appear in your device & sessions list.
+When you use the Passwords app, tokens with the naming schema "Passwords Session MM.DD.YY HH:MM - User@IP Address" will appear in your device & sessions list.
 These tokens are generated automatically when you access the Passwords app in Nextcloud.
 The tokens are only valid for a short period of time and usually do not have file system access.
 It is safe to delete the tokens, but you should be aware that this will close currently open sessions.
@@ -52,6 +56,11 @@ Even if you have the rights to edit the password, you can not delete it in the a
 
 
 ## Import and Export
+#### I want to import from another password manager but there is no option for this service
+Most password managers do offer a CSV export.
+If you have that csv file, you can choose the option "Other / Custom CSV" and map the fields yourself.
+See the [import section](./Import#custom-csv-import-options) for further information.
+
 #### A warning says that the service i am trying to import from is known to generate faulty csv files
 Some password services create export files where the columns are not formatted properly.
 If that happens, Passwords may be unable to import the file as it is and you have to fix it manually.
@@ -71,3 +80,18 @@ Given that the option is enabled, you can share passwords which have been shared
 By doing so, it might happen that the person you want to share the password with, is the one who originally shared it.
 If that is the case, Passwords will not complete the sharing process as this would create an endless loop.
 You can view all your shared passwords in `Shared > Shared by me`.
+
+#### The notification "We have detected several failed attempts to unlock your password database by ..."
+If you use 2FA or a master password, the app will send you a notification if a client tries to gain access to the database without correct credentials.
+If this was not you, we recommend revoking the app password of that client in the "Security" section of your Nextcloud account settings.
+If the client was not using an app password, we recommend that you change your account password and delete all the app passwords (Changing your password will invalidate the app passwords).
+
+#### The notification "Administrative access to your account"
+An administrator has opened the passwords app with your account trough an app like [impersonate](https://apps.nextcloud.com/apps/impersonate).
+If you use a master password, then this does not necessarily mean that access to your passwords was possible.
+For more information please talk to your administrator.
+
+#### The notification "Legacy API: Time to say goodbye!"
+You are still using third party software that accesses the passwords trough the old api from ocPasswords.
+This is not recommended and will cause issues if you use client side encryption.
+It is recommended that you update that client or look for a replacement.
