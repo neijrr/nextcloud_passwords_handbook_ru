@@ -42,7 +42,7 @@ The app has the ability to enable/disable some features trough a file in the han
 Those features are usually complete in the app itself, but require changes in external services before they work.
 The features available change between app versions.
 
-To enable/disable those features, the file [`_files/deferred-activation.json`](../../Users/_files/deferred-activation.json) can be used.
+To enable/disable those features, the file [`_files/deferred-activation.json`](../Users/_files/deferred-activation.json) can be used.
 The file will always be loaded when such a feature could be requested by the app.
 
 **Note:** Enabling features which are disabled by default can cause issues and is not supported
