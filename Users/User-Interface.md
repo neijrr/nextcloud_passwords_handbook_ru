@@ -2,6 +2,7 @@
 [![Password List](./_files/_previews/main-section.jpg)](./_files/main-section.png)
 [![Folder Section](./_files/_previews/folder-section.jpg)](./_files/folder-section.png)
 [![Tag Section](./_files/_previews/tag-section.jpg)](./_files/tag-section.png)
+[![Favorites Section](./_files/_previews/favorites-section.jpg)](./_files/favorites-section.png)
 [![Security Section](./_files/_previews/security-section.jpg)](./_files/security-section.png)
 [![Trash Section](./_files/_previews/trash-section.jpg)](./_files/trash-section.png)
 [![Settings Section](./_files/_previews/settings-section.jpg)](./_files/settings-section.png)

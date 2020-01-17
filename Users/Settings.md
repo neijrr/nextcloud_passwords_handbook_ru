@@ -37,7 +37,7 @@ If activated, the password generator will add special characters like `$, €, @
 ## User Interface
 ##### Initial section
 Here you can choose which section will be shown when you open the passwords app.
-By default the `Folders` section will be shown, but you can also select your `All Passwords`, `Favourites`, `Tags` or `Recent` passwords as inital section.
+By default the `Folders` section will be shown, but you can also select your `All Passwords`, `Favorites`, `Tags` or `Recent` passwords as inital section.
 
 ##### Show hidden custom fields (Advanced)
 If enabled, this option will show hidden custom field (custom fields which start with an underscore "`_`") in the password details and edit form.
