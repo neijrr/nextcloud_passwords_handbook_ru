@@ -6,7 +6,7 @@ Bugfixes and security fixes are not visible over the api.
 Support for an old version of the api will be ended by a new major version of the app.
 
 ##### Special note for the initial release
-The version 1.0 api is not complete at this point. It will be so in late 2019.
+The version 1.0 api is not complete at this point. It will be so in late 2020.
 
 ### API version support
 | API | Introduced | Deprecated | Removed |

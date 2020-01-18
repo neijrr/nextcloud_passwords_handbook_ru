@@ -58,16 +58,16 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 
 
 # Available api actions
-| Action | Url | Method | Description |
-| --- | --- | --- | --- |
-| list | `/api/1.0/password/list` | GET | List all passwords with the default detail level |
-| list | `/api/1.0/password/list` | POST | List all passwords with the given detail level |
-| show | `/api/1.0/password/show` | POST | Show a password |
-| find | `/api/1.0/password/find` | POST | Find passwords matching given criteria |
-| create | `/api/1.0/password/create` | POST | Create a new password |
-| update | `/api/1.0/password/update` | PATCH | Update an existing password |
-| delete | `/api/1.0/password/delete` | DELETE | Delete a password |
-| restore | `/api/1.0/password/restore` | PATCH | Restore an earlier state of a password |
+| Action | Url | Method | Session required | Description |
+| --- | --- | --- | --- | --- |
+| list | `/api/1.0/password/list` | GET | yes | List all passwords with the default detail level |
+| list | `/api/1.0/password/list` | POST | yes | List all passwords with the given detail level |
+| show | `/api/1.0/password/show` | POST | yes | Show a password |
+| find | `/api/1.0/password/find` | POST | yes | Find passwords matching given criteria |
+| create | `/api/1.0/password/create` | POST | yes | Create a new password |
+| update | `/api/1.0/password/update` | PATCH | yes | Update an existing password |
+| delete | `/api/1.0/password/delete` | DELETE | yes | Delete a password |
+| restore | `/api/1.0/password/restore` | PATCH | yes | Restore an earlier state of a password |
 
 
 

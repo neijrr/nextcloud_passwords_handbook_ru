@@ -1,11 +1,11 @@
 # Available api actions
-| Action | Url | Method | Description |
-| --- | --- | --- | --- |
-| get   | `/api/1.0/settings/get`   | POST | Returns the value of one setting |
-| set   | `/api/1.0/settings/set`   | POST | Sets the value of a setting |
-| list  | `/api/1.0/settings/list`  | GET  | Lists all settings |
-| list  | `/api/1.0/settings/list`  | POST | Lists all settings in a scope |
-| reset | `/api/1.0/settings/reset` | POST | Resets a setting |
+| Action | Url | Method | Session required | Description |
+| --- | --- | --- | --- | --- |
+| get   | `/api/1.0/settings/get`   | POST | no  | Returns the value of one setting |
+| set   | `/api/1.0/settings/set`   | POST | yes | Sets the value of a setting |
+| list  | `/api/1.0/settings/list`  | GET  | no  | Lists all settings |
+| list  | `/api/1.0/settings/list`  | POST | no  | Lists all settings in a scope |
+| reset | `/api/1.0/settings/reset` | POST | yes | Resets a setting |
 
 
 
@@ -28,7 +28,10 @@
 | user.mail.shares | bool | false | Whether or not the user receives mails about new shared objects |
 | user.notification.security | bool | true | Whether or not the user receives notifications about security issues |
 | user.notification.shares | bool | true | Whether or not the user receives notifications about new shared objects |
-| user.notification.errors | bool | true | Whether or not the user receives notifications about backgroudn errors |
+| user.notification.errors | bool | true | Whether or not the user receives notifications about background errors |
+| user.encryption.sse | int | 1 | The server side encryption type. 0 = None, 1 = SSEv1, 2 = SSEv1 |
+| user.encryption.cse | int | 0 | The client side encryption type. 0 = None, 1 = CSEv1 |
+| user.session.lifetime | int | 600 | The session lifetime in seconds |
 | server.version | string | - | The Nextcloud version of the server |
 | server.baseUrl | string | - | The base url of the server |
 | server.baseUrl.webdav | string | - | The base url of the WebDav service used for file storage |

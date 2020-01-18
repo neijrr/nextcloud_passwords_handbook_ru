@@ -45,16 +45,16 @@ The properties "revisions", "parent", "folders" and "passwords" are also process
 
 
 # Available api actions
-| Action | Url | Method | Description |
-| --- | --- | --- | --- |
-| list | `/api/1.0/folder/list` | GET | List all folders with the default detail level |
-| list | `/api/1.0/folder/list` | POST | List all folders with the given detail level |
-| show | `/api/1.0/folder/show` | POST | Show a folder |
-| find | `/api/1.0/folder/find` | POST | Find folders matching given criteria |
-| create | `/api/1.0/folder/create` | POST | Create a new folder |
-| update | `/api/1.0/folder/update` | PATCH | Update an existing folder |
-| delete | `/api/1.0/folder/delete` | DELETE | Delete a folder |
-| restore | `/api/1.0/folder/restore` | PATCH | Restore an earlier state of a folder |
+| Action | Url | Method | Session required | Description |
+| --- | --- | --- | --- | --- |
+| list | `/api/1.0/folder/list` | | GET | yes | List all folders with the default detail level |
+| list | `/api/1.0/folder/list` | POST | yes | List all folders with the given detail level |
+| show | `/api/1.0/folder/show` | POST | yes | Show a folder |
+| find | `/api/1.0/folder/find` | POST | yes | Find folders matching given criteria |
+| create | `/api/1.0/folder/create` | POST | yes | Create a new folder |
+| update | `/api/1.0/folder/update` | PATCH | yes | Update an existing folder |
+| delete | `/api/1.0/folder/delete` | DELETE | yes | Delete a folder |
+| restore | `/api/1.0/folder/restore` | PATCH | yes | Restore an earlier state of a folder |
 
 
 

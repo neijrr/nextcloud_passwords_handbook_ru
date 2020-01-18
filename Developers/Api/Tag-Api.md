@@ -37,16 +37,16 @@ The properties "revisions" and "passwords" are also processed if necessary.
 
 
 # Available api actions
-| Action | Url | Method | Description |
-| --- | --- | --- | --- |
-| list | `/api/1.0/tag/list` | GET | List all tags with the default detail level |
-| list | `/api/1.0/tag/list` | POST | List all tags with the given detail level |
-| show | `/api/1.0/tag/show` | POST | Show a tag |
-| find | `/api/1.0/tag/find` | POST | Find tags matching given criteria |
-| create | `/api/1.0/tag/create` | POST | Create a new tag |
-| update | `/api/1.0/tag/update` | PATCH | Update an existing tag |
-| delete | `/api/1.0/tag/delete` | DELETE | Delete a tag |
-| restore | `/api/1.0/tag/restore` | PATCH | Restore an earlier state of a tag |
+| Action | Url | Method | Session required | Description |
+| --- | --- | --- | --- | --- |
+| list | `/api/1.0/tag/list` | GET | yes | List all tags with the default detail level |
+| list | `/api/1.0/tag/list` | POST | yes | List all tags with the given detail level |
+| show | `/api/1.0/tag/show` | POST | yes | Show a tag |
+| find | `/api/1.0/tag/find` | POST | yes | Find tags matching given criteria |
+| create | `/api/1.0/tag/create` | POST | yes | Create a new tag |
+| update | `/api/1.0/tag/update` | PATCH | yes | Update an existing tag |
+| delete | `/api/1.0/tag/delete` | DELETE | yes | Delete a tag |
+| restore | `/api/1.0/tag/restore` | PATCH | yes | Restore an earlier state of a tag |
 
 
 

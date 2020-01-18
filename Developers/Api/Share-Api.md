@@ -39,17 +39,17 @@ The property "password" is also processed if necessary.
 
 
 # Available api actions
-| Action | Url | Method | Description |
-| --- | --- | --- | --- |
-| list | `/api/1.0/share/list` | GET | List all shares with the default detail level |
-| list | `/api/1.0/share/list` | POST | List all shares with the given detail level |
-| show | `/api/1.0/share/show` | POST | Show a share |
-| find | `/api/1.0/share/find` | POST | Find shares matching given criteria |
-| create | `/api/1.0/share/create` | POST | Create a new share |
-| update | `/api/1.0/share/update` | PATCH | Update an existing share |
-| delete | `/api/1.0/share/delete` | DELETE | Delete a share |
-| partners | `/api/1.0/share/partners` | GET | Find users you can share with |
-| partners | `/api/1.0/share/partners` | POST | Find users you can share with by pattern |
+| Action | Url | Method | Session required | Description |
+| --- | --- | --- | --- | --- |
+| list | `/api/1.0/share/list` | GET | yes | List all shares with the default detail level |
+| list | `/api/1.0/share/list` | POST | yes | List all shares with the given detail level |
+| show | `/api/1.0/share/show` | POST | yes | Show a share |
+| find | `/api/1.0/share/find` | POST | yes | Find shares matching given criteria |
+| create | `/api/1.0/share/create` | POST | yes | Create a new share |
+| update | `/api/1.0/share/update` | PATCH | yes | Update an existing share |
+| delete | `/api/1.0/share/delete` | DELETE | yes | Delete a share |
+| partners | `/api/1.0/share/partners` | GET | yes | Find users you can share with |
+| partners | `/api/1.0/share/partners` | POST | yes | Find users you can share with by pattern |
 
 
 
@@ -71,7 +71,8 @@ If the autocompletion is disabled by the administrator the result is an empty ar
 
 #### Notes
  - This command will fail if sharing is disabled
- - This api endpoint has a rate limit of 48 requests in 5 minutes
+ - The `limit` can not be less than 5 or more than 256
+ - This api endpoint has a rate limit of 45 requests per minute
 
 
 
