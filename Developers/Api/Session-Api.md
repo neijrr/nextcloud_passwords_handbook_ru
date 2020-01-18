@@ -78,7 +78,7 @@ The action will return an object with the property `success` with the value `tru
 # Session ID
 Usually, the session cookies provided by Nextcloud are sufficient to use sessions.
 If for some reason your client is unable to use cookies, the special header `X-API-SESSION` can be used to exchange session ids.
-The api will include the header in each request response and will accept it in each request.
+The api will include the header in each response and will accept it in each request.
 
 
 # Backwards compatibility
