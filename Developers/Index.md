@@ -22,6 +22,7 @@
       1. [CSEv1 Keychain](./Encryption/CSEv1Keychain)
    3. Encryption
       1. [CSEv1 Encryption](./Encryption/CSEv1Encryption)
+3. [List your app](./App-Requirements)
 3. [Legacy API](./Api/Legacy-Api)
 4. [Contributing](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
    1. [Development Environment](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
