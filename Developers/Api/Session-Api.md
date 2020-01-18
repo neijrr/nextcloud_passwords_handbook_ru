@@ -20,7 +20,7 @@ If nothing is required, the result is an empty object.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| challenge | object | An object with the [password challenge](./Encryption#password-challenge). The property `type` specifies the challenge type. |
+| challenge | object | An object with the [password challenge](../Encryption#password-challenge). The property `type` specifies the challenge type. |
 | token | array | An array with available [2FA token](./Token-Api). One of them must be used. |
 
 
@@ -32,7 +32,7 @@ Which arguments are required can be found out with the request action.
 
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| challenge | string | - | yes (if enabled) | The solution of the [password challenge](./Encryption#password-challenge) |
+| challenge | string | - | yes (if enabled) | The solution of the [password challenge](../Encryption#password-challenge) |
 | token | object | - | yes (if enabled) | An object with the id of the token as property and the token as value |
 
 #### Return value
