@@ -17,12 +17,16 @@ E2E in Passwords is designed to be upgradeable which is why every part of it is 
 | [`CSEv1r1`](./Encryption/CSEv1Keychain) | The standard CSE keychain |
 
 ##### CSE/E2E encryption
+The default CSE chosen by the user is set in `user.encryption.cse`.
+
 | Type | Description |
 | --- | --- |
 | `none` | An object without any client side encryption. Only available with SSE other than `none` |
 | [`CSEv1r1`](./Encryption/CSEv1Encryption) | The standard CSE encryption. Can not be used for shared entities. |
 
 ##### SSE encryption
+The default CSE chosen by the user is set in `user.encryption.sse`.
+
 | Type | Description |
 | --- | --- |
 | `none` | An object without any server side encryption. Only available with CSE other than `none` |
@@ -39,6 +43,8 @@ E2E in Passwords is designed to be upgradeable which is why every part of it is 
 
 
 ### The encryption flow
+This diagram explains the process which is necessary to use encryption.
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -73,7 +79,10 @@ sequenceDiagram
     end
 ```
 
-### The encryption setup
+
+### Set up encryption
+This diagram explains the process which is necessary to set up encryption
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -92,4 +101,29 @@ sequenceDiagram
     Client->>Server: Update objects
     Server->>Client: Success
     Client->>User: Shows objects
+```
+
+#### Notes
+ - When migrating objects without encryption, it is recommended to delete the old object and create a new one
+
+
+### Change the master password
+This diagram explains the process which is necessary to change the users master password
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Client
+    participant Server
+    User->>Client: New password
+    Client->>Server: Get current challenge
+    Client->>Client: Solve challenge
+    Client->>Client: Create new challenge
+    Client->>Server: Set challenge
+    Server->>Server: Update SSEv2
+    Server->>Client: Success
+    Client->>Client: Add key to keychain
+    Client->>Server: Set keychain
+    Server->>Client: Success
+    Client->>User: Password changed
 ```
