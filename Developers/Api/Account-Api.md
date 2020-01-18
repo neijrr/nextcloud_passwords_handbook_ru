@@ -32,7 +32,6 @@ The success status code is `200 Ok` or `202 Accepted`.
 
 # The get challenge action
 The get challenge action will return the current password challenge.
-The format matches the one in of the `challenge` property from [request-session](./Session-Api#the-request-action)
 
 #### Arguments
 There are no arguments for this action.
@@ -40,6 +39,7 @@ There are no arguments for this action.
 #### Return value
 The success status code is `200 Ok` .
 The request returns an object with the challenge data and the property `token` which identifies the challenge type.
+The format matches the one in of the `challenge` property from [request session](./Session-Api#the-request-action).
 
 
 # The set challenge action
