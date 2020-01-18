@@ -32,7 +32,7 @@ The default CSE chosen by the user is set in `user.encryption.sse`.
 | `none` | An object without any server side encryption. Only available with CSE other than `none` |
 | `SSEv1r1` | An object with first generation server side encryption. Uses a server key, user key and object key |
 | `SSEv1r2` | An object with second generation server side encryption. Uses the Nextcloud secret, user key and object key |
-| `SSEv2r1` | An object with secure server side encryption. SSEv2 uses a keychain which is remporarily decrypted with the challenge secret |
+| `SSEv2r1` | An object with secure server side encryption. SSEv2 uses a keychain which is temporarily decrypted with the challenge secret |
 
 ##### 2FA token
 | Type | Description |
