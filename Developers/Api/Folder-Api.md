@@ -3,7 +3,7 @@
 | --- | --- | --- | --- | --- | --- |
 | id | string | no | no | no | The UUID of the folder |
 | label | string | yes | yes | yes | User defined label of the folder |
-| parent | string | no | no | yes | UUID of the parent folder |
+| parent | string | yes | no | yes | UUID of the parent folder |
 | created | int | no | no | no | Unix timestamp when the folder was created |
 | updated | int | no | no | yes | Unix timestamp when the folder was updated |
 | edited | int | yes | no | yes | Unix timestamp when the user last changed the folder name |
