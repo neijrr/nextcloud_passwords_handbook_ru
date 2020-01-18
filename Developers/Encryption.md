@@ -20,7 +20,7 @@ E2E in Passwords is designed to be upgradeable which is why every part of it is 
 | Type | Description |
 | --- | --- |
 | `none` | An object without any client side encryption. Only available with SSE other than `none` |
-| [`CSEv1r1`](./Encryption/CSEv1Encryption) | The standard CSE encryption |
+| [`CSEv1r1`](./Encryption/CSEv1Encryption) | The standard CSE encryption. Can not be used for shared entities. |
 
 ##### SSE encryption
 | Type | Description |
@@ -38,7 +38,7 @@ E2E in Passwords is designed to be upgradeable which is why every part of it is 
 
 
 
-### Graphical schema of the encryption flow
+### The encryption flow
 ```mermaid
 sequenceDiagram
     participant User
@@ -55,20 +55,41 @@ sequenceDiagram
         Server->>Server: Validates challenge / token
         Server->>Client: Sends Keychain
     end
-   Client->>Client: Decrypt keychain
-   Client->>Client: Initialize encryption
-   Client->>User: Report login success
-   loop Object decryption
+    Client->>Client: Decrypt keychain
+    Client->>Client: Initialize encryption
+    Client->>User: Report login success
+    loop Object decryption
         Client->>Server: Requests objects
         Server->>Client: Sends objects
         Client->>Client: Decrypts objects
         Client->>User: Shows objects
     end
-   loop Object encryption
+    loop Object encryption
         User->>Client: Changes objects
         Client->>Client: Encrypts objects
         Client->>Server: Sends objects
         Server->>Client: Confirms changes
         Client->>User: Shows changes
     end
+```
+
+### The encryption setup
+```mermaid
+sequenceDiagram
+    participant User
+    participant Client
+    participant Server
+    User->>Client: Master password
+    Client->>Client: Create challenge
+    Client->>Server: Set challenge
+    Server->>Server: Set up SSEv2
+    Server->>Client: Success
+    Client->>Client: Create keychain
+    Client->>Server: Set keychain
+    Server->>Client: Success
+    Client->>User: Encryption enabled
+    Client->>Client: Encrypt objects
+    Client->>Server: Update objects
+    Server->>Client: Success
+    Client->>User: Shows objects
 ```
