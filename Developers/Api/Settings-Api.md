@@ -45,6 +45,7 @@
 | server.theme.background | string | - | The url to the current Nextcloud background image |
 | server.theme.logo | string | - | The url to the logo of the current Nextcloud theme |
 | server.theme.label | string | "Nextcloud" | The name of the Nextcloud instance |
+| server.theme.app.icon | string | - | The url to the current svg app icon |
 | server.theme.folder.icon | string | - | The url to the current svg folder icon |
 | server.manual.url | string | - | The base url of the in-app user handbook |
 | client.* | - | null | The client scope allows client defined keys |
