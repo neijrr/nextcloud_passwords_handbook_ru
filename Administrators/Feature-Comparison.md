@@ -8,6 +8,7 @@
 | Tags                  | ✔ | ✔ |
 | Trash                 | ✔ | ✔ |
 | Vaults                | ✖ | ✔ |
+| One Time Passwords    | ✖ | ✔ |
 | Custom Fields         | ✔ | ✔ |
 | Revisions             | ✔ | ✔ |
 | Password Generator    | ✔ | ✔ |
@@ -47,7 +48,7 @@
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
 | Favicons               | ✔ | ✔ |
-| Website Previews       | ✔ | ✔ |
+| Website Previews       | ✔ | ✖ |
 | Integrated Manual      | ✔ | ✖ |
 | Dark Mode supported    | ✔ | ✖ |
 | Markdown Notes         | ✔ | ✖ |
@@ -66,9 +67,9 @@
 ### Technical Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Compatibility | Nextcloud 15, 16 | Nextcloud 14, 15, 16 |
+| Compatibility | Nextcloud 17, 18 | Nextcloud 17, 18 |
 | Self hosted   | ✔ | ✔ |
-| Languages     | English, French, German, Czech, Dutch, Swedish, Russian | 48 languages including dialects |
+| Languages     | English, Spanish, French, German, Czech, Dutch, Swedish, Russian | 48 languages including dialects |
 | Price         | free | free |
 
 
@@ -78,8 +79,8 @@
 | Browsers                 | Firefox & Chrome | Firefox & Chrome |
 | Detect new Passwords     | ✔ | ✔ |
 | Detect changed Passwords | ✔ | ✔ |
-| Autofill                 | ✖ | ✔ |
-| Multiple Accounts        | ✖ | ✔ |
+| Autofill                 | ✔² | ✔ |
+| Multiple Accounts        | ✔² | ✔ |
 
 
 ### Android App
