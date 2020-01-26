@@ -35,7 +35,10 @@ The field "color" can not be left empty when creating or updating a tag.
 #### [f281915e] Invalid revision id
 The given revision uuid does not belong to the given entity uuid.
 
-#### [f281915e] Can not edit base folder
+#### [9c5d2ad8] Invalid revision id
+The given revision uuid is not the current revision of the entity.
+
+#### [7c8efc3c] Can not edit base folder
 When working with folders, you can not manipulate properties of the base folder as it is a virtual folder.
 
 #### [60177108] Illegal field in search criteria

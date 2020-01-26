@@ -36,23 +36,9 @@
 | +tags | Adds the tags property filled with the base model of all tags. Hidden tags are not included in this list if the password is not hidden |
 | +shares | Adds the shares property filled with the base model of all shares with other users. Fills the share property with the base model of the original share if available |
 
-#### Enhanced API special properties
-The properties "revisions", "folder", "tags", "shares" and "share" are also processed if necessary.
-
-| Property | Type | Description |
-| --- | --- | --- |
-| type | string | Object type, the value is "password" |
-| icon | string | Url for the default favicon of the website in 32x32px |
-| preview | string | Url for the default website preview image in 550x350+ px |
-| created | Date | Date when the password was created |
-| updated | Date | Date when the password was last updated |
-| edited | Date | Date when the use last changed the password |
-
 #### Notes
- - The status property may be 0 for secure, 1 for weak and 2 for breached.
- - The status code GOOD is level 0, OUTDATED and DUPLICATE are level 1 and BREACHED is level 2
  - Since the status check is done once per day server side, the DUPLICATE status may take some time to be applied to all affected passwords
- - The difference betwenn `updated` and `edited` is that updated is always set by the server when the password is changed and edited has to be set by the client.
+ - The difference between `updated` and `edited` is that updated is always set by the server when the password is changed and edited has to be set by the client.
 
 
 
@@ -60,14 +46,14 @@ The properties "revisions", "folder", "tags", "shares" and "share" are also proc
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
-| list | `/api/1.0/password/list` | GET | yes | List all passwords with the default detail level |
-| list | `/api/1.0/password/list` | POST | yes | List all passwords with the given detail level |
-| show | `/api/1.0/password/show` | POST | yes | Show a password |
-| find | `/api/1.0/password/find` | POST | yes | Find passwords matching given criteria |
-| create | `/api/1.0/password/create` | POST | yes | Create a new password |
-| update | `/api/1.0/password/update` | PATCH | yes | Update an existing password |
-| delete | `/api/1.0/password/delete` | DELETE | yes | Delete a password |
-| restore | `/api/1.0/password/restore` | PATCH | yes | Restore an earlier state of a password |
+| [list](#the-list-action) | `/api/1.0/password/list` | GET | yes | List all passwords with the default detail level |
+| [list](#the-list-action) | `/api/1.0/password/list` | POST | yes | List all passwords with the given detail level |
+| [show](#the-show-action) | `/api/1.0/password/show` | POST | yes | Show a password |
+| [find](#the-find-action) | `/api/1.0/password/find` | POST | yes | Find passwords matching given criteria |
+| [create](#the-create-action) | `/api/1.0/password/create` | POST | yes | Create a new password |
+| [update](#the-update-action) | `/api/1.0/password/update` | PATCH | yes | Update an existing password |
+| [delete](#the-delete-action) | `/api/1.0/password/delete` | DELETE | yes | Delete a password |
+| [restore](#the-restore-action) | `/api/1.0/password/restore` | PATCH | yes | Restore an earlier state of a password |
 
 
 
@@ -163,60 +149,6 @@ The success status code is `200 Ok`
 
 
 
-# The delete action
-The delete action moves a password to the trash or deletes it completely if it is already in the trash.
-
-#### Arguments
-| Arguments | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| id | string | - | yes | The id of the password |
-| revision | string | - | no | Assumed current revision of the password (Since 2019.6.0) |
-
-#### Return value
-The success status code is `200 Ok`
-
-| Argument | Type | Description |
-| --- | --- | --- |
-| id | string | The UUID of the password |
-| revision | string | The UUID of the new revision. Only if the password was moved to the trash |
-
-#### Notes
- - If a password is moved to the trash, the relations to tags will be hidden from the tag, but not the password.
- - If the `revision` is set, the password will only be deleted if that revision is the current revision. 
-   This way, a password is not accidentally deleted instead of trashed if the client is out of sync.
-
-
-# The restore action
-The restore action can restore an earlier state of a password.
-
-#### Arguments
-| Arguments | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| id | string | - | yes | The id of the password |
-| revision | string | - | no | The id of the revision |
-
-#### Return value
-The success status code is `200 Ok`
-
-| Argument | Type | Description |
-| --- | --- | --- |
-| id | string | The UUID of the password |
-| revision | string | The UUID of the new revision |
-
-#### Notes
- - If no revision is given and the password is in trash, it will be removed from trash
- - If no revision is given and the password is not in trash, nothing is done
- - If a revision is given and the revision is marked as in trash, it will be removed from trash
- - The action may fail if the password is shared but the revision to restore does not meet the requirements for sharing
- - This action will always create a new revision
- - The server side encryption type may change
- - If the folder does not exist anymore, it will be moved to the base folder
- - Tag relations can not be restored
- - Deleted passwords can not be restored
-
-
-
-
 # The show action
 The show action lists the properties of a single password.
 
@@ -287,6 +219,64 @@ The return value is a list of password objects that match the criteria with the 
  - The property `trashed` will be set to `false` if not present
  - The list will not include hidden passwords
  - The list will not include suspended passwords where the folder or a parent folder is in the trash
+
+
+
+
+# The delete action
+The delete action moves a password to the trash or deletes it completely if it is already in the trash.
+
+#### Arguments
+| Arguments | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the password |
+| revision | string | - | no | Assumed current revision of the password (Since 2019.6.0) |
+
+#### Return value
+The success status code is `200 Ok`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the password |
+| revision | string | The UUID of the new revision. Only if the password was moved to the trash |
+
+#### Notes
+ - If a password is moved to the trash, the relations to tags will be hidden from the tag, but not the password.
+ - If the `revision` is set, the password will only be deleted if that revision is the current revision.
+   Otherwise an "Outdated revision id" error is returned.
+   This way, a password is not accidentally deleted instead of trashed if the client is out of sync.
+
+
+
+
+# The restore action
+The restore action can restore an earlier state of a password.
+
+#### Arguments
+| Arguments | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| id | string | - | yes | The id of the password |
+| revision | string | - | no | The id of the revision |
+
+#### Return value
+The success status code is `200 Ok`
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| id | string | The UUID of the password |
+| revision | string | The UUID of the new revision |
+
+#### Notes
+ - If no revision is given and the password is in trash, it will be removed from trash
+ - If no revision is given and the password is not in trash, nothing is done
+ - If a revision is given and the revision is marked as in trash, it will be removed from trash
+ - If a revision is given that does not belong to the model, a "Invalid revision id" error will be returned.
+ - The action will fail if the password is shared but the revision to restore does not meet the requirements for sharing
+ - This action will always create a new revision
+ - The server side encryption type may change
+ - If the folder does not exist anymore, it will be moved to the base folder
+ - Tag relations can not be restored
+ - Deleted passwords can not be restored
 
 
 
