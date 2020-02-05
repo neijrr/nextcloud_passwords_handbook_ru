@@ -24,7 +24,6 @@
             "legacy-client-warning": false,
             "client-side-encryption": false
         },
-        "2019.10.1": {},
         "2019.11": {
             "two-factor-tokens": false,
             "legacy-client-warning": false,
@@ -43,7 +42,13 @@
             "legacy-client-warning": false,
             "client-side-encryption": false
         },
-        "2020.1.1": {}
+        "2020.2": {
+            "wo4snakes-fallback": false,
+            "two-factor-tokens": false,
+            "legacy-client-warning": false,
+            "client-side-encryption": false
+        },
+        "2020.2.1": {}
     },
     "webapp": {
         "2019.7": {
@@ -74,7 +79,6 @@
             "first-run-wizard": false,
             "backup-encryption": false
         },
-        "2019.10.1": {},
         "2019.11": {
             "encryption-tests": false,
             "client-side-encryption": false,
@@ -95,6 +99,12 @@
             "first-run-wizard": false,
             "backup-encryption": false
         },
-        "2020.1.1": {}
+        "2020.2": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2020.2.1": {}
     }
 }

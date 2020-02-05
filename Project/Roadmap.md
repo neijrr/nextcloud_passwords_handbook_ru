@@ -1,12 +1,11 @@
-## Q3 2019
+## Q2 2020
  - Client side encryption
  - New browser extension
- - Client names
  - Easy client setup process
  - Encrypted Database Export
  - Settings in Database Export
  
-## Q4 2019
+## Q4 2020
  - Group Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Folder Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Tag Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
@@ -26,10 +25,8 @@
  - Move items with dialog
  - Import and Export from Nextcloud
  - One Click Login (open website and login)
- - More password hashes
  - Enhanced sharing form
  - Password sending via link
  - Improved view of folders in trash
- - Language support
  - Bookmarks integration
  - Improved sharing with log
