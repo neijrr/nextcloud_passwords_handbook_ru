@@ -27,6 +27,7 @@
 
 
 ## Lists
+#### Ordered List
 1. Item 1
     1. Item 1
         1. Item 1
@@ -55,6 +56,7 @@
 
 
 
+#### Unordered List Type 1
 * Item 1
     * Item 1
         * Item 1
@@ -83,6 +85,7 @@
 
 
 
+#### Unordered List Type 2
 - Item 1
     - Item 1
         - Item 1
@@ -109,6 +112,13 @@
 - Item 4
 - Item 5
 
+
+## Tables
+| TH1 | TH2 | TH3 |
+| --- | --- | --- |
+| TD1 | TD2 | TD3 |
+| TD4 | TD5 | TD6 |
+| TD7 | TD8 | TD9 |
 
 ## Code
 ```
