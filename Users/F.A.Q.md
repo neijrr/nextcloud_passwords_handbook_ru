@@ -37,6 +37,20 @@ These tokens are generated automatically when you access the Passwords app in Ne
 The tokens are only valid for a short period of time and usually do not have file system access.
 It is safe to delete the tokens, but you should be aware that this will close currently open sessions.
 
+#### How do i create a master password?
+Open the Settings (`More > Settings`) and look for the "Encryption" section.
+If you don't see this section, please ask your admin to enable client-side encryption.
+Enable the client-side encryption option and set a master password.
+
+**Note:** This can not be undone. You can change the master password but not remove it.
+
+#### How do i use two factor authentication (2FA)?
+If your Nextcloud account is set up to use 2FA, the app will automatically require it if the feature is enabled.
+If you have 2FA set up, but the app does not require it on login, please ask yor admin to enable two factor authentication.
+
+**Note:** Some third party clients do not support 2FA and will be unusable after enabling it.
+**Note:** You need at least version 2.0.0 of the browser plugin to use 2FA.
+
 
 ## Sharing
 #### I have shared / unshared a password, but the other person can not / still see it
