@@ -156,7 +156,7 @@ Custom fields are intended to contain usual password related information like an
 They are not intended to hold large amounts of data.
 If you want to store long texts, we recommend to use the "Notes" field.
 
-#### Custom field type missmatch
+#### Custom field type mismatch
 If you import passwords with custom fields from any source other than the `Database Backup`, they will be validated.
 Fields with the type `url` or `email` will require to be in a correct format or their type will be set to `text`.
 Also all fields with the type `text` will be checked if they are in the right format for `url` or `email` and if so, their type will be changed. 
