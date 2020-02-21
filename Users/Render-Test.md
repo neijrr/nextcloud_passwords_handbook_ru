@@ -33,11 +33,13 @@
 4. Item 4
 5. Item 5
 
+
 * Item 1
 * Item 2
 * Item 3
 * Item 4
 * Item 5
+
 
 - Item 1
 - Item 2
@@ -48,16 +50,17 @@
 
 ## Code
 ```
-Standard code block
+Standard code block type 1
 ```
+
+~~~
+Standard code block type 2
+~~~
+
 
 ```bash
 Bash code block
 ```
-
-~~~
-Standard code block
-~~~
 
 Text `Code`.
 
