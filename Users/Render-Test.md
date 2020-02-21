@@ -9,6 +9,17 @@
 
 > :exclamation: Important
 
+* List Item
+  > Blockquote
+* List Item
+  > :star: Information
+* List Item
+  > :thumbsup: Recommendation
+* List Item
+  > :warning: Warning
+* List Item
+  > :exclamation: Important
+
 
 ## Headlines
 # H1
