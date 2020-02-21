@@ -28,22 +28,84 @@
 
 ## Lists
 1. Item 1
+    1. Item 1
+        1. Item 1
+        2. Item 2
+        3. Item 3
+        4. Item 4
+        5. Item 5
+    2. Item 2
+    3. Item 3
+    4. Item 4
+    5. Item 5
 2. Item 2
+    * Item 1
+    * Item 2
+    * Item 3
+    * Item 4
+    * Item 5
 3. Item 3
+    - Item 1
+    - Item 2
+    - Item 3
+    - Item 4
+    - Item 5
 4. Item 4
 5. Item 5
 
 
+
 * Item 1
+    * Item 1
+        * Item 1
+        * Item 2
+        * Item 3
+        * Item 4
+        * Item 5
+    * Item 2
+    * Item 3
+    * Item 4
+    * Item 5
 * Item 2
+    1. Item 1
+    2. Item 2
+    3. Item 3
+    4. Item 4
+    5. Item 5
 * Item 3
+    - Item 1
+    - Item 2
+    - Item 3
+    - Item 4
+    - Item 5
 * Item 4
 * Item 5
 
 
+
 - Item 1
+    - Item 1
+        - Item 1
+        - Item 2
+        - Item 3
+        - Item 4
+        - Item 5
+    - Item 2
+    - Item 3
+    - Item 4
+    - Item 5
 - Item 2
+    1. Item 1
+    2. Item 2
+    3. Item 3
+    4. Item 4
+    5. Item 5
 - Item 3
+    * Item 1
+    * Item 2
+    * Item 3
+    * Item 4
+    * Item 5
 - Item 4
 - Item 5
 
