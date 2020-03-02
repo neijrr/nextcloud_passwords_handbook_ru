@@ -67,7 +67,7 @@ However some local service providers like Pageres and the favicon finder may con
 - https://api.pwnedpasswords.com
 - https://raw.githubusercontent.com
 - http://watchout4snakes.com
-- https://ncpw.mdns.eu/
+- https://ncpw.mdns.eu
 
 ### Licenses
 All licensing information can be found in the [Licenses.md](https://github.com/marius-wieschollek/passwords/blob/master/Licenses.md) file

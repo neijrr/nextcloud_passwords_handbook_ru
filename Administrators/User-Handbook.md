@@ -57,3 +57,9 @@ The file will always be loaded when such a feature could be requested by the app
 | webapp | client-side-encryption | Enable client side encryption setup in the settings |
 | webapp | first-run-wizard | Enable the first run wizard with CSE setup |
 | webapp | backup-encryption | Enable encryption for database exports |
+
+#### Disable feature management
+With the following command, the feature management can be disabled on the server, but not on the webapp.
+```bash
+./occ config:app:set passwords das/enabled --value 0
+```
