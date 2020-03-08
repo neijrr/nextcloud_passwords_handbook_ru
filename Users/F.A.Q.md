@@ -81,6 +81,19 @@ If that happens, Passwords may be unable to import the file as it is and you hav
 See the [import section](./Import#how-to-fix-faulty-csv-files) for further information.
 
 
+## Performance
+#### The app is slow after failed logins
+If you repeatedly tried to login with any third party client using incorrect login data, Nextcloud will see this as a brute force attack.
+This results in a slowdown of any further api requests.
+Since the app uses the api, this slowdown will also affect it.
+The normal performance should be restored after some time.
+
+#### The "All" section or folders with many items are slow
+All passwords, folders and tags are stored encrypted and decrypting can take up considerable amounts of time.
+The generation of favicons for each password can also take some time initially.
+Using folders or tags to organize and browse your passwords will increase performance.
+
+
 ## Notifications and Emails
 #### Passwords tells me that one of my passwords is insecure
 If companies get hacked, the passwords of their users often end up in online databases of hacked passwords.
