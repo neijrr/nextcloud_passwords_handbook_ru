@@ -1,5 +1,5 @@
 |  | Minimum | Recommended |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | Processor | 2x1 GHz                     | 4x2 GHz |
 | Ram       | 512 MiB                     | 8 GiB |
 | Disk      | 4 GiB                       | 64 GiB |
@@ -11,13 +11,13 @@
 | PECL      | Curl                        | Zip, Imagick, Curl |
 | Libraries |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
-### Version scheme and minimum requirements
-Passwords versions are simply the date of the release of the version.
+### Version scheme and breaking changes
+Passwords versions are simply the year and month of the release of the version.
 The exact version scheme is `<year>.<month>.<bugfix>`.
-In accordance with [SemVer2.0.0](https://semver.org/spec/v2.0.0.html), backwards compatibility breaks will be introduced in the first version of a new year.
-This includes the removal of support for any Nextcloud version but the latest as well as any PHP version without [active support](http://php.net/supported-versions.php).
+In accordance with [SemVer2.0.0](https://semver.org/spec/v2.0.0.html), only the first version of a new year will introduce breaks in backward compatibility.
+With the first release of the year, the support for any Nextcloud version but the latest as well as any PHP version without [active support](https://php.net/supported-versions.php) will be ended.
 
-### HTTPS
+### HTTPS requirement
 Passwords requires HTTPS to work. This can not be disabled.
 Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
 If you use a proxy or separate ssl termination point, [configure your Nextcloud accordingly](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html).
@@ -32,9 +32,12 @@ More information can be found in the [documentation](https://docs.nextcloud.com/
 
 ### Browser Support
 We support the current version of Chrome and Firefox and assume that most browsers based on these will work as well.
-We do not support specific browser addons.
+We do not support specific configurations od browser extensions.
 
 ### PHP Requirements
+We only support PHP versions with active support by the PHP community.
+The app may run with older PHP versions but this is not tested and bug reports with unsupported PHP versions will be ignored.
+
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages)
 You can install the latest version from the PPA with the following commands:
 ```bash
