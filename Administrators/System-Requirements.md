@@ -35,8 +35,8 @@ We support the current version of Chrome and Firefox and assume that most browse
 We do not support specific configurations od browser extensions.
 
 ### PHP Requirements
-We only support PHP versions with active support by the PHP community.
-The app may run with older PHP versions but this is not tested and bug reports with unsupported PHP versions will be ignored.
+We only support versions of PHP with [active support](https://php.net/supported-versions.php) by the PHP community.
+The app may run with older PHP versions but this is not tested and bug reports with an unsupported version will be ignored.
 
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages)
 You can install the latest version from the PPA with the following commands:
