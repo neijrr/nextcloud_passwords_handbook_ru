@@ -19,7 +19,7 @@ With the first release of the year, the support for any Nextcloud version but th
 
 ### HTTPS requirement
 Passwords requires HTTPS to work. This can not be disabled.
-Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html#use-https) to configure your server correctly.
+Please take a look at the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#use-https-label) to configure your server correctly.
 If you use a proxy or separate ssl termination point, [configure your Nextcloud accordingly](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html).
 You can get a free HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/getting-started/).
 
