@@ -6,7 +6,7 @@
 | Platform  | Nextcloud 17                | Nextcloud 17 |
 | OS        | Linux                       | Ubuntu 18.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.4 |
-| PHP       | PHP 7.3                     | PHP 7.3 |
+| PHP       | PHP 7.3                     | PHP 7.4 |
 | Webserver | HTTPS                       | Nginx 1.17.3 HTTPS |
 | PECL      | Curl                        | Zip, Imagick, Curl |
 | Libraries |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
