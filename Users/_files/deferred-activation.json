@@ -105,6 +105,21 @@
             "first-run-wizard": false,
             "backup-encryption": false
         },
-        "2020.2.1": {}
+        "2020.2.1": {},
+        "2020.3": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false
+        },
+        "2020.3.1": {},
+        "2020.4": {
+            "encryption-tests": false,
+            "client-side-encryption": false,
+            "first-run-wizard": false,
+            "backup-encryption": false,
+            "upgrade-alert": true
+        },
+        "2020.4.1": {}
     }
 }
