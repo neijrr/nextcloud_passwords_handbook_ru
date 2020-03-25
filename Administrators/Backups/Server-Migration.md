@@ -65,12 +65,18 @@ Just use `gunzip migration.json.gz` or [7Zip](https://7-zip.org/) to unzip the f
 Upgrade to 2019.8.0.
 
 #### I have no SSH/SFTP/FTP access
-Well that sucks. 
 If you have access to your database, then you can dump all passwords tables (`passwords_*`). 
 Also dump all entries from `appconfig` where the `appid` is "passwords".
 Then dump all entries from `preferences` where the `appid` is "passwords".
 Export the server secret with OCC Web (`config:system:get secret`) or read it from the config.php.
-Restore all the tables and the server secret on your new Server. 
+Restore all the tables and the server secret on your new Server.
+
+#### I have no HTTPS/SFTP/FTP access
+If you still have SSH, you can try to move the backups to a new Nextcloud instance with the following command:
+
+```bash
+curl -T 'data/<appdata_dir>/passwords/autoBackups/<some_file>' 'https://<new_cloud_domain>/remote.php/dav/files/<new_user>/' --user '<new_user>:<password>'
+```
 
 #### I used the export in the app but the server won't import it
 That's because this is not how this works.
@@ -81,6 +87,11 @@ If you have a backup from the app, then use the app to import it again.
 These backups (client backups) are also only for a single user.
 Use the guides above to create and export backups properly.
 
-#### I get `Unsupported backup version`
+#### I get the error `Unsupported backup version`
 Upgrade the app to the latest version.
 Downgrading is not supported by backups because it does not work.
+
+#### I have a database dump but not the server secret
+You can still try to restore passwords that were encrypted with SSEv1r1.
+All other passwords will be lost.
+Try this [forum post](https://help.nextcloud.com/t/passwords-error-exception-hmac-does-not-match/69972/4?u=mdw).
