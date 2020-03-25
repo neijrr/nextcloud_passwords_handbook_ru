@@ -65,6 +65,10 @@ You should be able to access the backup directory with the following command:
 DATA_DIR="$(./occ config:system:get datadirectory)";
 INSTANCE_ID="$(./occ config:system:get instanceid)";
 
+# Manual backups
+cd ${DATA_DIR}/appdata_${INSTANCE_ID}/passwords/autoBackups;
+
+# Automated backups
 cd ${DATA_DIR}/appdata_${INSTANCE_ID}/passwords/backups;
 ```
 

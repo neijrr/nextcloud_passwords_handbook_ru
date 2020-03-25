@@ -69,7 +69,7 @@ Well that sucks.
 If you have access to your database, then you can dump all passwords tables (`passwords_*`). 
 Also dump all entries from `appconfig` where the `appid` is "passwords".
 Then dump all entries from `preferences` where the `appid` is "passwords".
-Export the server secret with OCC Web (See FTP migration).
+Export the server secret with OCC Web (`config:system:get secret`) or read it from the config.php.
 Restore all the tables and the server secret on your new Server. 
 
 #### I used the export in the app but the server won't import it
