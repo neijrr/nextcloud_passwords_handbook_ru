@@ -32,8 +32,8 @@ Appending a file to at least one password will fix this issue.
 To add a file, open the details of a password, click "Edit", then open the "Files" tab and upload a file via the "Choose a file"-button.
 After the file has uploaded, click "Save".
 
-**Note:** The Passwords Import can not import files.
-You will get a warning like `"Password Name" has files attached which can not be imported.`, which you can ignore in this case.
+> :star: The Passwords Import can not import files.
+> You will get a warning like `"Password Name" has files attached which can not be imported.`, which you can ignore in this case.
 
 #### No file download in Firefox / Stuck at "Done"
 In some versions of Passman, the file download will not work in Firefox.
@@ -48,7 +48,7 @@ Passwords does support the linking of files stored in Nextcloud to passwords.
 Therefore we recommend downloading the files manually from Passman and storing them in Nextcloud.
 After this you can edit the password and add a custom field with the type "file" and choose the file from the file dialog.
 
-**Note:** If you want to store secret files like private keys, we recommend that you use the [Nextcloud E2E Encryption](https://nextcloud.com/endtoend/).
+> :star: If you want to store secret files like private keys, we recommend that you use the [Nextcloud E2E Encryption](https://nextcloud.com/endtoend/).
 
 #### Long custom field names / values are truncated
 If you have custom fields with a label that exceeds 48 characters or a value that exceeds 320 characters, it will be truncated to fit the length limitations of Passwords.
@@ -62,5 +62,5 @@ The implementation is [planned](https://github.com/marius-wieschollek/passwords/
 You can safely import your passwords as of now and the OTP secret will be stored as custom field.
 Our OTP support will be able to import the OTP fields created by the import.
 
-**Note:** Storing OTP and Passwords for the same service in your password database will eliminate the security gains of 2FA.
-You should not store OTP and the password at the same time.
+> :warning: Storing OTP and Passwords for the same service in your password database will eliminate the security gains of 2FA.
+> You should not store OTP and the password at the same time.
