@@ -1,7 +1,7 @@
 This guide was written primarily for the Google chrome browser, but it should work with any browser based on chrome (like Opera, Vivaldi, Brave, Edge etc.)
 
 ## Export from the browser
-1. Open the [browser settings](chrome://settings/)
+1. Navigate to `chrome://settings/`
 2. Select "Passwords" (usually in the "AutoFill" section)
 3. Click the "⋮" icon and select "Export passwords"
 4. Click the "Export passwords" button in the dialog.
