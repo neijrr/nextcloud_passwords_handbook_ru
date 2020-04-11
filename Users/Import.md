@@ -39,86 +39,9 @@ If this option is selected, passwords which were shared with you by other users 
 
 
 
-## Import specific options and notes
-### Database Backup
-Database backups are a special import source.
+## Troubleshooting
 
-##### Backup password
-If the backup has been secured with a password, you will have to enter it here.
-
-### Custom CSV File Options
-![Parsing options for custom csv files](_files/import-custom-csv-options.png)
-
-##### Line Break
-Specifies the new line character used in the csv file.
-The `Detect` option will just check which line break is the most common and use it.
-If different line breaks are used in the csv, it is recommended to set it manually.
-
-##### Field Delimiter
-Specifies the character used to separate the fields in the csv. 
-The import can try to `Detect` the field delimiter.
-Alternatively you can choose one of the options manually.
-
-##### Quote Character
-The quote character is used to mark the contents of a field in the csv. 
-Anything after the quote character will be interpreted as content until another quote character is found.
-
-##### Escape Character
-This character is used to escape the quote character within a field. 
-If the escape character has to come before the quote character if it appears as part of the content.
-
-##### Detect unescaped quotes
-This option can help to parse faulty csv files. 
-It tries to detect whether a quote character is used to signal the beginning or ending of a field or if it is part of the content.
-
-### Custom CSV Import Options
-![Import options and field mapping for a custom csv file](_files/import-custom-csv-mapping.png)
-
-##### Database
-Select what type of data you want to import.
-You can choose between `Passwords`, `Folders` and `Tags`.
-This option defines which fields you can import and which conversion methods are applied.
-
-##### Skip first line
-Skips the first line of the csv.
-Select this option if your csv file has a header which should not be imported.
-
-##### Interpolate missing fields
-This option will make the Importer try to guess missing fields like the url.
-
-##### CSV Field Mapping
-Here you can map the columns of your csv file. 
-You don't have to map every column, just the ones you wish to import.
-For passwords you will have to map at least the `Password` column, for folders and tags the `Label` column is required.
-You can use the `Preview Line` option to preview a different line.
-
-##### Custom Fields format
-To import custom fields from a CSV file, the type of the column must be set to "Custom Fields" and the formatting must be as shown below.
-Each line contains one custom field.
-First, there is the label of the field which is optionally follwed by a comma and the type of the field.
-After that is a colon and then the value of the field.
-The type can be one of `text`, `email`, `url`, `secret`, `file` or `data`.
-
-```
-Label,type:value
-E-Mail,email:email@example.com
-Url,url:https://www.example.com
-Text,text:some sample text
-Password,secret:secret password
-File,file:/path/of/file/on/your/webdav.fil
-Data,data:applicationdatafield
-```
-
-
-### Enpass JSON
-
-##### Don't import empty fields
-Enpass has a lot of default fields which are often left empty.
-In order to improve usability, those fields can be skipped during import.
-
-
-
-## How to fix faulty CSV files
+### How to fix faulty CSV files
 ![Warning for services which may create faulty exports](_files/import-faulty-csv.png)
 
 Some password managers create faulty export files which can not be parsed by the importer.
@@ -132,13 +55,7 @@ These files need to be fixed manually in order to work properly.
 ##### Example errors
 ![Quotes are not escaped properly](_files/import-faulty-csv-error.png)
 
-
-
-## Compatibility Issues and Workarounds
-#### Passman related issues
-See the workarounds section in the [Import from Passman](./Import/Import-from-Passman#compatibility-issues-and-workarounds-for-the-passwords-import) tutorial for help regarding the Passman Import/Export.
-
-#### Files can not be imported
+### Files can not be imported
 Some password managers (e.g. Passman, Enpass, Bitwarden) allow files to be stored with passwords.
 The Import will show the warning `"Password Name" has files attached which can not be imported.` for each password which has files attached.
 The password will be imported anyway but the files will not be imported.
@@ -150,13 +67,13 @@ After this you can edit the password and add a custom field with the type "file"
 
 **Note:** If you want to store secret files like private keys, we recommend that you use the [Nextcloud E2E Encryption](https://nextcloud.com/endtoend/).
 
-#### Long custom field names / values are truncated
+### Long custom field names / values are truncated
 If you have custom fields with a label that exceeds 48 characters or a value that exceeds 320 characters, it will be truncated to fit the length limitations of Passwords.
 Custom fields are intended to contain usual password related information like and e-mail address or the like.
 They are not intended to hold large amounts of data.
 If you want to store long texts, we recommend to use the "Notes" field.
 
-#### Custom field type mismatch
+### Custom field type mismatch
 If you import passwords with custom fields from any source other than the `Database Backup`, they will be validated.
 Fields with the type `url` or `email` will require to be in a correct format or their type will be set to `text`.
 Also all fields with the type `text` will be checked if they are in the right format for `url` or `email` and if so, their type will be changed. 

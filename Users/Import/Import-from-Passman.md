@@ -18,10 +18,10 @@ You can either watch the video or follow the instructions below.
 2. Click on "More" in the bottom left corner.
 3. Click on "Backup and Restore".
 4. Choose "Restore or import".
-5. Select "Passman JSON" as format type in step 1.
+5. Select "Passman JSON" as import format.
 6. Open the file you exported before using the file dialog.
 7. Click the "Import" button.
-8. After the Import has finished, check the imported passwords.
+8. After the import has finished, check the imported passwords.
 9. Delete the export file from your computer.
 
 

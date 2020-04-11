@@ -12,6 +12,10 @@
 6. [Search](./Search)
 7. [Import](./Import)
     1. [Import from Passman](./Import/Import-from-Passman)
+    1. [Import from Chrome](./Import/Import-from-chrome)
+    1. [Import from database backup](./Import/Import-from-backup)
+    1. [Import from Enpass](./Import/Import-from-Enpass)
+    1. [Import from custom CSV](./Import/Import-from-custom-CSV)
 8. [Export](./Export)
 9. [Settings](./Settings)
 
