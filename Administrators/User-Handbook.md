@@ -29,7 +29,7 @@ You need to enter the url `https://git.mdns.eu/nextcloud/passwords.wiki.git` and
 ### Update the handbook url
 Use the following command to point the app to your custom handbook
 ```bash
-./occ config:app:set passwords handbook/url --value https://yourdomain.org/path/Users
+./occ config:app:set passwords handbook/url --value https://yourdomain.org/path/Users/
 ```
 With the given example, Passwords will try to load the file `https://yourdomain.org/path/Users/Index.md` when the handbook is opened.
 If you used the GitHub import, the correct url looks like this: `https://raw.githubusercontent.com/<username>/<repository>/master/Users`.
