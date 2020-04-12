@@ -37,7 +37,7 @@ The description of these options dav be found in the import guide for that servi
 
 
 ## Import Options
-##### Conflict Handling Mode
+#### Conflict Handling Mode
 The `Conflict handling` mode defines how the Importer should handle conflicts.
 `Skip if same revision` will skip an entry if it already exists and the revision matches. Works only if the import contains a revision field.
 `Skip always` will skip an entry if it already exists in the database.
@@ -47,7 +47,7 @@ The `Conflict handling` mode defines how the Importer should handle conflicts.
 
 **Note:** If no id field is available, entries will be matched by their name. The `Database Backup` option will always use id based matching.
 
-##### Don't edit passwords shared with me
+#### Don't edit passwords shared with me
 If this option is selected, passwords which were shared with you by other users will not be overwritten by the import.
 
 

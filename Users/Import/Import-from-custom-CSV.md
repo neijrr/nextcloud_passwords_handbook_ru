@@ -36,16 +36,16 @@ It tries to detect whether a quote character is used to signal the beginning or 
 > :star: This section describes only describes the import options which are specific to the custom CSV import.
 > For all other options please see [the general import options](../Import#Import-Options).
 
-##### Database
+#### Database
 Select what type of data you want to import.
 You can choose between `Passwords`, `Folders` and `Tags`.
 This option defines which fields you can import and which conversion methods are applied.
 
-##### Skip first line
+#### Skip first line
 Skips the first line of the csv.
 Select this option if your csv file has a header which should not be imported.
 
-##### Interpolate missing fields
+#### Interpolate missing fields
 This option will make the Importer try to guess missing fields like the url.
 
 
@@ -56,7 +56,7 @@ You don't have to map every column, just the ones you wish to import.
 For passwords you will have to map at least the `Password` column, for folders and tags the `Label` column is required.
 You can use the `Preview Line` option to preview a different line.
 
-##### Custom Fields format
+### Custom Fields format
 To import custom fields from a CSV file, the type of the column must be set to "Custom Fields" and the formatting must be as shown below.
 Each line contains one custom field.
 First, there is the label of the field which is optionally followed by a comma and the type of the field.

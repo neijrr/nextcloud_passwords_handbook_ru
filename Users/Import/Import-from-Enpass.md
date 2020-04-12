@@ -27,7 +27,7 @@ This guide explains how to import your passwords from Enpass.
 > :star: This section describes only describes the import options which are specific to Enpass.
 > For all other options please see [the general import options](../Import#Import-Options).
 
-##### Don't import empty fields
+#### Don't import empty fields
 Enpass has a lot of default fields which are often left empty.
 In order to improve usability, those fields can be skipped during import.
 
