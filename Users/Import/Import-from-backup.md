@@ -1,6 +1,6 @@
 This guide explains the import from a Passwords database backup which can be created with the export.
 
-> :star: The Passwords database backup can also be used to move from one Nextcloud instance to another
+> :thumbsup: The Passwords database backup can also be used to move from one Nextcloud instance to another.
 
 ## Export from Passwords
 1. Open the Passwords app.
