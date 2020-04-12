@@ -33,8 +33,8 @@ It tries to detect whether a quote character is used to signal the beginning or 
 ## Import Options
 ![Import options and field mapping for a custom csv file](../_files/import-custom-csv-mapping.png)
 
-This section describes only describes the import options which are specific to Enpass.
-For the other options please see [the general import options](../Import#Import-Options).
+> :star: This section describes only describes the import options which are specific to the custom CSV import.
+> For all other options please see [the general import options](../Import#Import-Options).
 
 ##### Database
 Select what type of data you want to import.
@@ -72,3 +72,6 @@ Password,secret:secret password
 File,file:/path/of/file/on/your/webdav.fil
 Data,data:applicationdatafield
 ```
+
+## Troubleshooting
+See [import troubleshotting](../Import#Troubleshooting).

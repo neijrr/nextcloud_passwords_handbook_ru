@@ -19,5 +19,10 @@ This guide was written primarily for the Google chrome browser, but it should wo
 9. After the import has finished, check the imported passwords.
 10. Delete the export file from your computer.
 
+
 ## Import Options
 See [the general import options](../Import#Import-Options).
+
+
+## Troubleshooting
+See [import troubleshotting](../Import#Troubleshooting).

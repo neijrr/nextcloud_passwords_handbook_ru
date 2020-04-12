@@ -23,6 +23,19 @@ If you're ready to go, hit the `Import` button and start importing your files
 
 
 
+## Specific importers
+Most of the imports for files from a third party service are just a profile with preselected options for the CSV import.
+There are some imports which do have special options just for that service.
+The description of these options dav be found in the import guide for that service.
+
+- [Import from Passman](./Import/Import-from-Passman)
+- [Import from Chrome](./Import/Import-from-Chrome)
+- [Import from database backup](./Import/Import-from-backup)
+- [Import from Enpass](./Import/Import-from-Enpass)
+- [Import from custom CSV](./Import/Import-from-custom-CSV)
+
+
+
 ## Import Options
 ##### Conflict Handling Mode
 The `Conflict handling` mode defines how the Importer should handle conflicts.

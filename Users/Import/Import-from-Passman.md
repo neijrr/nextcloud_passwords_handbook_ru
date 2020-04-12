@@ -13,6 +13,7 @@ You can either watch the video or follow the instructions below.
 6. Click on "Export".
 7. Wait for the export and save the file created by the export.
 
+
 ## Import your passwords into Passwords
 1. Open the Passwords app.
 2. Click on "More" in the bottom left corner.
@@ -23,6 +24,12 @@ You can either watch the video or follow the instructions below.
 7. Click the "Import" button.
 8. After the import has finished, check the imported passwords.
 9. Delete the export file from your computer.
+
+
+
+## Import Options
+See [the general import options](../Import#Import-Options).
+
 
 
 ## Issues and Workarounds for the Passman Export

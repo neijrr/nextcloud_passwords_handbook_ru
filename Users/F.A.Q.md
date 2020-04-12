@@ -73,7 +73,7 @@ Even if you have the rights to edit the password, you can not delete it in the a
 #### I want to import from another password manager but there is no option for this service
 Most password managers do offer a CSV export.
 If you have that csv file, you can choose the option "Other / Custom CSV" and map the fields yourself.
-See the [import section](./Import#custom-csv-import-options) for further information.
+See the [custom CSV import guide](./Import/Import-from-custom-CSV) for further information.
 
 #### A warning says that the service i am trying to import from is known to generate faulty csv files
 Some password services create export files where the columns are not formatted properly.

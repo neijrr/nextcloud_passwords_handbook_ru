@@ -25,9 +25,17 @@ This guide explains the import from a Passwords database backup which can be cre
 10. Delete the export file from your computer.
 
 
-## Import specific options and notes
+## Import Options
+
+> :star: This section describes only describes the import options which are specific to the database import.
+> For all other options please see [the general import options](../Import#Import-Options).
+
 ### Database Backup
 Database backups are a special import source.
 
 ##### Backup password
 If the backup has been secured with a password, you will have to enter it here.
+
+
+## Troubleshooting
+See [import troubleshotting](../Import#Troubleshooting).
