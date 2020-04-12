@@ -1,7 +1,13 @@
 This guide explains how to import your passwords from Enpass.
 
 ## Export from Enpass
-TODO
+1. Open the Enpass desktop app and unlock your vault.
+2. Click on the "☰" icon.
+3. Click on "File" in the menu and then "Export" in the submenu.
+4. Select ".json" as file format
+5. Choose a location for the export file.
+6. Click on "Export"
+7. Enter your vault password and click on "Continue"
 
 ## Import into Passwords
 1. Open the Passwords app.
