@@ -8,6 +8,7 @@
 4. [Database Repair](./Database-Repair)
 
 #### Tutorials
+1. [Use nightly versions](./Use-Nightlies)
 1. [Migrate to another server](./Backups/Server-Migration)
 2. [Migrating from the legacy app](./Legacy-Migration)
 3. [Self-Hosting the user handbook](./User-Handbook)
