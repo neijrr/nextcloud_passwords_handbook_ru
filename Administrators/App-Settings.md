@@ -80,9 +80,10 @@ The icons are only fetched once for a domain and then stored locally.
 This service usually finds the most icons, but also the most useless icons.
 
 **Besticon** uses a [besticon](https://github.com/mat/besticon) third party service to find icons.
+It usually returns the best icons and also good default icons if none is found.
+If no api url is provided, our shared Besticon instance will be used.
 The service can be self hosted by following our [tutorial](./Besticon-Self-Hosting).
 The url for the service can be defined in the settings. Any compatible api is accepted.
-It usually returns the best icons and also good default icons if none is found.
 
 **favicongrabber.com** is free, requires no software and delivers good icons.
 There is an api request limit which means that it can be slower.
@@ -179,10 +180,7 @@ Specifies the time after which passwords, folders and tags deleted by the user w
 This setting does not affect the data of deleted users which will always be deleted permanently.
 
 #### Show Nightly Updates in "Apps"
-This setting will modify the Nextcloud core to enable the installation of nightly updates.
-The system config key `allowNightlyUpdates` will contain an array of apps for which the nightly updates are enabled.
-
-**Note:** You can add other apps to `allowNightlyUpdates` or remove passwords from it manually, but the functionality will only work if the backend option is enabled.
+This setting will modify the Nextcloud core to enable the installation of nightly updates for the passwords app.
 
 #### Server survey participation
 The server survey will send us some anonymous data of your server once a week.
