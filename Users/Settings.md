@@ -11,6 +11,9 @@ Expert settings can be shown by setting the drop-down in the top right corner to
 Password rules activate additional security checks for passwords.
 If a password fails one of these checks, it will be marked as weak.
 
+> :star: The security status is updated once a day or when the password is changed.
+> This means that changes are not applied immediately and the status of entries with the same password can differ.
+
 ##### Mark duplicates
 If you use a password more than once, this option will mark it as weak.
 

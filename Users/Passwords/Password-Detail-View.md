@@ -25,6 +25,10 @@ The security section shows all security related information.
   It is only possible to gain access to your data by knowing your master password.
 
 ###### Password Security Status Explained
+
+> :star: The security status is updated once a day or when the password is changed.
+> This can cause the password to be marked as duplicate even after you changed/deleted the other password.
+
 - `Secure` (green) means that the password is perfectly safe
 - `Weak (Duplicate)` (yellow) means that you are using this password more than once.
   You need to activate [`Mark duplicates`](../Settings#mark-duplicates) in the settings for this.
