@@ -40,23 +40,23 @@ If you set an invalid handbook url, the default url will be used.
 ## App feature management with the handbook
 The app has the ability to enable/disable some features trough a file in the handbook.
 Those features are usually complete in the app itself, but require changes in external services before they work.
-The features available change between app versions.
+The features available change between app versions, if the installed app version does not have the feature or the feature check it will not work.
 
 To enable/disable those features, the file [`_files/deferred-activation.json`](../Users/_files/deferred-activation.json) can be used.
 The file will always be loaded when such a feature could be requested by the app.
 
-**Note:** Enabling features which are disabled by default can cause issues and is not supported
+**Note:** Enabling features which are disabled by default can cause issues and is not supported.
 
 | Scope | Feature | Description |
 | --- | --- | --- |
 | server | two-factor-tokens | Require 2FA tokens if available |
 | server | legacy-client-warning | Show a notification if a client is using the old api |
 | server | client-side-encryption | Allow users to set up client side encryption |
-| server | wo4snakes-fallback | Substitutes `watchout4snakes.com` as random words generator with the next working alternative. |
 | webapp | encryption-tests | Test client side encryption on the user device |
 | webapp | client-side-encryption | Enable client side encryption setup in the settings |
 | webapp | first-run-wizard | Enable the first run wizard with CSE setup |
 | webapp | backup-encryption | Enable encryption for database exports |
+| webapp | passlink-connect | Enable PassLink connect to log in with official apps and extensions easily |
 
 #### Disable feature management
 With the following command, the feature management can be disabled on the server, but not on the webapp.
