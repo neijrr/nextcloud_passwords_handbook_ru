@@ -1,4 +1,5 @@
 Nightly versions of of the passwords app are development builds that give faster access to new features and bugfixes.
+It is possible to upgrade from a nightly version to the final release trough the normal app store. 
 
 ## Enable nightly updates
 The easiest way to install nightly builds of the app is trough the app store
