@@ -1,8 +1,8 @@
 
 ### How do i keep my passwords secure?
  - Only access the Nextcloud over HTTPS
- - Do not give your credentials to someone else.
- - Do not log into Nextcloud on someone else's pc or a public pc.
+ - Do not give your credentials to someone else
+ - Do not log into Nextcloud on someone else's pc or a public pc
  - If you are using an app or browser extension to access your passwords, always use the latest version
 
 
