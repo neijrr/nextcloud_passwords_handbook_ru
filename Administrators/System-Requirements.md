@@ -1,3 +1,6 @@
+> This page contains the system requirements for the [passwords app for Nextcloud](https://apps.nextcloud.com/apps/passwords).
+> If you're looking for the Nextcloud server system requirements [click here](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html).
+
 |  | Minimum | Recommended |
 | --- | --- | --- |
 | Processor | 2x1 GHz                     | 4x2 GHz |
