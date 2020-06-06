@@ -6,11 +6,11 @@
 | Processor | 2x1 GHz                     | 4x2 GHz |
 | Ram       | 512 MiB                     | 8 GiB |
 | Disk      | 4 GiB                       | 64 GiB |
-| Platform  | Nextcloud 17                | Nextcloud 18 |
-| OS        | Linux                       | Ubuntu 18.04 |
-| Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.4 |
+| Platform  | Nextcloud 17                | Nextcloud 19 |
+| OS        | Linux                       | Ubuntu 20.04 |
+| Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
 | PHP       | PHP 7.3                     | PHP 7.4 |
-| Webserver | HTTPS                       | Nginx 1.17.3 HTTPS |
+| Webserver | HTTPS                       | Nginx 1.18 HTTPS |
 | PECL      | Curl                        | Zip, Imagick, Curl |
 | Libraries |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
@@ -47,7 +47,7 @@ You can install the latest version from the PPA with the following commands:
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install php7.3 php-defaults
+sudo apt-get install php7.4 php-defaults
 ```
 
 ### Pageres dependencies
@@ -61,7 +61,8 @@ The following list contains all domains which may provide these services.
 However some local service providers like Pageres and the favicon finder may contact any domain as requested via the api.
 
 - https://github.com
-- https://passwords-app-favicons.herokuapp.com
+- https://ncpw-besticon-01.herokuapp.com
+- https://ncpw-besticon-02.herokuapp.com
 - http://favicongrabber.com/
 - https://icons.duckduckgo.com
 - https://www.google.com
