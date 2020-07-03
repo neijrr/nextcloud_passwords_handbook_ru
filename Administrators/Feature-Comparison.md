@@ -69,7 +69,7 @@
 | --- | --- | --- |
 | Compatibility | Nextcloud 17, 18 | Nextcloud 17, 18 |
 | Self hosted   | ✔ | ✔ |
-| Languages     | English, Spanish, French, German, Czech, Dutch, Swedish, Russian | 48 languages including dialects |
+| Languages     | English, Spanish, French, German, Italian, Czech, Dutch, Swedish, Russian | 48 languages including dialects |
 | Price         | free | free |
 
 
