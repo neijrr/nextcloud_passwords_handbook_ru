@@ -1,5 +1,6 @@
-The password app lists official and third party apps in the included "Apps & Extensions" section and the readme.
-If you have developed an app or extension and want it to be listed there, this page lists what you need to do.
+The password app lists official clients, third party apps and programming libraries in the included "Apps & Extensions" section.
+Apps are also listed in the readme, libraries are also listed in the developer handbook.
+If you have developed an app or library and want it to be listed there, this page lists what you need to do.
 
 ## Requirements
 Your app should meet these requirements.
@@ -28,7 +29,7 @@ If you want to have your app listed, please [create a ticket in our issue tracke
 The ticket must contain the following:
 * Name of your app
 * Short description of your app (optional in multiple languages)
-* Logo of your app (SVG, PNG or JPG, ca 400x400px)
+* Logo of your app (SVG, PNG or JPG, ca 400x400px) (only apps, not libraries)
 * Link to the website/store where users can get your app
 * Link to the sources
 * Supported Systems/Browsers etc.
