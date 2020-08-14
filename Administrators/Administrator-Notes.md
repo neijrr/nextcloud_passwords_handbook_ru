@@ -1,5 +1,6 @@
 ## Built-In Handbook
 See [user handbook](./User-Handbook).
+The handbook also controls the availability of experimental features in the app.
 
 
 ## Deleting Users
@@ -30,7 +31,7 @@ The app is not designed to run offline.
 The options below are the best way to run the app on a server without internet access.
 
 Internet access is still required to fetch the bad passwords database.
-You must also [host the user manual](User-Handbook#self-hosting-the-handbook) yourself.
+You *must* also [host the user manual](User-Handbook#self-hosting-the-handbook) yourself.
 
 | Setting | Offline Option |
 | --- | --- |

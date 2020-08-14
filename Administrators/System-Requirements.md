@@ -59,11 +59,12 @@ sudo apt-get install php7.4 php-defaults
 To provide all api features, passwords may use third party services depending on the settings.
 The following list contains all domains which may provide these services.
 However some local service providers like Pageres and the favicon finder may contact any domain as requested via the api.
+The [user handbook](./User-Handbook) also makes direct requests to external servers from the user browser.
 
 - https://github.com
 - https://ncpw-besticon-01.herokuapp.com
 - https://ncpw-besticon-02.herokuapp.com
-- http://favicongrabber.com/
+- https://favicongrabber.com/
 - https://icons.duckduckgo.com
 - https://www.google.com
 - https://api.browshot.com
@@ -74,6 +75,7 @@ However some local service providers like Pageres and the favicon finder may con
 - https://api.pwnedpasswords.com
 - https://raw.githubusercontent.com
 - http://watchout4snakes.com
+- http://api.corpora.uni-leipzig.de
 - https://ncpw.mdns.eu
 
 ### Licenses
