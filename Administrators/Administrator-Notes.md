@@ -21,6 +21,13 @@ Passwords offers a repair job which can fix database inconsistencies like orphan
 It will also perform upgrades of entities when a new field is added or changed.
 To execute the repair job, execute the Nextcloud maintenance command from the nextcloud folder `./occ maintenance:repair`
 
+## How can i prevent the app from causing high server load
+Some actions like loading favicons, importing passwords or enabling encryption creates many requests and can cause high server load.
+The app provides a server performance preference to clients to prevent too many requests.
+If the automatically determined preference is not right for you, you can set preference with
+`occ config:app:set passwords performance --value=<number>` to a number between 0 and 6.
+0 would be very low performance, 5 high performance and 6 removes any restrictions.
+
 ## How do i make the app look like in the app store?
 - We use **Besticon** as **Favicon Service**. We recommend hosting it your self as [docker image](https://hub.docker.com/r/matthiasluedtke/iconserver/) or for free on [Heroku](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon&template=https%3A%2F%2Fgithub.com%2Fmat%2Fbesticon)
 - We use **Pageres** as **Website Preview Service**

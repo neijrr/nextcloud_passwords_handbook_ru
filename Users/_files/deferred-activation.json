@@ -1,7 +1,7 @@
 {
     "server": {
         "current": {
-            "version"     : "2020.8.0",
+            "version"     : "2020.9.0",
             "url"         : "https://apps.nextcloud.com/apps/passwords/releases",
             "requirements": {
                 "nextcloud": "17.0.0",
@@ -76,6 +76,11 @@
             "client-side-encryption": false
         },
         "2020.8" : {
+            "two-factor-tokens"     : false,
+            "legacy-client-warning" : false,
+            "client-side-encryption": false
+        },
+        "2020.9" : {
             "two-factor-tokens"     : false,
             "legacy-client-warning" : false,
             "client-side-encryption": false
@@ -164,6 +169,13 @@
             "passlink-connect"      : false
         },
         "2020.8"  : {
+            "encryption-tests"      : false,
+            "client-side-encryption": false,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : false,
+            "passlink-connect"      : false
+        },
+        "2020.9"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,
             "first-run-wizard"      : false,

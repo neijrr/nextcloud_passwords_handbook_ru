@@ -11,7 +11,7 @@
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
 | PHP       | PHP 7.3                     | PHP 7.4 |
 | Webserver | HTTPS                       | Nginx 1.18 HTTPS |
-| PECL      | Curl                        | Zip, Imagick, Curl |
+| PECL      |                             | Zip, Imagick |
 | Libraries |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Version scheme and breaking changes

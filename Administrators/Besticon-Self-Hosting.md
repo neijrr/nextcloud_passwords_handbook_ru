@@ -105,6 +105,7 @@ You need to run these commands on your server an you need to know the domain of 
 2. Set "Favicon Service" to "Besticon (recommended)".
 3. Set the "Favicon Service Api" to `http://your_domain_or_ip:8080/icon`
    - If you use https or a custom port update the domain accordingly.
+   - If you use the ip or a local domain to host besticon, set `allow_local_remote_servers` to `true` in the config.php
 4. Reload the page
 5. Clear the cache "Favicon"
 6. To test the settings:

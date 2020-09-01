@@ -19,7 +19,7 @@
 
 | Setting | Type | Default | Description |
 | --- | --- | --- | --- |
-| user.password.generator.strength | int | 1 | The strength of generated passwords |
+| user.password.generator.strength | int | 1 | The strength of generated passwords, a value between 0 (weak) and 4 (strong) |
 | user.password.generator.numbers | bool | false | Whether or not generated passwords contain numbers |
 | user.password.generator.special | bool | false | Whether or not generated passwords contain special characters |
 | user.password.security.duplicates | bool | true | Whether or not the server should check passwords for duplicates |
@@ -29,10 +29,12 @@
 | user.notification.security | bool | true | Whether or not the user receives notifications about security issues |
 | user.notification.shares | bool | true | Whether or not the user receives notifications about new shared objects |
 | user.notification.errors | bool | true | Whether or not the user receives notifications about background errors |
+| user.notification.admin | bool | true | Whether or not the user receives notifications about configuration issues. Only for admins |
 | user.encryption.sse | int | 1 | The server side encryption type. 0 = None, 1 = SSEv1, 2 = SSEv1 |
 | user.encryption.cse | int | 0 | The client side encryption type. 0 = None, 1 = CSEv1 |
 | user.session.lifetime | int | 600 | The session lifetime in seconds |
-| server.version | string | - | The Nextcloud version of the server |
+| server.version | string | - | The Nextcloud version of the server, e.g. "20" |
+| server.app.version | string | - | The app version of the server, e.g. "2020.9" |
 | server.baseUrl | string | - | The base url of the server |
 | server.baseUrl.webdav | string | - | The base url of the WebDav service used for file storage |
 | server.sharing.enabled | bool | true | Whether or not sharing is enabled globally |
@@ -47,7 +49,8 @@
 | server.theme.label | string | "Nextcloud" | The name of the Nextcloud instance |
 | server.theme.app.icon | string | - | The url to the current svg app icon |
 | server.theme.folder.icon | string | - | The url to the current svg folder icon |
-| server.manual.url | string | - | The base url of the in-app user handbook |
+| server.handbook.url | string | - | The base url of the in-app user handbook |
+| server.performance | int | 2 | An integer value indicating the server performance preference. 0 is a slow server where requests should be avoided (max 1 simultaneous request), 5 is a fast server which can handle many requests (x * 3 simultaneous requests), 6 is for unlimited requests. |
 | client.* | - | null | The client scope allows client defined keys |
 
 #### Notes
