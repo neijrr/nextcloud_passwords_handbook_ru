@@ -111,7 +111,7 @@ If you know a good program or service, feel free to open an issue to support it.
 **Pageres CLI** requires [pageres-cli](https://github.com/sindresorhus/pageres-cli) to installed locally.
 Usually very reliable local and headless preview generator with a modern browser engine.
 If the installation with NPM fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
-If you are using a docker container, add `--cap-add=SYS_ADMIN` to enable the chrome sandbox.
+If you are using a docker container, add `--cap-add=SYS_ADMIN` to the docker command to enable the chrome sandbox.
 
 **Browshot** offers 100 free screenshots per month.
 The api offers HTTPS by default, you can view the screenshots in your account and you can buy additional screenshots as you need.
