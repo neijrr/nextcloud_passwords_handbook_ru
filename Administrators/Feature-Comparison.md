@@ -59,7 +59,7 @@
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
 | Database Backups             | ✔ | ✖ |
-| Account Transfer             | ✖ | ✔ |
+| Account Transfer             | ✔ | ✔ |
 | Configure 3rd-Party-Services | ✔ | ✖ |
 | Server Backups               | ✔ | ✖ |
 
@@ -67,9 +67,9 @@
 ### Technical Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Compatibility | Nextcloud 17, 18 | Nextcloud 17, 18 |
+| Compatibility | Nextcloud 17, 18, 19, 20 | Nextcloud 17, 18 |
 | Self hosted   | ✔ | ✔ |
-| Languages     | English, Spanish, French, German, Italian, Czech, Dutch, Swedish, Russian | 48 languages including dialects |
+| Languages     | English, Spanish, French, German, Italian, Czech, Dutch, Swedish, Chinesse, Russian | 48 languages including dialects |
 | Price         | free | free |
 
 

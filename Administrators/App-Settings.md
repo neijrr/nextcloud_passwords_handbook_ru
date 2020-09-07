@@ -13,7 +13,7 @@ If the API is disabled it will no longer be possible to access it in any way as 
 **Note:** The browser extension does not support the new api in versions prior to 2.0.0.
 
 #### Legacy API was last used on
-This settings is read only.
+This setting is read only.
 It should tell you when the legacy api was last used.
 If you can see that the api is no longer in use on your server, you should disable it.
 
@@ -40,22 +40,24 @@ In this section you can configure all the third party services used by Passwords
 This service is used to check if a password is safe or not.
 
 **Have I been pwned?** is the recommended service.
-Is might be slow if a lot of passwords needs to be processed, since you can only make one request every 1.5 seconds.
-But in general it has the largest database and is updated regularly.
-If a bad password is found, the hash is stored locally so that the service does not need to be contacted again.
+[haveibeenpwned.com](https://haveibeenpwned.com/) stores the SHA-1 hashes of billions of compromised passwords.
+Their database receives regular updates with lists of passwords used by hackers to attempt to crack accounts.
+The app uses their [k-anonymity api](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/#cloudflareprivacyandkanonymity) to download a subset of hashes and does the comparison locally.
+The app never sends SHA-1 hashes to the api.
 
 **10 Million Passwords** downloads a static password file and fills the local cache with it.
 After this, all password checking can be done locally.
-It is faster than Hibp when it comes to checking passwords, but of course it does not contain that many passwords.
+Unlike Hibp it does not need to make a request for each check, but the database is a lot smaller and not up to date.
 Updating the database can take up to 1.75Gib of RAM or up to 125MiB on less powerful systems.
-If you do not have that much ram available, you should not use this service.
-It also requires up to 512Mib of disk space.
+If you do not have that much RAM available, you should not use this service.
+It also requires around 512Mib of disk space.
 
 **1 Million Passwords** downloads a static file with the most common passwords.
 It uses a lot less system resources than the 10Mio passwords and should run on any system.
+The database is considerably smaller and not up to date.
 
 **10 Mio Passwords + Have I been pwned?** fills the local cache with the most common passwords.
-It is faster if a bad password is found in the 10 Mio Passwords database since Hibp is not contacted in that case.
+This service fills the local database with the 10 million passwords and therefore reduces the amount of requests to Hibp.
 
 
 #### Password Generator Service
