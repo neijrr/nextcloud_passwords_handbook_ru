@@ -1,3 +1,5 @@
+The app settings can be found in the administrative area of Nextcloud.
+
 ## Legacy Api Support
 The Legacy API is the API which was originally provided by the Passwords App in versions prior to 2018.1.
 This API is used by many clients for passwords and therefore still available.
