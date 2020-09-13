@@ -1,7 +1,8 @@
-Bug should be reported on the official, public [bug tracker on GitHub](https://github.com/marius-wieschollek/passwords/issues)
+Bug should be reported on the official, public [bug tracker on GitHub](https://github.com/marius-wieschollek/passwords/issues/new/choose)
 
-> Please note that bug reports are for features and bugs.
+> Please note that tickets are for features and bugs.
 > If you need help with passwords visit the [official forum](https://help.nextcloud.com/c/apps/passwords)
+> or look at the provided [contact options](https://github.com/marius-wieschollek/passwords/issues/new/choose).
 
 ## Before you report a bug
 - Check if your system fulfills the [system requirements](../Administrators/System-Requirements)
