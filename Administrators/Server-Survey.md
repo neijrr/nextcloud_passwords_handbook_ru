@@ -34,21 +34,25 @@ Not even that you do not participate.
 
 ## Basic
 Will send the Nextcloud, PHP and app version and information about your OS, CPU architecture, cron execution and which database software is used.
+You can check the output on your machine with the command `./occ passwords:system:report --basic`.
 
 This is what a basic report looks like:
 ```json
 {
     "version": {
-        "server":"16.0.1.1",
-        "app": "2019.7.0",
-        "php": "7.3.0"
+        "server": "20.0.0.6",
+        "app": "2021.1.0",
+        "php": "7.4.10"
     },
     "environment": {
         "os": "Linux",
         "architecture": "x86_64",
         "bits": 64,
         "database": "mysql",
-        "cron": "cron"
+        "cron": "cron",
+        "proxy": false,
+        "sslProxy": false,
+        "subdirectory": false
     }
 }
 ```
@@ -57,47 +61,69 @@ This is what a basic report looks like:
 
 ## Full
 Will send all the basic information and the services selected in the admin settings, legacy api usage, how much sharing is used, which encryption types are used, and if selected other apps are installed.
+You can check the output on your machine with the command `./occ passwords:system:report`.
 
 This is what a full report looks like:
 ```json
 {
     "version": {
-        "server":"16.0.1.1",
-        "app": "2019.7.0",
-        "php": "7.3.0"
+        "server": "20.0.0.6",
+        "app": "2021.1.0",
+        "php": "7.4.10"
     },
     "environment": {
         "os": "Linux",
         "architecture": "x86_64",
         "bits": 64,
         "database": "mysql",
-        "cron": "cron"
+        "cron": "cron",
+        "proxy": false,
+        "sslProxy": false,
+        "subdirectory": false
     },
     "legacyApi": {
-        "enabled": true,
+        "enabled": 1,
         "used": false
     },
     "services": {
         "images": "imagick",
         "favicons": "bi",
-        "faviconApi": false,
         "previews": "pageres",
+        "security": "hibp",
+        "words": "wo4snakes",
         "previewApi": false,
-        "words": "local",
-        "security": "hibp"
+        "faviconApi": false
     },
     "settings": {
-        "nigthlies": false,
-        "handbook": false
+        "channel": "beta",
+        "nightlies": false,
+        "handbook": false,
+        "performance": 6
     },
     "apps": {
+        "guests": {
+            "installed": false,
+            "enabled": false
+        },
+        "occweb": {
+            "installed": true,
+            "enabled": false
+        },
+        "theming": {
+            "installed": true,
+            "enabled": true
+        },
         "passman": {
             "installed": true,
             "enabled": false
         },
         "unsplash": {
-            "installed": true,
-            "enabled": true
+            "installed": false,
+            "enabled": false
+        },
+        "impersonate": {
+            "installed": false,
+            "enabled": false
         }
     },
     "sharing": {
@@ -105,16 +131,16 @@ This is what a full report looks like:
     },
     "encryption": {
         "sse": {
-            "default": "SSEv1r2",
             "SSEv1r1": true,
             "SSEv1r2": true,
             "SSEv2r1": false,
-            "none": false
+            "none": false,
+            "default": "SSEv1r1"
         },
         "cse": {
-            "default": "none",
             "CSEv1r1": false,
-            "none": true
+            "none": true,
+            "default": "none"
         }
     }
 }
