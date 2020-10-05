@@ -28,7 +28,7 @@ If you want to have your app listed, please [create a ticket in our issue tracke
 
 The ticket must contain the following:
 * Name of your app
-* Short description of your app (optional in multiple languages)
+* Short description of your app (max ~160 characters, optionally in multiple languages)
 * Logo of your app (SVG, PNG or JPG, ca 400x400px) (only apps, not libraries)
 * Link to the website/store where users can get your app
 * Link to the sources
