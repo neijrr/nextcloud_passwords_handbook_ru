@@ -6,7 +6,7 @@
 | Processor | 2x1 GHz                     | 4x2 GHz |
 | Ram       | 512 MiB                     | 8 GiB |
 | Disk      | 4 GiB                       | 64 GiB |
-| Platform  | Nextcloud 17                | Nextcloud 19 |
+| Platform  | Nextcloud 17                | Nextcloud 20 |
 | OS        | Linux                       | Ubuntu 20.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
 | PHP       | PHP 7.3                     | PHP 7.4 |
