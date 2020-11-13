@@ -2,6 +2,7 @@
 With the first release of a new year, the passwords app drops support for all major versions of Nextcloud except the latest and all PHP version without [active support](https://php.net/supported-versions.php) by the PHP community.
 Around half a year before, the admin settings of the app will show a warning if the server runs on an old software platform.
 Three months before the end of support, each update creates a notification reminding administrators to update.
+This should give administrators enough time to plan and execute any necessary updates.
 
 ## What does this mean?
 Your server is using a version of Nextcloud or PHP that will soon no longer receive any updates for the passwords app.
