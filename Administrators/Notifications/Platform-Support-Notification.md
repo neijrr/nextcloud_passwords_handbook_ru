@@ -14,8 +14,8 @@ This notification is only about the passwords app and not related to Nextcloud o
 This change only affects future updates of the app.
 The currently installed version of the app will continue to work just like it does now.
 
-__However it might happen that some third party services used by the app will stop working over time.__
-__If this happens, we will **NOT** fix it__
+_However it might happen that some third party services used by the app will stop working over time._
+_If this happens, we will **NOT** fix it_
 
 ## Will the app stop working if i update?
 **NO**
