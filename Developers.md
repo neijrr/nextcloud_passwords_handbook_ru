@@ -1,1 +1,1 @@
-The developer handbook can be found [here](./Developers/Index).
+[The developer handbook can be found here](./Developers/Index).
