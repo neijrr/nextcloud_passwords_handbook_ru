@@ -22,6 +22,7 @@ _If this happens, we will **NOT** fix it_
 
 The built-in Nextcloud app store will not show updates that can not be installed on your server.
 You can install any update shown in the app store even if your server does not meet our minimum requirements.
+If you install an update manually (by uploading the new version to your server), Nextcloud will just deactivate the app.
 
 ## Why are you doing this?
 Because supporting a large amount of Nextcloud releases, PHP versions and Databases also creates a large amount of possible usage scenarios.
