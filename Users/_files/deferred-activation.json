@@ -8,11 +8,6 @@
                 "php"      : "7.2.0"
             }
         },
-        "2019.7" : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
         "2019.8" : {
             "two-factor-tokens"     : false,
             "legacy-client-warning" : false,
@@ -102,12 +97,6 @@
         }
     },
     "webapp": {
-        "2019.7"  : {
-            "encryption-tests"      : false,
-            "client-side-encryption": false,
-            "first-run-wizard"      : false,
-            "backup-encryption"     : false
-        },
         "2019.8"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,

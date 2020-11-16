@@ -4,6 +4,8 @@ Around half a year before, the admin settings of the app will show a warning if 
 Three months before the end of support, each update creates a notification reminding administrators to update.
 This should give administrators enough time to plan and execute any necessary updates.
 
+**NOTE:** Since the "current" version of Nextcloud can vary based on where you get updates from, we define the latest stable version as the version listed on the [Nextcloud download page](https://nextcloud.com/install/#instructions-server).
+
 ## What does this mean?
 Your server is using a version of Nextcloud or PHP that will soon no longer receive any updates for the passwords app.
 We recommend that you check the installed version of Nextcloud and PHP in the admin area and upgrade them if necessary.
