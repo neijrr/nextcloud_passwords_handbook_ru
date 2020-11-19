@@ -32,6 +32,8 @@
 | user.notification.admin | bool | true | Whether or not the user receives notifications about configuration issues. Only for admins |
 | user.encryption.sse | int | 1 | The server side encryption type. 0 = None, 1 = SSEv1, 2 = SSEv1 |
 | user.encryption.cse | int | 0 | The client side encryption type. 0 = None, 1 = CSEv1 |
+| user.sharing.editable | bool | true | Whether or not the editable option should be set by default for a new share. Not writeable if sharing disabled. |
+| user.sharing.resharing | bool | true | Whether or not the resharing option should be set by default for a new share. Not writeable if sharing or resharing disabled. |
 | user.session.lifetime | int | 600 | The session lifetime in seconds |
 | server.version | string | - | The Nextcloud version of the server, e.g. "20" |
 | server.app.version | string | - | The app version of the server, e.g. "2020.9" |
