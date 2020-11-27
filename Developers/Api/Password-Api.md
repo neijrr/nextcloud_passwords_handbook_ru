@@ -34,6 +34,7 @@
 | +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
 | +folder | Fills the folder property with the base model of the folder. If the password is not hidden but the folder is, the base folder will be used |
 | +tags | Adds the tags property filled with the base model of all tags. Hidden tags are not included in this list if the password is not hidden |
+| +tag-ids | Adds the tags property filled with the ids of all tags. Hidden tags are not included in this list if the password is not hidden. Can not be used with `+tags` |
 | +shares | Adds the shares property filled with the base model of all shares with other users. Fills the share property with the base model of the original share if available |
 
 #### Notes

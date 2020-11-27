@@ -23,7 +23,10 @@
 | +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
 | +parent | Fills the parent property with the base model of the parent folder |
 | +folders | Adds the folders property with the base model of all folders in this folder |
+| +folder-ids | Adds the folders property with the ids of all folders in this folder. Can not be used with `+folders` |
 | +passwords | Adds the passwords property with the base model of all passwords in this folder |
+| +password-ids | Adds the passwords property with the ids of all passwords in this folder. Can not be used with `+passwords` |
+| +password-tags | Loads the tags for all passwords in this folder in their respective model. Can only be used with `+passwords` |
 | +tags | Not implemented but reserved |
 
 #### Enhanced API special properties

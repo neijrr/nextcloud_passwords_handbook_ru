@@ -22,6 +22,8 @@
 | model | Returns the base model |
 | +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |
 | +passwords | Adds the passwords property with the base model of all passwords in this tag |
+| +password-ids | Adds the passwords property with the ids of all passwords in this tag. Can not be used with `+passwords` |
+| +password-tags | Loads the tags for all passwords in this tag in their respective model. Can only be used with `+passwords` |
 
 #### Enhanced API special properties
 The properties "revisions" and "passwords" are also processed if necessary.
