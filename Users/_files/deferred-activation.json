@@ -94,6 +94,11 @@
             "two-factor-tokens"     : false,
             "legacy-client-warning" : false,
             "client-side-encryption": false
+        },
+        "2021.1" : {
+            "two-factor-tokens"     : false,
+            "legacy-client-warning" : false,
+            "client-side-encryption": false
         }
     },
     "webapp": {
@@ -201,6 +206,13 @@
             "passlink-connect"      : false
         },
         "2020.12"  : {
+            "encryption-tests"      : false,
+            "client-side-encryption": false,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : false,
+            "passlink-connect"      : false
+        },
+        "2021.1"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,
             "first-run-wizard"      : false,
