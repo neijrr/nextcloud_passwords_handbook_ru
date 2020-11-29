@@ -1,6 +1,6 @@
 ## Why am i seeing this notification?
-With the first release of a new year, the passwords app drops support for all major versions of Nextcloud except the latest and all PHP version without [active support](https://php.net/supported-versions.php) by the PHP community.
-Around half a year before, the admin settings of the app will show a warning if the server runs on an old software platform.
+With the first release of a new year, the passwords app drops support for all major versions of Nextcloud except the latest and all PHP versions without [active support](https://php.net/supported-versions.php) by the PHP community.
+Around half a year before this, the admin settings of the app will show a warning if the server runs on an old software platform.
 Three months before the end of support, each update creates a notification reminding administrators to update.
 This should give administrators enough time to plan and execute any necessary updates.
 
@@ -18,7 +18,8 @@ This change only affects future updates of the app.
 The currently installed version of the app will continue to work just like it does now.
 
 _However it might happen that some third party services used by the app will stop working over time._
-_If this happens, we will **NOT** fix it_
+_It can also happen that apps and other tools using the passwords api will require a newer version of that api to work._
+_If this happens, we will **NOT** fix it._
 
 ## Will the app stop working if i update?
 **NO**
