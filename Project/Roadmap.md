@@ -1,11 +1,10 @@
 # Soon
  - Browser Extension V2
  - Client side encryption
- - New browser extension
  - Easy client setup process
  - Encrypted Database Export
 
-[**Check out new functionality in our Nightly Releases**](../Administrators/Use-Nightlies)
+[**Test the new features in our nightly releases**](../Administrators/Use-Nightlies)
 
 # Next
  - Settings in Database Export
