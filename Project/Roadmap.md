@@ -1,32 +1,44 @@
-## Q2 2020
+# Soon
+ - Browser Extension V2
  - Client side encryption
  - New browser extension
  - Easy client setup process
  - Encrypted Database Export
+
+[**Check out new functionality in our Nightly Releases**](../Administrators/Use-Nightlies)
+
+# Next
  - Settings in Database Export
- 
-## Q4 2020
+ - Hash check api endpoint (Hibp like)
  - Group Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Folder Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
  - Tag Sharing [#27](https://github.com/marius-wieschollek/passwords/issues/27)
 
-#### Unscheduled
- - Client Side Encryption for shares
- - Drag and Drop multiple items
+# Ideas
+###### Features
  - TOTP
- - Public link shares
- - Keyboard support for dropdown menu in tags
- - Hash check api endpoint (Hibp like)
- - Add tag on import
- - Support tags in password creation menu
- - Folder details
- - Tag details
  - Tags for folders
- - Move items with dialog
- - Import and Export from Nextcloud
- - One Click Login (open website and login)
+ - Bookmarks integration
+ - One Click Login (open website and login from app)
+
+###### Encryption
+ - Client Side Encryption for shares
+
+###### Sharing
+ - Public link shares
+ - Improved sharing with log
  - Enhanced sharing form
  - Password sending via link
+   
+###### UI
+ - Drag and Drop multiple items
+ - Keyboard support for dropdown menu in tags
+ - Folder details
+ - Tag details
+ - Support tags in password creation menu
+ - Move items with dialog
  - Improved view of folders in trash
- - Bookmarks integration
- - Improved sharing with log
+
+###### Import
+ - Add tag on import
+ - Import and Export from Nextcloud
