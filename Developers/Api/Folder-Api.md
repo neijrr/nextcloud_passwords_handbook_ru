@@ -1,20 +1,20 @@
 # The Folder Object
-| Property | Type | Writable | Encrypted | Versioned | Description |
-| --- | --- | --- | --- | --- | --- |
-| id | string | no | no | no | The UUID of the folder |
-| label | string | yes | yes | yes | User defined label of the folder |
-| parent | string | yes | no | yes | UUID of the parent folder |
-| created | int | no | no | no | Unix timestamp when the folder was created |
-| updated | int | no | no | yes | Unix timestamp when the folder was updated |
-| edited | int | yes | no | yes | Unix timestamp when the user last changed the folder name |
-| revision | string | no | no | yes | UUID of the current revision |
-| cseType | string | yes | no | yes | Type of the used client side encryption |
-| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
-| sseType | string | no | no | yes | Type of the used server side encryption |
-| client | string | no | no | yes | Name of the client which created this revision |
-| hidden | bool | yes | no | yes | Hides the folder in list / find actions |
-| trashed | bool | no | no | yes | True if the folder is in the trash |
-| favorite | bool | yes | no | yes | True if the user has marked the folder as favorite |
+| Property | Type | Writable | Encrypted | Versioned | Length | Description |
+| --- | --- | --- | --- | --- | --- | --- |
+| id | string | no | no | no | 36 | The UUID of the folder |
+| label | string | yes | yes | yes | 48 | User defined label of the folder |
+| parent | string | yes | no | yes | 36 | UUID of the parent folder |
+| revision | string | no | no | yes | 36 | UUID of the current revision |
+| cseType | string | yes | no | yes | 10 | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | 36 | UUID of the key used for client side encryption |
+| sseType | string | no | no | yes | 10 | Type of the used server side encryption |
+| client | string | no | no | yes | 256 | Name of the client which created this revision |
+| hidden | bool | yes | no | yes | 1 | Hides the folder in list / find actions |
+| trashed | bool | no | no | yes | 1 | True if the folder is in the trash |
+| favorite | bool | yes | no | yes | 1 | True if the user has marked the folder as favorite |
+| created | int | no | no | no | 12 | Unix timestamp when the folder was created |
+| updated | int | no | no | yes | 12 | Unix timestamp when the folder was updated |
+| edited | int | yes | no | yes | 12 | Unix timestamp when the user last changed the folder name |
 
 #### Detail Levels
 | Level | Description |
