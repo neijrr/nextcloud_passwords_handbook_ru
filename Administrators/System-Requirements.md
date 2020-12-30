@@ -35,7 +35,7 @@ More information can be found in the [documentation](https://docs.nextcloud.com/
 
 ### Browser Support
 We support the current version of Chrome and Firefox and assume that most browsers based on these will work as well.
-We do not support specific configurations od browser extensions.
+We do not support specific configurations or browser extensions.
 
 ### PHP Requirements
 We only support versions of PHP with [active support](https://php.net/supported-versions.php) by the PHP community.
