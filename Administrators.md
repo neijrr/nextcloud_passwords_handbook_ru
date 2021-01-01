@@ -1,1 +1,1 @@
-The administrator handbook can be found [here](./Administrators/Index).
+[The administrator handbook can be found here](./Administrators/Index).

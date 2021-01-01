@@ -1,1 +1,1 @@
-The user handbook can be found [here](./Users/Index).
+[The user handbook can be found here](./Users/Index).

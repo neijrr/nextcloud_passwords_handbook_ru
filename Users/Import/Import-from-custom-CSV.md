@@ -74,4 +74,4 @@ Data,data:applicationdatafield
 ```
 
 ## Troubleshooting
-See [import troubleshotting](../Import#Troubleshooting).
+See [import troubleshooting](../Import#Troubleshooting).

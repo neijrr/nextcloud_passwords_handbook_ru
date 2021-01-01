@@ -19,4 +19,8 @@
 1. [About the server survey](./Server-Survey)
 2. [Notes for Administrators](./Administrator-Notes)
 3. [Feature Comparison](./Feature-Comparison)
-4. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
+
+## Support
+1. [Official Chat](https://t.me/nc_passwords)
+2. [Official Forum](https://help.nextcloud.com/c/apps/passwords)
+3. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)

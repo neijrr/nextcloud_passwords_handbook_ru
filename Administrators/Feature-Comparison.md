@@ -67,7 +67,7 @@
 ### Technical Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Compatibility | Nextcloud 17, 18, 19, 20 | Nextcloud 17, 18 |
+| Compatibility | Nextcloud 17, 18, 19, 20 | Nextcloud 17, 18, 19 |
 | Self hosted   | ✔ | ✔ |
 | Languages     | English, Spanish, French, German, Italian, Czech, Dutch, Swedish, Chinesse, Russian | 48 languages including dialects |
 | Price         | free | free |

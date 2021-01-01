@@ -3,3 +3,7 @@
  
 ### Third Party
  - [Rust library](https://github.com/traxys/nextcloud-passwords-client/) by [https://github.com/traxys](traxys)
+ 
+
+### Integrations
+ - [Ansible integration](https://galaxy.ansible.com/markuman/nextcloud) by [https://galaxy.ansible.com/markuman](markuman)

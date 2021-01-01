@@ -44,7 +44,7 @@ The cli command `./occ passwords:backup:list` will list all backups with their n
 
 
 ## Restoring Backups
-Backups can be restored with the command line parameter `./occ passwords:backup:restore <backup name>`.
+Backups can be restored with the command `./occ passwords:backup:restore <backup name>`.
 You can choose which data should be restored with the following options for the command.
 
 **Note:** Restoring user data from backups will erase the current user data.
@@ -57,6 +57,13 @@ You can choose which data should be restored with the following options for the 
 * `--no-app-settings` Will not restore application settings. This is set automatically if you use the `--user` option.
 * `--no-interaction` Will skip interactive parts like the confirmation before restoring the backup.
 
+
+## Exporting & Importing Backups
+The command `./occ passwords:backup:export <backup name> [<file>]` can be used to export backup files to another location.
+The `<file>` parameter is optional and can be a file or directory.
+
+The command `./occ passwords:backup:import <file>` can be used to import a backup into the list of user created backups.
+The command will not restore backups.
 
 ## Accessing Backup Files
 The backup files are stored in the data directory of your Nextcloud instance.

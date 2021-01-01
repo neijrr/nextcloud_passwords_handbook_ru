@@ -1,17 +1,12 @@
 {
     "server": {
         "current": {
-            "version"     : "2020.9.0",
+            "version"     : "2020.12.1",
             "url"         : "https://apps.nextcloud.com/apps/passwords/releases",
             "requirements": {
                 "nextcloud": "17.0.0",
                 "php"      : "7.2.0"
             }
-        },
-        "2019.7" : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
         },
         "2019.8" : {
             "two-factor-tokens"     : false,
@@ -84,15 +79,29 @@
             "two-factor-tokens"     : false,
             "legacy-client-warning" : false,
             "client-side-encryption": false
+        },
+        "2020.10" : {
+            "two-factor-tokens"     : false,
+            "legacy-client-warning" : false,
+            "client-side-encryption": false
+        },
+        "2020.11" : {
+            "two-factor-tokens"     : false,
+            "legacy-client-warning" : false,
+            "client-side-encryption": false
+        },
+        "2020.12" : {
+            "two-factor-tokens"     : false,
+            "legacy-client-warning" : false,
+            "client-side-encryption": false
+        },
+        "2021.1" : {
+            "two-factor-tokens"     : false,
+            "legacy-client-warning" : false,
+            "client-side-encryption": false
         }
     },
     "webapp": {
-        "2019.7"  : {
-            "encryption-tests"      : false,
-            "client-side-encryption": false,
-            "first-run-wizard"      : false,
-            "backup-encryption"     : false
-        },
         "2019.8"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,
@@ -152,35 +161,70 @@
             "client-side-encryption": false,
             "first-run-wizard"      : false,
             "backup-encryption"     : false,
-            "passlink-connect"      : false
+            "passlink-connect"      : true
         },
         "2020.6"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,
             "first-run-wizard"      : false,
             "backup-encryption"     : false,
-            "passlink-connect"      : false
+            "passlink-connect"      : true
         },
         "2020.7"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,
             "first-run-wizard"      : false,
             "backup-encryption"     : false,
-            "passlink-connect"      : false
+            "passlink-connect"      : true
         },
         "2020.8"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,
             "first-run-wizard"      : false,
             "backup-encryption"     : false,
-            "passlink-connect"      : false
+            "passlink-connect"      : true
         },
         "2020.9"  : {
             "encryption-tests"      : false,
             "client-side-encryption": false,
             "first-run-wizard"      : false,
             "backup-encryption"     : false,
-            "passlink-connect"      : false
+            "passlink-connect"      : true
+        },
+        "2020.10"  : {
+            "encryption-tests"      : false,
+            "client-side-encryption": false,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : false,
+            "passlink-connect"      : true
+        },
+        "2020.11"  : {
+            "encryption-tests"      : false,
+            "client-side-encryption": false,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : false,
+            "passlink-connect"      : true
+        },
+        "2020.12"  : {
+            "encryption-tests"      : false,
+            "client-side-encryption": false,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : false,
+            "passlink-connect"      : true
+        },
+        "2020.12.1"  : {
+            "encryption-tests"      : false,
+            "client-side-encryption": false,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : false,
+            "passlink-connect"      : true
+        },
+        "2021.1"  : {
+            "encryption-tests"      : false,
+            "client-side-encryption": false,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : false,
+            "passlink-connect"      : true
         }
     }
 }

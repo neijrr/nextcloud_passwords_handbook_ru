@@ -24,7 +24,7 @@ You are one of it.
 Make sure to keep your Nextcloud account safe.
 Only access the cloud over HTTPS and do not give your credentials to someone else.
 Do not log into Nextcloud on someone else's pc or a public pc.
-IF you are using a client ot access your passwords, make sure it is always up-to-date.
+If you are using a client to access your passwords, make sure it is always up-to-date.
 The second main factor is the administrator of your Nextcloud instance.
 Any security issues in Nextcloud, other Nextcloud apps and the server in general is also a security issue for the Passwords app.
 So in order to keep your passwords safe, your server administrator has to keep the server safe.
