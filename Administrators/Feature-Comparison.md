@@ -19,7 +19,7 @@
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
 | Server Side Encryption    | ✔ | ✔ |
-| Client Side Encryption    | ✔² | ✔ |
+| Client Side Encryption    | ✔ | ✔ |
 | Two-Factor Authentication | ✔² | ✔ |
 | Password Quality Check    | ✔ | ✔ |
 | Password Breach Check     | ✔ | ✖ |
@@ -67,7 +67,7 @@
 ### Technical Features
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Compatibility | Nextcloud 17, 18, 19, 20 | Nextcloud 17, 18, 19 |
+| Compatibility | Nextcloud 20, 21 | Nextcloud 17, 18, 19 |
 | Self hosted   | ✔ | ✔ |
 | Languages     | English, Spanish, French, German, Italian, Czech, Dutch, Swedish, Chinesse, Russian | 48 languages including dialects |
 | Price         | free | free |
@@ -79,8 +79,8 @@
 | Browsers                 | Firefox & Chrome | Firefox & Chrome |
 | Detect new Passwords     | ✔ | ✔ |
 | Detect changed Passwords | ✔ | ✔ |
-| Autofill                 | ✔² | ✔ |
-| Multiple Accounts        | ✔² | ✔ |
+| Autofill                 | ✔ | ✔ |
+| Multiple Accounts        | ✔ | ✔ |
 
 
 ### Android App
