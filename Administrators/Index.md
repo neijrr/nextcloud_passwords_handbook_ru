@@ -16,8 +16,8 @@
 6. [Debugging the app](./App-Debugging)
 
 #### Information
-1. [About the server survey](./Server-Survey)
 2. [Notes for Administrators](./Administrator-Notes)
+1. [About the server survey](./Server-Survey)
 3. [Feature Comparison](./Feature-Comparison)
 
 ## Support
