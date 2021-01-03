@@ -35,7 +35,7 @@ You need command line access or file access to the installation folder of your N
 3. Continue with the correct steps based on the version number
 
 ##### If the result is the previous version number
-Example: You tried to upgrade from 2020.12.1 and the result of the previous command was 2020.12.1.
+Example: You tried to upgrade _from_ 2020.12.1 and the result of the previous command _is_ 2020.12.1.
 
 1. Open the apps or custom_apps folder where the passwords app is installed
 2. Remove the current version with `rm -rf passwords`
@@ -47,14 +47,17 @@ Example: You tried to upgrade from 2020.12.1 and the result of the previous comm
 8. Run `php ./occ maintenance:mode --off` if your Nextcloud is stuck in maintenance mode
 
 ##### The result is the version number of the upgrade
-Example: You tried to upgrade from 2020.12.1 to 2021.1.0 and the result of the previous command was 2021.1.0.
+Example: You tried to upgrade from 2020.12.1 _to_ 2021.1.0 and the result of the previous command _is_ 2021.1.0.
 
 1. Open the apps or custom_apps folder where the passwords app is installed
 2. Remove the current version with `rm -rf passwords`
 3. Download the supported version for your server with `wget <copy link of compatible version listed above>`
 4. Unpack the release with `tar -xf passwords.tar.gz`
 5. Open the base folder of your Nextcloud installation
-2. Run `php ./occ config:app:set passwords installed_version --version 2020.12.1`
+6. Run `php ./occ config:app:set passwords installed_version --version 2020.12.1`
+7. Run `php ./occ maintenance:repair`
+8. Run `php ./occ maintenance:mode` to see if your Nextcloud is still in maintenance mode
+9. Run `php ./occ maintenance:mode --off` if your Nextcloud is stuck in maintenance mode
 
 ### Via file access
 ##### Determine your "currently installed" version
