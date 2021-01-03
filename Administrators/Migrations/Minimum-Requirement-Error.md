@@ -6,6 +6,13 @@ Please note that PHP versions differ between the command line, the webserver and
 Run `php -v` as the the user executing cron command on your server to see which version of php is in use there.
 Look at the "System" section in the Nextcloud admin area to see which version of PHP is used for your webserver.
 
+### Is it safe to upgrade Nextcloud?
+Nextcloud 20 and before do not check PHP version requirements.
+They will install the latest available version of the app during the upgrade even if it does not work.
+This will leave your Nextcloud stuck in maintenance mode.
+You need to fulfill the PHP minimum requirement before updating Nextcloud.
+Nextcloud 21 and later seem to be not affected by this.
+
 # Compatible versions
 **NOTE:** The releases listed here are outdated and do not receive any support anymore!
 
