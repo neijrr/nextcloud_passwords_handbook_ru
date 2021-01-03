@@ -25,6 +25,7 @@ _If this happens, we will **NOT** fix it._
 **YES**
 
 Unlike stated here before, Nextcloud 20 and lower do not check the version requirements before offering an update.
+Installing an incompatible update will likely crash your Nextcloud and leave it in maintenance mode.
 
 
 ~~**NO**~~
