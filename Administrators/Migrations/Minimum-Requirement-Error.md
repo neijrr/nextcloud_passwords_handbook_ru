@@ -25,7 +25,7 @@ Nextcloud 21 and later seem to be not affected by this.
 | 7.3 | 17, 18, 19, 20 | 2020.12.1 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/10845/artifacts/raw/passwords.tar.gz) |
 
 # Downgrade the app
-If the previous version has already been removed from the app, you can still downgrade manually.
+If you have already attempted to upgrade to an incompatible version of the app, you can still downgrade to the latest compatible version manually.
 You need command line access or file access to the installation folder of your Nextcloud for this
 
 ### Via the command line
