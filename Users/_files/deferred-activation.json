@@ -130,28 +130,28 @@
             "encryption-tests"      : true,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
-            "backup-encryption"     : true,
+            "backup-encryption"     : false,
             "passlink-connect"      : true
         },
         "2021.1"  : {
             "encryption-tests"      : true,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
-            "backup-encryption"     : true,
+            "backup-encryption"     : false,
             "passlink-connect"      : true
         },
         "2021.2"  : {
             "encryption-tests"      : true,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
-            "backup-encryption"     : true,
+            "backup-encryption"     : false,
             "passlink-connect"      : true
         },
         "2021.3"  : {
             "encryption-tests"      : true,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
-            "backup-encryption"     : true,
+            "backup-encryption"     : false,
             "passlink-connect"      : true
         }
     }
