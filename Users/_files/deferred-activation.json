@@ -53,6 +53,11 @@
             "legacy-client-warning" : false,
             "client-side-encryption": true
         },
+        "2020.12.2" : {
+            "two-factor-tokens"     : true,
+            "legacy-client-warning" : false,
+            "client-side-encryption": true
+        },
         "2021.1" : {
             "two-factor-tokens"     : true,
             "legacy-client-warning" : false,
@@ -133,6 +138,13 @@
             "backup-encryption"     : false,
             "passlink-connect"      : true
         },
+        "2020.12.2"  : {
+            "encryption-tests"      : true,
+            "client-side-encryption": true,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : true,
+            "passlink-connect"      : true
+        },
         "2021.1"  : {
             "encryption-tests"      : true,
             "client-side-encryption": true,
@@ -140,18 +152,25 @@
             "backup-encryption"     : false,
             "passlink-connect"      : true
         },
+        "2021.1.1"  : {
+            "encryption-tests"      : true,
+            "client-side-encryption": true,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : true,
+            "passlink-connect"      : true
+        },
         "2021.2"  : {
             "encryption-tests"      : true,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
-            "backup-encryption"     : false,
+            "backup-encryption"     : true,
             "passlink-connect"      : true
         },
         "2021.3"  : {
             "encryption-tests"      : true,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
-            "backup-encryption"     : false,
+            "backup-encryption"     : true,
             "passlink-connect"      : true
         }
     }
