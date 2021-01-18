@@ -1,6 +1,8 @@
-> :warning: Some third-party clients do not support encryption
+The passwords app offers strong client side encryption which protects all your data with a master password.
 
 ## Enabling Client Side Encryption
+> :warning: Some third-party clients do not support encryption
+
 #### Important Information
 By default, the encryption setup will encrypt all existing passwords, folders and tags except shared passwords.
 All password revisions but the current will be deleted.
