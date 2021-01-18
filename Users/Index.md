@@ -9,6 +9,7 @@
    - [Password Details](./Passwords/Password-Detail-View)
  - [Folders](./Folders)
  - [Tags](./Tags)
+ - [Encryption](./Encryption)
  - [Search](./Search)
  - [Import](./Import)
    - [Import from Passman](./Import/Import-from-Passman)
