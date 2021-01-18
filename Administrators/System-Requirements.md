@@ -6,11 +6,11 @@
 | Processor | 2x1 GHz                     | 4x2 GHz |
 | Ram       | 512 MiB                     | 8 GiB |
 | Disk      | 4 GiB                       | 64 GiB |
-| Platform  | Nextcloud 17                | Nextcloud 20 |
+| Platform  | Nextcloud 20                | Nextcloud 20 |
 | OS        | Linux                       | Ubuntu 20.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
-| PHP       | PHP 7.3                     | PHP 7.4 |
-| Webserver | HTTPS                       | Nginx 1.18 HTTPS |
+| PHP       | PHP 7.4                     | PHP 7.4 |
+| Webserver | HTTPS                       | Nginx 1.19 HTTPS |
 | PECL      |                             | Zip, Imagick |
 | Libraries |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
@@ -35,10 +35,10 @@ More information can be found in the [documentation](https://docs.nextcloud.com/
 
 ### Browser Support
 We support the current version of Chrome and Firefox and assume that most browsers based on these will work as well.
-We do not support specific configurations od browser extensions.
+We do not support specific configurations or browser extensions.
 
 ### PHP Requirements
-We only support versions of PHP with [active support](https://php.net/supported-versions.php) by the PHP community.
+We support **only** versions of PHP with **[active support](https://php.net/supported-versions.php)** by the PHP community.
 The app may run with older PHP versions but this is not tested and bug reports with an unsupported version will be ignored.
 
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages)
@@ -51,7 +51,6 @@ sudo apt-get install php7.4 php-defaults
 ```
 
 ### Pageres dependencies
-- PhantomJS 
 - NPM 
 - fontconfig
 

@@ -1,7 +1,7 @@
 ## Find and Review Nextcloud Logs
 [![How To: Find and Review Nextcloud Logs](./_files/_previews/view-logs.gif)](./_files/videos/view-logs.webm)
 
-Nextcloud logs are helpful to get percise information about what happened when an error occured.
+Nextcloud logs are helpful to get precise information about what happened when an error occurred.
 The logs can be viewed from the admin area.
 Go to "Settings" > "Logging" to view the logs.
 
@@ -13,9 +13,12 @@ If you have found the correct log entry, click on the "copy" icon and select "co
 
 
 ## Find the system information
+If you have command line access, you can get the server information with the command `./occ passwords:system:report debug` in the root directory of your Nextcloud installation.
+If you have [occweb](https://apps.nextcloud.com/apps/occweb) installed, you can get this information with `passwords:system:report debug`.
+
 #### Nextcloud Version
 The Nextcloud version can be found in the "Overview" section in the admin area.
-Go to "Settings" > "Overview" and thake a look at the section "Version".
+Go to "Settings" > "Overview" and take a look at the section "Version".
 
 #### Environment
 If the "Monitoring" app has not been disabled, it will help to gather system information quickly.

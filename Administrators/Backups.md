@@ -17,6 +17,7 @@ While it is possible to read older backups on newer versions of the app, it not 
 | 2019.4.0 | 100, 101, 102, 103 |
 | 2019.6.0 | 100, 101, 102, 103, 104 |
 | 2019.7.0 | 100, 101, 102, 103, 104, 105 |
+| 2021.1.0 | 100, 101, 102, 103, 104, 105, 106 |
 
 **Note:** Backups will be gzipped automatically if your system supports it.
 Restoring gzipped backups on a system without the PHP-Gzip extension will not work.

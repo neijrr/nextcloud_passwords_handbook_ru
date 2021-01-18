@@ -22,11 +22,17 @@ _It can also happen that apps and other tools using the passwords api will requi
 _If this happens, we will **NOT** fix it._
 
 ## Will the app stop working if i update?
-**NO**
+**YES**
 
-The built-in Nextcloud app store will not show updates that can not be installed on your server.
+Unlike stated here before, Nextcloud 20 and lower do not check the version requirements before offering an update.
+Installing an incompatible update will likely crash your Nextcloud and leave it in maintenance mode.
+
+
+~~**NO**~~
+
+~~The built-in Nextcloud app store will not show updates that can not be installed on your server.
 You can install any update shown in the app store even if your server does not meet our minimum requirements.
-If you install an update manually (by uploading the new version to your server), Nextcloud will just deactivate the app.
+If you install an update manually (by uploading the new version to your server), Nextcloud will just deactivate the app.~~
 
 ## Why are you doing this?
 Because supporting a large amount of Nextcloud releases, PHP versions and Databases also creates a large amount of possible usage scenarios.

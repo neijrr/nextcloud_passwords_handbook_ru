@@ -19,6 +19,7 @@
    - [Import from custom CSV](./Import/Import-from-custom-CSV)
  - [Export](./Export)
  - [Settings](./Settings)
+ - [Extension](./Extension)
 
 ## Support & Contact
 If you have any questions which are not answered in the handbook,

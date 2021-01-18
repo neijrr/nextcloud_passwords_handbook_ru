@@ -1,31 +1,31 @@
 # The Password Object
-| Property | Type | Writable | Encrypted | Versioned | Description |
-| --- | --- | --- | --- | --- | --- |
-| id | string | no | no | no | The UUID of the password |
-| label | string | yes | yes | yes | User defined label of the password |
-| username | string | yes | yes | yes | Username associated with the password |
-| password | string | yes | yes | yes | The actual password |
-| url | string | yes | yes | yes | Url of the website |
-| notes | string | yes | yes | yes | Notes for the password. Can be formatted with Markdown |
-| customFields | string | yes | yes | yes | Custom fields created by the user. (See [custom fields](#custom-fields)) |
-| status | int | no | no | yes | Security status level of the password (0 = ok, 1 = user rules violated, 2 = breached) |
-| statusCode | string | no | no | yes | Specific code for the current security status (GOOD, OUTDATED, DUPLICATE, BREACHED) |
-| hash | string | yes | no | yes | SHA1 hash of the password |
-| folder | string | yes | no | yes | UUID of the current folder of the password |
-| revision | string | no | no | yes | UUID of the current revision |
-| share | string / null | no | no | no | UUID of the share if the password was shared by someone else with the user |
-| shared | bool | no | no | no | True if the password is shared with other users |
-| cseType | string | yes | no | yes | Type of the used client side encryption |
-| cseKey | string | yes | no | yes | UUID of the key used for client side encryption |
-| sseType | string | no | no | yes | Type of the used server side encryption |
-| client | string | no | no | yes | Name of the client which created this revision |
-| hidden | bool | yes | no | yes | Hides the password in list / find actions |
-| trashed | bool | no | no | yes | True if the password is in the trash |
-| favorite | bool | yes | no | yes | True if the user has marked the password as favorite |
-| editable | bool | no | no | no | Specifies if the encrypted properties can be changed. Might be false for shared passwords |
-| edited | int | yes | no | yes | Unix timestamp when the user last changed the password |
-| created | int | no | no | no | Unix timestamp when the password was created |
-| updated | int | no | no | yes | Unix timestamp when the password was updated |
+| Property | Type | Writable | Encrypted | Versioned | Length | Description |
+| --- | --- | --- | --- | --- | --- | --- |
+| id | string | no | no | no | 36 | The UUID of the password |
+| label | string | yes | yes | yes | 64 | User defined label of the password |
+| username | string | yes | yes | yes | 64 | Username associated with the password |
+| password | string | yes | yes | yes | 256 | The actual password |
+| url | string | yes | yes | yes | 2048 | Url of the website |
+| notes | string | yes | yes | yes | 4096 | Notes for the password. Can be formatted with Markdown |
+| customFields | string | yes | yes | yes | 8192 | Custom fields created by the user. (See [custom fields](#custom-fields)) |
+| status | int | no | no | yes | 1 | Security status level of the password (0 = ok, 1 = user rules violated, 2 = breached) |
+| statusCode | string | no | no | yes | 12 | Specific code for the current security status (GOOD, OUTDATED, DUPLICATE, BREACHED) |
+| hash | string | yes | no | yes | 40 | SHA1 hash of the password |
+| folder | string | yes | no | yes | 36 | UUID of the current folder of the password |
+| revision | string | no | no | yes | 36 | UUID of the current revision |
+| share | string / null | no | no | no | 36 | UUID of the share if the password was shared by someone else with the user |
+| shared | bool | no | no | no | 1 | True if the password is shared with other users |
+| cseType | string | yes | no | yes | 10 | Type of the used client side encryption |
+| cseKey | string | yes | no | yes | 36 | UUID of the key used for client side encryption |
+| sseType | string | no | no | yes | 10 | Type of the used server side encryption |
+| client | string | no | no | yes | 256 | Name of the client which created this revision |
+| hidden | bool | yes | no | yes | 1 | Hides the password in list / find actions |
+| trashed | bool | no | no | yes | 1 | True if the password is in the trash |
+| favorite | bool | yes | no | yes | 1 | True if the user has marked the password as favorite |
+| editable | bool | no | no | no | 1 | Specifies if the encrypted properties can be changed. Might be false for shared passwords |
+| edited | int | yes | no | yes | 12 | Unix timestamp when the user last changed the password |
+| created | int | no | no | no | 12 | Unix timestamp when the password was created |
+| updated | int | no | no | yes | 12 | Unix timestamp when the password was updated |
 
 #### Detail Levels
 | Level | Description |
