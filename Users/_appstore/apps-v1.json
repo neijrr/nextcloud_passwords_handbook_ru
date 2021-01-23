@@ -204,6 +204,40 @@
             }
         ]
     },
+    "integrations": {
+        "label": {
+            "en": "Integrations",
+            "de": "Integrationen"
+        },
+        "style": "list",
+        "icon" : "puzzle-piece",
+        "items": [
+            {
+                "id"         : "markuman",
+                "label"      : {
+                    "en": "Ansible Lookup Plugin"
+                },
+                "description": {
+                    "en": "Store secrets for your deployment in Nextcloud.",
+                    "de": "Zungangsdaten für Deployments in Nextcloud speichern."
+                },
+                "author"     : {
+                    "name"    : "markuman",
+                    "homepage": "https://galaxy.ansible.com/markuman"
+                },
+                "passlink"   : {
+                    "enabled": false,
+                    "altLink": false
+                },
+                "links"      : {
+                    "homepage": "https://galaxy.ansible.com/markuman/nextcloud",
+                    "download": "https://galaxy.ansible.com/markuman/nextcloud",
+                    "sources" : "https://git.osuv.de/m/nextcloud_collection"
+                },
+                "official"   : false
+            }
+        ]
+    },
     "libraries"   : {
         "label": {
             "en": "Libraries",
@@ -259,40 +293,6 @@
                     "homepage": "https://github.com/traxys/nextcloud-passwords-client",
                     "download": "https://github.com/traxys/nextcloud-passwords-client",
                     "sources" : "https://github.com/traxys/nextcloud-passwords-client"
-                },
-                "official"   : false
-            }
-        ]
-    },
-    "integrations": {
-        "label": {
-            "en": "Integrations",
-            "de": "Integrationen"
-        },
-        "style": "list",
-        "icon" : "puzzle-piece",
-        "items": [
-            {
-                "id"         : "markuman",
-                "label"      : {
-                    "en": "Ansible Lookup Plugin"
-                },
-                "description": {
-                    "en": "Store secrets for your deployment in Nextcloud.",
-                    "de": "Zungangsdaten für Deployments in Nextcloud speichern."
-                },
-                "author"     : {
-                    "name"    : "markuman",
-                    "homepage": "https://galaxy.ansible.com/markuman"
-                },
-                "passlink"   : {
-                    "enabled": false,
-                    "altLink": false
-                },
-                "links"      : {
-                    "homepage": "https://galaxy.ansible.com/markuman/nextcloud",
-                    "download": "https://galaxy.ansible.com/markuman/nextcloud",
-                    "sources" : "https://git.osuv.de/m/nextcloud_collection"
                 },
                 "official"   : false
             }
