@@ -20,7 +20,7 @@
 | --- | --- | --- |
 | Server Side Encryption    | ✔ | ✔ |
 | Client Side Encryption    | ✔ | ✔ |
-| Two-Factor Authentication | ✔² | ✔ |
+| Two-Factor Authentication | ✔ | ✔ |
 | Password Quality Check    | ✔ | ✔ |
 | Password Breach Check     | ✔ | ✖ |
 
@@ -69,17 +69,18 @@
 | --- | --- | --- |
 | Compatibility | Nextcloud 20, 21 | Nextcloud 17, 18, 19 |
 | Self hosted   | ✔ | ✔ |
-| Languages     | English, Spanish, French, German, Italian, Czech, Dutch, Swedish, Chinesse, Russian | 48 languages including dialects |
+| Languages     | English, Spanish, French, German, Italian, Czech, Dutch, Swedish, Chinese, Russian | 48 languages including dialects |
 | Price         | free | free |
 
 
 ### Browser Extension
 | Feature | Passwords App | Passman |
 | --- | --- | --- |
-| Browsers                 | Firefox & Chrome | Firefox & Chrome |
-| Detect new Passwords     | ✔ | ✔ |
-| Detect changed Passwords | ✔ | ✔ |
-| Autofill                 | ✔ | ✔ |
+| Browsers                 | Firefox, Chrome & Edge | Firefox & Chrome |
+| Detect new passwords     | ✔ | ✔ |
+| Detect changed passwords | ✔ | ✔ |
+| Paste passwords          | ✔ | ✔ |
+| Autofill passwords       | ✔ | ✖ |
 | Multiple Accounts        | ✔ | ✔ |
 
 
@@ -92,4 +93,3 @@
 
 ##### Footnotes
 ¹ Implemented but broken
-² In Beta Testing
