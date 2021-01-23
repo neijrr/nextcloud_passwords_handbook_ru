@@ -1,0 +1,26 @@
+{
+    "server": {
+        "current": {
+            "version"     : "2021.2.0",
+            "url"         : "https://apps.nextcloud.com/apps/passwords/releases",
+            "requirements": {
+                "nextcloud": "20.0.5",
+                "php"      : "7.4.0"
+            }
+        },
+        "2021.2" : {
+            "legacy-client-warning": false
+        },
+        "2021.3" : {
+            "legacy-client-warning": false
+        }
+    },
+    "webapp": {
+        "2021.2": {
+            "first-run-wizard": false
+        },
+        "2021.3": {
+            "first-run-wizard": false
+        }
+    }
+}
