@@ -52,10 +52,10 @@
                     "zh": "官方 Chrome 插件"
                 },
                 "description": {
-                    "en"   : "Our official Chrome extension lets you manage all your passwords from your browser and is available for many Chromium based Browsers from the Chrome Web Store.",
+                    "en"   : "Our official Chrome extension integrates Passwords into your browser and is available for many Chromium based Browsers from the Chrome Web Store.",
                     "sv"   : "Med det officiella tillägget för Chrome kan du enkelt komma åt alla dina lösenord från Chrome. Ladda ner tillägget från tilläggs-butiken för Chrome",
-                    "de"   : "Unsere offizielle Chrome-Erweiterung ermöglicht es dir, alle deine Passwörter über deinen Browser zu verwalten und ist für viele auf Chromium basierenden Browsern im Chrome Web Store verfügbar.",
-                    "de-DE": "Unsere offizielle Chrome-Erweiterung ermöglicht es Ihnen, alle Ihre Passwörter über Ihren Browser zu verwalten und ist für viele auf Chromium basierenden Browsern im Chrome Web Store verfügbar.",
+                    "de"   : "Unsere offizielle Chrome-Erweiterung integriert die Passwörter App in deinen Browser und ist für viele auf Chromium basierenden Browsern im Chrome Web Store verfügbar.",
+                    "de-DE": "Unsere offizielle Chrome-Erweiterung integriert die Passwörter App in Ihren Browser und ist für viele auf Chromium basierenden Browsern im Chrome Web Store verfügbar.",
                     "it"   : "La nostra estensione Chrome ufficiale ti permette di gestire tutte le password dal tuo browser ed è disponibile per tanti browser basati su Chromium dal Chrome Web Store.",
                     "zh-CN": "我们的官方 Chrome 扩展允许您从浏览器中管理所有密码。该扩展对许多基于 Chromium 的浏览器仍然适用。"
                 },
@@ -121,7 +121,7 @@
                 },
                 "description": {
                     "en": "A fast and polished Android App for Passwords to view, edit and create passwords and folders on the go.",
-                    "de": "Eine schnelle und ausgereifte Android-App für Passwörter, mit der unterwegs Passwörter und Ordner angezeigt, bearbeitet und erstellt werden können."
+                    "de": "Eine schnelle und ausgereifte Android-App mit der unterwegs Passwörter und Ordner angezeigt, bearbeitet und erstellt werden können."
                 },
                 "author"     : {
                     "name"    : "joleaf",
@@ -219,8 +219,8 @@
                     "de": "Offizieller JavaScript Client"
                 },
                 "description": {
-                    "en": "Official NPM package for the JavaScript client for the api",
-                    "de": "Offizielles NPM-Paket des JavaScript Clients für die API"
+                    "en": "Official NPM package for the JavaScript client for the api.",
+                    "de": "Offizielles NPM-Paket des JavaScript Clients für die API."
                 },
                 "author"     : {
                     "name"    : "Marius Wieschollek",
@@ -244,8 +244,8 @@
                     "de": "Rust Bibliothek"
                 },
                 "description": {
-                    "en": "A Rust library to bind to the Passwords API",
-                    "de": "Eine Rust-Bibliothek zur Anbindung der API"
+                    "en": "A Rust library to bind to the Passwords API.",
+                    "de": "Eine Rust-Bibliothek zur Anbindung der API."
                 },
                 "author"     : {
                     "name"    : "traxys",
@@ -278,8 +278,8 @@
                     "en": "Ansible Lookup Plugin"
                 },
                 "description": {
-                    "en": "Store secrets for your deployment in Nextcloud",
-                    "de": "Zungangsdaten für Deployments in Nextcloud speichern"
+                    "en": "Store secrets for your deployment in Nextcloud.",
+                    "de": "Zungangsdaten für Deployments in Nextcloud speichern."
                 },
                 "author"     : {
                     "name"    : "markuman",
