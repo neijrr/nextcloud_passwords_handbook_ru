@@ -21,7 +21,7 @@ So even if something goes wrong, there should be no data loss.
 
 The encryption setup will automatically encrypt all folders and passwords
 
-> :exclamation: Do not abort the encryption process or reload the page
+> :warning: Do not abort the encryption process or reload the page
 
 
 ## Disabling Client Side Encryption
@@ -30,7 +30,7 @@ Passwords offers hidden passwords, which make it impossible to guarantee that al
 This would either prevent removing the master passwords or leave some passwords undecryptable.
 If you're sure that you do not have any hidden passwords, you can try the following steps:
 
-> :warning: This process will delete any hidden items and all settings
+> :exclamation: This process will delete any hidden items and all settings
 
 1. Make you have no hidden passwords in any app you use or unhide them in that app.
 2. Exit or log out of any client but the Nextcloud app itself
