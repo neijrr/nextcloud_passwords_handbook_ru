@@ -45,8 +45,8 @@
             {
                 "id"         : "chrome",
                 "label"      : {
-                    "en": "Official Chrome Client",
-                    "de": "Offizieller Chrome Client",
+                    "en": "Official Chrome Extension",
+                    "de": "Offizieller Chrome Extension",
                     "sv": "Officiell Chrome klient",
                     "it": "Extension Chrome Ufficiale",
                     "zh": "官方 Chrome 插件"
