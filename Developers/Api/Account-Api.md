@@ -1,6 +1,7 @@
 # Available api actions
 | Action | Url | Method | Description |
 | --- | --- | --- | --- |
+| reset         | `/api/1.0/account/reset`         | GET  | Reset the user account |
 | reset         | `/api/1.0/account/reset`         | POST | Reset the user account |
 | challenge/get | `/api/1.0/account/challenge/get` | GET  | Get the current login challenge |
 | challenge/set | `/api/1.0/account/challenge/set` | POST | Set or update the login challenge |
@@ -9,13 +10,14 @@
 # The reset action
 The reset action will delete all user data and settings and reset the account to a blank state.
 This is a destructive action and can only be undone with a backup.
-The first request to the api endpoint will return a random wait time after which the action can be performed.
-The user should have to confirm both requests individually.
+Any request without a code will return a random reset code.
+The client should show the code to the user and request that the user enters the code manually to confirm the account reset.
+If the request contains a code, the app will check if it matches the last given code and perform the reset if so.
 
 #### Arguments
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
-| password | string | - | yes | The login password of the user |
+| code | string | - | no | The code for the user to enter |
 
 #### Return value
 The success status code is `200 Ok` or `202 Accepted`.
@@ -23,7 +25,7 @@ The success status code is `200 Ok` or `202 Accepted`.
 | Argument | Type | Description |
 | --- | --- | --- |
 | status | string | Either "accepted" or "ok". Ok means the action was completed |
-| wait | int | Random number of seconds to wait before sending the second request |
+| code | string | Random string for the user to enter to confirm the request |
 
 #### Notes
  - This request will close the session

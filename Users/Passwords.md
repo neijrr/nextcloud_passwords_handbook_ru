@@ -31,3 +31,6 @@ You can also delete the password via this menu.
 #### Additional display options
 If the [option](./Settings#show-tags-in-the-list-view) is enabled, you can also see the password tags in the listing.
 ![A password with tags in the list view](_files/tags-hover.gif)
+
+You can also configure the [field used as label](./Settings#set-title-from), the [field to sort by](./Settings#sort-by-advanced) and the [click](./Settings#single-click-action-advanced) and [double click](./Settings#double-click-action-advanced) actions.
+You can also configure the [user name to be always shown](./Settings#show-username-in-list-view-advanced).
