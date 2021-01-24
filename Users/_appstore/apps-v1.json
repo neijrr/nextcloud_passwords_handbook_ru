@@ -184,7 +184,8 @@
                     "en": "Passwords for Nextcloud"
                 },
                 "description": {
-                    "en": "Allows you to view, create, edit and delete the passwords and folders on your Nextcloud server. Supports Password AutoFill."
+                    "en": "Allows you to view, create, edit and delete the passwords and folders on your Nextcloud server. Supports Password AutoFill.",
+                    "de": "Erlaubt es, Passwörter und Ordner vom Nextcloud Server anzuzeigen, zu bearbeiten und zu löschen. Unterstützt Autofill für Passwörter."
                 },
                 "author"     : {
                     "name"    : "Johannes Schliephake",
