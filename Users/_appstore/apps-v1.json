@@ -13,7 +13,7 @@
                 "id"         : "firefox",
                 "label"      : {
                     "en": "Official Firefox Add-On",
-                    "de": "Offizieller Firefox Add-On",
+                    "de": "Offizielles Firefox Add-On",
                     "sv": "Officiell Firefox klient",
                     "it": "Add-On Firefox Ufficiale",
                     "zh": "官方 Firefox 插件"
@@ -46,7 +46,7 @@
                 "id"         : "chrome",
                 "label"      : {
                     "en": "Official Chrome Extension",
-                    "de": "Offizieller Chrome Extension",
+                    "de": "Offizielle Chrome Extension",
                     "sv": "Officiell Chrome klient",
                     "it": "Extension Chrome Ufficiale",
                     "zh": "官方 Chrome 插件"
