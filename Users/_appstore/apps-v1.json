@@ -37,9 +37,14 @@
                 "logo"       : "firefox.svg",
                 "links"      : {
                     "homepage": "https://github.com/marius-wieschollek/passwords-webextension",
-                    "download": "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps",
                     "sources" : "https://github.com/marius-wieschollek/passwords-webextension"
                 },
+                "downloads"  : [
+                    {
+                        "label": "Firefox Add-ons",
+                        "url"  : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps"
+                    }
+                ],
                 "official"   : true
             },
             {
@@ -70,9 +75,14 @@
                 "logo"       : "chrome.svg",
                 "links"      : {
                     "homepage": "https://github.com/marius-wieschollek/passwords-webextension",
-                    "download": "https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi",
                     "sources" : "https://github.com/marius-wieschollek/passwords-webextension"
                 },
+                "downloads"  : [
+                    {
+                        "label": "Chrome Web Store",
+                        "url"  : "https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi"
+                    }
+                ],
                 "official"   : true
             },
             {
@@ -85,8 +95,8 @@
                     "zh": "官方 Microsoft Edge 插件"
                 },
                 "description": {
-                    "en"   : "Our official Microsoft Edge extension suggests matching credentials for the current tab, pastes them into login forms on demand and can detect new login credentials.",
-                    "de"   : "Unsere offizielle Extension für Microsoft Edge schlägt passende Zugandsaten für den aktuellen Tab vor, fügt sie auf Wunsch in Anmeldeformulare ein und erkennt neue und geänderte Anmeldedaten."
+                    "en": "Our official Microsoft Edge extension suggests matching credentials for the current tab, pastes them into login forms on demand and can detect new login credentials.",
+                    "de": "Unsere offizielle Extension für Microsoft Edge schlägt passende Zugandsaten für den aktuellen Tab vor, fügt sie auf Wunsch in Anmeldeformulare ein und erkennt neue und geänderte Anmeldedaten."
                 },
                 "author"     : {
                     "name"    : "Marius Wieschollek",
@@ -99,9 +109,14 @@
                 "logo"       : "edge.svg",
                 "links"      : {
                     "homepage": "https://github.com/marius-wieschollek/passwords-webextension",
-                    "download": "https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk",
                     "sources" : "https://github.com/marius-wieschollek/passwords-webextension"
                 },
+                "downloads"  : [
+                    {
+                        "label": "Microsoft Store",
+                        "url"  : "https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk"
+                    }
+                ],
                 "official"   : true
             }
         ]
@@ -134,9 +149,18 @@
                 "logo"       : "joleaf-nc-passwords.png",
                 "links"      : {
                     "homepage": "https://gitlab.com/joleaf/nc-passwords-app",
-                    "download": "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app",
                     "sources" : "https://gitlab.com/joleaf/nc-passwords-app"
                 },
+                "downloads"  : [
+                    {
+                        "label": "F-Droid",
+                        "url"  : "https://f-droid.org/de/packages/de.jbservices.nc_passwords_app/"
+                    },
+                    {
+                        "label": "Google Play",
+                        "url"  : "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app"
+                    }
+                ],
                 "official"   : false
             },
             {
@@ -164,9 +188,19 @@
                 "logo"       : "daper-nextcloud-passwords.png",
                 "links"      : {
                     "homepage": "https://github.com/daper/nextcloud-passwords-app",
-                    "download": "https://play.google.com/store/apps/details?id=com.nextcloudpasswords",
+                    "download": "",
                     "sources" : "https://github.com/daper/nextcloud-passwords-app"
                 },
+                "downloads"  : [
+                    {
+                        "label": "F-Droid",
+                        "url"  : "https://f-droid.org/de/packages/com.nextcloudpasswords/"
+                    },
+                    {
+                        "label": "Google Play",
+                        "url"  : "https://play.google.com/store/apps/details?id=com.nextcloudpasswords"
+                    }
+                ],
                 "official"   : false
             }
         ]
@@ -198,9 +232,14 @@
                 "logo"       : "johannes-schliephake-nextcloud-passwords-ios.png",
                 "links"      : {
                     "homepage": "https://github.com/johannes-schliephake/nextcloud-passwords-ios",
-                    "download": "https://apps.apple.com/app/id1546212226",
                     "sources" : "https://github.com/johannes-schliephake/nextcloud-passwords-ios"
                 },
+                "downloads"  : [
+                    {
+                        "label": "Apple Appstore",
+                        "url"  : "https://apps.apple.com/app/id1546212226"
+                    }
+                ],
                 "official"   : false
             }
         ]
@@ -232,9 +271,14 @@
                 },
                 "links"      : {
                     "homepage": "https://galaxy.ansible.com/markuman/nextcloud",
-                    "download": "https://galaxy.ansible.com/markuman/nextcloud",
                     "sources" : "https://git.osuv.de/m/nextcloud_collection"
                 },
+                "downloads"  : [
+                    {
+                        "label": "Ansible Galaxy",
+                        "url"  : "https://galaxy.ansible.com/markuman/nextcloud"
+                    }
+                ],
                 "official"   : false
             }
         ]
@@ -267,9 +311,14 @@
                 },
                 "links"      : {
                     "homepage": "https://git.mdns.eu/nextcloud/passwords-client",
-                    "download": "https://www.npmjs.com/package/passwords-client",
                     "sources" : "https://git.mdns.eu/nextcloud/passwords-client/tree/master"
                 },
+                "downloads"  : [
+                    {
+                        "label": "NPM",
+                        "url"  : "https://www.npmjs.com/package/passwords-client"
+                    }
+                ],
                 "official"   : true
             },
             {
@@ -292,9 +341,14 @@
                 },
                 "links"      : {
                     "homepage": "https://github.com/traxys/nextcloud-passwords-client",
-                    "download": "https://github.com/traxys/nextcloud-passwords-client",
                     "sources" : "https://github.com/traxys/nextcloud-passwords-client"
                 },
+                "downloads"  : [
+                    {
+                        "label": "Crates.io",
+                        "url"  : "https://crates.io/crates/nextcloud-passwords-client"
+                    }
+                ],
                 "official"   : false
             }
         ]
