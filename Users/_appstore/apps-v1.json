@@ -41,7 +41,10 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "Firefox Add-ons",
+                        "label": {
+                            "en": "Available on Firefox Add-ons",
+                            "de": "Verfügbar auf Firefox Add-ons"
+                        },
                         "url"  : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps"
                     }
                 ],
@@ -79,7 +82,10 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "Chrome Web Store",
+                        "label": {
+                            "en": "Available in the Chrome Web Store",
+                            "de": "Verfügbar im Chrome Web Store"
+                        },
                         "url"  : "https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi"
                     }
                 ],
@@ -113,7 +119,10 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "Microsoft Store",
+                        "label": {
+                            "en": "Available in the Microsoft Store",
+                            "de": "Verfügbar im Microsoft Store"
+                        },
                         "url"  : "https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk"
                     }
                 ],
@@ -153,11 +162,17 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "F-Droid",
+                        "label": {
+                            "en": "Available on F-Droid",
+                            "de": "Verfügbar auf F-Droid"
+                        },
                         "url"  : "https://f-droid.org/de/packages/de.jbservices.nc_passwords_app/"
                     },
                     {
-                        "label": "Google Play",
+                        "label": {
+                            "en": "Available on Google Play",
+                            "de": "Verfügbar auf Google Play"
+                        },
                         "url"  : "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app"
                     }
                 ],
@@ -193,11 +208,17 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "F-Droid",
+                        "label": {
+                            "en": "Available on F-Droid",
+                            "de": "Verfügbar auf F-Droid"
+                        },
                         "url"  : "https://f-droid.org/de/packages/com.nextcloudpasswords/"
                     },
                     {
-                        "label": "Google Play",
+                        "label": {
+                            "en": "Available on Google Play",
+                            "de": "Verfügbar auf Google Play"
+                        },
                         "url"  : "https://play.google.com/store/apps/details?id=com.nextcloudpasswords"
                     }
                 ],
@@ -275,7 +296,10 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "Ansible Galaxy",
+                        "label": {
+                            "en": "Available on Ansible Galaxy",
+                            "de": "Verfügbar auf Ansible Galaxy"
+                        },
                         "url"  : "https://galaxy.ansible.com/markuman/nextcloud"
                     }
                 ],
@@ -315,7 +339,10 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "NPM",
+                        "label": {
+                            "en": "Available on NPM",
+                            "de": "Verfügbar auf NPM"
+                        },
                         "url"  : "https://www.npmjs.com/package/passwords-client"
                     }
                 ],
@@ -345,7 +372,10 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "Crates.io",
+                        "label": {
+                            "en": "Available on Crates.io",
+                            "de": "Verfügbar auf Crates.io"
+                        },
                         "url"  : "https://crates.io/crates/nextcloud-passwords-client"
                     }
                 ],
