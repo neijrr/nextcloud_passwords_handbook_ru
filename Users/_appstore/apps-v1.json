@@ -257,7 +257,10 @@
                 },
                 "downloads"  : [
                     {
-                        "label": "Apple Appstore",
+                        "label": {
+                            "en": "Available in the Apple Appstore",
+                            "de": "Verfügbar im Apple Appstore"
+                        },
                         "url"  : "https://apps.apple.com/app/id1546212226"
                     }
                 ],
