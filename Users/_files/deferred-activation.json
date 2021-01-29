@@ -122,21 +122,21 @@
             "passlink-connect"      : true
         },
         "2020.12.1": {
-            "encryption-tests"      : true,
+            "encryption-tests"      : false,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
             "backup-encryption"     : false,
             "passlink-connect"      : true
         },
         "2020.12.2": {
-            "encryption-tests"      : true,
+            "encryption-tests"      : false,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
             "backup-encryption"     : true,
             "passlink-connect"      : true
         },
         "2021.1"   : {
-            "encryption-tests"      : true,
+            "encryption-tests"      : false,
             "client-side-encryption": true,
             "first-run-wizard"      : false,
             "backup-encryption"     : false,
