@@ -48,6 +48,10 @@
                         "url"  : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             },
             {
@@ -89,6 +93,10 @@
                         "url"  : "https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             },
             {
@@ -126,6 +134,10 @@
                         "url"  : "https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             }
         ]
@@ -176,6 +188,10 @@
                         "url"  : "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : false
             },
             {
@@ -222,6 +238,10 @@
                         "url"  : "https://play.google.com/store/apps/details?id=com.nextcloudpasswords"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
@@ -264,6 +284,10 @@
                         "url"  : "https://apps.apple.com/app/id1546212226"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
@@ -306,6 +330,10 @@
                         "url"  : "https://galaxy.ansible.com/markuman/nextcloud"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
@@ -349,6 +377,10 @@
                         "url"  : "https://www.npmjs.com/package/passwords-client"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             },
             {
@@ -382,6 +414,10 @@
                         "url"  : "https://crates.io/crates/nextcloud-passwords-client"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
