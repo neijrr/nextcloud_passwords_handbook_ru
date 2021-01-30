@@ -1,6 +1,7 @@
 ## Before you start
 - This tutorial was developed for and tested with NextCloudPi 1.34.7 on a RaspberryPI.
 - NextCloudPi may behave differently on other systems.
+- This does not work for NextCloudPi Docker. You can't upgrade PHP in a Docker image.
 - _Make sure to make a backup of your entire NextCloudPi Instance (config, data, etc.) before you do this._
 
 ## Enable SSH
@@ -33,9 +34,6 @@ apt-get -y install php7.4-fpm php7.4-mysql php7.4-xml php7.4-zip php7.4-mbstring
 Execute the following commands on your NextCloudPi:
 
 ```bash
-# Become root
-sudo su
-
 # Configure apache for PHP7.4
 a2enmod proxy_fcgi setenvif
 a2enconf php7.4-fpm
