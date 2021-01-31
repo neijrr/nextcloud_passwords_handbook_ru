@@ -49,5 +49,29 @@ systemctl restart php7.4-fpm
 systemctl reload apache2
 ```
 
+## Check the PHP default version
+By default, your NextCloudPi should now be using PHP 7.4.
+You can check this by running `php -v`. The output should look like this:
+```bash
+root@nextcloudpi:/home/pi# php -v
+PHP 7.4.14 (cli) (built: Jan 12 2021 13:59:46) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.14, Copyright (c), by Zend Technologies
+```
+
+If it doesn't, you should use `update-alternatives --config php` and set PHP 7.4 as default:
+```bash
+root@nextcloudpi:/home/pi# update-alternatives --config php
+There are 2 choices for the alternative php (providing /usr/bin/php).
+
+  Selection    Path             Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/php7.4   74        auto mode
+  1            /usr/bin/php7.3   73        manual mode
+  2            /usr/bin/php7.4   74        manual mode
+Press <enter> to keep the current choice[*], or type selection number:0
+```
+
 ## Notes
 - It can take a day before updates show up in the apps store
