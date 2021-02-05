@@ -31,8 +31,11 @@
                     "homepage": "https://github.com/marius-wieschollek"
                 },
                 "passlink"   : {
-                    "enabled": true,
-                    "altLink": false
+                    "enabled" : true,
+                    "link"    : true,
+                    "qrcode"  : true,
+                    "protocol": "extension",
+                    "altLink" : false
                 },
                 "logo"       : "firefox.svg",
                 "links"      : {
@@ -72,8 +75,11 @@
                     "homepage": "https://github.com/marius-wieschollek"
                 },
                 "passlink"   : {
-                    "enabled": true,
-                    "altLink": true
+                    "enabled" : true,
+                    "link"    : true,
+                    "qrcode"  : true,
+                    "protocol": "domain",
+                    "altLink" : true
                 },
                 "logo"       : "chrome.svg",
                 "links"      : {
@@ -109,8 +115,11 @@
                     "homepage": "https://github.com/marius-wieschollek"
                 },
                 "passlink"   : {
-                    "enabled": true,
-                    "altLink": true
+                    "enabled" : true,
+                    "link"    : true,
+                    "qrcode"  : true,
+                    "protocol": "domain",
+                    "altLink" : true
                 },
                 "logo"       : "edge.svg",
                 "links"      : {
