@@ -33,7 +33,7 @@ The key is the generic hash (salt 1) with the length `crypto_generichash_KEYBYTE
 With the generic hash, the secret can be computed using [`crypto_pwhash`](https://download.libsodium.org/doc/password_hashing/default_phf#example-1-key-derivation).
 The key length is `crypto_box_SEEDBYTES`.
 The password is the generic hash.
-The salt is the password hash salt (salt 3) with the length `crypto_pwhash_SALTBYTES`.
+The salt is the password hash salt (salt 2) with the length `crypto_pwhash_SALTBYTES`.
 The ops limit is `crypto_pwhash_OPSLIMIT_INTERACTIVE`.
 The mem limit is `crypto_pwhash_MEMLIMIT_INTERACTIVE`.
 The algorithm is `crypto_pwhash_ALG_ARGON2ID13` which is currently `crypto_pwhash_ALG_DEFAULT`.
@@ -60,7 +60,7 @@ The key is the generic hash (salt 1) with the length `crypto_generichash_KEYBYTE
 With the generic hash, the secret can be computed using [`crypto_pwhash`](https://download.libsodium.org/doc/password_hashing/default_phf#example-1-key-derivation).
 The key length is `crypto_box_SEEDBYTES`.
 The password is the generic hash.
-The salt is the password hash salt (salt 3) with the length `crypto_pwhash_SALTBYTES`.
+The salt is the password hash salt (salt 2) with the length `crypto_pwhash_SALTBYTES`.
 The ops limit is `crypto_pwhash_OPSLIMIT_INTERACTIVE`.
 The mem limit is `crypto_pwhash_MEMLIMIT_INTERACTIVE`.
 The algorithm is `crypto_pwhash_ALG_ARGON2ID13` which is currently `crypto_pwhash_ALG_DEFAULT`.

@@ -51,6 +51,10 @@
                         "url"  : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             },
             {
@@ -95,6 +99,10 @@
                         "url"  : "https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             },
             {
@@ -135,6 +143,10 @@
                         "url"  : "https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             }
         ]
@@ -153,8 +165,9 @@
                     "de": "NC Passwords"
                 },
                 "description": {
-                    "en": "A fast and polished Android App for Passwords to view, edit and create passwords and folders on the go.",
-                    "de": "Eine schnelle und ausgereifte Android-App mit der unterwegs Passwörter und Ordner angezeigt, bearbeitet und erstellt werden können."
+                    "en"   : "Enjoy peace-of-mind access to your passwords wherever you are thanks to this convenient app with secure end-to-end encryption, password autofill and biometric access protection.",
+                    "de"   : "Genieße sorgenfreien Zugriff auf deine Passwörter wo auch immer du bist - dank dieser komfortablen App mit Ende-zu-Ende Verschlüsselung, Passwort-Autofill und biometrischem Zugiffsschutz.",
+                    "de-DE": "Genießen Sie überall sorgenfreien Zugriff auf Ihre Passwörter - dank dieser komfortablen App mit Ende-zu-Ende Verschlüsselung, Passwort-Autofill und biometrischem Zugiffsschutz."
                 },
                 "author"     : {
                     "name"    : "joleaf",
@@ -185,6 +198,10 @@
                         "url"  : "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : false
             },
             {
@@ -196,8 +213,8 @@
                 "description": {
                     "en"   : "A modern, fast and lightweight app to access and manage your passwords from your Android device.",
                     "sv"   : "Ett  modernt, snabb och lättanvänd applikation för åtkomst till, och hantering av dina lösenord i din Android-enhet. Ladda ner det från Google Play.",
-                    "de"   : "Endlich eine moderne, schnelle und benutzerfreundliche App für den Zugriff und die Verwaltung deiner Passwörter von deinem Android-Gerät aus.",
-                    "de-DE": "Endlich eine moderne, schnelle und benutzerfreundliche App für den Zugriff und die Verwaltung Ihrer Passwörter von Ihrem Android-Gerät aus.",
+                    "de"   : "Eine moderne, schnelle und benutzerfreundliche App für den Zugriff und die Verwaltung deiner Passwörter von deinem Android-Gerät aus.",
+                    "de-DE": "Eine moderne, schnelle und benutzerfreundliche App für den Zugriff und die Verwaltung Ihrer Passwörter von Ihrem Android-Gerät aus.",
                     "it"   : "Finalmente una app moderna, veloce e leggera per visualizzare e gestire le password dal tuo dispositivo Android. Scaricala dal Google Play.",
                     "zh-CN": "最后，从 Google play 商店获得现代、快速、轻量级的应用程序。其可以从 Android 设备访问和管理您的密码。"
                 },
@@ -231,6 +248,10 @@
                         "url"  : "https://play.google.com/store/apps/details?id=com.nextcloudpasswords"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
@@ -273,6 +294,10 @@
                         "url"  : "https://apps.apple.com/app/id1546212226"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
@@ -315,6 +340,10 @@
                         "url"  : "https://galaxy.ansible.com/markuman/nextcloud"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
@@ -358,6 +387,10 @@
                         "url"  : "https://www.npmjs.com/package/passwords-client"
                     }
                 ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
                 "official"   : true
             },
             {
@@ -391,6 +424,10 @@
                         "url"  : "https://crates.io/crates/nextcloud-passwords-client"
                     }
                 ],
+                "features"   : {
+                    "encryption": false
+                },
+                "recommended": false,
                 "official"   : false
             }
         ]
