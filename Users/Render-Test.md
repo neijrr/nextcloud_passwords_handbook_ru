@@ -162,3 +162,25 @@ Text `Code`.
 ![Password List](./_files/_previews/main-section.jpg)
 [![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)](../_files/Gallery/feature-overview.mp4)
 ![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)
+
+## Diagrams
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
