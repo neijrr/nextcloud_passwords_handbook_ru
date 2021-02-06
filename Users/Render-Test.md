@@ -1,4 +1,4 @@
-## Quotes and Notices
+# Quotes and Notices
 > Blockquote
 
 > :star: Information
@@ -21,7 +21,7 @@
   > :exclamation: Important
 
 
-## Headlines
+# Headlines
 # H1
 ## H2
 ### H3
@@ -32,14 +32,14 @@
 ###### He@dl!n€ with' $pecial&?% characters<|>
 
 
-## Links
+# Links
 * [external link](https://example.com)
 * [#anchor link](#h1)
 * [page link](Settings)
 * [page #anchor link](Settings#advanced-settings)
 
 
-## Lists
+# Lists
 #### Ordered List
 1. Item 1
     1. Item 1
@@ -126,14 +126,14 @@
 - Item 5
 
 
-## Tables
+# Tables
 | TH1 | TH2 | TH3 |
 | --- | --- | --- |
 | TD1 | TD2 | TD3 |
 | TD4 | TD5 | TD6 |
 | TD7 | TD8 | TD9 |
 
-## Code
+# Code
 ```
 Standard code block type 1
 ```
@@ -150,20 +150,20 @@ Bash code block
 Text `Code`.
 
 
-## Formatting
+# Formatting
 * **Bold 1**
 * __Bold 2__
 * _Italic 1_
 * *Italic 2*
 * ~~Striketrough~~
 
-## Images
+# Images
 [![Password List](./_files/_previews/main-section.jpg)](./_files/main-section.png)
 ![Password List](./_files/_previews/main-section.jpg)
 [![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)](../_files/Gallery/feature-overview.mp4)
 ![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)
 
-## Diagrams
+# Diagrams
 ```mermaid
 graph TD;
     A-->B;
@@ -173,14 +173,14 @@ graph TD;
 ```
 ```mermaid
 sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
+    participant A
+    participant B
+    A->>C: Perform Check
+    loop Check
+        C->>C: Internal Procedure
     end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
+    Note right of C: Important <br/>Note
+    C-->>A: Result
+    C->>B: Request
+    B-->>C: Result
 ```
