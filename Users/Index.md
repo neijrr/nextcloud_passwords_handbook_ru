@@ -10,6 +10,7 @@
  - [Folders](./Folders)
  - [Tags](./Tags)
  - [Encryption](./Encryption)
+   - [Enable End-to-End Encryption](./Encryption/Enable-End-to-End-Encryption)
  - [Search](./Search)
  - [Import](./Import)
    - [Import from Passman](./Import/Import-from-Passman)

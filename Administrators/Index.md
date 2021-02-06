@@ -1,4 +1,4 @@
-> Welcome to the Passwords Administrator Handbook.
+> Welcome to the Passwords app for Nextcloud Administrator Handbook.
 
 ## Contents
 #### Installation & Maintenance
