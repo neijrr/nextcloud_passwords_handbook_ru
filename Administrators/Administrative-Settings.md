@@ -1,1 +1,1 @@
-[This page has moved](./App-Settings).
+[This page has moved](./App-Settings)

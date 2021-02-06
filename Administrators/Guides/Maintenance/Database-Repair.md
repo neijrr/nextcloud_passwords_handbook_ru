@@ -4,8 +4,7 @@ This job can be executed manually using the command `./occ maintenance:repair` f
 Some, but not all, checks are also run during an app update.
 
 ## What the database repair does
-
-- Remove password, tag and folder models which do not have any revision at all.
+- Remove passwords, tag and folder models which do not have any revision at all.
 - Restore the last revision if the current revision does not exist for any password, tag or folder model.
 - Restore the last revision if the current revision is linked to another model for any password, tag or folder model.
 - Remove any password, tag or folder revision which can not be decrypted. (Only with `maintenance:repair`)
@@ -15,7 +14,9 @@ Some, but not all, checks are also run during an app update.
 - Fix any password revision where the custom fields attribute was initialized with an unencrypted default value (see [#66](https://github.com/marius-wieschollek/passwords/issues/66))
 - Upgrade custom fields to the latest format for any password revision which does not use E2E. (Only with `maintenance:repair`)
 - Remove invalid attributes from custom fields for any password revision which does not use E2E. (Only with `maintenance:repair`)
-- Reset the status for any password revision if the status code is invalid.
+- Reset custom fields data to default when the JSON can't be parsed for any password revision which does not use E2E. (Only with `maintenance:repair`)
+- Set the custom field type to text if invalid for any password revision which does not use E2E. (Only with `maintenance:repair`)
+- Reset the password security check status for any password revision if the status code is invalid.
 - Move any password revision to the default folder if the set folder does not exist.
 - Remove any relation between passwords and tags if either of them do not exist or belong to someone else.
 - Create an uuid for any relation between passwords and tags if it does not have one.

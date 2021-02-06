@@ -41,14 +41,8 @@ We do not support specific configurations or browser extensions.
 We support **only** versions of PHP with **[active support](https://php.net/supported-versions.php)** by the PHP community.
 The app may run with older PHP versions but this is not tested and bug reports with an unsupported version will be ignored.
 
-To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages)
-You can install the latest version from the PPA with the following commands:
-```bash
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install php7.4 php-defaults
-```
+To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages) for Ubuntu and Debian.
+If you use NextcloudPi, you can use our [NextcloudPi PHP 7.4 ugprade guide](./Guides/NextcloudPi/Upgrade-to-PHP-7.4).
 
 ### Pageres dependencies
 - NPM 
@@ -58,7 +52,7 @@ sudo apt-get install php7.4 php-defaults
 To provide all api features, passwords may use third party services depending on the settings.
 The following list contains all domains which may provide these services.
 However some local service providers like Pageres and the favicon finder may contact any domain as requested via the api.
-The [user handbook](./User-Handbook) also makes direct requests to external servers from the user browser.
+The [user handbook](./User-Handbook) also makes direct requests to external servers from the user browser and your server.
 
 - https://github.com
 - https://ncpw-besticon-01.herokuapp.com

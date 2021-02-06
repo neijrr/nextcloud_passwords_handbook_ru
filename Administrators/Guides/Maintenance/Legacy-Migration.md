@@ -9,7 +9,7 @@ Passwords is more secure, faster and comes with a more powerful api and a modern
 
 ### Prerequisites
 Make sure to upgrade to the latest version of the [legacy app](https://github.com/marius-wieschollek/passwords-legacy) before attempting the migration.
-Check the [system-requirements](System-Requirements.md) and make sure your server fulfills all the minimum requirements.
+Check the [system-requirements](../../System-Requirements.md) and make sure your server fulfills all the minimum requirements.
 The migration works **only** up to PHP 7.1. If you can not use PHP 7.1, perform the migration on the developer docker system and copy the databases and configuration for the app back to your productive system.
 You also need the **mcrypt** module for PHP for the migration. The developer docker system does **not** have mcrypt installed.
 See [Mcrypt not installed](#mcrypt-not-installed) if you don't have it installed.

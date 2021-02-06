@@ -5,19 +5,28 @@
 1. [System Requirements](./System-Requirements)
 2. [App Settings](./App-Settings)
 3. [Backups](./Backups)
-4. [Database Repair](./Database-Repair)
+4. [Database Repair](./Guides/Maintenance/Database-Repair)
 
-#### Tutorials
-1. [Use nightly versions](./Use-Nightlies)
-2. [Migrate to another server](./Backups/Server-Migration)
-3. [Migrating from the legacy app](./Legacy-Migration)
-4. [Self-Hosting the user handbook](./User-Handbook)
-5. [Self-Hosting the Besticon service](./Besticon-Self-Hosting)
-6. [Debugging the app](./App-Debugging)
+#### Guides
+1. [Use nightly versions](./Guides/Maintenance/Use-Nightlies)
+2. [Migrate to another server](./Guides/Maintenance/Server-Migration)
+3. [Migrating from the legacy app](./Guides/Maintenance/Legacy-Migration)
+4. [Debugging the app](./Guides/Maintenance/App-Debugging)
+
+#### Third party services
+1. [Self-Hosting Besticon](./Guides/Services/Besticon-Self-Hosting)
+
+#### Nextcloud Hosting
+1. [Upgrade NextcloudPi to PHP 7.4](./Guides/NextcloudPi/Upgrade-to-PHP-7.4)
+
+#### User Handbook
+1. [About the user handbook](./User-Handbook)
+2. [Self-Hosting](./User-Handbook/Self-Hosting)
+3. [Feature management](./User-Handbook/Feature-Management)
 
 #### Information
-2. [Notes for Administrators](./Administrator-Notes)
-1. [About the server survey](./Server-Survey)
+1. [F.A.Q](./F.A.Q)
+2. [About the server survey](./Server-Survey)
 3. [Feature Comparison](./Feature-Comparison)
 
 ## Support

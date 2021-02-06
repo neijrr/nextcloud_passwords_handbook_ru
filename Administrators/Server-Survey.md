@@ -7,7 +7,8 @@ All data collected by tge server survey is anonymous (and not pseudonym).
 The data can not be traced back to your server and does not contain any form of id.
 The data does also not allow to track servers or identify recurring reports from a server.
 We do not track your individual users or their use of the app or Nextcloud.
-We do not share raw data with anyone except for the publicly available statistics on the homepage.
+We do not share raw data with anyone.
+Only the publicly available statistics on the homepage are available.
 
 
 ## What is the use of the server survey?
