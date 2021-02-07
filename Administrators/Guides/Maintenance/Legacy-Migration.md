@@ -9,11 +9,11 @@ Passwords is more secure, faster and comes with a more powerful api and a modern
 
 ### Prerequisites
 Make sure to upgrade to the latest version of the [legacy app](https://github.com/marius-wieschollek/passwords-legacy) before attempting the migration.
-Check the [system-requirements](../../System-Requirements.md) and make sure your server fulfills all the minimum requirements.
+Check the [system-requirements](../../System-Requirements) and make sure your server fulfills all the minimum requirements.
 The migration works **only** up to PHP 7.1. If you can not use PHP 7.1, perform the migration on the developer docker system and copy the databases and configuration for the app back to your productive system.
 You also need the **mcrypt** module for PHP for the migration. The developer docker system does **not** have mcrypt installed.
 See [Mcrypt not installed](#mcrypt-not-installed) if you don't have it installed.
-Since the app requires PHP 7.1 minimum, you can use the [migration build](_files/passwords.tar.gz) to upgrade if you are using PHP 5.6.
+Since the app requires PHP 7.1 minimum, you can use the [migration build](../../_files/passwords.tar.gz) to upgrade if you are using PHP 5.6.
 It might also be a good idea to check the issue trackers [on github](https://github.com/marius-wieschollek/passwords/issues) to see if any problems with the migration process have occurred.
 
 
@@ -60,8 +60,8 @@ Execute the following command in the root directory of your Nextcloud installati
 ```
 If the migration was successful, the number of migrated passwords, categories and shares should be listed in the log.
 
-[![Migration Shell](../_files/Migration/_previews/01-migration-shell.png)](../_files/Migration/01-migration-shell.png)
-[![Migration Browser](../_files/Migration/_previews/02-migration-browser.png)](../_files/Migration/02-migration-browser.png)
+[![Migration Shell](../../_files/Migration/_previews/01-migration-shell.png)](../../_files/Migration/01-migration-shell.png)
+[![Migration Browser](../../_files/Migration/_previews/02-migration-browser.png)](../../_files/Migration/02-migration-browser.png)
 
 
 ### Post Migration Steps

@@ -8,10 +8,10 @@
 - [Database Repair](./Guides/Maintenance/Database-Repair)
 
 #### Guides
+- [Debugging the app](./Guides/Maintenance/App-Debugging)
 - [Use nightly versions](./Guides/Maintenance/Use-Nightlies)
 - [Migrate to another server](./Guides/Maintenance/Server-Migration)
 - [Migrating from the legacy app](./Guides/Maintenance/Legacy-Migration)
-- [Debugging the app](./Guides/Maintenance/App-Debugging)
 
 #### Third party services
 - [Self-Hosting Besticon](./Guides/Services/Besticon-Self-Hosting)

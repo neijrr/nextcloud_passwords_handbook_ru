@@ -22,4 +22,4 @@ You can download the current nightly from the Nextcloud Apps webpage and install
 4. Upload the archive to the apps folder of your Nextcloud instance
 5. Delete the existing passwords folder
 6. Unpack the archive with `tar zxf passwords.tar.gz` or `gunzip passwords.tar.gz && tar xf passwords.tar`
-7. Open the base folder and run the Nextcloud updater with `./occ upgrade` or trough the web interface.
+7. Open the base folder and run the Nextcloud updater with `php ./occ upgrade` or trough the web interface.
