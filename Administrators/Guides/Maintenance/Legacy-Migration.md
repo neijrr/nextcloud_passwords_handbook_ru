@@ -60,8 +60,8 @@ Execute the following command in the root directory of your Nextcloud installati
 ```
 If the migration was successful, the number of migrated passwords, categories and shares should be listed in the log.
 
-[![Migration Shell](../../_files/Migration/_previews/01-migration-shell.png)](../../_files/Migration/01-migration-shell.png)
-[![Migration Browser](../../_files/Migration/_previews/02-migration-browser.png)](../../_files/Migration/02-migration-browser.png)
+[![Migration Shell](../../_files/_previews/01-migration-shell.png)](../../_files/01-migration-shell.png)
+[![Migration Browser](../../_files/_previews/02-migration-browser.png)](../../_files/02-migration-browser.png)
 
 
 ### Post Migration Steps
