@@ -286,6 +286,8 @@ The success status code is `200 Ok`
 The custom fields attribute contains a JSON formatted array with user defined custom fields.
 Custom fields are part of the shared attributes.
 
+**Note:** Some clients may initialize the customFields attribute as an empty array (`"[]"`) others may use an empty string (`""`).
+
 #### Format
 Each field has three attributes: the name, the type and the value.
 The `label` contains the name of the field, the `type` describes the value and the `value` contains the content of the field.
