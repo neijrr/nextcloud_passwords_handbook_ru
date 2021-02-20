@@ -1,6 +1,8 @@
 > Welcome to the Passwords app for Nextcloud Administrator Handbook.
 
 ## Contents
+- [F.A.Q](./F.A.Q)
+
 #### Installation & Maintenance
 - [System Requirements](./System-Requirements)
 - [App Settings](./App-Settings)
@@ -25,7 +27,6 @@
 - [Feature management](./User-Handbook/Feature-Management)
 
 #### Information
-- [F.A.Q](./F.A.Q)
 - [About the server survey](./Server-Survey)
 - [Feature Comparison](./Feature-Comparison)
 

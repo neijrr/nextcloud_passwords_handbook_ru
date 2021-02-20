@@ -1,7 +1,14 @@
+## How do i share folders and tags?
+You don't. This feature is not yet supported.
+
+## How do i share passwords with groups?
+You don't. This feature is not yet supported.
+
 ## Why can't i reuse an existing user name?
 When a user gets deleted, all his data will be permanently removed with the next execution of the cron jobs.
 The value of the `Remove deleted objects from database` setting will be ignored and the data will be deleted permanently.
 While a user is queued for complete removal, you can not reassign the username.
+You can delete the user data yourself with the occ command `passwords:user:delete`.
 
 ## Why does sharing passwords take so long?
 Shared passwords are synchronized using a background job.
@@ -33,7 +40,7 @@ The app is not designed to run offline.
 The options below are the best way to run the app on a server without internet access.
 
 Internet access is still required to fetch the bad passwords database.
-You *must* also [host the user manual](User-Handbook#self-hosting-the-handbook) yourself.
+You *must* also [host the user manual](./User-Handbook/Self-Hosting) yourself.
 
 | Setting | Offline Option |
 | --- | --- |
