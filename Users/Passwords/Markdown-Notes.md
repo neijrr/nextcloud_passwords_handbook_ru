@@ -54,6 +54,43 @@ _
 
 
 
+## Quotes
+Text can be formatted as quote or blockquote by adding a `>` at the beginning of the line.
+You need to have at least ony empty line after a quote, otherwise the following text will still be formatted as quote.
+
+#### Example
+```markdown
+> Some quoted
+text
+
+Not quoted text
+```
+
+#### Result
+> Some quoted
+text
+
+Not quoted text
+
+
+
+## Code
+It is possible to format text as code block.
+
+#### Example
+~~~markdown
+```
+Code
+```
+~~~
+
+#### Result
+```
+Code
+```
+
+
+
 ## Headlines
 It is possible to add six different levels of headlines by adding `#` at the beginning of the line.
 The more `#`, the smaller the resulting headline.
@@ -75,23 +112,3 @@ The more `#`, the smaller the resulting headline.
 #### H4
 ##### H5
 ###### H6
-
-
-
-## Quotes
-Text can be formatted as quote or blockquote by adding a `>` at the beginning of the line.
-You need to have at least ony empty line after a quote, otherwise the following text will still be formatted as quote.
-
-#### Example
-```markdown
-> First line of quoted text
-Second line of quoted text
-
-Not quoted text
-```
-
-#### Result
-> First line of quoted text
-Second line of quoted text
-
-Not quoted text
