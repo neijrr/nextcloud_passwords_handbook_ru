@@ -60,15 +60,17 @@ You need to have at least ony empty line after a quote, otherwise the following 
 
 #### Example
 ```markdown
-> Some quoted
-text
+> First line of
+quoted text
+> Second line
 
 Not quoted text
 ```
 
 #### Result
-> Some quoted
-text
+> First line of
+quoted text
+> Second line
 
 Not quoted text
 
