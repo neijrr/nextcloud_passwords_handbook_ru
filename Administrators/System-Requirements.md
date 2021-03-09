@@ -6,12 +6,12 @@
 | Processor | 2x1 GHz                     | 4x2 GHz |
 | Ram       | 512 MiB                     | 8 GiB |
 | Disk      | 4 GiB                       | 64 GiB |
-| Platform  | Nextcloud 20.0.5            | Nextcloud 20.0.5 |
+| Platform  | Nextcloud 20.0.5            | Nextcloud 21 |
 | OS        | Linux                       | Ubuntu 20.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
-| PHP       | PHP 7.4                     | PHP 7.4 |
+| PHP       | PHP 7.4                     | PHP 8.0 |
 | Webserver | HTTPS                       | Nginx 1.19 HTTPS |
-| PECL      |                             | Zip, Imagick |
+| PECL      |                             | Zip, Imagick, Intl |
 | Libraries |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Version scheme and breaking changes
