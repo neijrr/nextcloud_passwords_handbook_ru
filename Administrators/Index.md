@@ -19,6 +19,7 @@
 - [Self-Hosting Besticon](./Guides/Services/Besticon-Self-Hosting)
 
 #### Nextcloud Hosting
+- [Upgrade NextcloudPi to PHP 8.0](./Guides/NextcloudPi/Upgrade-to-PHP-8.0)
 - [Upgrade NextcloudPi to PHP 7.4](./Guides/NextcloudPi/Upgrade-to-PHP-7.4)
 
 #### User Handbook
