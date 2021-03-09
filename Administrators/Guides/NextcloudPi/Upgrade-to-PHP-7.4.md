@@ -13,7 +13,7 @@ If you already have SSH enabled, you can skip this.
 - Login to your NextCloudPi with SSH (e.g. `ssh pi@<server>` on linux)
 
 
-## Add PHP 7.4 Package Archive
+## Add PHP Package Archive
 Execute the following commands on your NextCloudPi:
 
 ```bash
@@ -25,10 +25,16 @@ apt-get -y install apt-transport-https lsb-release ca-certificates curl
 curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
 apt-get update
-
-# Install PHP 7.4
-apt-get -y install php7.4-fpm php7.4-mysql php7.4-xml php7.4-zip php7.4-mbstring php7.4-gd php7.4-curl php7.4-redis php7.4-intl php7.4-bcmath php7.4-gmp php7.4-imagick
 ```
+
+
+## Install PHH 7.4
+Execute the following command on your NextCloudPi:
+
+```bash
+apt-get -y install php7.4-fpm php7.4-mysql php7.4-xml php7.4-zip php7.4-mbstring php7.4-gd php7.4-curl php7.4-redis php7.4-intl php7.4-bcmath php7.4-gmp php7.4-imagick imagemagick
+```
+
 
 ## Set up Apache for PHP 7.4
 Execute the following commands on your NextCloudPi:
@@ -74,4 +80,4 @@ Press <enter> to keep the current choice[*], or type selection number:0
 ```
 
 ## Notes
-- It can take a day before updates show up in the apps store
+- It can take a day before app updates show up in the apps store
