@@ -8,41 +8,6 @@
                 "php"      : "7.2.0"
             }
         },
-        "2020.5"   : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
-        "2020.6"   : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
-        "2020.7"   : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
-        "2020.8"   : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
-        "2020.9"   : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
-        "2020.10"  : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
-        "2020.11"  : {
-            "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
-            "client-side-encryption": false
-        },
         "2020.12"  : {
             "two-factor-tokens"     : false,
             "legacy-client-warning" : false,
@@ -54,6 +19,11 @@
             "client-side-encryption": true
         },
         "2020.12.2": {
+            "two-factor-tokens"     : true,
+            "legacy-client-warning" : false,
+            "client-side-encryption": true
+        },
+        "2020.12.3": {
             "two-factor-tokens"     : true,
             "legacy-client-warning" : false,
             "client-side-encryption": true
@@ -129,6 +99,13 @@
             "passlink-connect"      : true
         },
         "2020.12.2": {
+            "encryption-tests"      : false,
+            "client-side-encryption": true,
+            "first-run-wizard"      : false,
+            "backup-encryption"     : true,
+            "passlink-connect"      : true
+        },
+        "2020.12.3": {
             "encryption-tests"      : false,
             "client-side-encryption": true,
             "first-run-wizard"      : false,

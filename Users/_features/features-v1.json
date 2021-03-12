@@ -13,6 +13,21 @@
         },
         "2021.3" : {
             "legacy-client-warning": false
+        },
+        "2021.4" : {
+            "legacy-client-warning": false
+        },
+        "2021.5" : {
+            "legacy-client-warning": false
+        },
+        "2021.6" : {
+            "legacy-client-warning": false
+        },
+        "2021.7" : {
+            "legacy-client-warning": false
+        },
+        "2021.8" : {
+            "legacy-client-warning": false
         }
     },
     "webapp": {
@@ -20,6 +35,21 @@
             "first-run-wizard": false
         },
         "2021.3": {
+            "first-run-wizard": false
+        },
+        "2021.4": {
+            "first-run-wizard": false
+        },
+        "2021.5": {
+            "first-run-wizard": false
+        },
+        "2021.6": {
+            "first-run-wizard": false
+        },
+        "2021.7": {
+            "first-run-wizard": false
+        },
+        "2021.8": {
             "first-run-wizard": false
         }
     }
