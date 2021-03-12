@@ -14,21 +14,31 @@ If no name is chosen one will be generated.
 
 ##### Website
 The website associated with the password.
-The website will be used by the browser addon to determine on which pages the password will be suggested.
+The website will be used by the browser extension to determine on which pages the password will be suggested.
 
 ### Notes
 You can take notes for your password which will be shown in a separate "Notes" tab in the password details.
-The notes can be up to 4096 characters ling an can be styled using the Markdown language.
+The notes can be up to 4096 characters long and can be styled using the [Markdown syntax](./Markdown-Notes).
 
 ### Custom Fields
-You can create up to 20 custom fields for your password.
-Each field can have a name with up to 48 characters which has to be unique.
+You can create up to 20 custom fields for every password.
+Each field can have a name with up to 48 characters.
 The value of a custom field can be up to 320 characters long.
+Custom fields have a specific type attribute which determines how the field is shown and how apps and extensions use it.
 
-Custom fields can be a text, a secret, an email address, a link or a reference to a file from your Nextcloud storage.
-
-If the key of a custom field starts with an underscore, it will be considered a hidden field and not be shown.
+There can be special data fields which are created by apps.
 You can show those fields by enabling the [option](../Settings#show-hidden-custom-fields-Advanced) in the advanced settings.
+
+##### Custom Field Types
+
+| Type | Description |
+| --- | --- |
+| Text | A regular text field |
+| Secret | A password field. These fields are not monitored by the password security check |
+| Email | An email field |
+| Website | An url field. These fields are also used by the browser extension to create recommendations |
+| File | A reference to a file stored in Nextcloud |
+| Data | A field with technical data from apps & extensions. Usually hidden unless the setting is activated |
 
 
 ### More Options
