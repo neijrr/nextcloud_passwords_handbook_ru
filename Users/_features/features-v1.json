@@ -15,19 +15,24 @@
             "legacy-client-warning": false
         },
         "2021.4" : {
-            "legacy-client-warning": false
+            "legacy-client-warning": false,
+            "two-factor-required" : false
         },
         "2021.5" : {
-            "legacy-client-warning": false
+            "legacy-client-warning": false,
+            "two-factor-required" : false
         },
         "2021.6" : {
-            "legacy-client-warning": false
+            "legacy-client-warning": false,
+            "two-factor-required" : false
         },
         "2021.7" : {
-            "legacy-client-warning": false
+            "legacy-client-warning": false,
+            "two-factor-required" : false
         },
         "2021.8" : {
-            "legacy-client-warning": false
+            "legacy-client-warning": false,
+            "two-factor-required" : false
         }
     },
     "webapp": {
