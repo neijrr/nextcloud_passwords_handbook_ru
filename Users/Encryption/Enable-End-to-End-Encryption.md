@@ -11,7 +11,7 @@ If you do not want this, switch the settings view to `Advanced` in the top right
 The encryption setup will create the new entries before deleting.
 So even if something goes wrong, there should be no data loss.
 
-#### Manual encryption setup
+#### Enabling Client Side Encryption
 1. Open the Settings (`More > Settings`)
 2. Locate the `Encryption` section at the end of the `Security` section.
 3. Click the `Activate` button next to `End-to-End Encryption`.

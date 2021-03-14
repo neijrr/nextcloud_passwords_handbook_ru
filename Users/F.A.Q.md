@@ -31,6 +31,15 @@ So in order to keep your passwords safe, your server administrator has to keep t
 A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when client side encryption is enabled.
 So you will have to trust your administrator to keep the server safe.
 
+#### I got the notification "Suspicious amount of failed login attempts detected"
+The Passwords app counts failed attempts to unlock the password database with the master password.
+If five failed login attempts are detected, the app will revoke the app password the client that made the attempt.
+After that, the app will also revoke the app password of any other client after one failed login attempt by that client.
+The app will also prevent any client not using an app password from accessing the app at all.
+This means that clients which use your Nextcloud username and password to access the passwords app will not be able to even attempt to log in.
+All restrictions will be lifted as soon as you unlock the password database in with the correct mater password.
+However even after the restrictions are lifted, you will have to create a new app password for any client that had its app password revoked before.
+
 #### What does the Passwords Session Token do?
 When you use the Passwords app, tokens with the naming schema "Passwords Session MM.DD.YY HH:MM - User@IP Address" will appear in your device & sessions list.
 These tokens are generated automatically when you access the Passwords app in Nextcloud.
@@ -38,8 +47,8 @@ The tokens are only valid for a short period of time and usually do not have fil
 It is safe to delete the tokens, but you should be aware that this will close currently open sessions.
 
 #### How do i create a master password?
+Take a look at [the guide to enable end-to-end encryption](Encryption/Enable-End-to-End-Encryption).
 Open the Settings (`More > Settings`) and look for the "Encryption" section.
-If you don't see this section, please ask your admin to enable client-side encryption.
 Enable the client-side encryption option and set a master password.
 
 **Note:** This can not be undone. You can change the master password but not remove it.
@@ -49,7 +58,6 @@ If your Nextcloud account is set up to use 2FA, the app will automatically requi
 If you have 2FA set up, but the app does not require it on login, please ask yor admin to enable two factor authentication.
 
 **Note:** Some third party clients do not support 2FA and will be unusable after enabling it.
-**Note:** You need at least version 2.0.0 of the browser plugin to use 2FA.
 
 
 ## Sharing
