@@ -20,16 +20,23 @@ If the server does not support HTTPS, this error can not be solved.
 ## Security
 #### How secure is Passwords?
 How secure your passwords are with the Passwords app depends on two main factors.
-You are one of it.
-Make sure to keep your Nextcloud account safe.
-Only access the cloud over HTTPS and do not give your credentials to someone else.
-Do not log into Nextcloud on someone else's pc or a public pc.
-If you are using a client to access your passwords, make sure it is always up-to-date.
+_You are one of it._
+
+- Enable our [end to end encryption for your passwords](./Encryption/Enable-End-to-End-Encryption)
+- Make sure to keep your Nextcloud account safe.
+- Only access the cloud over HTTPS and do not give your credentials to someone else.
+- Do not log into Nextcloud on someone else's pc or a public pc.
+- If you are using a client to access your passwords, make sure it is always up-to-date.
+
 The second main factor is the administrator of your Nextcloud instance.
+
 Any security issues in Nextcloud, other Nextcloud apps and the server in general is also a security issue for the Passwords app.
 So in order to keep your passwords safe, your server administrator has to keep the server safe.
+
 A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when client side encryption is enabled.
 So you will have to trust your administrator to keep the server safe.
+
+
 
 #### I got the notification "Suspicious amount of failed login attempts detected"
 The Passwords app counts failed attempts to unlock the password database with the master password.
@@ -49,7 +56,7 @@ It is safe to delete the tokens, but you should be aware that this will close cu
 #### How do i create a master password?
 Take a look at [the guide to enable end-to-end encryption](Encryption/Enable-End-to-End-Encryption).
 Open the Settings (`More > Settings`) and look for the "Encryption" section.
-Enable the client-side encryption option and set a master password.
+Enable the client-side encryption option and set an encryption passphrase.
 
 **Note:** This can not be undone. You can change the master password but not remove it.
 
