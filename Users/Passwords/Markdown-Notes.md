@@ -54,6 +54,130 @@ _
 
 
 
+## Lists
+It is possible to create numbered lists and bullet point lists.
+Numbered lists can be created by starting the line with a number.
+The first number is the number the list items start with, after that the items will be incremented automatically no matter what number is used.
+Bullet point lists can be created by starting the list items with `* ` or `- `. 
+It is not possible to mix the two within a list.
+It is possible to create a list within a list item by intending the list items with two spaces.
+
+#### Example
+```markdown
+1. First Point
+2. Second Point
+3. Third Point
+2. The numbers don't actually matter
+
+- Bullet Point
+- Bullet Point
+- Bullet Point
+
+* Bullet Point
+* Bullet Point
+* Bullet Point
+
+
+* Bullet Point
+
+  with more than one line
+* Bullet Point
+  1. First subitem
+* Bullet Point
+  * Subitem
+```
+
+#### Result
+1. First Point
+2. Second Point
+3. Third Point
+2. The numbers don't actually matter
+
+- Bullet Point
+- Bullet Point
+- Bullet Point
+
+* Bullet Point
+* Bullet Point
+* Bullet Point
+
+
+* Bullet Point
+
+  with more than one line
+* Bullet Point
+    1. First subitem
+* Bullet Point
+    * Subitem
+
+
+
+## Tables
+The syntax for tables is a little more complex.
+It is always required to create a header and a body for the table.
+The column count should be the same for all rows of the table, and there can never be more columns than in the header.
+The header and body are separated by a row where every column is filled with at least three hyphens, (e.g. `---`).
+
+#### Example
+```markdown
+| Header 1 | Header 2 |
+| --- | --- |
+| Column 1 | Column 2 |
+| | Column 2 |
+| Column 1 | |
+```
+
+#### Result
+| Header 1 | Header 2 |
+| --- | --- |
+| Column 1 | Column 2 |
+| | Column 2 |
+| Column 1 | |
+
+
+
+## Horizontal Lines
+Lines can be created with by leaving a line empty and then writing at least three hyphens at the beginning of the next line that contains nothing otherwise.
+If the empty line is omitted, the previous text will become a headline instead.
+
+#### Example
+```markdown
+Text
+
+---
+Text
+
+---Doesn't work
+```
+
+#### Result
+Text
+
+---
+Text
+
+---Doesn't work
+
+
+
+## Links
+Links can be created by just adding any valid url to the text.
+It is also possible to create a text link by writing the text with square brackets `[]` and the link with regular backets just afterwards `()`.
+
+#### Example
+```markdown
+[Example Link](https://www.example.com)
+
+https://www.example.com
+```
+
+#### Result
+[Example Link](https://www.example.com)
+
+https://www.example.com
+
+
+
 ## Quotes
 Text can be formatted as quote or blockquote by adding a `>` at the beginning of the line.
 You need to have at least ony empty line after a quote, otherwise the following text will still be formatted as quote.
