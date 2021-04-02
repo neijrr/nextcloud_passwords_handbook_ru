@@ -162,19 +162,24 @@ Text
 
 ## Links
 Links can be created by just adding any valid url to the text.
-It is also possible to create a text link by writing the text with square brackets `[]` and the link with regular backets just afterwards `()`.
+It is also possible to create a text link by writing the text with square brackets `[]` and the link with regular brackets just afterwards `()`.
+Headlines can also be linked to, by starting the link with a pound sign `#` and then writing the headline with hyphens `-` instead of spaces.
 
 #### Example
 ```markdown
 [Example Link](https://www.example.com)
 
 https://www.example.com
+
+[Go to *BOLD*](#bold)
 ```
 
 #### Result
 [Example Link](https://www.example.com)
 
 https://www.example.com
+
+[Go to *BOLD*](#bold)
 
 
 
