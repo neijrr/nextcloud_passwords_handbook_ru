@@ -10,27 +10,27 @@
         },
         "2020.12"  : {
             "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
+            "legacy-client-warning" : true,
             "client-side-encryption": false
         },
         "2020.12.1": {
             "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
+            "legacy-client-warning" : true,
             "client-side-encryption": true
         },
         "2020.12.2": {
             "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
+            "legacy-client-warning" : true,
             "client-side-encryption": true
         },
         "2020.12.3": {
             "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
+            "legacy-client-warning" : true,
             "client-side-encryption": true
         },
         "2021.1"   : {
             "two-factor-tokens"     : false,
-            "legacy-client-warning" : false,
+            "legacy-client-warning" : true,
             "client-side-encryption": true
         }
     },
