@@ -6,7 +6,7 @@ Features that don't exist in a version of the app can't be enabled and features 
 This system is intended to help with the introduction of new features, it is not intended to manage which features your uses have access to.
 
 ## Managing Features
-If you want to enable or disable features, yopu need to [self-host the user handbook](./Self-Hosting).
+If you want to enable or disable features, you need to [self-host the user handbook](./Self-Hosting).
 The file [`_features/features-v1.json`](../../Users/_features/features-v1.json) is used to enable the features.
 This file will be fetched once per day from the handbook and is then cached in the default cache of the app.
 

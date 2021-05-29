@@ -1,3 +1,5 @@
+The session api allows clients to use an authorized session which is a requirement for client-side encryption.
+
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
@@ -8,7 +10,7 @@
 
 
 # The request action
-the request action returns all requirements that the client must meet in order to open an authenticated session.
+The request action returns all requirements that the client must meet in order to open an authenticated session.
 
 #### Arguments
 There are no arguments for this action.

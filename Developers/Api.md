@@ -14,8 +14,13 @@ The version 1.0 api is not complete at this point. It will be so in late 2020.
 | 0.1 | 2018.1 | 2018.1 | 2022.1 |
 | 1.0 | 2018.1 | - | - |
 
-### API debugging help
-To make working with the API easier, we offer an [import file](./_files/insomnia-workspace.json) for the free API debugging tool [Insomnia](https://insomnia.rest/).
+### API development help
+To make development with the api easier for developers, we're working on a collection for [Postman](https://www.postman.com/) which can be [downloaded here](./_files/postman-collection.json).
+This collection works best with our [sample data server backup](./_files/SampleDataBackup.json.gz) or the [sample data import](./_files/SamplePasswords.json).
+
+_Don't import either on a production system_
+
+We offer an [import file](./_files/insomnia-workspace.json) for the free API debugging tool [Insomnia](https://insomnia.rest/), but no work is done on this anymore.
 
 ### General Notes
  - The api delivers and receives JSON objects

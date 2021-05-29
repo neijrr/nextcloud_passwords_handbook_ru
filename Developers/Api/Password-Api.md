@@ -1,3 +1,5 @@
+The passwords api allows listing, creating, updating and deleting password entries in the password database.
+
 # The Password Object
 | Property | Type | Writable | Encrypted | Versioned | Length | Description |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -109,6 +111,7 @@ The update action creates a new revision of a password with an updated set of at
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password object |
 | password | string | - | yes | The password |
+| revision | string | - | no | The current revision of the client. If this is not the latest revision, the request will fail. |
 | label | string | - | yes | The label of the password |
 | username | string | empty | no | The username associated with the password |
 | url | string | empty | no | The url of the associated website |
@@ -138,6 +141,8 @@ The success status code is `200 Ok`
  - If the password is not hidden and should be moved to a hidden folder, it will be moved to the base folder instead
  - If the password has tags and you want to remove all tags, you need to submit an array with one invalid tag id
  - If the folder uuid is invalid or does not exist, the base folder uuid will be used instead
+ - If the `revision` argument is present, the value must match the latest revision or the action will fail with an error.
+   This prevents the client from overwriting a more recent revision on the server with old data.
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
  - If the `edited` time is in the future, the current time will be used
  - If the `hash` has not changed, the `edited` field from the last revision will be used
@@ -271,7 +276,7 @@ The success status code is `200 Ok`
  - If no revision is given and the password is in trash, it will be removed from trash
  - If no revision is given and the password is not in trash, nothing is done
  - If a revision is given and the revision is marked as in trash, it will be removed from trash
- - If a revision is given that does not belong to the model, a "Invalid revision id" error will be returned.
+ - If a revision is given that does not belong to the model, an "Invalid revision id" error will be returned.
  - The action will fail if the password is shared but the revision to restore does not meet the requirements for sharing
  - This action will always create a new revision
  - The server side encryption type may change
