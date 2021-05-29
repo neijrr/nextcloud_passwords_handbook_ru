@@ -53,7 +53,6 @@ sequenceDiagram
     loop Authentication
         User->>Client: Requests login
         Client->>Server: Requests session
-        click Server "http://www.github.com" "This is a link"
         Server->>Client: Challenge / Token
         Client->>User: Requests password / token
         User->>Client: Provides password / token
