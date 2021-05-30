@@ -1,3 +1,6 @@
+The share api provides functionality to share passwords with other users on the same server.
+This api is restricted by the sharing settings of the server, so the [related server.sharing.* settings](./Settings-Api#scopes-and-settings) should be checked before using it.
+
 # The Share Object
 | Property | Type | Writable | Description |
 | --- | --- | --- | --- |
@@ -41,21 +44,21 @@ The property "password" is also processed if necessary.
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
-| list | `/api/1.0/share/list` | GET | yes | List all shares with the default detail level |
-| list | `/api/1.0/share/list` | POST | yes | List all shares with the given detail level |
-| show | `/api/1.0/share/show` | POST | yes | Show a share |
-| find | `/api/1.0/share/find` | POST | yes | Find shares matching given criteria |
-| create | `/api/1.0/share/create` | POST | yes | Create a new share |
-| update | `/api/1.0/share/update` | PATCH | yes | Update an existing share |
-| delete | `/api/1.0/share/delete` | DELETE | yes | Delete a share |
-| partners | `/api/1.0/share/partners` | GET | yes | Find users you can share with |
-| partners | `/api/1.0/share/partners` | POST | yes | Find users you can share with by pattern |
+| [list](#the-list-action) | `/api/1.0/share/list` | GET | yes | List all shares with the default detail level |
+| [list](#the-list-action) | `/api/1.0/share/list` | POST | yes | List all shares with the given detail level |
+| [share](#the-share-action) | `/api/1.0/share/show` | POST | yes | Show a share |
+| [find](#the-find-action) | `/api/1.0/share/find` | POST | yes | Find shares matching given criteria |
+| [create](#the-create-action) | `/api/1.0/share/create` | POST | yes | Create a new share |
+| [update](#the-update-action) | `/api/1.0/share/update` | PATCH | yes | Update an existing share |
+| [delete](#the-delete-action) | `/api/1.0/share/delete` | DELETE | yes | Delete a share |
+| [partners](#the-partners-action) | `/api/1.0/share/partners` | GET | yes | Find users you can share with |
+| [partners](#the-partners-action) | `/api/1.0/share/partners` | POST | yes | Find users you can share with by pattern |
 
 
 
 
 # The partners action
-This commands returns an array of users that the current user can share with.
+This partners action returns an array of users that the current user can share with.
 
 #### Arguments
 | Argument | Type | Default | Required | Description |
@@ -186,6 +189,8 @@ The return value is a list of share objects with the given detail level
 
 #### Notes
  - This action still works if sharing has been disabled
+
+
 
 
 # The find action

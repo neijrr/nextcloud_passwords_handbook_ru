@@ -1,7 +1,9 @@
+The token api allows clients to trigger 2FA token providers in order to send the user a 2FA token.
+
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
-| request | `/api/1.0/token/{provider}/request` | GET | no | Requests a token with the provider |
+| [request](#the-request-action) | `/api/1.0/token/{provider}/request` | GET | no | Requests a token with the provider |
 
 
 # The request action

@@ -1,11 +1,13 @@
+The service api provides access to general services provided by the Passwords app.
+
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
-| password | `/api/1.0/service/password` | GET | yes | Generates a password with the users default settings |
-| password | `/api/1.0/service/password` | POST | yes | Generates a password with the given settings |
-| avatar   | `/api/1.0/service/avatar/{user}/{size}` | GET | no | Returns the avatar image for a user |
-| favicon  | `/api/1.0/service/favicon/{domain}/{size}` | GET | no | Returns a favicon image for a domain |
-| preview  | `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET | no | Returns a preview image for a domain |
+| [password](#the-password-action) | `/api/1.0/service/password` | GET | yes | Generates a password with the users default settings |
+| [password](#the-password-action) | `/api/1.0/service/password` | POST | yes | Generates a password with the given settings |
+| [avatar](#the-avatar-action)     | `/api/1.0/service/avatar/{user}/{size}` | GET | no | Returns the avatar image for a user |
+| [favicon](#the-favicon-action)   | `/api/1.0/service/favicon/{domain}/{size}` | GET | no | Returns a favicon image for a domain |
+| [preview](#the-preview-action)   | `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET | no | Returns a preview image for a domain |
 
 
 

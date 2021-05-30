@@ -1,11 +1,13 @@
+The settings api allows clients to get and set settings in the user account.
+
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
-| get   | `/api/1.0/settings/get`   | POST | no  | Returns the value of one setting |
-| set   | `/api/1.0/settings/set`   | POST | yes | Sets the value of a setting |
-| list  | `/api/1.0/settings/list`  | GET  | no  | Lists all settings |
-| list  | `/api/1.0/settings/list`  | POST | no  | Lists all settings in a scope |
-| reset | `/api/1.0/settings/reset` | POST | yes | Resets a setting |
+| [get](#the-get-action)   | `/api/1.0/settings/get`   | POST | no  | Returns the value of one setting |
+| [set](#the-set-action)   | `/api/1.0/settings/set`   | POST | yes | Sets the value of a setting |
+| [list](#the-list-action)  | `/api/1.0/settings/list`  | GET  | no  | Lists all settings |
+| [list](#the-list-action)  | `/api/1.0/settings/list`  | POST | no  | Lists all settings in a scope |
+| [reset](#the-reset-action) | `/api/1.0/settings/reset` | POST | yes | Resets a setting |
 
 
 
@@ -13,9 +15,9 @@
 # Scopes and Settings
 | Scope | Writable | Description |
 | --- | --- | --- |
-| user | yes | User specific settings |
-| client | yes | Client specific settings |
-| server | no | Server specific settings |
+| user | yes | Settings for the current user account. Used to configure backend/api behaviour |
+| client | yes | Client settings. Accessible to all clients attached to the user account |
+| server | no | Server settings, configured by the admin |
 
 | Setting | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -65,7 +67,7 @@
 
 
 # The get action
-Get the value of one or more settings.
+The get action retrieves the value of one or more settings.
 This action accepts an array of strings where each value is the name of one setting.
 
 #### Arguments
@@ -88,7 +90,7 @@ Each key of the object is a setting and the value is the value of the setting.
 
 
 # The set action
-Set the value of one or more settings.
+The set action updates the value of one or more settings.
 This action accepts an object where each key is the name of a setting and the value is the new value
 
 #### Arguments
@@ -111,7 +113,7 @@ The return value is an object with the updated settings and their new value.
 
 
 # The reset action
-Reset the value of one or more settings.
+The reset actionwill reset the value of one or more settings to the default.
 This action accepts an array of strings where each value is the name of one setting.
 
 #### Arguments
@@ -133,7 +135,7 @@ Each key of the object is a setting and the value is the value of the setting.
 
 
 # The list action
-Lists all settings within a scope.
+The list action returns all settings or the settings within a scope if one is given.
 
 #### Arguments
 | Arguments | Type | Default | Required | Description |

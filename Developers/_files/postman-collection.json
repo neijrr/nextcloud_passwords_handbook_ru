@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "a1b8a087-c660-4437-bb92-7049cf8722f0",
 		"name": "Passwords for Nextcloud API",
-		"description": "The passwords api allows clients to interact with the Passwords app for Nextcloud.\n\nThe full documentation can be found here:\n[https://git.mdns.eu/nextcloud/passwords/wikis/Developers](https://git.mdns.eu/nextcloud/passwords/wikis/Developers)",
+		"description": "The passwords api allows clients to interact with the Passwords app for Nextcloud.\n\nThe full documentation can be found here:\n[https://git.mdns.eu/nextcloud/passwords/wikis/Developers](https://git.mdns.eu/nextcloud/passwords/wikis/Developers)\n\nYou can set the login data in the variables, as well as any session token if necessary.\n\nIf you're working with e2e, you can log in in the webapp and then use the session token and app token from that session.\n\nThe session token can be found in each request in the X-Api-Session header and the app token can be found in the html source of the page in the meta tag with the name \"pw-api-token\".",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -484,7 +484,1787 @@
 					"response": []
 				}
 			],
-			"description": "# The passwords api\nThe [passwords api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Password-Api) allows listing, creating, updating and deleting password entries in the password database."
+			"description": "# The passwords api\nThe [passwords api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Password-Api) allows listing, creating, updating and deleting password entries.\n\n# The Password Object\n| Property | Type | Writable | Encrypted | Versioned | Length | Description |\n| --- | --- | --- | --- | --- | --- | --- |\n| id | string | no | no | no | 36 | The UUID of the password |\n| label | string | yes | yes | yes | 64 | User defined label of the password |\n| username | string | yes | yes | yes | 64 | Username associated with the password |\n| password | string | yes | yes | yes | 256 | The actual password |\n| url | string | yes | yes | yes | 2048 | Url of the website |\n| notes | string | yes | yes | yes | 4096 | Notes for the password. Can be formatted with Markdown |\n| customFields | string | yes | yes | yes | 8192 | Custom fields created by the user. (See [custom fields](#custom-fields)) |\n| status | int | no | no | yes | 1 | Security status level of the password (0 = ok, 1 = user rules violated, 2 = breached) |\n| statusCode | string | no | no | yes | 12 | Specific code for the current security status (GOOD, OUTDATED, DUPLICATE, BREACHED) |\n| hash | string | yes | no | yes | 40 | SHA1 hash of the password |\n| folder | string | yes | no | yes | 36 | UUID of the current folder of the password |\n| revision | string | no | no | yes | 36 | UUID of the current revision |\n| share | string / null | no | no | no | 36 | UUID of the share if the password was shared by someone else with the user |\n| shared | bool | no | no | no | 1 | True if the password is shared with other users |\n| cseType | string | yes | no | yes | 10 | Type of the used client side encryption |\n| cseKey | string | yes | no | yes | 36 | UUID of the key used for client side encryption |\n| sseType | string | no | no | yes | 10 | Type of the used server side encryption |\n| client | string | no | no | yes | 256 | Name of the client which created this revision |\n| hidden | bool | yes | no | yes | 1 | Hides the password in list / find actions |\n| trashed | bool | no | no | yes | 1 | True if the password is in the trash |\n| favorite | bool | yes | no | yes | 1 | True if the user has marked the password as favorite |\n| editable | bool | no | no | no | 1 | Specifies if the encrypted properties can be changed. Might be false for shared passwords |\n| edited | int | yes | no | yes | 12 | Unix timestamp when the user last changed the password |\n| created | int | no | no | no | 12 | Unix timestamp when the password was created |\n| updated | int | no | no | yes | 12 | Unix timestamp when the password was updated |\n\n#### Detail Levels\n| Level | Description |\n| --- | --- |\n| model | Returns the base model |\n| +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |\n| +folder | Fills the folder property with the base model of the folder. If the password is not hidden but the folder is, the base folder will be used |\n| +tags | Adds the tags property filled with the base model of all tags. Hidden tags are not included in this list if the password is not hidden |\n| +tag-ids | Adds the tags property filled with the ids of all tags. Hidden tags are not included in this list if the password is not hidden. Can not be used with `+tags` |\n| +shares | Adds the shares property filled with the base model of all shares with other users. Fills the share property with the base model of the original share if available |\n\n#### Notes\n - Since the status check is done once per day server side, the DUPLICATE status may take some time to be applied to all affected passwords\n - The difference between `updated` and `edited` is that updated is always set by the server when the password is changed and edited has to be set by the client."
+		},
+		{
+			"name": "Folder API",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-list-action) lists all folders of the user except those in trash and the hidden ones.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| details | string | \"model\" | no | The detail level of the returned folder objects |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of folder objects with the given detail level\n\n#### Notes\n - The list will not include trashed folders\n - The list will not include hidden folders\n - The list will not include suspended folders where a parent folder is in the trash"
+					},
+					"response": []
+				},
+				{
+					"name": "List (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"details\": \"model+revisions+parent+folders+passwords\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-list-action) lists all folders of the user except those in trash and the hidden ones.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| details | string | \"model\" | no | The detail level of the returned folder objects |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of folder objects with the given detail level\n\n#### Notes\n - The list will not include trashed folders\n - The list will not include hidden folders\n - The list will not include suspended folders where a parent folder is in the trash"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{folder_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/show",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"show"
+							]
+						},
+						"description": "# The show action\nThe [show action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-show-action) lists the properties of a single folder.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the folder |\n| details | string | \"model\" | no | The detail level of the returned folder object |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a folder object with the given detail level\n\n#### Notes\n - This is the only action that can access hidden folders"
+					},
+					"response": []
+				},
+				{
+					"name": "Show (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{folder_id}}\",\n    \"details\": \"model+revisions+parent+folders+passwords\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/show",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"show"
+							]
+						},
+						"description": "# The show action\nThe [show action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-show-action) lists the properties of a single folder.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the folder |\n| details | string | \"model\" | no | The detail level of the returned folder object |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a folder object with the given detail level\n\n#### Notes\n - This is the only action that can access hidden folders"
+					},
+					"response": []
+				},
+				{
+					"name": "Find",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"trashed\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/find",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"find"
+							]
+						},
+						"description": "# The find action\nThe [find action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-find-action) can be used to find all folders matching the given search criteria.\nOnly a specific set of fields is allowed in the criteria.\nHow the criteria array works is explained on the [object search page](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Object-Search.md).\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| criteria | array | [] | no | The search criteria |\n| details | string | \"model\" | no | The detail level of the returned folder objects |\n\n#### Allowed search fields\n| Field | Type | Description |\n| --- | --- | --- |\n| created | int | Unix timestamp when the folder was created |\n| updated | int | Unix timestamp when the folder was updated |\n| edited | int | Unix timestamp when the user last renamed the folder |\n| cseType | string | The client side encryption type |\n| sseType | string | The server side encryption type |\n| parent | string | The id of the parent folder |\n| trashed | bool | Whether or not the folder is in the trash |\n| favorite | bool | Whether or not the user has marked the folder as favorite |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of folder objects that match the criteria with the given detail level\n\n#### Notes\n - The property `trashed` will be set to `false` if not present\n - The property `parent` is only supported in 2019.5.0 and later\n - The list will not include hidden folders\n - The list will not include suspended folders where a parent folder is in the trash"
+					},
+					"response": []
+				},
+				{
+					"name": "Find (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"trashed\": true,\n    \"details\": \"model+revisions+parent+folders+passwords\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/find",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"find"
+							]
+						},
+						"description": "# The find action\nThe [find action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-find-action) can be used to find all folders matching the given search criteria.\nOnly a specific set of fields is allowed in the criteria.\nHow the criteria array works is explained on the [object search page](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Object-Search.md).\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| criteria | array | [] | no | The search criteria |\n| details | string | \"model\" | no | The detail level of the returned folder objects |\n\n#### Allowed search fields\n| Field | Type | Description |\n| --- | --- | --- |\n| created | int | Unix timestamp when the folder was created |\n| updated | int | Unix timestamp when the folder was updated |\n| edited | int | Unix timestamp when the user last renamed the folder |\n| cseType | string | The client side encryption type |\n| sseType | string | The server side encryption type |\n| parent | string | The id of the parent folder |\n| trashed | bool | Whether or not the folder is in the trash |\n| favorite | bool | Whether or not the user has marked the folder as favorite |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of folder objects that match the criteria with the given detail level\n\n#### Notes\n - The property `trashed` will be set to `false` if not present\n - The property `parent` is only supported in 2019.5.0 and later\n - The list will not include hidden folders\n - The list will not include suspended folders where a parent folder is in the trash"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"label\": \"Work\",\n    \"edited\": 1518640874,\n    \"parent\": \"00000000-0000-0000-0000-000000000000\",\n    \"cseKey\": \"\",\n    \"cseType\": \"none\",\n    \"hidden\": false,\n    \"favorite\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"create"
+							]
+						},
+						"description": "# The create action\nThe [create action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-create-action) creates a new folder with the given attributes.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| label | string | - | yes | The label of the folder |\n| parent | string | Base folder | no | The current parent folder |\n| cseType | string | \"none\" | no | The client side encryption type |\n| cseKey | string | \"\" | no | The UUID of the key used for client side encryption. Required if `cseType` not \"none\" |\n| edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |\n| hidden | bool | false | no | Whether or not the folder should be hidden |\n| favorite | bool | false | no | Whether or not the user has marked this folder as favorite |\n\n#### Return value\nThe success status code is `201 Created`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the folder |\n| revision | string | The UUID of the revision |\n\n#### Notes\n - If the uuid of the parent folder is invalid or does not exist, the base folder uuid will be used instead\n - If the folder is not hidden and should be created in a hidden folder, it will be created in the base folder instead\n - If the `edited` argument is \"0\", missing or in the future, the current time will be used"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{folder_id}}\",\n    //\"revision\": \"{{folder_revision}}\",\n    \"label\": \"Work\",\n    \"edited\": 1518640874,\n    \"parent\": \"00000000-0000-0000-0000-000000000000\",\n    \"cseKey\": \"\",\n    \"cseType\": \"none\",\n    \"hidden\": false,\n    \"favorite\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"update"
+							]
+						},
+						"description": "# The update action\nThe [update action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-update-action) creates a new revision of a folder with an updated set of attributes.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the folder |\n| revision | string | - | no | The current revision known to the client. If not the latest revision, the request will fail. |\n| label | string | - | yes | The label of the folder |\n| parent | string | Base folder | no | The current parent folder |\n| cseType | string | \"none\" | no | The client side encryption type |\n| cseKey | string | \"\" | no | The UUID of the key used for client side encryption. Required if `cseType` not \"none\" |\n| edited | int | 0 | no | Unix timestamp when the user has last renamed the folder |\n| hidden | bool | false | no | Whether or not the folder should be hidden |\n| favorite | bool | false | no | Whether or not the user has marked this folder as favorite |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the folder |\n| revision | string | The UUID of the new revision |\n\n#### Notes\n - If the uuid of the parent folder is invalid or does not exist, the base folder uuid will be used instead\n - If the folder is not hidden and should be moved to a hidden parent folder, it will be moved to the base folder instead\n - If hou hide a folder, all folders and passwords in it will be hidden as well\n - If you unhide a folder no change to the folders and passwords in it will be made and they will remain hidden\n - If the `revision` argument is present, the value must match the latest revision or the action will fail with an error.\n   This prevents the client from overwriting a more recent revision on the server with old data.\n - If the `edited` argument is \"0\" or missing, the timestamp from the last revision will be used\n - If the `edited` time is in the future, the current time will be used"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{folder_id}}\"\n    //,\n    //\"revision\": \"{{folder_revision}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"delete"
+							]
+						},
+						"description": "# The delete action\nThe [delete action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-delete-action) moves a folder and its content to the trash or deletes it completely if it is already in the trash.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the folder |\n| revision | string | - | no | Assumed current revision of the folder (Since 2019.6.0) |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the folder |\n| revision | string | The UUID of the new revision. Only if the folder was moved to the trash |\n\n#### Notes\n - If a folder is moved to the trash, all passwords and folders in it will be suspended and hidden from list and find actions\n - If a folder is moved to the trash, the relations between tags and passwords in the folder will be hidden from the tag, but not the password\n - If a folder is deleted, all passwords and folders in it will be deleted as well\n - If the `revision` is set, the folder will only be deleted if that revision is the current revision. \n   This way, a folder is not accidentally deleted instead of trashed if the client is out of sync."
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{folder_id}}\"\n    //,\n    //\"revision\": \"{{folder_revision}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/folder/restore",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"folder",
+								"restore"
+							]
+						},
+						"description": "# The restore action\nThe [restore action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api#the-restore-action) can restore an earlier state of a folder.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the folder |\n| revision | string | - | no | The id of the revision |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the folder |\n| revision | string | The UUID of the new revision |\n\n#### Notes\n - If no revision is given and the folder is in trash, it will be removed from trash\n - If no revision is given and the folder is not in trash, nothing is done\n - If a revision is given and the revision is marked as in trash, it will be removed from trash\n - This action will always create a new revision\n - The server side encryption type may change\n - If the parent folder does not exist anymore, it will be moved to the base folder\n - Deleted folders can not be restored"
+					},
+					"response": []
+				}
+			],
+			"description": "# The folder api\nThe [folder api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Folder-Api) allows listing, creating, updating and deleting folders.\n\n# The Folder Object\n| Property | Type | Writable | Encrypted | Versioned | Length | Description |\n| --- | --- | --- | --- | --- | --- | --- |\n| id | string | no | no | no | 36 | The UUID of the folder |\n| label | string | yes | yes | yes | 48 | User defined label of the folder |\n| parent | string | yes | no | yes | 36 | UUID of the parent folder |\n| revision | string | no | no | yes | 36 | UUID of the current revision |\n| cseType | string | yes | no | yes | 10 | Type of the used client side encryption |\n| cseKey | string | yes | no | yes | 36 | UUID of the key used for client side encryption |\n| sseType | string | no | no | yes | 10 | Type of the used server side encryption |\n| client | string | no | no | yes | 256 | Name of the client which created this revision |\n| hidden | bool | yes | no | yes | 1 | Hides the folder in list / find actions |\n| trashed | bool | no | no | yes | 1 | True if the folder is in the trash |\n| favorite | bool | yes | no | yes | 1 | True if the user has marked the folder as favorite |\n| created | int | no | no | no | 12 | Unix timestamp when the folder was created |\n| updated | int | no | no | yes | 12 | Unix timestamp when the folder was updated |\n| edited | int | yes | no | yes | 12 | Unix timestamp when the user last changed the folder name |\n\n#### Detail Levels\n| Level | Description |\n| --- | --- |\n| model | Returns the base model |\n| +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |\n| +parent | Fills the parent property with the base model of the parent folder |\n| +folders | Adds the folders property with the base model of all folders in this folder |\n| +folder-ids | Adds the folders property with the ids of all folders in this folder. Can not be used with `+folders` |\n| +passwords | Adds the passwords property with the base model of all passwords in this folder |\n| +password-ids | Adds the passwords property with the ids of all passwords in this folder. Can not be used with `+passwords` |\n| +password-tags | Loads the tags for all passwords in this folder in their respective model. Can only be used with `+passwords` |\n| +tags | Not implemented but reserved |"
+		},
+		{
+			"name": "Tag API",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-list-action) lists all tags of the user except those in trash and the hidden ones.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| details | string | \"model\" | no | The detail level of the returned tag objects |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of tag objects with the given detail level\n\n#### Notes\n - The list will not include trashed tags\n - The list will not include hidden tags"
+					},
+					"response": []
+				},
+				{
+					"name": "List (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"details\": \"model+revisions+passwords\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-list-action) lists all tags of the user except those in trash and the hidden ones.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| details | string | \"model\" | no | The detail level of the returned tag objects |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of tag objects with the given detail level\n\n#### Notes\n - The list will not include trashed tags\n - The list will not include hidden tags"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{tag_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/show",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"show"
+							]
+						},
+						"description": "# The show action\nThe [show action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-show-action) lists the properties of a single tag.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the tag |\n| details | string | \"model\" | no | The detail level of the returned tag object |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a tag object with the given detail level\n\n#### Notes\n - This is the only action that can access hidden tags"
+					},
+					"response": []
+				},
+				{
+					"name": "Show (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{tag_id}}\",\n    \"details\": \"model+revisions+passwords\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/show",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"show"
+							]
+						},
+						"description": "# The show action\nThe [show action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-show-action) lists the properties of a single tag.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the tag |\n| details | string | \"model\" | no | The detail level of the returned tag object |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a tag object with the given detail level\n\n#### Notes\n - This is the only action that can access hidden tags"
+					},
+					"response": []
+				},
+				{
+					"name": "Find",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"trashed\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/find",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"find"
+							]
+						},
+						"description": "# The find action\nThe [find action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-find-action) can be used to find all tags matching the given search criteria.\nOnly a specific set of fields is allowed in the criteria.\nHow the criteria array works is explained on the [object search page](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Object-Search.md).\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| criteria | array | [] | no | The search criteria |\n| details | string | \"model\" | no | The detail level of the returned tag objects |\n\n#### Allowed search fields\n| Field | Type | Description |\n| --- | --- | --- |\n| created | int | Unix timestamp when the tag was created |\n| updated | int | Unix timestamp when the tag was updated |\n| edited | int | Unix timestamp when the user last renamed the tag |\n| cseType | string | The client side encryption type |\n| sseType | string | The server side encryption type |\n| trashed | bool | Whether or not the tag is in the trash |\n| favorite | bool | Whether or not the user has marked the tag as favorite |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of tag objects that match the criteria with the given detail level\n\n#### Notes\n - The property `trashed` will be set to `false` if not present\n - The list will not include hidden tags"
+					},
+					"response": []
+				},
+				{
+					"name": "Find (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"trashed\": true,\n    \"details\": \"model+revisions+passwords\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/find",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"find"
+							]
+						},
+						"description": "# The find action\nThe [find action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-find-action) can be used to find all tags matching the given search criteria.\nOnly a specific set of fields is allowed in the criteria.\nHow the criteria array works is explained on the [object search page](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Object-Search.md).\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| criteria | array | [] | no | The search criteria |\n| details | string | \"model\" | no | The detail level of the returned tag objects |\n\n#### Allowed search fields\n| Field | Type | Description |\n| --- | --- | --- |\n| created | int | Unix timestamp when the tag was created |\n| updated | int | Unix timestamp when the tag was updated |\n| edited | int | Unix timestamp when the user last renamed the tag |\n| cseType | string | The client side encryption type |\n| sseType | string | The server side encryption type |\n| trashed | bool | Whether or not the tag is in the trash |\n| favorite | bool | Whether or not the user has marked the tag as favorite |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of tag objects that match the criteria with the given detail level\n\n#### Notes\n - The property `trashed` will be set to `false` if not present\n - The list will not include hidden tags"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"label\": \"Cloud Services\",\n    \"color\": \"#2196f3\",\n    \"edited\": 1520164982,\n    \"cseKey\": \"\",\n    \"cseType\": \"none\",\n    \"hidden\": false,\n    \"trashed\": false,\n    \"favorite\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"create"
+							]
+						},
+						"description": "# The create action\nThe [create action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-create-action) creates a new tag with the given attributes.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| label | string | - | yes | The label of the tag |\n| color | string | - | yes | The color of the tag |\n| cseType | string | \"none\" | no | The client side encryption type |\n| cseKey | string | \"\" | no | The UUID of the key used for client side encryption. Required if `cseType` not \"none\" |\n| edited | int | 0 | no | Unix timestamp when the user has last edited the tag |\n| hidden | bool | false | no | Whether or not the tag should be hidden |\n| favorite | bool | false | no | Whether or not the user has marked this tag as favorite |\n\n#### Return value\nThe success status code is `201 Created`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the tag |\n| revision | string | The UUID of the revision |\n\n#### Notes\n - If the `edited` argument is \"0\", missing or in the future, the current time will be used"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{password_id}}\",\n    //\"revision\": \"{{password_revision}}\",\n    \"label\": \"Cloud Services\",\n    \"color\": \"#2196f3\",\n    \"edited\": 1520164982,\n    \"cseKey\": \"\",\n    \"cseType\": \"none\",\n    \"hidden\": false,\n    \"trashed\": false,\n    \"favorite\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"update"
+							]
+						},
+						"description": "# The update action\nThe [update action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-update-action) creates a new revision of a tag with an updated set of attributes.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the tag |\n| revision | string | - | no | The current revision known to the client. If not the latest revision, the request will fail. |\n| label | string | - | yes | The label of the tag |\n| color | string | - | yes | The color of the tag |\n| cseType | string | \"none\" | no | The client side encryption type |\n| cseKey | string | \"\" | no | The UUID of the key used for client side encryption. Required if `cseType` not \"none\" |\n| edited | int | 0 | no | Unix timestamp when the user has last edited the tag |\n| hidden | bool | false | no | Whether or not the tag should be hidden |\n| favorite | bool | false | no | Whether or not the user has marked this tag as favorite |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the tag |\n| revision | string | The UUID of the new revision |\n\n#### Notes\n - If hou hide a tag, the tag will be no longer visible in passwords which are not hidden, but the passwords will be visible in the tag\n - If the `revision` argument is present, the value must match the latest revision or the action will fail with an error.\n   This prevents the client from overwriting a more recent revision on the server with old data.\n - If the `edited` argument is \"0\" or missing, the timestamp from the last revision will be used\n - If the `edited` time is in the future, the current time will be used"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{tag_id}}\"\n    //,\n    //\"revision\": \"{{tag_revision}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"delete"
+							]
+						},
+						"description": "# The delete action\nThe [delete action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-delete-action) moves a tag to the trash or deletes it completely if it is already in the trash.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the tag |\n| revision | string | - | no | Assumed current revision of the tag (Since 2019.6.0) |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the tag |\n| revision | string | The UUID of the new revision. Only if the tag was moved to the trash |\n\n#### Notes\n - If a tag is moved to the trash, the relation to all passwords which are not in trash will be hidden from the password\n - If a tag is deleted, all relations to passwords are deleted\n - If the `revision` is set, the tag will only be deleted if that revision is the current revision. \n   This way, a tag is not accidentally deleted instead of trashed if the client is out of sync."
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{tag_id}}\"\n    //,\n    //\"revision\": \"{{tag_revision}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/tag/restore",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"tag",
+								"restore"
+							]
+						},
+						"description": "# The restore action\nThe [restore action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api#the-restore-action) can restore an earlier state of a tag.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the tag |\n| revision | string | - | no | The id of the revision |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the tag |\n| revision | string | The UUID of the new revision |\n\n#### Notes\n - If no revision is given and the tag is in trash, it will be removed from trash\n - If no revision is given and the tag is not in trash, nothing is done\n - If a revision is given and the revision is marked as in trash, it will be removed from trash\n - This action will always create a new revision\n - The server side encryption type may change\n - Deleted tags can not be restored"
+					},
+					"response": []
+				}
+			],
+			"description": "# The tag api\nThe [tag api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Tag-Api) allows listing, creating, updating and deleting tags.\n\n# The Tag Object\n| Property | Type | Writable | Encrypted | Versioned | Length | Description |\n| --- | --- | --- | --- | --- | --- | --- |\n| id | string | no | no | no | 36 | The UUID of the tag |\n| label | string | yes | yes | yes | 48 | User defined label of the tag |\n| color | string | yes | yes | yes | 8 | The color of the tag. Any valid CSSv3 color is accepted. |\n| revision | string | no | no | yes | 36 | UUID of the current revision |\n| cseType | string | yes | no | yes | 10 | Type of the used client side encryption |\n| cseKey | string | yes | no | yes | 36 | UUID of the key used for client side encryption |\n| sseType | string | no | no | yes | 10 | Type of the used server side encryption |\n| client | string | no | no | yes | 256 | Name of the client which created this revision |\n| hidden | bool | yes | no | yes | 1 | Hides the tag in list / find actions |\n| trashed | bool | no | no | yes | 1 | True if the tag is in the trash |\n| favorite | bool | yes | no | yes | 1 | True if the user has marked the tag as favorite |\n| created | int | no | no | no | 12 | Unix timestamp when the tag was created |\n| updated | int | no | no | yes | 12 | Unix timestamp when the tag was updated |\n| edited | int | yes | no | yes | 12 | Unix timestamp when the user last edited the tag name or color |\n\n#### Detail Levels\n| Level | Description |\n| --- | --- |\n| model | Returns the base model |\n| +revisions | Adds the revisions property which contains all revisions. A revision consists of all properties marked as versioned and its own created property |\n| +passwords | Adds the passwords property with the base model of all passwords in this tag |\n| +password-ids | Adds the passwords property with the ids of all passwords in this tag. Can not be used with `+passwords` |\n| +password-tags | Loads the tags for all passwords in this tag in their respective model. Can only be used with `+passwords` |"
+		},
+		{
+			"name": "Share API",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-list-action) lists all shares with the user as owner or receiver.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| details | string | \"model\" | no | The detail level of the returned share objects |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of share objects with the given detail level\n\n#### Notes\n - This action still works if sharing has been disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "List (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"details\": \"model+password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-list-action) lists all shares with the user as owner or receiver.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| details | string | \"model\" | no | The detail level of the returned share objects |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of share objects with the given detail level\n\n#### Notes\n - This action still works if sharing has been disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{share_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/show",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"show"
+							]
+						},
+						"description": "# The show action\nThe [show action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-show-action) lists the properties of a single share.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the share |\n| details | string | \"model\" | no | The detail level of the returned share object |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a share object with the given detail level\n\n#### Notes\n - This action still works if sharing has been disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Show (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{share_id}}\",\n    \"details\": \"model+password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/show",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"show"
+							]
+						},
+						"description": "# The show action\nThe [show action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-show-action) lists the properties of a single share.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the share |\n| details | string | \"model\" | no | The detail level of the returned share object |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a share object with the given detail level\n\n#### Notes\n - This action still works if sharing has been disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Find",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"receiver\": \"max\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/find",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"find"
+							]
+						},
+						"description": "# The find action\nThe [find action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-find-action) can be used to find all shares matching the given search criteria.\nOnly a specific set of fields is allowed in the criteria.\nHow the criteria array works is explained on the [object search page](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Object-Search.md).\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| criteria | array | [] | no | The search criteria |\n| details | string | \"model\" | no | The detail level of the returned share objects |\n\n#### Allowed search fields\n| Field | Type | Description |\n| --- | --- | --- |\n| created | int | Unix timestamp when the share was created |\n| updated | int | Unix timestamp when the share was updated |\n| owner | string | User id of the owner of the share |\n| receiver | string | User id of the receiver of the share |\n| expires | int / null | Unix timestamp when the share will expire |\n| editable | bool | Whether or not the receiver can edit the password |\n| shareable | bool | Whether or not the receiver can share the password |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of shares objects that match the criteria with the given detail level\n\n#### Notes\n - The `owner` and `receiver` fields allow the special value `_self` which is replaced with the users id\n - This action still works if sharing has been disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Find (Details)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"receiver\": \"max\",\n    \"details\": \"model+password\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/find",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"find"
+							]
+						},
+						"description": "# The find action\nThe [find action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-find-action) can be used to find all shares matching the given search criteria.\nOnly a specific set of fields is allowed in the criteria.\nHow the criteria array works is explained on the [object search page](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Object-Search.md).\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| criteria | array | [] | no | The search criteria |\n| details | string | \"model\" | no | The detail level of the returned share objects |\n\n#### Allowed search fields\n| Field | Type | Description |\n| --- | --- | --- |\n| created | int | Unix timestamp when the share was created |\n| updated | int | Unix timestamp when the share was updated |\n| owner | string | User id of the owner of the share |\n| receiver | string | User id of the receiver of the share |\n| expires | int / null | Unix timestamp when the share will expire |\n| editable | bool | Whether or not the receiver can edit the password |\n| shareable | bool | Whether or not the receiver can share the password |\n\n#### Return value\nThe success status code is `200 Ok`\nThe return value is a list of shares objects that match the criteria with the given detail level\n\n#### Notes\n - The `owner` and `receiver` fields allow the special value `_self` which is replaced with the users id\n - This action still works if sharing has been disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"{{password_id}}\",\n    \"receiver\": \"max\",\n    \"type\": \"user\",\n    \"expires\": null,\n    \"editable\": false,\n    \"shareable\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"create"
+							]
+						},
+						"description": "# The create action\nThe [create action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-create-action) creates a new share with the given attributes.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| password | string | - | yes | The UUID of the password |\n| receiver | string | - | yes | The user id of the user which the password should be shared with |\n| type | string | \"user\" | no | The type of the share |\n| expires | int / null | null | no | Unix timestamp when the share will expire |\n| editable | bool | false | no | Whether or not the receiver can edit the password |\n| shareable | bool | false | no | Whether or not the receiver can share the password |\n\n#### Return value\nThe success status code is `201 Created`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the share |\n\n#### Notes\n - This action will fail if the password is hidden or the CSE does not support sharing\n - You can not share a password with the same user more than once\n - This command will fail if sharing is disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{share_id}}\",\n    \"expires\": null,\n    \"editable\": false,\n    \"shareable\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"update"
+							]
+						},
+						"description": "# The update action\nThe [update action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-update-action) changes the properties of an existing share.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The UUID of the share |\n| expires | int / null | null | no | Unix timestamp when the share will expire |\n| editable | bool | false | no | Whether or not the receiver can edit the password |\n| shareable | bool | false | no | Whether or not the receiver can share the password |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the share |\n\n#### Notes\n - You can only edit a share if it is owned by the user\n - This command will fail if sharing is disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"   : \"{{share_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"delete"
+							]
+						},
+						"description": "# The delete action\nThe [delete action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-delete-action) deletes a share.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | The id of the share |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| id | string | The UUID of the share |\n\n#### Notes\n - You can only delete shares owned by the user.\n - If you want to delete a share where the current user is the receiver, you need to delete the password instead\n - This action still works if sharing has been disabled"
+					},
+					"response": []
+				},
+				{
+					"name": "Partners",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/partners",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"partners"
+							]
+						},
+						"description": "# The partners action\nThis [partners action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-partners-action) returns an array of users that the current user can share with.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| search | string | - | no | Find users containing the search string |\n| limit | int | 5 | no | The maximum amount of matches to return |\n\n#### Return value\nThe success status code is `200 Ok`.\nThe return value is an array with the user id as key and the user display name as value.\nThe array is at maximum around 256 entries long.\nIf the autocompletion is disabled by the administrator the result is an empty array\n\n#### Notes\n - This command will fail if sharing is disabled\n - The `limit` can not be less than 5 or more than 256\n - This api endpoint has a rate limit of 45 requests per minute"
+					},
+					"response": []
+				},
+				{
+					"name": "Partners Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"search\": \"mus\",\n    \"limit\" : 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/share/partners",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"share",
+								"partners"
+							]
+						},
+						"description": "# The partners action\nThis [partners action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api#the-partners-action) returns an array of users that the current user can share with.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| search | string | - | no | Find users containing the search string |\n| limit | int | 5 | no | The maximum amount of matches to return |\n\n#### Return value\nThe success status code is `200 Ok`.\nThe return value is an array with the user id as key and the user display name as value.\nThe array is at maximum around 256 entries long.\nIf the autocompletion is disabled by the administrator the result is an empty array\n\n#### Notes\n - This command will fail if sharing is disabled\n - The `limit` can not be less than 5 or more than 256\n - This api endpoint has a rate limit of 45 requests per minute"
+					},
+					"response": []
+				}
+			],
+			"description": "# The share api\nThe [share api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Share-Api) provides functionality to share passwords with other users on the same server.\nThis api is restricted by the sharing settings of the server, so the [related server.sharing.* settings](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Settings-Api#scopes-and-settings) should be checked before using it.\n\n\n## The Share Object\n| Property | Type | Writable | Description |\n| --- | --- | --- | --- |\n| id | string | no | The UUID of the share |\n| created | int | no | Unix timestamp when the share was created |\n| updated | int | no | Unix timestamp when the share was updated |\n| expires | int / null | yes | Unix timestamp when the share will expire |\n| editable | bool | yes | Whether or not the receiving user can edit the password |\n| shareable | bool | yes | Whether or not the receiving user can share the password again |\n| updatePending | bool | no | Whether or not data changes for this share are in queue |\n| password | string | yes | The UUID of the password |\n| owner | object | yes | Object with the id and the full name of the owner |\n| receiver | object | yes | Object with the id and the full name of the receiver |\n\n#### Detail Levels\n| Level | Description |\n| --- | --- |\n| model | Returns the base model |\n| +password | Fills the password property with the base model of the password |\n\n#### Notes\n - Shares have no revisions\n - The value of the `password` attribute is different for the owner and the receiver\n - The `shareable` will always be `false` for the receiver if resharing is disabled system wide"
+		},
+		{
+			"name": "Settings API",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"user.password.generator.strength\",\n    \"user.password.generator.numbers\",\n    \"user.password.generator.special\",\n    \"client.postman.test\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/settings/get",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"settings",
+								"get"
+							]
+						},
+						"description": "# The get action\nThe [get action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Settings-Api#the-get-action) retrieves the value of one or more settings.\nThis action accepts an array of strings where each value is the name of one setting.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| first setting | string | - | yes | The name of the first setting |\n| second setting | string | - | no | The name of the second setting |\n\n#### Return value\nThe success status code is `200 Ok`.\nThe return value is an object with the requested settings.\nEach key of the object is a setting and the value is the value of the setting.\n\n#### Notes\n - The Enhanced API also offers the option to get a single setting\n - If the setting is not defined, it will default to `null`\n - Accessing an undefined setting in the `client` scope will not create it"
+					},
+					"response": []
+				},
+				{
+					"name": "Set",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user.password.generator.numbers\": true,\n    \"user.password.generator.special\": true,\n    \"client.postman.test\": \"it works\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/settings/set",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"settings",
+								"set"
+							]
+						},
+						"description": "# The set action\nThe [set action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Settings-Api#the-set-action) updates the value of one or more settings.\nThis action accepts an object where each key is the name of a setting and the value is the new value\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| first setting | mixed | - | yes | The first setting to be set |\n| second setting | mixed | - | no | The second setting to be set |\n\n#### Return value\nThe success status code is `200 Ok`.\nThe return value is an object with the updated settings and their new value.\n\n#### Notes\n - The Enhanced API also offers the option to set a single setting\n - If the scope is not writable, the setting will not be saved and default to `null` in the return value\n - If the setting is not defined in the `user` scope, it will not be saved and default to `null` in the return value\n - If the size limitations of the `client` scope are exceeded, an error will be returned"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/settings/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"settings",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Settings-Api#the-list-action) returns all settings or the settings within a scope if one is given.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| scopes | array | - | no | An array with the names of all requested scopes as value |\n\n#### Return value\nThe return value is a JSON formatted object with all settings from the requested scopes.\n\n#### Notes\n - If a scope has been specified, only the values of this scope will be returned\n - If the specified scopes do not exist, te return value is an empty array\n - If no scope has been defined, all existing settings will be returned"
+					},
+					"response": []
+				},
+				{
+					"name": "List (Scope)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"scopes\": [\"user\", \"client\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/settings/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"settings",
+								"list"
+							]
+						},
+						"description": "# The list action\nThe [list action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Settings-Api#the-list-action) returns all settings or the settings within a scope if one is given.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| scopes | array | - | no | An array with the names of all requested scopes as value |\n\n#### Return value\nThe return value is a JSON formatted object with all settings from the requested scopes.\n\n#### Notes\n - If a scope has been specified, only the values of this scope will be returned\n - If the specified scopes do not exist, te return value is an empty array\n - If no scope has been defined, all existing settings will be returned"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"user.password.generator.numbers\",\n    \"user.password.generator.special\",\n    \"client.postman.test\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/settings/reset",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"settings",
+								"reset"
+							]
+						},
+						"description": "# The reset action\nThe [reset action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Settings-Api#the-reset-action) will reset the value of one or more settings to the default.\nThis action accepts an array of strings where each value is the name of one setting.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| first setting | string | - | yes | The name of the first setting |\n| second setting | string | - | no | The name of the second setting |\n\n#### Return value\nThe success status code is `200 Ok`.\nThe return value is an object with the cleared settings.\nEach key of the object is a setting and the value is the value of the setting.\n\n#### Notes\n - If you reset a setting in the client scope, it will be deleted and no longer appear in the list action\n - If the setting does not exist, the value will be `null`"
+					},
+					"response": []
+				}
+			],
+			"description": "# The settings api\nThe [settings api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Settings-Api) allows clients to get and set settings in the user account.\n\n## Scopes and Settings\n| Scope | Writable | Description |\n| --- | --- | --- |\n| user | yes | Settings for the current user account. Used to configure backend/api behaviour |\n| client | yes | Client settings. Accessible to all clients attached to the user account |\n| server | no | Server settings, configured by the admin |\n\n| Setting | Type | Default | Description |\n| --- | --- | --- | --- |\n| user.password.generator.strength | int | 1 | The strength of generated passwords, a value between 0 (weak) and 4 (strong) |\n| user.password.generator.numbers | bool | false | Whether or not generated passwords contain numbers |\n| user.password.generator.special | bool | false | Whether or not generated passwords contain special characters |\n| user.password.security.duplicates | bool | true | Whether or not the server should check passwords for duplicates |\n| user.password.security.age | int | 0 | Marks passwords a weak if they surpass the specified date mark. 0 is off. |\n| user.mail.security | bool | true | Whether or not the user receives mails about security issues |\n| user.mail.shares | bool | false | Whether or not the user receives mails about new shared objects |\n| user.notification.security | bool | true | Whether or not the user receives notifications about security issues |\n| user.notification.shares | bool | true | Whether or not the user receives notifications about new shared objects |\n| user.notification.errors | bool | true | Whether or not the user receives notifications about background errors |\n| user.notification.admin | bool | true | Whether or not the user receives notifications about configuration issues. Only for admins |\n| user.encryption.sse | int | 1 | The server side encryption type. 0 = None, 1 = SSEv1, 2 = SSEv1 |\n| user.encryption.cse | int | 0 | The client side encryption type. 0 = None, 1 = CSEv1 |\n| user.sharing.editable | bool | true | Whether or not the editable option should be set by default for a new share. Not writeable if sharing disabled. |\n| user.sharing.resharing | bool | true | Whether or not the resharing option should be set by default for a new share. Not writeable if sharing or resharing disabled. |\n| user.session.lifetime | int | 600 | The session lifetime in seconds |\n| server.version | string | - | The Nextcloud version of the server, e.g. \"20\" |\n| server.app.version | string | - | The app version of the server, e.g. \"2020.9\" |\n| server.baseUrl | string | - | The base url of the server |\n| server.baseUrl.webdav | string | - | The base url of the WebDav service used for file storage |\n| server.sharing.enabled | bool | true | Whether or not sharing is enabled globally |\n| server.sharing.resharing | bool | true | Whether or not resharing shared entities is enabled globally |\n| server.sharing.autocomplete | bool | true | Whether or not the [auto-complete](./Share-Api.md#the-partners-action) request works |\n| server.sharing.types | array | `[\"user\"]` | List of supported sharing types.  |\n| server.theme.color.primary | string | `#745bca` | The color of the current Nextcloud theme |\n| server.theme.color.text | string | `#ffffff` | The text color of the current Nextcloud theme |\n| server.theme.color.background | string | `#ffffff` | The background color of the current Nextcloud theme |\n| server.theme.background | string | - | The url to the current Nextcloud background image |\n| server.theme.logo | string | - | The url to the logo of the current Nextcloud theme |\n| server.theme.label | string | \"Nextcloud\" | The name of the Nextcloud instance |\n| server.theme.app.icon | string | - | The url to the current svg app icon |\n| server.theme.folder.icon | string | - | The url to the current svg folder icon |\n| server.handbook.url | string | - | The base url of the in-app user handbook |\n| server.performance | int | 2 | An integer value indicating the server performance preference. 0 is a slow server where requests should be avoided (max 1 simultaneous request), 5 is a fast server which can handle many requests (x * 3 simultaneous requests), 6 is for unlimited requests. |\n| client.* | - | null | The client scope allows client defined keys |\n\n#### Notes\n - The `server.theme.background` image might have a transparent background. In this case the background color should be `server.theme.color`.\n - The `client` scope allows keys with up to 48 characters, excluding `client.`\n - The `client` scope allows values with a maximum length of 128 characters\n - The `client` scope is shared between all clients"
+		},
+		{
+			"name": "Token API",
+			"item": [
+				{
+					"name": "Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/token/{{token_provider}}/request",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"token",
+								"{{token_provider}}",
+								"request"
+							]
+						},
+						"description": "# The request action\nThe [request action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Token-Api#the-request-action) is required for some token in order to send the user the token.\nFor example the email token will send an email to the users mail account.\nIt is recommended to only call this action if the user has chosen that token, not just trigger it for all available tokens.\n\n#### Arguments\n| Argument | Type | Description |\n| --- | --- | --- |\n| provider | string | The id of the token |\n\n#### Return value\nThe success status code is `200 Ok`.\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| success | boolean | Whether or not the action was successful |\n| data | object | For the \"Nextcloud Notification\" token, this object will contain the property `token` with the token value. |"
+					},
+					"response": []
+				}
+			],
+			"description": "# The token api\nThe [token api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Token-Api) allows clients to trigger 2FA token providers in order to send the user a 2FA token.\n\n## Token types\n\n### The token object\nThe [session request](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Session-Api#the-request-action) action will return an array of possible tokens.\nEach token object looks like this:\n\n```json\n{\n    \"type\":\"user-token\",\n    \"id\":\"tokenid\",\n    \"label\":\"Human readable label\",\n    \"description\":\"A short description of the token process\",\n    \"request\":true\n}\n```\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| type | string | The token type is either `user-token` or `request-token` |\n| id | object | This id must be used in the [token request](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Token-Api#the-request-action) and the [session open](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Session-Api#the-open-action) action. |\n| label | string | The label of the token |\n| description | string | A description of the token adn the authentication process |\n| request | boolean | Whether or not the authentication process must be triggered with the [request action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Token-Api#the-request-action) |\n\n\n### The user token\nTokens with the type `user-token` require that the user enters a code which is then sent to the server.\nIt might be required that the [request action](#the-request-action) is executed in order to provide the user with that code.\n\n### The request token\nCurrently only the \"Nextcloud Notification\" is a `request-token`.\nThis token does not require a user input.\nInstead the user will confirm the token trough a second app or device.\nThe [request action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Token-Api#the-request-action) will provide the token that needs to be sent to the server."
+		},
+		{
+			"name": "Account API",
+			"item": [
+				{
+					"name": "Reset",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/account/reset",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"account",
+								"reset"
+							]
+						},
+						"description": "# The reset action\nThe [reset action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Account-Api#the-reset-action) will delete all user data and settings and reset the account to a blank state.\nThis is a destructive action and can only be undone with a backup.\nAny request without a code will return a random reset code.\nThe client should show the code to the user and request that the user enters the code manually to confirm the account reset.\nIf the request contains a code, the app will check if it matches the last given code and perform the reset if so.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| code | string | - | no | The code for the user to enter |\n\n#### Return value\nThe success status code is `200 Ok` or `202 Accepted`.\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| status | string | Either \"accepted\" or \"ok\". Ok means the action was completed |\n| code | string | Random string for the user to enter to confirm the request |\n\n#### Notes\n - This request will close the session\n - This request will not delete any app or device tokens"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Confirm",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"your-rese-t000-code\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/account/reset",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"account",
+								"reset"
+							]
+						},
+						"description": "# The reset action\nThe [reset action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Account-Api#the-reset-action) will delete all user data and settings and reset the account to a blank state.\nThis is a destructive action and can only be undone with a backup.\nAny request without a code will return a random reset code.\nThe client should show the code to the user and request that the user enters the code manually to confirm the account reset.\nIf the request contains a code, the app will check if it matches the last given code and perform the reset if so.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| code | string | - | no | The code for the user to enter |\n\n#### Return value\nThe success status code is `200 Ok` or `202 Accepted`.\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| status | string | Either \"accepted\" or \"ok\". Ok means the action was completed |\n| code | string | Random string for the user to enter to confirm the request |\n\n#### Notes\n - This request will close the session\n - This request will not delete any app or device tokens"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Challenge",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/account/challenge/get",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"account",
+								"challenge",
+								"get"
+							]
+						},
+						"description": "# The get challenge action\nThe [get challenge action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Account-Api#the-get-challenge-action) will return the current password challenge.\n\n#### Arguments\nThere are no arguments for this action.\n\n#### Return value\nThe success status code is `200 Ok` .\nThe request returns an object with the challenge data and the property `token` which identifies the challenge type.\nThe format matches the one in of the `challenge` property from [request session](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Session-Api#the-request-action)."
+					},
+					"response": []
+				},
+				{
+					"name": "Set Challenge",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"secret\":\"6d2be297294d63c12ed50a304684d8d27090a5a8d8352169cefffa677a44a3f1\",\n    \"data\":[\n        \"03f98b14af2f219e7d83a9b45b347a675af73d67fac54fdd5a397d381074e7ca5920d7b00c076c5a2dbaadf60d206f75c88343052616e77426a1340d5d89a0301039c47882a69266b3d89515755757203a5583f6f2fc80cec68b1ed7e4d5dfc632224eb392c7e7c19f67865c832533042043995d0921f316fa6e513863427092dbfcf72581c616b7d9c87f659c55ae053d7239435ee7a9f19e430cc3ee77c509c556c2e923b7dbe56c34401ad718954174f4e0c06112d8eb475ec102f010a16daf4a69aa9ff6b5b864083b8d3695c4af8180b11ffbf142d004ddd86d2688025dd4e74fdf9f365b02980f68d887dc03aeaa627710e5dc683e1e5fdc4d13d6363f\",\n        \"de4ac0ba7d5b9a0782f4654d0b21cd2255d180011d916d78812cfcee237fa7859d809198ad1d355be3a3ab2b2aa0ee5fd2354b6311751b2961dec4be8c7c1cb3\",\n        \"b6c2067b93cee98bfdd27249375dc512\"\n        ],\n    \"oldSecret\":\"5ceb88da25ab6d3286caf7a168294a5d1d719241d371848fc81e7826c122c4e6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/account/challenge/set",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"account",
+								"challenge",
+								"set"
+							]
+						},
+						"description": "# The set challenge action\nThe [set challenge action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Account-Api#the-set-challenge-action) will create or update the user challenge and enable CSE and SSEv2.\nIt is not possible to specify the challenge type and the server always expects you to use the latest challenge method.\nThis is currently `PWDv1r1`.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| secret | string | - | yes | The computed secret of the new challenge |\n| data | array | - | yes | An array with the challenge data |\n| oldSecret | string/null | null | sometimes | If the user already has CSE set up, the secret of the current challenge is required |\n\n#### Return value\nThe success status code is `200 Ok` .\nThe request returns an object property success and the value true if successful.\n\n#### Notes\n - This action will fail if the `client-side-encryption` feature is disabled on the server\n - This action will authorize the current session if successful"
+					},
+					"response": []
+				}
+			],
+			"description": "The [account api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Account-Api) allows general the management of the user account."
+		},
+		{
+			"name": "Keychain API",
+			"item": [
+				{
+					"name": "Get",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/keychain/get",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"keychain",
+								"get"
+							]
+						},
+						"description": "# The get action\nThe [get action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Keychain-Api#the-get-action) will return an object with all keychains.\n\n#### Arguments\nThere are no arguments for this action.\n\n#### Return value\nThe success status code is `200 Ok` .\nThe request returns an object with the keychain type as properties and the encrypted keychain data as value of that property.\nThe format matches the one in of the `keys` property from [open session](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Session-Api#the-open-action)."
+					},
+					"response": []
+				},
+				{
+					"name": "Set",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"CSEv1r1\",\n    \"data\":\"4b6d9214cbc5b499e89a2e2a475b354b7429a8be4482b997b498daa2ada2c5458ada4184a2b09ed413eaf5e9b668746d09311d5b711851e6fdb6fe3eaf251e77efc652e761077bafe06df2eac5aed5b0e389960396b0cb62acf743d5f1a84a055b225ca4f733865a900a712ff0efd1866b0d55e65d94b56cc1392bc31fbfb96d52c69d231b0b00168102b56e4c112b1df3ecd3bad4d45a718a829f2a74a87e0ed314f4f1f731d07b53c3318fecc9001afdf1fa5c23b56cd081c48f23315b9dc765445c343a134eaa4c515d00ec7ac4714aa76f20b33ef8ef71f48263d5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/keychain/set",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"keychain",
+								"set"
+							]
+						},
+						"description": "# The set action\nThe [set action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Account-Api#the-set-challenge-action) will create or update a keychain.\n\n#### Arguments\n| Argument | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| id | string | - | yes | Id or type of the keychain |\n| data | string | - | yes | The encrypted keychain data |\n\n#### Return value\nThe success status code is `200 Ok` .\nThe request returns an object with the property id and the keychain id / type as value.\n\n#### Notes\n - Keychains can only be created if a challenge is set"
+					},
+					"response": []
+				}
+			],
+			"description": "The [keychain api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Keychain-Api) allows the management of the client-side encryption keychains.\nThis api is only available if the account has a challenge."
+		},
+		{
+			"name": "Service API",
+			"item": [
+				{
+					"name": "Generate Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/service/password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"service",
+								"password"
+							]
+						},
+						"description": "# The password action\nThe [password action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Service-Api#the-password-action) generates one password with the given settings.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| strength | int | 1 | no | A higher value creates a longer and more complex password |\n| numbers | bool | false | no | Whether or not numbers should be used in the password |\n| special | bool | false | no | Whether or not special characters should be used in the password |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| password | string | The generated password |\n| words | string | The words used in the password |\n| strength | int | The strength setting used |\n| numbers | bool | Whether or not numbers were used in the password |\n| special | bool | Whether or not special characters were used in the password |\n\n#### Notes\n - If you call this action with a GET request, the users settings will be used\n - If you call this action with a POST request, the default settings will be used for missing parameters\n - Generated passwords are checked for security automatically\n - The maximum value for `strength` is 4"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Password (Custom)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strength\": 4,\n    \"numbers\" : true,\n    \"special\" : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1.0/service/password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"service",
+								"password"
+							]
+						},
+						"description": "# The password action\nThe [password action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Service-Api#the-password-action) generates one password with the given settings.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| strength | int | 1 | no | A higher value creates a longer and more complex password |\n| numbers | bool | false | no | Whether or not numbers should be used in the password |\n| special | bool | false | no | Whether or not special characters should be used in the password |\n\n#### Return value\nThe success status code is `200 Ok`\n\n| Argument | Type | Description |\n| --- | --- | --- |\n| password | string | The generated password |\n| words | string | The words used in the password |\n| strength | int | The strength setting used |\n| numbers | bool | Whether or not numbers were used in the password |\n| special | bool | Whether or not special characters were used in the password |\n\n#### Notes\n - If you call this action with a GET request, the users settings will be used\n - If you call this action with a POST request, the default settings will be used for missing parameters\n - Generated passwords are checked for security automatically\n - The maximum value for `strength` is 4"
+					},
+					"response": []
+				},
+				{
+					"name": "Avatar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/service/avatar/admin/32",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"service",
+								"avatar",
+								"admin",
+								"32"
+							]
+						},
+						"description": "# The avatar action\nThe [avatar action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Service-Api#the-avatar-action) returns a png avatar icon for the given user id.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| user | string | - | yes | The user id |\n| size | int | 32 | no | The size of the avatar in pixels |\n\n#### Return value\nThe success status code is `200 Ok`.\nThis action returns a png image file on success\n\n#### Notes\n - If the user did not specify an avatar a default image will be generated\n - The size must be a multiple of `8`\n - The minimum size is `16` pixels\n - The maximum size is `256` pixels"
+					},
+					"response": []
+				},
+				{
+					"name": "Favicon",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/service/favicon/www.nextcloud.com/32",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"service",
+								"favicon",
+								"www.nextcloud.com",
+								"32"
+							]
+						},
+						"description": "# The favicon action\nThe [favicon action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Service-Api#the-favicon-action) returns a png favicon icon for the given domain.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| domain | string | - | yes | The domain name |\n| size | int | 32 | no | The size of the favicon in pixels |\n\n#### Return value\nThe success status code is `200 Ok`.\nThis action returns a png image file on success\n\n#### Notes\n - If no favicon can be found a default image will be generated\n - The size must be a multiple of `8`\n - The minimum size is `16` pixels\n - The maximum size is `256` pixels"
+					},
+					"response": []
+				},
+				{
+					"name": "Preview",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-SESSION",
+								"value": "{{http_api_session}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/1.0/service/preview/www.nextcloud.com/desktop/640/360...",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"service",
+								"preview",
+								"www.nextcloud.com",
+								"desktop",
+								"640",
+								"360..."
+							]
+						},
+						"description": "# The preview action\nThe [preview action](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Service-Api#the-preview-action) returns a jpeg preview image for the given domain.\n\n#### Arguments\n| Arguments | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| domain | string | - | yes | The domain name |\n| view | string | \"desktop\" | no | Can be `desktop` or `mobile`. Sets device name / viewports. |\n| width | string/int | 640 | no | The width of the resulting image |\n| height | string/int | \"360...\" | no | The height of the resulting image |\n\n#### Return value\nThe success status code is `200 Ok`.\nThis action returns a jpeg image file on success\n\n#### Notes\n - If no image can be created a default image will be used\n - This action is known to be slow if the cache is empty\n - The width and height must be a multiple of `10`\n - The minimum width is `240` pixels\n - The maximum width is `1280` pixels\n - The minimum height is `240` pixels\n - The maximum height is `1280` pixels\n - If a width and height were specified, the image will be cropped to fill the area\n - The width and height can be `0`. In this case, it is up to the api to set the optimal value\n - You can specify a range for width and height by passing `SIZE...`, `SIZE...SIZE` or `...SIZE` where size is a number.\n   The left value will be the minimum and the right value the maximum.\n   The api will try to generate an image that fits the given values without cropping\n - The resulting image will always have a minimum width and height of 240 pixels"
+					},
+					"response": []
+				}
+			],
+			"description": "The [service api](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Api/Service-Api) provides access to general services provided by the Passwords app."
 		}
 	],
 	"auth": {
@@ -492,7 +2272,7 @@
 		"basic": [
 			{
 				"key": "password",
-				"value": "{{http_auth_user}}",
+				"value": "{{http_auth_pass}}",
 				"type": "string"
 			},
 			{
@@ -546,6 +2326,30 @@
 		{
 			"key": "password_revision",
 			"value": "db48e68a-21a1-486f-86c0-cc60810b1ae4"
+		},
+		{
+			"key": "folder_id",
+			"value": "7575ef5e-68ef-4bdb-bdb5-442accf73499"
+		},
+		{
+			"key": "folder_revision",
+			"value": "30e852bb-516f-497a-abfd-6971ab57a540"
+		},
+		{
+			"key": "tag_id",
+			"value": "d244b461-c48f-43b1-b4c4-6a4093f57ccf"
+		},
+		{
+			"key": "tag_revision",
+			"value": "d3c74782-d042-4f80-899e-88f078c20242"
+		},
+		{
+			"key": "share_id",
+			"value": "7e2cdd48-fdaf-4b68-8ced-80420cd93ae1"
+		},
+		{
+			"key": "token_provider",
+			"value": "twofactor_nextcloud_notification"
 		}
 	]
 }
