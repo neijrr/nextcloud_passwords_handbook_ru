@@ -1,7 +1,11 @@
 > Welcome to the Passwords Developer Handbook.
 
 ## Contents
-1. [The API](./Api)
+1. Getting Started
+    1. [Development Environment](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
+    2. [Working with the API](./Getting-Started/Working-with-the-API.md)
+    3. [Sample Data](./Getting-Started/Sample-Data)
+2. [The API](./Api)
    1. [Session API](./Api/Session-Api)
    2. [Password API](./Api/Password-Api)
    3. [Folder API](./Api/Folder-Api)
@@ -15,18 +19,16 @@
    11. [Object Search API](./Api/Object-Search)
    12. [Client Names](./Api/Client-Names)
    13. [Error Codes](./Api/Error-Codes)
-2. [Encryption](./Encryption)
+3. [Encryption](./Encryption)
    1. Challenges
       1. [PWDv1 Challenge](./Encryption/PWDv1Challenge)
    2. Keychains
       1. [CSEv1 Keychain](./Encryption/CSEv1Keychain)
    3. Encryption
       1. [CSEv1 Encryption](./Encryption/CSEv1Encryption)
-3. [Libraries & Packages](./Libraries)
-4. [List your app](./App-Requirements)
-5. [Legacy API](./Api/Legacy-Api)
-6. [Contributing](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
-   1. [Development Environment](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
-   2. [Verify GIT Commits](./Contributing/Verify-Git-Commits)
-   3. [Sample Data](./Contributing/Sample-Data)
-7. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
+4. [Libraries & Packages](./Libraries)
+5. [List your app](./App-Requirements)
+6. [Legacy API](./Api/Legacy-Api)
+7. [Contributing](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
+   1. [Verify GIT Commits](./Contributing/Verify-Git-Commits)
+8. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
