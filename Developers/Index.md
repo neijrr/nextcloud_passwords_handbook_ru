@@ -1,7 +1,7 @@
 > Welcome to the Passwords Developer Handbook.
 
 ## Contents
-1. Getting Started
+1. [Getting Started](./Getting-Started)
     1. [Development Environment](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
     2. [Working with the API](./Getting-Started/Working-with-the-API)
     3. [Sample Data](./Getting-Started/Sample-Data)
