@@ -34,7 +34,7 @@ If you're sure that you do not have any hidden passwords, you can try the follow
 
 > :exclamation: This process will delete any hidden items and all settings
 
-1. Make you have no hidden passwords in any app you use or unhide them in that app.
+1. Make sure you have no hidden passwords in any app you use or unhide them in that app.
 2. Exit or log out of any client but the Nextcloud app itself
 3. Ask your admin to make a backup using passwords backup command
 4. Make a complete, unencrypted [database export](./Export#database-backup)
