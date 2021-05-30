@@ -7,7 +7,7 @@
    This is a rule from Nextcloud and can't be changed
 - [More information can be found on the API page](../Api#general-notes)
 
-# Debugging API Requests with Postman
+# Inspecting API requests with Postman
 To make development with the api easier for developers, we have a collection for [Postman](https://www.postman.com/).
 
 - [Download Postman collection](../_files/postman-collection.json)
