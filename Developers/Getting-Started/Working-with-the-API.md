@@ -2,7 +2,8 @@
 
 - Nextcloud API credentials are required
    - We recommend using an app token to access the api.
-     App tokens are the only thing working with 2FA-enabled accounts and the usage of app tokens makes it easier for users to revoke access of lost or compromised clients.
+     App tokens are the only kind of authentication working with 2FA-enabled accounts.
+     The usage of app tokens also makes it easier for users to revoke access of lost or compromised clients.
 - API requests can not be made from your browser and trying to do so will end your NC session.
    This is a rule from Nextcloud and can't be changed
 - [More information can be found on the API page](../Api#general-notes)
