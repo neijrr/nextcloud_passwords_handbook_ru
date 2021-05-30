@@ -20,7 +20,7 @@ Then import the file by dropping it into the dialog and click the `Import` butto
 The collection contains all requests to the api and gives you the option to inspect the api endpoints without having to write your own client.
 
 ## Sample Data
-The collection works best with our [Sample Data Server Backup](./Sample-Data#server-backup)
+The collection works best with our [Sample Data Server Backup](./Sample-Data#server-backup).
 
 ## Variables
 The "Variables" tab in the main page of the collection contains all variables used in the requests.

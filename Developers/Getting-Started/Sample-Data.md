@@ -2,7 +2,7 @@
 We provide a full server backup with data for the admin user and two test users (max & erika).
 The backup can be [imported via occ](../../Administrators/Backups#exporting-importing-backups) and then restored.
 
-**You should not do this on any production system as this will overwrite all data for the Passwords app on the server**
+**Do not use this backup on any production system as this will overwrite all data for the Passwords app on the server**
 
 - [Sample Data Server Backup](../_files/SampleDataBackup.json.gz)
 
