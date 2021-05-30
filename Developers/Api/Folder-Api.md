@@ -1,3 +1,5 @@
+The folder api allows listing, creating, updating and deleting folders.
+
 # The Folder Object
 | Property | Type | Writable | Encrypted | Versioned | Length | Description |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -50,14 +52,14 @@ The properties "revisions", "parent", "folders" and "passwords" are also process
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
-| list | `/api/1.0/folder/list` | | GET | yes | List all folders with the default detail level |
-| list | `/api/1.0/folder/list` | POST | yes | List all folders with the given detail level |
-| show | `/api/1.0/folder/show` | POST | yes | Show a folder |
-| find | `/api/1.0/folder/find` | POST | yes | Find folders matching given criteria |
-| create | `/api/1.0/folder/create` | POST | yes | Create a new folder |
-| update | `/api/1.0/folder/update` | PATCH | yes | Update an existing folder |
-| delete | `/api/1.0/folder/delete` | DELETE | yes | Delete a folder |
-| restore | `/api/1.0/folder/restore` | PATCH | yes | Restore an earlier state of a folder |
+| [list](#the-list-action) | `/api/1.0/folder/list` | | GET | yes | List all folders with the default detail level |
+| [list](#the-list-action) | `/api/1.0/folder/list` | POST | yes | List all folders with the given detail level |
+| [show](#the-show-action) | `/api/1.0/folder/show` | POST | yes | Show a folder |
+| [find](#the-find-action) | `/api/1.0/folder/find` | POST | yes | Find folders matching given criteria |
+| [create](#the-create-action) | `/api/1.0/folder/create` | POST | yes | Create a new folder |
+| [update](#the-update-action) | `/api/1.0/folder/update` | PATCH | yes | Update an existing folder |
+| [delete](#the-delete-action) | `/api/1.0/folder/delete` | DELETE | yes | Delete a folder |
+| [restore](#the-restore-action) | `/api/1.0/folder/restore` | PATCH | yes | Restore an earlier state of a folder |
 
 
 
@@ -99,6 +101,7 @@ The update action creates a new revision of a folder with an updated set of attr
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the folder |
+| revision | string | - | no | The current revision known to the client. If not the latest revision, the request will fail. |
 | label | string | - | yes | The label of the folder |
 | parent | string | Base folder | no | The current parent folder |
 | cseType | string | "none" | no | The client side encryption type |
@@ -120,6 +123,8 @@ The success status code is `200 Ok`
  - If the folder is not hidden and should be moved to a hidden parent folder, it will be moved to the base folder instead
  - If hou hide a folder, all folders and passwords in it will be hidden as well
  - If you unhide a folder no change to the folders and passwords in it will be made and they will remain hidden
+ - If the `revision` argument is present, the value must match the latest revision or the action will fail with an error.
+   This prevents the client from overwriting a more recent revision on the server with old data.
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
  - If the `edited` time is in the future, the current time will be used
 

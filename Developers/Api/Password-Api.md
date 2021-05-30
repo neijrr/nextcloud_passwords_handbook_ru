@@ -1,4 +1,4 @@
-The passwords api allows listing, creating, updating and deleting password entries in the password database.
+The passwords api allows listing, creating, updating and deleting password entries.
 
 # The Password Object
 | Property | Type | Writable | Encrypted | Versioned | Length | Description |
@@ -110,8 +110,8 @@ The update action creates a new revision of a password with an updated set of at
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the password object |
+| revision | string | - | no | The current revision known to the client. If not the latest revision, the request will fail. |
 | password | string | - | yes | The password |
-| revision | string | - | no | The current revision of the client. If this is not the latest revision, the request will fail. |
 | label | string | - | yes | The label of the password |
 | username | string | empty | no | The username associated with the password |
 | url | string | empty | no | The url of the associated website |

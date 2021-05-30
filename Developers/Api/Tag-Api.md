@@ -1,3 +1,5 @@
+The tag api allows listing, creating, updating and deleting tags.
+
 # The Tag Object
 | Property | Type | Writable | Encrypted | Versioned | Length | Description |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -41,14 +43,14 @@ The properties "revisions" and "passwords" are also processed if necessary.
 # Available api actions
 | Action | Url | Method | Session required | Description |
 | --- | --- | --- | --- | --- |
-| list | `/api/1.0/tag/list` | GET | yes | List all tags with the default detail level |
-| list | `/api/1.0/tag/list` | POST | yes | List all tags with the given detail level |
-| show | `/api/1.0/tag/show` | POST | yes | Show a tag |
-| find | `/api/1.0/tag/find` | POST | yes | Find tags matching given criteria |
-| create | `/api/1.0/tag/create` | POST | yes | Create a new tag |
-| update | `/api/1.0/tag/update` | PATCH | yes | Update an existing tag |
-| delete | `/api/1.0/tag/delete` | DELETE | yes | Delete a tag |
-| restore | `/api/1.0/tag/restore` | PATCH | yes | Restore an earlier state of a tag |
+| [list](#the-list-action) | `/api/1.0/tag/list` | GET | yes | List all tags with the default detail level |
+| [list](#the-list-action) | `/api/1.0/tag/list` | POST | yes | List all tags with the given detail level |
+| [show](#the-show-action) | `/api/1.0/tag/show` | POST | yes | Show a tag |
+| [find](#the-find-action) | `/api/1.0/tag/find` | POST | yes | Find tags matching given criteria |
+| [create](#the-create-action) | `/api/1.0/tag/create` | POST | yes | Create a new tag |
+| [update](#the-update-action) | `/api/1.0/tag/update` | PATCH | yes | Update an existing tag |
+| [delete](#the-delete-action) | `/api/1.0/tag/delete` | DELETE | yes | Delete a tag |
+| [restore](#the-restore-action) | `/api/1.0/tag/restore` | PATCH | yes | Restore an earlier state of a tag |
 
 
 
@@ -88,6 +90,7 @@ The update action creates a new revision of a tag with an updated set of attribu
 | Argument | Type | Default | Required | Description |
 | --- | --- | --- | --- | --- |
 | id | string | - | yes | The id of the tag |
+| revision | string | - | no | The current revision known to the client. If not the latest revision, the request will fail. |
 | label | string | - | yes | The label of the tag |
 | color | string | - | yes | The color of the tag |
 | cseType | string | "none" | no | The client side encryption type |
@@ -106,6 +109,8 @@ The success status code is `200 Ok`
 
 #### Notes
  - If hou hide a tag, the tag will be no longer visible in passwords which are not hidden, but the passwords will be visible in the tag
+ - If the `revision` argument is present, the value must match the latest revision or the action will fail with an error.
+   This prevents the client from overwriting a more recent revision on the server with old data.
  - If the `edited` argument is "0" or missing, the timestamp from the last revision will be used
  - If the `edited` time is in the future, the current time will be used
 
