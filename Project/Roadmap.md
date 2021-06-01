@@ -1,7 +1,7 @@
 # Soon
  - Browser Extension V2.2
 
-[**Test the new features in our nightly releases**](../Administrators/Use-Nightlies)
+[**Test the new features in our nightly releases**](../Administrators/Guides/Maintenance/Use-Nightlies)
 
 # Next
  - Settings in Database Export
