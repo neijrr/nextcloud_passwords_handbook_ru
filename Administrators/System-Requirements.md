@@ -1,24 +1,30 @@
 > This page contains the system requirements for the [passwords app for Nextcloud](https://apps.nextcloud.com/apps/passwords).
 > If you're looking for the Nextcloud server system requirements [click here](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html).
 
-|  | Minimum | Recommended |
+|  | Minimum | LTS | Recommended |
 | --- | --- | --- |
-| Processor | 2x1 GHz                     | 4x2 GHz |
-| RAM       | 512 MiB                     | 8 GiB |
-| Disk      | 4 GiB                       | 64 GiB |
-| Nextcloud | Nextcloud 20.0.5            | Nextcloud 21 |
-| OS        | Linux                       | Ubuntu 20.04 |
-| Database  | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
-| PHP       | PHP 7.4                     | PHP 8.0 |
-| Webserver | HTTPS                       | Nginx 1.19 HTTPS |
-| PECL      | Intl                        | Zip, Imagick |
-| Libraries |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+| Processor | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz |
+| RAM       | 512 MiB                     | 512 MiB                     | 8 GiB |
+| Disk      | 4 GiB                       | 4 GiB                       | 64 GiB |
+| Nextcloud | Nextcloud 20.0.5            | Nextcloud 20.               | Nextcloud 21 |
+| OS        | Linux                       | Linux                       | Ubuntu 20.04 |
+| Database  | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
+| PHP       | PHP 7.4                     | PHP 7.3                     | PHP 8.0 |
+| Webserver | HTTPS                       | HTTPS                       | Nginx 1.19 HTTPS |
+| PECL      | Intl                        | Intl                        | Zip, Imagick |
+| Libraries |                             |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Version scheme and breaking changes
 Passwords versions are simply the year and month of the release of the version.
 The exact version scheme is `<year>.<month>.<bugfix>`.
 In accordance with [SemVer2.0.0](https://semver.org/spec/v2.0.0.html), only the first version of a new year will introduce breaks in backward compatibility.
 With the first release of the year, the support for any Nextcloud version but the latest as well as any PHP version without [active support](https://php.net/supported-versions.php) will be ended.
+
+### LTS builds
+LTS builds are intended to provide longer support for systems which do no longer meet the PHP minimum requirements.
+These builds are generated automatically during the release process from the current source code and are not tested before release.
+Since systems using LTS builds do not meet the minimum requirements, no support is provided by the developers.
+If you experience any issues, visit the forum or the chat groups for help.
 
 ### HTTPS requirement
 Passwords requires HTTPS to work. This can not be disabled.
@@ -42,7 +48,7 @@ We support **only** versions of PHP with **[active support](https://php.net/supp
 The app may run with older PHP versions but this is not tested and bug reports with an unsupported version will be ignored.
 
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages) for Ubuntu and Debian.
-If you use NextcloudPi, you can use our [NextcloudPi PHP 7.4 ugprade guide](./Guides/NextcloudPi/Upgrade-to-PHP-7.4).
+If you use NextcloudPi, you can use our [NextcloudPi PHP 8.0 ugprade guide](./Guides/NextcloudPi/Upgrade-to-PHP-8.0).
 
 ### Pageres dependencies
 - NPM 

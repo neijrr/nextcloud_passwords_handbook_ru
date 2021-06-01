@@ -7,7 +7,7 @@ Run `php -v` as the the user executing cron command on your server to see which 
 Look at the "System" section in the Nextcloud admin area to see which version of PHP is used for your webserver.
 
 ### Is it safe to upgrade Nextcloud?
-Nextcloud 20 and before do not check PHP version requirements.
+Nextcloud 20.0.4 and before do not check PHP version requirements.
 They will install the latest available version of the app during the upgrade even if it does not work.
 This will leave your Nextcloud stuck in maintenance mode.
 You need to fulfill the PHP minimum requirement before updating Nextcloud.
@@ -20,9 +20,11 @@ Nextcloud 21 and later seem to be not affected by this.
 
 | PHP Version | Nextcloud Version | App Version | Download |
 | --- | --- | --- | --- |
-| 7.1 | 14, 15, 16, 17 | 2019.12.1 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz) |
-| 7.2 | 17, 18, 19, 20 | 2020.12.1 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/10845/artifacts/raw/passwords.tar.gz) |
-| 7.3 | 17, 18, 19, 20 | 2020.12.1 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/10845/artifacts/raw/passwords.tar.gz) |
+| 7.1 | 12, 13, 14     | 2018.12.0 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/7245/artifacts/raw/passwords.tar.gz)  |
+| 7.1 | 15, 16, 17     | 2019.12.1 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz)  |
+| 7.2 | 16             | 2019.12.1 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz)  |
+| 7.2 | 17, 18, 19, 20 | 2020.12.3 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/12049/artifacts/raw/passwords.tar.gz) |
+| 7.3 | 17, 18, 19, 20 | 2020.12.3 | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/12049/artifacts/raw/passwords.tar.gz) |
 
 # Downgrade the app
 If you have already attempted to upgrade to an incompatible version of the app, you can still downgrade to the latest compatible version manually.
