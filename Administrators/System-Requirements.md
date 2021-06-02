@@ -1,7 +1,7 @@
 > This page contains the system requirements for the [passwords app for Nextcloud](https://apps.nextcloud.com/apps/passwords).
 > If you're looking for the Nextcloud server system requirements [click here](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html).
 
-|  | Minimum | LTS | Recommended |
+|  | Minimum | LSR | Recommended |
 | --- | --- | --- |
 | Processor | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz |
 | RAM       | 512 MiB                     | 512 MiB                     | 8 GiB |
@@ -20,10 +20,10 @@ The exact version scheme is `<year>.<month>.<bugfix>`.
 In accordance with [SemVer2.0.0](https://semver.org/spec/v2.0.0.html), only the first version of a new year will introduce breaks in backward compatibility.
 With the first release of the year, the support for any Nextcloud version but the latest as well as any PHP version without [active support](https://php.net/supported-versions.php) will be ended.
 
-### LTS builds
-LTS builds are intended to provide longer support for systems which do no longer meet the PHP minimum requirements.
+### LSR/Legacy Support Releases
+LSR builds are intended to provide longer support for systems which do no longer meet the PHP minimum requirements.
 These builds are generated automatically during the release process from the current source code and are not tested before release.
-Since systems using LTS builds do not meet the minimum requirements, no support is provided by the developers.
+Since systems using LSR builds do not meet the minimum requirements, no support is provided by the developers.
 If you experience any issues, visit the forum or the chat groups for help.
 
 ### HTTPS requirement
