@@ -2,7 +2,7 @@
 > If you're looking for the Nextcloud server system requirements [click here](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html).
 
 |  | Minimum | LSR | Recommended |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Processor | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz |
 | RAM       | 512 MiB                     | 512 MiB                     | 8 GiB |
 | Disk      | 4 GiB                       | 4 GiB                       | 64 GiB |
