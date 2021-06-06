@@ -1,18 +1,15 @@
 ## Before you start
 - This tutorial was developed for and tested with DietPi 7.2 on a RaspberryPI.
-- This tutorial only works if you use "Apache" as webserver.
+- This tutorial only works if you use "Lighttpd" as webserver.
   Run `dietpi-software` and check the setting for "Webserver Preference".
 - DietPi may behave differently on other systems.
 - Nextcloud 21 is required _before_ upgrading to PHP 8.0.
 - This does not work for DietPi Docker. You can't upgrade PHP in a Docker image.
 - _Make sure to make a backup of your entire DietPi Instance (config, data, etc.) before you do this._
 
-
-
 ## Log in as Root
 If you're using SSH, log in with `ssh root@<your dietpi ip>`.
 If you're directly on the device, use `sudo su`
-
 
 
 ## Add PHP Package Archive
@@ -27,34 +24,60 @@ apt-get update
 ```
 
 
-
 ## Install PHP 8.0
 Execute the following command on your DietPi to install PHP 8.0:
 
 ```bash
 # Install PHP 8.0
-apt-get -y install libapache2-mod-php8.0 php8.0-apcu php8.0-mysql php8.0-xml php8.0-zip php8.0-mbstring php8.0-gd php8.0-curl php8.0-redis php8.0-intl php8.0-bcmath php8.0-gmp php8.0-imagick imagemagick
+apt-get -y install php8.0-fpm php8.0-apcu php8.0-mysql php8.0-xml php8.0-zip php8.0-mbstring php8.0-gd php8.0-curl php8.0-redis php8.0-intl php8.0-bcmath php8.0-gmp php8.0-imagick imagemagick
 ```
 
-
-
-## Set up Apache for PHP 8.0
-Execute the following commands on your DietPi:
-
+## Update the PHP 8.0 configuration
+Execute the following command on your DietPi to link the DietPi configuration for PHP from PHP 7.3 to 8.0 and enable it:
 ```bash
 # Symlink NCP PHP configuration
 ln -s /etc/php/7.3/mods-available/dietpi-nextcloud.ini /etc/php/8.0/mods-available/dietpi-nextcloud.ini
 ln -s /etc/php/7.3/mods-available/dietpi.ini /etc/php/8.0/mods-available/dietpi.ini
 phpenmod dietpi
 phpenmod dietpi-nextcloud
-
-# Configure apache for php8.0
-a2dismod php7.3
-a2enmod php8.0
-
-systemctl restart apache2
 ```
 
+Now you need to edit the configuration of PHP FPM.
+Run the command `nano /etc/php/8.0/fpm/php.ini` to open a text editor with the config file.
+Find the line `;cgi.fix_pathinfo=1` and remove the `;` at the beginning so that the line reads `cgi.fix_pathinfo=1`.
+You can use `CTRL` + `w` to search in the file, 
+with `CRTL` + `o` you can save the changed file and 
+with `CRTL` + `x` you can close the editor.
+
+
+## Set up lighttpd for PHP 8.0
+Now you need to edit the configuration for lighttpd to instruct it to use PHP 8.0
+Run `nano /etc/lighttpd/conf-available/15-fastcgi-php.conf` to open the configuration file.
+
+It should have this section:
+```
+fastcgi.server += ( ".php" =>
+        ((
+                "socket" => "/run/php/php7.3-fpm.sock",
+                "broken-scriptfilename" => "enable"
+        ))
+)
+```
+
+You need to change the "socket" from "/run/php/php7.3-fpm.sock" to "/run/php/php8.0-fpm.sock".
+The section should now read like this:
+```
+fastcgi.server += ( ".php" =>
+        ((
+                "socket" => "/run/php/php8.0-fpm.sock",
+                "broken-scriptfilename" => "enable"
+        ))
+)
+```
+Save the file and then run the following command to restart lighttpd:
+```bash
+service lighttpd force-reload
+```
 
 
 ## Check the PHP default version
