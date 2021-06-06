@@ -57,6 +57,7 @@ service php8.0-fpm restart
 Now you need to edit the configuration of PHP FPM.
 Run the command `nano /etc/php/8.0/fpm/php.ini` to open a text editor with the config file.
 Find the line `;cgi.fix_pathinfo=1` and remove the `;` at the beginning so that the line reads `cgi.fix_pathinfo=1`.
+
 You can use `CTRL` + `w` to search in the file, 
 with `CRTL` + `o` you can save the changed file and 
 with `CRTL` + `x` you can close the editor.

@@ -48,7 +48,9 @@ We support **only** versions of PHP with **[active support](https://php.net/supp
 The app may run with older PHP versions but this is not tested and bug reports with an unsupported version will be ignored.
 
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages) for Ubuntu and Debian.
+
 If you use NextcloudPi, you can use our [NextcloudPi PHP 8.0 ugprade guide](./Guides/NextcloudPi/Upgrade-to-PHP-8.0).
+
 If you use DietPi, [check the guide for your webserver choice](./Index#dietpi).
 
 ### Pageres dependencies
