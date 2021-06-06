@@ -42,6 +42,9 @@ apt-get -y install libapache2-mod-php8.0 php8.0-apcu php8.0-mysql php8.0-xml php
 Execute the following commands on your DietPi to update the Apache configuration:
 
 ```bash
+# Enable the image magick module
+phpenmod imagick
+
 # Symlink NCP PHP configuration
 ln -s /etc/php/7.3/mods-available/dietpi-nextcloud.ini /etc/php/8.0/mods-available/dietpi-nextcloud.ini
 ln -s /etc/php/7.3/mods-available/dietpi.ini /etc/php/8.0/mods-available/dietpi.ini
@@ -52,7 +55,19 @@ phpenmod dietpi-nextcloud
 a2dismod php7.3
 a2enmod php8.0
 
+# Restart Apache
 systemctl restart apache2
+```
+
+
+
+## Check for Nextcloud and App updates
+```bash
+# Check for updates
+ncc update:check
+
+# Install updates of the passwords app if available
+ncc app:update passwords
 ```
 
 
@@ -61,17 +76,16 @@ systemctl restart apache2
 By default, your DietPi should now be using PHP 8.0.
 You can check this by running `php -v`. The output should look like this:
 ```bash
-root@DietPi:/home/pi# php -v
+root@DietPi:~# php -v
 PHP 8.0.3 (cli) (built: Mar  5 2021 08:38:30) ( NTS )
 Copyright (c) The PHP Group
 Zend Engine v4.0.3, Copyright (c) Zend Technologies
     with Zend OPcache v8.0.3, Copyright (c), by Zend Technologies
-
 ```
 
 If it doesn't, you should use `update-alternatives --config php` and set PHP 8.0 as default:
 ```bash
-root@DietPi:/home/pi# update-alternatives --config php
+root@DietPi:~# update-alternatives --config php
 There are 2 choices for the alternative php (providing /usr/bin/php).
 
   Selection    Path             Priority   Status

@@ -1,6 +1,6 @@
 ## Before you start
 - This tutorial was developed for and tested with DietPi 7.2 on a RaspberryPI.
-- This tutorial only works if you use "Lighttpd" as webserver.
+- This tutorial only works if you use "Nginx" as webserver.
   Run `dietpi-software` and check the setting for "Webserver Preference".
 - DietPi may behave differently on other systems.
 - Nextcloud 21 is required _before_ upgrading to PHP 8.0.
@@ -42,6 +42,7 @@ apt-get -y install php8.0-fpm php8.0-apcu php8.0-mysql php8.0-xml php8.0-zip php
 Execute the following command on your DietPi to link the DietPi configuration for PHP from PHP 7.3 to 8.0 and enable it:
 ```bash
 # Enable the image magick module
+# Errors related to PHP 7.3 can be ignored
 phpenmod imagick
 
 # Symlink NCP PHP configuration
@@ -54,42 +55,32 @@ phpenmod dietpi-nextcloud
 service php8.0-fpm restart
 ```
 
-Now you need to edit the configuration of PHP FPM.
-Run the command `nano /etc/php/8.0/fpm/php.ini` to open a text editor with the config file.
-Find the line `;cgi.fix_pathinfo=1` and remove the `;` at the beginning so that the line reads `cgi.fix_pathinfo=1`.
-You can use `CTRL` + `w` to search in the file, 
-with `CRTL` + `o` you can save the changed file and 
-with `CRTL` + `x` you can close the editor.
 
-
-
-## Set up Lighttpd for PHP 8.0
+## Set up Nginx for PHP 8.0
 Now you need to edit the configuration for lighttpd to instruct it to use PHP 8.0
-Run `nano /etc/lighttpd/conf-available/15-fastcgi-php.conf` to open the configuration file.
+Run `nano /etc/nginx/nginx.conf` to open the configuration file.
+
+You can use `CTRL` + `w` to search in the file,
+with `CRTL` + `o` you can save the changed file and
+with `CRTL` + `x` you can close the editor.
 
 It should have this section:
 ```
-fastcgi.server += ( ".php" =>
-        ((
-                "socket" => "/run/php/php7.3-fpm.sock",
-                "broken-scriptfilename" => "enable"
-        ))
-)
+	upstream php {
+		server unix:/run/php/php7.3-fpm.sock;
+	}
 ```
 
-You need to change the "socket" from "/run/php/php7.3-fpm.sock" to "/run/php/php8.0-fpm.sock".
+You need to change the "server" from "unix:/run/php/php7.3-fpm.sock;" to "unix:/run/php/php8.0-fpm.sock;".
 The section should now read like this:
 ```
-fastcgi.server += ( ".php" =>
-        ((
-                "socket" => "/run/php/php8.0-fpm.sock",
-                "broken-scriptfilename" => "enable"
-        ))
-)
+	upstream php {
+		server unix:/run/php/php8.0-fpm.sock;
+	}
 ```
-Save the file and then run the following command to restart lighttpd:
+Save the file and then run the following command to restart Nginx:
 ```bash
-service lighttpd force-reload
+service nginx restart
 ```
 
 

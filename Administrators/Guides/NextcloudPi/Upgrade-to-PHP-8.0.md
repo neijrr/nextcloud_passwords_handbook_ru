@@ -44,6 +44,9 @@ apt-get -y install php8.0-fpm php8.0-mysql php8.0-xml php8.0-zip php8.0-mbstring
 Execute the following command on your NextCloudPi to link the NextCloudPi configuration for PHP from PHP 7.3 to 8.0 and enable it:
 
 ```bash
+# Enable the image magick module
+phpenmod imagick
+
 # Symlink NCP PHP configuration
 ln -s /etc/php/7.3/fpm/conf.d/90-ncp.ini /etc/php/8.0/fpm/conf.d/90-ncp.ini
 
@@ -71,6 +74,18 @@ a2disconf php7.4-fpm
 systemctl reload apache2
 ```
 
+## Check for Nextcloud and App updates
+```bash
+cd /var/www/nextcloud
+
+# Check for updates
+sudo -u www-data php ./occ update:check
+
+# Install updates of the passwords app if available
+sudo -u www-data php ./occ app:update passwords
+```
+
+
 ## Check the PHP default version
 By default, your NextCloudPi should now be using PHP 8.0.
 You can check this by running `php -v`. The output should look like this:
@@ -80,7 +95,6 @@ PHP 8.0.3 (cli) (built: Mar  5 2021 08:38:30) ( NTS )
 Copyright (c) The PHP Group
 Zend Engine v4.0.3, Copyright (c) Zend Technologies
     with Zend OPcache v8.0.3, Copyright (c), by Zend Technologies
-
 ```
 
 If it doesn't, you should use `update-alternatives --config php` and set PHP 8.0 as default:
