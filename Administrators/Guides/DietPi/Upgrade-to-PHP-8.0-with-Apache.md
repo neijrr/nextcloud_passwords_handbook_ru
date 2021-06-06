@@ -39,7 +39,7 @@ apt-get -y install libapache2-mod-php8.0 php8.0-apcu php8.0-mysql php8.0-xml php
 
 
 ## Set up Apache for PHP 8.0
-Execute the following commands on your DietPi:
+Execute the following commands on your DietPi to update the Apache configuration:
 
 ```bash
 # Symlink NCP PHP configuration

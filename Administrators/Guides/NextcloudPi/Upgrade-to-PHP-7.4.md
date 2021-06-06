@@ -1,3 +1,9 @@
+
+> **PHP 8.0 is out so why not update to the newest version of PHP right away?**
+> 
+> **[Check out the PHP 8.0 upgrade guide](./Upgrade-to-PHP-8.0)**
+
+
 ## Before you start
 - This tutorial was developed for and tested with NextCloudPi 1.34.7 on a RaspberryPI.
 - NextCloudPi may behave differently on other systems.

@@ -14,14 +14,15 @@ If you already have SSH enabled, you can skip this.
 - Login to your NextCloudPi with SSH (e.g. `ssh pi@<server>` on linux)
 
 
+## Log in as Root
+After logging in, run `sudo su` to start a session as root.
+
+
 ## Add PHP Package Archive
 You can skip this step if you already followed the [Upgrade to PHP 7.4](./Upgrade-to-PHP-7.4) guide.
-Execute the following commands on your NextCloudPi:
+Execute the following commands on your NextCloudPi to add the repository PHP 8.0 from [deb.sury.org](https://deb.sury.org/#php-packages):
 
 ```bash
-# Become root
-sudo su
-
 # Add the PHP PPA from deb.sury.org
 apt-get -y install apt-transport-https lsb-release ca-certificates curl
 curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
@@ -31,19 +32,29 @@ apt-get update
 
 
 ## Install PHP 8.0
-Execute the following command on your NextCloudPi:
+Execute the following command on your NextCloudPi to install PHP 8.0:
 
 ```bash
-# Become root
-sudo su
-
 # Install PHP 8.0
 apt-get -y install php8.0-fpm php8.0-mysql php8.0-xml php8.0-zip php8.0-mbstring php8.0-gd php8.0-curl php8.0-redis php8.0-intl php8.0-bcmath php8.0-gmp php8.0-imagick imagemagick
 ```
 
 
+## Update the PHP 8.0 configuration
+Execute the following command on your NextCloudPi to link the NextCloudPi configuration for PHP from PHP 7.3 to 8.0 and enable it:
+
+```bash
+# Symlink NCP PHP configuration
+ln -s /etc/php/7.3/fpm/conf.d/90-ncp.ini /etc/php/8.0/fpm/conf.d/90-ncp.ini
+
+# Restart PHP
+systemctl restart php8.0-fpm
+```
+
+
+
 ## Set up Apache for PHP 8.0
-Execute the following commands on your NextCloudPi:
+Execute the following commands on your NextCloudPi to update the Apache configuration:
 
 ```bash
 # Configure apache for php8.0
@@ -56,11 +67,7 @@ a2disconf php7.3-fpm
 # If you don't have PHP 7.4 installed, this will report an error which you can ignore
 a2disconf php7.4-fpm
 
-# Symlink NCP PHP configuration
-ln -s /etc/php/7.3/fpm/conf.d/90-ncp.ini /etc/php/8.0/fpm/conf.d/90-ncp.ini
-
-# Restart PHP & Apache
-systemctl restart php8.0-fpm
+# Restart PHP
 systemctl reload apache2
 ```
 
@@ -79,7 +86,7 @@ Zend Engine v4.0.3, Copyright (c) Zend Technologies
 If it doesn't, you should use `update-alternatives --config php` and set PHP 8.0 as default:
 ```bash
 root@nextcloudpi:/home/pi# update-alternatives --config php
-There are 2 choices for the alternative php (providing /usr/bin/php).
+There are 3 choices for the alternative php (providing /usr/bin/php).
 
   Selection    Path             Priority   Status
 ------------------------------------------------------------
