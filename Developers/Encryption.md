@@ -5,6 +5,18 @@ The library also provides good performance and security while being comparably e
 E2E in Passwords is designed to be upgradeable which is why every part of it is implemented separately and has its own version information.
 
 
+### Avoiding user confusion
+It can not be expected that users have any idea what e2e/cse is and how it works.
+Keep this in mind when designing and developing the ui related to encryption.
+
+Here are some terms you should use when talking to users about encryption:
+
+- **Encryption Password** / **Encryption Passphrase** is the password the user has chosen during the encryption setup.
+  Experience has shown that users will enter their Nextcloud password repeatedly and get locked out of the app if they're just asked for the "password".
+- **End-to-End Encryption** / **End to End Encryption** is the term used to describe client side encryption to users.
+  Using different terms to describe the same functionality will confuse users.
+  Additionally, users may not know what a client is.
+
 ### Encryption and Token types
 ##### Password challenge
 | Type | Description |

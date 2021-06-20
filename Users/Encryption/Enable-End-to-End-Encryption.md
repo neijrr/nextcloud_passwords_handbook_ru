@@ -1,6 +1,6 @@
-The passwords app offers strong client side encryption which requires anyone trying to decrypt your passwords to know the encryption passphrase.
+The passwords app offers strong end to end encryption which requires anyone trying to decrypt your passwords to know the encryption passphrase.
 
-## Enabling Client Side Encryption
+## Enabling End to End encryption
 > :warning: Some third-party clients do not support encryption
 
 #### Important Information
@@ -11,7 +11,7 @@ The passwords app offers strong client side encryption which requires anyone try
 - The encryption setup will create the new entries before deleting any old ones.
   So even if something goes wrong, there should be no data loss.
 
-#### Enabling Client Side Encryption
+#### Enabling End to End encryption
 1. Open the Settings (`More > Settings`)
 2. Locate the `Encryption` section at the end of the `Security` section.
 3. Click the `Activate` button next to `End-to-End Encryption`.
@@ -26,8 +26,8 @@ The encryption setup will automatically encrypt all folders and passwords
 > :warning: Do not abort the encryption process or reload the page
 
 
-## Disabling Client Side Encryption
-There is no built-in option to disable client side encryption.
+## Disabling End to End encryption
+There is no built-in option to disable end to end encryption.
 Passwords offers hidden passwords, which make it impossible to guarantee that all passwords have been decrypted.
 This would either prevent removing the encryption passphrase or leave some passwords unreadable and permanently encrypted.
 If you're sure that you do not have any hidden passwords, you can try the following steps:

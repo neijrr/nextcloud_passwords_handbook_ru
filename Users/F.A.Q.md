@@ -31,10 +31,10 @@ _You are one of it._
 The second main factor is the administrator of your Nextcloud instance.
 
 Any security issues in Nextcloud, other Nextcloud apps and the server in general is also a security issue for the Passwords app.
-So in order to keep your passwords safe, your server administrator has to keep the server safe.
+To keep your passwords safe, your server administrator has to keep the server safe.
 
-A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when client side encryption is enabled.
-So you will have to trust your administrator to keep the server safe.
+A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when end to end encryption is enabled.
+You should be able to trust your administrator to respect your privacy rights and keep your data safe.
 
 
 
@@ -135,5 +135,5 @@ For more information please talk to your administrator.
 
 #### The notification "Legacy API: Time to say goodbye!"
 You are still using third party software that accesses the passwords trough the old api from ocPasswords.
-This is not recommended and will cause issues if you use client side encryption.
+This is not recommended and will cause issues if you use end to end encryption.
 It is recommended that you update that client or look for a replacement.
