@@ -24,8 +24,8 @@ _If this happens, we will **NOT** fix it._
 ## Will the app stop working if i update?
 **NO**
 
-We have taken steps to make sure that the built-in Nextcloud app store will not show updates that can not be installed on your server.
-You can install any update shown in the app store even if your server does not meet our minimum requirements.
+Nextcloud will check the minimum requirements before updating an app and won't advertise updates you can not install.
+Any update shown in the app store can be installed, even if your server does not meet our minimum requirements of the latest version of passwords.
 If you install an update manually (by uploading the new version to your server), Nextcloud will just deactivate the app.
 
 ## Why are you doing this?

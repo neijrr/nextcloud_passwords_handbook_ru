@@ -9,7 +9,7 @@
 | Nextcloud | Nextcloud 20.0.5            | Nextcloud 20                | Nextcloud 21 |
 | OS        | Linux                       | Linux                       | Ubuntu 20.04 |
 | Database  | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.5 |
-| PHP       | PHP 7.4                     | PHP 7.3                     | PHP 8.0 |
+| PHP       | PHP 7.4                     | PHP 7.2                     | PHP 8.0 |
 | Webserver | HTTPS                       | HTTPS                       | Nginx 1.19 HTTPS |
 | PECL      | Intl                        | Intl                        | Zip, Imagick |
 | Libraries |                             |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
@@ -66,7 +66,7 @@ The [user handbook](./User-Handbook) also makes direct requests to external serv
 - https://github.com
 - https://ncpw-besticon-01.herokuapp.com
 - https://ncpw-besticon-02.herokuapp.com
-- https://favicongrabber.com/
+- https://favicongrabber.com
 - https://icons.duckduckgo.com
 - https://www.google.com
 - https://api.browshot.com
