@@ -22,7 +22,7 @@ Set a maximum age for passwords after which they will be marked as weak.
 Setting the value to `0` will disable the check.
 
 #### Security Check Hash (Advanced)
-This setting defines how much of the SHA-1 hash used to compare each password against a list of known bad passwords should be stored.
+This setting defines how much of the SHA-1 hash used to compare each password against a list of known compromised passwords should be stored.
 If the server is compromised, an attacker could use the SHA-1 hash to find the plain text value of a compromised password.
 Storing a partial hash can reduce this risk, but also means that passwords may be marked as compromised despite being secure.
 Storing no hash will prevent the password security check and the duplicate check from working.

@@ -162,7 +162,7 @@ Send emails when a password was shared with an user.
 These settings can be overwritten by the user.
 
 #### Security Check Hash
-This setting defines which percentage of the SHA-1 hash used to compare each password against a list of known bad passwords should be stored.
+This setting defines which percentage of the SHA-1 hash used to compare each password against a list of known compromised passwords should be stored.
 If your server is compromised, an attacker could use the SHA-1 hash to find the plain text value of a compromised password.
 Storing a partial hash can reduce this risk, but also means that passwords may be marked as compromised despite being secure.
 Storing no hash will prevent the password security check and the duplicate check from working.
