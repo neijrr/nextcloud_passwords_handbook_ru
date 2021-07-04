@@ -158,6 +158,21 @@ Send emails when a password was shared with an user.
 
 
 
+## Default Password Security Settings
+These settings can be overwritten by the user.
+
+#### Security Check Hash
+This setting defines which percentage of the SHA-1 hash used to compare each password against a list of known bad passwords should be stored.
+If your server is compromised, an attacker could use the SHA-1 hash to find the plain text value of a compromised password.
+Storing a partial hash can reduce this risk, but also means that passwords may be marked as compromised despite being secure.
+Storing no hash will prevent the password security check and the duplicate check from working.
+
+Changes in this setting will be applied to new passwords immediately.
+If a shorter value is selected, the hashes of existing passwords will be updated with the next password security check.
+If a longer value is selected, the existing hashes will *not* be updated and remain short.
+Changing this setting will have no impact on the status of passwords which were already marked as compromised.
+
+
 ## Backup Settings
 Passwords makes regular backups of the raw password database.
 These backups can be used to restore the entire database or the database of a specific user.

@@ -15,10 +15,24 @@ If a password fails one of these checks, it will be marked as weak.
 > This means that changes are not applied immediately and the status of entries with the same password can differ.
 
 ##### Mark duplicates
-If you use a password more than once, this option will mark it as weak.
+If this option is enabled, passwords will be marked as weak if they appear more than once in your database.
 
 ##### Maximum age in days
-Set the maximum age allowed for your passwords. Setting the value to `0` will disable the check.
+Set a maximum age for passwords after which they will be marked as weak.
+Setting the value to `0` will disable the check.
+
+#### Security Check Hash (Advanced)
+This setting defines how much of the SHA-1 hash used to compare each password against a list of known bad passwords should be stored.
+If the server is compromised, an attacker could use the SHA-1 hash to find the plain text value of a compromised password.
+Storing a partial hash can reduce this risk, but also means that passwords may be marked as compromised despite being secure.
+Storing no hash will prevent the password security check and the duplicate check from working.
+
+Changes in this setting will be applied to new passwords immediately.
+If a shorter value is selected, the hashes of existing passwords will be updated with the next password security check.
+If a longer value is selected, the existing hashes will *not* be updated and remain short.
+Changing this setting will have no impact on the status of passwords which were already marked as compromised.
+The default value for this setting is defined by the administrator
+
 
 ### Password Generator
 These settings define how the built-in password generator creates passwords.
