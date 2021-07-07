@@ -1,26 +1,35 @@
 The password app lists official clients, third party apps and programming libraries in the included "Apps & Extensions" section.
 Apps are also listed in the readme, libraries are also listed in the developer handbook.
-If you have developed an app or library and want it to be listed there, this page lists what you need to do.
+If you have developed an app or library and want it to be listed there, this page contains the requirements and process to do so.
 
 ## Requirements
-Your app should meet these requirements.
+Your app must meet all of the following requirements to be listed:
 
-#### Open Source
-The source code of your app must be public.
-Since security and trust are very important to our users, they must be able to check the source code of the applications they use.
-
-**Note:** This does not mean that your app must be free or that others must be allowed to use your source code.
-
-#### No Ads
-Any app must not contain any ads.
-Any tracking must be optional and _opt-in_ and compliant with the EU GDPR.
-
-#### Optional third party services
-If your app contacts any server other than the Nextcloud instance of the user, this action should be optional.
-The user must also be aware if data is sent to another service.
-
-#### No legacy api
-We do not accept any app that uses the legacy api.
+* **Apps must be Open Source**
+    
+    The source code of your app must be public.
+    Since security and trust are very important to our users, they must be able to check the source code of the applications they use.
+    
+    **Note:** This does not mean that your app must be free or that others must be allowed to use your source code.
+* **Apps must not contain Ads**
+    
+    Any app must not contain any ads.
+    Any tracking must be optional and _opt-in_ and compliant with the EU GDPR.
+* **Any third party service must be optional**
+    
+    If your app contacts any server other than the Nextcloud instance of the user, this action should be optional.
+    The user must also be aware if data is sent to another service.
+* **Apps must not be branded as "Official"**
+    
+    Apps must not use wording that makes them appear to the user as if they are developed by the developer(s) of the Passwords app for Nextcloud.
+* **Apps must not use the legacy api**
+    
+    Apps must not use the [legacy api](./Api/Legacy-Api) for ocPasswords.
+    Support for this api will be dropped in january 2022.
+* **(2022) Apps must support client side encryption**
+    
+    Starting january 2022, new apps must support [client side encryption](./Encryption).
+    Already listed apps must support client side encryption from january 2023.
 
 
 ## How to list your app
@@ -34,3 +43,11 @@ The ticket must contain the following:
 * Link to the sources
 * Supported Systems/Browsers etc.
 * Information how we can test your app
+
+
+## Removing apps
+Apps will be removed if one or more of the following issues appear
+
+* They do not or no longer meet requirements
+* The author wants them removed
+* The app is not working and no longer maintained

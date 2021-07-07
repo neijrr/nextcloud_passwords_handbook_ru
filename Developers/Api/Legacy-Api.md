@@ -1,7 +1,8 @@
+> **This api will be removed permanently in version 2022.1.**
+> 
 > This is the legacy api of the original passwords app by Fallon Turner.
 > The rewritten passwords app provides an implementation of this api, but does not recommend using it.
 > Due to its limitations, this api returns incomplete data and does not support client side encryption.
-> This api will be removed permanently in version 2021.1.
 > If you are planning to use the passwords api in your own application, please use the new api instead.
 
 |Method |Scope      |Semantics|
@@ -20,7 +21,7 @@ The api can only be accessed with CORS compatible clients and requires basic aut
 
 ## Version
 #### The Version Object
-This api always returns the number `21`
+This api endpoint always returns the number `21`
 
 #### Api Url
 `https://{host}/index.php/apps/passwords/api/0.1/version/`
@@ -89,8 +90,8 @@ This api always returns the number `21`
 - Some passwords will not have addresses or websites as this is not a required field in the new app
 - The delete command will move passwords into the trash if they do not have the deleted attribute
 - The attribute strength has only three values: 0 - 10 - 20
-- The sharing api is not supported. If you need it open a ticket.
+- The sharing api is not supported.
 - Categories are mapped to tags. There is only the first category shown.
 - Tags will only be moved in the trash when deleted
-- Client side encryption or safe sever side encryption are not supported
+- Client side encryption or SSEv2 encryption are not supported
 - The new app will fill all fields with values, the legacy app only the properties
