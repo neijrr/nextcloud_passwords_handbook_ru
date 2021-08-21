@@ -313,11 +313,11 @@
             {
                 "id"         : "markuman",
                 "label"      : {
-                    "en": "Ansible Lookup Plugin"
+                    "en": "Ansible Plugin"
                 },
                 "description": {
-                    "en": "Store secrets for your deployment in Nextcloud.",
-                    "de": "Zungangsdaten für Deployments in Nextcloud speichern."
+                    "en": "Use the passwords api to fetch, create, update and delete secrets during deployments.",
+                    "de": "Verwende die API, um Passwörter während eines Deployments zu lesen, erstellen, aktualisieren oder löschen."
                 },
                 "author"     : {
                     "name"    : "markuman",
