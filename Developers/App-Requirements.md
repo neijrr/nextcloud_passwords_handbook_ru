@@ -43,6 +43,7 @@ The ticket must contain the following:
 * Link to the sources
 * Supported Systems/Browsers etc.
 * Information how we can test your app
+* Does your app support client side encryption?
 
 
 ## Removing apps
