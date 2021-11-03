@@ -31,4 +31,5 @@
 6. [Legacy API](./Api/Legacy-Api)
 7. [Contributing](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
    1. [Verify GIT Commits](./Contributing/Verify-Git-Commits)
-8. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
+8. [Passwords Test Environment](https://test.passwordsapp.org/apps/cms_pico/pico/passwords_test)
+9. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
