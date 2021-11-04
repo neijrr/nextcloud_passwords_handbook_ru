@@ -1,5 +1,5 @@
 ## Before you start
-- This tutorial was developed for and tested with NextCloudPi 1.35.0 on a RaspberryPI.
+- This tutorial was developed for and tested with NextCloudPi 1.43.3 on a RaspberryPI.
 - NextCloudPi may behave differently on other systems.
 - Nextcloud 21 is required _before_ upgrading to PHP 8.0. 
 - This does not work for NextCloudPi Docker. You can't upgrade PHP in a Docker image.
@@ -75,11 +75,10 @@ systemctl reload apache2
 ```
 
 ## Check for Nextcloud and App updates
+It can take some time until updates for apps are shown in the appstore.
+
 ```bash
 cd /var/www/nextcloud
-
-# Check for updates
-sudo -u www-data php ./occ update:check
 
 # Install updates of the passwords app if available
 sudo -u www-data php ./occ app:update passwords
