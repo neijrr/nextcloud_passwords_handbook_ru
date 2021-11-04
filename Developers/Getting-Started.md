@@ -3,3 +3,4 @@ If you're looking to get started with development for the passwords app or any c
 - [Development Environment](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
 - [Working with the API](./Getting-Started/Working-with-the-API)
 - [Sample Data](./Getting-Started/Sample-Data)
+- [Passwords Test Server](https://test.passwordsapp.org/apps/cms_pico/pico/passwords_test)

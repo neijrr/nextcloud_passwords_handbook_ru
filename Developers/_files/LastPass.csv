@@ -1,142 +1,147 @@
-url,username,password,extra,name,grouping,fav
-https://www.facebook.com,zuckerberg,SozialisierungParteiischeres,,Facebook,Social Media,0
-https://www.google.com,page,UnüblichsterFortbestünden,,Google,Private,0
-https://www.microsoft.com,gates,EdleresMarkierter,,Microsoft,Work,0
-https://www.amazon.com,bezos,WettrüstendesAbrollendem,"Amazon.com, Inc. (oft als Amazon, deutsche Aussprache, englisch, bezeichnet) ist ein börsennotierter amerikanischer Online-Versandhändler mit einer breit gefächerten Produktpalette. Nach eigenen Angaben hat Amazon als Marktführer des Handels im Internet die weltweit größte Auswahl an Büchern, CDs und Videos. Über die integrierte Verkaufsplattform Marketplace können auch Privatpersonen oder andere Unternehmen im Rahmen des Online-Handels neue und gebrauchte Produkte anbieten. ",Amazon,Shopping,1
-https://www.skype.com,myskypename,HineintretenderHelltönende,,skype.com - myskypename,Social Media,0
-https://www.apple.com,steve,KnacklautenArbeitsgericht,,apple.com - steve,Smartphone,0
-https://www.whatsapp.com,+49123456,VorgezeichnetWeiträumigeres,,Whatsapp,Messengers,0
-https://telegram.org/,+49456789,AnwinkelndenVortritten,,Telegram,Messengers,1
-https://www.zalando.de/,shoes,UnangebrachterGasfeuerung,,Zalando,Shopping,0
-https://www.alternate.de/,buypc,RatenzahlungsvereinbarungenGewinnanteils,,Alternate.de,Shopping,0
-https://www.conrad.de/,someone,AugenfälligerenZeitplanens,,Conrad,Shopping,0
-https://www.digitalo.de/,buyer,VertrauensbildendemAusströmend,,Digitalo.de,Shopping,0
-https://www.youtube.com/,famous,DurchstreiftenEs,,YouTube,Entertainment,0
-https://www.twitch.tv/,streamer,HexadezimalanzeigeKribbelndes,,Twitch.tv,Entertainment,0
-https://twitter.com/,dorsey,HergestelltemZurückbehaltener,,Twitter,Smartphone,0
-https://plus.google.com/,brin,VerrostetAufpumpenden,,Google Plus,Social Media,0
-https://www.teamviewer.com/de/,desktop,DemontagefallHerausgewagter,,Teamviewer,Work,0
-https://slack.com/intl/de-de,chat,NeuphilologischeSäurehaltigerem,,Slack,Work,0
-https://www.deutsche-bank.de/pfb/content/privatkunden.html,bank,InstrumentationenHineinführend,,Deutsche Bank,Financial,0
-https://www.paypal.com/de/webapps/mpp/home,pay,PreiserhöhungAbgebürstete,,PayPal,Financial,0
-https://www.paydirekt.de/account/#/login?registration,geld,MorgenstundeAnklagst,,PayDirekt,Financial,0
-https://www.ebay.de/,seller,HerzigerHerzförmiger,,ebay.de - seller,Shopping,0
-https://stackoverflow.com/,ask,AnfachtestLockigem,,Stackoverflow,Development,0
-https://aws.amazon.com/de/,hosting,AnschaffstBewegter,,Amazon AWS,Work,0
-http://store.steampowered.com/,gabe,VerkrustendUmarmungen,"# Steam
-**Steam** is a digital distribution platform developed by **Valve** Corporation, which offers digital rights management (DRM), multiplayer gaming, video streaming and social networking services. Steam provides the user with installation and automatic updating of games, and community features such as friends lists and groups, cloud saving, and in-game voice and chat functionality. The software provides a freely available application programming interface (API) called Steamworks, which developers can use to integrate many of Steam's functions into their products, including networking, matchmaking, in-game achievements, micro-transactions, and support for user-created content through Steam Workshop. Though initially developed for use on Microsoft Windows operating systems, versions for OS X and Linux were later released. Mobile apps with connected functionality with the main software were later released for iOS, Android, and Windows Phone devices in the 2010s.",Steam,Hobbies,1
-https://www.humblebundle.com/,games,AufzeichnungsträgerRüstungsanstrengungen,,Humble Bundle,Hobbies,0
-https://www.gog.com,games,SonderangebotesVerwandtesten,,GoG,Hobbies,0
-https://www.kickstarter.com/,me,InterkommunalenKartellabsprache,,KickStarter,Financial,0
-https://www.indiegogo.com/,supporter,ZweifelhaftesterUmhörende,,IndieGoGo,Financial,0
-https://www.gofundme.com/,fund,ReuigstesVorbeikommen,,GoFundMe.com,Financial,0
-https://github.com/,dev,GasherdesEndgültigstem,,GitHub,Development,0
-https://gitlab.com/explore,dev,VorpostensRegenbogens,,GitLab,Development,0
-https://nextcloud.com/,files,HumanistischerAngelgelegenheiten,,Nextcloud,Work,1
-https://www.dropbox.com/,upload,MagerjahrenZimbel,,DropBox,Work,0
-https://de.linkedin.com/,employee,EntwarfenSpleens,,LinkedIn,Work,0
-https://www.xing.com/,user,PräsidierendesBeinhalteter,,xing.com - user,Work,0
-http://www.amd.com/de,ryzen,AufzustellendeMenschheitssache,,amd.com - ryzen,Work,0
-https://www.playstation.com/,ps2,password,,playstation.com - ps2,Hobbies,0
-http://www.adobe.com/,creator,123456,,Creative Cloud,Work,0
-https://threema.ch/de,chat,WohlbehagenZurückerbeten,,Threema,Messengers,0
-https://signal.org/,secure,ErstattestAbwerbe,,Signal,Messengers,0
-https://www.sparkasse.de/,konto,PrivatangelegenheitLeidendes,,sparkasse.de - konto,Financial,0
-https://www.sparda-bw.de/,anlage,TrübsinnigeSteuerzugeständnisse,,Sparda Bank,Financial,0
-https://www.jetbrains.com/,ide,DreamiestBookcase,,JetBrains,Development,0
-https://www.netflix.com/de/,watch,PuncturedPotassium,,Netflix,Entertainment,0
-https://www.hbo.com/,got,FlammableBlackening,,HBO,Entertainment,0
-https://www.spotify.com/de/,music,WoollyRobbery,,Spotify,Entertainment,0
-https://www.deezer.com/de/,laut,MitigatedJeering,,Deezer,Entertainment,0
-https://de.magine.com/,tv,GossamerAntiquity,,magine.com - tv,Entertainment,0
-https://www.waipu.tv/,bored,DizziestPane,,waipu.tv - watch,Entertainment,0
-https://bitbucket.org/,coder,UnchristianHindrance,,Bitbucket,Development,0
-https://mixer.com/,streaming,AnbeiGeehrtem,"**Mixer** (formerly **Beam**) is a Seattle-based live streaming video platform owned by Microsoft. The service officially launched on January 5, 2016",Mixer Streaming,Entertainment,0
-https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page,redakteur,AbwegigsterVerstrichst,"## Wikipedia
-Wikipedia is a multilingual, web-based, free-content encyclopedia project supported by the Wikimedia Foundation and based on a model of openly editable content. Wikipedia is the largest and most popular general reference work on the Internet, and is named as one of the most popular websites. The project is owned by the Wikimedia Foundation, a non-profit which \""operates on whatever monies it receives from its annual fund drives"".",Wikipedia Account,Private,0
-https://profile.theguardian.com/signin,reader,Stofff@rb3At1a$,,The Guardian,International,0
-https://www.thetimes.co.uk/,username,D@zugosstGlück1o$3n,,British Times,International,0
-https://www.nytimes.com/,reader,Z3rschnittKun$t5z€ne,"The New York Times (NYT) ist eine einflussreiche und überregionale Tageszeitung aus New York City, die von der New York Times Company geführt wird. ",New York Times,International,0
-https://www.hulu.com/tv,myaccount,Müh3lo$€mRütte1te,,Hulu,Entertainment,0
-https://www.hosteurope.de/,user123456,Hinausr@gt3Osm0s€n,"This is the account for our company website hosting.
-
-We have the service WebHosting Medium, Service can be found [here](https://www.hosteurope.de/Host-Europe/Kontakt/).",Host Europe Hosting,Hosting,0
-https://www.hetzner.de/,server,Zur3d€nFutter@1s,This is our dedicated Server. Type EPYC AX160-NVMe,Hetzner Server,Hosting,0
-https://maxcluster.de/,eshop,K@1kart!g3mTränkt,This is our webshop. ***!!! Important !!!***,Maxcluster Webshop Hosting,Hosting,0
-http://www.zeit.de/index,anonymous,Pr0z3ntsKn€if$t,"## DIE ZEIT
-Die Zeit (in der Schreibweise des Verlags: DIE ZEIT) ist eine überregionale deutsche Wochenzeitung, die erstmals am 21. Februar 1946 erschien. Seit dem 1. Juli 1996 gehört der Zeitverlag und somit Die Zeit zur Verlagsgruppe Georg von Holtzbrinck. Sie erscheint jeden Donnerstag; an Feiertagen wird der Erscheinungstag in der Regel vorgezogen.
-
-
-Den Herausgeberrat der Zeit bilden Jutta Allmendinger, Zanny Minton Beddoes, Florian Illies, Josef Joffe und René Obermann. Weitere Herausgeber waren unter anderen Gerd Bucerius, Marion Gräfin Dönhoff, Helmut Schmidt, Theo Sommer und Michael Naumann.
-
-
-Erscheinungsort ist seit jeher Hamburg. Die Zeit unterhält Redaktionsbüros in Baden in der Schweiz, Berlin, Brüssel, Dresden, Frankfurt am Main, Moskau, New York, Paris, Istanbul, Washington, D.C. und Wien. Korrespondenten der Zeit arbeiten in Neu-Delhi, Peking, Tel Aviv, London und Rom.
-
-![Zeit Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Die_Zeit-Logo-Bremen.svg/799px-Die_Zeit-Logo-Bremen.svg.png)",Zeit.de,News,0
-http://www.faz.net/aktuell/,reader,Trächt!g3r€ntw0rfener,,F.A.Z,News,0
-http://www.sueddeutsche.de/,redakteur,G3f1öt€tGewertet€r,,SZ.de,News,0
-http://www.lemonde.fr/,lecteur,üb3r1@stRicht€rin,,Le Monde,International,0
-https://www.nikkei.com/,jp,Pr@ss3nKürz€5ten,"The Nikkei, formally known as The Nihon Keizai Shinbun (日本経済新聞, Japan Economics Newspaper), is Nikkei, Inc.'s flagship publication and the world's largest financial newspaper, with a daily circulation exceeding three million.",The Nikkei 日本経済新聞,International,0
-https://www.sony.de/mysony,mysony,Umdr3htenAu5zuredendAb0nnierten,,Sony Account,Customer Accounts,0
-https://account.samsung.com/accounts/v1/MBR/signInGate?locale=de_DE&svcParam=eyJzdmNFbmNLWSI6ImY4Z09xTi85VnhBYkFTWThZWlpDdVN0VTZPeG0rZm1FYWlmMy85UUo3ZkszMnBpaE1SdTRnTzVVTk9FT0Z4S3NSeDdHZG5OV0xDRFB5T2hJZlVUSlova3NDbzJaT2ZzUmZlOXlJQ1NzMHR0OEU0aFdjWGpoMEVhWHFUVS9uTFZMTlhwOU90SjlqL0VSRXRPM3d5ejBFUC9BZDNFY0dJN2I2TFlvUmMxR1IrOD0iLCJzdmNFbmNQYXJhbSI6Imw3WUhYNEUyQjJjaDd4T05sSGhHdVVwRDl1d3UreTdVUmxTY3JlajJqWEh4ejFTOGo4TGVDc1lNVVpwRHNra05uOU0xMjRsSHVidUhhSm10L1lNR2RLY2JsY0NMRzBEQXNYYlZEQnBlQjRZYnRVS3p0cjdjZStHa0xQQzRra2FzaUJtNURQQVNPckZEUGdQVzZtTHBQSEdjRDVzWWI3VjZjKzR0UlpNV2ZhTkEybWFhOXozZXpKUktEbWoxV0xoTGZyREZ6QnpabVBUc0gyZlhJUlZyMHBySTBQeWN6TmtjTFFyczBieWJIdktEZW5pdzRMN1VBeU9IZkF3VnU1dXY2eHkxcGd2bFF5VXdMd3NNOUtEeitteUV4U3hKZ2dZM2pYY1A0d1BHRVRpMlhCMVE4dWdYUFNtcmhjZTBOVnliczlGOGZGRUIxUUdjQjA0bXhDYUNodz09IiwiY2hrRG9OdW0iOiIxNDgyODM3NjE3NTk5Iiwic3ZjRW5jSVYiOiI2YjI4NjQ5MzI5MzQxYjViMTk0NTljMWUzM2Q3ZmNiZCJ9,sungsam,P3ntium5chandbaremBegeh7,,Samsung Account,Customer Accounts,0
-https://www.lg.com/de/support/mein-lg/anmeldung,user,Ab5t3cktetKöche1tenFragbaren,,LG Support,Customer Accounts,0
-https://account.xiaomi.com/pass/serviceLogin?callback=http%3A%2F%2Fglobal.mi.com%2Fen%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fwww.mi.com%252Fen%252F%26sign%3DZDk4YmY0MTRkMThmODExYTE0MDljYWRmYzczZmNjOGZjNDAzNzU0Mg%2C%2C&sid=mi_overseaen&_locale=en,user,Ang310genenGastgebernWandersmann,,Xiaomi Account (北京小米科技有限责任公司 ),Customer Accounts,0
-https://oneplus.net/de/,twominus,Armach53FaucheUrtüm1iche,,Oneplus Shop,Customer Accounts,0
-https://forums.oneplus.net/,twominus,Umg3kipptesRüffelndF0rtspü1st,,Oneplus Forum,Customer Accounts,0
-https://www.car2go.com/auth/realms/c2gcustomer/protocol/openid-connect/auth?client_id=portal-client&redirect_uri=https%3A%2F%2Fwww.car2go.com%2FDE%2Fde%2Fmyaccount%2F&state=035e310a-ccdd-44e1-9102-95820d39ab0a&nonce=7fa08314-69c3-49c3-9f34-6f1d23b0f985&response_mode=fragment&response_type=code&scope=openid,benz,Vol1st3nAndremSchrotbr0ts,,Car2Go,Car Sharing,0
-https://www.drive-now.com/de/de,bmw,Warb3nHei15amereDämme,,DriveNow ,Car Sharing,0
-https://www.flinkster.de/kundenbuchung/process.php?proc=online_anmeldung&f_request=J&f=3#,car,V3rmutestDruckba1kenSekt0rs,"Deutsche Bahn, but they have electric cars",Flinkster,Car Sharing,0
-https://www.stadtmobil.de/,auto,V3rkeilteHal1enbahn5ympathien,,Stadtmobil Car Sharing,Car Sharing,0
-https://www.sixt.de/,rental,Starrt3nReihstErneu7e5,,Sixt,Car Sharing,0
-https://www.hertz.de/rentacar/reservation/,car,Frucht3ndAuffalleBei1egte5t,,Hertz Rental Cars,Car Sharing,0
-https://www.europcar.de/,rental,Kam31sTestete5tJägerin,,europcar.de - rental,Car Sharing,0
-https://fahrkarten.bahn.de/cache/start/start.post?lang=de&scope=login&dbkanal_007=L01_S01_D001_KIN0004_TOP-NAVI-LOGIN_LZ01#stay,öpnv,Säub3rungBedanktestBallwech5e1,,Deutsche Bahn Fahrkarten,Mobility,0
-https://www.flixbus.de/,bus,Mitspr3cheAnkaufte5t1agebedingt,,Flixbus,Mobility,0
-https://www.bq.com/de/,customer,Sp0ntan5t3AufgepeppteUnentdeckt,,BQ,Customer Accounts,0
-https://customer-de.wikomobile.com/src/engine.php,user,F3rienidyllV01ksfestesWieners,,Wiko Customer Account,Customer Accounts,0
-https://www.razerzone.com/de-de,user,N3tt0zinsenPrivi1egsMachbaren,,Razer Gaming Stuff,Customer Accounts,0
-https://www.logitech.com/de-de,keyboard,S0mm3rb1umeAbgingeAbgedankter,,Logitech,Customer Accounts,0
-https://www.facebook.com/,fakeuser,Pa1äarktisPfand3sUmsp0nnenem,,Facebook (Second Account),Social Media,0
-https://myspace.com/,lol,123456789,,MySpace,Social Media,0
-https://www.vero.co/,social,Daur3VermummHumans7e5,,Vero Social Network,Social Media,0
-https://www.instagram.com/,photos,Wägbar35eparatemNage1nde,,Instagram,Social Media,0
-https://www.flickr.com/,photos,Ansch0bstPrivatbri3fG1asieren,,Flickr,Social Media,0
-https://www.tumblr.com/login,blogging,Abzuwi3genWälzendeMu1d3n,,Tumblr,Social Media,0
-https://www.blogger.com/about/?r=1-null_user,blog,Sitz3ndenAbkap5e1eAngebereien,> Google Tumblr Clone,Blogger,Social Media,0
-https://www.reddit.com/,troll,Abg3nicktenZögernd5tAnmaß7en,,Reddit,Social Media,0
-https://www.futuremark.com/,benchmark,Ank1ang5NacktB3zauberter,,futuremark.com - benchmark,Private,0
-https://www.computerbase.de/forum/,user123,V3rdünntemEr5chreck7Anhäufend,,Computerbase,IT,0
-https://www.golem.de/,user456,Ti3ferD0zierteUmsege1tet,,Golem,IT,0
-https://www.heise.de/,ct,B3werfendesM0tzeAbwei5t,,Heise,IT,0
-http://www.chip.de/,user196,V3rk0ppelInnehabenWede1t,,Chip.de,IT,0
-http://www.mediamarkt.de/,shopping,Ansäg3ndZwickzangenPeil5igna1,,Media Markt,Shopping,0
-http://www.saturn.de/,customer,G3schauertWi1dcard5Mündigen,,Saturn,Shopping,0
-https://outlook.live.com/owa/,mail,Mütt3rchenSiebenfacheMu5tertex7,,Outlook,Work,0
-https://onedrive.live.com/about/de-de/,storage,Taiwan3rnGeknöpfterWieher73n,,Onedrive,Work,0
-https://products.office.com/de-de/home,writer,Walz3nhöheBe5türzteP1eitegehen,,Office 365,Work,0
-https://uplay.ubi.com/,purchase,Stich3ltenA1tbayernRinnende5,,Uplay,Hobbies,0
-https://www.nexusmods.com/games?,mod,G3würfe1tFindbarRadar5chirm,,Nexusmods,Hobbies,0
-http://en.cdprojektred.com/,gamer,V3rarmendeGewächsenF1ügge5,,CD Projekt Red,Hobbies,0
-https://account.dji.com/login?appId=store&locale=DE_DE&backUrl=https%3A%2F%2Fwww.dji.com%2Fde,fly,3inweichteZerbarstetTranchier57,,DJI Drones,Hobbies,0
-https://www.komoot.de/,sport,Ton10s3nUmfasseBefeuertes,,Komoot,Hobbies,0
-https://community.letsencrypt.org/,ssl,Hall3ndenRedigierung1äu7ernden,,Let's Encrypt Community,Development,0
-http://bfy.tw/5zh,lol,Bolzan0G3köpftenAsy1,What could this be? I definitely don't know! Never seen it!,Mystery Account,Private,0
-https://bugzilla.mozilla.org/,bug,Ri3genSatiniertesIrrwi7zige5,,Bugzilla,Development,0
-https://support.mozilla.org/de/users/auth,help,Stimml0sKavali3renVerwe1ktes,,Mozilla Support,Private,0
-http://www.gamestar.de/,reader,P0rti3rtetältesterErk1immtet,,gamestar.de - reader,IT,0
-https://www.pinterest.de/,photo,Bind3tUnerf0rschtKrank5t,,Pinterest,Social Media,0
-https://vimeo.com/,watch,$h0rT,,Vimeo,Entertainment,0
-https://soundcloud.com/,music,Oxidati0nH3imzah1tenFindige,,Soundcloud,Entertainment,0
-http://bbc.co.uk/,reader,Tr0ck3nererAnvisierten5temmenden,,BBC,International,0
-https://issuu.com/,publish,S3elenhei1eExpositi0nAbhängt,,ISSUU Publisher Account,Work,0
-https://www.yelp.com/,rate,BuchsbaumsBasis1ag3r5Erneuernden,,Yelp,Private,0
-https://www.imdb.com/,movies,Gal3rienNeblig5tFlege1hafte,,IMDb,Entertainment,0
-https://www.washingtonpost.com/,user,Rauchig3sGehackteEhe5tif7er,,Washington Post,International,0
-https://www.rakuten.co.jp/,buy,W3gzufegendZeilenweiseEntg1ei5t,,Rakuten Japan,Shopping,0
-https://www.telegraph.co.uk/,reader,V3rpolteMilizenGrapho10gen,,Telegraph,International,0
-https://www.etsy.com/,buy,Funk31tMasernsJu5tieren,,Etsy,Shopping,0
-https://www.rakuten.de/,buyer,3rglühtetG1itzerte5tEntwendeten,,Rakuten,Shopping,0
-https://www.change.org/,activism,3ntfesse1nVerkupfereErnähr5t,,Change.org,Private,0
-https://www.tripadvisor.com,travel,NotaAbdrift3tenFikti0na1,,TripAdvisor,Private,0
-https://www.booking.com/index.de.html,book,N3u5temAufkochendeKr0atinnen,,Booking.com,Shopping,0
-https://www.cisco.com/c/en/us/about/account.html,switches,Knitt3rigen0rgelk1angHitze,,Cisco Login,Work,0
+url,username,password,totp,extra,name,grouping,fav
+http://,,,,,Password Minimal,,0
+https://example.com,,dzVic8PMEMRk9qv,,,Password Normal,,0
+https://accounts.google.com/ServiceLogin,Username,a4ds56af4ds65f4dsa65f41dsa65as6d6sda,,"The password app lists official clients, third party apps and programming libraries in the included ""Apps & Extensions"" section.
+Apps are also listed in the readme, libraries are also listed in the developer handbook.
+If you have developed an app or library and want it to be listed there, this page contains the requirements and process to do so.",Password Maximal,Email,1
+http://sn,,,,,Notes Minimal,,0
+http://sn,,,,[Passwords Test Environment](https://test.passwordsapp.org/apps/cms_pico/pico/passwords_test),Notes Standard,,0
+http://sn,,,,[Passwords Test Environment](https://test.passwordsapp.org/apps/cms_pico/pico/passwords_test),Notes Maximal,Email,1
+http://sn,,,,"NoteType:Address
+Language:en-US
+Title:
+First Name:
+Middle Name:
+Last Name:
+Username:
+Gender:
+Birthday:,,
+Company:
+Address 1:
+Address 2:
+Address 3:
+City / Town:
+County:
+State:
+Zip / Postal Code:
+Country:
+Timezone:
+Email Address:
+Phone:
+Evening Phone:
+Mobile Phone:
+Fax:
+Notes:",Address Minimal,,0
+http://sn,,,,"NoteType:Address
+Language:en-US
+Title:
+First Name:First
+Middle Name:
+Last Name:Last
+Username:
+Gender:
+Birthday:,,
+Company:
+Address 1:
+Address 2:
+Address 3:
+City / Town:
+County:
+State:
+Zip / Postal Code:
+Country:
+Timezone:
+Email Address:mail@example.com
+Phone:
+Evening Phone:
+Mobile Phone:
+Fax:
+Notes:",Address Standard,,0
+http://sn,,,,"NoteType:Address
+Language:en-US
+Title:mr
+First Name:First
+Middle Name:Middle
+Last Name:Last
+Username:Username
+Gender:m
+Birthday:August,10,1990
+Company:Company
+Address 1:Address 1
+Address 2:Address 2
+Address 3:Address 3
+City / Town:City
+County:County
+State:State
+Zip / Postal Code:ZIP
+Country:DE
+Timezone:+01:00,1
+Email Address:mail@example.com
+Phone:{""num"":""49666666"",""ext"":""190"",""cc3l"":""DEU""}
+Evening Phone:{""num"":""49555555"",""ext"":""190"",""cc3l"":""DEU""}
+Mobile Phone:{""num"":""49666555"",""ext"":""159"",""cc3l"":""DEU""}
+Fax:{""num"":""49999999"",""ext"":""190"",""cc3l"":""DEU""}
+Notes:dsfasdf asdf dasfdsa fasdgfs gfadsgf dsafgdsa agfds gasfds fadsf asdfsd a",Address Maximal,Email,0
+http://sn,,,,"NoteType:Credit Card
+Language:en-US
+Name on Card:
+Type:
+Number:
+Security Code:
+Start Date:,
+Expiration Date:,
+Notes:",Card Minimal,,0
+http://sn,,,,"NoteType:Credit Card
+Language:en-US
+Name on Card:
+Type:
+Number:1234-4567-7890-0123
+Security Code:456
+Start Date:,
+Expiration Date:,
+Notes:",Card Standard,,0
+http://sn,,,,"NoteType:Credit Card
+Language:en-US
+Name on Card:Name on Card
+Type:Type
+Number:0123-3456-6789-9123
+Security Code:789
+Start Date:April,2020
+Expiration Date:December,2024
+Notes:rgf agre iougrefgnb rfgaiufdgf aiupgfrdsauga biuhdfsa iujdfgv nands pgfdpdfdsgfnodfgb iudsij bd bsfa",Card Maximal,Cards,0
+http://sn,,,,"NoteType:Bank Account
+Language:en-US
+Bank Name:
+Account Type:
+Routing Number:
+Account Number:
+SWIFT Code:
+IBAN Number:
+Pin:
+Branch Address:
+Branch Phone:
+Notes:",Bank Minimal,,0
+http://sn,,,,"NoteType:Bank Account
+Language:en-US
+Bank Name:
+Account Type:
+Routing Number:
+Account Number:0123456
+SWIFT Code:
+IBAN Number:IB46 1234 4567 1235 5643
+Pin:4565
+Branch Address:
+Branch Phone:
+Notes:",Bank Standard,,0
+http://sn,,,,"NoteType:Bank Account
+Language:en-US
+Bank Name:Bank Name
+Account Type:Account Type
+Routing Number:Routing Number
+Account Number:Account Number
+SWIFT Code:SWIFT Code
+IBAN Number:IB01 2365 4398 7536
+Pin:4563
+Branch Address:Branch Address
+Branch Phone:Branch Phone
+Notes:fdsaf dsaf asd asfdsf asdfd asfds fasfds fasdfdas fsfasdfdas f",Bank Maximal,BANK,1
