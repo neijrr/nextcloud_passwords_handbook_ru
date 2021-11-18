@@ -26,7 +26,7 @@ The settings api allows clients to get and set settings in the user account.
 | user.password.generator.special | bool | false | Whether or not generated passwords contain special characters |
 | user.password.security.duplicates | bool | true | Whether or not the server should check passwords for duplicates |
 | user.password.security.age | int | 0 | Marks passwords a weak if they surpass the specified date mark. 0 is off. |
-| user.password.security.hash | int | 40 | How many characters of the has should be saved. Can be either 0, 20, 30 or 40. For e2e this is implemented by the client, count characters from the beginning of the string |
+| user.password.security.hash | int | 40 | How many characters of the hash should be saved. Can be either 0, 20, 30 or 40. For e2e this is implemented by the client, count characters from the beginning of the string |
 | user.mail.security | bool | true | Whether or not the user receives mails about security issues |
 | user.mail.shares | bool | false | Whether or not the user receives mails about new shared objects |
 | user.notification.security | bool | true | Whether or not the user receives notifications about security issues |
