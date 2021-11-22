@@ -302,6 +302,96 @@
             }
         ]
     },
+    "windows"         : {
+        "label": {
+            "en": "Windows"
+        },
+        "style": "grid",
+        "icon" : "windows",
+        "items": [
+            {
+                "id"         : "j0chn",
+                "label"      : {
+                    "en": "Nextcloud Password Client (Alpha)"
+                },
+                "description": {
+                    "en": "Nextcloud Password Client is a Flutter based application to manage passwords from the corresponding Nextcloud App.\nThis app is meant to be run on desktop clients and not on mobile devices (that's what the name should intend).\nThis Version is in development state and there a lot of features missing right now."
+                },
+                "author"     : {
+                    "name"    : "j0chn",
+                    "homepage": "https://gitlab.com/j0chn"
+                },
+                "passlink"   : {
+                    "enabled": false,
+                    "altLink": false
+                },
+                "logo"       : "j0chn-nextcloud-password-client.png",
+                "links"      : {
+                    "homepage": "https://gitlab.com/j0chn/nextcloud_password_client",
+                    "sources" : "https://gitlab.com/j0chn/nextcloud_password_client"
+                },
+                "downloads"  : [
+                    {
+                        "label": {
+                            "en": "Available on GitLab",
+                            "de": "Verfügbar auf GitLab"
+                        },
+                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#windows"
+                    }
+                ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
+                "official"   : false
+            }
+        ]
+    },
+    "linux"         : {
+        "label": {
+            "en": "Linux"
+        },
+        "style": "grid",
+        "icon" : "linux",
+        "items": [
+            {
+                "id"         : "j0chn",
+                "label"      : {
+                    "en": "Nextcloud Password Client (Alpha)"
+                },
+                "description": {
+                    "en": "Nextcloud Password Client is a Flutter based application to manage passwords from the corresponding Nextcloud App.\nThis app is meant to be run on desktop clients and not on mobile devices (that's what the name should intend).\nThis Version is in development state and there a lot of features missing right now."
+                },
+                "author"     : {
+                    "name"    : "j0chn",
+                    "homepage": "https://gitlab.com/j0chn"
+                },
+                "passlink"   : {
+                    "enabled": false,
+                    "altLink": false
+                },
+                "logo"       : "j0chn-nextcloud-password-client.png",
+                "links"      : {
+                    "homepage": "https://gitlab.com/j0chn/nextcloud_password_client",
+                    "sources" : "https://gitlab.com/j0chn/nextcloud_password_client"
+                },
+                "downloads"  : [
+                    {
+                        "label": {
+                            "en": "Available on GitLab",
+                            "de": "Verfügbar auf GitLab"
+                        },
+                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#linux"
+                    }
+                ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
+                "official"   : false
+            }
+        ]
+    },
     "integrations": {
         "label": {
             "en": "Integrations",
