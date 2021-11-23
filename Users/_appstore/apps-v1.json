@@ -312,7 +312,7 @@
             {
                 "id"         : "j0chn",
                 "label"      : {
-                    "en": "Nextcloud Password Client (Alpha)"
+                    "en": "Nextcloud Password Client (WIP)"
                 },
                 "description": {
                     "en": "Nextcloud Password Client is a Flutter based application to manage passwords from the corresponding Nextcloud App.\nThis app is meant to be run on desktop clients and not on mobile devices (that's what the name should intend).\nThis Version is in development state and there a lot of features missing right now."
@@ -357,7 +357,7 @@
             {
                 "id"         : "j0chn",
                 "label"      : {
-                    "en": "Nextcloud Password Client (Alpha)"
+                    "en": "Nextcloud Password Client (WIP)"
                 },
                 "description": {
                     "en": "Nextcloud Password Client is a Flutter based application to manage passwords from the corresponding Nextcloud App.\nThis app is meant to be run on desktop clients and not on mobile devices (that's what the name should intend).\nThis Version is in development state and there a lot of features missing right now."
