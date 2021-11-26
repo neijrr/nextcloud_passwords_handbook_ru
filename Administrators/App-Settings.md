@@ -79,6 +79,7 @@ This service has no dependencies.
 #### Favicon Service
 This service delivers the website favicons .
 The icons are only fetched once for a domain and then stored locally.
+If you change this setting, clear the favicon cache and your browser cache to see changes.
 
 **Local analyzer** fetches the start page of the domain and searches for common icon tags.
 This service usually finds the most icons, but also the most useless icons.
@@ -104,11 +105,14 @@ It is the fastest and most privacy friendly service.
 
 #### Favicon Service Api
 If you use a service with an API, you can enter the url here.
+If you change this setting, clear the favicon cache and your browser cache to see changes.
 
 
 #### Website Preview Service
 This service is used to generate previews of websites.
 Only the front page of the domain is called and at maximum twice for mobile and desktop views.
+If you change this setting, clear the favicon cache and your browser cache to see changes.
+
 If you know a good program or service, feel free to open an issue to support it.
 (Requirements: Offers a free plan and has an api)
 
@@ -143,7 +147,7 @@ HTTPS is not supported.
 #### Website Preview API Key
 If you use "Browshot", "screenshotlayer" or "screenshotmachine.com", you will have to provide an api key here.
 Otherwise these services will not work.
-
+If you change this setting, clear the favicon cache and your browser cache to see changes.
 
 
 ## Default Email Settings
