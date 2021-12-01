@@ -40,5 +40,5 @@ If you're sure that you do not have any hidden passwords, you can try the follow
 4. Make a complete, unencrypted [database export](./Export#database-backup)
 5. Check the contents of the export with a text editor to verify that your data is exported correctly
 6. Go into `Settings` and use the option to reset everything in the `Danger Zone`
-7. [Import the database backup](./Import/Import-from-backup)
+7. [Import the database backup](../Import/Import-from-Backup)
 8. Delete the backup file and restore your settings
