@@ -315,7 +315,8 @@
                     "en": "Nextcloud Password Client (WIP)"
                 },
                 "description": {
-                    "en": "Nextcloud Password Client is a Flutter based application to manage passwords from the corresponding Nextcloud App.\nThis app is meant to be run on desktop clients and not on mobile devices (that's what the name should intend).\nThis Version is in development state and there a lot of features missing right now."
+                    "en": "Nextcloud Password Client is a Flutter based application to manage passwords on you Desktop PC. The app is new and lots of features will be added in upcoming releases.",
+                    "de": "Nextcloud Password Client ist eine auf Flutter basierende Anwendung zur Verwaltung von ihrem Computer aus. Die App ist neu und viele neue Funktionen werden in den nächsten Versionen hinzugefügt."
                 },
                 "author"     : {
                     "name"    : "j0chn",
@@ -360,8 +361,8 @@
                     "en": "Nextcloud Password Client (WIP)"
                 },
                 "description": {
-                    "en": "Nextcloud Password Client is a Flutter based application to manage passwords from the corresponding Nextcloud App.\nThis app is meant to be run on desktop clients and not on mobile devices (that's what the name should intend).\nThis Version is in development state and there a lot of features missing right now.",
-                    "de": "Nextcloud Password Client ist eine auf Flutter basierende Anwendung zur Verwaltung von Passwörtern aus der entsprechenden Nextcloud App.\nDiese App ist für den Einsatz auf Desktop Clients und nicht auf mobilen Geräten gedacht (Das soll der Name ausdrücken).\nDiese Version befindet sich noch in der Entwicklung und es fehlen noch viele Funktionen."
+                    "en": "Nextcloud Password Client is a Flutter based application to manage passwords on you Desktop PC. The app is new and lots of features will be added in upcoming releases.",
+                    "de": "Nextcloud Password Client ist eine auf Flutter basierende Anwendung zur Verwaltung von ihrem Computer aus. Die App ist neu und viele neue Funktionen werden in den nächsten Versionen hinzugefügt."
                 },
                 "author"     : {
                     "name"    : "j0chn",
@@ -383,6 +384,52 @@
                             "de": "Verfügbar auf GitLab"
                         },
                         "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#linux"
+                    }
+                ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
+                "official"   : false
+            }
+        ]
+    },
+    "macos"         : {
+        "label": {
+            "en": "macOS"
+        },
+        "style": "grid",
+        "icon" : "apple",
+        "items": [
+            {
+                "id"         : "j0chn",
+                "label"      : {
+                    "en": "Nextcloud Password Client (WIP)"
+                },
+                "description": {
+                    "en": "Nextcloud Password Client is a Flutter based application to manage passwords on you Desktop PC. The app is new and lots of features will be added in upcoming releases.",
+                    "de": "Nextcloud Password Client ist eine auf Flutter basierende Anwendung zur Verwaltung von ihrem Computer aus. Die App ist neu und viele neue Funktionen werden in den nächsten Versionen hinzugefügt."
+                },
+                "author"     : {
+                    "name"    : "j0chn",
+                    "homepage": "https://gitlab.com/j0chn"
+                },
+                "passlink"   : {
+                    "enabled": false,
+                    "altLink": false
+                },
+                "logo"       : "j0chn-nextcloud-password-client.png",
+                "links"      : {
+                    "homepage": "https://gitlab.com/j0chn/nextcloud_password_client",
+                    "sources" : "https://gitlab.com/j0chn/nextcloud_password_client"
+                },
+                "downloads"  : [
+                    {
+                        "label": {
+                            "en": "Available on GitLab",
+                            "de": "Verfügbar auf GitLab"
+                        },
+                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main"
                     }
                 ],
                 "features"   : {
