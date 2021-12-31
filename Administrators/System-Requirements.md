@@ -63,11 +63,15 @@ If you use DietPi, [check the guide for your webserver choice](./Index#dietpi).
 ### Third Party Services
 To provide all api features, passwords may use third party services depending on the settings.
 The following list contains all domains which may provide these services.
-However some local service providers like Pageres and the favicon finder may contact any domain as requested via the api.
+However, some local service providers like Pageres and the favicon finder may contact any domain as requested via the api.
 The [user handbook](./User-Handbook) also makes direct requests to external servers from the user browser and your server.
 
 - https://github.com
+- https://api.pwnedpasswords.com
+- https://raw.githubusercontent.com
 - https://icons.passwordsapp.org
+- https://breached.passwordsapp.org
+- https://statistics.passwordsapp.org
 - https://favicongrabber.com
 - https://icons.duckduckgo.com
 - https://www.google.com
@@ -75,12 +79,8 @@ The [user handbook](./User-Handbook) also makes direct requests to external serv
 - http://api.screenshotlayer.com
 - http://api.screenshotmachine.com
 - https://secure.screeenly.com
-- https://archive.org
-- https://api.pwnedpasswords.com
-- https://raw.githubusercontent.com
 - http://watchout4snakes.com
 - http://api.corpora.uni-leipzig.de
-- https://ncpw.mdns.eu
 
 ### Licenses
 All licensing information can be found in the [Licenses.md](https://github.com/marius-wieschollek/passwords/blob/master/Licenses.md) file

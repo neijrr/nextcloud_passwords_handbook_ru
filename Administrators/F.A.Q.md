@@ -42,14 +42,17 @@ If the automatically determined preference is not right for you, you can set pre
 The app is not designed to run offline.
 The options below are the best way to run the app on a server without internet access.
 
-Internet access is still required to fetch the bad passwords database.
+The app will try to fetch the breached passwords database over teh Internet.
+You can prevent this by [creating the database locally](https://breached.passwordsapp.org/).
+This needs to be done everytime the database is updated.
+
 You *must* also [host the user manual](./User-Handbook/Self-Hosting) yourself.
 
-| Setting | Offline Option |
-| --- | --- |
-| Password Security Checks | 10 Million Passwords _or_ 1 Million Passwords |
-| Password Generator Service | Local dictionary _or_ Random characters |
-| Favicon Service | None |
-| Website Preview Service | None |
-| Server survey participation | None |
-| Show Nightly Updates in "Apps" | No |
+| Setting                        | Offline Option                                |
+|--------------------------------|-----------------------------------------------|
+| Password Security Checks       | Big local database _or_ Small local database  |
+| Password Generator Service     | Local dictionary _or_ Random characters       |
+| Favicon Service                | None                                          |
+| Website Preview Service        | None                                          |
+| Server survey participation    | None                                          |
+| Show Nightly Updates in "Apps" | No                                            |

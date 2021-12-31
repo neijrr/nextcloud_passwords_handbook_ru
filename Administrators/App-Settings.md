@@ -45,19 +45,18 @@ Their database receives regular updates with lists of passwords used by hackers 
 The app uses their [k-anonymity api](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/#cloudflareprivacyandkanonymity) to download a subset of hashes and does the comparison locally.
 The app never sends SHA-1 hashes to the api.
 
-**10 Million Passwords** downloads a static password file and fills the local cache with it.
-After this, all password checking can be done locally.
-Unlike Hibp it does not need to make a request for each check, but the database is a lot smaller and not up to date.
-Updating the database can take up to 1.75Gib of RAM or up to 125MiB on less powerful systems.
-If you do not have that much RAM available, you should not use this service.
-It also requires around 512Mib of disk space.
+**Big local database (25M passwords)** downloads a static database of 25 million breached passwords and stores them locally.
+Unlike Hibp?, the security check is done locally and no request to any api is made.
+This database contains the 25 million most common entries from Hibp? and is significantly smaller than theirs (600M+ entries) and also not updated as often.
+The database requires around 600MiB of disk space on your server.
 
-**1 Million Passwords** downloads a static file with the most common passwords.
-It uses a lot less system resources than the 10Mio passwords and should run on any system.
-The database is considerably smaller and not up to date.
+**Small local database (5M passwords)** downloads a static database of 5 million breached passwords and stores them locally.
+Unlike Hibp?, the security check is done locally and no request to any api is made.
+This database contains the 5 million most common entries from Hibp? and is significantly smaller than theirs (600M+ entries) and also not updated as often.
+The database requires around 150MiB of disk space on your server.
 
-**10 Mio Passwords + Have I been pwned?** fills the local cache with the most common passwords.
-This service fills the local database with the 10 million passwords and therefore reduces the amount of requests to Hibp.
+**Big local database & Hibp?** downloads a static database of the 25 million most common breached passwords and stores them locally.
+If the SHA-1 hash of any password is not found in the local database, it will be checked against the Hibp?-Api.
 
 
 #### Password Generator Service
