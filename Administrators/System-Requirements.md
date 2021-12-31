@@ -1,18 +1,18 @@
 > This page contains the system requirements for the [passwords app for Nextcloud](https://apps.nextcloud.com/apps/passwords).
 > If you're looking for the Nextcloud server system requirements [click here](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html).
 
-|  | Minimum                     | LSR                         | Recommended                                                                                   |
-| --- |-----------------------------|-----------------------------|-----------------------------------------------------------------------------------------------|
-| Processor | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz                                                                                       |
-| RAM       | 512 MiB                     | 512 MiB                     | 8 GiB                                                                                         |
-| Disk      | 4 GiB                       | 4 GiB                       | 64 GiB                                                                                        |
-| Nextcloud | Nextcloud 23                | Nextcloud 23                | Nextcloud 23                                                                                  |
-| OS        | Linux                       | Linux                       | Ubuntu 20.04                                                                                  |
-| Database  | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.5                                                                                  |
-| PHP       | PHP 7.4                     | PHP 7.2                     | PHP 8.0                                                                                       |
-| Webserver | HTTPS                       | HTTPS                       | Nginx 1.19 HTTPS                                                                              |
-| PECL      | Intl                        | Intl                        | Zip, Imagick                                                                                  |
-| Libraries |                             |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+|            | Minimum                     | LSR                         | Recommended                                                                                   |
+|------------|-----------------------------|-----------------------------|-----------------------------------------------------------------------------------------------|
+| Processor  | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz                                                                                       |
+| RAM        | 512 MiB                     | 512 MiB                     | 8 GiB                                                                                         |
+| Disk       | 2 GiB                       | 2 GiB                       | 64 GiB                                                                                        |
+| Nextcloud  | Nextcloud 23                | Nextcloud 23                | Nextcloud 23                                                                                  |
+| OS         | Linux                       | Linux                       | Ubuntu 20.04                                                                                  |
+| Database   | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.5                                                                                  |
+| PHP        | PHP 7.4                     | PHP 7.2                     | PHP 8.0                                                                                       |
+| Webserver  | HTTPS                       | HTTPS                       | Nginx 1.19 HTTPS                                                                              |
+| PECL       | Intl                        | Intl                        | Zip, Imagick                                                                                  |
+| Libraries  |                             |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Version scheme and breaking changes
 Passwords versions are simply the year and month of the release of the version.
