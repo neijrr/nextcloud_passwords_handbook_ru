@@ -331,10 +331,10 @@ Each password entry has the `status` and `statusCode` properties which describe 
 The `status` is an integer value which categorizes the overall status of the password and the `statusCode` is a string which may give a reason for the status.
 The status is maintained by the server and updated automatically.
 
-| Status | Description                        | Status Code | Status Code Description                                                                                      |
-|--------|------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------|
-| 0      | The password is secure             | GOOD        | The password is secure                                                                                       |
-| 1      | User specified rules were violated | DUPLICATE   | The password occurs multiple times in the database                                                           |
-|        |                                    | OUTDATED    | The user specified maximum age for passwords is exceeded                                                     |
-| 2      | The password is insecure           | BREACHED    | The password was found in a database of breached passwords                                                   |
-| 3      | Unknown                            | NOT_CHECKED | The security status of the password was not checked. This can occur if the user has disabled the SAH-1 hash. |
+| Status | Description                        | Status Code | Status Code Description                                                                                     |
+|--------|------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
+| 0      | The password is secure             | GOOD        | The password is secure                                                                                      |
+| 1      | User specified rules were violated | DUPLICATE   | The password occurs multiple times in the database                                                          |
+|        |                                    | OUTDATED    | The user specified maximum age for passwords is exceeded                                                    |
+| 2      | The password is insecure           | BREACHED    | The password was found in a database of breached passwords                                                  |
+| 3      | Unknown                            | NOT_CHECKED | The security status of the password was not checked. This can occur if the user has disabled the SHA1 hash. |
