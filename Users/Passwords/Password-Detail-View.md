@@ -36,6 +36,7 @@ The security section shows all security related information.
   You need to activate [`Maximum age in days`](../Settings#maximum-age-in-days) in the setting for this.
 - `Broken` (red) means that the password is bad and can be found in hacker databases on the internet.
   You need to change it and you should make sure that the account you're using it for has not been compromised
+- `Unknown` (gray) means that the password has no password security hash and no statement about the safety can be made.
 
 
 ## Notes
