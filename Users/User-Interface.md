@@ -13,4 +13,4 @@
 
 ## Feature Overview
 The short video below quickly shows you all the major features of passwords.
-[![Feature Overview](./_files/_previews/feature-overview.gif)](./_files/videos/feature-overview.mp4)
+[![Feature Overview](./_files/_previews/feature-overview.png)](./_files/videos/feature-overview.mp4)
