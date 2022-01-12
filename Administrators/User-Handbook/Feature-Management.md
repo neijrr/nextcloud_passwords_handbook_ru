@@ -15,10 +15,10 @@ This file will be fetched once per day from the handbook and is then cached in t
 **Note:** Once a feature is considered to be stable, the option to enable/disable it will be removed.
 
 ## Feature list
-| Scope | Feature | Description |
-| --- | --- | --- |
+| Scope  | Feature               | Description                                          |
+|--------|-----------------------|------------------------------------------------------|
 | server | legacy-client-warning | Show a notification if a client is using the old api |
-| webapp | first-run-wizard | Enable the first run wizard with E2E setup |
+| webapp | first-run-wizard      | Enable the first run wizard with E2E setup           |
 
 #### Disable feature management
 It is possible to disable the feature management.

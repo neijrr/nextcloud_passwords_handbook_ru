@@ -1,3 +1,7 @@
+## Handbook for Passwords app
+This wiki article describes how you can replace the built-in user handbook of the passwords app with your own user handbook.
+If you just want to have the official handbook hosted on your server instead of Github, consider the [Passwords Handbook app](https://apps.nextcloud.com/apps/passwords_handbook).
+
 ## Requirements
 A server which can be accessed by your users without authentication and which allows requests from the domain of your Nextcloud server.
 
