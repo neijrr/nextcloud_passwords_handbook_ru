@@ -82,10 +82,6 @@ This is what a full report looks like:
         "sslProxy": false,
         "subdirectory": false
     },
-    "legacyApi": {
-        "enabled": 1,
-        "used": false
-    },
     "services": {
         "images": "imagick",
         "favicons": "bi",

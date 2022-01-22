@@ -9,7 +9,7 @@ A server which can be accessed by your users without authentication and which al
 
 ## Clone our wiki
 The handbook is part of our wiki, therefore you should clone it if you don't want to write your own handbook from scratch.
-Make sure that folders like `.git` are not accessible trough your webserver.
+Make sure that folders like `.git` are not accessible through your webserver.
 
 #### Clone the wiki to your own server
 ```bash
