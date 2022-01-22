@@ -36,23 +36,10 @@ If the automatically determined preference is not right for you, you can set pre
 ## How do i make the app look like in the app store?
 - We use **Besticon** as **Favicon Service**. We recommend [hosting it your self](./Guides/Services/Besticon-Self-Hosting)
 - We use **Pageres** as **Website Preview Service**
+- We use **Imagic** for **Image Rendering**
 
 ## How do i use the app on a server without internet access?
 
 The app is not designed to run offline.
-The options below are the best way to run the app on a server without internet access.
 
-The app will try to fetch the breached passwords database over teh Internet.
-You can prevent this by [creating the database locally](https://breached.passwordsapp.org/).
-This needs to be done everytime the database is updated.
-
-You *must* also [host the user manual](./User-Handbook/Self-Hosting) yourself.
-
-| Setting                        | Offline Option                                |
-|--------------------------------|-----------------------------------------------|
-| Password Security Checks       | Big local database _or_ Small local database  |
-| Password Generator Service     | Local dictionary _or_ Random characters       |
-| Favicon Service                | None                                          |
-| Website Preview Service        | None                                          |
-| Server survey participation    | None                                          |
-| Show Nightly Updates in "Apps" | No                                            |
+[We provide a list of the best fitting options for that scenario here](./App-Settings#optimal-settings)

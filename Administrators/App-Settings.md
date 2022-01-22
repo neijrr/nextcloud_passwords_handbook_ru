@@ -46,11 +46,13 @@ This reduces the number of requests to the Hibp? api and speeds up the check.
 #### Password Generator Service
 This service will be used to generate the basic words for a new password.
 
-**Local Dictionary** detects and uses locally installed dictionaries for english, german, french, italian, spanish and portuguese..
-Actually available options depend on which dictionaries are installed on the server.
+**Select automatically** selects the best fitting service based on availability.
 
 **Leipzig Corpora Collection** supports english, german, french, italian, spanish, portuguese, dutch, dansk, czech and polish.
 The service returns random words from a randomly selected corpora and has the largest language support.
+
+**Local Dictionary** detects and uses locally installed dictionaries for english, german, french, italian, spanish and portuguese.
+Actually available options depend on which dictionaries are installed on the server.
 
 **watchout4snakes.com** is only available in english.
 It can provide words based on their rarity and type and is therefore a great service to generate easy to remember and secure passwords.
@@ -215,3 +217,19 @@ Contains the raw website screenshots and resized or cropped versions.
 
 #### Passwords Cache
 Contains lists with bad passwords.
+
+
+
+## Optimal settings
+Which settings are optimal for you is dependent on your use case is dependent on your use case.
+This table is intended to help with that choice.
+
+| Sevice                      | Recommended                                             | Privacy friendly                                                                                                        | Offline                                                                                                                                                     |
+|-----------------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                             | Recommended services for best user experience           | Services with the least change of user data sent to others                                                              | Services which don't require internet connection                                                                                                            |
+| Password Security Check     | "Hibp?" and "Big local database & Hibp?"                | "Big local database & Hibp?"                                                                                            | "Big local database" and "Small local database" with [self generated dataset](./Services/Password-Security-Check-Services#big-local-database-25m-passwords) |
+| Password Generator Service  | "Select automatically" and "Leipzig Corpora Collection" | "Local dictionary" and "Random characters"                                                                              | "Local dictionary" and "Random characters"                                                                                                                  |
+| Favicon Service             | "Besticon"                                              | "Besticon" ([self hosted](./Besticon-Self-Hosting)) and "Local analyzer"                                                | "None"                                                                                                                                                      |
+| Website Preview Service     | "screeenly" and "Pageres CLI"                           | "Pageres CLI" and "screeenly" ([self hosted](https://github.com/stefanzweifel/screeenly/wiki/Requirements-and-Install)) | "None"                                                                                                                                                      |
+| Server survey participation | "Full"                                                  | "Basic"                                                                                                                 | "None"                                                                                                                                                      |
+| Other settings              | -                                                       | Install the [Passwords Handbook app](https://apps.nextcloud.com/apps/passwords_handbook)                                | Install the [Passwords Handbook app](https://apps.nextcloud.com/apps/passwords_handbook)                                                                    |
