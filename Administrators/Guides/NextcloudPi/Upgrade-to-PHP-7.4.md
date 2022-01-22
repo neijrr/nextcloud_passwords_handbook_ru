@@ -1,5 +1,5 @@
 
-> **PHP 8.0 is out so why not update to the newest version of PHP right away?**
+> **PHP 7.4 is so 2019. Why not update to PHP 8.0 right away?**
 > 
 > **[Check out the PHP 8.0 upgrade guide](./Upgrade-to-PHP-8.0)**
 
