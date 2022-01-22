@@ -9,20 +9,50 @@
             }
         },
         "2021.12" : {
-            "legacy-client-warning": true,
+            "legacy-client-warning": true
+        },
+        "2022.1" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.1" : {
+        "2022.2" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
+        },
+        "2022.3" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
+        },
+        "2022.4" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
+        },
+        "2022.5" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
+        },
+        "2022.6" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         }
     },
     "webapp": {
-        "2021.12": {
+        "2022.1": {
             "first-run-wizard": false
         },
-        "2021.1": {
+        "2022.2": {
+            "first-run-wizard": false
+        },
+        "2022.3": {
+            "first-run-wizard": false
+        },
+        "2022.4": {
+            "first-run-wizard": false
+        },
+        "2022.5": {
+            "first-run-wizard": false
+        },
+        "2022.6": {
             "first-run-wizard": false
         }
     }
