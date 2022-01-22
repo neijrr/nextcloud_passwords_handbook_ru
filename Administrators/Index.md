@@ -16,11 +16,11 @@
 - [Migrating from the legacy app](./Guides/Maintenance/Legacy-Migration)
 
 #### Third party services
+- [Password Security Check Services](./Services/Password-Security-Check-Services)
 - [Self-Hosting Besticon](./Guides/Services/Besticon-Self-Hosting)
 
 #### NextcloudPi
 - [Upgrade NextcloudPi to PHP 8.0](./Guides/NextcloudPi/Upgrade-to-PHP-8.0)
-- [Upgrade NextcloudPi to PHP 7.4](./Guides/NextcloudPi/Upgrade-to-PHP-7.4)
 
 #### DietPi
 - [Upgrade DietPi to PHP 8.0 with Lighttpd](./Guides/DietPi/Upgrade-to-PHP-8.0-with-Lighttpd)

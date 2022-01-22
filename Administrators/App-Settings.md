@@ -1,23 +1,5 @@
 The app settings can be found in the administrative area of Nextcloud.
 
-## Legacy Api Support
-The Legacy API is the API which was originally provided by the Passwords App in versions prior to 2018.1.
-This API is used by many clients for passwords and therefore still available.
-However the API does not support client side encryption or safe server side encryption.
-It is also makes the application slower and does not strictly enforce HTTPS.
-
-#### Enable Legacy API
-This option enables or disables the API completely.
-If the API is disabled it will no longer be possible to access it in any way as the app will no longer register the necessary components in Nextcloud.
-
-**Note:** The browser extension does not support the new api in versions prior to 2.0.0.
-
-#### Legacy API was last used on
-This setting is read only.
-It should tell you when the legacy api was last used.
-If you can see that the api is no longer in use on your server, you should disable it.
-
-
 
 ## Internal Data Processing
 These settings influence how Passwords processes different types of data internally.
@@ -40,23 +22,25 @@ In this section you can configure all the third party services used by Passwords
 This service is used to check if a password is safe or not.
 
 **Have I been pwned?** is the recommended service.
-[haveibeenpwned.com](https://haveibeenpwned.com/) stores the SHA-1 hashes of billions of compromised passwords.
-Their database receives regular updates with lists of passwords used by hackers to attempt to crack accounts.
-The app uses their [k-anonymity api](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/#cloudflareprivacyandkanonymity) to download a subset of hashes and does the comparison locally.
-The app never sends SHA-1 hashes to the api.
+Checks SHA-1 hashes against the database of [haveibeenpwned.com](https://haveibeenpwned.com/) which contains hundreds of millions of compromised passwords.
+The service is privacy friendly since it downloads data from the api and does the comparison locally and never sends any identifying information to the api.
+The service is the most up-to-date source when it comes to notifying you about breached passwords.
+[More details about the service can be found here.](./Services/Password-Security-Check-Services#have-i-been-pwned)
 
 **Big local database (25M passwords)** downloads a static database of 25 million breached passwords and stores them locally.
-Unlike Hibp?, the security check is done locally and no request to any api is made.
-This database contains the 25 million most common entries from Hibp? and is significantly smaller than theirs (600M+ entries) and also not updated as often.
-The database requires around 600MiB of disk space on your server.
+The security check is performed locally and no external service is involved.
+The downside is the significantly smaller database which is also updated less often.
+[More details about the service can be found here.](./Services/Password-Security-Check-Services#big-local-database-25m-passwords)
 
 **Small local database (5M passwords)** downloads a static database of 5 million breached passwords and stores them locally.
-Unlike Hibp?, the security check is done locally and no request to any api is made.
-This database contains the 5 million most common entries from Hibp? and is significantly smaller than theirs (600M+ entries) and also not updated as often.
-The database requires around 150MiB of disk space on your server.
+The security check is performed locally and no external service is involved.
+The downside is the significantly smaller database which is also updated less often.
+[More details about the service can be found here.](./Services/Password-Security-Check-Services#small-local-database-5m-passwords)
 
-**Big local database & Hibp?** downloads a static database of the 25 million most common breached passwords and stores them locally.
-If the SHA-1 hash of any password is not found in the local database, it will be checked against the Hibp?-Api.
+**Big local database & Hibp?** combines the "Have i been pwned?" and "Big local database" services.
+The service checks against the local database first and only contacts Hibp? if the SHA-1 hash is not found locally.
+This reduces the number of requests to the Hibp? api and speeds up the check.
+[More details about the service can be found here.](./Services/Password-Security-Check-Services#big-local-database--hibp)
 
 
 #### Password Generator Service
