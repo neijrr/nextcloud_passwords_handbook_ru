@@ -8,10 +8,10 @@
 | Disk       | 2 GiB                       | 2 GiB                       | 64 GiB                                                                                        |
 | Nextcloud  | Nextcloud 23                | Nextcloud 23                | Nextcloud 23                                                                                  |
 | OS         | Linux                       | Linux                       | Ubuntu 20.04                                                                                  |
-| Database   | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.5                                                                                  |
-| PHP        | PHP 7.4                     | PHP 7.2                     | PHP 8.0                                                                                       |
-| Webserver  | HTTPS                       | HTTPS                       | Nginx 1.19 HTTPS                                                                              |
-| PECL       | Intl                        | Intl                        | Zip, Imagick                                                                                  |
+| Database   | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.7                                                                                  |
+| PHP        | PHP 8.0                     | PHP 7.3                     | PHP 8.0                                                                                       |
+| Webserver  | HTTPS                       | HTTPS                       | Nginx 1.21 HTTPS                                                                              |
+| PECL       | Intl                        | Intl                        | Intl, Zip, Imagick                                                                            |
 | Libraries  |                             |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
 
 ### Version scheme and breaking changes

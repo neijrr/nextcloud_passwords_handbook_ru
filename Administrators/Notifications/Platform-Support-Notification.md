@@ -2,11 +2,8 @@
 With the first release of a new year, the passwords app drops support for all major versions of Nextcloud except the latest and all PHP versions without [active support](https://php.net/supported-versions.php) by the PHP community.
 For systems that use a PHP version which is still supported by Nextcloud but not by the passwords app, the Nextcloud appstore will automatically switch to the [legacy support release](../System-Requirements#lsrlegacy-support-releases).
 
-Around half a year before this, the admin settings of the app will show a warning if the server runs on an old software platform.
-Three months before the end of support, each update creates a notification reminding administrators to update.
-This should give administrators enough time to plan and execute any necessary updates.
-
-**NOTE:** Since the "current" version of Nextcloud can vary based on where you get updates from, we define the latest stable version as the version listed on the [Nextcloud download page](https://nextcloud.com/install/#instructions-server).
+**NOTE:** The latest version of Nextcloud can be found in their [Maintenance and Release Schedule](https://github.com/nextcloud/server/wiki/Maintenance-and-Release-Schedule).
+We don't care if wherever you're getting Nextcloud from is not up-to-date.
 
 ## What does this mean?
 Your server is using a version of Nextcloud or PHP that will soon no longer receive any updates for the passwords app.
@@ -22,16 +19,15 @@ This notification is only about the passwords app and not related to Nextcloud o
 This change only affects future updates of the app.
 The currently installed version of the app will continue to work just like it does now.
 
-_However it might happen that some third party services used by the app will stop working over time._
+_However it might happen that some third party services used by the app will stop working at some point._
 _It can also happen that apps and other tools using the passwords api will require a newer version of that api to work._
 _If this happens, we will **NOT** fix it._
 
 ## Will the app stop working if i update?
 **NO**
 
-Nextcloud will check the minimum requirements before updating an app and won't advertise updates you can not install.
-Any update shown in the app store can be installed, even if your server does not meet our minimum requirements of the latest version of passwords.
-If a [legacy support release](../System-Requirements#lsrlegacy-support-releases) is available for your system, it will be distributed automatically trough the Nextcloud appstore and you can install it as a regular update.
+Nextcloud checks the minimum requirements before updating an app and won't advertise updates you can not install.
+If a [legacy support release](../System-Requirements#lsrlegacy-support-releases) is available for your system, it will be distributed automatically through the Nextcloud appstore and you can install it as a regular update.
 If you install an update manually (by uploading the new version to your server), Nextcloud will just deactivate the app.
 
 ## Why are you doing this?
