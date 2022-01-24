@@ -312,7 +312,7 @@
             {
                 "id"         : "j0chn",
                 "label"      : {
-                    "en": "Nextcloud Password Client (WIP)"
+                    "en": "Nextcloud Password Client"
                 },
                 "description": {
                     "en": "Nextcloud Password Client is a Flutter based application to manage passwords on your PC. The app is new and lots of features will be added in upcoming releases.",
@@ -334,10 +334,10 @@
                 "downloads"  : [
                     {
                         "label": {
-                            "en": "Available on GitLab",
-                            "de": "Verfügbar auf GitLab"
+                            "en": "Available in the Microsoft Store",
+                            "de": "Verfügbar im Microsoft Store"
                         },
-                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#windows"
+                        "url"  : "https://www.microsoft.com/store/apps/9NXVZ0ZP6D5Z"
                     }
                 ],
                 "features"   : {
