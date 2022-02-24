@@ -51,6 +51,30 @@ If activated, the password generator will add numbers to the created password.
 If activated, the password generator will add special characters like `$, €, @` to the created password.
 
 
+### Login & Session
+**Note:** This section is available if you have End-to-end encryption enabled
+
+##### Keep me logged in
+This setting controls how the app will keep the current session open before the encryption password needs to be entered again.
+The option "Always" will keep the session open as long as the tab is open, 
+"when i'm active" keeps it open as long as there is any kind of action in the tab and 
+"when i'm working" only keeps the session open when there are requests to the server.
+
+##### End session after (Advanced)
+Controls how long the server should keep a session after the last contact to the client.
+If the "Keep me logged in" setting is not set to "Always", this setting also controls how long the app will keep you logged in.
+
+
+### Encryption
+##### Server encryption mode (Advanced)
+Choose the default server side encryption mode.
+
+##### Client encryption mode (Advanced)
+Choose the default client side encryption mode.
+
+##### End-to-end Encryption
+Set up end-to-end encryption for your passwords or change the encryption password.
+
 ## User Interface
 ##### Initial section
 Here you can choose which section will be shown when you open the passwords app.
