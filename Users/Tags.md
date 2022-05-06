@@ -47,12 +47,3 @@ You can still find the tag in the trash and see all passwords it was assigned to
 If you choose to restore the tag, it will also appear in the passwords again.
 
 **Note:** Deleting a tag from the trash will delete the tag *only* and *not* the passwords it was assigned to.
-
-
-## Tags in the legacy api
-Tags are available to apps using the legacy api as "categories".
-However, there are some limitations:
-
-- Only one tag will be shown per password
-- You can add new tags by changing the category, but the "current" tag will not be removed
-- Removing the category from a password will remove the tag and set the nex tag as category if available.

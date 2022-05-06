@@ -132,8 +132,3 @@ If the client was not using an app password, we recommend that you change your a
 An administrator has opened the passwords app with your account trough an app like [impersonate](https://apps.nextcloud.com/apps/impersonate).
 If you use a master password, then this does not necessarily mean that access to your passwords was possible.
 For more information please talk to your administrator.
-
-#### The notification "Legacy API: Time to say goodbye!"
-You are still using third party software that accesses the passwords trough the old api from ocPasswords.
-This is not recommended and will cause issues if you use end to end encryption.
-It is recommended that you update that client or look for a replacement.

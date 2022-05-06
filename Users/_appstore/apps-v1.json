@@ -34,7 +34,7 @@
                     "enabled" : true,
                     "link"    : true,
                     "qrcode"  : true,
-                    "protocol": "extension",
+                    "protocol": "domain",
                     "altLink" : false
                 },
                 "logo"       : "firefox.svg",

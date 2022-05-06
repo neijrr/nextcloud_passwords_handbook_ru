@@ -1,7 +1,7 @@
 {
     "server": {
         "current": {
-            "version"     : "2022.1.0",
+            "version"     : "2022.6.0",
             "url"         : "https://apps.nextcloud.com/apps/passwords/releases",
             "requirements": {
                 "nextcloud": "23.0.0",
