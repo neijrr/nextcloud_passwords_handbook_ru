@@ -64,12 +64,12 @@
 
 
 ### Technical Features
-| Feature       | Passwords App | Passman                         |
-|---------------|---------------|---------------------------------|
-| Compatibility | Nextcloud 23  | Nextcloud 20, 21, 22, 23        |
-| Self hosted   | ✔             | ✔                               |
-| Languages     | 14+ languages | 48 languages including dialects |
-| Price         | free          | free                            |
+| Feature       | Passwords App    | Passman                         |
+|---------------|------------------|---------------------------------|
+| Compatibility | Nextcloud 23, 24 | Nextcloud 20, 21, 22, 23        |
+| Self hosted   | ✔                | ✔                               |
+| Languages     | 14+ languages    | 48 languages including dialects |
+| Price         | free             | free                            |
 
 
 ### Browser Extension
