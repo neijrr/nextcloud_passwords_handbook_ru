@@ -11,24 +11,24 @@ Your app must meet all of the following requirements to be listed:
     Since security and trust are very important to our users, they must be able to check the source code of the applications they use.
     
     **Note:** This does not mean that your app must be free or that others must be allowed to use your source code.
+
 * **Apps must not contain Ads**
     
     Any app must not contain any ads.
     Any tracking must be optional and _opt-in_ and compliant with the EU GDPR.
+
 * **Any third party service must be optional**
     
     If your app contacts any server other than the Nextcloud instance of the user, this action should be optional.
     The user must also be aware if data is sent to another service.
+
 * **Apps must not be branded as "Official"**
     
     Apps must not use wording that makes them appear to the user as if they are developed by the developer(s) of the Passwords app for Nextcloud.
-* **Apps must not use the legacy api**
+
+* **Apps must support client side encryption**
     
-    Apps must not use the [legacy api](./Api/Legacy-Api) for ocPasswords.
-    Support for this api will be dropped in january 2022.
-* **(2022) Apps must support client side encryption**
-    
-    Starting january 2022, new apps must support [client side encryption](./Encryption).
+    New apps must support [client side encryption](./Encryption).
     Already listed apps must support client side encryption from january 2023.
 
 
@@ -43,7 +43,6 @@ The ticket must contain the following:
 * Link to the sources
 * Supported Systems/Browsers etc.
 * Information how we can test your app
-* Does your app support client side encryption?
 
 
 ## Removing apps

@@ -380,10 +380,17 @@
                 "downloads"  : [
                     {
                         "label": {
+                            "en": "Available on Flathub",
+                            "de": "Verfügbar auf Flathub"
+                        },
+                        "url"  : "https://flathub.org/apps/details/com.gitlab.j0chn.nextcloud_password_client"
+                    },
+                    {
+                        "label": {
                             "en": "Available on GitLab",
                             "de": "Verfügbar auf GitLab"
                         },
-                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#linux"
+                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#get-it-from"
                     }
                 ],
                 "features"   : {
@@ -429,7 +436,7 @@
                             "en": "Available on GitLab",
                             "de": "Verfügbar auf GitLab"
                         },
-                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#mac-os"
+                        "url"  : "https://gitlab.com/j0chn/nextcloud_password_client/-/tree/main#get-it-from"
                     }
                 ],
                 "features"   : {

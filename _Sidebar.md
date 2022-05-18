@@ -1,4 +1,4 @@
 - [Administrator Manual](https://git.mdns.eu/nextcloud/passwords/wikis/Administrators/Index)
 - [Developer Manual](https://git.mdns.eu/nextcloud/passwords/wikis/Developers/Index)
 - [User Manual](https://git.mdns.eu/nextcloud/passwords/wikis/User/Index)
-- [Report a bug](Bug-Reporting)
+- [Report a bug](https://git.mdns.eu/nextcloud/passwords/wikis/Project/Bug-Reporting)
