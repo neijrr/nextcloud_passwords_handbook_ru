@@ -160,7 +160,7 @@ Text `Code`.
 # Images
 [![Password List](./_files/_previews/main-section.jpg)](./_files/main-section.png)
 ![Password List](./_files/_previews/main-section.jpg)
-[![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)](../_files/Gallery/feature-overview.mp4)
+[![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)](./_files/videos/feature-overview.mp4)
 ![Feature Overview](../_files/Gallery/_previews/feature-overview.gif)
 
 # Diagrams
