@@ -13,7 +13,7 @@
 - [Debugging the app](./Guides/Maintenance/App-Debugging)
 - [Use nightly versions](./Guides/Maintenance/Use-Nightlies)
 - [Migrate to another server](./Guides/Maintenance/Server-Migration)
-- [Migrating from the legacy app](./Guides/Maintenance/Legacy-Migration)
+- [Migrating from the OwnCloud passwords app](./Guides/Maintenance/Legacy-Migration)
 
 #### Third party services
 - [Password Security Check Services](./Services/Password-Security-Check-Services)

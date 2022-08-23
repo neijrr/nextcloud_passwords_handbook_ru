@@ -6,7 +6,7 @@
 | Processor  | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz                                                                                       |
 | RAM        | 512 MiB                     | 512 MiB                     | 8 GiB                                                                                         |
 | Disk       | 2 GiB                       | 2 GiB                       | 64 GiB                                                                                        |
-| Nextcloud  | Nextcloud 23                | Nextcloud 23                | Nextcloud 23                                                                                  |
+| Nextcloud  | Nextcloud 23, 24            | Nextcloud 23, 24            | Nextcloud 24                                                                                  |
 | OS         | Linux                       | Linux                       | Ubuntu 20.04                                                                                  |
 | Database   | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.7                                                                                  |
 | PHP        | PHP 8.0                     | PHP 7.3                     | PHP 8.0                                                                                       |
@@ -52,7 +52,7 @@ The app may run with older PHP versions but this is not tested and bug reports w
 
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages) for Ubuntu and Debian.
 
-If you use NextcloudPi, you can use our [NextcloudPi PHP 8.0 ugprade guide](./Guides/NextcloudPi/Upgrade-to-PHP-8.0).
+If you use NextcloudPi, you can use our [NextcloudPi PHP 8.0 upgrade guide](./Guides/NextcloudPi/Upgrade-to-PHP-8.0).
 
 If you use DietPi, [check the guide for your webserver choice](./Index#dietpi).
 

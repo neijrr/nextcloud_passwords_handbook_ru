@@ -1,10 +1,10 @@
 {
     "server": {
         "current": {
-            "version"     : "2022.6.0",
+            "version"     : "2022.8.0",
             "url"         : "https://apps.nextcloud.com/apps/passwords/releases",
             "requirements": {
-                "nextcloud": "23.0.0",
+                "nextcloud": "24.0.0",
                 "php"      : "8.0.0"
             }
         },
@@ -34,6 +34,22 @@
         "2022.6" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
+        },
+        "2022.7" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
+        },
+        "2022.8" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
+        },
+        "2022.9" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
+        },
+        "2022.10" : {
+            "two-factor-enabled"   : false,
+            "two-factor-required"  : false
         }
     },
     "webapp": {
@@ -53,6 +69,18 @@
             "first-run-wizard": false
         },
         "2022.6": {
+            "first-run-wizard": false
+        },
+        "2022.7": {
+            "first-run-wizard": false
+        },
+        "2022.8": {
+            "first-run-wizard": false
+        },
+        "2022.9": {
+            "first-run-wizard": false
+        },
+        "2022.10": {
             "first-run-wizard": false
         }
     }
