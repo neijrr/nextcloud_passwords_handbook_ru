@@ -203,56 +203,6 @@
                 },
                 "recommended": false,
                 "official"   : false
-            },
-            {
-                "id"         : "daper",
-                "label"      : {
-                    "en": "Nextcloud Passwords",
-                    "de": "Nextcloud Passwords"
-                },
-                "description": {
-                    "en"   : "A modern, fast and lightweight app to access and manage your passwords from your Android device.",
-                    "sv"   : "Ett  modernt, snabb och lättanvänd applikation för åtkomst till, och hantering av dina lösenord i din Android-enhet. Ladda ner det från Google Play.",
-                    "de"   : "Eine moderne, schnelle und benutzerfreundliche App für den Zugriff und die Verwaltung deiner Passwörter von deinem Android-Gerät aus.",
-                    "de-DE": "Eine moderne, schnelle und benutzerfreundliche App für den Zugriff und die Verwaltung Ihrer Passwörter von Ihrem Android-Gerät aus.",
-                    "it"   : "Finalmente una app moderna, veloce e leggera per visualizzare e gestire le password dal tuo dispositivo Android. Scaricala dal Google Play.",
-                    "zh-CN": "最后，从 Google play 商店获得现代、快速、轻量级的应用程序。其可以从 Android 设备访问和管理您的密码。"
-                },
-                "author"     : {
-                    "name"    : "daper",
-                    "homepage": "https://gitlab.com/daper"
-                },
-                "passlink"   : {
-                    "enabled": false,
-                    "altLink": false
-                },
-                "logo"       : "daper-nextcloud-passwords.png",
-                "links"      : {
-                    "homepage": "https://github.com/daper/nextcloud-passwords-app",
-                    "download": "",
-                    "sources" : "https://github.com/daper/nextcloud-passwords-app"
-                },
-                "downloads"  : [
-                    {
-                        "label": {
-                            "en": "Available on F-Droid",
-                            "de": "Verfügbar auf F-Droid"
-                        },
-                        "url"  : "https://f-droid.org/de/packages/com.nextcloudpasswords/"
-                    },
-                    {
-                        "label": {
-                            "en": "Available on Google Play",
-                            "de": "Verfügbar auf Google Play"
-                        },
-                        "url"  : "https://play.google.com/store/apps/details?id=com.nextcloudpasswords"
-                    }
-                ],
-                "features"   : {
-                    "encryption": false
-                },
-                "recommended": false,
-                "official"   : false
             }
         ]
     },
