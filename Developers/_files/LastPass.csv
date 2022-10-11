@@ -5,8 +5,8 @@ https://accounts.google.com/ServiceLogin,Username,a4ds56af4ds65f4dsa65f41dsa65as
 Apps are also listed in the readme, libraries are also listed in the developer handbook.
 If you have developed an app or library and want it to be listed there, this page contains the requirements and process to do so.",Password Maximal,Email,1
 http://sn,,,,,Notes Minimal,,0
-http://sn,,,,[Passwords Test Environment](https://test.passwordsapp.org/apps/cms_pico/pico/passwords_test),Notes Standard,,0
-http://sn,,,,[Passwords Test Environment](https://test.passwordsapp.org/apps/cms_pico/pico/passwords_test),Notes Maximal,Email,1
+http://sn,,,,[Passwords Test Environment](https://test.passwordsapp.org/info.html),Notes Standard,,0
+http://sn,,,,[Passwords Test Environment](https://test.passwordsapp.org/info.html),Notes Maximal,Email,1
 http://sn,,,,"NoteType:Address
 Language:en-US
 Title:
