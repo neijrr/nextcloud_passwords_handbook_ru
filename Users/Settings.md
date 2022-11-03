@@ -185,15 +185,24 @@ If any errors happen during these tasks and this option is enabled, you will be 
 
 ## Danger Zone
 The options in this section might irreversibly delete data from your account.
-Therefore it is recommended that you use them with caution.
+Therefore, it is recommended that you use them with caution.
+
+##### Recover hidden items
+This action will recover hidden items sich as passwords, folders and tags that are not visible in the Passwords app at all unless directly accessed.
+You can choose to recover four types of hidden items:
+ - **Passwords which aren't in a hidden folder**: will recover passwords which are hidden but are stored in a folder that is not hidden.
+    If you moved a hidden password out of a hidden folder and it can no longer be seen in the app, this option will make the password visible in the folder it was moved to.
+ - **All hidden passwords**: will recover any password marked as hidden, regardless of the folder it is in.
+ - **All hidden folders**: will recover any folder that is marked as hidden. When used with "*Passwords which aren't in a hidden folder*", all passwords will be recovered.
+ - **All hidden tags**: will recover any tag marked as hidden.
 
 ##### Reset all settings
-This option will delete all settings stored in the passwords app.
+This action will reset all settings stored in the Passwords app.
 This will not only reset the settings visible here, but may also include settings from other apps or browser extension using the Passwords API.
 Deleted settings can not be restored.
 
 ##### Delete everything
-This option will delete all passwords, folders, tags and settings in your account.
+This action will delete all passwords, folders, tags and settings in your account.
 It will also delete your private encryption key. This means that your data can not be restored.
 You should make a backup and confirm that the backup works before you use this option.
 

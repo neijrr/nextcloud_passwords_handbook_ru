@@ -1,6 +1,6 @@
-The passwords app offers strong end to end encryption which requires anyone trying to decrypt your passwords to know the encryption passphrase.
+The passwords app offers strong end-to-end encryption which requires anyone trying to decrypt your passwords to know the encryption passphrase.
 
-## Enabling End to End encryption
+## Enabling End-to-End encryption
 > :warning: Some third-party clients do not support encryption
 
 #### Important Information
@@ -11,7 +11,7 @@ The passwords app offers strong end to end encryption which requires anyone tryi
 - The encryption setup will create the new entries before deleting any old ones.
   So even if something goes wrong, there should be no data loss.
 
-#### Enabling End to End encryption
+#### Enabling End-to-End encryption
 1. Open the Settings (`More > Settings`)
 2. Locate the `Encryption` section at the end of the `Security` section.
 3. Click the `Activate` button next to `End-to-End Encryption`.
@@ -26,15 +26,15 @@ The encryption setup will automatically encrypt all folders and passwords
 > :warning: Do not abort the encryption process or reload the page
 
 
-## Disabling End to End encryption
-There is no built-in option to disable end to end encryption.
-Passwords offers hidden passwords, which make it impossible to guarantee that all passwords have been decrypted.
-This would either prevent removing the encryption passphrase or leave some passwords unreadable and permanently encrypted.
-If you're sure that you do not have any hidden passwords, you can try the following steps:
+## Disabling End-to-End encryption
+There is no built-in option to disable end-to-end encryption.
+Passwords a functionality to store hidden passwords, tags and folders and also keeps previous revisions of any change made to any item.
+These features prevent removing the encryption passphrase or would leave some items permanently encrypted and unreadable.
+You can follow these steps to export all your data, reset the app and start again without encryption:
 
 > :exclamation: This process will delete any hidden items and all settings
 
-1. Make sure you have no hidden passwords in any app you use or unhide them in that app.
+1. Make sure you have no hidden items or use the [Recover hidden items](../Settings#recover-hidden-items) option to show them all.
 2. Exit or log out of any client but the Nextcloud app itself
 3. Ask your admin to make a backup using passwords backup command
 4. Make a complete, unencrypted [database export](./Export#database-backup)
