@@ -6,10 +6,10 @@
 | Processor  | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz                                                                                       |
 | RAM        | 512 MiB                     | 512 MiB                     | 8 GiB                                                                                         |
 | Disk       | 2 GiB                       | 2 GiB                       | 64 GiB                                                                                        |
-| Nextcloud  | Nextcloud 23, 24, 25        | Nextcloud 23, 24, 25        | Nextcloud 24                                                                                  |
-| OS         | Linux                       | Linux                       | Ubuntu 20.04                                                                                  |
+| Nextcloud  | Nextcloud 23, 24, 25        | Nextcloud 23, 24, 25        | Nextcloud 25                                                                                  |
+| OS         | Linux                       | Linux                       | Ubuntu 22.04                                                                                  |
 | Database   | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.7                                                                                  |
-| PHP        | PHP 8.0                     | PHP 7.3                     | PHP 8.0                                                                                       |
+| PHP        | PHP 8.0                     | PHP 7.3                     | PHP 8.1                                                                                       |
 | Webserver  | HTTPS                       | HTTPS                       | Nginx 1.21 HTTPS                                                                              |
 | PECL       | Intl                        | Intl                        | Intl, Zip, Imagick                                                                            |
 | Libraries  |                             |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
