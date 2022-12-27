@@ -1,7 +1,8 @@
 # Passwords 2020.1.0 and newer no longer support the legacy migration. You need to use [2019.12.1](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz) for the migration
 
-This guide helps you to migrate fom the [Passwords Legacy](https://github.com/marius-wieschollek/passwords-legacy) app written by Fallon Turner and maintained by Marius Wieschollek.
-If you did not use the legacy app or want to [start from scratch](#starting-from-scratch), this guide is not relevant for you.
+- This guide helps you to migrate fom the [Passwords Legacy](https://github.com/marius-wieschollek/passwords-legacy) app written by Fallon Turner and maintained by Marius Wieschollek.
+- If you did not use the legacy app or want to [start from scratch](#starting-from-scratch), this guide is not relevant for you.
+- **This guide is not related to the [Legacy Support Releases](../../System-Requirements#lsrlegacy-support-releases) of the Passwords app for Nextcloud.**
 
 ### Why you should upgrade
 Since the release of Passwords 2019.1 at the beginning of 2019, Passwords Legacy is entirely unsupported and does not receive any updates or security patches at all anymore.
@@ -18,7 +19,8 @@ It might also be a good idea to check the issue trackers [on github](https://git
 
 
 ### Database Backup
-Passwords has no write capabilities for Passwords Legacy built-in and does not use the legacy tables.
+Passwords has no write capabilities for Passwords Legacy built-in and 2019.12.1 does not use the legacy tables.
+(Later versions of the passwords app will overwrite the passwords_share table)
 It is still a good idea to make a backup of the following tables before you start the migration process.
 **Do not keep this backup in any publicly accessible folder of your webserver**
 
@@ -122,10 +124,6 @@ phpenmod mcrypt
 # If you use the Nextcloud docker container or the developer system
 echo "extension=mcrypt.so" > /usr/local/etc/php/conf.d/docker-php-ext-mcrypt.ini
 ```
-
-###### Not listed issues
-If your issue is not listed here, try the [public issue tracker](https://github.com/marius-wieschollek/passwords/issues).
-Please describe your issue in detail and precise and supply all necessary information to find a solution.
 
 
 ### Starting from scratch
