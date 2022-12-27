@@ -66,8 +66,8 @@ The service is only available in english.
 It can provide words based on their rarity and type and is therefore a great service to generate easy to remember and secure passwords.
 
 #### Random Characters
-Generates sets of random letters.
-This service has no dependencies but password may be hard to remember or write.
+Generates strings of random letters.
+This service has no dependencies but passwords may be hard to remember or write.
 
 
 ## Favicon Service
@@ -111,19 +111,17 @@ If you change this setting, clear the favicon cache and your browser cache to se
 
 ## Website Preview Service
 This service is used to generate previews of websites.
-Only the front page of the domain is called and at maximum twice for mobile and desktop views.
-If you change this setting, clear the favicon cache and your browser cache to see changes.
-
-If you know a good program or service, feel free to open an issue to support it.
-(Requirements: Offers a free plan and has an api)
 
 #### Pageres CLI
-Requires [pageres-cli](https://github.com/sindresorhus/pageres-cli) to installed locally.
+Uses [pageres-cli](https://github.com/sindresorhus/pageres-cli) to generate website previews locally.
 Usually very reliable local and headless preview generator with a modern browser engine.
-If the installation with NPM fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
-If you are using a docker container, add `--cap-add=SYS_ADMIN` to the docker command to enable the chrome sandbox.
+[More details about the service can be found here.](./Services/Website-Preview-Services#pageres-cli)
 
 #### Browshot
+Uses the [browshot.com](https://browshot.com/) webservice to generate website previews.
+Browshot generates website screenshots with real browsers and devices.
+[More details about the service can be found here.](./Services/Website-Preview-Services#browshot)
+
 Offers 100 free screenshots per month.
 The api offers HTTPS by default, you can view the screenshots in your account and you can buy additional screenshots as you need.
 Passwords will check your account and use free screenshots if possible. 
