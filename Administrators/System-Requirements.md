@@ -71,9 +71,6 @@ If you use NextcloudPi, you can use our [NextcloudPi PHP 8.0 upgrade guide](./Gu
 
 If you use DietPi, [check the guide for your webserver choice](./Index#dietpi).
 
-### Pageres dependencies
-- NPM 
-- fontconfig
 
 ### Third Party Services
 To provide all api features, passwords may use third party services depending on the settings.
