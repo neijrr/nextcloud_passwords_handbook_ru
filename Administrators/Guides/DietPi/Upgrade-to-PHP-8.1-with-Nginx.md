@@ -1,10 +1,9 @@
 ## Before you start
-- This tutorial was developed for and tested with DietPi 7.2 on a RaspberryPI.
+- This tutorial was developed for and tested with DietPi 8.12.1 on a RaspberryPI.
 - This tutorial only works if you use "Nginx" as webserver.
   Run `dietpi-software` and check the setting for "Webserver Preference".
 - DietPi may behave differently on other systems.
 - Nextcloud 24 is required _before_ upgrading to PHP 8.1.
-- This does not work for DietPi Docker. You can't upgrade PHP in a Docker image.
 - _Make sure to make a backup of your entire DietPi Instance (config, data, etc.) before you do this._
 
 
@@ -39,15 +38,35 @@ apt-get -y install php8.1-fpm php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php
 
 
 ## Update the PHP 8.1 configuration
-Execute the following command on your DietPi to link the DietPi configuration for PHP from PHP 7.3 to 8.1 and enable it:
+Now you need to copy and edit the php-fpm configuration for PHP 8.1
+
+Run `cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf` to copy the existing configuration file.
+Run `nano /etc/php/8.1/fpm/pool.d/www.conf` to open the configuration file.
+
+You can use `CTRL` + `w` to search in the file,
+with `CRTL` + `o` you can save the changed file and
+with `CRTL` + `x` you can close the editor.
+
+Find the following line:
+```bash
+listen = /run/php/php7.4-fpm.sock
+```
+and replace it with this line:
+```bash
+listen = /run/php/php8.1-fpm.sock
+```
+Then save the file and exit the editor.
+
+
+Now execute the following commands on your DietPi to link the DietPi configuration for PHP from PHP 7.4 to 8.1 and enable it:
 ```bash
 # Enable the image magick module
-# Errors related to PHP 7.3 can be ignored
+# Errors related to PHP 7.4 and PHP 8.2 can be ignored
 phpenmod imagick
 
 # Symlink NCP PHP configuration
-ln -s /etc/php/7.3/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-available/dietpi-nextcloud.ini
-ln -s /etc/php/7.3/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
+ln -s /etc/php/7.4/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-available/dietpi-nextcloud.ini
+ln -s /etc/php/7.4/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
 phpenmod dietpi
 phpenmod dietpi-nextcloud
 
@@ -57,7 +76,7 @@ service php8.1-fpm restart
 
 
 ## Set up Nginx for PHP 8.1
-Now you need to edit the configuration for lighttpd to instruct it to use PHP 8.1
+Now you need to edit the configuration for nginx to instruct it to use PHP 8.1
 Run `nano /etc/nginx/nginx.conf` to open the configuration file.
 
 You can use `CTRL` + `w` to search in the file,
@@ -67,11 +86,12 @@ with `CRTL` + `x` you can close the editor.
 It should have this section:
 ```
 	upstream php {
-		server unix:/run/php/php7.3-fpm.sock;
+		server unix:/run/php/php7.4-fpm.sock;
 	}
 ```
 
-You need to change the "server" from "unix:/run/php/php7.3-fpm.sock;" to "unix:/run/php/php8.1-fpm.sock;".
+You need to change the "server" from "unix:/run/php/php7.4-fpm.sock;" to "unix:/run/php/php8.1-fpm.sock;".
+__If you already followed the PHP 8.0 upgrade guide, the line will read "unix:/run/php/php**8.0**-fpm.sock;" instead of 7.4.__
 The section should now read like this:
 ```
 	upstream php {
@@ -84,26 +104,15 @@ service nginx restart
 ```
 
 
-
-## Check for Nextcloud and App updates
-```bash
-# Check for updates
-ncc update:check
-
-# Install updates of the passwords app if available
-ncc app:update passwords
-```
-
-
-## Check the PHP default version
+## Set the PHP command line version
 By default, your DietPi should now be using PHP 8.1.
 You can check this by running `php -v`. The output should look like this:
 ```bash
 root@DietPi:~# php -v
-PHP 8.1.0 (cli) (built: Mar  5 2021 08:38:30) ( NTS )
+PHP 8.1.13 (cli) (built: Nov 26 2022 14:27:02) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.0.3, Copyright (c) Zend Technologies
-    with Zend OPcache v8.1.3, Copyright (c), by Zend Technologies
+Zend Engine v4.1.13, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
 ```
 
 If it doesn't, you should use `update-alternatives --config php` and set PHP 8.1 as default:
@@ -114,10 +123,20 @@ There are 2 choices for the alternative php (providing /usr/bin/php).
   Selection    Path             Priority   Status
 ------------------------------------------------------------
 * 0            /usr/bin/php8.1   81        auto mode
-  1            /usr/bin/php8.0   80        manual mode
+  1            /usr/bin/php7.4   74        manual mode
   2            /usr/bin/php8.1   81        manual mode
 
 Press <enter> to keep the current choice[*], or type selection number:0
+```
+
+
+## Check for Nextcloud and App updates
+```bash
+# Check for updates
+ncc update:check
+
+# Install updates of the passwords app if available
+ncc app:update passwords
 ```
 
 ## Notes

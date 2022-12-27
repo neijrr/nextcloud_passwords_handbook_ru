@@ -1,10 +1,9 @@
 ## Before you start
-- This tutorial was developed for and tested with DietPi 7.2 on a RaspberryPI.
+- This tutorial was developed for and tested with DietPi 8.12.1 on a RaspberryPI.
 - This tutorial only works if you use "Apache" as webserver.
   Run `dietpi-software` and check the setting for "Webserver Preference".
 - DietPi may behave differently on other systems.
 - Nextcloud 24 is required _before_ upgrading to PHP 8.1.
-- This does not work for DietPi Docker. You can't upgrade PHP in a Docker image.
 - _Make sure to make a backup of your entire DietPi Instance (config, data, etc.) before you do this._
 
 
@@ -46,13 +45,13 @@ Execute the following commands on your DietPi to update the Apache configuration
 phpenmod imagick
 
 # Symlink NCP PHP configuration
-ln -s /etc/php/7.3/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-available/dietpi-nextcloud.ini
-ln -s /etc/php/7.3/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
+ln -s /etc/php/7.4/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-available/dietpi-nextcloud.ini
+ln -s /etc/php/7.4/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
 phpenmod dietpi
 phpenmod dietpi-nextcloud
 
 # Configure apache for php8.1
-a2dismod php7.3
+a2dismod php7.4
 a2enmod php8.1
 
 # Restart Apache

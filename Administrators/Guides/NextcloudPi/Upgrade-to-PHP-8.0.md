@@ -99,7 +99,7 @@ Zend Engine v4.0.3, Copyright (c) Zend Technologies
 If it doesn't, you should use `update-alternatives --config php` and set PHP 8.0 as default:
 ```bash
 root@nextcloudpi:/home/pi# update-alternatives --config php
-There are 3 choices for the alternative php (providing /usr/bin/php).
+There are 4 choices for the alternative php (providing /usr/bin/php).
 
   Selection    Path             Priority   Status
 ------------------------------------------------------------
@@ -108,7 +108,7 @@ There are 3 choices for the alternative php (providing /usr/bin/php).
   2            /usr/bin/php7.4   74        manual mode
   3            /usr/bin/php8.0   80        manual mode
 
-Press <enter> to keep the current choice[*], or type selection number:0
+Press <enter> to keep the current choice[*], or type selection number: 0
 ```
 
 ## Notes
