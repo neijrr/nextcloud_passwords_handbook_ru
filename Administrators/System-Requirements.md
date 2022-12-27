@@ -1,33 +1,48 @@
-> This page contains the system requirements for the [passwords app for Nextcloud](https://apps.nextcloud.com/apps/passwords).
-> If you're looking for the Nextcloud server system requirements [click here](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html).
+This page is about the system requirements for the [Passwords app for Nextcloud](https://apps.nextcloud.com/apps/passwords).
+We also list the system requirements for the latest Nextcloud version since Google keeps recommending this site instead of the official system requirements for Nextcloud page.
 
-|            | Minimum                     | LSR                         | Recommended                                                                                   |
-|------------|-----------------------------|-----------------------------|-----------------------------------------------------------------------------------------------|
-| Processor  | 2x1 GHz                     | 2x1 GHz                     | 4x2 GHz                                                                                       |
-| RAM        | 512 MiB                     | 512 MiB                     | 8 GiB                                                                                         |
-| Disk       | 2 GiB                       | 2 GiB                       | 64 GiB                                                                                        |
-| Nextcloud  | Nextcloud 23, 24, 25        | Nextcloud 23, 24, 25        | Nextcloud 25                                                                                  |
-| OS         | Linux                       | Linux                       | Ubuntu 22.04                                                                                  |
-| Database   | Sqlite / MySQL / PostgreSQL | Sqlite / MySQL / PostgreSQL | MariaDB 10.7                                                                                  |
-| PHP        | PHP 8.0                     | PHP 7.3                     | PHP 8.1                                                                                       |
-| Webserver  | HTTPS                       | HTTPS                       | Nginx 1.21 HTTPS                                                                              |
-| PECL       | Intl                        | Intl                        | Intl, Zip, Imagick                                                                            |
-| Libraries  |                             |                             | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+|                | [Nextcloud 25](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html)                                                                                                                | [Passwords App](https://passwordsapp.org) | Recommended                                                                                   |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Processor      | 64-bit CPU                                                                                                                                                                                                                 | 2x1 GHz                                   | 4x2 GHz                                                                                       |
+| RAM            | 512Mib                                                                                                                                                                                                                     | 512 MiB                                   | 8 GiB                                                                                         |
+| Disk           | 256Mib                                                                                                                                                                                                                     | 2 GiB                                     | 64 GiB                                                                                        |
+| Nextcloud      | 25                                                                                                                                                                                                                         | **25**                                    | 25                                                                                            |
+| OS             | **Ubuntu 22.04 LTS**/20.04 LTS, **Red Hat Enterprise Linux 8**, Debian 11, SUSE Linux Enterprise Server 15, openSUSE Leap 15.4, CentOS Stream                                                                              | Linux                                     | Ubuntu 22.04                                                                                  |
+| Database       | **MySQL 8.0+ or MariaDB 10.3+**, PostgreSQL 10+, SQLite                                                                                                                                                                    | **MariaDB** / MySQL / PostgreSQL / Sqlite | MariaDB 10.7                                                                                  |
+| PHP            | **8.1**, 8.0,  7.4 (deprecated)                                                                                                                                                                                            | **8.1**, 8.0                              | PHP 8.1                                                                                       |
+| Webserver      | **Apache 2.4 with mod_php or php-fpm**, nginx with php-fpm                                                                                                                                                                 | HTTPS                                     | nginx 1.23 with php-fpm & HTTPS                                                               |
+| PHP Extensions | ctype, curl, dom, fileinfo, GD, JSON, libxml, mbstring, openssl, posix, session, SimpleXML, XMLReader, XMLWriter, zip, zlib, pdo_sqlite, pdo_mysql, pdo_pgsql, filter (only on Mageia and FreeBSD), hash (only on FreeBSD) | intl                                      | intl, zip, imagick                                                                            |
+| Libraries      | libxml2 >=2.7.0                                                                                                                                                                                                            |                                           | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+
+ ** Recommendations are in **bold**
+
+### LSR/Legacy Support Releases
+Legacy support releases are provided for servers which run a PHP version that is not supported by the passwords app, but by any version of Nextcloud that is support.
+LSR builds are generated by an automated process during the release which rewrites the source code of the app to work with an older PHP language level.
+This means that the source code of LSR builds does not match the source code in our repositories and the build is also not tested before the release.
+We can only provide LSR builds as long as the automatic conversion is possible so LSR builds may end without any notice if that is not possible.
+
+|            | Minimum                                   | Recommended                                                                                   |
+|------------|-------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Processor  | 2x1 GHz                                   | 4x2 GHz                                                                                       |
+| RAM        | 512 MiB                                   | 8 GiB                                                                                         |
+| Disk       | 2 GiB                                     | 64 GiB                                                                                        |
+| Nextcloud  | **25**                                    | 25                                                                                            |
+| OS         | Linux                                     | Ubuntu 22.04                                                                                  |
+| Database   | **MariaDB** / MySQL / PostgreSQL / Sqlite | MariaDB 10.7                                                                                  |
+| PHP        | 7.4                                       | 7.4                                                                                           |
+| Webserver  | HTTPS                                     | Nginx 1.23 HTTPS                                                                              |
+| PECL       | intl                                      | intl, zip, imagick                                                                            |
+| Libraries  |                                           | imagemagick, librsvg, wbritish, wamerican, wngerman, wfrench, wspanish, witalian, wportuguese |
+
+Since systems using LSR builds do not meet the minimum requirements, no official support is provided by us.
+If you experience any issues, visit the forum or the chat groups for help.
 
 ### Version scheme and breaking changes
 Passwords versions are simply the year and month of the release of the version.
 The exact version scheme is `<year>.<month>.<bugfix>`.
 In accordance with [SemVer2.0.0](https://semver.org/spec/v2.0.0.html), only the first version of a new year will introduce breaks in backward compatibility.
 With the first release of the year, the support for any Nextcloud version but the latest as well as any PHP version without [active support](https://php.net/supported-versions.php) will be ended.
-
-### LSR/Legacy Support Releases
-Legacy support releases are intended for systems which run a PHP version that is not supported by the passwords app, but by any version of Nextcloud that is supported by the passwords app.
-We intend to provide LSR builds as long as Nextcloud itself supports any PHP version, however as we are dependent on third party software to create these builds there is no guarantee for this.
-LSR builds are generated by an automated process during the release which rewrites the source code of the app to work with an older PHP language level.
-This means that the source code of LSR builds does not match the source code in our repositories and the build is also not tested before the release.
-
-Since systems using LSR builds do not meet the minimum requirements, no official support is provided by us.
-If you experience any issues, visit the forum or the chat groups for help.
 
 ### HTTPS requirement
 Passwords requires HTTPS to work. This can not be disabled.
