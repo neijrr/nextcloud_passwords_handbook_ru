@@ -47,9 +47,7 @@ Run `cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf` to co
 
 Run `nano /etc/php/8.1/fpm/pool.d/www.conf` to open the configuration file.
 
-You can use `CTRL` + `w` to search in the file,
-with `CRTL` + `o` you can save the changed file and
-with `CRTL` + `x` you can close the editor.
+> You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
 
 Find the following line:
 ```bash
@@ -83,9 +81,7 @@ service php8.1-fpm restart
 Now you need to edit the configuration for nginx to instruct it to use PHP 8.1.
 Run `nano /etc/nginx/nginx.conf` to open the configuration file.
 
-You can use `CTRL` + `w` to search in the file,
-with `CRTL` + `o` you can save the changed file and
-with `CRTL` + `x` you can close the editor.
+> You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
 
 It should have this section:
 ```
@@ -154,7 +150,7 @@ ncc app:update passwords
 Just edit the configuration for nginx and instruct it to use PHP 7.4 again.
 Run `nano /etc/nginx/nginx.conf` to open the configuration file.
 
-You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
+> You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
 
 It should have this section that you changed:
 ```

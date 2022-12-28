@@ -35,9 +35,29 @@ Execute the following command on your DietPi to install PHP 8.1:
 apt-get -y remove php-apcu php-igbinary php-redis
 
 # Install PHP 8.1
-apt-get -y install php8.1-common libapache2-mod-php8.1 php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg imagemagick
+apt-get -y install php8.1-common php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg imagemagick
 ```
 
+
+
+## Update the PHP 8.1 configuration
+Now you need to copy and edit the php-fpm configuration for PHP 8.1
+
+Run `cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf` to copy the existing configuration file.
+
+Run `nano /etc/php/8.1/fpm/pool.d/www.conf` to open the configuration file.
+
+> You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
+
+Find the following line:
+```bash
+listen = /run/php/php7.4-fpm.sock
+```
+and replace it with this line:
+```bash
+listen = /run/php/php8.1-fpm.sock
+```
+Then save the file and exit the editor.
 
 
 ## Set up Apache for PHP 8.1
@@ -55,8 +75,8 @@ phpenmod dietpi
 phpenmod dietpi-nextcloud
 
 # Configure apache for php8.1
-a2dismod php7.4
-a2enmod php8.1
+a2disconf php7.4-fpm
+a2enconf php8.1-fpm
 
 # Restart Apache
 systemctl restart apache2
@@ -110,8 +130,8 @@ ncc app:update passwords
 First, switch back to the PHP 7.4 configuration for apache:
 
 ```bash
-a2dismod php8.1
-a2enmod php7.4
+a2disconf php8.1-fpm
+a2enconf php7.4-fpm
 ```
 
 Then restart apache:

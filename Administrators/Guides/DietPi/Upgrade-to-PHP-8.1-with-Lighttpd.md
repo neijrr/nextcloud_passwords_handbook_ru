@@ -47,9 +47,7 @@ Run `cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf` to co
 
 Run `nano /etc/php/8.1/fpm/pool.d/www.conf` to open the configuration file.
 
-You can use `CTRL` + `w` to search in the file,
-with `CRTL` + `o` you can save the changed file and
-with `CRTL` + `x` you can close the editor.
+> You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
 
 Find the following line:
 ```bash
@@ -78,7 +76,7 @@ phpenmod dietpi-nextcloud
 Now you need to edit the configuration of PHP FPM.
 Run the command `nano /etc/php/8.1/fpm/php.ini` to open a text editor with the config file.
 
-You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
+> You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
 
 Find the line
 
