@@ -15,72 +15,90 @@ If you're directly on the device, use `sudo su`
 
 
 ## Add PHP Package Archive
-Execute the following commands on your DietPi to add the repository PHP 8.1 from [deb.sury.org](https://deb.sury.org/#php-packages):
+With the following commands you will add the PHP 8.1 repository from [deb.sury.org](https://deb.sury.org/#php-packages) to your DietPi:
 
-```bash
-# Add the PHP PPA from deb.sury.org
-apt-get -y install apt-transport-https lsb-release ca-certificates curl
-curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
-apt-get update
-```
-
+1. Install dependencies
+    ```bash
+    apt-get -y install apt-transport-https lsb-release ca-certificates curl
+    ```
+2. Download the public key and add the repository
+    ```bash
+    curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+    sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+    ```
+3. Update the list of available software
+    ```bash
+    apt-get update
+    ```
 
 
 ## Install PHP 8.1
-Execute the following command on your DietPi to install PHP 8.1:
+Now install PHP 8.1 on your DietPi with the following commands:
 
-```bash
-# Remove conflicting packages
-apt-get -y remove php-apcu php-igbinary php-redis
-
-# Install PHP 8.1
-apt-get -y install php8.1-common php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg imagemagick
-```
+1. Remove conflicting packages
+    ```bash
+    apt-get -y remove php-apcu php-igbinary php-redis
+    ```
+2. Install PHP 8.1
+    ```bash
+    apt-get -y install php8.1-common php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg imagemagick
+    ```
 
 
 
 ## Update the PHP 8.1 configuration
-Now you need to copy and edit the php-fpm configuration for PHP 8.1
+Now you need to copy and edit the php-fpm configuration for PHP 8.1.
 
-Run `cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf` to copy the existing configuration file.
-
-Run `nano /etc/php/8.1/fpm/pool.d/www.conf` to open the configuration file.
-
-> You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
-
-Find the following line:
-```bash
-listen = /run/php/php7.4-fpm.sock
-```
-and replace it with this line:
-```bash
-listen = /run/php/php8.1-fpm.sock
-```
-Then save the file and exit the editor.
+1. Copy the existing configuration file from PHP 7.4 to 8.1
+    ```bash
+    cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf
+    ```
+2. Open the config file with nano to edit it
+    > You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
+    ```bash
+    nano /etc/php/8.1/fpm/pool.d/www.conf
+    ```
+3. Find the following line:
+    ```bash
+    listen = /run/php/php7.4-fpm.sock
+    ```
+    and replace it with this line:
+    ```bash
+    listen = /run/php/php8.1-fpm.sock
+    ```
+4. Now save the file with `CRTL` + `o` and exit the editor with `CRTL` + `x`
+5. Restart the PHP FPM service.
+    ```bash
+    service php8.1-fpm restart
+    ```
+6. Enable the image magick module (_Errors related to PHP 7.4 can be ignored_)
+    ```bash
+    phpenmod imagick
+    ```
+7. Symlink DietPi PHP 7.4 configuration to PHP 8.1
+    ```bash
+    ln -s /etc/php/7.4/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-available/dietpi-nextcloud.ini
+    ln -s /etc/php/7.4/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
+    ```
+8. Enable the DietPi configuration for PHP 8.1
+    ```bash
+    phpenmod dietpi
+    phpenmod dietpi-nextcloud
+    ```
 
 
 ## Set up Apache for PHP 8.1
 Execute the following commands on your DietPi to update the Apache configuration:
 
-```bash
-# Enable the image magick module
-# Errors related to PHP 7.4 can be ignored
-phpenmod imagick
-
-# Symlink NCP PHP configuration
-ln -s /etc/php/7.4/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-available/dietpi-nextcloud.ini
-ln -s /etc/php/7.4/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
-phpenmod dietpi
-phpenmod dietpi-nextcloud
-
-# Configure apache for php8.1
-a2disconf php7.4-fpm
-a2enconf php8.1-fpm
-
-# Restart Apache
-systemctl restart apache2
-```
+1. Configure Apache to use PHP 8.1 instead of PHP 7.4
+    ```bash
+    a2disconf php7.4-fpm
+    a2enconf php8.1-fpm
+    ```
+2. Restart Apache
+    ```bash
+    systemctl restart apache2
+    ```
 
 
 ## Set the PHP command line version
@@ -94,7 +112,9 @@ Zend Engine v4.1.13, Copyright (c) Zend Technologies
     with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
 ```
 
-It's important that it shows `PHP 8.1.*`. If it doesn't, you should use `update-alternatives --config php` and set PHP 8.1 as default:
+It's important that it shows `PHP 8.1.*`.
+If it doesn't, use the command `update-alternatives --config php` to set PHP 8.1 as default.
+Select the option with the path "/usr/bin/php8.1" and confirm.
 ```bash
 root@DietPi:~# update-alternatives --config php
 There are 2 choices for the alternative php (providing /usr/bin/php).
@@ -111,13 +131,16 @@ Press <enter> to keep the current choice[*], or type selection number:0
 
 
 ## Check for Nextcloud and App updates
-```bash
-# Check for updates
-ncc update:check
+Check for server and app updates for your Nextcloud.
 
-# Install updates of the passwords app if available
-ncc app:update passwords
-```
+1. Check for updates
+    ```bash
+    ncc update:check
+    ```
+2. Install updates of the passwords app if available
+    ```bash
+    ncc app:update passwords
+    ```
 
 
 
@@ -127,29 +150,28 @@ ncc app:update passwords
 
 
 # How to Switch back to PHP 7.4
-First, switch back to the PHP 7.4 configuration for apache:
+You can switch back to PHP 7.4 at any time if something does not work.
 
-```bash
-a2disconf php8.1-fpm
-a2enconf php7.4-fpm
-```
-
-Then restart apache:
-```bash
-systemctl restart apache2
-```
-
-Now run the command `update-alternatives --config php` to select which PHP version should be used for the command line.
-Select the option with the path "/usr/bin/php7.4" and confirm.
-```bash
-root@DietPi:~# update-alternatives --config php
-There are 2 choices for the alternative php (providing /usr/bin/php).
-
-  Selection    Path             Priority   Status
-------------------------------------------------------------
-* 0            /usr/bin/php8.1   81        auto mode
-  1            /usr/bin/php7.4   74        manual mode
-  2            /usr/bin/php8.1   81        manual mode
-
-Press <enter> to keep the current choice[*], or type selection number:1
-```
+1. First, switch back to the PHP 7.4 configuration for Apache:
+    ```bash
+    a2disconf php8.1-fpm
+    a2enconf php7.4-fpm
+    ```
+2. Then restart apache:
+    ```bash
+    systemctl restart apache2
+    ```
+3. Now run the command `update-alternatives --config php` to select which PHP version should be used for the command line.
+    Select the option with the path "/usr/bin/php7.4" and confirm.
+    ```bash
+    root@DietPi:~# update-alternatives --config php
+    There are 2 choices for the alternative php (providing /usr/bin/php).
+    
+      Selection    Path             Priority   Status
+    ------------------------------------------------------------
+    * 0            /usr/bin/php8.1   81        auto mode
+      1            /usr/bin/php7.4   74        manual mode
+      2            /usr/bin/php8.1   81        manual mode
+    
+    Press <enter> to keep the current choice[*], or type selection number:1
+    ```
