@@ -76,7 +76,8 @@ You need to edit the PHP configuration for php-fpm.
 1. Open the configuration file with nano to edit it.
     > You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
     ```bash
-    `nano /etc/php/8.1/fpm/php.ini`
+    nano /etc/php/8.1/fpm/php.ini
+    ``
 2. Find the following line:
     ```bash
     ;cgi.fix_pathinfo=1
