@@ -32,6 +32,7 @@ With the following commands you will add the PHP 8.1 repository from [deb.sury.o
     ```
 
 
+
 ## Install PHP 8.1
 Now install PHP 8.1 on your DietPi with the following commands:
 
@@ -47,14 +48,15 @@ Now install PHP 8.1 on your DietPi with the following commands:
 
 
 ## Update the PHP 8.1 configuration
-Now you need to copy and edit the php-fpm configuration for PHP 8.1.
+#### Update the PHP FPM pool configuration
+You need to copy and edit the php-fpm configuration for PHP 8.1.
 
 1. Copy the existing configuration file from PHP 7.4 to 8.1
     ```bash
     cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf
     ```
-2. Open the config file with nano to edit it
-    > You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
+2. Open the configuration file with nano to edit it
+   > You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
     ```bash
     nano /etc/php/8.1/fpm/pool.d/www.conf
     ```
@@ -62,29 +64,33 @@ Now you need to copy and edit the php-fpm configuration for PHP 8.1.
     ```bash
     listen = /run/php/php7.4-fpm.sock
     ```
-    and replace it with this line:
+   and replace it with this line:
     ```bash
     listen = /run/php/php8.1-fpm.sock
     ```
 4. Now save the file with `CRTL` + `o` and exit the editor with `CRTL` + `x`
-5. Restart the PHP FPM service.
-    ```bash
-    service php8.1-fpm restart
-    ```
-6. Enable the image magick module (_Errors related to PHP 7.4 can be ignored_)
+
+#### Enable the DietPi configuration for PHP 8.1
+1. Enable the image magick module (_Errors related to PHP 7.4 can be ignored_)
     ```bash
     phpenmod imagick
     ```
-7. Symlink DietPi PHP 7.4 configuration to PHP 8.1
+2. Symlink DietPi PHP 7.4 configuration to PHP 8.1
     ```bash
     ln -s /etc/php/7.4/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-available/dietpi-nextcloud.ini
     ln -s /etc/php/7.4/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
     ```
-8. Enable the DietPi configuration for PHP 8.1
+3. Enable the DietPi configuration for PHP 8.1
     ```bash
     phpenmod dietpi
     phpenmod dietpi-nextcloud
     ```
+
+#### Restart the php-fpm service
+    ```bash
+    service php8.1-fpm restart
+    ```
+
 
 
 ## Set up Apache for PHP 8.1
@@ -99,6 +105,7 @@ Execute the following commands on your DietPi to update the Apache configuration
     ```bash
     systemctl restart apache2
     ```
+
 
 
 ## Set the PHP command line version
