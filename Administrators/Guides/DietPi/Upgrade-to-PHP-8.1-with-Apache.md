@@ -1,10 +1,16 @@
-## Before you start
+# Before you start
 - This tutorial was developed for and tested with DietPi 8.12.1 on a RaspberryPI.
 - This tutorial only works if you use "Apache" as webserver.
   Run `dietpi-software` and check the setting for "Webserver Preference".
 - DietPi may behave differently on other systems.
 - Nextcloud 24 is required _before_ upgrading to PHP 8.1.
+- Upgrading PHP may affect other software on your DietPi that uses PHP. Make sure it is compatible before you upgrade
 - _Make sure to make a backup of your entire DietPi Instance (config, data, etc.) before you do this._
+
+
+
+# Upgrade PHP on DietPI with Apache
+After you have read the information above and ensured you're ready to start, follow the steps below to upgrade your DietPi to PHP 8.1 with the Apache webserver.
 
 
 
@@ -42,8 +48,12 @@ Now install PHP 8.1 on your DietPi with the following commands:
     ```
 2. Install PHP 8.1
     ```bash
-    apt-get -y install php8.1-common php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg libmagickwand-dev imagemagick
+    apt-get -y install php8.1-common php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-bz2 php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg libmagickwand-dev imagemagick
     ```
+3. If you have installed optional php modules for specific Nextcloud apps, you need to upgrade them too.
+    Here is a list for the apps mentioned in the [Nextcloud docs](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html):
+   - LDAP integration: `apt-get install -y php8.1-ldap`
+   - Exernal Storage with [SMB/CIFS integration](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/external_storage/smb.html): `apt-get install -y php8.1-smbclient`
 
 
 
@@ -151,7 +161,13 @@ Check for server and app updates for your Nextcloud.
 
 
 
-## Notes
+## Done
+Congratulations! You're done now.
+To verify that everything has worked, log into your Nextcloud, click on your account icon and click on "Administration settings".
+There, open the "System" section and scroll down do PHP.
+You should also go to the "Overview" section and take care of any warnings that show up there.
+
+#### Notes
 - It can take a day before app updates show up in the apps store
 
 
