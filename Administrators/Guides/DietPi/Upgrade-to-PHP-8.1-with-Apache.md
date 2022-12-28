@@ -31,8 +31,11 @@ apt-get update
 Execute the following command on your DietPi to install PHP 8.1:
 
 ```bash
+# Remove conflicting packages
+apt-get -y remove php-apcu php-igbinary php-redis
+
 # Install PHP 8.1
-apt-get -y install libapache2-mod-php8.1 php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick imagemagick
+apt-get -y install php8.1-common libapache2-mod-php8.1 php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg imagemagick
 ```
 
 
@@ -42,6 +45,7 @@ Execute the following commands on your DietPi to update the Apache configuration
 
 ```bash
 # Enable the image magick module
+# Errors related to PHP 7.4 can be ignored
 phpenmod imagick
 
 # Symlink NCP PHP configuration
@@ -59,6 +63,32 @@ systemctl restart apache2
 ```
 
 
+## Set the PHP command line version
+By default, your DietPi should now be using PHP 8.1.
+You can check this by running `php -v`. The output should look like this:
+```bash
+root@DietPi:~# php -v
+PHP 8.1.13 (cli) (built: Nov 26 2022 14:27:02) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.1.13, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
+```
+
+It's important that it shows `PHP 8.1.*`. If it doesn't, you should use `update-alternatives --config php` and set PHP 8.1 as default:
+```bash
+root@DietPi:~# update-alternatives --config php
+There are 2 choices for the alternative php (providing /usr/bin/php).
+
+  Selection    Path             Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/php8.1   81        auto mode
+  1            /usr/bin/php7.4   74        manual mode
+  2            /usr/bin/php8.1   81        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:0
+```
+
+
 
 ## Check for Nextcloud and App updates
 ```bash
@@ -71,18 +101,26 @@ ncc app:update passwords
 
 
 
-## Check the PHP default version
-By default, your DietPi should now be using PHP 8.1.
-You can check this by running `php -v`. The output should look like this:
+## Notes
+- It can take a day before app updates show up in the apps store
+
+
+
+# How to Switch back to PHP 7.4
+First, switch back to the PHP 7.4 configuration for apache:
+
 ```bash
-root@DietPi:~# php -v
-PHP 8.1.0 (cli) (built: Mar  5 2021 08:38:30) ( NTS )
-Copyright (c) The PHP Group
-Zend Engine v4.0.3, Copyright (c) Zend Technologies
-    with Zend OPcache v8.1.3, Copyright (c), by Zend Technologies
+a2dismod php8.1
+a2enmod php7.4
 ```
 
-If it doesn't, you should use `update-alternatives --config php` and set PHP 8.1 as default:
+Then restart apache:
+```bash
+systemctl restart apache2
+```
+
+Now run the command `update-alternatives --config php` to select which PHP version should be used for the command line.
+Select the option with the path "/usr/bin/php7.4" and confirm.
 ```bash
 root@DietPi:~# update-alternatives --config php
 There are 2 choices for the alternative php (providing /usr/bin/php).
@@ -90,11 +128,8 @@ There are 2 choices for the alternative php (providing /usr/bin/php).
   Selection    Path             Priority   Status
 ------------------------------------------------------------
 * 0            /usr/bin/php8.1   81        auto mode
-  1            /usr/bin/php8.0   80        manual mode
+  1            /usr/bin/php7.4   74        manual mode
   2            /usr/bin/php8.1   81        manual mode
 
-Press <enter> to keep the current choice[*], or type selection number:0
+Press <enter> to keep the current choice[*], or type selection number:1
 ```
-
-## Notes
-- It can take a day before app updates show up in the apps store

@@ -31,8 +31,11 @@ apt-get update
 Execute the following command on your DietPi to install PHP 8.1:
 
 ```bash
+# Remove conflicting packages
+apt-get -y remove php-apcu php-igbinary php-redis
+
 # Install PHP 8.1
-apt-get -y install php8.1-fpm php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick imagemagick
+apt-get -y install php8.1-common php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg imagemagick
 ```
 
 
@@ -41,6 +44,7 @@ apt-get -y install php8.1-fpm php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php
 Now you need to copy and edit the php-fpm configuration for PHP 8.1
 
 Run `cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf` to copy the existing configuration file.
+
 Run `nano /etc/php/8.1/fpm/pool.d/www.conf` to open the configuration file.
 
 You can use `CTRL` + `w` to search in the file,
@@ -61,7 +65,7 @@ Then save the file and exit the editor.
 Now execute the following commands on your DietPi to link the DietPi configuration for PHP from PHP 7.4 to 8.1 and enable it:
 ```bash
 # Enable the image magick module
-# Errors related to PHP 7.4 and PHP 8.2 can be ignored
+# Errors related to PHP 7.4 can be ignored
 phpenmod imagick
 
 # Symlink NCP PHP configuration
@@ -76,7 +80,7 @@ service php8.1-fpm restart
 
 
 ## Set up Nginx for PHP 8.1
-Now you need to edit the configuration for nginx to instruct it to use PHP 8.1
+Now you need to edit the configuration for nginx to instruct it to use PHP 8.1.
 Run `nano /etc/nginx/nginx.conf` to open the configuration file.
 
 You can use `CTRL` + `w` to search in the file,
@@ -115,7 +119,7 @@ Zend Engine v4.1.13, Copyright (c) Zend Technologies
     with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
 ```
 
-If it doesn't, you should use `update-alternatives --config php` and set PHP 8.1 as default:
+It's important that it shows `PHP 8.1.*`. If it doesn't, you should use `update-alternatives --config php` and set PHP 8.1 as default:
 ```bash
 root@DietPi:~# update-alternatives --config php
 There are 2 choices for the alternative php (providing /usr/bin/php).
@@ -139,5 +143,50 @@ ncc update:check
 ncc app:update passwords
 ```
 
+
+
 ## Notes
 - It can take a day before app updates show up in the apps store
+
+
+
+# How to Switch back to PHP 7.4
+Just edit the configuration for nginx and instruct it to use PHP 7.4 again.
+Run `nano /etc/nginx/nginx.conf` to open the configuration file.
+
+You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
+
+It should have this section that you changed:
+```
+	upstream php {
+		server unix:/run/php/php8.1-fpm.sock;
+	}
+```
+
+Change the "server" from "unix:/run/php/php8.1-fpm.sock;" back to "unix:/run/php/php7.4-fpm.sock;".
+The section should now read like this:
+```
+	upstream php {
+		server unix:/run/php/php7.4-fpm.sock;
+	}
+```
+
+Save the file and then run the following command to restart Nginx:
+```bash
+service nginx restart
+```
+
+Now run the command `update-alternatives --config php` to select which PHP version should be used for the command line.
+Select the option with the path "/usr/bin/php7.4" and confirm.
+```bash
+root@DietPi:~# update-alternatives --config php
+There are 2 choices for the alternative php (providing /usr/bin/php).
+
+  Selection    Path             Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/php8.1   81        auto mode
+  1            /usr/bin/php7.4   74        manual mode
+  2            /usr/bin/php8.1   81        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:1
+```

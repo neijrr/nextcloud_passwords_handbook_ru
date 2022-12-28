@@ -1,3 +1,7 @@
+> **PHP 8.0 is so 2020. Why not update to PHP 8.1 right away?**
+>
+> **[Check out the PHP 8.1 upgrade guide](./Upgrade-to-PHP-8.1-with-Apache)**
+
 ## Before you start
 - This tutorial was developed for and tested with DietPi 7.2 on a RaspberryPI.
 - This tutorial only works if you use "Apache" as webserver.

@@ -31,16 +31,41 @@ apt-get update
 Execute the following command on your DietPi to install PHP 8.1:
 
 ```bash
+# Remove conflicting packages
+apt-get -y remove php-apcu php-igbinary php-redis
+
 # Install PHP 8.1
-apt-get -y install php8.1-fpm php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick imagemagick
+apt-get -y install php8.1-common php8.1-fpm php8.1-cli php8.1-opcache php8.1-apcu php8.1-mysql php8.1-xml php8.1-zip php8.1-mbstring php8.1-gd php8.1-curl php8.1-redis php8.1-intl php8.1-bcmath php8.1-gmp php8.1-imagick php8.1-igbinary php8.1-readline php8.1-phpdbg imagemagick
 ```
 
 
 
 ## Update the PHP 8.1 configuration
-Execute the following command on your DietPi to link the DietPi configuration for PHP from PHP 7.4 to 8.1 and enable it:
+Now you need to copy and edit the php-fpm configuration for PHP 8.1
+
+Run `cp /etc/php/7.4/fpm/pool.d/www.conf /etc/php/8.1/fpm/pool.d/www.conf` to copy the existing configuration file.
+
+Run `nano /etc/php/8.1/fpm/pool.d/www.conf` to open the configuration file.
+
+You can use `CTRL` + `w` to search in the file,
+with `CRTL` + `o` you can save the changed file and
+with `CRTL` + `x` you can close the editor.
+
+Find the following line:
+```bash
+listen = /run/php/php7.4-fpm.sock
+```
+and replace it with this line:
+```bash
+listen = /run/php/php8.1-fpm.sock
+```
+Then save the file and exit the editor.
+
+
+Now execute the following command on your DietPi to link the DietPi configuration for PHP from PHP 7.4 to 8.1 and enable it:
 ```bash
 # Enable the image magick module
+# Errors related to PHP 7.4 can be ignored
 phpenmod imagick
 
 # Symlink NCP PHP configuration
@@ -48,48 +73,78 @@ ln -s /etc/php/7.4/mods-available/dietpi-nextcloud.ini /etc/php/8.1/mods-availab
 ln -s /etc/php/7.4/mods-available/dietpi.ini /etc/php/8.1/mods-available/dietpi.ini
 phpenmod dietpi
 phpenmod dietpi-nextcloud
-
-# Restart PHP
-service php8.1-fpm restart
 ```
 
 Now you need to edit the configuration of PHP FPM.
 Run the command `nano /etc/php/8.1/fpm/php.ini` to open a text editor with the config file.
-Find the line `;cgi.fix_pathinfo=1` and remove the `;` at the beginning so that the line reads `cgi.fix_pathinfo=1`.
 
-You can use `CTRL` + `w` to search in the file, 
-with `CRTL` + `o` you can save the changed file and 
-with `CRTL` + `x` you can close the editor.
+You can use `CTRL` + `w` to search in the file, with `CRTL` + `o` you can save the changed file and with `CRTL` + `x` you can close the editor.
+
+Find the line
+
+```bash
+;cgi.fix_pathinfo=1
+```
+and remove the `;` at the beginning so that the line reads 
+```bash
+cgi.fix_pathinfo=1
+```
+
+Then save the file, exit the editor and restart the PHP FPM service.
+```bash
+# Restart PHP
+service php8.1-fpm restart
+```
 
 
 
 ## Set up Lighttpd for PHP 8.1
-Now you need to edit the configuration for lighttpd to instruct it to use PHP 8.1
-Run `nano /etc/lighttpd/conf-available/15-fastcgi-php.conf` to open the configuration file.
+Run the command `update-alternatives --config php-fpm.sock` to select which PHP version should be used for the webserver.
+Select the option with the path "/run/php/php8.1-fpm.sock". If that option already has the asterisk ("*"), you can just enter "*" and confirm.
 
-It should have this section:
-```
-fastcgi.server += ( ".php" =>
-        ((
-                "socket" => "/run/php/php7.4-fpm.sock",
-                "broken-scriptfilename" => "enable"
-        ))
-)
+```bash
+root@DietPi:~# update-alternatives --config php-fpm.sock
+There are 2 choices for the alternative php-fpm.sock (providing /run/php/php-fpm.sock).
+
+  Selection    Path                      Priority   Status
+------------------------------------------------------------
+* 0            /run/php/php8.1-fpm.sock   81        auto mode
+  1            /run/php/php7.4-fpm.sock   74        manual mode
+  2            /run/php/php8.1-fpm.sock   81        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 0
 ```
 
-You need to change the "socket" from "/run/php/php7.4-fpm.sock" to "/run/php/php8.1-fpm.sock".
-The section should now read like this:
-```
-fastcgi.server += ( ".php" =>
-        ((
-                "socket" => "/run/php/php8.1-fpm.sock",
-                "broken-scriptfilename" => "enable"
-        ))
-)
-```
-Save the file and then run the following command to restart lighttpd:
+Then just restart lighttpd:
 ```bash
 service lighttpd force-reload
+```
+
+
+
+## Set the PHP command line version
+By default, your DietPi should now be using PHP 8.1.
+You can check this by running `php -v`. The output should look like this:
+```bash
+root@DietPi:~# php -v
+PHP 8.1.13 (cli) (built: Nov 26 2022 14:27:02) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.1.13, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.13, Copyright (c), by Zend Technologies
+```
+
+It's important that it shows `PHP 8.1.*`. If it doesn't, you should run `update-alternatives --config php` and set PHP 8.1 as default:
+```bash
+root@DietPi:~# update-alternatives --config php
+There are 2 choices for the alternative php (providing /usr/bin/php).
+
+  Selection    Path             Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/php8.1   81        auto mode
+  1            /usr/bin/php7.4   74        manual mode
+  2            /usr/bin/php8.1   81        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:0
 ```
 
 
@@ -104,18 +159,36 @@ ncc app:update passwords
 ```
 
 
-## Check the PHP default version
-By default, your DietPi should now be using PHP 8.1.
-You can check this by running `php -v`. The output should look like this:
+
+## Notes
+- It can take a day before app updates show up in the apps store
+
+
+
+# How to Switch back to PHP 7.4
+Run the command `update-alternatives --config php-fpm.sock` to select which PHP version should be used for the webserver.
+Select the option with the path "/run/php/php7.4-fpm.sock" and confirm.
+
 ```bash
-root@DietPi:~# php -v
-PHP 8.1.0 (cli) (built: Mar  5 2021 08:38:30) ( NTS )
-Copyright (c) The PHP Group
-Zend Engine v4.0.3, Copyright (c) Zend Technologies
-    with Zend OPcache v8.1.3, Copyright (c), by Zend Technologies
+root@DietPi:~# update-alternatives --config php-fpm.sock
+There are 2 choices for the alternative php-fpm.sock (providing /run/php/php-fpm.sock).
+
+  Selection    Path                      Priority   Status
+------------------------------------------------------------
+* 0            /run/php/php8.1-fpm.sock   81        auto mode
+  1            /run/php/php7.4-fpm.sock   74        manual mode
+  2            /run/php/php8.1-fpm.sock   81        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:1
 ```
 
-If it doesn't, you should use `update-alternatives --config php` and set PHP 8.1 as default:
+Then reload lighttpd:
+```bash
+service lighttpd force-reload
+```
+
+Now run the command `update-alternatives --config php` to select which PHP version should be used for the command line.
+Select the option with the path "/usr/bin/php7.4" and confirm.
 ```bash
 root@DietPi:~# update-alternatives --config php
 There are 2 choices for the alternative php (providing /usr/bin/php).
@@ -123,11 +196,8 @@ There are 2 choices for the alternative php (providing /usr/bin/php).
   Selection    Path             Priority   Status
 ------------------------------------------------------------
 * 0            /usr/bin/php8.1   81        auto mode
-  1            /usr/bin/php8.1   80        manual mode
+  1            /usr/bin/php7.4   74        manual mode
   2            /usr/bin/php8.1   81        manual mode
 
-Press <enter> to keep the current choice[*], or type selection number:0
+Press <enter> to keep the current choice[*], or type selection number:1
 ```
-
-## Notes
-- It can take a day before app updates show up in the apps store
