@@ -104,9 +104,9 @@ You need to edit the PHP configuration for php-fpm.
     ```
 
 #### Restart the php-fpm service
-    ```bash
-    service php8.1-fpm restart
-    ```
+```bash
+service php8.1-fpm restart
+```
 
 
 

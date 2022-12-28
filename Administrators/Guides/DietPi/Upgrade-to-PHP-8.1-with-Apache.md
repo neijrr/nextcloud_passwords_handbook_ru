@@ -87,9 +87,9 @@ You need to copy and edit the php-fpm configuration for PHP 8.1.
     ```
 
 #### Restart the php-fpm service
-    ```bash
-    service php8.1-fpm restart
-    ```
+```bash
+service php8.1-fpm restart
+```
 
 
 

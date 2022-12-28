@@ -186,9 +186,9 @@ You can switch back to PHP 7.4 at any time if something does not work.
     Change the "server" from "unix:/run/php/php8.1-fpm.sock;" back to "unix:/run/php/php7.4-fpm.sock;".
     The section should now read like this:
     ```
-    upstream php {
-        server unix:/run/php/php7.4-fpm.sock;
-    }
+        upstream php {
+            server unix:/run/php/php7.4-fpm.sock;
+        }
     ```
 3. Now save the file with `CRTL` + `o` and exit the editor with `CRTL` + `x`
 4. Restart nginx
