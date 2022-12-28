@@ -113,7 +113,8 @@ service php8.1-fpm restart
 
 ## Set up Lighttpd for PHP 8.1
 1. Run the command `update-alternatives --config php-fpm.sock` to select which PHP version should be used for the webserver.
-    Select the option with the path "/run/php/php8.1-fpm.sock". If that option already has the asterisk ("*"), you can just enter "*" and confirm.
+    Select the option with the path "/run/php/php8.1-fpm.sock".
+    If that option already has the asterisk ("*"), you can just confirm to keep the current choice.
     ```bash
     root@DietPi:~# update-alternatives --config php-fpm.sock
     There are 2 choices for the alternative php-fpm.sock (providing /run/php/php-fpm.sock).
