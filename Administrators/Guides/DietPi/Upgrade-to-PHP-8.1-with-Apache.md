@@ -164,7 +164,7 @@ Check for server and app updates for your Nextcloud.
 ## Done
 Congratulations! You're done now.
 To verify that everything has worked, log into your Nextcloud, click on your account icon and click on "Administration settings".
-There, open the "System" section and scroll down do PHP.
+There, open the "System" section and scroll down to PHP.
 You should also go to the "Overview" section and take care of any warnings that show up there.
 
 #### Notes
