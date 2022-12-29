@@ -8,6 +8,7 @@
 - [App Settings](./App-Settings)
 - [Backups](./Backups)
 - [Database Repair](./Guides/Maintenance/Database-Repair)
+- [OCC Commands](./OCC-Commands/OCC-Commands)
 
 #### Guides
 - [Debugging the app](./Guides/Maintenance/App-Debugging)
