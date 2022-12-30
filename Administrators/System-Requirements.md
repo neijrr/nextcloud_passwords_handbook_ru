@@ -68,7 +68,7 @@ To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](h
 
 If you use NextcloudPi, you can use our [NextcloudPi PHP 8.0 upgrade guide](./Guides/NextcloudPi/Upgrade-to-PHP-8.0).
 
-If you use DietPi, [check the guide for your webserver choice](./Index#dietpi).
+If you use DietPi, [check the PHP 8.1 upgrade guide for your webserver choice](./Index#dietpi).
 
 
 ### Third Party Services
