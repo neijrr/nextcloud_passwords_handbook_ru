@@ -30,7 +30,7 @@ The description of these options dav be found in the import guide for that servi
 
 - [Import from Passman](./Import/Import-from-Passman)
 - [Import from Chrome](./Import/Import-from-Chrome)
-- [Import from database backup](./Import/Import-from-backup)
+- [Import from database backup](./Import/Import-from-Backup)
 - [Import from Enpass](./Import/Import-from-Enpass)
 - [Import from custom CSV](./Import/Import-from-custom-CSV)
 
