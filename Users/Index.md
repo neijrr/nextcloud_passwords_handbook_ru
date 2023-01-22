@@ -7,7 +7,7 @@
    - [Creating Passwords](./Passwords/Creating-Passwords)
    - [Sharing Passwords](./Passwords/Sharing-Passwords)
    - [Password Details](./Passwords/Password-Detail-View)
-   - [Password Security Status](./Passwords/Password-Security-Status.md)
+   - [Password Security Status](./Passwords/Password-Security-Status)
  - [Folders](./Folders)
  - [Tags](./Tags)
  - [Encryption](./Encryption)
