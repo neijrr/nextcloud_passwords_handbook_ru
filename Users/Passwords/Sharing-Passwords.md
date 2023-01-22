@@ -38,9 +38,3 @@ Since this synchronisation is done by the server in the background, it may take 
 To make this process transparent to you, you will see a loading icon around the avatar of the user if there are changes pending for or from this specific user.
 
 ![A password (middle) is queued to be synchronized](../_files/share-update.gif)
-
-
-
-## Share password via QRCode
-In the `Share` tab of the password details, you will find the `QRCode` tab.
-The QRCode sharing functionality allows you to create a QRCode for the most commonly used properties of a password: the username, the website and the password itself.
