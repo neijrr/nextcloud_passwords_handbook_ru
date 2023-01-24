@@ -2305,7 +2305,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "https://localhost/apps/passwords"
+			"value": "https://localhost/index.php/apps/passwords"
 		},
 		{
 			"key": "http_auth_user",
