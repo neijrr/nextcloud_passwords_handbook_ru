@@ -74,16 +74,6 @@ a2disconf php7.4-fpm
 systemctl reload apache2
 ```
 
-## Check for Nextcloud and App updates
-It can take some time until updates for apps are shown in the appstore.
-
-```bash
-cd /var/www/nextcloud
-
-# Install updates of the passwords app if available
-sudo -u www-data php ./occ app:update passwords
-```
-
 
 ## Check the PHP default version
 By default, your NextCloudPi should now be using PHP 8.0.
@@ -109,6 +99,16 @@ There are 4 choices for the alternative php (providing /usr/bin/php).
   3            /usr/bin/php8.0   80        manual mode
 
 Press <enter> to keep the current choice[*], or type selection number: 0
+```
+
+## Check for Nextcloud and App updates
+It can take some time until updates for apps are shown in the appstore.
+
+```bash
+cd /var/www/nextcloud
+
+# Install updates of the passwords app if available
+sudo -u www-data php ./occ app:update passwords
 ```
 
 ## Notes
