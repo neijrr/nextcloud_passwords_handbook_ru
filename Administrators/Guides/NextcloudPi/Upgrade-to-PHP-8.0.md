@@ -18,6 +18,14 @@ If you already have SSH enabled, you can skip this.
 After logging in, run `sudo su` to start a session as root.
 
 
+## Check which version of PHP you're using
+The latest version of NextcloudPi already uses PHP 8.1 by default.
+You can see the PHP version used by your Webserver in the "System" section in the Nextcloud Admin settings.
+You can use the command `php -v` to see the php version used by default on the command line.
+
+If you're already using PHP 8.1 or newer, you can stop here.
+
+
 ## Add PHP Package Archive
 You can skip this step if you already followed the [Upgrade to PHP 7.4](./Upgrade-to-PHP-7.4) guide.
 Execute the following commands on your NextCloudPi to add the repository PHP 8.0 from [deb.sury.org](https://deb.sury.org/#php-packages):
