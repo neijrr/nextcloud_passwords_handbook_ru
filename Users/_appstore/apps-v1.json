@@ -424,7 +424,7 @@
                 },
                 "links"      : {
                     "homepage": "https://galaxy.ansible.com/markuman/nextcloud",
-                    "sources" : "https://git.osuv.de/m/nextcloud_collection"
+                    "sources" : "https://github.com/markuman/markuman.nextcloud"
                 },
                 "downloads"  : [
                     {
