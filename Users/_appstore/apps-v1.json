@@ -436,7 +436,7 @@
                     }
                 ],
                 "features"   : {
-                    "encryption": false
+                    "encryption": true
                 },
                 "recommended": false,
                 "official"   : false
