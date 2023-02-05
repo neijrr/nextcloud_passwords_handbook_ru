@@ -32,7 +32,7 @@ In that case you should always review the log before posting it online and remov
 
 ## I copied something into the console, what now?
 
-1. Speak to your IT Support or Administrator. Explain what you did, give them what you pasted and follow their instructions.
+1. **Speak to your IT Support or Administrator. Explain what you did, show them what you pasted and follow their instructions.**
 2. Confirm this with your IT support first: Clear your browser history, make sure to clear "Cookies", "Cache", "Active Logins", "Website Settings" and "Website Data". These may be called a
    little different in your browser.
 3. Log in with Nextcloud again, go into your personal sections and there into the security section. Scroll to the "Devices and Sessions" part and revoke access for all devices listed there.
