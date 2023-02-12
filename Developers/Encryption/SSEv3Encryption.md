@@ -15,11 +15,11 @@ Here is an example for the implementation without any custom code.
 ```php
 <?php
 
-namespace OCA\PasswordsEncryptionProvider\Encryption;
+namespace OCA\MyEncryptionProvider\Encryption;
 
 use OCA\Passwords\Encryption\Object\SseV3KeyProviderInterface;
 
-class Encryption implements SseV3KeyProviderInterface {
+class MyKeyProvider implements SseV3KeyProviderInterface {
 
     /**
      * Returns if the key provider is ready to provide encryption keys
