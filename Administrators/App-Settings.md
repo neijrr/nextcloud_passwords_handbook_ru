@@ -151,8 +151,15 @@ Just delivers one of five default images.
 
 ## Website Preview API Key
 If you use "Browshot", "screenshotlayer" or "screenshotmachine.com", you will have to provide an api key here.
-Otherwise these services will not work.
+Otherwise, these services will not work.
 If you change this setting, clear the favicon cache and your browser cache to see changes.
+
+
+# Encryption Settings
+Configure the encryption methods used by the app.
+
+## Allow third party encryption
+Use the configured SSEv3 user key provider for server side encryption.
 
 
 # Default Email Settings

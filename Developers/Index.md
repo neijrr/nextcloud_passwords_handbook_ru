@@ -26,6 +26,7 @@
       1. [CSEv1 Keychain](./Encryption/CSEv1Keychain)
    3. Encryption
       1. [CSEv1 Encryption](./Encryption/CSEv1Encryption)
+      1. [SSEv3 Encryption](./Encryption/SSEv3Encryption)
 4. [Libraries & Packages](./Libraries)
 5. [List your app](./App-Requirements)
 6. [Legacy API](./Api/Legacy-Api)
