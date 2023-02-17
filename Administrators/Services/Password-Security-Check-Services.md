@@ -11,7 +11,7 @@ This preserves the privacy of the passwords stored in the app as no SHA-1 hash o
 "Have i been pwned?" is the recommended default service for security checks as it provides up-to-date data.
 
 ##### Configuring the api url
-It is possible to use a compatible api instead of the the official Hibp? api.
+It is possible to use a compatible api instead of the official Hibp? api.
 For this, the config key `passwords/hibp/url` needs to be set to the url of the api.
 The url should contain the placeholder `:range` which will be replaced with the first five characters of the SHA-1 hash which should be checked.
 The url should look like this in the end: `https://api.pwnedpasswords.com/range/:range`.
@@ -25,7 +25,12 @@ After the database has been downloaded, all checks are done locally.
 Which version of the dataset is downloaded is hardcoded into the app.
 This means that a new version of the database is only downloaded after the app has been updated and old apps may download an outdated database.
 
-##### Generating the database
+##### Requirements
+- PHP ZIP extension must be installed
+- PHP `max_execution_time` must be two hours or more for background jobs
+- There must be at least 2 GB of free disk space
+
+##### Generating the database yourself
 The app offers an option to generate the password database from the source files provided by Hibp?.
 In order to process the file, your server should have at least 3 GiB RAM for PHP applications and around 60 GiB of disk space.
 
@@ -56,6 +61,11 @@ This means that a new version of the database is only downloaded after the app h
 
 _This service supports the same customisation options as the [Big local database (25M passwords)](#big-local-database-25m-passwords) service_
 
+##### Requirements
+- PHP ZIP extension must be installed
+- PHP `max_execution_time` must be two hours or more for background jobs
+- There must be at least 1 GB of free disk space
+
 
 
 ### Big local database & Hibp?
@@ -69,3 +79,8 @@ With that knowledge and the original list of passwords from which the hashes wer
 By having a large list of common passwords locally, this scenario is prevented since no request to the api is made for the SHA-1 hash of any common password.
 
 _This service supports all customisation options of the [Have i been pwned?](#have-i-been-pwned) service and the [Big local database (25M passwords)](#big-local-database-25m-passwords) service_
+
+##### Requirements
+- PHP ZIP extension must be installed
+- PHP `max_execution_time` must be two hours or more for background jobs
+- There must be at least 2 GB of free disk space
