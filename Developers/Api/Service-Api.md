@@ -160,3 +160,6 @@ The success status code is `200 Ok` and `404 Not Found` if no url could be deter
 | Argument | Type   | Description                                        |
 |----------|--------|----------------------------------------------------|
 | url      | string | The URL of the password change page for the domain |
+
+#### Notes
+- This api requires at least version 2023.3
