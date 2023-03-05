@@ -15,7 +15,7 @@ If the copy action was successful, a notification at the top of the window will 
 This way you always have quick access to the most important properties.
 
 ##### The Security Status
-The shield at the right side of each password symbolizes the security status of a password.
+The shield on the right side of each password symbolizes the security status of a password.
 If the shield is green, you have nothing to worry about.
 If it is yellow, the password does not fulfill your personal security standards.
 If you hover the icon, the tooltip will show you which rule was violated.
@@ -26,6 +26,7 @@ You can get a quick overview of all passwords by their security status in the se
 With the `More` menu, you can access all other options available for the password.
 The `Details` option will open a side section with all the password details and other things such as [sharing](./Passwords/Sharing-Passwords), notes and previous revisions.
 The `Edit` option will open the `Edit Password` window where you can change the password properties.
+The `Open Change Password page` option will open a dialog which leads you to the url where you can change the password for this account.
 You can also delete the password via this menu.
 
 #### Additional display options
