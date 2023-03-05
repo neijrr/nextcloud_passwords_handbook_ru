@@ -1,37 +1,44 @@
 The service api provides access to general services provided by the Passwords app.
 
-# Available api actions
-| Action | Url | Method | Session required | Description |
-| --- | --- | --- | --- | --- |
-| [password](#the-password-action) | `/api/1.0/service/password` | GET | yes | Generates a password with the users default settings |
-| [password](#the-password-action) | `/api/1.0/service/password` | POST | yes | Generates a password with the given settings |
-| [avatar](#the-avatar-action)     | `/api/1.0/service/avatar/{user}/{size}` | GET | no | Returns the avatar image for a user |
-| [favicon](#the-favicon-action)   | `/api/1.0/service/favicon/{domain}/{size}` | GET | no | Returns a favicon image for a domain |
-| [preview](#the-preview-action)   | `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET | no | Returns a preview image for a domain |
+# Available api endpoints
+| Action                                               | Url                                                         | Method | Session required | Description                                          |
+|------------------------------------------------------|-------------------------------------------------------------|--------|------------------|------------------------------------------------------|
+| [password](#the-password-endpoint)                   | `/api/1.0/service/password`                                 | GET    | yes              | Generates a password with the users default settings |
+| [password](#the-password-endpoint)                   | `/api/1.0/service/password`                                 | POST   | yes              | Generates a password with the given settings         |
+| [avatar](#the-avatar-endpoint)                       | `/api/1.0/service/avatar/{user}/{size}`                     | GET    | no               | Returns the avatar image for a user                  |
+| [favicon](#the-favicon-endpoint)                     | `/api/1.0/service/favicon/{domain}/{size}`                  | GET    | no               | Returns a favicon image for a domain                 |
+| [preview](#the-preview-endpoint)                     | `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET    | no               | Returns a preview image for a domain                 |
+| [password-change](#the-password-change-url-endpoint) | `/api/1.0/service/password-change`                          | POST   | no               | Returns the url of the password change page          |
 
 
 
 
-# The password action
-The password action generates one password with the given settings.
+# The password endpoint
+The password endpoint generates one password with the given settings.
+
+#### URL
+| Path                        | Method | Session required |
+|-----------------------------|--------|------------------|
+| `/api/1.0/service/password` | GET    | yes              |
+| `/api/1.0/service/password` | POST   | yes              |
 
 #### Arguments
-| Arguments | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| strength | int | 1 | no | A higher value creates a longer and more complex password |
-| numbers | bool | false | no | Whether or not numbers should be used in the password |
-| special | bool | false | no | Whether or not special characters should be used in the password |
+| Arguments | Type | Default | Required | Description                                                      |
+|-----------|------|---------|----------|------------------------------------------------------------------|
+| strength  | int  | 1       | no       | A higher value creates a longer and more complex password        |
+| numbers   | bool | false   | no       | Whether or not numbers should be used in the password            |
+| special   | bool | false   | no       | Whether or not special characters should be used in the password |
 
 #### Return value
 The success status code is `200 Ok`
 
-| Argument | Type | Description |
-| --- | --- | --- |
-| password | string | The generated password |
-| words | string | The words used in the password |
-| strength | int | The strength setting used |
-| numbers | bool | Whether or not numbers were used in the password |
-| special | bool | Whether or not special characters were used in the password |
+| Argument | Type   | Description                                                 |
+|----------|--------|-------------------------------------------------------------|
+| password | string | The generated password                                      |
+| words    | string | The words used in the password                              |
+| strength | int    | The strength setting used                                   |
+| numbers  | bool   | Whether or not numbers were used in the password            |
+| special  | bool   | Whether or not special characters were used in the password |
 
 #### Notes
  - If you call this action with a GET request, the users settings will be used
@@ -42,14 +49,19 @@ The success status code is `200 Ok`
 
 
 
-# The avatar action
-The avatar action returns a png avatar icon for the given user id.
+# The avatar endpoint
+The avatar endpoint returns a png avatar icon for the given user id.
+
+#### URL
+| Path                                    | Method | Session required |
+|-----------------------------------------|--------|------------------|
+| `/api/1.0/service/avatar/{user}/{size}` | GET    | no               |
 
 #### Arguments
-| Arguments | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| user | string | - | yes | The user id |
-| size | int | 32 | no | The size of the avatar in pixels |
+| Arguments | Type   | Default | Required | Description                      |
+|-----------|--------|---------|----------|----------------------------------|
+| user      | string | -       | yes      | The user id                      |
+| size      | int    | 32      | no       | The size of the avatar in pixels |
 
 #### Return value
 The success status code is `200 Ok`.
@@ -64,14 +76,19 @@ This action returns a png image file on success
 
 
 
-# The favicon action
-The favicon action returns a png favicon icon for the given domain.
+# The favicon endpoint
+The favicon endpoint returns a png favicon icon for the given domain.
+
+#### URL
+| Path                                       | Method | Session required |
+|--------------------------------------------|--------|------------------|
+| `/api/1.0/service/favicon/{domain}/{size}` | GET    | no               |
 
 #### Arguments
-| Arguments | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| domain | string | - | yes | The domain name |
-| size | int | 32 | no | The size of the favicon in pixels |
+| Arguments | Type   | Default | Required | Description                       |
+|-----------|--------|---------|----------|-----------------------------------|
+| domain    | string | -       | yes      | The domain name                   |
+| size      | int    | 32      | no       | The size of the favicon in pixels |
 
 #### Return value
 The success status code is `200 Ok`.
@@ -86,16 +103,21 @@ This action returns a png image file on success
 
 
 
-# The preview action
-The preview action returns a jpeg preview image for the given domain.
+# The preview endpoint
+The preview endpoint returns a jpeg preview image for the given domain.
+
+#### URL
+| Path                                                        | Method | Session required |
+|-------------------------------------------------------------|--------|------------------|
+| `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET    | no               |
 
 #### Arguments
-| Arguments | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| domain | string | - | yes | The domain name |
-| view | string | "desktop" | no | Can be `desktop` or `mobile`. Sets device name / viewports. |
-| width | string/int | 640 | no | The width of the resulting image |
-| height | string/int | "360..." | no | The height of the resulting image |
+| Arguments | Type       | Default   | Required | Description                                                 |
+|-----------|------------|-----------|----------|-------------------------------------------------------------|
+| domain    | string     | -         | yes      | The domain name                                             |
+| view      | string     | "desktop" | no       | Can be `desktop` or `mobile`. Sets device name / viewports. |
+| width     | string/int | 640       | no       | The width of the resulting image                            |
+| height    | string/int | "360..."  | no       | The height of the resulting image                           |
 
 #### Return value
 The success status code is `200 Ok`.
@@ -115,3 +137,26 @@ This action returns a jpeg image file on success
    The left value will be the minimum and the right value the maximum.
    The api will try to generate an image that fits the given values without cropping
  - The resulting image will always have a minimum width and height of 240 pixels
+
+
+
+
+# The password change url endpoint
+The password change url endpoint will attempt to determine the url of the "Change password page" for the given domain.
+
+#### URL
+| Path                               | Method | Session required |
+|------------------------------------|--------|------------------|
+| `/api/1.0/service/password-change` | GET    | no               |
+
+#### Arguments
+| Arguments | Type   | Default | Required | Description     |
+|-----------|--------|---------|----------|-----------------|
+| domain    | string | -       | yes      | The domain name |
+
+#### Return value
+The success status code is `200 Ok` and `404 Not Found` if no url could be determined.
+
+| Argument | Type   | Description                                        |
+|----------|--------|----------------------------------------------------|
+| url      | string | The URL of the password change page for the domain |
