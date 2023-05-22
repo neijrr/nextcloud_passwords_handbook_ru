@@ -85,7 +85,7 @@ As usual with Google, there is no knowing what they do with any data collected b
 
 #### None
 Always returns the fallback icon.
-It is the fastest and most privacy friendly service.
+It is the fastest and most privacy-friendly service.
 
 
 ## Favicon Service Api

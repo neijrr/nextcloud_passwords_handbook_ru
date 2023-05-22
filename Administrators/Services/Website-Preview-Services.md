@@ -3,7 +3,7 @@ Only the front page of the domain is called and at maximum twice for mobile and 
 
 If you change this setting, clear the preview cache and your browser cache to see changes.
 
-If you know a good program or service that has an API and offers a free plan for users, feel free to open an issue to add support for it.
+**Note:** If you know a good program or service that has an API and offers a free plan for users, feel free to open an issue to add support for it.
 
 
 ## Pageres CLI
@@ -16,11 +16,17 @@ Pageres can be installed with NPM with the command `npm install --global pageres
 If the installation fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
 If you are using a docker container, add `--cap-add=SYS_ADMIN` to the docker command to enable the chrome sandbox.
 
+**Warning:** Locally hosted services can generate previews of websites only available within your local network. (e.g. Intranet/Company Wiki etc.).
+This could leak confidential data.
+
 
 ## screeenly
 Screeenly is a standalone open source website screenshot service.
-It offers unlimited free screenshots and provides a [self hosting](https://github.com/stefanzweifel/screeenly/wiki/Requirements-and-Install) option.
+It offers unlimited free screenshots and provides a [self hosted](https://github.com/stefanzweifel/screeenly/wiki/Requirements-and-Install) option.
 It usually creates proper screenshots and the online version supports HTTPS by default.
+
+**Warning:** Locally hosted services can generate previews of websites only available within your local network. (e.g. Intranet/Company Wiki etc.).
+This could leak confidential data.
 
 #### Configuration
 If you're using the hosted version, just enter your api key from [screeenly.com](https://secure.screeenly.com/dashboard)
