@@ -16,7 +16,7 @@ Pageres can be installed with NPM with the command `npm install --global pageres
 If the installation fails, try `sudo npm install --global pageres-cli --unsafe-perm`.
 If you are using a docker container, add `--cap-add=SYS_ADMIN` to the docker command to enable the chrome sandbox.
 
-**Warning:** Locally hosted services can generate previews of websites only available within your local network. (e.g. Intranet/Company Wiki etc.).
+**Warning:** Locally hosted services can generate previews of websites only available within your local network. (e.g. Intranet/Company Wiki).
 This could leak confidential data.
 
 
@@ -25,7 +25,7 @@ Screeenly is a standalone open source website screenshot service.
 It offers unlimited free screenshots and provides a [self hosted](https://github.com/stefanzweifel/screeenly/wiki/Requirements-and-Install) option.
 It usually creates proper screenshots and the online version supports HTTPS by default.
 
-**Warning:** Locally hosted services can generate previews of websites only available within your local network. (e.g. Intranet/Company Wiki etc.).
+**Warning:** Locally hosted services can generate previews of websites only available within your local network. (e.g. Intranet/Company Wiki).
 This could leak confidential data.
 
 #### Configuration
