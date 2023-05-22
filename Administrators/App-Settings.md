@@ -19,33 +19,17 @@ In this section you can configure all the third party services used by Passwords
 
 
 ## Password Security Checks
-This service is used to check if a password is safe or not.
+This setting defines the service which is used to check if a password has been compromised.
+[A full description of all services can be found here](./Services/Password-Security-Check-Services)
 
-#### Have I been pwned?
-This is the recommended service.
-It checks SHA-1 hashes against the database of [haveibeenpwned.com](https://haveibeenpwned.com/) which contains hundreds of millions of compromised passwords.
-The service is privacy friendly since it downloads data from the api and does the comparison locally and never sends any identifying information to the api.
-The service is the most up-to-date source when it comes to notifying you about breached passwords.
-[More details about the service can be found here.](./Services/Password-Security-Check-Services#have-i-been-pwned)
+**Our Recommendation**: [Have I been pwned?](./Services/Password-Security-Check-Services#have-i-been-pwned)
 
-#### Big local database (25M passwords)
-This service downloads a static database of 25 million breached passwords and stores them locally.
-The security check is performed locally and no external service is involved.
-The downside is the significantly smaller database which is also updated less often.
-[More details about the service can be found here.](./Services/Password-Security-Check-Services#big-local-database-25m-passwords)
-
-#### Small local database (5M passwords)
-This service downloads a static database of 5 million breached passwords and stores them locally.
-The security check is performed locally and no external service is involved.
-The downside is the significantly smaller database which is also updated less often.
-[More details about the service can be found here.](./Services/Password-Security-Check-Services#small-local-database-5m-passwords)
-
-#### Big local database & Hibp?
-This service combines the "Have i been pwned?" and "Big local database" services.
-The service checks against the local database first and only contacts Hibp? if the SHA-1 hash is not found locally.
-This reduces the number of requests to the Hibp? api and speeds up the check.
-[More details about the service can be found here.](./Services/Password-Security-Check-Services#big-local-database--hibp)
-
+| **Service**     | Have I been pwned?                                                                                                 | Big local database (25M passwords)                                                               | Small local database (5M passwords)                                                              | Big local database & Hibp?                                                                                                           |
+|-----------------|--------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **Description** | Uses [haveibeenpwned.com](https://haveibeenpwned.com/) to check for hundreds of millions of compromised passwords. | Downloads a static database of common compromised passwords and checks your passwords against it | Downloads a static database of common compromised passwords and checks your passwords against it | This service combines the "Have i been pwned?" and "Big local database" services.                                                    |
+| **Benefits**    | Up-to-date, privacy friendly, large database                                                                       | All checks done locally, allows custom dataset, can be used offline                              | All checks done locally, does not require much space, allows custom dataset, can be used offline | Up-to-date, privacy friendly, large database, allows custom dataset, can be used offline, less requests to HIBP for common passwords |
+| **Downsides**   | Requires online connection                                                                                         | Requires download & disk space, small compared to HIBP, rarely updated                           | Very small dataset, rarely updated                                                               | Requires download & Disk space                                                                                                       |
+| **Details**     | [More details](./Services/Password-Security-Check-Services#have-i-been-pwned)                                      | [More details](./Services/Password-Security-Check-Services#big-local-database-25m-passwords)     | [More details](./Services/Password-Security-Check-Services#small-local-database-5m-passwords)    | [More details](./Services/Password-Security-Check-Services#big-local-database--hibp)                                                 |
 
 ## Password Generator Service
 This service will be used to generate the basic words for a new password.
@@ -112,41 +96,12 @@ If you change this setting, clear the favicon cache and your browser cache to se
 ## Website Preview Service
 This service is used to generate previews of websites.
 
-#### Pageres CLI
-Uses [pageres-cli](https://github.com/sindresorhus/pageres-cli) to generate website previews locally.
-Usually very reliable local and headless preview generator with a modern browser engine.
-[More details about the service can be found here.](./Services/Website-Preview-Services#pageres-cli)
-
-#### Browshot
-Uses the [browshot.com](https://browshot.com/) webservice to generate website previews.
-Browshot generates website screenshots with real browsers and devices.
-[More details about the service can be found here.](./Services/Website-Preview-Services#browshot)
-
-Offers 100 free screenshots per month.
-The api offers HTTPS by default, you can view the screenshots in your account and you can buy additional screenshots as you need.
-Passwords will check your account and use free screenshots if possible. 
-(Instance 27 is used for desktop and instance 67 for mobile.)
-If your account balance allows it, passwords will use premium instances if no free screenshots are left.
-(Instance 58 is used for desktop and instance 275 for mobile.)
-You can specify the premium instance to use with the config keys `service/preview/bws/mobile` and `service/preview/bws/desktop` manually.
-
-#### screeenly
-Offers unlimited free screenshots and [self hosting](https://github.com/stefanzweifel/screeenly/wiki/Requirements-and-Install)
-It has HTTPS by default and usually creates proper screenshots.
-You can either just enter an api key and use the hosted version at [screeenly.com](https://secure.screeenly.com/) or enter a full url like `https://secure.screeenly.com/api/v1?key=yourapikey` where everything before `?key=` is the api url and the key is your api key.
-
-#### screenshotlayer
-Offers 100 free screenshots per month.
-If you need more, you have to buy a subscription.
-Triggers the bot protection on more websites and HTTPS is not supported.
-
-#### screenshotmachine.com
-Offers 100 fresh screenshots for free per month (accumulative) and impressions are free.
-You pay what you use, it is quite fast and supports different devices.
-HTTPS is not supported.
-
-#### None
-Just delivers one of five default images.
+| **Service**     | Pageres CLI                                                          | screeenly                                                                                | Browshot                                                                                | screenshotmachine.com                                                    | screenshotlayer                                                     | None                                                     |
+|-----------------|----------------------------------------------------------------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------------|
+| **Description** | Uses the locally installed pageres-cli to generate website previews. | Can be used with [screeenly.com](https://secure.screeenly.com/) or a self hosted version | Uses the [browshot.com](https://browshot.com/) webservice to generate website previews. | Uses [screenshotmachine.com](https://screenshotmachine.com)              | Uses [screenshotlayer](https://screenshotlayer.com/)                | Delivers default images instead of previews              |
+| **Benefits**    | Reliable, privacy friendly                                           | Totally free, self hosted version                                                        | Easy to use, uses real browsers, free tier                                              | Easy to use, accumulative free tier (+100 previews/month)                | Easy to use, free tier                                              | Local, privacy friendly                                  |
+| **Downsides**   | Requires installing and maintaining additional software              | External service, free version no longer developed                                       | External service                                                                        | External service                                                         | External service, no HTTPS API, watermark                           | Not actually previews                                    |
+| **Details**     | [More details](./Services/Website-Preview-Services#pageres-cli)      | [More details](./Services/Website-Preview-Services#screeenly)                            | [More details](./Services/Website-Preview-Services#browshot)                            | [More details](./Services/Website-Preview-Services#screenshotmachinecom) | [More details](./Services/Website-Preview-Services#screenshotlayer) | [More details](./Services/Website-Preview-Services#none) |
 
 
 ## Website Preview API Key
