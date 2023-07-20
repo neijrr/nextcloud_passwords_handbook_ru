@@ -78,15 +78,18 @@ The action will return an object with the property `success` with the value `tru
 
 
 # Session ID
-Usually, the session cookies provided by Nextcloud are sufficient to use sessions.
-If for some reason your client is unable to use cookies, the special header `X-API-SESSION` can be used to exchange session ids.
-The api will include the header in each response and will accept it in each request.
+The passwords app will send the `nc_passwords` session cookie and the `X-API-SESSION` header with each request.
+If you use the session cookie, you need to send the most recent cookie you received from the server with every following request.
+If you use the header, you need to send the most recent header you received from the server with every following request.
+
+**Node:** If the value of the cookie or header changes, it's likely that the server has terminated the previous session.
+
 
 
 # Backwards compatibility
 To remain compatible with older clients which do neither support encryption nor sessions, the api does currently not require an authorized session if the user does not use encryption.
 
-This will change by the end of 2020.
+This will change by the end of 2023.
 
 
 # Client deauthorization

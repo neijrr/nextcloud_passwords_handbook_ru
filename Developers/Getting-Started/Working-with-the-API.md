@@ -6,6 +6,8 @@
      The usage of app tokens also makes it easier for users to revoke access of lost or compromised clients.
 - API requests can not be made from your browser and trying to do so will end your NC session.
    This is a rule from Nextcloud and can't be changed
+- Your client must be able to handle the `nc_passwords` session cookie or be able to receive and send the `X-API-SESSION` with each request.
+  [See Session ID](../Api/Session-Api#session-id)
 - [More information can be found on the API page](../Api#general-notes)
 
 # Inspecting API requests with Postman
@@ -28,7 +30,7 @@ You may need to set the `base_url`, `http_auth_user` and `http_auth_pass`.
 The `http_api_session` can be used to use the api with a session context.
 
 ## End-to-End Encryption
-If you're working with e2e, you can log in in the webapp and then use the session token and app token from that session.
+If you're working with e2e, you can log in the webapp and then use the session token and app token from that session.
 You should be aware that there is no decryption / encryption logic available in Postman.
 
  - The session token can be found in each request in the X-Api-Session header.
