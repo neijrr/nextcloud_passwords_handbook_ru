@@ -4,4 +4,4 @@ If you're looking to get started with development for the passwords app or any c
 - [Working with the API](./Getting-Started/Working-with-the-API)
 - [Sample Data](./Getting-Started/Sample-Data)
 - [Passwords Test Server](https://test.passwordsapp.org/info.html)
-- [Telegram Group for Developers](https://t.me/nc_passwords_dev)
+- [Telegram Group for Developers](https://t.me/nc_passwords/3826)

@@ -27,7 +27,7 @@
 ## Support & Contact
 If you have any questions which are not answered in the handbook,
 don't hesitate to ask your question in our [forum](https://help.nextcloud.com/c/apps/passwords)
-or in our [Telegram chat](https://t.me/nc_passwords).
+or in our [Telegram chat](https://t.me/nc_passwords/1).
 
 ## Browser Extension
 The Passwords Browser Extension gives you easy and secure access to all your passwords from within your browser.

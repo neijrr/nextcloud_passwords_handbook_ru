@@ -17,6 +17,6 @@ Go to `More > Handbook` view it.
 Alternatively the online version can be found [here](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Index).
 
 ## Support
-1. [Official Chat](https://t.me/nc_passwords)
+1. [Official Chat](https://t.me/nc_passwords/1)
 2. [Official Forum](https://help.nextcloud.com/c/apps/passwords)
 3. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
