@@ -177,7 +177,7 @@ This setting will modify the Nextcloud core to enable the installation of nightl
 The server survey will send us some anonymous data of your server once a week.
 This helps us to plan the future development of the app.
 You can either contribute basic data (Nextcloud, App and PHP version) or full data (App Settings, Encryption usage) or no data at all.
-You can read more about this [here](./Server-Survey) or take a look at our [statistics](https://ncpw.mdns.eu/) generated from the data. 
+You can read more about this [here](./Server-Survey) or take a look at our [statistics](https://statistics.passwordsapp.org/) generated from the data. 
 
 
 # Caches

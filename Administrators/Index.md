@@ -34,6 +34,11 @@
 - [Self-Hosting](./User-Handbook/Self-Hosting)
 - [Feature management](./User-Handbook/Feature-Management)
 
+#### App Notifications
+- [Platform Support Notification](./Notifications/Platform-Support-Notification)
+- [Breached Passwords Update Failure Notification](./Notifications/Platform-Support-Notification)
+- [Server Survey Notification](./Notifications/Server-Survey-Notification)
+
 #### Information
 - [About the server survey](./Server-Survey)
 - [Feature Comparison](./Feature-Comparison)

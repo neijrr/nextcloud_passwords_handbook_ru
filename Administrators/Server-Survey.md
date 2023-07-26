@@ -1,5 +1,5 @@
 The passwords server survey is a collection of anonymous server data sent by the passwords app once a month.
-The statistics are publicly available on [ncpw.mdns.eu](https://ncpw.mdns.eu/).
+The statistics are publicly available on [statistics.passwordsapp.org](https://statistics.passwordsapp.org/).
 
 
 ## Data privacy
@@ -32,6 +32,7 @@ In the admin settings you can specify which data you want to send in the server 
 ## No participation
 Will not send any data at all.
 Not even that you do not participate.
+You will also not receive any further notifications about the survey.
 
 ## Basic
 Will send the Nextcloud, PHP and app version and information about your OS, CPU architecture, cron execution and which database software is used.
