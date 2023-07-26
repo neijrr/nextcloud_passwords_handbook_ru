@@ -9,5 +9,5 @@ After three attempts, the app will no longer try to download the database and in
 1. Read the reason given in the notification. If it suggests that there were timeouts or the host could not be reached, your server may not be able to reach the download server or timeouts (e.g. for background jobs) may be too short.
 2. You can always try again. Run the command `php ./occ config:app:set passwords passwords/db/attempts --value=0;` in the installation directory to reset the attempt counter.
 3. Check the [Nextcloud log](../Guides/Maintenance/App-Debugging) for any related errors.
-4. Configure a different [password security check service](./Services/Password-Security-Check-Services#have-i-been-pwned)
+4. Configure a different [password security check service](../Services/Password-Security-Check-Services#have-i-been-pwned)
 5. Ask for [support](../Index#support)
