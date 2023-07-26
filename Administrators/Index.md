@@ -36,7 +36,7 @@
 
 #### App Notifications
 - [Platform Support Notification](./Notifications/Platform-Support-Notification)
-- [Breached Passwords Update Failure Notification](./Notifications/Platform-Support-Notification)
+- [Breached Passwords Update Failure Notification](./Notifications/Breached-Passwords-Update-Failure-Notification)
 - [Server Survey Notification](./Notifications/Server-Survey-Notification)
 
 #### Information
