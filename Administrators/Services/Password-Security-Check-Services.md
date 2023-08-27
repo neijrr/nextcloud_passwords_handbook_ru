@@ -20,7 +20,7 @@ The app expects a list of matching hashes as response, with one entry per line a
 
 
 ### Big local database (25M passwords)
-This service downloads a database with the 25 million most common passwords of the [Hibp? dataset](https://haveibeenpwned.com/Passwords) from [breached.passwordsapp.org](httsp://breached.passwordsapp.org) and installs it locally.
+This service downloads a database with the 25 million most common passwords of the [Hibp? dataset](https://haveibeenpwned.com/Passwords) from [breached.passwordsapp.org](https://breached.passwordsapp.org) and installs it locally.
 After the database has been downloaded, all checks are done locally. 
 Which version of the dataset is downloaded is hardcoded into the app.
 This means that a new version of the database is only downloaded after the app has been updated and old apps may download an outdated database.
@@ -54,7 +54,7 @@ The url should look like this in the end: `https://breached.passwordsapp.org/dat
 
 ### Small local database (5M passwords)
 This service is exactly the same as the [Big local database (25M passwords)](#big-local-database-25m-passwords) service, just with a smaller database.
-The service downloads a database with the 5 million most common passwords of the [Hibp? dataset](https://haveibeenpwned.com/Passwords) from [breached.passwordsapp.org](httsp://breached.passwordsapp.org) and installs it locally.
+The service downloads a database with the 5 million most common passwords of the [Hibp? dataset](https://haveibeenpwned.com/Passwords) from [breached.passwordsapp.org](https://breached.passwordsapp.org) and installs it locally.
 After the database has been downloaded, all checks are done locally.
 Which version of the dataset is downloaded is hardcoded into the app.
 This means that a new version of the database is only downloaded after the app has been updated and old apps may download an outdated database.
