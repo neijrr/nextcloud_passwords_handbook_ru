@@ -9,6 +9,7 @@
 - [Backups](./Backups)
 - [Database Repair](./Guides/Maintenance/Database-Repair)
 - [OCC Commands](./OCC-Commands/OCC-Commands)
+- [Demo](https://test.passwordsapp.org/info.html)
 
 #### Guides
 - [Debugging the app](./Guides/Maintenance/App-Debugging)
