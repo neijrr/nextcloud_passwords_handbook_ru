@@ -78,7 +78,6 @@ Set up end-to-end encryption for your passwords or change the encryption passwor
 ##### Log in with WebAuthn
 If end-to-end encryption is enabled and your browser supports it, you can log in with WebAuthn.
 This stores your encryption passphrase in the browser and automatically retrieves it when you log in.
-Log in with WebAuthn needs to be enabled on any device where you want to use it.
 The set up process only stores the given passphrase in the browser, it does not check if it is the right passphrase.
 If the passphrase is invalid, you will see an error message when you log in and need to enter the passphrase manually.
 
