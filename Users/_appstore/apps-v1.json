@@ -45,6 +45,13 @@
                 "downloads"  : [
                     {
                         "label": {
+                            "en": "Download from Mirror",
+                            "de": "Von Spiegelserver laden"
+                        },
+                        "url"  : "https://extensions.passwordsapp.org"
+                    },
+                    {
+                        "label": {
                             "en": "Available on Firefox Add-ons",
                             "de": "Verfügbar auf Firefox Add-ons"
                         },
@@ -93,6 +100,13 @@
                 "downloads"  : [
                     {
                         "label": {
+                            "en": "Download from Mirror",
+                            "de": "Von Spiegelserver laden"
+                        },
+                        "url"  : "https://extensions.passwordsapp.org"
+                    },
+                    {
+                        "label": {
                             "en": "Available in the Chrome Web Store",
                             "de": "Verfügbar im Chrome Web Store"
                         },
@@ -135,6 +149,13 @@
                     "sources" : "https://github.com/marius-wieschollek/passwords-webextension"
                 },
                 "downloads"  : [
+                    {
+                        "label": {
+                            "en": "Download from Mirror",
+                            "de": "Von Spiegelserver laden"
+                        },
+                        "url"  : "https://extensions.passwordsapp.org"
+                    },
                     {
                         "label": {
                             "en": "Available in the Microsoft Store",
