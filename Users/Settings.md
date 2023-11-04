@@ -75,6 +75,16 @@ Choose the default client side encryption mode.
 ##### End-to-end Encryption
 Set up end-to-end encryption for your passwords or change the encryption password.
 
+##### Log in with WebAuthn
+If end-to-end encryption is enabled and your browser supports it, you can log in with WebAuthn.
+This stores your encryption passphrase in the browser and automatically retrieves it when you log in.
+Log in with WebAuthn needs to be enabled on any device where you want to use it.
+The set up process only stores the given passphrase in the browser, it does not check if it is the right passphrase.
+If the passphrase is invalid, you will see an error message when you log in and need to enter the passphrase manually.
+
+**Note:** Browsers may store your passphrase unencrypted in plain text and synchronize it using third party servers such as from Google (Chrome) or Microsoft (Edge).
+
+
 ## User Interface
 ##### Initial section
 Here you can choose which section will be shown when you open the passwords app.
