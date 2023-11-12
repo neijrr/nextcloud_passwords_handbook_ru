@@ -108,6 +108,15 @@ sudo -u www-data php ./occ app:update passwords
 ```
 
 
+## Check the PHP version in Nextcloud
+Log into your Nextcloud with an admin account.
+If you have the `nextcloudpi.local` domain set up, you can click this link: [https://192.168.178.53/index.php/settings/admin/serverinfo](https://192.168.178.53/index.php/settings/admin/serverinfo).
+Otherwise, go into "Administration Settings" and scroll all the way down in the left sidebar to "System".
+
+Open the System section and scroll down to "PHP".
+It should confirm you're using PHP 8.2.
+
+
 ## Check the PHP default version
 By default, your NextCloudPi should now be using PHP 8.2.
 You can check this by running `php -v`. The output should look like this:
@@ -135,3 +144,31 @@ Press <enter> to keep the current choice[*], or type selection number:0
 
 ## Notes
 - It can take a day before app updates show up in the apps store
+
+
+# How to Switch back to PHP 8.1
+You can switch back to PHP 8.1 at any time if something does not work.
+
+1. First, switch back to the PHP 8.1 configuration for Apache:
+    ```bash
+    a2disconf php8.2-fpm
+    a2enconf php8.1-fpm
+    ```
+2. Then restart apache:
+    ```bash
+    systemctl restart apache2
+    ```
+3. Now run the command `update-alternatives --config php` to select which PHP version should be used for the command line.
+   Select the option with the path "/usr/bin/php8.1" and confirm.
+    ```bash
+    root@DietPi:~# update-alternatives --config php
+    There are 2 choices for the alternative php (providing /usr/bin/php).
+    
+      Selection    Path             Priority   Status
+    ------------------------------------------------------------
+    * 0            /usr/bin/php8.2   82        auto mode
+      1            /usr/bin/php8.1   81        manual mode
+      2            /usr/bin/php8.2   82        manual mode
+    
+    Press <enter> to keep the current choice[*], or type selection number: 1
+    ```
