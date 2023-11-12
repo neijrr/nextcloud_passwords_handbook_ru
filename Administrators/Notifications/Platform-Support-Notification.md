@@ -40,8 +40,8 @@ We believe that our time is better spent developing new features than figuring o
 How to update PHP depends on how your system is set up.
 
 - If you're using the official [docker images](https://hub.docker.com/_/nextcloud), you just need to pick a newer one.
-- If you're using NextcloudPi we have an [upgrade guide](../Index#NextcloudPi).
-- If you're using DietPi we have [upgrade guides](../Index#DietPi) for all three available webservers.
+- If you're using NextcloudPi we have an [upgrade guide](../Index#nextcloudpi).
+- If you're using DietPi we have [upgrade guides](../Index#dietpi) for all three available webservers.
 - In any other cases you can use our guides as guidelines.
 
 

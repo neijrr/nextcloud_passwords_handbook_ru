@@ -67,9 +67,9 @@ The app may run with older PHP versions but this is not tested and bug reports w
 
 To keep your PHP version updated, we recommend the [PHP PPA from deb.sury.org](https://deb.sury.org/#php-packages) for Ubuntu and Debian.
 
-If you use NextcloudPi, you can use our [NextcloudPi PHP 8.0 upgrade guide](./Guides/NextcloudPi/Upgrade-to-PHP-8.0).
+If you use NextcloudPi, you can use our [NextcloudPi PHP upgrade guide](./Index#nextcloudpi).
 
-If you use DietPi, [check the PHP 8.1 upgrade guide for your webserver choice](./Index#dietpi).
+If you use DietPi, [check the PHP 8 upgrade guide for your webserver choice](./Index#dietpi).
 
 
 ### Third Party Services
