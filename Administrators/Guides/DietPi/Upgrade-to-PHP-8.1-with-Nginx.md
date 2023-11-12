@@ -1,7 +1,10 @@
+> **❗ ❗ ❗ PHP 8.1 is no longer the recommended version for Nextcloud. ❗ ❗ ❗**
+>
+> **[Check out the PHP 8.2 upgrade guide](./Upgrade-to-PHP-8.2-with-Nginx)**
+
 ## Before you start
 - This tutorial was developed for and tested with DietPi 8.12.1 on a RaspberryPI.
-- This tutorial only works if you use "Nginx" as webserver.
-  Run `dietpi-software` and check the setting for "Webserver Preference".
+- This tutorial _only_ works if you use "Nginx" as webserver.
 - DietPi may behave differently on other systems.
 - Nextcloud 24 is required _before_ upgrading to PHP 8.1.
 - Upgrading PHP may affect other software on your DietPi that uses PHP. Make sure it is compatible before you upgrade
@@ -53,7 +56,7 @@ Now install PHP 8.1 on your DietPi with the following commands:
 3. If you have installed optional php modules for specific Nextcloud apps, you need to upgrade them too.
    Here is a list for the apps mentioned in the [Nextcloud docs](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html):
     - LDAP integration: `apt-get install -y php8.1-ldap`
-    - Exernal Storage with [SMB/CIFS integration](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/external_storage/smb.html): `apt-get install -y php8.1-smbclient`
+    - External Storage with [SMB/CIFS integration](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/external_storage/smb.html): `apt-get install -y php8.1-smbclient`
 
 
 
@@ -132,6 +135,25 @@ Now you need to edit the configuration for nginx to instruct it to use PHP 8.1.
     ```
 
 
+# Upgrading Nextcloud
+Since you're likely on an unsupported version of Nextcloud, it's a good idea to upgrade to the latest version now.
+To do so, follow these steps until you're on the latest version which supports PHP 8.1
+
+1. Go into the Nextcloud updater folder
+    ```bash
+    cd /var/www/nextcloud/updater
+    ```
+2. Run the updater
+    ```bash
+    sudo -u www-data  php updater.phar
+    ```
+3. Enter `y` when asked `Start update? [y/N]`
+4. Enter `y` when asked `Should the "occ upgrade" command be executed? [Y/n]`
+5. Enter `n` when asked `Keep maintenance mode active? [y/N]`
+6. Check if your Nextcloud is fully functional after the upgrade
+7. Repeat from Step 2 until the updater tells you that no update is available.
+
+
 ## Set the PHP command line version
 By default, your DietPi should now be using PHP 8.1.
 You can check this by running `php -v`. The output should look like this:
@@ -176,10 +198,12 @@ Check for server and app updates for your Nextcloud.
 
 
 ## Done
-Congratulations! You're done now.
+Congratulations! You're done with the upgrade to PHP 8.1 now.
 To verify that everything has worked, log into your Nextcloud, click on your account icon and click on "Administration settings".
 There, open the "System" section and scroll down to PHP.
 You should also go to the "Overview" section and take care of any warnings that show up there.
+
+Then continue to the [PHP 8.2 Upgrade](./Upgrade-to-PHP-8.2-with-Nginx)
 
 #### Notes
 - It can take a day before app updates show up in the apps store

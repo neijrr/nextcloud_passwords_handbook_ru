@@ -36,22 +36,33 @@ ncp-update
 
 Execute the following commands on your NextCloudPi to add the repository PHP 8.2 from [deb.sury.org](https://deb.sury.org/#php-packages):
 
-```bash
-# Add the PHP PPA from deb.sury.org
-apt-get -y install apt-transport-https lsb-release ca-certificates curl
-curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
-apt-get update
-```
+1. Install dependencies
+    ```bash
+    apt-get -y install apt-transport-https lsb-release ca-certificates curl
+    ```
+2. Download the public key and add the repository
+    ```bash
+    curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+    sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+    ```
+3. Update the list of available software
+    ```bash
+    apt-get update
+    ```
 
 
 ## Install PHP 8.2
 Execute the following command to install PHP 8.2 and all required packages:
 
-```bash
-# Install PHP 8.2
-apt-get -y install php8.2-fpm php8.2-mysql php8.2-xml php8.2-zip php8.2-mbstring php8.2-gd php8.2-curl php8.2-redis php8.2-intl php8.2-bcmath php8.2-gmp php8.2-imagick imagemagick
-```
+1. Install PHP 8.2
+    ```bash
+    # Install PHP 8.2
+    apt-get -y install php8.2-fpm php8.2-mysql php8.2-xml php8.2-zip php8.2-mbstring php8.2-gd php8.2-curl php8.2-redis php8.2-intl php8.2-bcmath php8.2-gmp php8.2-imagick imagemagick
+    ```
+2. If you have installed optional php modules for specific Nextcloud apps, you need to upgrade them too.
+   Here is a list for the apps mentioned in the [Nextcloud docs](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html):
+    - LDAP integration: `apt-get install -y php8.2-ldap`
+    - External Storage with [SMB/CIFS integration](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/external_storage/smb.html): `apt-get install -y php8.2-smbclient`
 
 
 ## Update the PHP 8.2 configuration

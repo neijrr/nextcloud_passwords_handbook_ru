@@ -1,6 +1,6 @@
-> **PHP 8.0 is so 2020. Why not update to PHP 8.1 right away?**
+> **❗ ❗ ❗ This guide is outdated. PHP 8.0 has been discontinued and should no longer be used. ❗ ❗ ❗**
 >
-> **[Check out the PHP 8.1 upgrade guide](./Upgrade-to-PHP-8.1-with-Nginx)**
+> **[Check out the PHP 8.2 upgrade guide](./Upgrade-to-PHP-8.2-with-Nginx)**
 
 ## Before you start
 - This tutorial was developed for and tested with DietPi 7.2 on a RaspberryPI.

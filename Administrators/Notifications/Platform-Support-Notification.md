@@ -36,6 +36,15 @@ This means that we have to spend a lot of time on testing the app with all the s
 In result, the app gets slower and is more likely to be buggy which then leads to more users requesting support from the developers.
 We believe that our time is better spent developing new features than figuring out how to support dozens of Nextcloud major releases.
 
+## How do i update PHP
+How to update PHP depends on how your system is set up.
+
+- If you're using the official [docker images](https://hub.docker.com/_/nextcloud), you just need to pick a newer one.
+- If you're using NextcloudPi we have an [upgrade guide](../Index#NextcloudPi).
+- If you're using DietPi we have [upgrade guides](../Index#DietPi) for all three available webservers.
+- In any other cases you can use our guides as guidelines.
+
+
 ## What if i already use a Legacy Support Release?
 The notification appears when your system does not meet the future requirements of the build that you are using.
 If you see this notification while using an LSR, you will not be able to receive any further updates after support ends.

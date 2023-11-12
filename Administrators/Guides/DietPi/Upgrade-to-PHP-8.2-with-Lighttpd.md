@@ -1,9 +1,10 @@
 ## Before you start
-- This tutorial was developed for and tested with DietPi 8.12.1 on a RaspberryPI.
+- This tutorial was developed for and tested with DietPi 8.23.3 based on Debian Bullseye on a RaspberryPI.
+  - If you're using DietPi based on Debian Buster, you should already have PHP 8.2 installed
 - This tutorial only works if you use "Lighttpd" as webserver.
-  Run `dietpi-software` and check the setting for "Webserver Preference".
 - DietPi may behave differently on other systems.
-- Nextcloud 26 is required _before_ upgrading to PHP 8.2.
+- **Nextcloud 26 is required _before_ upgrading to PHP 8.2.**
+  - Since Nextcloud 26 doesn't work with PHP 7.4, you should follow our previous [PHP 8.1 upgrade guide](./Upgrade-to-PHP-8.1-with-Lighttpd) if you haven't already.
 - Upgrading PHP may affect other software on your DietPi that uses PHP. Make sure it is compatible before you upgrade
 - _Make sure to make a backup of your entire DietPi Instance (config, data, etc.) before you do this._
 
@@ -15,13 +16,15 @@ After you have read the information above and ensured you're ready to start, fol
 
 
 ## Log in as Root
-If you're using SSH, log in with `ssh root@<your dietpi ip>`.
-If you're directly on the device, use `sudo su`
+- If you're using SSH, log in with `ssh root@<your dietpi ip>`.
+- If you're directly on the device, use `sudo su`
 
 
 
 ## Add PHP Package Archive
 With the following commands you will add the PHP 8.2 repository from [deb.sury.org](https://deb.sury.org/#php-packages) to your DietPi:
+
+> ℹ If you already followed the previous PHP 8.0 or PHP 8.1 upgrade guides, this may not be necessary.
 
 1. Install dependencies
     ```bash
@@ -53,7 +56,7 @@ Now install PHP 8.2 on your DietPi with the following commands:
 3. If you have installed optional php modules for specific Nextcloud apps, you need to upgrade them too.
    Here is a list for the apps mentioned in the [Nextcloud docs](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html):
     - LDAP integration: `apt-get install -y php8.2-ldap`
-    - Exernal Storage with [SMB/CIFS integration](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/external_storage/smb.html): `apt-get install -y php8.2-smbclient`
+    - External Storage with [SMB/CIFS integration](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/external_storage/smb.html): `apt-get install -y php8.2-smbclient`
 
 
 
@@ -81,7 +84,8 @@ You need to copy and edit the php-fpm configuration for PHP 8.2.
     ```
 4. Now save the file with `CRTL` + `o` and exit the editor with `CRTL` + `x`
 
-#### Update the PHP FPM pool configuration
+
+#### Update the PHP FPM configuration
 You need to edit the PHP configuration for php-fpm.
 
 1. Open the configuration file with nano to edit it.
@@ -132,9 +136,10 @@ service php8.2-fpm restart
     
       Selection    Path                      Priority   Status
     ------------------------------------------------------------
-    * 0            /run/php/php8.2-fpm.sock   81        auto mode
+    * 0            /run/php/php8.2-fpm.sock   82        auto mode
       1            /run/php/php7.4-fpm.sock   74        manual mode
-      2            /run/php/php8.2-fpm.sock   81        manual mode
+      2            /run/php/php8.1-fpm.sock   81        manual mode
+      3            /run/php/php8.2-fpm.sock   82        manual mode
     
     Press <enter> to keep the current choice[*], or type selection number: 0
     ```
@@ -150,10 +155,10 @@ By default, your DietPi should now be using PHP 8.2.
 You can check this by running `php -v`. The output should look like this:
 ```bash
 root@DietPi:~# php -v
-PHP 8.2.13 (cli) (built: Nov 26 2022 14:27:02) (NTS)
+PHP 8.2.12 (cli) (built: Oct 27 2023 13:01:32) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.1.13, Copyright (c) Zend Technologies
-    with Zend OPcache v8.2.13, Copyright (c), by Zend Technologies
+Zend Engine v4.2.12, Copyright (c) Zend Technologies
+    with Zend OPcache v8.2.12, Copyright (c), by Zend Technologies
 ```
 
 It's important that it shows `PHP 8.2.*`.
@@ -167,9 +172,10 @@ There are 2 choices for the alternative php (providing /usr/bin/php).
 ------------------------------------------------------------
 * 0            /usr/bin/php8.2   82        auto mode
   1            /usr/bin/php7.4   74        manual mode
-  2            /usr/bin/php8.2   82        manual mode
+  2            /usr/bin/php8.1   81        manual mode
+  3            /usr/bin/php8.2   82        manual mode
 
-Press <enter> to keep the current choice[*], or type selection number:0
+Press <enter> to keep the current choice[*], or type selection number: 0
 ```
 
 
@@ -181,15 +187,25 @@ Check for server and app updates for your Nextcloud.
     ```bash
     ncc update:check
     ```
-2. Install updates of the passwords app if available
+2. Install the passwords app if not installed
+    ```bash
+    ncc app:install passwords
+    ```
+3. Install updates of the passwords app if available
     ```bash
     ncc app:update passwords
     ```
 
+## Check the PHP version in Nextcloud
+Log into your Nextcloud with an admin account.
+Go into "Administration Settings" and scroll all the way down in the left sidebar to "System".
+Open the System section and scroll down to "PHP".
+It should confirm you're using PHP 8.2.
+
 
 
 ## Done
-Congratulations! You're done now.
+Congratulations! You're done with the upgrade to PHP 8.2 now.
 To verify that everything has worked, log into your Nextcloud, click on your account icon and click on "Administration settings".
 There, open the "System" section and scroll down to PHP.
 You should also go to the "Overview" section and take care of any warnings that show up there.
@@ -199,11 +215,11 @@ You should also go to the "Overview" section and take care of any warnings that 
 
 
 
-# How to Switch back to PHP 7.4
-You can switch back to PHP 7.4 at any time if something does not work.
+# How to Switch back to PHP 8.1
+You can switch back to PHP 8.1 (or any other previous version) at any time if something does not work.
 
 1. First, switch back the PHP version used by the webserver with the command `update-alternatives --config php-fpm.sock`.
-    Select the option with the path "/run/php/php7.4-fpm.sock" and confirm.
+    Select the option with the path "/run/php/php8.1-fpm.sock" and confirm.
     ```bash
     root@DietPi:~# update-alternatives --config php-fpm.sock
     There are 2 choices for the alternative php-fpm.sock (providing /run/php/php-fpm.sock).
@@ -212,16 +228,17 @@ You can switch back to PHP 7.4 at any time if something does not work.
     ------------------------------------------------------------
     * 0            /run/php/php8.2-fpm.sock   82        auto mode
       1            /run/php/php7.4-fpm.sock   74        manual mode
-      2            /run/php/php8.2-fpm.sock   82        manual mode
+      2            /run/php/php8.1-fpm.sock   81        manual mode
+      3            /run/php/php8.2-fpm.sock   82        manual mode
     
-    Press <enter> to keep the current choice[*], or type selection number:1
+    Press <enter> to keep the current choice[*], or type selection number:2
     ```
 2. Then reload lighttpd:
     ```bash
     service lighttpd force-reload
     ```
 3. Now, switch back the PHP version used for the command line with the command `update-alternatives --config php`.
-    Select the option with the path "/usr/bin/php7.4" and confirm.
+    Select the option with the path "/usr/bin/php8.1" and confirm.
     ```bash
     root@DietPi:~# update-alternatives --config php
     There are 2 choices for the alternative php (providing /usr/bin/php).
@@ -230,7 +247,8 @@ You can switch back to PHP 7.4 at any time if something does not work.
     ------------------------------------------------------------
     * 0            /usr/bin/php8.2   82        auto mode
       1            /usr/bin/php7.4   74        manual mode
-      2            /usr/bin/php8.2   82        manual mode
+      2            /usr/bin/php8.1   81        manual mode
+      3            /usr/bin/php8.2   82        manual mode
     
-    Press <enter> to keep the current choice[*], or type selection number:1
+    Press <enter> to keep the current choice[*], or type selection number: 2
     ```
