@@ -1,7 +1,7 @@
 
-> **PHP 7.4 is so 2019. Why not update to PHP 8.0 right away?**
+> **❗ ❗ ❗ This guide is outdated. PHP 7.4 has been discontinued and should no longer be used. ❗ ❗ ❗**
 > 
-> **[Check out the PHP 8.0 upgrade guide](./Upgrade-to-PHP-8.0)**
+> **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2) instead.**
 
 
 ## Before you start

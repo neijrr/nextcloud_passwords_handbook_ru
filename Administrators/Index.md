@@ -23,7 +23,7 @@
 - [Self-Hosting Besticon](./Guides/Services/Besticon-Self-Hosting)
 
 #### NextcloudPi
-- [Upgrade NextcloudPi to PHP 8.0](./Guides/NextcloudPi/Upgrade-to-PHP-8.0)
+- [Upgrade NextcloudPi to PHP 8.2](./Guides/NextcloudPi/Upgrade-to-PHP-8.2)
 
 #### DietPi
 - [Upgrade DietPi to PHP 8.1 with Nginx](./Guides/DietPi/Upgrade-to-PHP-8.1-with-Nginx)
