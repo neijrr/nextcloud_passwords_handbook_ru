@@ -1,4 +1,4 @@
-> **❗ ❗ ❗ This guide is outdated. PHP 7.4 has been discontinued and should no longer be used. ❗ ❗ ❗**
+> **❗ ❗ ❗ This guide is outdated. PHP 8.0 has been discontinued and should no longer be used. ❗ ❗ ❗**
 >
 > **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2) instead.**
 

@@ -1,5 +1,6 @@
 
 > **❗ ❗ ❗ This guide is outdated. PHP 7.4 has been discontinued and should no longer be used. ❗ ❗ ❗**
+> **❗ ❗ ❗ Current versions of Nextcloud no longer support PHP 7.4 ❗ ❗ ❗**
 > 
 > **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2) instead.**
 

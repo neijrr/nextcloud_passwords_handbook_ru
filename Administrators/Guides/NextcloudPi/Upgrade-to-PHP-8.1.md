@@ -1,4 +1,4 @@
-> **❗ ❗ ❗ PHP 8.1 i no longer the recommended version for Nextcloud. ❗ ❗ ❗**
+> **❗ ❗ ❗ PHP 8.1 is no longer the recommended version for Nextcloud. ❗ ❗ ❗**
 >
 > **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2) instead.**
 
