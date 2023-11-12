@@ -19,7 +19,7 @@ If you already have SSH enabled, you can skip this.
 
 
 ## Log in as Root
-After logging in, run `sudo su` to start a session as root.
+After logging in, run `sudo su -s /bin/bash` to start a session as root.
 
 
 ## Add PHP Package Archive

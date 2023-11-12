@@ -11,7 +11,7 @@ If you already have SSH enabled, you can skip this.
 - Open the NextCloudPi management ui by opening the NextCloudPi app.
 - Find the "SSH" section under "Networking" in the menu on the left
 - Make sure it's active and you know the password
-- Login to your NextCloudPi with SSH (e.g. `ssh pi@<server>` on linux)
+- Login to your NextCloudPi with SSH (e.g. `ssh pi@<your server>` or `ssh ncpadmin@<your server>` on linux)
 
 
 ## Log in as Root
