@@ -3,6 +3,10 @@
 The Passwords app in your browser does not support any offline storage.
 But some of the apps in the appstore do include offline storage capabilities.
 
+#### I have hidden passwords, how do I get them?
+Go to `More` > `Settings` > `Danger Zone`, then click `Recover hidden items`.
+Select any type of items you want to unhide and press "Ok".
+
 
 ## Security
 #### How secure is Passwords?
