@@ -17,8 +17,9 @@ This way you always have quick access to the most important properties.
 ##### The Security Status
 The shield on the right side of each password symbolizes the security status of a password.
 If the shield is green, you have nothing to worry about.
-If it is yellow, the password does not fulfill your personal security standards.
+If it is yellow, the password does not fulfill your personal security standards set in the settings.
 If you hover the icon, the tooltip will show you which rule was violated.
+In case of duplicates, you can click the icon to see all other entries with the same password 
 If the shield is red, the password is bad and has been found in hacker databases.
 You can get a quick overview of all passwords by their security status in the security section.
 

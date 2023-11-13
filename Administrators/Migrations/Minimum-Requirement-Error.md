@@ -18,13 +18,23 @@ Nextcloud 21 and later seem to be not affected by this.
 
 **NOTE:** Only versions where your PHP version _and_ your Nextcloud version are listed will work on your server.
 
-| PHP Version | Nextcloud Version | App Version | Download                                                                                        |
-|-------------|-------------------|-------------|-------------------------------------------------------------------------------------------------|
-| 7.1         | 12, 13, 14        | 2018.12.0   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/7245/artifacts/raw/passwords.tar.gz)  |
-| 7.1         | 15, 16, 17        | 2019.12.1   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz)  |
-| 7.2         | 16                | 2019.12.1   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz)  |
-| 7.2         | 17, 18, 19, 20    | 2020.12.3   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/12049/artifacts/raw/passwords.tar.gz) |
-| 7.3         | 17, 18, 19, 20    | 2020.12.3   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/12049/artifacts/raw/passwords.tar.gz) |
+| PHP Version | Nextcloud Version | App Version | Download                                                                                            |
+|-------------|-------------------|-------------|-----------------------------------------------------------------------------------------------------|
+| 7.1         | 12, 13, 14        | 2018.12.0   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/7245/artifacts/raw/passwords.tar.gz)      |
+| 7.1         | 15, 16, 17        | 2019.12.1   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz)      |
+| 7.2         | 16                | 2019.12.1   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/9150/artifacts/raw/passwords.tar.gz)      |
+| 7.2         | 17, 18, 19        | 2020.12.4   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/12403/artifacts/raw/passwords.tar.gz)     |
+| 7.2         | 20, 21            | 2021.12.10  | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/13229/artifacts/raw/passwords-lsr.tar.gz) |
+| 7.3         | 17, 18, 19        | 2020.12.4   | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/12403/artifacts/raw/passwords.tar.gz)     |
+| 7.3         | 20, 21, 22        | 2021.12.10  | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/13229/artifacts/raw/passwords-lsr.tar.gz) |
+| 7.3         | 23                | 2022.12.11  | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/14833/artifacts/raw/passwords-lsr.tar.gz) |
+| 7.4         | 20, 21, 22        | 2021.12.20  | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/13229/artifacts/raw/passwords.tar.gz)     |
+| 7.4         | 23, 24            | 2022.12.11  | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/14833/artifacts/raw/passwords-lsr.tar.gz) |
+| 7.4         | 25                | 2023.12.10  |                                                                                                     |
+| 8.0         | 23, 24            | 2022.12.21  | [download](https://git.mdns.eu/nextcloud/passwords/-/jobs/14833/artifacts/raw/passwords.tar.gz)     |
+| 8.0         | 25, 26, 27        | 2023.12.20  |                                                                                                     |
+| 8.1         | 25, 26, 27        | 2023.12.30  |                                                                                                     |
+| 8.2         | 25, 26, 27        | 2023.12.30  |                                                                                                     |
 
 # Downgrade the app
 If you have already attempted to upgrade to an incompatible version of the app, you can still downgrade to the latest compatible version manually.
