@@ -36,6 +36,8 @@ Nextcloud 21 and later seem to be not affected by this.
 | 8.1         | 25, 26, 27        | 2023.12.30  |                                                                                                     |
 | 8.2         | 25, 26, 27        | 2023.12.30  |                                                                                                     |
 
+In case this list is incomplete and does not list your version of Nextcloud, you can check the list in the [official appstore](https://apps.nextcloud.com/apps/passwords/releases) for a compatible version.
+
 # Downgrade the app
 If you have already attempted to upgrade to an incompatible version of the app, you can still downgrade to the latest compatible version manually.
 You need command line access or file access to the installation folder of your Nextcloud for this
