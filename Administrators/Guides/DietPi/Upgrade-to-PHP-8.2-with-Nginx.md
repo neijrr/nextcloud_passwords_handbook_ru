@@ -1,6 +1,6 @@
 ## Before you start
 - This tutorial was developed for and tested with DietPi 8.23.3 based on Debian Bullseye on a RaspberryPI.
-  - If you're using DietPi based on Debian Buster, you should already have PHP 8.2 installed
+  - If you're using DietPi based on Debian Bookworm, you should already have PHP 8.2 installed
 - This tutorial only works if you use "Nginx" as webserver.
 - DietPi may behave differently on other systems.
 - **Nextcloud 26 is required _before_ upgrading to PHP 8.2.**
