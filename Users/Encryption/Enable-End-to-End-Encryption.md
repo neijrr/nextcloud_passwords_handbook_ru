@@ -1,7 +1,6 @@
 The passwords app offers strong end-to-end encryption which requires anyone trying to decrypt your passwords to know the encryption passphrase.
 
 ## Enabling End-to-End encryption
-> :warning: Some third-party clients do not support encryption
 
 #### Important Information
 - By default, the encryption setup will encrypt all existing passwords, folders and tags except those who are shared.
