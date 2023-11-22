@@ -5,13 +5,18 @@ The app settings can be found in the administrative area of Nextcloud.
 These settings influence how Passwords processes different types of data internally.
 
 ## Image Rendering
-You have two options for image rendering.
-If Imagemagick or Graphicsmagick are installed on your system, they will automatically be chosen as default.
-GDLib should only be chosen if Imagemagick is broken or not available.
-GDLib usually provides lower image quality and might not work with all formats.
+Passwords processes favicons and website previews internally for optimal performance.
+The image rendering setting decides which service should be used to process images.
 
-**Note:** If you have Imagemagick selected, make sure that svg is supported. Otherwise GDLib will be used in some cases.
+**Our Recommendation**: Automatic selection
 
+| **Service**     | Automatic selection                                             | Imagick/GMagick                                                 | Imaginary                                                                                                                                                                                                                          | GDLib                                                                                                        |
+|-----------------|-----------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Description** | Automatically selects the best available service on your server | Uses the Imagemagick/Graphicsmagick library to process images   | Uses the [configured](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#preview-imaginary-url) [Imaginary](https://github.com/h2non/imaginary) server to process images | Use the PHP graphics functions to process images                                                             |
+| **Benefits**    | No configuration needed                                         | High quality local image processing, wide format support        | Better performance and scalability.                                                                                                                                                                                                | Shipped with PHP, always available                                                                           |
+| **Downsides**   |                                                                 | Requires imagemagick and the php imagick module to be installed | Requires Imaginary server to be available and configured in Nextcloud                                                                                                                                                              | Poor performance, poor format support. Should only be chosen if the automatically selected service is broken |
+
+**Note:** If you have Imagemagick selected, make sure that svg is supported. Otherwise, GDLib will be used in some cases.
 
 
 # External Services
