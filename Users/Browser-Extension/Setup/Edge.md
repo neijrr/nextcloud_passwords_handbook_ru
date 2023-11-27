@@ -1,5 +1,6 @@
 [![How To: Setup for Edge](../../_files/_previews/extension-setup.png)](../../_files/videos/edge-extension-setup.mp4)
 
+#### Installation
 1. Open the Passwords App in Nextcloud
 2. Click on "More"
 3. Click on "Apps & Extensions"

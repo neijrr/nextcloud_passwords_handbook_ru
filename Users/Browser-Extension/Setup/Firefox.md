@@ -1,5 +1,6 @@
 [![How To: Setup for Firefox](../../_files/_previews/extension-setup.png)](../../_files/videos/firefox-extension-setup.mp4)
 
+#### Installation
 1. Open the Passwords App in Nextcloud
 2. Click on "More"
 3. Click on "Apps & Extensions"
