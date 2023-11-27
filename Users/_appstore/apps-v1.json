@@ -51,11 +51,12 @@
                         "url"  : "https://extensions.passwordsapp.org"
                     },
                     {
-                        "label": {
+                        "label"  : {
                             "en": "Available on Firefox Add-ons",
                             "de": "Verfügbar auf Firefox Add-ons"
                         },
-                        "url"  : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps"
+                        "url"    : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps",
+                        "primary": true
                     }
                 ],
                 "features"   : {
@@ -106,11 +107,12 @@
                         "url"  : "https://extensions.passwordsapp.org"
                     },
                     {
-                        "label": {
+                        "label"  : {
                             "en": "Available in the Chrome Web Store",
                             "de": "Verfügbar im Chrome Web Store"
                         },
-                        "url"  : "https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi"
+                        "url"    : "https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi",
+                        "primary": true
                     }
                 ],
                 "features"   : {
@@ -157,11 +159,12 @@
                         "url"  : "https://extensions.passwordsapp.org"
                     },
                     {
-                        "label": {
+                        "label"  : {
                             "en": "Available in the Microsoft Store",
                             "de": "Verfügbar im Microsoft Store"
                         },
-                        "url"  : "https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk"
+                        "url"    : "https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk",
+                        "primary": true
                     }
                 ],
                 "features"   : {
@@ -212,11 +215,12 @@
                         "url"  : "https://f-droid.org/de/packages/de.jbservices.nc_passwords_app/"
                     },
                     {
-                        "label": {
+                        "label"  : {
                             "en": "Available on Google Play",
                             "de": "Verfügbar auf Google Play"
                         },
-                        "url"  : "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app"
+                        "url"    : "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app",
+                        "primary": true
                     }
                 ],
                 "features"   : {
@@ -258,11 +262,12 @@
                         "url"  : "https://github.com/hegocre/NextcloudPasswords/releases/latest"
                     },
                     {
-                        "label": {
+                        "label"  : {
                             "en": "Available on Google Play",
                             "de": "Verfügbar auf Google Play"
                         },
-                        "url"  : "https://play.google.com/store/apps/details?id=com.hegocre.nextcloudpasswords"
+                        "url"    : "https://play.google.com/store/apps/details?id=com.hegocre.nextcloudpasswords",
+                        "primary": true
                     }
                 ],
                 "features"   : {
@@ -319,7 +324,7 @@
             }
         ]
     },
-    "windows"         : {
+    "windows"     : {
         "label": {
             "en": "Windows"
         },
@@ -365,7 +370,7 @@
             }
         ]
     },
-    "linux"         : {
+    "linux"       : {
         "label": {
             "en": "Linux"
         },
@@ -396,11 +401,12 @@
                 },
                 "downloads"  : [
                     {
-                        "label": {
+                        "label"  : {
                             "en": "Available on Flathub",
                             "de": "Verfügbar auf Flathub"
                         },
-                        "url"  : "https://flathub.org/apps/details/com.gitlab.j0chn.nextcloud_password_client"
+                        "url"    : "https://flathub.org/apps/details/com.gitlab.j0chn.nextcloud_password_client",
+                        "primary": true
                     },
                     {
                         "label": {
@@ -418,7 +424,7 @@
             }
         ]
     },
-    "macos"         : {
+    "macos"       : {
         "label": {
             "en": "macOS"
         },
