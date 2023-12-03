@@ -1,24 +1,20 @@
-[![How To: Setup for Edge](../../_files/_previews/extension-setup.png)](../../_files/videos/edge-extension-setup.mp4)
+[![How To: Setup for Firefox](../../_files/_previews/firefox-extension-setup.jpg)](../../_files/videos/firefox-extension-setup.mp4)
 
 #### Installation
 1. Open the Passwords App in Nextcloud
 2. Click on "More"
 3. Click on "Apps & Extensions"
-4. Locate the "Official Microsoft Edge Extension" and click on "Available in the Microsoft Store"
-5. In the Microsoft Store, click the blue "Get" button to install the extension
-6. Confirm the installation by clicking on the "Add extension" button in the dialog that opened
-    - For easier access to the extension, right-click the extension icon and select "Show in toolbar"
+4. Locate the "Official Firefox Add-On" and click on "Available on Firefox Add-ons"
+5. On the Firefox Add-ons page, click the blue "Add to Firefox" button to install the extension
+6. Confirm the installation by clicking on the "Add" button in the dialog that opened
+    - _IF_ you wish to use the extension also in private mode, check the option "Allow this extension to run in Private Windows" and click "Okay"
+    - For easier access to the extension, click on the extension button, then click on the settings button on the Passwords Extension and click "Pin to Toolbar"
 7. Navigate back to "Apps & Extensions"
-8. Locate the "Official Microsoft Edge Extension" again and click on "Connect with PassLink"
+8. Locate the "Official Firefox Add-On" again and click on "Connect with PassLink"
 9. Click "Connect via Link" in the dialog that opens
 10. A window from the extension should open and the dialog should switch to showing a set of four codes
 11. Compare the codes and click on "Looks good" if they match
     - You can close both dialogs afterward
-
-#### Allow in private browsing
-1. Right-Click on the extension icon
-2. Click on "Manage Extension"
-3. Enable "Allow in InPrivate"
 
 #### Confirm it's working
 You can confirm that the extension is successfully connected with these steps

@@ -1,7 +1,7 @@
 ## Setup Guides
-  - [Mozilla Firefox](./Browser-Extension/Setup/Firefox)
-  - [Google Chrome](./Browser-Extension/Setup/Chrome)
-  - [Microsoft Edge](./Browser-Extension/Setup/Edge)
+  - [Mozilla Firefox](./Browser-Extension/Setup/Setup-with-Firefox)
+  - [Google Chrome](./Browser-Extension/Setup/Setup-with-Chrome)
+  - [Microsoft Edge](./Browser-Extension/Setup/Setup-with-Edge)
 
 ## Downloads
   - [Mozilla Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords?src=external-handbook)

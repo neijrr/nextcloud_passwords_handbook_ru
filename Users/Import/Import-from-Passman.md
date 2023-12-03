@@ -1,7 +1,7 @@
 This tutorial will help you to import your passwords from the Passman app.
 You can either watch the video or follow the instructions below.
 
-[![How To: Import your passwords from Passman](../_files/_previews/passman-import.png)](../_files/videos/passman-import.webm)
+[![How To: Import your passwords from Passman](../_files/_previews/passman-import.jpg)](../_files/videos/passman-import.webm)
 
 
 ## Exporting your passwords from Passman

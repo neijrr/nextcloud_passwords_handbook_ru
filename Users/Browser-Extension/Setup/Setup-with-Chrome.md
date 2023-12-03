@@ -1,4 +1,4 @@
-[![How To: Setup for Chrome](../../_files/_previews/extension-setup.png)](../../_files/videos/chrome-extension-setup.mp4)
+[![How To: Setup for Chrome](../../_files/_previews/chrome-extension-setup.jpg)](../../_files/videos/chrome-extension-setup.mp4)
 
 #### Installation
 1. Open the Passwords App in Nextcloud

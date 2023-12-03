@@ -12,6 +12,7 @@
  - [Tags](./Tags)
  - [Encryption](./Encryption)
    - [Enable End-to-End Encryption](./Encryption/Enable-End-to-End-Encryption)
+   - [Disable End-to-End Encryption](./Encryption/Disable-End-to-End-Encryption)
    - [Encryption Types](./Encryption/Encryption-Types)
  - [Search](./Search)
  - [Import](./Import)
@@ -30,9 +31,9 @@ The Passwords Browser Extension gives you easy and secure access to all your pas
 [**Open the browser Extension Handbook**](./Browser-Extension)
 
 ### Setup
-- [Setup for Firefox](./Browser-Extension/Setup/Firefox)
-- [Setup for Chrome](./Browser-Extension/Setup/Chrome)
-- [Setup for Microsoft Edge](./Browser-Extension/Setup/Edge)
+- [Setup with Firefox](./Browser-Extension/Setup/Setup-with-Firefox)
+- [Setup with Chrome](./Browser-Extension/Setup/Setup-with-Chrome)
+- [Setup with Microsoft Edge](./Browser-Extension/Setup/Setup-with-Edge)
 
 ### Download
 - [Download for Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords?src=external-handbook)

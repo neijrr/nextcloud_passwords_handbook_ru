@@ -14,5 +14,8 @@ sequenceDiagram
     Server->>Database: Store Data
 ```
 
+### Enable End-to-End Encryption
+See [Enable End-to-End Encryption](./Encryption/Enable-End-to-End-Encryption)
+
 ### Encryption Types
 See [encryption types](./Encryption/Encryption-Types).
