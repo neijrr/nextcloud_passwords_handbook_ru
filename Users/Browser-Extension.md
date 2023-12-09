@@ -16,3 +16,6 @@
 
 ## Account Management
 - [Update Nextcloud Credentials](./Browser-Extension/Update-Nextcloud-Credentials)
+
+## Issues
+- [Troubleshooting & Debugging](./Browser-Extension/Troubleshooting)
