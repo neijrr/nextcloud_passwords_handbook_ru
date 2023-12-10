@@ -21,3 +21,19 @@
 - The developer tools should open in a new window
   - Use the "Console" tab to see errors and log messages
   - Use the "Network" tab to see requests to the server
+
+### Debug in Chrome
+- Open a new tab and navigate to "chrome://extensions"
+- Enable the "Developer mode" switch in the top right corner
+- Locate the "Passwords for Nextcloud Browser Extension" and click "Inspect views background page"
+- The developer tools should open in a new window
+    - Use the "Console" tab to see errors and log messages
+    - Use the "Network" tab to see requests to the server
+
+### Debug in MS Edge
+- Open a new tab and navigate to "edge://extensions"
+- Enable the "Developer mode" switch in the left sidebar
+- Locate the "Passwords for Nextcloud Browser Extension" and click "Inspect views Background page"
+- The developer tools should open in a new window
+    - Use the "Console" tab to see errors and log messages
+    - Use the "Network" tab to see requests to the server
