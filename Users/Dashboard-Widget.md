@@ -1,4 +1,4 @@
-The passwords dashboard widget allows quick and easy access to your passwords directly from the dashboard.
+The Passwords App dashboard widget allows quick and easy access to your passwords directly from the dashboard.
 
 ![The dashboard widget](_files/dashboard-widget.png)
 
@@ -15,6 +15,7 @@ Clicking and Double-Clicking passwords will perform the configured click actions
 (By default these are "Copy Password" and "Copy Username")
 
 ### Searching passwords
-With the "Search all passwords" input field at the top of the widgets, it's possible to search through all your passwords.
+With the "Search all passwords" input field at the top of the widgets, it's easy to search through all your passwords.
 
-> :star: Sometimes it can take a little longer to load all passwords. In that case you will see a corresponding message and the search will be rerun once all passwords are loaded
+> :star: Sometimes it can take a little longer to load all passwords.
+> In that case you will see a corresponding message and the search will be rerun once all passwords are loaded.
