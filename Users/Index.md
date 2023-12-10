@@ -23,7 +23,8 @@
    - [Import from custom CSV](./Import/Import-from-custom-CSV)
  - [Export](./Export)
  - [Settings](./Settings)
- - [Extension](./Extension)
+ - [Dashboard Widget](./Dashboard-Widget)
+ - [Extension](./Browser-Extension)
 
 ## Browser Extension
 The Passwords Browser Extension gives you easy and secure access to all your passwords from within your browser.
