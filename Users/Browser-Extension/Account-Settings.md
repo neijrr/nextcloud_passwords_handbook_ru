@@ -10,8 +10,9 @@ If the default account is deleted, the extension will automatically select a new
 This list shows all currently connected accounts.
 The icons on the right allow adding new accounts, either by scanning a PassLink QR Code or manually entering the account information.
 
-##### Manually adding accounts
-See the [manual setup guide](./Setup/Setup-manually) for more details about adding accounts manually
+##### Add an account
+The [setup guides can be found here](../Browser-Extension#setup-guides).
+See the [manual setup guide](./Setup/Setup-manually) for more details about manually adding accounts.
 
 ##### Updating account details
 Once you click on account name, a form with the account details will open.
