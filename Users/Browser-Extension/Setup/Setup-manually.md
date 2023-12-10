@@ -7,7 +7,7 @@
 4. Locate the browser extension entry for your browser and click the button to open the extension page in the official extension store
 5. Install the extension from the extension store
 
-#### Adding accounts
+#### Adding an account
 1. Open Nextcloud, click on your profile icon in the top right corner and click on "Settings"
 2. Open the "Security" section on the left
 3. Scroll down to "Devices & Sessions".
