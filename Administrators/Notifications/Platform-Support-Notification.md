@@ -5,6 +5,7 @@ For systems that use a PHP version which is still supported by Nextcloud but not
 **NOTE:** The latest version of Nextcloud can be found in their [Maintenance and Release Schedule](https://github.com/nextcloud/server/wiki/Maintenance-and-Release-Schedule).
 We don't care if wherever you're getting Nextcloud from is not up-to-date.
 
+
 ## What does this mean?
 Your server is using a version of Nextcloud or PHP that will soon no longer receive any updates for the passwords app.
 You can check the currently used version of Nextcloud and PHP in the admin area of Nextcloud.
@@ -12,6 +13,7 @@ You can check the currently used version of Nextcloud and PHP in the admin area 
  - If your version of PHP is outdated but still supported by the latest version of Nextcloud, you will likely be able to use the [legacy support release](../System-Requirements#lsrlegacy-support-releases) through the normal Nextcloud update process.
 
 This notification is only about the passwords app and not related to Nextcloud or any other app.
+
 
 ## Will the passwords app stop working?
 **NO**.
@@ -23,12 +25,20 @@ _However it might happen that some third party services used by the app will sto
 _It can also happen that apps and other tools using the passwords api will require a newer version of that api to work._
 _If this happens, we will **NOT** fix it._
 
-## Will the app stop working if i update?
+
+## Will the app stop working if i install updates shown in the appstore?
 **NO**
 
 Nextcloud checks the minimum requirements before updating an app and won't advertise updates you can not install.
 If a [legacy support release](../System-Requirements#lsrlegacy-support-releases) is available for your system, it will be distributed automatically through the Nextcloud appstore and you can install it as a regular update.
 If you install an update manually (by uploading the new version to your server), Nextcloud will just deactivate the app.
+
+
+## This is not how _i_ update/upgrade Nextcloud/PHP!
+If you have an update policy for Nextcloud and PHP in place, that's great news!
+You can best judge yourself when you're ready to upgrade.
+If you don't have an update policy or rely on a third party solution (e.g. DietPi or NextcloudPi) to upgrade NC for you, now is probably a good time to check if that actually works and you didn't unknowingly ended up with outdated software.
+
 
 ## Why are you doing this?
 Because supporting a large amount of Nextcloud releases, PHP versions and Databases also creates a large amount of possible usage scenarios.
@@ -36,13 +46,18 @@ This means that we have to spend a lot of time on testing the app with all the s
 In result, the app gets slower and is more likely to be buggy which then leads to more users requesting support from the developers.
 We believe that our time is better spent developing new features than figuring out how to support dozens of Nextcloud major releases.
 
+
 ## How do i update PHP
 How to update PHP depends on how your system is set up.
 
-- If you're using the official [docker images](https://hub.docker.com/_/nextcloud), you just need to pick a newer one.
+- If you're using the official [Nextcloud AIO](https://github.com/nextcloud/all-in-one#nextcloud-all-in-one) or community [docker images](https://hub.docker.com/_/nextcloud), you just need to pick a newer one.
 - If you're using NextcloudPi we have an [upgrade guide](../Index#nextcloudpi).
 - If you're using DietPi we have [upgrade guides](../Index#dietpi) for all three available webservers.
 - In any other cases you can use our guides as guidelines.
+
+
+## How do i update Nextcloud
+See the [official guide](https://docs.nextcloud.com/server/latest/admin_manual/maintenance/upgrade.html).
 
 
 ## What if i already use a Legacy Support Release?
@@ -54,5 +69,9 @@ We're happy to help you with upgrading in our [forum](https://help.nextcloud.com
 We won't help you with issues in your outdated version of the passwords app.
 We will also close any ticket on our official bugtracker if you're not using the latest version of the app.
 
+
 ## Where can i find the system requirements?
 [Here.](../System-Requirements)
+
+## I don't want this notification
+You can disable admin notifications in the passwords app settings
