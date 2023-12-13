@@ -1,6 +1,7 @@
 ## Why am i seeing this notification?
 With the first release of a new year, the passwords app drops support for all major versions of Nextcloud except the latest and all PHP versions without [active support](https://php.net/supported-versions.php) by the PHP community.
 For systems that use a PHP version which is still supported by Nextcloud but not by the passwords app, the Nextcloud appstore will automatically switch to the [legacy support release](../System-Requirements#lsrlegacy-support-releases).
+A notification of this upcoming change is sent to administrators of Nextcloud instances that are affected by this change.
 
 **NOTE:** The latest version of Nextcloud can be found in their [Maintenance and Release Schedule](https://github.com/nextcloud/server/wiki/Maintenance-and-Release-Schedule).
 We don't care if wherever you're getting Nextcloud from is not up-to-date.
@@ -40,6 +41,12 @@ You can best judge yourself when you're ready to upgrade.
 If you don't have an update policy or rely on a third party solution (e.g. DietPi or NextcloudPi) to upgrade NC for you, now is probably a good time to check if that actually works and you didn't unknowingly ended up with outdated software.
 
 
+## Outrageous! Other apps don't do this!
+Do what? End support for your configuration or _tell_ you that they end support for your configuration?
+Nextcloud Apps are the wild west of software support and even with "Featured" apps you don't know what level of service they actually offer for your version.
+The clear support plan for the Passwords App for Nextcloud is beneficial to you as an administrator as it helps you to anticipate upcoming changes and plan your resources.
+
+
 ## Why are you doing this?
 Because supporting a large amount of Nextcloud releases, PHP versions and Databases also creates a large amount of possible usage scenarios.
 This means that we have to spend a lot of time on testing the app with all the supported software, adding workarounds for bugs and creating slow compatibility layers to support different Nextcloud APIs.
@@ -63,6 +70,7 @@ See the [official guide](https://docs.nextcloud.com/server/latest/admin_manual/m
 ## What if i already use a Legacy Support Release?
 The notification appears when your system does not meet the future requirements of the build that you are using.
 If you see this notification while using an LSR, you will not be able to receive any further updates after support ends.
+
 
 ## What if i need help with my outdated version of the app?
 We're happy to help you with upgrading in our [forum](https://help.nextcloud.com/c/apps/passwords) or [chat](https://t.me/nc_passwords/1).
