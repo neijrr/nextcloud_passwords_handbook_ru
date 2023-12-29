@@ -1,4 +1,13 @@
-### Paste into custom HTML fields
+## Reset Suggestion Data
+The extension remembers which credentials were used on a website and will rank these credentials higher in the suggested credentials for this website.
+The data for this is stored locally and can be deleted in the extension settings.
+
+1. Open the extension settings (E.g. by clicking "Open Extension Settings" in the "Tools" tab)
+2. Open the "Debug" tab
+3. Click "Reset Recommendation Data"
+
+
+## Extra Login Form Fields
 When credentials are pasted into a website, it is possible to supply additional values which should be pasted into additional fields.
 These values must also be specified in the password entry using a specific format.
 

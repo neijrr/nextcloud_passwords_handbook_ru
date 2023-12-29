@@ -15,6 +15,9 @@
       - [Mirror Server](https://extensions.passwordsapp.org/)
       - [Development Build](https://git.mdns.eu/nextcloud/passwords-webextension/-/packages/16)
 
+## Features
+- [Password Paste & Autofill](./Browser-Extension/Password-Autofill)
+
 ## Account Management
 - [Account settings](./Browser-Extension/Account-Settings)
 - [Update Nextcloud Credentials](./Browser-Extension/Update-Nextcloud-Credentials)
