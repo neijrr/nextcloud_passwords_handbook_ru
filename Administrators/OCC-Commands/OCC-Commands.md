@@ -103,12 +103,19 @@ With `./occ passwords:system:report debug`, you get the report you are supposed 
 
 # Other
 ## passwords:pwned-list:process
-Takes the Pwned Passwords list ordered by prevalence from haveibeenpwned.com or any list with the same structure and creates an update file for the local database password security check service.
-The command will create a file with the naming schema `<size in millions>-million-v<current version of the password database>-<mode>.zip`.
+Takes the Pwned Passwords list from [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) (or any list with the same structure) and converts it for the local database password security check service.
 
-| Parameter        | Type   | Required? | Description                                                                                                                                                                                                     |
-|------------------|--------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<file>`         | string | yes       | The location of the pwned passwords file.                                                                                                                                                                       |
-| `--size`, `-s`   | number | yes       | The amount of hashes to process in millions. E.g. "25". Defaults to 25.                                                                                                                                         |
-| `--mode`, `-m`   | string | no        | The way in which the list should be packed. `json` to pack it as JSON files, `gzip` to pack it as compressed files or `auto` to pack it in whichever variant is used by the current server. Defaults to `auto`. |
-| `--import`, `-i` | -      | no        | Import the data while creating the file.                                                                                                                                                                        |
+#### Creating an update file
+By default, the command will import the hashes directly into the local database, but with the `--mode` parameter it is also possible to create an update file with the naming schema `<size in millions>m-v<current version of the password database>-<mode>.zip`.
+This update file can then be distributed to other Nextcloud servers by hosting it on a server and configuring the source url:
+
+```bash
+/var/www/html/occ config:app:set passwords passwords/localdb/source --value="https://yourdomain/yourpath/<size in millions>m-v:version-:format.zip";
+/var/www/html/occ config:app:set passwords passwords/localdb/version --value="0";
+```
+
+| Parameter        | Type   | Required? | Description                                                                                                                                                                                                                                  |
+|------------------|--------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<file>`         | string | no        | The location of the pwnedpasswords.txt file.                                                                                                                                                                                                 |
+| `--size`, `-s`   | number | no        | The amount of hashes to process in millions. E.g. "25". Defaults to 25.                                                                                                                                                                      |
+| `--mode`, `-m`   | string | no        | The mode for processing the hashes. `import` to import the m directly, `json` to pack it as JSON files, `gzip` to pack it as compressed files or `file` to pack it in whichever variant is used by the current server. Defaults to `import`. |
