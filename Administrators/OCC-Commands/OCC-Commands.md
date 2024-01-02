@@ -106,12 +106,12 @@ With `./occ passwords:system:report debug`, you get the report you are supposed 
 Takes the Pwned Passwords list from [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) (or any list with the same structure) and converts it for the local database password security check service.
 
 #### Creating an update file
-By default, the command will import the hashes directly into the local database, but with the `--mode` parameter it is also possible to create an update file with the naming schema `<size in millions>m-v<current version of the password database>-<mode>.zip`.
+By default, the command will import the hashes directly into the local database, but with the `--mode` parameter it is also possible to create an update file with the naming schema `<size>m-v<database version>-<mode>.zip`.
 This update file can then be distributed to other Nextcloud servers by hosting it on a server and configuring the source url:
 
 ```bash
-/var/www/html/occ config:app:set passwords passwords/localdb/source --value="https://yourdomain/yourpath/<size in millions>m-v:version-:format.zip";
-/var/www/html/occ config:app:set passwords passwords/localdb/version --value="0";
+./occ config:app:set passwords passwords/localdb/source --value="https://yourdomain/yourpath/<size>m-v:version-:format.zip";
+./occ config:app:set passwords passwords/localdb/version --value="0";
 ```
 
 | Parameter        | Type   | Required? | Description                                                                                                                                                                                                                                  |
