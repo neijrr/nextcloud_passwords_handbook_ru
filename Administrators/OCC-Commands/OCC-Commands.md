@@ -105,6 +105,8 @@ With `./occ passwords:system:report debug`, you get the report you are supposed 
 ## passwords:pwned-list:process
 Takes the Pwned Passwords list from [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) (or any list with the same structure) and converts it for the local database password security check service.
 
+**Note:** This command can take a lot of RAM. You should have ~100MiB free RAM per 1 million hashes. So `--size 25` would require around 2.5GiB of RAM.
+
 #### Creating an update file
 By default, the command will import the hashes directly into the local database, but with the `--mode` parameter it is also possible to create an update file with the naming schema `<size>m-v<database version>-<mode>.zip`.
 This update file can then be distributed to other Nextcloud servers by hosting it on a server and configuring the source url:
