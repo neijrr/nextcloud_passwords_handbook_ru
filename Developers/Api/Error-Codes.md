@@ -111,6 +111,9 @@ Please check your server configuration.
 The current words service was unable to produce usable output.
 Please check your server configuration.
 
+#### [49f5c936] Invalid range
+The hash range provided to the hashes endpoint is not within the allowed range of 5 - 40 characters.
+
 
 ## Other Errors
 #### [65611064] 
