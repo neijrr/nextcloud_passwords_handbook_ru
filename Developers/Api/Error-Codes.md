@@ -115,6 +115,45 @@ Please check your server configuration.
 The hash range provided to the hashes endpoint is not within the allowed range of 5 - 40 characters.
 
 
+## Session & Encryption Errors
+#### [ab6e13ba] Passphrase invalid
+The given passphrase is incorrect or no passphrase was given when it is required.
+Too many attempts to open a session with an incorrect passphrase will revoke your clients login credentials.
+
+#### [033d1943] Passphrase verification failed
+The given passphrase is incorrect.
+Too many attempts to open a session with an incorrect passphrase will revoke your clients login credentials.
+
+#### [3476b978] Reading user keychain failed
+The app is unable to read the users SSEv2 or CSE keychain.
+This indicates an issue with the encryption keys on the server.
+
+#### [92312b66] Secret invalid
+The given challenge secret is invalid, e.g. it doesn't have the correct length.
+Consult the [encryption implementation documentation](../Encryption).
+
+#### [ee858005] Salt length invalid
+The lengths of the challenge salts are incorrect.
+Consult the [encryption implementation documentation](../Encryption).
+
+#### [c0980e3c] Token invalid
+The given token is invalid or expired or no token was given when it is required.
+Too many attempts to open a session with an incorrect token will revoke your clients login credentials.
+
+#### [8b4f02b4] Token verification failed
+The given token is incorrect.
+Too many attempts to open a session with an incorrect token will revoke your clients login credentials.
+
+#### [1d21b905] Loading challenge failed
+The app was unable to load the users encryption challenge.
+More details will be in the server log.
+
+#### [114cbe8d] Challenge update failed
+The app was unable to update the user challenge.
+The existing user challenge remains active.
+The server log may contain more details.
+
+
 ## Other Errors
 #### [65611064] 
 The application was not designed to be able to fulfill the requested action.
