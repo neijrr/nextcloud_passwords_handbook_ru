@@ -1,121 +1,97 @@
 {
     "server": {
         "current": {
-            "version"     : "2022.11.0",
+            "version"     : "2024.1.0",
             "url"         : "https://apps.nextcloud.com/apps/passwords/releases",
             "requirements": {
-                "nextcloud": "23.0.0",
-                "php"      : "7.4.0"
+                "nextcloud": "28.0.0",
+                "php"      : "8.0.0"
             }
         },
-        "2021.12" : {
-            "legacy-client-warning": true
-        },
-        "2022.1" : {
+        "2024.1" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.2" : {
+        "2024.2" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.3" : {
+        "2024.3" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.4" : {
+        "2024.4" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.5" : {
+        "2024.5" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.6" : {
+        "2024.6" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.7" : {
+        "2024.7" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.8" : {
+        "2024.8" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.9" : {
+        "2024.9" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.10" : {
+        "2024.10" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.11" : {
+        "2024.11" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         },
-        "2022.12" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
-        },
-        "2023.1" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
-        },
-        "2023.2" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
-        },
-        "2023.3" : {
+        "2024.12" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false
         }
     },
     "webapp": {
-        "2022.1": {
+        "2024.1": {
             "first-run-wizard": false
         },
-        "2022.2": {
+        "2024.2": {
             "first-run-wizard": false
         },
-        "2022.3": {
+        "2024.3": {
             "first-run-wizard": false
         },
-        "2022.4": {
+        "2024.4": {
             "first-run-wizard": false
         },
-        "2022.5": {
+        "2024.5": {
             "first-run-wizard": false
         },
-        "2022.6": {
+        "2024.6": {
             "first-run-wizard": false
         },
-        "2022.7": {
+        "2024.7": {
             "first-run-wizard": false
         },
-        "2022.8": {
+        "2024.8": {
             "first-run-wizard": false
         },
-        "2022.9": {
+        "2024.9": {
             "first-run-wizard": false
         },
-        "2022.10": {
+        "2024.10": {
             "first-run-wizard": false
         },
-        "2022.11": {
+        "2024.11": {
             "first-run-wizard": false
         },
-        "2022.12": {
-            "first-run-wizard": false
-        },
-        "2023.1": {
-            "first-run-wizard": false
-        },
-        "2023.2": {
-            "first-run-wizard": false
-        },
-        "2023.3": {
+        "2024.12": {
             "first-run-wizard": false
         }
     }
