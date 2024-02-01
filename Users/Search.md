@@ -21,7 +21,7 @@ If you have [the "Search everywhere with Enter" option](Settings##search-everywh
 
 
 ## Advanced search usage
-By default, the search will search the `url`, `username`, `name` and `notes` of a password.
+By default, the search will search the url, username, name and notes of a password.
 You can use an advanced syntax to search other fields as well.
 The advanced syntax consists of a field and a value like this `field:value` or this `field:"value with spaces"`.
 You can use multiple fields: `field1:value1 field2:value2 rest of the query`.

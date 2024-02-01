@@ -1,13 +1,5 @@
 {
     "server": {
-        "current": {
-            "version"     : "2024.1.0",
-            "url"         : "https://apps.nextcloud.com/apps/passwords/releases",
-            "requirements": {
-                "nextcloud": "28.0.0",
-                "php"      : "8.0.0"
-            }
-        },
         "2024.1" : {
             "two-factor-enabled"   : false,
             "two-factor-required"  : false

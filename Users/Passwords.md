@@ -24,10 +24,10 @@ If the shield is red, the password is bad and has been found in hacker databases
 You can get a quick overview of all passwords by their security status in the security section.
 
 ##### The `⋯`-Menu
-With the `More` menu, you can access all other options available for the password.
-The `Details` option will open a side section with all the password details and other things such as [sharing](./Passwords/Sharing-Passwords), notes and previous revisions.
-The `Edit` option will open the `Edit Password` window where you can change the password properties.
-The `Open Change Password page` option will open a dialog which leads you to the url where you can change the password for this account.
+With the "More" menu, you can access all other options available for the password.
+The "Details" option will open a side section with all the password details and other things such as [sharing](./Passwords/Sharing-Passwords), notes and previous revisions.
+The "Edit" option will open the "Edit Password" window where you can change the password properties.
+The "Open Change Password page" option will open a dialog which leads you to the url where you can change the password for this account.
 You can also delete the password via this menu.
 
 #### Additional display options
