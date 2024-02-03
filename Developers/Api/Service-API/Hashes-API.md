@@ -46,6 +46,15 @@ If no hashes match the given range, the response will have a 404 status code.
 | 429    | text/html        | -        | Rate limit exceeded       |
 | 400    | application/json | object   | Error message             |
 
+#### Response Example
+```json
+[
+    "ace7700a317f9e0a0b86cdd0032d0edb0eb9d5cf",
+    "ace77015084506525d74d585deb02467a29658a7",
+    "ace77016ed9aa8c62ebf66fc06eba40a9cac087c"
+]
+```
+
 #### Errors
 | Code     | Message       | Description                                                                                          |
 |----------|---------------|------------------------------------------------------------------------------------------------------|
@@ -86,6 +95,15 @@ If no hashes match the given range, the response will have a 404 status code.
 | 404    | application/json | string[] | An empty list             |
 | 429    | text/html        | -        | Rate limit exceeded       |
 | 400    | application/json | object   | Error message             |
+
+#### Response Example
+```json
+[
+    "ace7700a317f9e0a0b86cdd0032d0edb0eb9d5cf",
+    "ace77015084506525d74d585deb02467a29658a7",
+    "ace77016ed9aa8c62ebf66fc06eba40a9cac087c"
+]
+```
 
 #### Errors
 | Code     | Message       | Description                                                                                          |

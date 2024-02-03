@@ -39,7 +39,7 @@ The success status code is `200 Ok` and `404 Not Found` if no url could be deter
 | url      | string | The URL of the password change page for the domain |
 
 #### Response Example
-```
+```json
 {
     "url": "https://test.passwordsapp.org/settings/user/security"
 }
