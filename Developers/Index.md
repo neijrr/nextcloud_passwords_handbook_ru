@@ -12,6 +12,8 @@
    4. [Tag API](./Api/Tag-Api)
    5. [Share API](./Api/Share-Api)
    6. [Service API](./Api/Service-Api)
+        - [Hashes API](./Api/Service-API/Hashes-API)
+        - [Password Change API](./Api/Service-API/Password-Change-API.md)
    7. [Settings API](./Api/Settings-Api)
    8. [Token API](./Api/Token-Api)
    9. [Account API](./Api/Account-Api)

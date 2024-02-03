@@ -10,10 +10,10 @@ Users can choose to disable this check or just store a partial hash to improve t
 Therefore, this API supports a [k-anonymity](https://en.wikipedia.org/wiki/K-anonymity) approach in which the client requests all hashes within a given range and then confirms locally if a hash is within the set returned by the server.
 
 # Version History
-| App Version | Change                                                   |
-|-------------|----------------------------------------------------------|
-| 2024.1.0    | Initial introduction of the API                          |
-| 2024.2.0    | API now uses 404 status code. Addition of request limits |
+| App Version | Change                                                |
+|-------------|-------------------------------------------------------|
+| 2024.1.0    | Initial introduction of the API                       |
+| 2024.2.0    | API now uses 404 status code. Addition of rate limits |
 
 # Endpoints
 
@@ -31,8 +31,9 @@ Get hashes by the given range.
 | range     | string | -       | yes      | 5-40 characters of a SHA-1 hash to check against in the database |
 
 #### Restrictions
-- Authentication required
-- User rate limit: 10 requests per 10 seconds
+- Nextcloud Authentication **required**
+- Authenticated API Session **required**
+- User rate limit of **2 requests per 10 seconds**
 
 #### Response
 The API will respond with a list of SHA-1 hashes matching the provided range.
