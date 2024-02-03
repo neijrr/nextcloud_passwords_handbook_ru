@@ -1,6 +1,7 @@
 The hashes API returns the SHA-1 hashes of passwords contained in public data breaches.
 The data can be searched by providing a SHA-1 hash or at least the first five characters of the hash.
 
+# Contents
 [[_TOC_]]
 
 # Privacy
