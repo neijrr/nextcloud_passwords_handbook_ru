@@ -8,6 +8,7 @@ The service api provides access to general services provided by the Passwords ap
 | [avatar](#the-avatar-endpoint)                       | `/api/1.0/service/avatar/{user}/{size}`                     | GET    | no               | Returns the avatar image for a user                  |
 | [favicon](#the-favicon-endpoint)                     | `/api/1.0/service/favicon/{domain}/{size}`                  | GET    | no               | Returns a favicon image for a domain                 |
 | [preview](#the-preview-endpoint)                     | `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET    | no               | Returns a preview image for a domain                 |
+| [hashes](./Service-API/Hashes-API)                   | `/service/hashes/{range}`                                   | GET    | no               | Returns breached hashes for the given range          |
 | [password-change](#the-password-change-url-endpoint) | `/api/1.0/service/password-change`                          | POST   | no               | Returns the url of the password change page          |
 
 
