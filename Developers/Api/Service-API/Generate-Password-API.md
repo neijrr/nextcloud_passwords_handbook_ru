@@ -11,7 +11,7 @@ The password endpoint uses the service defined in the app settings andthe users 
 
 # Endpoints
 
-## Generate password GET endpoint
+## Generate Password GET Endpoint
 This API endpoint generates a new password with the users default settings
 
 #### URL
@@ -67,7 +67,7 @@ The success status code is `200 Ok`
 
 
 
-## Generate password POST endpoint
+## Generate Password POST Endpoint
 Generate a password with the settings provided in the request and use the users default setting for any not provided setting.
 
 #### URL
