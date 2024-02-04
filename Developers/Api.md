@@ -10,9 +10,9 @@ The version 1.0 api is not complete at this point. This is planned for late 2022
 
 ### API version support
 | API | Introduced | Deprecated | Removed |
-| --- | --- | --- | --- |
-| 0.1 | 2018.1 | 2018.1 | 2022.1 |
-| 1.0 | 2018.1 | - | - |
+|-----|------------|------------|---------|
+| 0.1 | 2018.1     | 2018.1     | 2022.1  |
+| 1.0 | 2018.1     | -          | -       |
 
 ### General Notes
  - The api delivers and receives JSON objects

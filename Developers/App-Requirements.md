@@ -29,11 +29,10 @@ Your app must meet all of the following requirements to be listed:
 * **Apps must support client side encryption**
     
     New apps must support [client side encryption](./Encryption).
-    Already listed apps must support client side encryption from january 2023.
 
 
 ## How to list your app
-If you want to have your app listed, please [create a ticket in our issue tracker](https://github.com/marius-wieschollek/passwords/issues/new?labels=feature&template=Feature_request.md).
+If you want to have your app listed, please [create a ticket in our issue tracker](https://github.com/marius-wieschollek/passwords/issues/new?assignees=&labels=&projects=&template=03_app_submission.yml&title=%5BNEW+APP%5D%3A+).
 
 The ticket must contain the following:
 * Name of your app
