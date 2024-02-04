@@ -48,6 +48,12 @@ Look into the documentation of the entity you want to use find on to see which p
 #### [f2fc3b4a] Illegal operator in search criteria
 The following operators can be used in the find command: `eq`, `nq`, `lt`, `gt`, `le`, `ge`.
 
+#### [e5eeb777] Key too long
+The name of a client setting exceeds the maximum of 48 characters.
+
+#### [9b106704] Value too long
+The value of a client setting exceeds the maximum of 128 characters.
+
 
 ## Sharing Errors
 #### [0b0498c1] Sharing disabled
