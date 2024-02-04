@@ -10,6 +10,9 @@ It uses the [.well-known/change-password](https://web.dev/articles/change-passwo
 | 2023.3.0    | Initial introduction of the API |
 | 2024.2.0    | Addition of rate limits         |
 
+## Password change page endpoint
+Retrieves the url of the password change page for the given domain.
+
 #### URL
 | Path                               | Method |
 |------------------------------------|--------|

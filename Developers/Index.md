@@ -14,6 +14,7 @@
    6. [Service API](./Api/Service-Api)
         - [Hashes API](./Api/Service-API/Hashes-API)
         - [Password Change API](./Api/Service-API/Password-Change-API)
+        - [Generate Password API](./Api/Service-API/Generate-Password-API)
    7. [Settings API](./Api/Settings-Api)
    8. [Token API](./Api/Token-Api)
    9. [Account API](./Api/Account-Api)

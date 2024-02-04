@@ -1,53 +1,14 @@
 The service api provides access to general services provided by the Passwords app.
 
 # Available api endpoints
-| Action                                               | Url                                                         | Method     | Session required | Description                                           |
-|------------------------------------------------------|-------------------------------------------------------------|------------|------------------|-------------------------------------------------------|
-| [password](#the-password-endpoint)                   | `/api/1.0/service/password`                                 | GET        | yes              | Generates a password with the users default settings  |
-| [password](#the-password-endpoint)                   | `/api/1.0/service/password`                                 | POST       | yes              | Generates a password with the given settings          |
-| [avatar](#the-avatar-endpoint)                       | `/api/1.0/service/avatar/{user}/{size}`                     | GET        | no               | Returns the avatar image for a user                   |
-| [favicon](#the-favicon-endpoint)                     | `/api/1.0/service/favicon/{domain}/{size}`                  | GET        | no               | Returns a favicon image for a domain                  |
-| [preview](#the-preview-endpoint)                     | `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET        | no               | Returns a preview image for a domain                  |
-| [hashes](./Service-API/Hashes-API)                   | `/service/hashes/{range}`                                   | GET & POST | no               | Returns breached hashes for the given range           |
-| [password-change](./Service-API/Password-Change-API) | `/api/1.0/service/password-change`                          | POST       | no               | Find the url of the password change page for a domain |
-
-
-
-
-# The password endpoint
-The password endpoint generates one password with the given settings.
-
-#### URL
-| Path                        | Method | Session required |
-|-----------------------------|--------|------------------|
-| `/api/1.0/service/password` | GET    | yes              |
-| `/api/1.0/service/password` | POST   | yes              |
-
-#### Arguments
-| Arguments | Type | Default | Required | Description                                                      |
-|-----------|------|---------|----------|------------------------------------------------------------------|
-| strength  | int  | 1       | no       | A higher value creates a longer and more complex password        |
-| numbers   | bool | false   | no       | Whether or not numbers should be used in the password            |
-| special   | bool | false   | no       | Whether or not special characters should be used in the password |
-
-#### Return value
-The success status code is `200 Ok`
-
-| Argument | Type   | Description                                                 |
-|----------|--------|-------------------------------------------------------------|
-| password | string | The generated password                                      |
-| words    | string | The words used in the password                              |
-| strength | int    | The strength setting used                                   |
-| numbers  | bool   | Whether or not numbers were used in the password            |
-| special  | bool   | Whether or not special characters were used in the password |
-
-#### Notes
- - If you call this action with a GET request, the users settings will be used
- - If you call this action with a POST request, the default settings will be used for missing parameters
- - Generated passwords are checked for security automatically
- - The maximum value for `strength` is 4
-
-
+| Endpoint                                             | Url                                                         | Methods    | Description                                           |
+|------------------------------------------------------|-------------------------------------------------------------|------------|-------------------------------------------------------|
+| [password](./Service-API/Generate-Password-API)      | `/api/1.0/service/password`                                 | GET & POST | Generates a password                                  |
+| [avatar](#the-avatar-endpoint)                       | `/api/1.0/service/avatar/{user}/{size}`                     | GET        | Returns the avatar image for a user                   |
+| [favicon](#the-favicon-endpoint)                     | `/api/1.0/service/favicon/{domain}/{size}`                  | GET        | Returns a favicon image for a domain                  |
+| [preview](#the-preview-endpoint)                     | `/api/1.0/service/preview/{domain}/{view}/{width}/{height}` | GET        | Returns a preview image for a domain                  |
+| [hashes](./Service-API/Hashes-API)                   | `/service/hashes/{range}`                                   | GET & POST | Returns breached hashes for the given range           |
+| [password-change](./Service-API/Password-Change-API) | `/api/1.0/service/password-change`                          | POST       | Find the url of the password change page for a domain |
 
 
 # The avatar endpoint

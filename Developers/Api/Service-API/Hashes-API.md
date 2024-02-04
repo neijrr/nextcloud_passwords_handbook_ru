@@ -17,7 +17,7 @@ Therefore, this API supports a [k-anonymity](https://en.wikipedia.org/wiki/K-ano
 
 # Endpoints
 
-## GET hashes endpoint
+## Breached hashes GET endpoint
 Get hashes by the given range.
 
 #### URL
@@ -66,7 +66,7 @@ If no hashes match the given range, the response will have a 404 status code.
 
 
 
-## POST hashes endpoint
+## Breached hashes POST endpoint
 Get hashes by the given range.
 The upside of a POST request over a GET request is that the requested range will not be logged to server logs.
 
