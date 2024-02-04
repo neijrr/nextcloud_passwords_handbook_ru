@@ -11,14 +11,16 @@ It uses the [.well-known/change-password](https://web.dev/articles/change-passwo
 | 2024.2.0    | Addition of rate limits         |
 
 #### URL
-| Path                               | Method | Session required |
-|------------------------------------|--------|------------------|
-| `/api/1.0/service/password-change` | POST   | yes              |
+| Path                               | Method |
+|------------------------------------|--------|
+| `/api/1.0/service/password-change` | POST   |
 
-#### Arguments
-| Arguments | Type   | Default | Required | Description     |
-|-----------|--------|---------|----------|-----------------|
-| domain    | string | -       | yes      | The domain name |
+#### Request
+This endpoint accepts a JSON formatted request body with an object with the following properties.
+
+| Property | Type   | Default | Required | Description     |
+|----------|--------|---------|----------|-----------------|
+| domain   | string | -       | yes      | The domain name |
 
 #### Restrictions
 - Nextcloud Authentication **required**
@@ -34,7 +36,7 @@ The success status code is `200 Ok` and `404 Not Found` if no url could be deter
 | 404    | application/json | object | An object where the property `url` is `null`.      |
 | 429    | text/html        | -      | Rate limit exceeded                                |
 
-| Argument | Type   | Description                                        |
+| Property | Type   | Description                                        |
 |----------|--------|----------------------------------------------------|
 | url      | string | The URL of the password change page for the domain |
 

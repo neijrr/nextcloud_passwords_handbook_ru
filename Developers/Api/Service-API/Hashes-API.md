@@ -21,19 +21,18 @@ Therefore, this API supports a [k-anonymity](https://en.wikipedia.org/wiki/K-ano
 Get hashes by the given range.
 
 #### URL
-| Path                              | Method | Session required |
-|-----------------------------------|--------|------------------|
-| `/api/1.0/service/hashes/{range}` | GET    | no               |
+| Path                              | Method |
+|-----------------------------------|--------|
+| `/api/1.0/service/hashes/{range}` | GET    |
 
 #### Arguments
-| Arguments | Type   | Default | Required | Description                                                      |
-|-----------|--------|---------|----------|------------------------------------------------------------------|
-| range     | string | -       | yes      | 5-40 characters of a SHA-1 hash to check against in the database |
+| Name  | Type   | Default | Required | Description                                                      |
+|-------|--------|---------|----------|------------------------------------------------------------------|
+| range | string | -       | yes      | 5-40 characters of a SHA-1 hash to check against in the database |
 
 #### Restrictions
 - Nextcloud Authentication **required**
-- Authenticated API Session **required**
-- User rate limit of **2 requests per 10 seconds**
+- User rate limit of **10 requests per 10 seconds**
 
 #### Response
 The API will respond with a list of SHA-1 hashes matching the provided range.
@@ -72,18 +71,20 @@ Get hashes by the given range.
 The upside of a POST request over a GET request is that the requested range will not be logged to server logs.
 
 #### URL
-| Path                      | Method | Session required |
-|---------------------------|--------|------------------|
-| `/api/1.0/service/hashes` | POST   | no               |
+| Path                      | Method |
+|---------------------------|--------|
+| `/api/1.0/service/hashes` | POST   |
 
-#### Arguments
-| Arguments | Type   | Default | Required | Description                                                      |
-|-----------|--------|---------|----------|------------------------------------------------------------------|
-| range     | string | -       | yes      | 5-40 characters of a SHA-1 hash to check against in the database |
+#### Request
+This endpoint accepts a JSON formatted request body with an object with the following properties.
+
+| Property | Type   | Default | Required | Description                                                      |
+|----------|--------|---------|----------|------------------------------------------------------------------|
+| range    | string | -       | yes      | 5-40 characters of a SHA-1 hash to check against in the database |
 
 #### Restrictions
-- Authentication required
-- User rate limit: 10 requests per 10 seconds
+- Nextcloud Authentication **required**
+- User rate limit of **10 requests per 10 seconds**
 
 #### Response
 The API will respond with a list of SHA-1 hashes matching the provided range.
