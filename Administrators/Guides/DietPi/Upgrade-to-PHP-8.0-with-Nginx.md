@@ -1,6 +1,7 @@
 > **❗ ❗ ❗ This guide is outdated. PHP 8.0 has been discontinued and should no longer be used. ❗ ❗ ❗**
 >
-> **[Check out the PHP 8.2 upgrade guide](./Upgrade-to-PHP-8.2-with-Nginx)**
+> **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2-with-Nginx) instead _if you're on NC 26 or newer_.**
+> **If you're on Nextcloud 24 or 25, follow the [PHP 8.1](./Upgrade-to-PHP-8.1-with-Nginx) guide first.**
 
 ## Before you start
 - This tutorial was developed for and tested with DietPi 7.2 on a RaspberryPI.
