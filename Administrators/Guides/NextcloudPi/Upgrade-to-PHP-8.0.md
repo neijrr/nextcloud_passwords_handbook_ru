@@ -1,6 +1,7 @@
 > **❗ ❗ ❗ This guide is outdated. PHP 8.0 has been discontinued and should no longer be used. ❗ ❗ ❗**
 >
-> **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2) instead.**
+> **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2) instead _if you're on NC 26 or newer_.**
+> **If you're on Nextcloud 24 or 25, follow the [PHP 8.1](./Upgrade-to-PHP-8.1) guide first.**
 
 ## Before you start
 - This tutorial was developed for and tested with NextCloudPi 1.43.3 on a RaspberryPI.
