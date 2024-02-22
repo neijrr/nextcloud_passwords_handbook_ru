@@ -123,7 +123,7 @@ The "Show Qrcode" option will open the Qrcode dialog which provides a qrcode wit
 The "Print password" option will trigger the printout, but is only available if the "Show print option" is enabled.
 
 ##### Add copy options in menu
-If this option is enabled, the `⋯`-menu will contain two menu entries to copy the password and the username.
+If this option is enabled, the "⋯"-menu will contain two menu entries to copy the password and the username.
 By default, these menu entries are not visible since you can copy the password by clicking on the name and the username by clicking twice.
 On mobile devices the menu entries will always be shown regardless of whether this option enabled.
 

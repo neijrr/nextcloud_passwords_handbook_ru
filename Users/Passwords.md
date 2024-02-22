@@ -23,7 +23,7 @@ In case of duplicates, you can click the icon to see all other entries with the 
 If the shield is red, the password is bad and has been found in hacker databases.
 You can get a quick overview of all passwords by their security status in the security section.
 
-##### The `⋯`-Menu
+##### The "⋯"-Menu
 With the "More" menu, you can access all other options available for the password.
 The "Details" option will open a side section with all the password details and other things such as [sharing](./Passwords/Sharing-Passwords), notes and previous revisions.
 The "Edit" option will open the "Edit Password" window where you can change the password properties.

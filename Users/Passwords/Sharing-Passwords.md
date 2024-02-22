@@ -1,5 +1,5 @@
 Passwords allows you to share a password with other user from your Nextcloud instance.
-To share a password. click on the `⋯`-menu and then click `Details`.
+To share a password. click on the "⋯"-menu and then click `Details`.
 The sharing options can be found in the `Share` tab.
 
 **Note:** The administrator of your Nextcloud instance may disable sharing.

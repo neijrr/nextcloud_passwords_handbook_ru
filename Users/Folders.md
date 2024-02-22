@@ -13,7 +13,7 @@ To open a folder, click on it on the list view.
 To move passwords or folders into a folder, drag and drop them onto the folder.
 To move passwords or folders into the parent folder, drop them onto the folder in the navigation.
 
-##### The `⋯`-Menu
+##### The "⋯"-Menu
 With the "More" menu, you can access all other options available for the folder.
 The "Rename" option will open the "Rename Folder" window where you can change the name.
 The "Delete" option will move the folder and its contents to the trash.
@@ -30,7 +30,7 @@ Enter the name of the folder and click on "Yes" to create the folder.
 
 
 ## Deleting folders
-Once you select the "Delete" option from the `⋯`-Menu, the folder and all its contents will be moved into the trash.
+Once you select the "Delete" option from the "⋯"-Menu, the folder and all its contents will be moved into the trash.
 You can still browse the folder there and restore it if needed.
 
 **Note:** Deleting a folder from the trash will delete the folder and all passwords and folders in it.

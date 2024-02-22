@@ -11,7 +11,7 @@ You could also use tags like "Outdated" or "Second Account" to mark passwords us
 All tags can be viewed in the tag section.
 To view all tagged passwords for a tag, click on it on the list view.
 
-##### The `⋯`-Menu
+##### The "⋯"-Menu
 With the "More" menu, you can access all other options available for the folder.
 The "Edit" option will open the "Edit Tag" window where you can change the name and color.
 The "Delete" option will move the tag.
@@ -41,7 +41,7 @@ When you click "Enter", the tag will be created and a random color will be assig
 
 
 ## Deleting tags
-Once you select the `Delete` option from the `⋯`-Menu, the tag.
+Once you select the `Delete` option from the "⋯"-Menu, the tag.
 It will disappear from all passwords it was assigned to.
 You can still find the tag in the trash and see all passwords it was assigned to.
 If you choose to restore the tag, it will also appear in the passwords again.
