@@ -1,4 +1,4 @@
-The import can be found under `More > Backup and Restore > Restore or Import`.
+The import feature is located under "[Restore or Import](web+passlink://goto/backup/import)" in the "Backup and Restore" section which is accessed through the 🗃 icon in the app navigation.
 It can be used to restore a previously made backup, import a backup from another instance or import data from another password manager.
 
 ![The Import section](_files/import-section.png)

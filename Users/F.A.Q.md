@@ -1,10 +1,10 @@
 ## General
 #### Can I access passwords offline?
 The Passwords app in your browser does not support any offline storage.
-But some of the apps in the appstore do include offline storage capabilities.
+But some of the apps in the [appstore](web+passlink://goto/apps) do include offline storage capabilities.
 
 #### I have hidden passwords, how do I get them?
-Go to `More` > `Settings` > `Danger Zone`, then click `Recover hidden items`.
+Go to "[Settings](web+passlink://goto/settings)" -> "Danger Zone", then click "Recover hidden items".
 Select any type of items you want to unhide and press "Ok".
 
 
@@ -62,7 +62,7 @@ It is safe to delete the tokens, but you should be aware that this will close cu
 
 #### How do I create a master password?
 Take a look at [the guide to enable end-to-end encryption](Encryption/Enable-End-to-End-Encryption).
-Open the Settings (`More > Settings`) and look for the "Encryption" section.
+Open the [Settings](web+passlink://goto/settings) and look for the "Encryption" section.
 Enable the client-side encryption option and set an encryption passphrase.
 
 **Note:** This can not be undone. You can change the master password but not remove it.

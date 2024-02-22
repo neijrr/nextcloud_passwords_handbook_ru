@@ -2,18 +2,17 @@
 
 #### Installation
 1. Open the Passwords App in Nextcloud
-2. Click on "More"
-3. Click on "Apps & Extensions"
-4. Locate the "Official Firefox Add-On" and click on "Available on Firefox Add-ons"
-5. On the Firefox Add-ons page, click the blue "Add to Firefox" button to install the extension
-6. Confirm the installation by clicking on the "Add" button in the dialog that opened
+2. Click on the 🧩 icon to open "[Apps & Extensions](web+passlink://goto/apps)"
+3. Locate the "Official Firefox Add-On" and click on "Available on Firefox Add-ons"
+4. On the Firefox Add-ons page, click the blue "Add to Firefox" button to install the extension
+5. Confirm the installation by clicking on the "Add" button in the dialog that opened
     - _IF_ you wish to use the extension also in private mode, check the option "Allow this extension to run in Private Windows" and click "Okay"
     - For easier access to the extension, click on the extension button, then click on the settings button on the Passwords Extension and click "Pin to Toolbar"
-7. Navigate back to "Apps & Extensions"
-8. Locate the "Official Firefox Add-On" again and click on "Connect with PassLink"
-9. Click "Connect via Link" in the dialog that opens
-10. A window from the extension should open and the dialog should switch to showing a set of four codes
-11. Compare the codes and click on "Looks good" if they match
+6. Navigate back to "Apps & Extensions"
+7. Locate the "Official Firefox Add-On" again and click on "Connect with PassLink"
+8. Click "Connect via Link" in the dialog that opens
+9. A window from the extension should open and the dialog should switch to showing a set of four codes
+10. Compare the codes and click on "Looks good" if they match
     - You can close both dialogs afterward
 
 #### Confirm it's working

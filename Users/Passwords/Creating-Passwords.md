@@ -10,7 +10,7 @@ The refresh ("🔃") button will generate a new password and also show the passw
 
 ##### Name
 The name of the password entry which will be shown in the list view.
-If no name is chosen one will be generated.
+If no name is chosen, one will be generated.
 
 ##### Website
 The website associated with the password.
@@ -31,14 +31,14 @@ You can show those fields by enabling the [option](../Settings#show-hidden-custo
 
 ##### Custom Field Types
 
-| Type | Description |
-| --- | --- |
-| Text | A regular text field |
-| Secret | A password field. These fields are not monitored by the password security check |
-| Email | An email field |
-| Website | An url field. These fields are also used by the browser extension to create recommendations |
-| File | A reference to a file stored in Nextcloud |
-| Data | A field with technical data from apps & extensions. Usually hidden unless the setting is activated |
+| Type    | Description                                                                                        |
+|---------|----------------------------------------------------------------------------------------------------|
+| Text    | A regular text field                                                                               |
+| Secret  | A password field. These fields are not monitored by the password security check                    |
+| Email   | An email field                                                                                     |
+| Website | An url field. These fields are also used by the browser extension to create recommendations        |
+| File    | A reference to a file stored in Nextcloud                                                          |
+| Data    | A field with technical data from apps & extensions. Usually hidden unless the setting is activated |
 
 
 ### More Options
@@ -51,4 +51,4 @@ If available, you can select an encryption type for the password here.
 
 ### Tags
 It is currently not possible to assign tags in the password creation dialog.
-To assign tags to a password, please use the `Add Tags...` area in the password detail view.
+To assign tags to a password, please use the "Add Tags..." area in the password detail view.

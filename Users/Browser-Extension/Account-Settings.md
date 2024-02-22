@@ -22,4 +22,4 @@ To change the App Password, see the [Update Nextcloud Credentials guide](./Updat
 
 ##### Delete an account
 Close the account details form if open by clicking on the account name.
-Click the "🗑" next to the account name to delete it.
+Click the "🗑" icon next to the account name to delete it.

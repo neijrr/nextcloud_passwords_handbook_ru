@@ -4,25 +4,23 @@ This guide explains the import from a Passwords database backup which can be cre
 
 ## Export from Passwords
 1. Open the Passwords app.
-2. Click on "More" in the bottom left corner.
-3. Click on "Backup and Restore".
-4. Choose "Backup or export".
-5. Choose export options as wanted.
-6. Click the "Export" button.
-7. Wait for the export to finish, then click the "Download JSON" button.
-8. Save the file on your computer
+2. Click on the "🗃" icon in the bottom left corner to open "Backup and Restore".
+3. Choose "[Backup or export](web+passlink://goto/backup/export)".
+4. Choose export options as wanted.
+5. Click the "Export" button.
+6. Wait for the export to finish, then click the "Download JSON" button.
+7. Save the file on your computer
 
 ## Import into Passwords
 1. Open the Passwords app.
-2. Click on "More" in the bottom left corner.
-3. Click on "Backup and Restore".
-4. Choose "Restore or import".
-5. Select "Database Backup" as import format.
-6. Open the file you exported before using the file dialog.
-7. Choose import options as wanted.
-8. Click the "Import" button.
-9. After the import has finished, check the imported passwords.
-10. Delete the export file from your computer.
+2. Click on the "🗃" icon in the bottom left corner to open "Backup and Restore".
+3. Choose "[Restore or import](web+passlink://goto/backup/import)".
+4. Select "Database Backup" as import format.
+5. Open the file you exported before using the file dialog.
+6. Choose import options as wanted.
+7. Click the "Import" button.
+8. After the import has finished, check the imported passwords.
+9. Delete the export file from your computer.
 
 
 ## Import Options
@@ -35,4 +33,4 @@ If the backup has been secured with a password, you will have to enter it here.
 
 
 ## Troubleshooting
-See [import troubleshotting](../Import#Troubleshooting).
+See [import troubleshooting](../Import#Troubleshooting).

@@ -12,9 +12,9 @@ All tags can be viewed in the tag section.
 To view all tagged passwords for a tag, click on it on the list view.
 
 ##### The `⋯`-Menu
-With the `More` menu, you can access all other options available for the folder.
-The `Edit` option will open the `Edit Tag` window where you can change the name and color.
-The `Delete` option will move the tag.
+With the "More" menu, you can access all other options available for the folder.
+The "Edit" option will open the "Edit Tag" window where you can change the name and color.
+The "Delete" option will move the tag.
 
 ##### Tags in the main view
 ![Tags of a password in the list view](_files/tags-hover.gif)
@@ -29,15 +29,15 @@ You can then click on the tag to see all related passwords.
 ##### Using the tag creation dialog 
 ![The tag creation dialog](_files/tag-create.png)
 
-Click on the `+`-Button in the breadcrumb navigation in the tag section and select `New Tag` to open the tag creation dialog.
+Click on the `+`-Button in the breadcrumb navigation in the tag section and select "New Tag" to open the tag creation dialog.
 Enter the name of the tag and click and choose a custom color if wanted.
-Then click on on `Yes` to create the tag.
+Then click on on "Yes" to create the tag.
 
 ##### Creating tags automatically
 Tags will be created automatically if they are assigned to a password but don't exist.
 
-To do os, open the detail view of a password and write the name of the tag in the `Add Tags...` area.
-When you click `Enter`, the tag will be created and a random color will be assigned.
+To do os, open the detail view of a password and write the name of the tag in the "Add Tags..." area.
+When you click "Enter", the tag will be created and a random color will be assigned.
 
 
 ## Deleting tags

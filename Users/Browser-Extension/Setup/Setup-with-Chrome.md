@@ -2,17 +2,16 @@
 
 #### Installation
 1. Open the Passwords App in Nextcloud
-2. Click on "More"
-3. Click on "Apps & Extensions"
-4. Locate the "Official Chrome Extension" and click on "Available in the Chrome Web Store"
-5. In the Chrome Web Store, click the blue "Add to Chrome" button to install the extension
-6. Confirm the installation by clicking on the "Add extension" button in the dialog that opened
+2. Click on the 🧩 icon to open "[Apps & Extensions](web+passlink://goto/apps)"
+3. Locate the "Official Chrome Extension" and click on "Available in the Chrome Web Store"
+4. In the Chrome Web Store, click the blue "Add to Chrome" button to install the extension
+5. Confirm the installation by clicking on the "Add extension" button in the dialog that opened
     - For easier access to the extension, click on the extension button, then click on the "Pin" icon next to the extension name
-7. Navigate back to "Apps & Extensions"
-8. Locate the "Official Chrome Extension" again and click on "Connect with PassLink"
-9. Click "Connect via Link" in the dialog that opens
-10. A window from the extension should open and the dialog should switch to showing a set of four codes
-11. Compare the codes and click on "Looks good" if they match
+6. Navigate back to "Apps & Extensions"
+7. Locate the "Official Chrome Extension" again and click on "Connect with PassLink"
+8. Click "Connect via Link" in the dialog that opens
+9. A window from the extension should open and the dialog should switch to showing a set of four codes
+10. Compare the codes and click on "Looks good" if they match
     - You can close both dialogs afterward
 
 #### Allow in private browsing

@@ -11,15 +11,14 @@ This guide explains how to import your passwords from Enpass.
 
 ## Import into Passwords
 1. Open the Passwords app.
-2. Click on "More" in the bottom left corner.
-3. Click on "Backup and Restore".
-4. Choose "Restore or import".
-5. Select "Enpass JSON" as import format.
-6. Open the file you exported before using the file dialog.
-7. Choose import options as wanted.
-8. Click the "Import" button.
-9. After the import has finished, check the imported passwords.
-10. Delete the export file from your computer.
+2. Click on the "🗃" icon in the bottom left corner to open "Backup and Restore".
+3. Choose "[Restore or import](web+passlink://goto/backup/import)".
+4. Select "Enpass JSON" as import format.
+5. Open the file you exported before using the file dialog.
+6. Choose import options as wanted.
+7. Click the "Import" button.
+8. After the import has finished, check the imported passwords.
+9. Delete the export file from your computer.
 
 
 ## Import Options
@@ -33,4 +32,4 @@ In order to improve usability, those fields can be skipped during import.
 
 
 ## Troubleshooting
-See [import troubleshotting](../Import#Troubleshooting).
+See [import troubleshooting](../Import#Troubleshooting).

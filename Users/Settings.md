@@ -1,4 +1,4 @@
-The settings section can be found under `More > Settings`.
+The [settings section](web+passlink://goto/settings) can be found by clicking the cog-icon in the app navigation.
 These settings allow you to define how the app itself and the official clients behave.
 
 ![The Settings section](_files/settings-section.png)
@@ -19,7 +19,7 @@ If this option is enabled, passwords will be marked as weak if they appear more 
 
 ##### Maximum age in days
 Set a maximum age for passwords after which they will be marked as weak.
-Setting the value to `0` will disable the check.
+Setting the value to "0" will disable the check.
 
 #### Security Check Hash (Expert Settings)
 This setting defines how much of the SHA-1 hash used to compare each password against a list of known compromised passwords should be stored.
@@ -87,10 +87,10 @@ If the passphrase is invalid, you will see an error message when you log in and 
 ## User Interface
 ##### Initial section
 Here you can choose which section will be shown when you open the passwords app.
-By default, the `Folders` section will be shown, but you can also select your `All Passwords`, `Favorites`, `Tags` or `Recent` passwords as inital section.
+By default, the `Folders` section will be shown, but you can also select your "All Passwords", "Favorites", "Tags" or "Recent" passwords as initial section.
 
 ##### Show hidden custom fields (Expert Settings)
-If enabled, this option will show hidden custom field (custom fields which start with an underscore "`_`") in the password details and edit form.
+If enabled, this option will show hidden custom field (custom fields which start with an underscore "_") in the password details and edit form.
 These fields are usually visually hidden and may be used for technical information, but they count towards the custom fields maximum limit.
 
 
@@ -99,28 +99,28 @@ These settings change how passwords are displayed in the list view.
 
 ##### Set title from
 By default, the name of the password will be shown in the list view.
-You can also select the `Website` to be used.
+You can also select the "Website" to be used.
 
 ##### Single click action
 This option defines the action which will be executed when you click on a password entry.
-The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-The option `Show details` will open the password details and the option `Edit password` will open the edit dialog.
-If set to `Nothing`, the click action will be disabled.
+The options "Copy password", "Copy username" and "Copy website" will copy the value of the corresponding attribute to your clipboard.
+The option "Show details" will open the password details and the option "Edit password" will open the edit dialog.
+If set to "Nothing", the click action will be disabled.
 
 ##### Double click action
 This option defines the action which will be executed when you double-click on a password entry.
-The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-The option `Show details` will open the password details and the option `Edit password` will open the edit dialog.
-`Open website` will open the website for the password if one is given.
-If set to `Nothing`, the double click action will be disabled.
+The options "Copy password", "Copy username" and "Copy website" will copy the value of the corresponding attribute to your clipboard.
+The option "Show details" will open the password details and the option "Edit password" will open the edit dialog.
+"Open website" will open the website for the password if one is given.
+If set to "Nothing", the double click action will be disabled.
 
 ##### Show shortcut button
 This option adds one additional button to quickly access one action in the password list entry.
-The option `Show details` will open the password details, `Show Share Tab` will open the share tab in the details view and the option `Edit password` will open the edit dialog.
-The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-`Open website` will open the website for the password if one is given.
-The `Show Qrcode` option will open the Qrcode dialog which provides a qrcode with the password value.
-The `Print password` option will trigger the printout, but is only available if the "Show print option" is enabled.
+The option "Show details" will open the password details, "Show Share Tab" will open the share tab in the details view and the option "Edit password" will open the edit dialog.
+The options "Copy password", "Copy username" and "Copy website" will copy the value of the corresponding attribute to your clipboard.
+"Open website" will open the website for the password if one is given.
+The "Show Qrcode" option will open the Qrcode dialog which provides a qrcode with the password value.
+The "Print password" option will trigger the printout, but is only available if the "Show print option" is enabled.
 
 ##### Add copy options in menu
 If this option is enabled, the `⋯`-menu will contain two menu entries to copy the password and the username.

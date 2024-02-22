@@ -1,4 +1,4 @@
-The export feature is located under "[Backup or Export](web+passlink://goto/backup/export)" in the "Backup and Restore" section which is accessed trough the 🗃 icon in the app navigation.
+The export feature is located under "[Backup or Export](web+passlink://goto/backup/export)" in the "Backup and Restore" section which is accessed through the 🗃 icon in the app navigation.
 It can be used to create a backup of your current database or to create csv and office documents for the use in third party applications.
 
 ![The Export section](_files/export-section.png)

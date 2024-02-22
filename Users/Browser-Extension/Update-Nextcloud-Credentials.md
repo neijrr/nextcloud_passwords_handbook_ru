@@ -6,7 +6,7 @@ This article covers how to update the credentials used by the browser extension 
 > :star: This method requires the browser extension version 2.5.0 or higher
 
 1. Open the passwords app using the browser where the extension is installed
-2. Click on "More", then "Apps & Extensions"
+2. Click on the 🧩 icon to open "[Apps & Extensions](web+passlink://goto/apps)"
 3. Locate the extension listing for your browser (Firefox, Google Chrome, Microsoft Edge) and click on "Connect with PassLink"
 4. Click "Connect via Link" in the dialog that opens
 5. A window from the extension should open and the dialog should switch to showing a set of four codes

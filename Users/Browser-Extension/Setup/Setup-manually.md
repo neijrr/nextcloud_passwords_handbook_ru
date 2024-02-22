@@ -2,10 +2,9 @@
 
 #### Installation
 1. Open the Passwords App in Nextcloud
-2. Click on "More"
-3. Click on "Apps & Extensions"
-4. Locate the browser extension entry for your browser and click the button to open the extension page in the official extension store
-5. Install the extension from the extension store
+2. Click on the 🧩 icon to open "[Apps & Extensions](web+passlink://goto/apps)"
+3. Locate the browser extension entry for your browser and click the button to open the extension page in the official extension store
+4. Install the extension from the extension store
 
 #### Adding an account
 1. Open Nextcloud, click on your profile icon in the top right corner and click on "Settings"
@@ -15,7 +14,7 @@
 5. Enter a name for the Extension into the "App name" input field
 6. Click "Create new app password"
 7. Authenticate with your Nextcloud password if required
-8. Use the "📋" to copy the token from the "Password" field
+8. Use the "📋" button to copy the token from the "Password" field
 9. Open the extension popup by clicking on the extension icon
 10. Open the last tab called "Tools" and click "Open Extension Settings"
 11. Click on the "👤" icon
