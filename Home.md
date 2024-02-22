@@ -13,7 +13,7 @@ The [developer handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Developer
 
 ## [User Handbook](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Index)
 The user manual can be accessed from within the app.
-Go to `More > Handbook` view it.
+Click the :grey_question: icon at the bottom left in the app to open it.
 Alternatively the online version can be found [here](https://git.mdns.eu/nextcloud/passwords/wikis/Users/Index).
 
 ## Support
