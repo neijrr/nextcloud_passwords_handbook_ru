@@ -21,7 +21,7 @@ The "Delete" option will move the folder and its contents to the trash.
 ## Creating a folder
 ![The folder creation dialog](_files/folder-create.png)
 
-Click on the `+`-Button in the breadcrumb navigation in the folder section and select "New Folder" to open the folder creation dialog.
+Click on the "⋯"-Button in the breadcrumb navigation in the folder section and select "New Folder" to open the folder creation dialog.
 Enter the name of the folder and click on "Yes" to create the folder.
 
 **Notes**

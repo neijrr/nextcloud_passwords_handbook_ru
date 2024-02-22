@@ -29,7 +29,7 @@ You can then click on the tag to see all related passwords.
 ##### Using the tag creation dialog 
 ![The tag creation dialog](_files/tag-create.png)
 
-Click on the `+`-Button in the breadcrumb navigation in the tag section and select "New Tag" to open the tag creation dialog.
+Click on the "⋯"-Button in the breadcrumb navigation in the tag section and select "New Tag" to open the tag creation dialog.
 Enter the name of the tag and click and choose a custom color if wanted.
 Then click on on "Yes" to create the tag.
 
@@ -41,7 +41,7 @@ When you click "Enter", the tag will be created and a random color will be assig
 
 
 ## Deleting tags
-Once you select the `Delete` option from the "⋯"-Menu, the tag.
+Once you select the "Delete" option from the "⋯"-Menu, the tag.
 It will disappear from all passwords it was assigned to.
 You can still find the tag in the trash and see all passwords it was assigned to.
 If you choose to restore the tag, it will also appear in the passwords again.

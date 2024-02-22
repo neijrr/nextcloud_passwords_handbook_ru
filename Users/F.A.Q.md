@@ -100,15 +100,15 @@ Even if you have the rights to edit the password, you can not delete it in the a
 #### Passwords tells me that one of my passwords is insecure
 If companies get hacked, the passwords of their users often end up in online databases of hacked passwords.
 Because of this, the passwords app checks on a regular basis if one of your passwords appears in these databases and notifies you if it does.
-This does not necessarily mean that you or the website which you use the password for have been hacked.
-But you should change the password as hackers now have it in their databases as well.
-You can view all your insecure passwords in `Security > Broken`.
+This does not necessarily mean that you or the website which you use the password for has been hacked.
+But you should change the password immediately, as hackers now have it in their databases as well.
+You can view all your insecure passwords in "[Security](web+passlink://goto/security)" -> "[Breached](web+passlink://goto/security/2)".
 
 #### Password tells me that one of my passwords could not be shared
 Given that the option is enabled, you can share passwords which have been shared with you.
-By doing so, it might happen that the person you want to share the password with, is the one who originally shared it.
+By doing so, it might happen that the person you want to share the password with is the one who originally shared it.
 If that is the case, Passwords will not complete the sharing process as this would create an endless loop.
-You can view all your shared passwords in `Shared > Shared by me`.
+You can view all your shared passwords in "[Shares](web+passlink://goto/shared)" -> "[Shared by me](web+passlink://goto/shared/1)".
 
 #### The notification "We have detected several failed attempts to unlock your password database by ..."
 If you use 2FA or a master password, the app will send you a notification if a client tries to gain access to the database without correct credentials.

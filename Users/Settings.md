@@ -48,7 +48,7 @@ Every password will have at least 12 characters minimum.
 If activated, the password generator will add numbers to the created password.
 
 ##### Include special characters
-If activated, the password generator will add special characters like `$, €, @` to the created password.
+If activated, the password generator will add special characters like "$", "€", "@" to the created password.
 
 
 ### Login & Session
@@ -137,15 +137,15 @@ Also, the tags will not be shown on mobile devices.
 
 ##### Sort by (Expert Settings)
 This option lets you choose which field will be used to sort passwords, when "Sort by Name" is selected in the list view.
-By default, the title field from the `Set title from` option will be used.
-But you can also have your passwords sorted by `Name`, `Website` independently of the title field.
+By default, the title field from the "Set title from" option will be used.
+But you can also have your passwords sorted by "Name", "Website" independently of the title field.
 
 ##### Mousewheel click action (Expert Settings)
 This option defines the action which will be executed when you click on a password entry with the mouse wheel.
-The options `Copy password`, `Copy username` and `Copy website` will copy the value of the corresponding attribute to your clipboard.
-The option `Show details` will open the password details and the option `Edit password` will open the edit dialog.
-`Open website` will open the website for the password if one is given.
-If set to `Nothing`, the double click action will be disabled.
+The options "Copy password", "Copy username" and "Copy website" will copy the value of the corresponding attribute to your clipboard.
+The option "Show details" will open the password details and the option "Edit password" will open the edit dialog.
+"Open website" will open the website for the password if one is given.
+If set to "Nothing", the double click action will be disabled.
 
 ##### Show print option (Expert Settings)
 This setting adds an option to print the password to the list view and to the password details view.
