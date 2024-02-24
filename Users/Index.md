@@ -37,6 +37,6 @@ The Passwords Browser Extension gives you easy and secure access to all your pas
 - [Setup with Microsoft Edge](./Browser-Extension/Setup/Setup-with-Edge)
 
 ### Download
-- [Download for Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords?src=external-handbook)
+- [Download for Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords?utm_source=wiki&utm_medium=home)
 - [Download for Chrome](https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi)
 - [Download for Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/cjmlcljdpphgdfpkngjcmeepdpcgpffk)

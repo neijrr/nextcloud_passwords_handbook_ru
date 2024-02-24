@@ -5,7 +5,7 @@
   - [Manual Setup](./Browser-Extension/Setup/Setup-manually)
 
 ## Downloads
-  - [Mozilla Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords?src=external-handbook)
+  - [Mozilla Firefox](https://addons.mozilla.org/de/firefox/addon/nextcloud-passwords?utm_source=wiki&utm_medium=extension)
       - [Mirror Server](https://extensions.passwordsapp.org/)
       - [Development Build](https://git.mdns.eu/nextcloud/passwords-webextension/-/packages/16)
   - [Google Chrome](https://chrome.google.com/webstore/detail/nextcloud-passwords/mhajlicjhgoofheldnmollgbgjheenbi)

@@ -55,7 +55,7 @@
                             "en": "Available on Firefox Add-ons",
                             "de": "Verfügbar auf Firefox Add-ons"
                         },
-                        "url"    : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?src=external-apps",
+                        "url"    : "https://addons.mozilla.org/firefox/addon/nextcloud-passwords?utm_source=wiki&utm_medium=apps",
                         "primary": true
                     }
                 ],
