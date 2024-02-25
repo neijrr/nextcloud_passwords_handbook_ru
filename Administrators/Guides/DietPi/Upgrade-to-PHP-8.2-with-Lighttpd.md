@@ -1,3 +1,7 @@
+> **❗ ❗ ❗ PHP 8.2 is no longer the recommended version for Nextcloud. ❗ ❗ ❗**
+>
+> **[Follow the PHP 8.3 upgrade guide if you have Nextcloud 28 or later](./Upgrade-to-PHP-8.3-with-Lighttpd)**
+
 ## Before you start
 - This tutorial was developed for and tested with DietPi 8.23.3 based on Debian Bullseye on a RaspberryPI.
   - If you're using DietPi based on Debian Bookworm, you should already have PHP 8.2 installed

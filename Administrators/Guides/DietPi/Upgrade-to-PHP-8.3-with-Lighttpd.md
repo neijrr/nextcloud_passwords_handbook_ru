@@ -148,10 +148,10 @@ By default, your DietPi should now be using PHP 8.3.
 You can check this by running `php -v`. The output should look like this:
 ```bash
 root@DietPi:~# php -v
-PHP 8.3.12 (cli) (built: Oct 27 2023 13:01:32) (NTS)
+PHP 8.3.3-1+0~20240216.17+debian12~1.gbp87e37b (cli) (built: Feb 16 2024 10:32:28) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.2.12, Copyright (c) Zend Technologies
-    with Zend OPcache v8.3.12, Copyright (c), by Zend Technologies
+Zend Engine v4.3.3, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.3-1+0~20240216.17+debian12~1.gbp87e37b, Copyright (c), by Zend Technologies
 ```
 
 It's important that it shows `PHP 8.3.*`.

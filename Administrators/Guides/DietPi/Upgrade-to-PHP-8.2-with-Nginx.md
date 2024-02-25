@@ -1,6 +1,6 @@
 > **❗ ❗ ❗ PHP 8.2 is no longer the recommended version for Nextcloud. ❗ ❗ ❗**
 >
-> **[Follow the PHP 8.3 upgrade guide if you have Nextcloud 26 or later](./Upgrade-to-PHP-8.3-with-Nginx)**
+> **[Follow the PHP 8.3 upgrade guide if you have Nextcloud 28 or later](./Upgrade-to-PHP-8.3-with-Nginx)**
 
 ## Before you start
 - This tutorial was developed for and tested with DietPi 8.23.3 based on Debian Bullseye on a RaspberryPI.

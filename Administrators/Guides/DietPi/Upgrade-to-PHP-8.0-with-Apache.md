@@ -1,5 +1,6 @@
 > **❗ ❗ ❗ This guide is outdated. PHP 8.0 has been discontinued and should no longer be used. ❗ ❗ ❗**
 >
+> **We recommend upgrading to [PHP 8.3](./Upgrade-to-PHP-8.3-with-Apache) instead _if you're on NC 28 or newer_.**
 > **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2-with-Apache) instead _if you're on NC 26 or newer_.**
 > **If you're on Nextcloud 24 or 25, follow the [PHP 8.1](./Upgrade-to-PHP-8.1-with-Apache) guide first.**
 
