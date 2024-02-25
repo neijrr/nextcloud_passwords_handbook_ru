@@ -1,6 +1,7 @@
 > **❗ ❗ ❗ PHP 8.1 is no longer the recommended version for Nextcloud. ❗ ❗ ❗**
 >
-> **We recommend upgrading to [PHP 8.2](./Upgrade-to-PHP-8.2) instead _if you're on NC 26 or newer_.**
+> **We recommend upgrading to [PHP 8.3](./Upgrade-to-PHP-8.3) instead _if you're on NC 28 or newer_.**
+> **For Nextcloud 26 or 27, follow the [PHP 8.2](./Upgrade-to-PHP-8.2) guide first.**
 
 ## Before you start
 - This tutorial was developed for and tested with NextCloudPi 1.43.3 on a RaspberryPI.

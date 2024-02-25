@@ -1,5 +1,5 @@
 ## Before you start
-- This tutorial was developed for and tested with NextCloudPi 1.52.4 on a RaspberryPI.
+- This tutorial was developed for and tested with NextCloudPi 1.53.1 on a RaspberryPI.
 - NextCloudPi may behave differently on other systems.
 - Nextcloud 28 is required _before_ upgrading to PHP 8.3. 
 - This does not work for NextCloudPi Docker. You can't upgrade PHP in a Docker image.
@@ -91,9 +91,6 @@ Execute the following commands on your NextCloudPi to update the Apache configur
 a2enmod proxy_fcgi setenvif
 a2enconf php8.3-fpm
 
-# Disable PHP 8.0 for apache if enabled
-# If you don't have PHP 8.0 installed, this will report an error which you can ignore
-a2disconf php8.0-fpm
 # Disable PHP 8.1 for apache if enabled
 a2disconf php8.1-fpm
 
@@ -133,10 +130,10 @@ By default, your NextCloudPi should now be using PHP 8.3.
 You can check this by running `php -v`. The output should look like this:
 ```bash
 root@nextcloudpi:/home/pi# php -v
-PHP 8.3.12 (cli) (built: Oct 27 2023 13:01:32) (NTS)
+PHP 8.3.3-1+0~20240216.17+debian11~1.gbp87e37b (cli) (built: Feb 16 2024 10:33:07) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.2.12, Copyright (c) Zend Technologies
-    with Zend OPcache v8.3.12, Copyright (c), by Zend Technologies
+Zend Engine v4.3.3, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.3-1+0~20240216.17+debian11~1.gbp87e37b, Copyright (c), by Zend Technologies
 ```
 
 If it doesn't, you should use `update-alternatives --config php` and set PHP 8.3 as default:
