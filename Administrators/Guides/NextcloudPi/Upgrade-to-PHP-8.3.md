@@ -32,7 +32,7 @@ ncp-update
 
 
 ## Add PHP Package Archive
-> ℹ You can skip this step if you already followed one of our previous guide.
+> ℹ You can skip this step if you already followed one of our previous guides.
 
 Execute the following commands on your NextCloudPi to add the repository PHP 8.3 from [deb.sury.org](https://deb.sury.org/#php-packages):
 
