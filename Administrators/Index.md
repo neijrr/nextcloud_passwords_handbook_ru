@@ -26,9 +26,10 @@
 - [Upgrade NextcloudPi to PHP 8.2](./Guides/NextcloudPi/Upgrade-to-PHP-8.2)
 
 #### DietPi
-- [Upgrade DietPi to PHP 8.2 with Nginx](./Guides/DietPi/Upgrade-to-PHP-8.2-with-Nginx)
+- [Upgrade DietPi to PHP 8.3 with Nginx](./Guides/DietPi/Upgrade-to-PHP-8.3-with-Nginx)
 - [Upgrade DietPi to PHP 8.2 with Apache](./Guides/DietPi/Upgrade-to-PHP-8.2-with-Apache)
 - [Upgrade DietPi to PHP 8.2 with Lighttpd](./Guides/DietPi/Upgrade-to-PHP-8.2-with-Lighttpd)
+- [OLD: Upgrade DietPi to PHP 8.2 with Nginx](./Guides/DietPi/Upgrade-to-PHP-8.2-with-Nginx)
 
 #### User Handbook
 - [About the user handbook](./User-Handbook)

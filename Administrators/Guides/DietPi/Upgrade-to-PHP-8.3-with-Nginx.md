@@ -1,5 +1,5 @@
 ## Before you start
-- This tutorial was developed for and tested with DietPi 8.23.3 based on Debian Bookworm on a RaspberryPI.
+- This tutorial was developed for and tested with DietPi 9.1.1 based on Debian Bookworm on a RaspberryPI.
 - This tutorial only works if you use "Nginx" as webserver.
 - DietPi may behave differently on other systems.
 - **Nextcloud 28 is required _before_ upgrading to PHP 8.3.**
@@ -13,11 +13,9 @@
 After you have read the information above and ensured you're ready to start, follow the steps below to upgrade your DietPi to PHP 8.3 with the Nginx webserver.
 
 
-
 ## Log in as Root
 - If you're using SSH, log in with `ssh root@<your dietpi ip>`.
 - If you're directly on the device, use `sudo su`
-
 
 
 ## Add PHP Package Archive
@@ -40,7 +38,6 @@ With the following commands you will add the PHP 8.3 repository from [deb.sury.o
     ```
 
 
-
 ## Install PHP 8.3
 Now install PHP 8.3 on your DietPi with the following commands:
 
@@ -56,8 +53,6 @@ Now install PHP 8.3 on your DietPi with the following commands:
    Here is a list for the apps mentioned in the [Nextcloud docs](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html):
     - LDAP integration: `apt-get install -y php8.3-ldap`
     - External Storage with [SMB/CIFS integration](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/external_storage/smb.html): `apt-get install -y php8.3-smbclient`
-
-
 
 
 ## Update the PHP 8.3 configuration
@@ -83,6 +78,7 @@ You need to copy and edit the php-fpm configuration for PHP 8.3.
     ```
 4. Now save the file with `CRTL` + `o` and exit the editor with `CRTL` + `x`
 
+
 #### Enable the DietPi configuration for PHP 8.3
 1. Enable the image magick module (_Errors related to PHP 8.2 can be ignored_)
     ```bash
@@ -98,6 +94,7 @@ You need to copy and edit the php-fpm configuration for PHP 8.3.
     phpenmod dietpi
     phpenmod dietpi-nextcloud
     ```
+
 
 #### Restart the php-fpm service
 ```bash
@@ -138,10 +135,10 @@ By default, your DietPi should now be using PHP 8.3.
 You can check this by running `php -v`. The output should look like this:
 ```bash
 root@DietPi:~# php -v
-PHP 8.3.12 (cli) (built: Oct 27 2023 13:01:32) (NTS)
+PHP 8.3.3-1+0~20240216.17+debian12~1.gbp87e37b (cli) (built: Feb 16 2024 10:32:28) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.2.12, Copyright (c) Zend Technologies
-    with Zend OPcache v8.3.12, Copyright (c), by Zend Technologies
+Zend Engine v4.3.3, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.3-1+0~20240216.17+debian12~1.gbp87e37b, Copyright (c), by Zend Technologies
 ```
 
 It's important that it shows `PHP 8.3.*`.
@@ -161,7 +158,6 @@ Press <enter> to keep the current choice[*], or type selection number:0
 ```
 
 
-
 ## Check for Nextcloud and App updates
 Check for server and app updates for your Nextcloud.
 
@@ -178,12 +174,12 @@ Check for server and app updates for your Nextcloud.
     ncc app:update passwords
     ```
 
+
 ## Check the PHP version in Nextcloud
 Log into your Nextcloud with an admin account.
 Go into "Administration Settings" and scroll all the way down in the left sidebar to "System".
 Open the System section and scroll down to "PHP".
 It should confirm you're using PHP 8.3.
-
 
 
 ## Done

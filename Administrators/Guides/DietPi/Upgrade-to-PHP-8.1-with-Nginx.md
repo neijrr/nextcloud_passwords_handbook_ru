@@ -1,5 +1,6 @@
 > **❗ ❗ ❗ PHP 8.1 is no longer the recommended version for Nextcloud. ❗ ❗ ❗**
 >
+> **[Follow the PHP 8.3 upgrade guide if you have Nextcloud 28 or later](./Upgrade-to-PHP-8.3-with-Nginx)**
 > **[Follow the PHP 8.2 upgrade guide if you have Nextcloud 26 or later](./Upgrade-to-PHP-8.2-with-Nginx)**
 
 ## Before you start
