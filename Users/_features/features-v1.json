@@ -1,90 +1,198 @@
 {
     "server": {
         "2024.1" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.2" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.3" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.4" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.5" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.6" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.7" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.8" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
         "2024.9" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
-        "2024.10" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+        "2024.10": {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
-        "2024.11" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+        "2024.11": {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         },
-        "2024.12" : {
-            "two-factor-enabled"   : false,
-            "two-factor-required"  : false
+        "2024.12": {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.1" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.2" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.3" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.4" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.5" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.6" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.7" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.8" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.9" : {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.10": {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.11": {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
+        },
+        "2025.12": {
+            "two-factor-enabled" : false,
+            "two-factor-required": false
         }
     },
     "webapp": {
-        "2024.1": {
-            "first-run-wizard": false
+        "2024.1" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.2": {
-            "first-run-wizard": false
+        "2024.2" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.3": {
-            "first-run-wizard": false
+        "2024.3" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.4": {
-            "first-run-wizard": false
+        "2024.4" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.5": {
-            "first-run-wizard": false
+        "2024.5" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.6": {
-            "first-run-wizard": false
+        "2024.6" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.7": {
-            "first-run-wizard": false
+        "2024.7" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.8": {
-            "first-run-wizard": false
+        "2024.8" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
-        "2024.9": {
-            "first-run-wizard": false
+        "2024.9" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
         "2024.10": {
-            "first-run-wizard": false
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
         "2024.11": {
-            "first-run-wizard": false
+            "first-run-wizard": false,
+            "donate-button"   : true
         },
         "2024.12": {
-            "first-run-wizard": false
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.1" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.2" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.3" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.4" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.5" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.6" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.7" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.8" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.9" : {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.10": {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.11": {
+            "first-run-wizard": false,
+            "donate-button"   : true
+        },
+        "2025.12": {
+            "first-run-wizard": false,
+            "donate-button"   : true
         }
     }
 }
