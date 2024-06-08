@@ -11,9 +11,9 @@ making the app more open to developers all around the world and less likely to h
 WebAssembly is usually enabled by default in all modern browsers, but some privacy focussed users and browser developers enable this feature.
 This guide explains how to enable WebAssembly in the most common browser types.
 
+
 ## Chrome and derivates
 These instructions should work for Chrome and other all browsers built on it, such as Microsoft Edge, Vivaldi, Brave, Chromium and Opera.
-
 
 #### Windows
 ###### Desktop Icon
@@ -35,7 +35,7 @@ Under Linux, apps like [alacarte](https://gitlab.gnome.org/GNOME/alacarte) and [
 can be used to modify the command for the application shortcut in the start menu.
 
 
-## Firefox
+## Firefox and derivates
 These instructions should work for Firefox and other all browsers built on it, such as Tor Browser, Librewolf, Pale Moon, Waterfox and IceCat.
 
 1. Open a new tab and enter the url `about:config`

@@ -33,3 +33,14 @@ With the given example, Passwords will try to load the file `https://yourdomain.
 If you used the GitHub import, the correct url looks like this: `https://raw.githubusercontent.com/<username>/<repository>/master/Users/`.
 
 If you set an invalid handbook url, the default url will be used.
+
+
+## Update the web handbook url
+At some locations, the app will include links to a web version of the handbook, e.g. when the app is in a state where the in-app handbook can't be used.
+The path structure is the same, but the `.md` file ending won't be used.
+So instead of linking to `/Index.md`, the app would link to `/Index`.
+
+Use the following command to point the app to your custom handbook
+```bash
+./occ config:app:set passwords handbook/url/web --value https://yourdomain.org/path/Users/
+```
