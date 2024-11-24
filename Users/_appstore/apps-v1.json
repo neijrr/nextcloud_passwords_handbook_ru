@@ -183,6 +183,53 @@
         "icon" : "android",
         "items": [
             {
+                "id"         : "hegocre",
+                "label"      : {
+                    "en": "Nextcloud Passwords",
+                    "de": "Nextcloud Passwords"
+                },
+                "description": {
+                    "en"   : "Secure and user friendly app for viewing and editing passwords which also offers a AutoFill service, making logging in on Android devices easier.",
+                    "de"   : "Sichere und benutzerfreundliche App zum Anzeigen und Bearbeiten die auch einen AutoAusfüllen-Dienst bietet, um bequemes Anmelden auf Android-Geräten zu ermöglichen.",
+                    "de-DE": "Sichere und benutzerfreundliche App zum Anzeigen und Bearbeiten die auch einen AutoAusfüllen-Dienst bietet, um bequemes Anmelden auf Android-Geräten zu ermöglichen."
+                },
+                "author"     : {
+                    "name"    : "hegocre",
+                    "homepage": "https://github.com/hegocre"
+                },
+                "passlink"   : {
+                    "enabled": false,
+                    "altLink": false
+                },
+                "logo"       : "hegocre-nextcloud-passwords.png",
+                "links"      : {
+                    "homepage": "https://github.com/hegocre/NextcloudPasswords",
+                    "sources" : "https://github.com/hegocre/NextcloudPasswords"
+                },
+                "downloads"  : [
+                    {
+                        "label": {
+                            "en": "Available on F-Droid",
+                            "de": "Verfügbar auf F-Droid"
+                        },
+                        "url"  : "https://f-droid.org/packages/com.hegocre.nextcloudpasswords/"
+                    },
+                    {
+                        "label"  : {
+                            "en": "Available on Google Play",
+                            "de": "Verfügbar auf Google Play"
+                        },
+                        "url"    : "https://play.google.com/store/apps/details?id=com.hegocre.nextcloudpasswords",
+                        "primary": true
+                    }
+                ],
+                "features"   : {
+                    "encryption": true
+                },
+                "recommended": false,
+                "official"   : false
+            },
+            {
                 "id"         : "joleaf",
                 "label"      : {
                     "en": "NC Passwords",
@@ -220,53 +267,6 @@
                             "de": "Verfügbar auf Google Play"
                         },
                         "url"    : "https://play.google.com/store/apps/details?id=de.jbservices.nc_passwords_app",
-                        "primary": true
-                    }
-                ],
-                "features"   : {
-                    "encryption": true
-                },
-                "recommended": false,
-                "official"   : false
-            },
-            {
-                "id"         : "hegocre",
-                "label"      : {
-                    "en": "Nextcloud Passwords",
-                    "de": "Nextcloud Passwords"
-                },
-                "description": {
-                    "en"   : "Secure app for viewing and editing passwords for the Nextcloud Passwords app. Supports end-to-end encryption.",
-                    "de"   : "Sichere App zum Anzeigen und Bearbeiten von Passwörtern für die Nextcloud Passwords App. Unterstützt Ende-zu-Ende-Verschlüsselung.",
-                    "de-DE": "Sichere App zum Anzeigen und Bearbeiten von Passwörtern für die Nextcloud Passwords App. Unterstützt Ende-zu-Ende-Verschlüsselung."
-                },
-                "author"     : {
-                    "name"    : "hegocre",
-                    "homepage": "https://github.com/hegocre"
-                },
-                "passlink"   : {
-                    "enabled": false,
-                    "altLink": false
-                },
-                "logo"       : "hegocre-nextcloud-passwords.png",
-                "links"      : {
-                    "homepage": "https://github.com/hegocre/NextcloudPasswords",
-                    "sources" : "https://github.com/hegocre/NextcloudPasswords"
-                },
-                "downloads"  : [
-                    {
-                        "label": {
-                            "en": "Available on GitHub",
-                            "de": "Verfügbar auf GitHub"
-                        },
-                        "url"  : "https://github.com/hegocre/NextcloudPasswords/releases/latest"
-                    },
-                    {
-                        "label"  : {
-                            "en": "Available on Google Play",
-                            "de": "Verfügbar auf Google Play"
-                        },
-                        "url"    : "https://play.google.com/store/apps/details?id=com.hegocre.nextcloudpasswords",
                         "primary": true
                     }
                 ],
