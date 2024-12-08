@@ -73,7 +73,7 @@ If you see this notification while using an LSR, you will not be able to receive
 
 
 ## What if i need help with my outdated version of the app?
-We're happy to help you with upgrading in our [forum](https://help.nextcloud.com/c/apps/passwords) or [chat](https://t.me/nc_passwords/1).
+We're happy to help you with upgrading in our [forum](https://help.nextcloud.com/tag/passwords-app) or [chat](https://t.me/nc_passwords/1).
 We won't help you with issues in your outdated version of the passwords app.
 We will also close any ticket on our official bugtracker if you're not using the latest version of the app.
 

@@ -18,5 +18,5 @@ Alternatively the online version can be found [here](https://git.mdns.eu/nextclo
 
 ## Support
 1. [Official Chat](https://t.me/nc_passwords/1)
-2. [Official Forum](https://help.nextcloud.com/c/apps/passwords)
+2. [Official Forum](https://help.nextcloud.com/tag/passwords-app)
 3. [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
