@@ -44,7 +44,7 @@
 ### [Contributing](https://git.mdns.eu/nextcloud/passwords/blob/master/CONTRIBUTING.md)
 - [Verify GIT Commits](./Contributing/Verify-Git-Commits)
 - [Passwords Test Environment](https://test.passwordsapp.org/info.html)
-   - [NC 28](https://nc28.passwordsapp.org/info.html)
+   - [NC 30](https://nc30.passwordsapp.org/info.html)
    - [Nightly](https://next.passwordsapp.org/info.html)
 - [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
 - [Telegram Group for Developers](https://t.me/nc_passwords/3826)
