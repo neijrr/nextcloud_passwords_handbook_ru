@@ -1,7 +1,7 @@
 This page is about the minimum system requirements for the [Passwords app for Nextcloud](https://apps.nextcloud.com/apps/passwords).
 We also list the minimum system requirements for the latest version of Nextcloud since Google keeps recommending this site instead of the official system requirements for Nextcloud in their wiki.
 
-|                | [Nextcloud 30](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html)                                                                                                                     | [Passwords App](https://passwordsapp.org) | Recommended Specifications                                                                    |
+|                | [Nextcloud 31](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html)                                                                                                                     | [Passwords App](https://passwordsapp.org) | Recommended Specifications                                                                    |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|-----------------------------------------------------------------------------------------------|
 | PHP            | 8.4, **8.3**, 8.2, _8.1 (deprecated)_                                                                                                                                                                                           | 8.4, **8.3**                              | PHP 8.3                                                                                       |
 | Database       | **MySQL 8.4**/8.0 or **MariaDB 10.11**/10.6/11.4, PostgreSQL 12/13/14/15/16, SQLite 3.16+, _Oracle Database 11g/18/21/23 (NC enterprise)_                                                                                       | **MariaDB** / MySQL / PostgreSQL / Sqlite | MariaDB 10.7                                                                                  |
@@ -24,7 +24,7 @@ We can only provide LSR builds as long as the automatic conversion is possible s
 
 |            | LSR                                       | Recommended Specifications                                                                    |
 |------------|-------------------------------------------|-----------------------------------------------------------------------------------------------|
-| PHP        | 8.4, 8.3, 8.2, **8.1**                    | 8.2                                                                                           |
+| PHP        | 8.4, 8.3, **8.2**, 8.1                    | 8.2                                                                                           |
 | Database   | **MariaDB** / MySQL / PostgreSQL / Sqlite | MariaDB 10.7                                                                                  |
 | OS         | Linux                                     | Ubuntu 22.04                                                                                  |
 | Processor  | 4 Core CPU                                | "AMD Ryzen 3 1200" or better                                                                  |
