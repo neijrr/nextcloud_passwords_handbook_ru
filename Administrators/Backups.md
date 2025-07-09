@@ -57,6 +57,8 @@ You can choose which data should be restored with the following options for the 
 * `--no-app-settings` Will not restore application settings. This is set automatically if you use the `--user` option.
 * `--no-interaction` Will skip interactive parts like the confirmation before restoring the backup.
 
+If you're trying to restore a backup from a bricked Nextcloud instance, take a look at the [Server Migration Guide](./Guides/Maintenance/Server-Migration) for possible options.
+
 
 ## Exporting & Importing Backups
 The command `./occ passwords:backup:export <backup name> [<file>]` can be used to export backup files to another location.

@@ -1,5 +1,5 @@
 ## I bricked my server, how do i restore my passwords?
-Check the [app backups](./Backups) and then follow the [server migration guide](./Guides/Maintenance/Server-Migration) to restore the leatest backup on another server.
+Check the [app backups](./Backups) and then follow the [server migration guide](./Guides/Maintenance/Server-Migration) to restore the latest backup on another server.
 
 ## How do i share folders and tags?
 You don't. This feature is not yet supported.
