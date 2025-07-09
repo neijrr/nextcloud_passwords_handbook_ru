@@ -1,7 +1,8 @@
 This guide explains how to migrate the passwords database to a new server.
 
-**Warning:** The passwords app backup will overwrite your server secret.
-We recommend importing the backup before setting up other apps & encryption.
+__Warning:__ The backup restore will overwrite the server secret used by the passwords app.
+It will not be possible to restore previous data unless you have a backup of that data.
+Restoring a backup deletes the existing data therefore it is not possible to restore multiple backups to one server.
 
 ## With CLI/SSH Access
 1. Log onto your old server and open the Nextcloud directory.
