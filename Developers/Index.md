@@ -48,7 +48,7 @@
    - [NC 30](https://nc30.passwordsapp.org/info.html)
    - [Nightly](https://next.passwordsapp.org/info.html)
 - [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
-- [Telegram Group for Developers](https://t.me/nc_passwords/3826)
+- [Telegram Group for Developers](https://matrix.to/#/#developers:chat.passwordsapp.org)
 
 ### More
 - [Libraries & Packages](./Libraries)

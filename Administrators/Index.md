@@ -49,6 +49,6 @@
 - [Feature Comparison](./Feature-Comparison)
 
 ## Support
-- [Official Chat](https://t.me/nc_passwords/1)
+- [Official Chat](https://matrix.to/#/#nextcloud-passwords:chat.passwordsapp.org)
 - [Official Forum](https://help.nextcloud.com/tag/passwords-app)
 - [Official Bug Tracker](https://github.com/marius-wieschollek/passwords/issues)
