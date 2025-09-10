@@ -6,6 +6,10 @@ If you change this setting, clear the preview cache and your browser cache to se
 **Note:** If you know a good program or service that has an API and offers a free plan for users, feel free to open an issue to add support for it.
 
 
+## Contents
+[[_TOC_]]
+
+
 ## Pageres CLI
 Requires [pageres-cli](https://github.com/sindresorhus/pageres-cli) to installed locally.
 Usually very reliable local and headless preview generator with a modern browser engine.
