@@ -1,6 +1,9 @@
 The password app regularly checks user passwords against a database of breached passwords.
 Which database this is, can be configured through the password security check service in the app settings.
 
+[[_TOC_]]
+
+
 ### Have i been pwned?
 [haveibeenpwned.com](https://haveibeenpwned.com/) hosts a large database with hundreds of millions of compromised credentials.
 Their database receives regular updates with lists of leaked passwords which are usually used by hackers who to attempt to break into accounts.
@@ -24,31 +27,12 @@ This service downloads a database with the 25 million most common passwords of t
 After the database has been downloaded, all checks are done locally. 
 Which version of the dataset is downloaded is hardcoded into the app.
 This means that a new version of the database is only downloaded after the app has been updated and old apps may download an outdated database.
+[You can generate your own dataset locally.](../Guides/Services/Generating-the-password-database)
 
 ##### Requirements
 - PHP ZIP extension must be installed
 - PHP `max_execution_time` must be two hours or more for background jobs
 - There must be at least 2 GB of free disk space
-
-##### Generating the database yourself
-The app offers an option to generate the password database from the source files provided by Hibp?.
-In order to process the file, your server should have at least 3 GiB RAM for PHP applications and around 60 GiB of disk space.
-
-1. Go to [Hibp?](https://haveibeenpwned.com/Passwords) and download the "Pwned Passwords list" in the SHA-1 format ordered by prevalence.
-2. Unpack the archive
-3. Place the file on the server and ensure it is readable by the webserver user.
-4. Log into the command line of your server and navigate to the root folder of your Nextcloud installation.
-5. Now run the command `php ./occ passwords:pwned-list:process <file> --size <size> --import` where `<file>` is the location to your file and `<size>` is the number of passwords to import in millions (e.g. 25).
-    The option `--import` will automatically import the resulting file into the passwords app.
-    When choosing the `<size>`, be aware that a greater size will also require more RAM.
-6. Now place the generated ZIP-file on a location that is accessible via https and configure the database url for the service as described below.
-    Even if you used the import option, the app may download the database again if the cache is cleared or a new version is released.
-
-##### Configuring the database url
-It is possible to configure a custom url for the database.
-For this, the config key `passwords/hibp/url` needs to be set to the url of the api.
-The url should contain the placeholders `:format` for the format of the database ("json" or "gzip") and `:version` for the version of the database used by the app.
-The url should look like this in the end: `https://breached.passwordsapp.org/databases/25-million-v:version-:format.zip`.
 
 
 
@@ -58,6 +42,7 @@ The service downloads a database with the 5 million most common passwords of the
 After the database has been downloaded, all checks are done locally.
 Which version of the dataset is downloaded is hardcoded into the app.
 This means that a new version of the database is only downloaded after the app has been updated and old apps may download an outdated database.
+[You can generate your own dataset locally.](../Guides/Services/Generating-the-password-database)
 
 _This service supports the same customisation options as the [Big local database (25M passwords)](#big-local-database-25m-passwords) service_
 
@@ -77,6 +62,7 @@ This improves the privacy of your users since no request to an external api is m
 In theory, Hibp? (or whoever runs the configured api) could record your requests against that api and then assume you were looking for the most common hash in the requested subset of hashes.
 With that knowledge and the original list of passwords from which the hashes were generated, the api provider could guess a password looked up by your server if it's common.
 By having a large list of common passwords locally, this scenario is prevented since no request to the api is made for the SHA-1 hash of any common password.
+[You can generate your own dataset locally.](../Guides/Services/Generating-the-password-database)
 
 _This service supports all customisation options of the [Have i been pwned?](#have-i-been-pwned) service and the [Big local database (25M passwords)](#big-local-database-25m-passwords) service_
 
