@@ -19,7 +19,7 @@
 
 #### Third party services
 - [Password Security Check Services](./Services/Password-Security-Check-Services)
-  - [Generate your own password database](../Guides/Services/Generating-the-password-database)
+  - [Generate your own password database](./Guides/Services/Generating-the-password-database)
 - [Website Preview Services](./Services/Website-Preview-Services)
 - [Self-Hosting Besticon](./Guides/Services/Besticon-Self-Hosting)
 
