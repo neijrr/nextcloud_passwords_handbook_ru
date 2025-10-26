@@ -1,33 +1,34 @@
-Tags can be used to classify passwords which belong to a specific topic.
-For example your "Slack" password could be in your "Work" folder and your "Discord" password in your "Private" folder, but both could be assigned to the tag "Messenger".
-This makes passwords that relate to each other easier to find.
-You could also use tags like "Outdated" or "Second Account" to mark passwords used for specific use cases. 
+Теги можно использовать для классификации паролей по различным параметрам.
+Например, ваш пароль от корпоративного мессенджера находится в папке "Работа", а пароль от личного мессенджера - в папке "Личное", однако оба содержат тег "Мессенджер".
+Это помогает искать связанные друг с другом пароли быстрее.
 
 ![The tag section](_files/tag-section.png)
 
-## Tags in the list view
+## Список тегов
 ![A single tag as displayed in the list view](_files/tag-single.png)
 
-All tags can be viewed in the tag section.
-To view all tagged passwords for a tag, click on it on the list view.
+Все теги можно увидеть в разделе "Теги".
+Чтобы посмотреть все пароли с данным тегом, нажмите на него.
 
-##### The "⋯"-Menu
-With the "More" menu, you can access all other options available for the folder.
-The "Edit" option will open the "Edit Tag" window where you can change the name and color.
-The "Delete" option will move the tag.
+#### Меню "Больше"
+В меню "Больше" (иконка "⋯") доступны различные действия над тегами.
 
-##### Tags in the main view
+Кнопка "Редактировать" позволяет изменить название и цвет тега.
+Кнопка "Удалить" переместит тег в корзину.
+
+## Теги в списке паролей
 ![Tags of a password in the list view](_files/tags-hover.gif)
 
-If the [option](./Settings#show-tags-in-the-list-view) is enabled, listing of passwords will show the tags associated with them.
-You can then click on the tag to see all related passwords.
+Если [включена соответствующая опция в настройках]((./Settings#show-tags-in-the-list-view)), у записей в списке паролей будут видны их теги.
+Нажав на один из тегов, можно увидеть все пароли с этим тегом.
 
-**Note:** Please be aware that this option may slow the app down.
+**Примечание:** использование этой опции может замедлить работу приложения.
 
-
-## Creating a tag
-##### Using the tag creation dialog 
+## Создание тегов
+#### С помощью диалогового окна
 ![The tag creation dialog](_files/tag-create.png)
+
+Нажмите на иконку "⋯" в навигаторе в списке тегов.
 
 Click on the "⋯"-Button in the breadcrumb navigation in the tag section and select "New Tag" to open the tag creation dialog.
 Enter the name of the tag and click and choose a custom color if wanted.
