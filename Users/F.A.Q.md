@@ -1,168 +1,152 @@
-## General
-#### Can I access passwords offline?
-The Passwords app in your browser does not support any offline storage.
-But some of the apps in the [appstore](web+passlink://goto/apps) do include offline storage capabilities.
+## Общее
+#### Можно ли работать с паролями без подключения к интернету?
+Passwords в браузере не поддерживает работу без интернета.
+Однако, некоторые [клиенты](web+passlink://goto/apps) имеют такой функционал.
 
-#### I have hidden passwords, how do I get them?
-Go to "[Settings](web+passlink://goto/settings)" -> "Danger Zone", then click "Recover hidden items".
-Select any type of items you want to unhide and press "Ok".
+#### Я скрыл пароль, как его восстановить?
+Зайдите в [Настройки](web+passlink://goto/settings) -> "Опасная зона" -> "Восстановление скрытых предметов".
+Выберите нужные опции и нажмите "Да".
 
+## Безопасность
+#### Насколько безопасен Passwords?
+Безопасность Passwords зависит от двух основных факторов:
+_Вы один их них._
 
-## Security
-#### How secure is Passwords?
-How secure your passwords are with the Passwords app depends on two main factors.
-_You are one of it._
+- Включите [сквозное шифрование паролей](./Encryption/Enable-End-to-End-Encryption).
+- Убедитесь в безопасности своего профиля Nextcloud.
+- Подключайтесь к облаку только по HTTPS.
+- Не давайте никому свои логин и пароль.
+- Не входите в Nextcloud на чужом или общедоступном компьютере.
+- Если вы используете сторонний клиент, убедитесь, что он обновлён до последней версии.
 
-- Enable our [end-to-end encryption for your passwords](./Encryption/Enable-End-to-End-Encryption)
-- Make sure to keep your Nextcloud account safe.
-- Only access the cloud over HTTPS and do not give your credentials to someone else.
-- Do not log into Nextcloud on someone else's pc or a public pc.
-- If you are using a client to access your passwords, make sure it is always up-to-date.
+Вторым фактором является администратор вашего облака.
 
-The second main factor is the administrator of your Nextcloud instance.
+Любые проблемы с безопасностью Nextcloud, других приложений в Nextcloud и сервера в принципе также являются проблемой с безопасностью Passwords.
+Для того, чтобы ваши пароли были в безопасности, необходимо, чтобы администратор обеспечивал безопасность облака.
 
-Any security issues in Nextcloud, other Nextcloud apps and the server in general is also a security issue for the Passwords app.
-To keep your passwords safe, your server administrator has to keep the server safe.
+Злоумышленный администратор может украсть ваши пароли, даже если у вас включено сквозное шифрование.
 
-A bad administrator could also manipulate Nextcloud in a way to steal your passwords even when end-to-end encryption is enabled.
+<!--
+Не уверен, как грамотно перевести данный фрагмент.
 You should be able to trust your administrator to respect your privacy rights and keep your data safe.
+-->
 
-#### Suspicious amount of failed login attempts detected
-The Passwords app counts failed attempts to unlock the password database with the encryption passphrase.
-If **five** failed login attempts are detected, the app will:
-- Revoke the app password the of the client that made the attempt.
-- Revoke the app password of _any_ other client after the _first_ failed login attempt.
-- Prevent any client not using an app password from accessing the app at all.
-  - Clients which use your Nextcloud username and password to access the passwords app will not be blocked until the restrictions are lifted.
+#### Замечено подозрительное количество неудачных попыток входа
+Passwords считает количество попыток разблокировать зашифрованную базу паролей.
+При **пяти** неудачных попытках входа, приложение.
+- Отзовёт пароль приложения для клиента, который пытается войти.
+- Отзовёт пароль приложения для любого *другого* клиента при *первой* неудачной попытке входа.
+- Запретит всем клиентам входить с помощью паролей приложения.
+  - Клиенты, которые входят с помощью имени и пароля Nextcloud, продолжат работать.
 
-All restrictions will be lifted as soon as you unlock the password database in with the correct encryption passphrase.
-However, even after the restrictions are lifted, revoked app passwords will not be reinstated.
-You will have to create a new app password for any client that had its app password revoked before.
+Все ограничения будут сняты, как только вы разблокируете базу паролей.
+Однако, пароли приложения не будут восстановлены.
+Вам будет нужно их заново создать для каждого клиента, которому был отозван доступ.
 
+#### Пароль помечен как дубликат, как найти другой пароль?
+По умолчанию, приложение сканирует пароли и ищет дубликаты, помечая их как "Слабый (Уже имеется)".
 
-#### A password is marked as duplicate, how do I find the others
-By default, tha app will scan your passwords for duplicates and mark them as "Weak (Duplicate)".
-You can quickly see the status of a password by looking at the color of the "🛡" icon.
-Yellow means weak, red means it's compromised.
+Вы можете посмотреть статус пароля, посмотрев на иконку "🛡".
+Жёлтый цвет означает слабый пароль, красный - скомпрометированный.
 
-To find other duplicates of the same password, just click on the "🛡" icon.
+Вы можете быстро найти дубликаты пароля, нажав на иконку "🛡".
 
-There are some instances where a duplicate isn't shown:
-- If it's already in the trash. Check the trash bin and empty it.
-- If it has recently been deleted. The status will update within one day.
-- If the duplicate itself is hidden. You can use the "Recover hidden items" action in the settings to unhide any hidden password.
+Есть случаи, когда дубликат не показывается:
+- Он находится в корзине. Зайдите в неё и отчистите.
+- Дубликат был недавно удалён. Статус паролей обновляется в течении дня.
+- Пароль был скрыт. Вы можете восстановить его в настройках (смотрите "[Я скрыл пароль, как его восстановить?](#я-скрыл-пароль-как-его-восстановить)").
 
+#### Что делает Passwords Session Token?
+Когда вы используете Passwords в Nextcloud, токен с именем
+"Passwords Session MM.DD.YY HH:MM - Пользователь@IP адрес"
+появится в списке устройств и сессий.
+Эти токены создаются автоматически, работают в течении небольшого промежутка времени и обычно не имеют доступа к файлам.
+Вы спокойно можете их удалить, однако это может закрыть текущие сессии.
 
-#### What does the Passwords Session Token do?
-When you use the Passwords app, tokens with the naming schema "Passwords Session MM.DD.YY HH:MM - User@IP Address" will appear in your device & sessions list.
-These tokens are generated automatically when you access the Passwords app in Nextcloud.
-The tokens are only valid for a short period of time and usually do not have file system access.
-It is safe to delete the tokens, but you should be aware that this will close currently open sessions.
+#### Как создать мастер-пароль?
+Смотрите [руководство по включению сквозного шифрования](Encryption/Enable-End-to-End-Encryption).
 
+[Настройки](web+passlink://goto/settings) -> "Безопасность" -> "Сквозное шифрование" -> "Включить".
+Введите мастер-пароль и включите шифрование.
 
-#### How do I create a master password?
-Take a look at [the guide to enable end-to-end encryption](Encryption/Enable-End-to-End-Encryption).
-Open the [Settings](web+passlink://goto/settings) and look for the "Encryption" section.
-Enable the client-side encryption option and set an encryption passphrase.
+**Внимание:** это необратимо. Вы можете изменить мастер-пароль, но не убрать его.
 
-**Note:** This can not be undone. You can change the master password but not remove it.
+#### Как использовать двухфакторную аутентификацию (2FA)?
+Если ваш профиль использует 2FA, включите в приложении Passwords использование двухфакторной аутентификации.
 
+Эта функция работает только при включенном сквозном шифровании.
 
-#### How do I use two-factor authentication (2FA)?
-If your account has 2FA set up and the passwords app is configured to enable the feature,
-it will automatically require 2FA when you log in with your encryption passphrase.
+**Примечание:** Некоторые сторонние клиенты не поддерживают 2FA и не смогут работать при его включении.
 
-This feature only works when an end-to-end encryption is enabled and is currently disabled by default due to user complaints.
+## Общий доступ
+#### Я предоставил / отозвал доступ к паролю, но у другого человека его все ещё нет / он все ещё есть
+Изменения к общим паролям применяются фоновой задачей (обычно каждые 15 минут).
+При конфликте в изменениях, имеют приоритет изменения, внесённые владельцем записи.
 
-**Note:** Some third party clients do not support 2FA and will be unusable after enabling it.
+#### Некоторые из общих паролей показывают процесс загрузки с текстом "Данные находятся в процессе синхронизации"
+Как сказано ранее, общие пароли синхронизируются фоновой задачей.
+Если вы или кто-либо ещё внёс изменения, он находится в очереди на синхронизацию.
+Пока изменения не синхронизированы, будет показываться анимация загрузки.
 
+#### Что случится, если я удалю пароль, к которому мне дали доступ?
+Если вы удалите пароль, к которому вам дали доступ, он будет удалён только у вас и у тех, кому *вы* передали доступ.
+Даже если у вас есть права на изменения пароля, вы не сможете его удалить у того, кто им с вами поделился.
 
-
-## Sharing
-#### I have shared / unshared a password, but the other person can not / still see it
-Passwords permits users to access the data of other users themselves.
-Because of this, changes in shared passwords need to be processed by a privileged automated process on the server.
-This is usually done every 15 minutes.
-This process will always execute changes made by the original owner first and discard the changes of others if there is any conflict.
-
-#### Some of my shares show a loading that says "Some data is waiting to be synchronized"
-As described in the [question above](#i-have-shared-unshared-a-password-but-the-other-person-can-not-still-see-it), shared passwords are synchronized in the background.
-So if you or someone else changes the shared password, it is queued for synchronizing.
-Until all changes have been synchronized, the loading animation will tell you that changes are waiting to be synchronized.
-
-#### What happens if I delete a password that was shared with me?
-If you delete a password that was shared with you, it will only be deleted from your account and the accounts of the people you may have shared the password with.
-Even if you have the rights to edit the password, you can not delete it in the account of the person who shared it with you.
-
-
-
-## Notifications and Emails
-#### Passwords tells me that one of my passwords is insecure
-If companies get hacked, the passwords of their users often end up in online databases of hacked passwords.
-Because of this, the passwords app checks on a regular basis if one of your passwords appears in these databases and notifies you if it does.
-This does not necessarily mean that you or the website which you use the password for has been hacked.
-But you should change the password immediately, as hackers now have it in their databases as well.
-You can view all your insecure passwords in "[Security](web+passlink://goto/security)" -> "[Breached](web+passlink://goto/security/2)".
-
-#### Password tells me that one of my passwords could not be shared
-Given that the option is enabled, you can share passwords which have been shared with you.
-By doing so, it might happen that the person you want to share the password with is the one who originally shared it.
-If that is the case, Passwords will not complete the sharing process as this would create an endless loop.
-You can view all your shared passwords in "[Shares](web+passlink://goto/shared)" -> "[Shared by me](web+passlink://goto/shared/1)".
-
-#### The notification "We have detected several failed attempts to unlock your password database by ..."
-If you use 2FA or a master password, the app will send you a notification if a client tries to gain access to the database without correct credentials.
-If this was not you, we recommend revoking the app password of that client in the "Security" section of your Nextcloud account settings.
-If the client was not using an app password, we recommend that you change your account password and delete all the app passwords (Changing your password will invalidate the app passwords).
-
-#### The notification "Administrative access to your account"
-An administrator has opened the passwords app with your account through an app like [impersonate](https://apps.nextcloud.com/apps/impersonate).
-If you use a master password, then this does not necessarily mean that access to your passwords was possible.
-For more information please talk to your administrator.
-
-#### The notification "Suspicious amount of failed login attempts detected"
-See [Suspicious amount of failed login attempts detected](#suspicious-amount-of-failed-login-attempts-detected).
+## Уведомления и письма
+#### Passwords говорит, что один из моих паролей небезопасен
+Если компанию взломали, часто пароли их пользователей оказываются в базах данных в интернете.
+В связи с этим, Passwords регулярно проверяет, не оказался ли какой-либо из ваших паролей в одной из таких баз данных, и предупреждает вас если он там есть.
+Это не говорит о том, что вас или веб-сайт, которым вы пользовались, взломали.
+Однако вам следует немедленно изменить пароль, так как теперь к нему есть доступ у злоумышленников.
+Вы можете посмотреть все свои небезопасные пароли в "[Безопасность](web+passlink://goto/security)" -> "[Скомпрометированный](web+passlink://goto/security/2)".
 
 
+#### Password говорит, что не удалось дать доступ к одному из моих паролей
+Если эта опция включена, вы можете предоставить доступ к паролю, которым с вами поделились.
+Если попытаетесь дать доступ к паролю его владельцу, Passwords не сможет этого сделать.
+Вы можете посмотреть все пароли, к которым вы дали доступ в "[Общий доступ](web+passlink://goto/shared)" -> "[Мною предоставлен доступ](web+passlink://goto/shared/1)".
 
-## Import and Export
-#### I want to import from another password manager but there is no option for this service
-Most password managers do offer a CSV export.
-If you have that csv file, you can choose the option "Other / Custom CSV" and map the fields yourself.
-See the [custom CSV import guide](./Import/Import-from-custom-CSV) for further information.
+#### Уведомление "Мы заметили несколько неудачных попыток разблокировать вашу базу паролей ..."
+Если вы используете мастер-пароль, Passwords отправить вам уведомление, если клиент попытается получить доступ к паролям с неверными реквизитами.
+Если это были не вы, рекомендуется отозвать пароль приложения для этого клиента в разделе "Безопасность" в вашем профиле Nextcloud.
+Если клиент не использует пароль приложения, рекомендуется сменить ваш пароль и удалить все пароли приложения (смена пароля автоматически отключает их).
 
-#### A warning says that the service i am trying to import from is known to generate faulty csv files
-Some password services create export files where the columns are not formatted properly.
-If that happens, Passwords may be unable to import the file as it is and you have to fix it manually.
-See the [import section](./Import#how-to-fix-faulty-csv-files) for further information.
+#### Уведомление "Административный доступ к вашему профилю"
+Администратор открыл Passwords с вашего профиля с помощью приложения типа [impersonate](https://apps.nextcloud.com/apps/impersonate).
+Если вы используете мастер-пароль, это уведомление не обязательно означает, что он получил доступ к вашим паролям.
+Для более подробной информации свяжитесь с вашим администратором.
 
+#### Уведомление "Замечено подозрительное количество неудачных попыток входа"
+Смотрите "[Замечено подозрительное количество неудачных попыток входа](#замечено-подозрительное-количество-неудачных-попыток-входа)"
 
+## Импорт и экспорт
+#### Я хочу импортировать пароли из другого менеджера паролей, но для моего менеджера нет опции импорта
+Большинство менеджеров паролей предлагают экспорт в CSV.
+В таком случае, вы можете импортировать этот CSV файл.
+Смотрите "[Импорт из CSV](./Import/Import-from-custom-CSV)" для более подробной информации.
 
-## Performance
-#### The app is slow / The app is slow after failed logins
-If you repeatedly tried to login with any third party client using incorrect login data, Nextcloud will see this as a brute force attack.
-This results in a slowdown of any further api requests.
-Since the app uses the api, this slowdown will also affect it.
-The normal performance should be restored after some time.
+#### Предупреждение говорит о том, что сервис, из которого я импортирую, создаёт сломанные CSV файлы
+Некоторые менеджеры паролей при экспорте неверно форматируют столбцы.
+В таком случае возможно, что Passwords не получится импортировать файл, и вам придётся его править вручную.
+Смотрите "[Импорт - Как исправить проблемный CSV файл](./Import#как-исправить-проблемный-csv-файл)" для более подробной информации.
 
-#### The "All" section or folders with many items are slow
-All passwords, folders and tags are stored encrypted and decrypting can take up considerable amounts of time.
-The generation of favicons for each password can also take some time initially.
-Using folders or tags to organize and browse your passwords will increase performance.
+## Производительность
+#### Приложение медленно работает после нескольких неуспешных попыток входа
+Если вы несколько раз неуспешно попытались войти в Nextcloud или его приложение, сервер будет это рассматривать как попытку bruteforce-атаки.
+В связи с этим будет применятся задержка любых запросов.
+Нормальная работоспособность со временем восстановится.
 
+#### Раздел "Всё" или "Папки" медленно работает с большим количеством объектов
+Все пароли, папки и теги хранятся в зашифрованном виде, и их расшифровка занимает значительное время.
+Создание фавиконов для паролей также может занимать время. Распределение по папкам и тэгам увеличит производительность.
 
+## Сообщения об ошибках
+#### Ошибка "Ваш браузер устарел"
+Вы увидите это сообщение, если ваш браузер не поддерживает API, используемые Passwords.
+Это означает, что ваш браузер не предоставляет необходимый функционал для работы приложения.
 
-## Error Messages
-#### Error "Your Browser is outdated"
-If your browser does not support the necessary APIs used by Passwords, you will see this message.
-This means that your browser does not provide some functionality which is absolutely required to run the app.
-Passwords checks the existence of such functionality and shows the message only if it is not present.
-You may use a known working browser like Firefox or Vivaldi to run the app.
-
-**NOTE:** Please do not ask us to "make your browser compatible". If we could, you would not see this message.
-
-#### Error "HTTPS Required"
-This error appears if you tried to open the app with an unsecure connection.
-Using Passwords via HTTP is not only insecure, the app will also not work.
-You can solve this issue by prefixing the url with `https://<your nextcloud url>`.
-If the server does not support HTTPS, this error can not be solved.
+#### Ошибка "Требуется HTTPS"
+Эта ошибка появляется, если вы пытаетесь открыть приложение через небезопасное соединение.
+Приложение Passwords не будет работать через HTTP.
+Вы можете решить эту проблему, добавив `http://` в начале адреса (например, `https://example.com`).
+Если сервер не поддерживает HTTPS, эту проблему нельзя решить.
