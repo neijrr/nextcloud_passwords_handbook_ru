@@ -1,49 +1,47 @@
-Tags can be used to classify passwords which belong to a specific topic.
-For example your "Slack" password could be in your "Work" folder and your "Discord" password in your "Private" folder, but both could be assigned to the tag "Messenger".
-This makes passwords that relate to each other easier to find.
-You could also use tags like "Outdated" or "Second Account" to mark passwords used for specific use cases. 
+Теги можно использовать для классификации паролей по различным параметрам.
+Например, ваш пароль от корпоративного мессенджера находится в папке "Работа", а пароль от личного мессенджера - в папке "Личное", однако оба содержат тег "Мессенджер".
+Это помогает искать связанные друг с другом пароли быстрее.
 
 ![The tag section](_files/tag-section.png)
 
-## Tags in the list view
+## Список тегов
 ![A single tag as displayed in the list view](_files/tag-single.png)
 
-All tags can be viewed in the tag section.
-To view all tagged passwords for a tag, click on it on the list view.
+Все теги можно увидеть в разделе "Теги".
+Чтобы посмотреть все пароли с данным тегом, нажмите на него.
 
-##### The "⋯"-Menu
-With the "More" menu, you can access all other options available for the folder.
-The "Edit" option will open the "Edit Tag" window where you can change the name and color.
-The "Delete" option will move the tag.
+#### Меню "Ещё"
+В меню "Ещё" (иконка "⋯") доступны различные действия над тегами.
 
-##### Tags in the main view
+Кнопка "Редактировать" позволяет изменить название и цвет тега.
+Кнопка "Удалить" переместит тег в корзину.
+
+## Теги в списке паролей
 ![Tags of a password in the list view](_files/tags-hover.gif)
 
-If the [option](./Settings#show-tags-in-the-list-view) is enabled, listing of passwords will show the tags associated with them.
-You can then click on the tag to see all related passwords.
+Если [включена соответствующая опция в настройках]((./Settings#show-tags-in-the-list-view)), у записей в списке паролей будут видны их теги.
+Нажав на один из тегов, можно увидеть все пароли с этим тегом.
 
-**Note:** Please be aware that this option may slow the app down.
+**Примечание:** использование этой опции может замедлить работу приложения.
 
-
-## Creating a tag
-##### Using the tag creation dialog 
+## Создание тегов
+#### С помощью диалогового окна
 ![The tag creation dialog](_files/tag-create.png)
 
-Click on the "⋯"-Button in the breadcrumb navigation in the tag section and select "New Tag" to open the tag creation dialog.
-Enter the name of the tag and click and choose a custom color if wanted.
-Then click on on "Yes" to create the tag.
+Нажмите на иконку "⋯" в навигаторе в списке тегов и затем нажмите "Новый тег" для открытия диалогового окна.
+Введите название нового тега и выберите цвет, нажав на него, либо выберите случайный цвет, нажав на кнопку справа от цвета.
+Нажмите на "Да", чтобы подтвердить создание тега.
 
-##### Creating tags automatically
-Tags will be created automatically if they are assigned to a password but don't exist.
+#### Автоматическое создание
+Теги создаются автоматически, если они присвоены паролю, но ещё не были созданы.
 
-To do os, open the detail view of a password and write the name of the tag in the "Add Tags..." area.
-When you click "Enter", the tag will be created and a random color will be assigned.
+Для этого при создании или редактировании пароля напишите название тега в поле "Добавить теги..." и нажмите Enter.
 
+Автоматически созданным тегам присваивается случайный цвет.
 
-## Deleting tags
-Once you select the "Delete" option from the "⋯"-Menu, the tag.
-It will disappear from all passwords it was assigned to.
-You can still find the tag in the trash and see all passwords it was assigned to.
-If you choose to restore the tag, it will also appear in the passwords again.
+## Удаление тегов
+Найдите тег в списке тегов, откройте меню "Ещё" ("⋯") и нажмите "Удалить".
+Тег будет перемещён в корзину и удалён из всех паролей.
+Нажав на тег в корзине, вы сможете посмотреть список паролей, которые были с ним связаны до удаления.
 
-**Note:** Deleting a tag from the trash will delete the tag *only* and *not* the passwords it was assigned to.
+**Примечание:** удалив тег из корзины, вы удалите его *навсегда*, при этом пароли *не будут* удалены.

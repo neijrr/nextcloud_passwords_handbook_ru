@@ -1,40 +1,31 @@
-Passwords allows you to share a password with other user from your Nextcloud instance.
-To share a password. click on the "⋯"-menu and then click `Details`.
-The sharing options can be found in the `Share` tab.
+Passwords позволяет делится паролем с другими пользователями в Nextcloud.
+Для того, чтобы поделится паролем, в списке паролей нажмите "⋯" -> "Общий доступ".
 
-**Note:** The administrator of your Nextcloud instance may disable sharing.
-If someone shares a password with you, he can also disable sharing.
+**Примечание:** администратор сервера Nextcloud может отключить общий доступ. Если кто-то поделился паролем с вами, он может отключить возможность поделится этим паролем.
 
+## Предоставление доступа к паролю другому пользователю
+Для того, чтобы поделится паролем с другим пользователем, просто введите его имя или имя пользователя в поле "Поиск пользователей", и выберите пользователя (или несколько) из выпадающего списка.
+Если пользователь не появляется в результате поиска, вероятно, его нет в Nextcloud или вам нельзя с ним делится паролями.
 
-## Share passwords with another user
-To share the password with another user, simply type the name or the username of the person in the search field.
-You can then select the user from the search results.
-If the user does not appear in the search results it is likely that it does not exist or you are not allowed to share with him.
+### Управление доступом
 
-#### Write permissions
-By clicking on the `✎`-icon you can allow a user to change the password.
-The icon will be light grey if the user can not edit the password and full black if he can.
+#### Разрешение на запись
+Нажав на иконку карандаша `✎`, вы можете разрешить (белая иконка) или запретить (серая иконка) пользователю редактировать пароль.
 
-#### Sharing permissions
-By clicking on the `Share`-icon you can allow a user to share the password with other users.
-The icon will be light grey if the user can not share the password and full black if he can.
+#### Возможность поделиться
+Нажав на иконку общего доступа (3 соединённые точки), вы можете разрешить или запретить пользователю возможность делиться паролем (аналогично разрешению на запись).
 
-#### Expiration date
-By clicking on the `🗓`-icon, you can open the expiration date dialog.
-You can now set an expiration date via the date field in the dialog.
-On this date, the share will automatically be deleted.
-If you clear the date field and confirm the dialog, any existing expiration date will be removed.
-The icon will be full black if an expiration date is set.
-By hovering over the icon, you can see the date.
+#### Финальная дата
+Нажав на иконку календаря `🗓`, откроется диалоговое окно, в котором вы можете задать финальную дату доступа (формат MM/DD/YYYY). В эту дату доступ будет автоматически отозван. Если отчистить поле даты и нажать "Да", финальная дата будет убрана. Аналогично разрешениям, если финальная дата задана, иконка будет белой, если нет - серой.
 
-#### Unshare a password
-By clicking on the `🗑`-icon, the password will be no longer shared with the user.
+#### Отключить доступ
+Нажав на иконку корзины `🗑`, пароль больше не будет доступен пользователю.
 
-#### Updating shared passwords
-Passwords are released by creating a copy of the password in the account of the user with whom the password was shared.
-By doing so, the receiver of the shared password can access the passwords without having access to your password library.
-This also means that if a shared password is updated or the permissions of the share are changed, these changes need to be synchronized.
-Since this synchronisation is done by the server in the background, it may take some minutes.
-To make this process transparent to you, you will see a loading icon around the avatar of the user if there are changes pending for or from this specific user.
+### Изменение общих паролей
+При предоставлении доступа к паролю другому пользователю, у него создаётся копия пароля.
+Благодаря этому, получатель пароля взаимодействует с ним, не имея доступа к вашей базе паролей.
+Это также означает, что в случае, если пароль и/или разрешения изменены, эти изменения необходимо синхронизировать.
+Так как синхронизация выполняется сервером в фоновой задаче, это может занять некоторое время.
+Пока изменения не синхронизированы, вы можете видеть иконку загрузки вокруг аватара пользователя.
 
 ![A password (middle) is queued to be synchronized](../_files/share-update.gif)

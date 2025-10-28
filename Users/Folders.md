@@ -1,36 +1,30 @@
-Folders are a great way to organize passwords.
-A well structured folder hierarchy makes the application faster and passwords easier to find.
-For example you could have a folder "Work" for accounts related to your workplace and a folder "Private" for your own passwords.
-A password can only be in one folder at a time.
-If you want to classify passwords with multiple keywords, consider using [tags](./Tags).
+Папки - удобный способ организовать пароли. Хорошая структура папок ускоряет как работу приложения, так и поиск пароля. К примеру, у вас может быть папка "Работа" для аккаунтов, связанных с работой, и папка "Личное" для паролей от личных аккаунтов.
+Пароль может быть одновременно только в одной папке.
+Если вы хотите организовать пароли по нескольким ключевым словам, возможно вам стоит использовать [теги](./Tags).
 
 ![The folder section](_files/folder-section.png)
 
-## Folders in the list view
+## Папки в списке
 ![A single folder as displayed in the list view](_files/folder-single.png)
 
-To open a folder, click on it on the list view.
-To move passwords or folders into a folder, drag and drop them onto the folder.
-To move passwords or folders into the parent folder, drop them onto the folder in the navigation.
+Для того, чтобы открыть папку, нажмите на неё в списке.
+Для того, чтобы переместить в папку пароль или другую папку, перетащите их мышкой в папку.
+Для того, чтобы переместить пароль или папку из данной папки, перетащите их мышкой в папку в меню навигации над списком паролей.
 
-##### The "⋯"-Menu
-With the "More" menu, you can access all other options available for the folder.
-The "Rename" option will open the "Rename Folder" window where you can change the name.
-The "Delete" option will move the folder and its contents to the trash.
+#### Меню "Ещё"
+В меню "Ещё" (иконка "⋯") вы можете выполнить остальные операции над папкой.
 
-## Creating a folder
+## Создание папки
 ![The folder creation dialog](_files/folder-create.png)
 
-Click on the "⋯"-Button in the breadcrumb navigation in the folder section and select "New Folder" to open the folder creation dialog.
-Enter the name of the folder and click on "Yes" to create the folder.
+Для создания новой папки, откройте меню "Ещё" ("⋯") в навигаторе (над списком паролей) и нажмите "Новая папка".
+Введите имя новой папки в диалогово окне и нажмите "Да" для завершения.
 
-**Notes**
-- The folder will always be created in the current folder.
-- Folders are not unique. Different folders with the same name can exist.
+**Примечания**
+- Папка всегда создаётся там, где сейчас открыт список.
+- Имена папок не уникальные. Могут существовать несколько папок с одинаковым именем по одному пути.
 
+## Удаление папок
+Нажав "Удалить" в меню "Ещё", папка и всё её содержимое будет перемещено в корзину. При необходимости, вы всё ещё можете посмотреть и восстановить её содержимое.
 
-## Deleting folders
-Once you select the "Delete" option from the "⋯"-Menu, the folder and all its contents will be moved into the trash.
-You can still browse the folder there and restore it if needed.
-
-**Note:** Deleting a folder from the trash will delete the folder and all passwords and folders in it.
+**Примечание:** Удаление папки из корзины навсегда удалит её и все находящиеся в ней пароли и папки.

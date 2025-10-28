@@ -1,4 +1,4 @@
-## Images
+## Изображения
 [![Password List](./_files/_previews/main-section.jpg)](./_files/main-section.png)
 [![Folder Section](./_files/_previews/folder-section.jpg)](./_files/folder-section.png)
 [![Tag Section](./_files/_previews/tag-section.jpg)](./_files/tag-section.png)
@@ -11,6 +11,6 @@
 [![Handbook Section](./_files/_previews/handbook-section.jpg)](./_files/handbook-section.png)
 
 
-## Feature Overview
-The short video below quickly shows you all the major features of passwords.
+## Обзор функционала
+Это краткое видео покажет вам основные функции Passwords (видео на английском).
 [![Feature Overview](./_files/_previews/feature-overview.png)](./_files/videos/feature-overview.mp4)

@@ -1,25 +1,22 @@
-The passwords app offers strong end-to-end encryption which requires anyone trying to decrypt your passwords to know the encryption passphrase.
+Passwords предлагает усиленное сквозное шифрование, которое требует разблокировки базы паролей с помощью мастер-пароля.
 
-#### Before you start
-- By default, the encryption setup will encrypt all existing passwords, folders and tags except those who are shared.
-- All previous revisions but the current will be deleted.
-- The encryption setup will also create a new password entry with your encryption passphrase.
-  If you do not want this, switch the settings view to "Advanced" in the top right corner and uncheck the options in step 5 of the setup.
-- The encryption setup will create the new entries before deleting any old ones.
-  So even if something goes wrong, there should be no data loss.
+#### Перед тем, как вы начнёте
+- По умолчанию, будут зашифрованы все пароли, папки и теги, которые не находятся в общем доступе.
+- Все предыдущие ревизии будут удалены.
+- Будет создана новая запись с мастер-паролем. Если вы не хотите этого, перейдите в [Настройки](web+passlink://goto/settings) -> включите Экспертные настройки (левый верхний угол), и при включении сквозного шифрования в шаге 5 отключите галочку "Сохранить пароль".
+- При настройке сквозного шифрования создаётся копия всех записей - в случае ошибки, потери данных не будет.
 
+#### Включение сквозного шифрования
 [![How To: Enable End-To-End Encryption](../_files/_previews/encryption-setup.jpg)](../_files/videos/encryption-setup.mp4)
 
-#### Enabling End-to-End encryption
-1. Open the [Settings](web+passlink://goto/settings) (the cog icon)
-2. Locate the "Encryption" section at the end of the "Security" section.
-3. Click the "Activate" button next to "End-to-End Encryption".
-4. The setup wizard will appear. Click continue to see the encryption passphrase dialog.
-5. Choose an encryption passphrase with at least 12 characters and confirm it.
-   > :warning: Do not use your Nextcloud password.
-   > Every Nextcloud app can read your Nextcloud password and it offers no security
-6. Click "Save".
+1. Откройте [настройки](web+passlink://goto/settings).
+2. Найдите в разделе "Безопасность" настройку "Сквозное шифрование".
+3. Нажмите кнопку "Включить" справа от надписи "Сквозное шифрование".
+4. Введите мастер-пароль в диалоговое окно. Мастер-пароль должен быть не менее 12 символов в длину.
+   > :warning: Не используйте пароль от профиля Nextcloud.
+   > Любое приложение в Nextcloud может прочитать его.
+7. Нажмите сохранить.
 
-The encryption setup will automatically encrypt all folders and passwords
+Все пароли, папки и теги будут автоматически зашифрованы.
 
-> :warning: Do not abort the encryption process or reload the page
+> :warning: Не прерывайте процесс шифрования и не перезагружайте страницу
