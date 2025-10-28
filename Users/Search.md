@@ -1,44 +1,40 @@
-The search section will appear when a global search is triggered.
-You can search all passwords, folders and tags from the search section.
-
 ![The Search section](_files/search-section.png)
 
-## Search in page
-If the search is available in the current section, the search box in the app navigation on the left will be enabled.
-The search will automatically show all entries matching the current search query.
-Clicking the "X" icon in the search box will clear the search query and show all entries again.
+## Поиск по странице
+Если в данном разделе включен поиск, над списком разделов будет находится поисковая строка.
+С помощью неё можно искать по открытому разделу.
+Нажатие на иконку "X" отчистит поле поиска.
 
-You can also open the search box with `Ctrl` + `F` or by typing anywhere on the page if [the "Search as i type" option](Settings##search-as-i-type-advanced) is activated.
+При включенной опции "[Живой поиск](Settings##search-as-i-type-advanced)", поиск по странице будет автоматически включен, как только вы начнёте набирать текст.
 
 ![The activated search box](_files/search-active.png)
 
-## Search everywhere
-By default, you will only search in the currently displayed passwords, folders and tags.
-But you can also use the global search to search in all passwords, folders and tags.
-To do so, you have to click on the "Search everywhere for "…"" link which you can find either at the end of the current search results or below the "No results" message.
-If you have [the "Search everywhere with Enter" option](Settings##search-everywhere-with-enter-advanced) option enabled, you can also trigger the global search by hitting the `Enter` key in the search box.
+## Поиск везде
+По умолчанию поиск происходит только среди видимых на данный момент паролей, папок и тегов.
+В разделе "Поиск" можно искать одновременно по всем паролям, папкам и тегам.
+Если у вас включена опция "[Искать везде по клавише Enter](Settings##search-everywhere-with-enter-advanced)", нажатие на Enter при обычном поиске автоматически переключит вас на глобальный поиск.
 
+## Расширенный поиск
+По умолчанию, поиск ищет по названию, логину, url и заметкам в пароле.
+Вы можете использовать расширенный синтаксис `поле:значение` для поиска по другим полям.
+Если в значении есть пробелы, оно должно быть заключено в кавычки: `поле:"значение с пробелами"`.
+Можно указывать несколько полей вместе с обычным поиском:
+`поле1:значение1 поле2:"значение 2" обычный поиск`.
 
-## Advanced search usage
-By default, the search will search the url, username, name and notes of a password.
-You can use an advanced syntax to search other fields as well.
-The advanced syntax consists of a field and a value like this `field:value` or this `field:"value with spaces"`.
-You can use multiple fields: `field1:value1 field2:value2 rest of the query`.
+**Примечание:** Чтобы пароль попал в результат, должны совпасть все поля.
 
-**Note:** All fields must match for each result.
+### Допустимые поля:
 
-##### Available Fields
+| Object | Fields                                                                                                                                                           |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Пароль | `website`, `username`, `url`, `type`, `password`, `notes`, `label`, `id`, `revision`, `edited`, `status`, `statusCode`, `hash`, `favorite`, `sseType`, `cseType` |
+| Папка  | `label`, `type`, `id`, `revision`, `edited`, `sseType`, `cseType`                                                                                                |
+| Тег    | `label`, `type`, `id`, `revision`, `edited`, `sseType`, `cseType`                                                                                                |
 
-| Object    | Fields                                                                                                                                                           |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Passwords | `website`, `username`, `url`, `type`, `password`, `notes`, `label`, `id`, `revision`, `edited`, `status`, `statusCode`, `hash`, `favorite`, `sseType`, `cseType` |
-| Folders   | `label`, `type`, `id`, `revision`, `edited`, `sseType`, `cseType`                                                                                                |
-| Tags      | `label`, `type`, `id`, `revision`, `edited`, `sseType`, `cseType`                                                                                                |
+### Альтернативные названия:
 
-##### Alias names
-
-| Alias       | Field                                          |
-|-------------|------------------------------------------------|
+| Имя         | Поле                                           |
+| ----------- | ---------------------------------------------- |
 | `name`      | `label`                                        |
 | `title`     | `label`                                        |
 | `user`      | `username`                                     |

@@ -1,39 +1,41 @@
+# Шифрование на сервере
+Шифрование на сервере применяется перед сохранением данных в хранилище.
 
+### Нет шифрования
+Если данные уже были зашифрованы клиентом, нет необходимости шифровать данные на сервере.
 
+### SSEv1
+Простое шифрование, использующее индивидуальный ключ для каждого пароля.
+Ключ генерируется на основе серверного ключа, пользовательского ключа и ключа предмета.
+Этот тип шифрования не требует мастер-пароля.
+Данное шифрование защищает при частично скомпрометированном сервере - например, если у взломщиков есть доступ к базе данных или бэкапам.
 
-# Server-Side Encryption
-Server-Side encryption is used on the server before the data is stored in the database.
+Показывается в разделе "Безопасность" как "Простое шифрование (Быт. 1)"
 
-### None
-If the client already encrypted the password, the server does not need to add additional encryption.
+### SSEv2
+В данном тип шифрования ключи, способные расшифровать пароль, хранятся в защищённой цепочке ключей.
+Данные, необходимые для разблокировки цепочки, недоступны серверу, пока клиент не сделает запрос.
+Для взлома злоумышленникам потребуется постоянный доступ к серверу во время работы пользователя.
 
-### SSEv1 (Server-side encryption (Gen. 1))
-This is a basic server side encryption which creates an individual encryption key for each password.
-The key is generated using the server-wide Nextcloud secret, a user specific key and a per-item key.
-This type of encryption does not require a master password.
-This encryption protects against partially compromised servers, e.g. when the attacker has access to the database or backups of it.
+Показывается в разделе "Безопасность" как "Простое шифрование (Быт. 2)"
 
-### SSEv2 (Server-side encryption (Gen. 2))
-This encryption uses an encrypted keychain to store the keys used to decrypt passwords.
-The data necessary to decrypt the keychain is controlled by the  client and only available on the server when the client makes a request.
-To get around this encryption, an attacker would need continuous access to the server while the user is logged in.
+### SSEv3
+Это шифрование работает аналогично SSEv1, при этом ключ пользователя предоставляется сторонним приложением (например, сервисом SSO), и ключ сервера не используется.
+Данный метод шифрования может быть безопасней SSEv1, так как для расшифровки данных злоумышленнику потребуется доступ к стороннему сервису.
 
-### SSEv3 (Third party server side encryption)
-This encryption works similar to SSEv1, however the user specific encryption key is provided by a third party application and the server key is omitted.
-With this encryption method, the user key is usually provided by another application outside Nextcloud itself, e.g. an SSO service.
-This encryption method can be safer than SSEv1 since an attacker needs access to the third party application to decrypt any data.
+Показывается в разделе "Безопасность" как "Простое шифрование (Быт. 3)"
 
-# Client-Side Encryption
-Client-Side encryption is implemented in the clients such as the webapp, Desktop apps or smartphone apps and is applied before the data is sent to the server.
+# Клиентское шифрование
+Клиентское шифрование реализуется в клиенте, например, в приложении на компьютере или телефоне, и применяется до того, как данные будут переданы серверу.
 
-### None
-If the user does not use a master password, the client does not apply any encryption.
-The data is transferred to the server securely via HTTPS and encrypted there before it is stored in the database.
+### Нет шифрования
+Если пользователь не использует мастер-пароль, клиент не может применить шифрование.
+Данные передаются в безопасности по HTTPS, и шифруются на сервере перед сохранением.
 
-### CSEv1 (Encryption with libsodium)
-With CSEv1, the user chooses a master password.
-This master password is used to encrypt a keychain which contains the keys used to encrypt the passwords.
-The passwords are then encrypted with a key from the keychain before being sent to the server.
-This method is the most secure way to store your passwords.
-Any attacker with access to the server or capable of intercepting the communication between the client and the server will only see already encrypted data.
-The master password from the user is never sent to the server and is only known to the user.
+### CSEv1 (libsodium)
+При использовании CSEv1, пользователь выбирает мастер-пароль.
+Он используется для шифрования цепочки ключей.
+Пароли шифруются ключами из цепочки перед отправкой на сервер.
+Этот метод шифрования является самым безопасным.
+Даже при наличии доступа к серверу или при перехвате трафика, злоумышленник не получит расшифрованные данные.
+Мастер-пароль не передаётся серверу и известен только пользователю.

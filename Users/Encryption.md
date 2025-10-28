@@ -1,21 +1,21 @@
-The passwords app supports different types of encryption to keep your data safe.
-The main classes of encryption provided are client side encryption (also known as end-to-end encryption) and server side encryption.
-With client side encryption, the data is encrypted on your device with an encryption password chosen by you before it's sent to the server and stored there.
-With server side encryption, the data is sent to the server and encrypted there before it's stored.
+Passwords поддерживает несколько разных типов шифрования.
+Два основных типа шифрования: клиентское/сквозное шифрование, и шифрование на сервере.
+Со сквозным шифрованием, данные зашифрованы на вашем устройстве выбранным вами паролем *до* отправки на сервере.
+С шифрованием на сервере, данные шифруются перед сохранением в базе данных.
 
 ```mermaid
 sequenceDiagram
-    participant Client
-    participant Server
-    participant Database
-        Client->>Client: Apply End-to-End-Encryption
-    Client->>Server: Store Data
-        Server->>Server: Apply Server-Side-Encryption
-    Server->>Database: Store Data
+    participant Клиент
+    participant Сервер
+    participant База данных
+        Клиент->>Клиент: Сквозное шифрование
+    Клиент->>Сервер: Передача данных
+        Сервер->>Сервер: Шифрование на сервере
+    Сервер->>База данных: Сохранение данных
 ```
 
-### Enable End-to-End Encryption
-See [Enable End-to-End Encryption](./Encryption/Enable-End-to-End-Encryption)
+### Включение сквозного шифрования
+Смотрите [Включение сквозного шифрования](./Encryption/Enable-End-to-End-Encryption).
 
-### Encryption Types
-See [encryption types](./Encryption/Encryption-Types).
+### Типы шифрования
+Смотрите [Типы шифрования](./Encryption/Encryption-Types).
