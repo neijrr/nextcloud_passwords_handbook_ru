@@ -1,4 +1,4 @@
-![The password creation dialog](../_files/password-create.png)
+![Диалоговое окно создания пароля](../_files/password-create.png)
 
 ### Свойства
 ##### Логин

@@ -1,7 +1,7 @@
-![The main section with password details visible](_files/password-details.png)
+![Список паролей с информацией о выбранном пароле](_files/password-details.png)
 
 ## Пароль в списке
-![A single password as displayed in the list view](_files/password-single.png)
+![Пароль в списке](_files/password-single.png)
 
 Список паролей даёт быстрый доступ к часто используемой информации.
 Вы можете видеть фавикон веб-сайта и имя пароля, а также статус безопасности, обозначаемый иконкой щита. Рядом с ним находится дата последнего изменения. В зависимости от ваших настроек, в списке также может показываться дополнительная информация
@@ -31,7 +31,7 @@
 #### Дополнительная отображаемая информация
 Если в настройка [включено отображение тэгов](./Settings#show-tags-in-the-list-view), в списке паролей вы увидите теги для каждого пароля.
 
-![A password with tags in the list view](_files/tags-hover.gif)
+![Теги в списке паролей](_files/tags-hover.gif)
 
 Вы также можете настроить,
 - [какое поле используется в качестве названия](./Settings#set-title-from);

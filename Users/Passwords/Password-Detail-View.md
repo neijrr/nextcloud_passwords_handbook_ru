@@ -1,7 +1,7 @@
-![The main section with a password in the detail view at the right](../_files/password-details.png)
+![Список паролей с информацией о выбранном пароле](../_files/password-details.png)
 
 ## Детали
-[![The details tab of a password](../_files/_previews/password-details-details.jpg)](../_files/password-details-details.png)
+[![Раздел информации о пароле](../_files/_previews/password-details-details.jpg)](../_files/password-details-details.png)
 
 Во вкладке "Детали", вы найдёте все заполненные поля (кроме заметок) у пароля. Если вы создали дополнительные поля, они также отобразятся здесь.
 При нажатии на ссылку или файл, они откроются в новой вкладке.
@@ -17,12 +17,12 @@
 В раздел "Безопасность" находится [статус безопасности](./Password-Security-Status) пароля и информация о [шифровании](./Encryption/Encryption-Types), а также хеш SHA-1 пароля.
 
 ## Заметки
-[![The notes tab of a password](../_files/_previews/password-details-notes.jpg)](../_files/password-details-notes.png)
+[![Заметки к паролю](../_files/_previews/password-details-notes.jpg)](../_files/password-details-notes.png)
 
 Вкладка "Заметки" показывается, только если в записи они есть. Заметки содержат текст в [формате Markdown](./Markdown-Notes.md) и могут быть длиной до 4096 символов.
 
 ## Общий доступ
-[![The sharing tab of a password with a qr code](../_files/_previews/password-details-sharing.jpg)](../_files/password-details-sharing.png)
+[![Общий доступ к паролю](../_files/_previews/password-details-sharing.jpg)](../_files/password-details-sharing.png)
 
 Здесь вы можете поделится данным паролем (если вам это разрешено).
 Вы также можете здесь увидеть, кому вы предоставили доступ, и, если это чужой пароль, кто его предоставил вам.
@@ -30,7 +30,7 @@
 Для дополнительной информации смотрите "[Общий доступ](./Sharing-Passwords)".
 
 ## Ревизии
-[![The revisions tab of a password](../_files/_previews/password-details-revisions.jpg)](../_files/password-details-revisions.png)
+[![Ревизии пароля](../_files/_previews/password-details-revisions.jpg)](../_files/password-details-revisions.png)
 
 При каждом изменении пароля создаётся новая ревизия.
 Каждая ревизия хранит все данные о пароле.
