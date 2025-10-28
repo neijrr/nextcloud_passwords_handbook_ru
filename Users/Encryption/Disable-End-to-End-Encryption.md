@@ -2,7 +2,7 @@
 По техническим причинам в Passwords нет встроенного способа отключить сквозное шифрование.
 При необходимости, вы можете экспортировать ваши данные, сбросить настройки приложения и импортировать данные без сквозного шифрования.
 
-[![How To: Disable End-To-End Encryption](../_files/_previews/encryption-removal.jpg)](../_files/videos/encryption-removal.mp4)
+[![Выключение сквозного шифрования (англ.)](../_files/_previews/encryption-removal.jpg)](../_files/videos/encryption-removal.mp4)
 
 > :exclamation: Этот процесс удалит все скрытые предметы и все настройки.
 
