@@ -40,9 +40,6 @@
 ### Интерполировать отсутствующие поля
 Если эта опция указана, импортёр попытается угадать значения отсутствующих полей.
 
-## Маппинг CSV-полей
-Здесь указывается соответствие столбцов CSV файла и полей
-
 ## CSV Field Mapping
 Here you can map the columns of your csv file.
 You don't have to map every column, just the ones you wish to import.
