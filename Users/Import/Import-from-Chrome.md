@@ -1,27 +1,19 @@
-This guide was written primarily for the Google chrome browser, but it should work with any browser based on chrome (like Opera, Vivaldi, Brave, Edge etc.)
+Это руководство написано для Google Chrome, однако оно должно работать и для других браузеров на основе Chromium (такие как Opera, Vivaldi, Brave, Edge и другие).
 
-## Export from the browser
-1. Navigate to `chrome://settings/`.
-2. Select "Passwords" (usually in the "AutoFill" section).
-3. Click the "⋮" icon and select "Export passwords".
-4. Click the "Export passwords" button in the dialog.
-5. Save the file on your pc.
+## Экспорт из браузера
+1. Откройте настройки.
+2. Откройте Автозаполнение и пароли -> Менеджер паролей.
+3. В меню слева выберите Настройки (для Chrome/Chromium: [`chrome://password-manager/settings`](chrome://password-manager/settings)).
+4. Нажмите кнопку "Скачать файл" в пункте "Экспорт паролей".
+5. Сохраните файл на вашем компьютере.
 
-## Import into Passwords
-1. Open the Passwords app.
-2. Click on the "🗃" icon in the bottom left corner to open "Backup and Restore".
-3. Choose "[Restore or import](web+passlink://goto/backup/import)".
-4. Select "Chrome / Google Passwords CSV" as import format.
-5. Open the file you exported before using the file dialog.
-6. Choose import options as wanted.
-7. Click the "Import" button.
-8. After the import has finished, check the imported passwords.
-9. Delete the export file from your computer.
+## Импорт в Passwords
+1. Откройте приложение Passwords.
+2. Зайдите в [Архивирование и восстановление](web+passlink://goto/backup) -> [Импорт и восстановление](web+passlink://goto/backup/import)
+3. Выберите формат "Chrome / Google Passwords CSV".
+4. Выберите ранее сохранённый файл.
+5. Выберите желаемые [опции импорта](../Import#опции-импорта), затем начните импорт.
+6. Проверьте, что все пароли импортировались корректно.
+7. Удалите файл с паролями с вашего компьютера.
 
-
-## Import Options
-See [the general import options](../Import#Import-Options).
-
-
-## Troubleshooting
-See [import troubleshooting](../Import#Troubleshooting).
+При возникновении проблем смотрите [соответствующую главу руководства по импорту](../Import/#решение-проблем).

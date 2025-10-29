@@ -1,92 +1,79 @@
-The import feature is located under "[Restore or Import](web+passlink://goto/backup/import)" in the "Backup and Restore" section which is accessed through the "🗃" icon in the app navigation.
-It can be used to restore a previously made backup, import a backup from another instance or import data from another password manager.
+[Импорт паролей](web+passlink://goto/backup/import) находится в разделе "[Архивирование и восстановление]((web+passlink://goto/backup))" в нижнем левом углу.
+Импорт паролей можно использовать для восстановления ранее созданного бэкапа или бэкапа с другого сервера, или для импорта паролей из другого менеджера паролей.
 
-![The Import section](_files/import-section.png)
+![Импорт паролей](_files/import-section.png)
 
+## Импорт паролей по шагам
+#### 1. Выберите формат
+Выберите формат файла, соответствующий приложению, из которого вы импортируете пароли (или "Резервная копия в БД" для бэкапа Passwords).
+Если для вашего приложения нет формата файла, выберите опцию "Пользовательский CSV-файл".
 
+#### 2. Выберите файл
+Выберите импортируемый файл.
+Если вы импортируете пользовательский CSV, укажите соответствующие опции перед тем, как выбирать файл.
 
-## The Import Steps
-##### 1. Choose Format
-Choose the format of the file you want to import.
-If you want to import a CSV file from an application which is not listed, choose "Custom CSV".
+### 3. Выберите опции
+Выберите опции импорта.
+Опции могут отличаться в зависимости от типа файла.
+При выборе
 
-##### 2. Select File
-Select the file you want to import.
-If you want to import a custom csv file, make sure to set the csv options before you open the file.
+### 4. Начните импорт
+Если вы готовы, нажмите "Импорт".
 
-##### 3. Select Options
-Select the options for the import.
-Depending on the file type, different options may be available which are explained below.
+## Форматы импорта
+Большинство форматов импорта из файла являются импортом из CSV файла с заранее заданными опциями.
+Для определённых форматов есть особые опции.
+Для таких сервисов есть отдельные инструкции по импорту:
+- [Импорт из Passman](./Import/Import-from-Passman)
+- [Импорт из Chrome](./Import/Import-from-Chrome)
+- [Импорт из резервной копии БД](./Import/Import-from-Backup)
+- [Импорт из Enpass](./Import/Import-from-Enpass)
+- [Импорт из пользовательского CSV](./Import/Import-from-custom-CSV)
 
-##### 4. Run Import
-If you're ready to go, hit the "Import" button and start importing your files
+## Опции импорта
+### Обработка конфликтов
+Режимы обработки конфликтов задают поведение при импорте в случае конфликта.
+- "Пропускать совпадающие ревизии" пропускает пароль, если он уже существует и его ревизия совпадает. Работает, только если в импортируемом файле есть поле ревизии.
+- "Всегда пропускать" будет пропускать любую запись, которая уже есть в базе данных.
+- "Перезапись" будет перезаписывать любую запись, которая уже есть в базе данных.
+- "Выполнить слияние" объединит данные из импортируемой записи с существующей записью. Не работает для дополнительных полей.
+- "Создать новые" создаст новую запись, даже если такая уже существует.
 
+**Примечание:** если нет поля id, записи будут сравниваться по именам. При импорте из резервной копии всегда используется сравнение по id.
 
+#### Не редактировать предоставленные мне пароли
+Если выбрано, предоставленные вам пароли не будут перезаписаны при импорте.
 
-## Specific importers
-Most of the imports for files from a third party service are just a profile with preselected options for the CSV import.
-There are some imports which do have special options just for that service.
-The description of these options dav be found in the import guide for that service.
-
-- [Import from Passman](./Import/Import-from-Passman)
-- [Import from Chrome](./Import/Import-from-Chrome)
-- [Import from database backup](./Import/Import-from-Backup)
-- [Import from Enpass](./Import/Import-from-Enpass)
-- [Import from custom CSV](./Import/Import-from-custom-CSV)
-
-
-
-## Import Options
-#### Conflict Handling Mode
-The "Conflict handling" mode defines how the Importer should handle conflicts.
-"Skip if same revision" will skip an entry if it already exists and the revision matches. Works only if the import contains a revision field.
-"Skip always" will skip an entry if it already exists in the database.
-"Overwrite existing" will overwrite an entry if it already exists in the database.
-"Merge with existing" will merge the new data with the current data. This does not apply for custom fields.
-"Create new entry" will always create a new entry, even if it already exists.
-
-**Note:** If no id field is available, entries will be matched by their name. The "Database Backup" option will always use id based matching.
-
-#### Don't edit passwords shared with me
-If this option is selected, passwords which were shared with you by other users will not be overwritten by the import.
-
-
-
-## Troubleshooting
+## Решение проблем
 ### Как исправить проблемный CSV файл
-### How to fix faulty CSV files
-![Warning for services which may create faulty exports](_files/import-faulty-csv.png)
+![Предупреждение для сервиса, который создаёт проблемные CSV файлы при экспорте](_files/import-faulty-csv.png)
 
-Some password managers create faulty export files which can not be parsed by the importer.
-These files need to be fixed manually in order to work properly.
+Некоторые менеджеры паролей при экспорте создают проблемные CSV файлы, которые не могут быть распознаны импортёром.
+Эти файлы необходимо исправить вручную для правильной работы импорта.
 
-1. Open the file in a spreadsheet program like [LibreOffice Calc](https://libreoffice.org) or Microsoft Excel.
-2. Check the file for errors. Most of these programs do a good job in fixing faulty CSVs. You should make sure that all colums are filled in properly.
-3. Export the file as CSV.
-4. Try the Import again
+1. Откройте файл в табличном процессоре (Microsoft Excel, LibreOffice Calc или другом).
+2. Проверьте файл на ошибки. Обычно табличный процессор автоматически исправляет большинство ошибок. Удостоверьтесь, что столбцы заполнены правильно.
+3. Экспортируйте таблицу как CSV файл.
+4. Импортируйте новый файл.
 
-##### Example errors
-![Quotes are not escaped properly](_files/import-faulty-csv-error.png)
+##### Пример ошибки в CSV файле
+![Кавычки не были корректно экранированы](_files/import-faulty-csv-error.png)
 
-### Files can not be imported
-Some password managers (e.g. Passman, Enpass, Bitwarden) allow files to be stored with passwords.
-The Import will show the warning ""Password Name" has files attached which can not be imported." for each password which has files attached.
-The password will be imported anyway but the files will not be imported.
-Passwords does not offer any file storage functionality as we believe that it is better to leave this to Nextcloud itself.
+### Не импортируются файлы
+Некоторые менеджеры паролей (Passman, Enpass, Bitwarden и другие) позволяют хранить файлы в пароле.
+При импорте такого пароля Импортёр покажет сообщение "<Название пароля> содержит прикреплённые файлы, которые невозможно импортировать" для каждого пароля с приложенными файлами.
+Passwords не предоставляет файловое хранилище, так как этот функционал уже есть в самом Nextcloud.
 
-Passwords does support the linking of files stored in Nextcloud to passwords.
-Therefore we recommend downloading the files manually from your old Password manager and storing them in Nextcloud.
-After this you can edit the password and add a custom field with the type "file" and choose the file from the file dialog.
+Passwords позволяет ссылаться в паролях на файлы из Nextcloud. Поэтому мы рекомендуем вначале скачать файлы из вашего менеджера паролей и разместить их в Nextcloud, затем импортировать пароли и добавить им дополнительное поле с типом "файл", ссылающееся на соответствующий файл в Nextcloud.
 
-**Note:** If you want to store secret files like private keys, we recommend that you use the [Nextcloud E2E Encryption](https://nextcloud.com/endtoend/).
+**Примечание:** если вы хотите хранить зашифрованные файлы, например, приватные ключи, мы рекомендуем использовать [сквозное шифрование в Nextcloud](https://nextcloud.com/endtoend/).
 
-### Long custom field names / values are truncated
-If you have custom fields with a label that exceeds 48 characters or a value that exceeds 320 characters, it will be truncated to fit the length limitations of Passwords.
-Custom fields are intended to contain usual password related information like and e-mail address or the like.
-They are not intended to hold large amounts of data.
-If you want to store long texts, we recommend to use the "Notes" field.
+### Длинные имена дополнительных полей / обрезанные значения
+Если у вас есть дополнительные поля с именем длиннее 48 символов, или значения длиннее 320 символов, они будут обрезаны до соответствующей длины.
+Дополнительные поля предназначены для обычной для записей информации, типа e-mail адресов или ссылок.
+Если вам нужно хранить длинный текст, мы рекомендуем использовать поле "Заметки".
 
-### Custom field type mismatch
-If you import passwords with custom fields from any source other than the "Database Backup", they will be validated.
-Fields with the type "url" or "email" will require to be in a correct format or their type will be set to "text".
-Additionally, all fields with the type "text" will be checked if they are in the right format for "url" or "email" and if so, their type will be changed.
+### Несоответствие типа дополнительного поля
+Если вы импортируете пароли с дополнительными полями (кроме импорта из резервной копии), их значения проверяются перед импортом.
+Поля типа "url" и "email" должны быть в соответствующем формате, иначе они будут преобразованы в тип "текст".
+Кроме того, все поля типа "текст" проверяются на их формат - если они содержат url или e-mail адрес, им будет задан соответствующий тип.
