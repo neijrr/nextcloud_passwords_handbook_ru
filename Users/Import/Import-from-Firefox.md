@@ -1,6 +1,6 @@
 ## Export from the browser
 1. Navigate to `about:logins` in Firefox.
-3. Click the "⋯" icon in the top right and select "Export Logins…".
+3. Click the `⋯` icon in the top right and select "Export Logins…".
 4. Click the "Export…" button in the dialog.
 5. Save the file on your pc.
 

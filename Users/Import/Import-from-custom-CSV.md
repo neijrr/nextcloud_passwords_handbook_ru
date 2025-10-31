@@ -40,21 +40,22 @@
 ### Интерполировать отсутствующие поля
 Если эта опция указана, импортёр попытается угадать значения отсутствующих полей.
 
-## CSV Field Mapping
-Here you can map the columns of your csv file.
-You don't have to map every column, just the ones you wish to import.
-For passwords you will have to map at least the `Password` column, for folders and tags the `Label` column is required.
-You can use the `Preview Line` option to preview a different line.
+## CSV маппинг
+Здесь задаётся соответствие столбцов CSV файла к полям в паролях/папках/тегах.
+Вам не обязательно указывать соответствие для всех полей - достаточно только для тех, которые вы хотите заполнить.
+Для паролей обязательно указать столбец, соответствующий полю `Пароль`, для папок и тегов - полю `Метка`.
+Вы можете смотреть на значения из разных строк, выбирая строку в поле "Предпросмотр".
 
-### Custom Fields format
-To import custom fields from a CSV file, the type of the column must be set to "Custom Fields" and the formatting must be as shown below.
-Each line contains one custom field.
-First, there is the label of the field which is optionally followed by a comma and the type of the field.
-After that is a colon and then the value of the field.
-The type can be one of `text`, `email`, `url`, `secret`, `file` or `data`.
-
+### Формат дополнительных полей
+Для импорта дополнительных полей из CSV файла, тип столбца должен быть указан как "Дополнительные поля", и поле должно быть форматировано соответствующим образом:
 ```
-Label,type:value
+название,тип:значение
+название,тип:значение
+```
+Тип может быть `text`, `email`, `url`, `secret` (пароль), `file` или `data` (внутренние данные).
+
+Например:
+```
 E-Mail,email:email@example.com
 Url,url:https://www.example.com
 Text,text:some sample text
@@ -63,5 +64,5 @@ File,file:/path/of/file/on/your/webdav.fil
 Data,data:applicationdatafield
 ```
 
-## Troubleshooting
-See [import troubleshooting](../Import#Troubleshooting).
+## Решение проблем
+Смотрите [Импорт - решение проблем](../Import#решение-проблем).
