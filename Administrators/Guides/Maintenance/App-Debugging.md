@@ -9,7 +9,7 @@ You can use the log level filter in the "Log reader settings" to exclude irrelev
 Errors logged by the passwords app can usually be identified by checking the "Application" column.
 However, in some cases the Application could be listed as "index", "no app in context" or "PHP" instead.
 
-If you have found the correct log entry, click on the "⋯"-Menu on the right and select "Copy raw entry" to copy the log entry.
+If you have found the correct log entry, click on the `⋯`-Menu on the right and select "Copy raw entry" to copy the log entry.
 
 
 ## Find the system information
